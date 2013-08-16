@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{68A0657C-25CB-47D0-B674-CADDA0508F9F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DeckManager</RootNamespace>
+    <AssemblyName>DeckManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cards\BaseCard.cs" />
+    <Compile Include="Cards\CrisisCard.cs" />
+    <Compile Include="Cards\DestinationCard.cs" />
+    <Compile Include="Cards\Enums\CardType.cs" />
+    <Compile Include="Cards\Enums\SkillCardColor.cs" />
+    <Compile Include="Cards\Enums\Loyalty.cs" />
+    <Compile Include="Cards\LoyaltyCard.cs" />
+    <Compile Include="Cards\QuorumCard.cs" />
+    <Compile Include="Cards\SuperCrisisCard.cs" />
+    <Compile Include="Decks\BaseDeck.cs" />
+    <Compile Include="Decks\CrisisDeck.cs" />
+    <Compile Include="Decks\DestinationDeck.cs" />
+    <Compile Include="Decks\DestinyDeck.cs" />
+    <Compile Include="Decks\QuorumDeck.cs" />
+    <Compile Include="Decks\SkillCardDeck.cs" />
+    <Compile Include="Decks\LoyaltyDeck.cs" />
+    <Compile Include="Decks\SuperCrisisDeck.cs" />
+    <Compile Include="GameManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\Board.cs" />
+    <Compile Include="Cards\SkillCard.cs" />
+    <Compile Include="States\Civilian.cs" />
+    <Compile Include="States\Enums\ViperStatus.cs" />
+    <Compile Include="States\GameState.cs" />
+    <Compile Include="States\Location.cs" />
+    <Compile Include="States\Player.cs" />
+    <Compile Include="States\Viper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
