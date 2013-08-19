@@ -7,6 +7,11 @@ namespace DeckManager.States
 {
     public class GameState
     {
+        /// <summary>
+        /// A generic string to dump crap that happened during the turn in, for the brains of fleshbags.
+        /// </summary>
+        public string TurnLog { get; set; }
+
         public int Fuel { get; set; }
         public int Food { get; set; }
         public int Morale { get; set; }

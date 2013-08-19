@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DeckManager.Cards.Enums;
 
 namespace DeckManager.Cards
 {
     public class CrisisCard : BaseCard
     {
+
+
         /// <summary>
         /// Reports that this is a crisis card.
         /// </summary>
@@ -35,51 +34,28 @@ namespace DeckManager.Cards
         /// The additional text.
         /// </value>
         public string AdditionalText { get; set; }
-        
+
         /// <summary>
-        /// A list of skill card colors that are positive for this crisis.
+        /// Gets or sets the positive card colors.
         /// </summary>
         /// <value>
         /// The positive colors.
         /// </value>
-        //public List<SkillCardColor> PositiveColors { get; set; }
-
-        /// <summary>
-        /// Gets or sets the crisis strength.
-        /// </summary>
-        /// <value>
-        /// The crisis strength.
-        /// </value>
-        //public int CrisisStrength { get; set; }
-
-        /// <summary>
-        /// Gets or sets the partial pass strength (if it exists).
-        /// </summary>
-        /// <value>
-        /// The partial pass.
-        /// </value>
-        //public int? PartialPass { get; set; }
-
-        /// <summary>
-        /// Gets or sets the post crisis text - Basestars attack, raiders activate, jump prep increases, etc.
-        /// </summary>
-        /// <value>
-        /// The post crisis.
-        /// </value>
-        //public string PostCrisis { get; set; }
+        public List<SkillCardColor> PositiveColors { get; set; }
 
         /// <summary>
         /// Gets or sets whether the Crisis has Jump Prep
         /// </summary>
-        public bool jumpPrep { get; set; }
+        public bool JumpPrep { get; set; }
+
         /// <summary>
         /// Gets or Sets the Crisis' cylon activation
         /// </summary>
-        public CylonActivations activation { get; set; }
+        public CylonActivations Activation { get; set; }
 
         /// <summary>
         /// This crisis' skill check (can be null)
         /// </summary>
-        public SkillCheck skillCheck { get; set; }
+        public List<Tuple<int, string>> PassLevels { get; set; }
     }
 }
