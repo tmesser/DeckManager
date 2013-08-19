@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DeckManager.Cards.Enums;
+using DeckManager.Cards;
 
 namespace DeckManager.Cards
 {
@@ -11,7 +12,7 @@ namespace DeckManager.Cards
     {
         public List<SkillCardColor> positiveColors { get; set; }
         public List<SkillCard> playedCards { get; private set; }
-        public List<Consequence> consequences { get; set; }
+        public List<DeckManager.Cards.Consequence> consequences { get; set; }
         public Guid guid { get; set; }
         public string name { get; set; }
         public int passValue { get; set; }
@@ -45,17 +46,17 @@ namespace DeckManager.Cards
 
         public void addConsequence(string text, int threshold = 0)
         {
-            this.consequences.Add(new Consequence(text, threshold));
+            this.consequences.Add(new DeckManager.Cards.Consequence(text, threshold));
         }
         /// <summary>
         /// Evaluates the skill check after all cards have been played.
         /// </summary>
         /// <returns>List of all consequences that occur as a result of the skill check's outcome.</returns>
-        public List<Consequence> evalSkillCheck()
+        public List<DeckManager.Cards.Consequence> evalSkillCheck()
         {
             int posTotal = 0;
             int negTotal = 0;
-            List<Consequence> results = new List<Consequence>();
+            List<DeckManager.Cards.Consequence> results = new List<DeckManager.Cards.Consequence>();
             bool scaHit = false;
             foreach (SkillCard card in this.playedCards)
             {
@@ -78,20 +79,5 @@ namespace DeckManager.Cards
             return null;
         }
 
-        class Consequence
-        {   
-            /// <summary>
-            /// Threshold for consequence to occur. Max value for skill check is pass, 0 is fail, -1 is a skill check ability consequence.
-            /// </summary>
-            public int threshold { get; set; }
-
-            public string conditionText { get; set; }
-
-            public Consequence(string text, int threshold)
-            {
-                this.conditionText = text;
-                this.threshold = threshold;
-            }
-        }
     }
 }
