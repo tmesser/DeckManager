@@ -42,7 +42,7 @@ namespace DeckManager.Cards
         /// <value>
         /// The positive colors.
         /// </value>
-        public List<SkillCardColor> PositiveColors { get; set; }
+        //public List<SkillCardColor> PositiveColors { get; set; }
 
         /// <summary>
         /// Gets or sets the crisis strength.
@@ -50,7 +50,7 @@ namespace DeckManager.Cards
         /// <value>
         /// The crisis strength.
         /// </value>
-        public int CrisisStrength { get; set; }
+        //public int CrisisStrength { get; set; }
 
         /// <summary>
         /// Gets or sets the partial pass strength (if it exists).
@@ -58,7 +58,7 @@ namespace DeckManager.Cards
         /// <value>
         /// The partial pass.
         /// </value>
-        public int? PartialPass { get; set; }
+        //public int? PartialPass { get; set; }
 
         /// <summary>
         /// Gets or sets the post crisis text - Basestars attack, raiders activate, jump prep increases, etc.
@@ -66,6 +66,20 @@ namespace DeckManager.Cards
         /// <value>
         /// The post crisis.
         /// </value>
-        public string PostCrisis { get; set; }
+        //public string PostCrisis { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether the Crisis has Jump Prep
+        /// </summary>
+        public bool jumpPrep { get; set; }
+        /// <summary>
+        /// Gets or Sets the Crisis' cylon activation
+        /// </summary>
+        public CylonActivations activation { get; set; }
+
+        /// <summary>
+        /// This crisis' skill check (can be null)
+        /// </summary>
+        public SkillCheck skillCheck { get; set; }
     }
 }
