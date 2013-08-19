@@ -67,5 +67,14 @@ namespace DeckManager.Cards
         /// The post crisis.
         /// </value>
         public string PostCrisis { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether the Crisis has Jump Prep
+        /// </summary>
+        public bool jumpPrep { get; set; }
+        /// <summary>
+        /// Gets or Sets the Crisis' cylon activation
+        /// </summary>
+        public CylonActivations activation { get; set; }
     }
 }
