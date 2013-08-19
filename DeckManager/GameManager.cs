@@ -53,6 +53,7 @@ namespace DeckManager
             foreach (var player in playerList)
             {
                 player.LoyaltyCards.Add(firstTurn.LoyaltyDeck.Draw());
+                DoPlayerDraw(player);
             }
 
             throw new NotImplementedException();
@@ -62,7 +63,7 @@ namespace DeckManager
         {
             try
             {
-                foreach (var color in player.SkillCardDraws.ElementAt(0))
+                foreach (var color in player.SkillCardDraws.ElementAt(drawIndex))
                 {
                     switch (color)
                     {

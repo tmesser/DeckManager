@@ -1,19 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DeckManager.Cards;
+using log4net;
 
 namespace DeckManager.ManagerLogic
 {
     public class SkillCheck
     {
+        private readonly ILog _logger;
         public CrisisCard CrisisCard { get; set; }
         public List<SkillCard> PlayedCards { get; private set; }
         //TODO: Let's talk about how Consequences should be handled here, I'm not sure what value this object is adding right now.
         public List<Consequence> Consequences { get; set; }
         public string Name { get; set; }
 
-        public SkillCheck()
+        public SkillCheck(ILog logger)
         {
+            _logger = logger;
             PlayedCards = new List<SkillCard>();
         }
 
@@ -34,29 +38,38 @@ namespace DeckManager.ManagerLogic
         /// <returns>List of all consequences that occur as a result of the skill check's outcome.</returns>
         public List<Consequence> EvalSkillCheck()
         {
-            var strength = 0;
             var results = new List<Consequence>();
-            var scaHit = false;
-            foreach (var card in PlayedCards)
+            try
             {
-                if (card.CardPower > 0)
-                {
-                    if (CrisisCard.PositiveColors.Contains(card.CardColor))
-                        strength += card.CardPower;
-                    else
-                        strength -= card.CardPower;
-                }
-                else if (!scaHit && Consequences.Exists(x => x.Threshold == -1))
-                {
-                    //TODO: 0-strength card consequences should probably be attached to the card, not the consequence.
-                    scaHit = true;
-                    results.Add(Consequences.Find(x => x.Threshold == -1));    // SCA consequence only happens once
-                }
-            }
+                var strength = 0;
 
-            // TODO: OrderBy might arrange the skill check backwards.  This would be really easy to test if I had NuGet working and could install NUnit.  Check this later.
-            var checkResult = CrisisCard.PassLevels.OrderBy(x => x.Item1).First(result => strength > result.Item1);
-            results.Add(new Consequence(checkResult.Item1, checkResult.Item2));
+                var scaHit = false;
+                foreach (var card in PlayedCards)
+                {
+                    if (card.CardPower > 0)
+                    {
+                        if (CrisisCard.PositiveColors.Contains(card.CardColor))
+                            strength += card.CardPower;
+                        else
+                            strength -= card.CardPower;
+                    }
+                    else if (!scaHit && Consequences.Exists(x => x.Threshold == -1))
+                    {
+                        //TODO: 0-strength card consequences should probably be attached to the card, not the consequence.
+                        scaHit = true;
+                        results.Add(Consequences.Find(x => x.Threshold == -1));    // SCA consequence only happens once
+                    }
+                }
+
+                // TODO: OrderBy might arrange the skill check backwards.  This would be really easy to test if I had NuGet working and could install NUnit.  Check this later.
+                var checkResult = CrisisCard.PassLevels.OrderBy(x => x.Item1).First(result => strength > result.Item1);
+                results.Add(new Consequence(checkResult.Item1, checkResult.Item2));
+            }
+            catch (Exception e)
+            {
+                _logger.Error("Error while computing skill check.", e);
+                throw;
+            }
 
             return results;
         }

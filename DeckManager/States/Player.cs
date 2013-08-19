@@ -13,5 +13,6 @@ namespace DeckManager.States
         public List<LoyaltyCard> LoyaltyCards { get; set; }
         public List<List<SkillCardColor>> SkillCardDraws { get; set; }
         public int MiracleTokens { get; set; }
+        public int DefaultDrawIndex { get; set; }
     }
 }
