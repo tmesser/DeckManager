@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DeckManager.DeckManager.Cards
 {
-    class Consequence
+    public class Consequence
     {
         /// <summary>
         /// Threshold for consequence to occur. Max value for skill check is pass, 0 is fail, -1 is a skill check ability consequence.

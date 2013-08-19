@@ -8,7 +8,7 @@ using DeckManager.Cards;
 
 namespace DeckManager.Cards
 {
-    class SkillCheck
+    public class SkillCheck
     {
         public List<SkillCardColor> positiveColors { get; set; }
         public List<SkillCard> playedCards { get; private set; }
