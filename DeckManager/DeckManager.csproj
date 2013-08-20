@@ -33,6 +33,9 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
     </Reference>
@@ -46,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cards\BaseCard.cs" />
+    <Compile Include="Characters\Character.cs" />
+    <Compile Include="Characters\Enums\Titles.cs" />
     <Compile Include="ManagerLogic\Consequence.cs" />
     <Compile Include="Cards\CrisisCard.cs" />
     <Compile Include="Cards\DestinationCard.cs" />
