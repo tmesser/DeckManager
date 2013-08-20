@@ -57,5 +57,14 @@ namespace DeckManager.Cards
         /// This crisis' skill check (can be null)
         /// </summary>
         public List<Tuple<int, string>> PassLevels { get; set; }
+
+        /// <summary>
+        /// Formats the object for posts on BBCode forums
+        /// </summary>
+        /// <returns></returns>
+        public string toBBCode()
+        {
+            return "not implemented";
+        }
     }
 }

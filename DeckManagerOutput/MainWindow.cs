@@ -27,7 +27,20 @@ namespace DeckManagerOutput
         private void giveCardToCurrentCharacterButton_Click(object sender, EventArgs e)
         {
             // give drawn card to currently selected player (skill or quorum)
+            DeckManager.Cards.BaseCard card = (DeckManager.Cards.BaseCard)this.drawnCardListBox.SelectedItem;
+            DeckManager.Characters.Character currentPlayer = (DeckManager.Characters.Character)this.characterListBox.SelectedItem;
 
+            switch (card.CardType)
+            {
+                case DeckManager.Cards.Enums.CardType.Skill:
+                    currentPlayer.skillHand.Add((DeckManager.Cards.SkillCard)card);
+                    break;
+                case DeckManager.Cards.Enums.CardType.Quorum:
+                    // @todo no representation of quorum deck yet
+                    break;
+            }
+
+            this.drawnCardListBox.Items.Remove(card);
         }
 
         private void polDeckButton_Click(object sender, EventArgs e)
@@ -73,12 +86,14 @@ namespace DeckManagerOutput
 
         private void drawCrisisButton_Click(object sender, EventArgs e)
         {
+            DeckManager.Cards.CrisisCard crisis = Program.gManager.CurrentGameState.CrisisDeck.Draw();
 
+            this.crisisSkillCheckListBox.Items.Add(crisis);
         }
 
         private void crisisCopyTextButton_Click(object sender, EventArgs e)
         {
-
+            System.Windows.Forms.Clipboard.SetText(((DeckManager.Cards.CrisisCard)this.crisisSkillCheckListBox.SelectedItem).ToString());
         }
 
         private void addDestinyCardsButton_Click(object sender, EventArgs e)
@@ -108,7 +123,12 @@ namespace DeckManagerOutput
 
         private void discardSkillCardButton_Click(object sender, EventArgs e)
         {
+            DeckManager.Characters.Character currentCharacter = (DeckManager.Characters.Character)this.characterListBox.SelectedItem;
+            DeckManager.Cards.SkillCard card = (DeckManager.Cards.SkillCard)this.characterSkillHandListBox.SelectedItem;
 
+            bool success = currentCharacter.discard(card);
+            if (success)
+                ; // update character skill box with character's skill hand info
         }
 
         private void drawQuorumButton_Click(object sender, EventArgs e)
@@ -129,6 +149,50 @@ namespace DeckManagerOutput
         private void returnToDeckButton_Click(object sender, EventArgs e)
         {
             // return the selected card to the appropriate deck
+            // should probably move these switches elsewhere, outside of gui code.
+            DeckManager.Cards.BaseCard card = (DeckManager.Cards.BaseCard)this.drawnCardListBox.SelectedItem;
+            switch (card.CardType)
+            {
+                case DeckManager.Cards.Enums.CardType.Quorum:
+                    Program.gManager.CurrentGameState.QuorumDeck.Bury((DeckManager.Cards.QuorumCard)card);
+                    break;
+                case DeckManager.Cards.Enums.CardType.Skill:
+                    switch (((DeckManager.Cards.SkillCard)card).CardColor)
+                    {
+                        case DeckManager.Cards.Enums.SkillCardColor.Politics:
+                            Program.gManager.CurrentGameState.PoliticsDeck.Bury((DeckManager.Cards.SkillCard)card);
+                            break;
+                        case DeckManager.Cards.Enums.SkillCardColor.Leadership:
+                            Program.gManager.CurrentGameState.LeadershipDeck.Bury((DeckManager.Cards.SkillCard)card);
+                            break;
+                        case DeckManager.Cards.Enums.SkillCardColor.Tactics:
+                            Program.gManager.CurrentGameState.TacticsDeck.Bury((DeckManager.Cards.SkillCard)card);
+                            break;
+                        case DeckManager.Cards.Enums.SkillCardColor.Engineering:
+                            Program.gManager.CurrentGameState.EngineeringDeck.Bury((DeckManager.Cards.SkillCard)card);
+                            break;
+                        case DeckManager.Cards.Enums.SkillCardColor.Piloting:
+                            Program.gManager.CurrentGameState.PilotingDeck.Bury((DeckManager.Cards.SkillCard)card);
+                            break;
+                        case DeckManager.Cards.Enums.SkillCardColor.Treachery:
+                            Program.gManager.CurrentGameState.TreacheryDeck.Bury((DeckManager.Cards.SkillCard)card);
+                            break;
+                    }
+                    break;
+            }
+            this.drawnCardListBox.Items.Remove(card);
+        }
+
+        private void drawDestinationsButton_Click(object sender, EventArgs e)
+        {
+            int count = (int)this.destinationCountUpDown.Value;
+            this.destinationsListBox.Items.Add(Program.gManager.CurrentGameState.DestinationDeck.DrawMany(count));
+        }
+
+        private void characterListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // update skill card list box
+            // update quorum card list box if current character is president
         }
 
 

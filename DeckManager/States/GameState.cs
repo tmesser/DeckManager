@@ -87,7 +87,7 @@ namespace DeckManager.States
                     _pilotingDeck = value;
             }
         }
-        
+
         private SkillCardDeck _tacticsDeck;
         public SkillCardDeck TacticsDeck
         {
@@ -96,6 +96,16 @@ namespace DeckManager.States
             {
                 if (value.DeckColor == SkillCardColor.Tactics)
                     _tacticsDeck = value;
+            }
+        }
+        private SkillCardDeck _treacheryDeck;
+        public SkillCardDeck TreacheryDeck
+        {
+            get { return _treacheryDeck; }
+            set
+            {
+                if (value.DeckColor == SkillCardColor.Treachery)
+                    _treacheryDeck = value;
             }
         }
     }

@@ -42,6 +42,7 @@
             this.beginGameButton = new System.Windows.Forms.Button();
             this.characterListBox = new System.Windows.Forms.ListBox();
             this.skillDecksPanel = new System.Windows.Forms.Panel();
+            this.returnToDeckButton = new System.Windows.Forms.Button();
             this.drawQuorumButton = new System.Windows.Forms.Button();
             this.giveCardToCurrentCharacterButton = new System.Windows.Forms.Button();
             this.treDeckButton = new System.Windows.Forms.Button();
@@ -52,6 +53,8 @@
             this.polDeckButton = new System.Windows.Forms.Button();
             this.drawnCardListBox = new System.Windows.Forms.ListBox();
             this.crisisPanel = new System.Windows.Forms.Panel();
+            this.clearCrisisButton = new System.Windows.Forms.Button();
+            this.drawMissionButton = new System.Windows.Forms.Button();
             this.copySkillCheckResultsButton = new System.Windows.Forms.Button();
             this.evalSkillCheckButton = new System.Windows.Forms.Button();
             this.addDestinyCardsButton = new System.Windows.Forms.Button();
@@ -72,9 +75,6 @@
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.drawMissionButton = new System.Windows.Forms.Button();
-            this.clearCrisisButton = new System.Windows.Forms.Button();
-            this.returnToDeckButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.skillDecksPanel.SuspendLayout();
             this.crisisPanel.SuspendLayout();
@@ -221,6 +221,7 @@
             this.characterListBox.Name = "characterListBox";
             this.characterListBox.Size = new System.Drawing.Size(338, 147);
             this.characterListBox.TabIndex = 0;
+            this.characterListBox.SelectedIndexChanged += new System.EventHandler(this.characterListBox_SelectedIndexChanged);
             // 
             // skillDecksPanel
             // 
@@ -238,6 +239,16 @@
             this.skillDecksPanel.Name = "skillDecksPanel";
             this.skillDecksPanel.Size = new System.Drawing.Size(102, 407);
             this.skillDecksPanel.TabIndex = 1;
+            // 
+            // returnToDeckButton
+            // 
+            this.returnToDeckButton.Location = new System.Drawing.Point(39, 242);
+            this.returnToDeckButton.Name = "returnToDeckButton";
+            this.returnToDeckButton.Size = new System.Drawing.Size(40, 23);
+            this.returnToDeckButton.TabIndex = 9;
+            this.returnToDeckButton.Text = "^";
+            this.returnToDeckButton.UseVisualStyleBackColor = true;
+            this.returnToDeckButton.Click += new System.EventHandler(this.returnToDeckButton_Click);
             // 
             // drawQuorumButton
             // 
@@ -343,6 +354,24 @@
             this.crisisPanel.Size = new System.Drawing.Size(312, 407);
             this.crisisPanel.TabIndex = 2;
             // 
+            // clearCrisisButton
+            // 
+            this.clearCrisisButton.Location = new System.Drawing.Point(233, 359);
+            this.clearCrisisButton.Name = "clearCrisisButton";
+            this.clearCrisisButton.Size = new System.Drawing.Size(75, 23);
+            this.clearCrisisButton.TabIndex = 8;
+            this.clearCrisisButton.Text = "Clear Crisis";
+            this.clearCrisisButton.UseVisualStyleBackColor = true;
+            // 
+            // drawMissionButton
+            // 
+            this.drawMissionButton.Location = new System.Drawing.Point(4, 66);
+            this.drawMissionButton.Name = "drawMissionButton";
+            this.drawMissionButton.Size = new System.Drawing.Size(75, 39);
+            this.drawMissionButton.TabIndex = 7;
+            this.drawMissionButton.Text = "Draw Mission";
+            this.drawMissionButton.UseVisualStyleBackColor = true;
+            // 
             // copySkillCheckResultsButton
             // 
             this.copySkillCheckResultsButton.Location = new System.Drawing.Point(4, 312);
@@ -435,6 +464,7 @@
             this.drawDestinationsButton.TabIndex = 1;
             this.drawDestinationsButton.Text = "Draw Destinations";
             this.drawDestinationsButton.UseVisualStyleBackColor = true;
+            this.drawDestinationsButton.Click += new System.EventHandler(this.drawDestinationsButton_Click);
             // 
             // destinationCountUpDown
             // 
@@ -547,34 +577,6 @@
             0,
             0,
             0});
-            // 
-            // drawMissionButton
-            // 
-            this.drawMissionButton.Location = new System.Drawing.Point(4, 66);
-            this.drawMissionButton.Name = "drawMissionButton";
-            this.drawMissionButton.Size = new System.Drawing.Size(75, 39);
-            this.drawMissionButton.TabIndex = 7;
-            this.drawMissionButton.Text = "Draw Mission";
-            this.drawMissionButton.UseVisualStyleBackColor = true;
-            // 
-            // clearCrisisButton
-            // 
-            this.clearCrisisButton.Location = new System.Drawing.Point(233, 359);
-            this.clearCrisisButton.Name = "clearCrisisButton";
-            this.clearCrisisButton.Size = new System.Drawing.Size(75, 23);
-            this.clearCrisisButton.TabIndex = 8;
-            this.clearCrisisButton.Text = "Clear Crisis";
-            this.clearCrisisButton.UseVisualStyleBackColor = true;
-            // 
-            // returnToDeckButton
-            // 
-            this.returnToDeckButton.Location = new System.Drawing.Point(39, 242);
-            this.returnToDeckButton.Name = "returnToDeckButton";
-            this.returnToDeckButton.Size = new System.Drawing.Size(40, 23);
-            this.returnToDeckButton.TabIndex = 9;
-            this.returnToDeckButton.Text = "^";
-            this.returnToDeckButton.UseVisualStyleBackColor = true;
-            this.returnToDeckButton.Click += new System.EventHandler(this.returnToDeckButton_Click);
             // 
             // MainForm
             // 

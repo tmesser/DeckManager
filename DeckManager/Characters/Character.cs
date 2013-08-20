@@ -5,9 +5,9 @@ using System.Text;
 using DeckManager.Cards.Enums;
 using DeckManager.Cards;
 
-namespace DeckManager.DeckManager.Characters
+namespace DeckManager.Characters
 {
-    class Character
+    public class Character
     {
         /// <summary>
         /// Set of draw colors. Each inner list represents mixed draws.
@@ -24,6 +24,19 @@ namespace DeckManager.DeckManager.Characters
         public string characterName { get; set; }
         public string playerName { get; set; }
 
+        /// <summary>
+        /// Discard a specific card. Removes the card from the character's hand if it exists.
+        /// </summary>
+        /// <param name="card">The Card to remove</param>
+        /// <returns>True if the card was present and successfully removed, false if not.</returns>
+        public bool discard(DeckManager.Cards.SkillCard card)
+        {
+            if (this.skillHand.Contains(card))
+                this.skillHand.Remove(card);
+            else 
+                return false;
+            return true;
+        }
 
     }
 }

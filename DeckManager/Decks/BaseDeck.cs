@@ -84,6 +84,10 @@ namespace DeckManager.Decks
             return ret;
         }
 
+        public virtual void Bury(T card)
+        {
+            this.Deck.Add(card);        // we're drawing at 0, this puts card at the end of the list
+        }
         /// <summary>
         /// Draws multiple cards.
         /// </summary>

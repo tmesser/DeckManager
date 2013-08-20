@@ -30,8 +30,10 @@ namespace DeckManager
             var firstTurn = new GameState
                 {
                     TurnLog = "Begin game.",
+
                     CrisisDeck = new CrisisDeck(_logger),
                     DestinationDeck = new DestinationDeck(_logger),
+
                     EngineeringDeck = new SkillCardDeck(_logger, SkillCardColor.Engineering),
                     LeadershipDeck = new SkillCardDeck(_logger, SkillCardColor.Leadership),
                     LoyaltyDeck = new LoyaltyDeck(_logger, playerList.Count(), extraLoyaltyCards, usingSympathizer),
@@ -40,6 +42,7 @@ namespace DeckManager
                     QuorumDeck = new QuorumDeck(_logger),
                     SuperCrisisDeck = new SuperCrisisDeck(_logger),
                     TacticsDeck = new SkillCardDeck(_logger, SkillCardColor.Tactics),
+                    TreacheryDeck = new SkillCardDeck (_logger, SkillCardColor.Treachery),
                     Turn = 1,
                     Fuel = 8,
                     Food = 8,
