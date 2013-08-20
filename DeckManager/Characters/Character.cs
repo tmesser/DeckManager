@@ -19,7 +19,7 @@ namespace DeckManager.DeckManager.Characters
         /// </summary>
         public List<SkillCard> skillHand { get; private set; }
 
-        public List<Titles> titles { get; set; }
+        public List<Titles> Titles { get; set; }
 
         public string characterName;
         public string playerName;

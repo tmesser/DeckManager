@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeckManager", "DeckManager\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeckManagerOutput", "DeckManagerOutput\DeckManagerOutput.csproj", "{C5602094-1635-44F5-A6AE-D09C6C700F83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeckManagerTests", "DeckManagerTests\DeckManagerTests.csproj", "{2BC73027-7669-485B-AD0C-B58E076A48F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{C5602094-1635-44F5-A6AE-D09C6C700F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5602094-1635-44F5-A6AE-D09C6C700F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5602094-1635-44F5-A6AE-D09C6C700F83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BC73027-7669-485B-AD0C-B58E076A48F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC73027-7669-485B-AD0C-B58E076A48F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC73027-7669-485B-AD0C-B58E076A48F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC73027-7669-485B-AD0C-B58E076A48F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
