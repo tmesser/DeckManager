@@ -21,8 +21,8 @@ namespace DeckManager.DeckManager.Characters
 
         public List<Titles> Titles { get; set; }
 
-        public string characterName;
-        public string playerName;
+        public string characterName { get; set; }
+        public string playerName { get; set; }
 
 
     }

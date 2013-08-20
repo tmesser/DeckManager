@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.discardQuorumCardButton = new System.Windows.Forms.Button();
+            this.discardSkillCardButton = new System.Windows.Forms.Button();
+            this.playIntoCrisisButton = new System.Windows.Forms.Button();
             this.characterQuorumHandCountTextBox = new System.Windows.Forms.TextBox();
             this.characterSkillHandCountTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +42,7 @@
             this.beginGameButton = new System.Windows.Forms.Button();
             this.characterListBox = new System.Windows.Forms.ListBox();
             this.skillDecksPanel = new System.Windows.Forms.Panel();
+            this.drawQuorumButton = new System.Windows.Forms.Button();
             this.giveCardToCurrentCharacterButton = new System.Windows.Forms.Button();
             this.treDeckButton = new System.Windows.Forms.Button();
             this.pilDeckButton = new System.Windows.Forms.Button();
@@ -48,26 +52,36 @@
             this.polDeckButton = new System.Windows.Forms.Button();
             this.drawnCardListBox = new System.Windows.Forms.ListBox();
             this.crisisPanel = new System.Windows.Forms.Panel();
+            this.copySkillCheckResultsButton = new System.Windows.Forms.Button();
+            this.evalSkillCheckButton = new System.Windows.Forms.Button();
             this.addDestinyCardsButton = new System.Windows.Forms.Button();
             this.crisisSkillCheckListBox = new System.Windows.Forms.ListBox();
             this.crisisCopyTextButton = new System.Windows.Forms.Button();
             this.crisisTextListBox = new System.Windows.Forms.ListBox();
             this.drawCrisisButton = new System.Windows.Forms.Button();
-            this.evalSkillCheckButton = new System.Windows.Forms.Button();
-            this.playIntoCrisisButton = new System.Windows.Forms.Button();
-            this.discardSkillCardButton = new System.Windows.Forms.Button();
-            this.discardQuorumCardButton = new System.Windows.Forms.Button();
-            this.drawQuorumButton = new System.Windows.Forms.Button();
-            this.copySkillCheckResultsButton = new System.Windows.Forms.Button();
             this.destinationPanel = new System.Windows.Forms.Panel();
-            this.destinationCountUpDown = new System.Windows.Forms.NumericUpDown();
-            this.drawDestinationsButton = new System.Windows.Forms.Button();
             this.destinationsListBox = new System.Windows.Forms.ListBox();
+            this.drawDestinationsButton = new System.Windows.Forms.Button();
+            this.destinationCountUpDown = new System.Windows.Forms.NumericUpDown();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.skillDecksPanel.SuspendLayout();
             this.crisisPanel.SuspendLayout();
             this.destinationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.destinationCountUpDown)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,6 +102,37 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(345, 452);
             this.panel1.TabIndex = 0;
+            // 
+            // discardQuorumCardButton
+            // 
+            this.discardQuorumCardButton.Location = new System.Drawing.Point(6, 415);
+            this.discardQuorumCardButton.Name = "discardQuorumCardButton";
+            this.discardQuorumCardButton.Size = new System.Drawing.Size(75, 34);
+            this.discardQuorumCardButton.TabIndex = 11;
+            this.discardQuorumCardButton.Text = "Discard Quorum Card";
+            this.discardQuorumCardButton.UseVisualStyleBackColor = true;
+            this.discardQuorumCardButton.Visible = false;
+            this.discardQuorumCardButton.Click += new System.EventHandler(this.discardQuorumCardButton_Click);
+            // 
+            // discardSkillCardButton
+            // 
+            this.discardSkillCardButton.Location = new System.Drawing.Point(186, 415);
+            this.discardSkillCardButton.Name = "discardSkillCardButton";
+            this.discardSkillCardButton.Size = new System.Drawing.Size(75, 34);
+            this.discardSkillCardButton.TabIndex = 10;
+            this.discardSkillCardButton.Text = "Discard Skill Card";
+            this.discardSkillCardButton.UseVisualStyleBackColor = true;
+            this.discardSkillCardButton.Click += new System.EventHandler(this.discardSkillCardButton_Click);
+            // 
+            // playIntoCrisisButton
+            // 
+            this.playIntoCrisisButton.Location = new System.Drawing.Point(270, 415);
+            this.playIntoCrisisButton.Name = "playIntoCrisisButton";
+            this.playIntoCrisisButton.Size = new System.Drawing.Size(75, 34);
+            this.playIntoCrisisButton.TabIndex = 9;
+            this.playIntoCrisisButton.Text = "Play Into Crisis";
+            this.playIntoCrisisButton.UseVisualStyleBackColor = true;
+            this.playIntoCrisisButton.Click += new System.EventHandler(this.playIntoCrisisButton_Click);
             // 
             // characterQuorumHandCountTextBox
             // 
@@ -190,6 +235,16 @@
             this.skillDecksPanel.Size = new System.Drawing.Size(102, 407);
             this.skillDecksPanel.TabIndex = 1;
             // 
+            // drawQuorumButton
+            // 
+            this.drawQuorumButton.Location = new System.Drawing.Point(4, 204);
+            this.drawQuorumButton.Name = "drawQuorumButton";
+            this.drawQuorumButton.Size = new System.Drawing.Size(75, 23);
+            this.drawQuorumButton.TabIndex = 8;
+            this.drawQuorumButton.Text = "Quorum";
+            this.drawQuorumButton.UseVisualStyleBackColor = true;
+            this.drawQuorumButton.Click += new System.EventHandler(this.drawQuorumButton_Click);
+            // 
             // giveCardToCurrentCharacterButton
             // 
             this.giveCardToCurrentCharacterButton.Location = new System.Drawing.Point(4, 242);
@@ -282,6 +337,25 @@
             this.crisisPanel.Size = new System.Drawing.Size(312, 407);
             this.crisisPanel.TabIndex = 2;
             // 
+            // copySkillCheckResultsButton
+            // 
+            this.copySkillCheckResultsButton.Location = new System.Drawing.Point(4, 312);
+            this.copySkillCheckResultsButton.Name = "copySkillCheckResultsButton";
+            this.copySkillCheckResultsButton.Size = new System.Drawing.Size(75, 39);
+            this.copySkillCheckResultsButton.TabIndex = 6;
+            this.copySkillCheckResultsButton.Text = "Copy to Clipboard";
+            this.copySkillCheckResultsButton.UseVisualStyleBackColor = true;
+            // 
+            // evalSkillCheckButton
+            // 
+            this.evalSkillCheckButton.Location = new System.Drawing.Point(4, 226);
+            this.evalSkillCheckButton.Name = "evalSkillCheckButton";
+            this.evalSkillCheckButton.Size = new System.Drawing.Size(75, 39);
+            this.evalSkillCheckButton.TabIndex = 5;
+            this.evalSkillCheckButton.Text = "Evaluate Skill Check";
+            this.evalSkillCheckButton.UseVisualStyleBackColor = true;
+            this.evalSkillCheckButton.Click += new System.EventHandler(this.evalSkillCheckButton_Click);
+            // 
             // addDestinyCardsButton
             // 
             this.addDestinyCardsButton.Location = new System.Drawing.Point(4, 179);
@@ -329,66 +403,6 @@
             this.drawCrisisButton.UseVisualStyleBackColor = true;
             this.drawCrisisButton.Click += new System.EventHandler(this.drawCrisisButton_Click);
             // 
-            // evalSkillCheckButton
-            // 
-            this.evalSkillCheckButton.Location = new System.Drawing.Point(4, 226);
-            this.evalSkillCheckButton.Name = "evalSkillCheckButton";
-            this.evalSkillCheckButton.Size = new System.Drawing.Size(75, 39);
-            this.evalSkillCheckButton.TabIndex = 5;
-            this.evalSkillCheckButton.Text = "Evaluate Skill Check";
-            this.evalSkillCheckButton.UseVisualStyleBackColor = true;
-            this.evalSkillCheckButton.Click += new System.EventHandler(this.evalSkillCheckButton_Click);
-            // 
-            // playIntoCrisisButton
-            // 
-            this.playIntoCrisisButton.Location = new System.Drawing.Point(270, 415);
-            this.playIntoCrisisButton.Name = "playIntoCrisisButton";
-            this.playIntoCrisisButton.Size = new System.Drawing.Size(75, 34);
-            this.playIntoCrisisButton.TabIndex = 9;
-            this.playIntoCrisisButton.Text = "Play Into Crisis";
-            this.playIntoCrisisButton.UseVisualStyleBackColor = true;
-            this.playIntoCrisisButton.Click += new System.EventHandler(this.playIntoCrisisButton_Click);
-            // 
-            // discardSkillCardButton
-            // 
-            this.discardSkillCardButton.Location = new System.Drawing.Point(186, 415);
-            this.discardSkillCardButton.Name = "discardSkillCardButton";
-            this.discardSkillCardButton.Size = new System.Drawing.Size(75, 34);
-            this.discardSkillCardButton.TabIndex = 10;
-            this.discardSkillCardButton.Text = "Discard Skill Card";
-            this.discardSkillCardButton.UseVisualStyleBackColor = true;
-            this.discardSkillCardButton.Click += new System.EventHandler(this.discardSkillCardButton_Click);
-            // 
-            // discardQuorumCardButton
-            // 
-            this.discardQuorumCardButton.Location = new System.Drawing.Point(6, 415);
-            this.discardQuorumCardButton.Name = "discardQuorumCardButton";
-            this.discardQuorumCardButton.Size = new System.Drawing.Size(75, 34);
-            this.discardQuorumCardButton.TabIndex = 11;
-            this.discardQuorumCardButton.Text = "Discard Quorum Card";
-            this.discardQuorumCardButton.UseVisualStyleBackColor = true;
-            this.discardQuorumCardButton.Visible = false;
-            this.discardQuorumCardButton.Click += new System.EventHandler(this.discardQuorumCardButton_Click);
-            // 
-            // drawQuorumButton
-            // 
-            this.drawQuorumButton.Location = new System.Drawing.Point(4, 204);
-            this.drawQuorumButton.Name = "drawQuorumButton";
-            this.drawQuorumButton.Size = new System.Drawing.Size(75, 23);
-            this.drawQuorumButton.TabIndex = 8;
-            this.drawQuorumButton.Text = "Quorum";
-            this.drawQuorumButton.UseVisualStyleBackColor = true;
-            this.drawQuorumButton.Click += new System.EventHandler(this.drawQuorumButton_Click);
-            // 
-            // copySkillCheckResultsButton
-            // 
-            this.copySkillCheckResultsButton.Location = new System.Drawing.Point(4, 312);
-            this.copySkillCheckResultsButton.Name = "copySkillCheckResultsButton";
-            this.copySkillCheckResultsButton.Size = new System.Drawing.Size(75, 39);
-            this.copySkillCheckResultsButton.TabIndex = 6;
-            this.copySkillCheckResultsButton.Text = "Copy to Clipboard";
-            this.copySkillCheckResultsButton.UseVisualStyleBackColor = true;
-            // 
             // destinationPanel
             // 
             this.destinationPanel.Controls.Add(this.destinationsListBox);
@@ -398,6 +412,23 @@
             this.destinationPanel.Name = "destinationPanel";
             this.destinationPanel.Size = new System.Drawing.Size(344, 107);
             this.destinationPanel.TabIndex = 3;
+            // 
+            // destinationsListBox
+            // 
+            this.destinationsListBox.FormattingEnabled = true;
+            this.destinationsListBox.Location = new System.Drawing.Point(6, 47);
+            this.destinationsListBox.Name = "destinationsListBox";
+            this.destinationsListBox.Size = new System.Drawing.Size(113, 56);
+            this.destinationsListBox.TabIndex = 2;
+            // 
+            // drawDestinationsButton
+            // 
+            this.drawDestinationsButton.Location = new System.Drawing.Point(6, 3);
+            this.drawDestinationsButton.Name = "drawDestinationsButton";
+            this.drawDestinationsButton.Size = new System.Drawing.Size(75, 36);
+            this.drawDestinationsButton.TabIndex = 1;
+            this.drawDestinationsButton.Text = "Draw Destinations";
+            this.drawDestinationsButton.UseVisualStyleBackColor = true;
             // 
             // destinationCountUpDown
             // 
@@ -412,28 +443,111 @@
             0});
             this.destinationCountUpDown.ValueChanged += new System.EventHandler(this.destinationCountUpDown_ValueChanged);
             // 
-            // drawDestinationsButton
+            // panel2
             // 
-            this.drawDestinationsButton.Location = new System.Drawing.Point(6, 3);
-            this.drawDestinationsButton.Name = "drawDestinationsButton";
-            this.drawDestinationsButton.Size = new System.Drawing.Size(75, 36);
-            this.drawDestinationsButton.TabIndex = 1;
-            this.drawDestinationsButton.Text = "Draw Destinations";
-            this.drawDestinationsButton.UseVisualStyleBackColor = true;
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.numericUpDown4);
+            this.panel2.Controls.Add(this.numericUpDown3);
+            this.panel2.Controls.Add(this.numericUpDown2);
+            this.panel2.Controls.Add(this.numericUpDown1);
+            this.panel2.Location = new System.Drawing.Point(361, 422);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(113, 100);
+            this.panel2.TabIndex = 4;
             // 
-            // destinationsListBox
+            // label6
             // 
-            this.destinationsListBox.FormattingEnabled = true;
-            this.destinationsListBox.Location = new System.Drawing.Point(6, 47);
-            this.destinationsListBox.Name = "destinationsListBox";
-            this.destinationsListBox.Size = new System.Drawing.Size(113, 56);
-            this.destinationsListBox.TabIndex = 2;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 81);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Population:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(22, 55);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Morale:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(30, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Food:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(34, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Fuel:";
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(70, 53);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(40, 20);
+            this.numericUpDown4.TabIndex = 3;
+            this.numericUpDown4.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(70, 77);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(40, 20);
+            this.numericUpDown3.TabIndex = 2;
+            this.numericUpDown3.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(70, 29);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(40, 20);
+            this.numericUpDown2.TabIndex = 1;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(70, 3);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(40, 20);
+            this.numericUpDown1.TabIndex = 0;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 573);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.destinationPanel);
             this.Controls.Add(this.crisisPanel);
             this.Controls.Add(this.skillDecksPanel);
@@ -446,6 +560,12 @@
             this.crisisPanel.ResumeLayout(false);
             this.destinationPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.destinationCountUpDown)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -487,6 +607,15 @@
         private System.Windows.Forms.Button drawDestinationsButton;
         private System.Windows.Forms.NumericUpDown destinationCountUpDown;
         private System.Windows.Forms.ListBox destinationsListBox;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 
