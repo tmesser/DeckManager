@@ -26,6 +26,7 @@ namespace DeckManagerOutput
 
         private void giveCardToCurrentCharacterButton_Click(object sender, EventArgs e)
         {
+            // BIG TODO changed selection mode to multiple, rewrite this 
             // give drawn card to currently selected player (skill or quorum)
             DeckManager.Cards.BaseCard card = (DeckManager.Cards.BaseCard)this.drawnCardListBox.SelectedItem;
             DeckManager.Characters.Character currentPlayer = (DeckManager.Characters.Character)this.characterListBox.SelectedItem;
@@ -86,9 +87,20 @@ namespace DeckManagerOutput
 
         private void drawCrisisButton_Click(object sender, EventArgs e)
         {
-            DeckManager.Cards.CrisisCard crisis = Program.gManager.CurrentGameState.CrisisDeck.Draw();
+            this.crisisSkillCheckListBox.BeginUpdate();
 
+            // DeckManager.Cards.CrisisCard crisis = Program.gManager.CurrentGameState.CrisisDeck.Draw();
+
+            DeckManager.Cards.CrisisCard crisis = new DeckManager.Cards.CrisisCard();
+            crisis.Activation = DeckManager.Cards.Enums.CylonActivations.Raiders;
+            crisis.Heading = "Test Crisis";
+            crisis.JumpPrep = true;
+            crisis.PositiveColors = new List<DeckManager.Cards.Enums.SkillCardColor>();
+            crisis.PositiveColors.Add(DeckManager.Cards.Enums.SkillCardColor.Engineering);
+            crisis.PositiveColors.Add(DeckManager.Cards.Enums.SkillCardColor.Politics);
+            
             this.crisisSkillCheckListBox.Items.Add(crisis);
+            this.crisisSkillCheckListBox.EndUpdate();
         }
 
         private void crisisCopyTextButton_Click(object sender, EventArgs e)
@@ -98,7 +110,13 @@ namespace DeckManagerOutput
 
         private void addDestinyCardsButton_Click(object sender, EventArgs e)
         {
+            DeckManager.Cards.SkillCard dest1 =  Program.gManager.CurrentGameState.DestinyDeck.Draw();
+            DeckManager.Cards.SkillCard dest2 = Program.gManager.CurrentGameState.DestinyDeck.Draw();
 
+            this.crisisSkillCheckListBox.BeginUpdate();
+            this.crisisSkillCheckListBox.Items.Add(dest1);            
+            this.crisisSkillCheckListBox.Items.Add(dest2);
+            this.crisisSkillCheckListBox.EndUpdate();
         }
 
         private void addPlayerButton_Click(object sender, EventArgs e)
@@ -108,7 +126,7 @@ namespace DeckManagerOutput
 
         private void beginGameButton_Click(object sender, EventArgs e)
         {
-
+            this.addPlayerButton.Enabled = false;
         }
 
         private void evalSkillCheckButton_Click(object sender, EventArgs e)
@@ -118,7 +136,10 @@ namespace DeckManagerOutput
 
         private void playIntoCrisisButton_Click(object sender, EventArgs e)
         {
-
+            DeckManager.Cards.SkillCard card = (DeckManager.Cards.SkillCard)this.characterSkillHandListBox.SelectedItem;
+            this.crisisSkillCheckListBox.Items.Add(card);
+            ((DeckManager.Characters.Character)this.characterListBox.SelectedItem).discard(card);
+            this.characterSkillHandListBox.Items.Remove(card);
         }
 
         private void discardSkillCardButton_Click(object sender, EventArgs e)
@@ -133,7 +154,8 @@ namespace DeckManagerOutput
 
         private void drawQuorumButton_Click(object sender, EventArgs e)
         {
-
+            DeckManager.Cards.QuorumCard quorum = (DeckManager.Cards.QuorumCard)Program.gManager.CurrentGameState.QuorumDeck.Draw();
+            this.drawnCardListBox.Items.Add(quorum);
         }
 
         private void discardQuorumCardButton_Click(object sender, EventArgs e)
@@ -148,6 +170,7 @@ namespace DeckManagerOutput
 
         private void returnToDeckButton_Click(object sender, EventArgs e)
         {
+            // BIG TODO changed selection mode to multiple, rewrite this 
             // return the selected card to the appropriate deck
             // should probably move these switches elsewhere, outside of gui code.
             DeckManager.Cards.BaseCard card = (DeckManager.Cards.BaseCard)this.drawnCardListBox.SelectedItem;
@@ -195,6 +218,17 @@ namespace DeckManagerOutput
             // update quorum card list box if current character is president
         }
 
+        private void removeFromHandButton_Click(object sender, EventArgs e)
+        {
+            // move character's currently selected card into the drawn card window. can use this to transfer cards between players
+        }
+
+        private void copyGameButton_Click(object sender, EventArgs e)
+        {
+            // this button click copies an entire post update to the clipboard
+            // e.g. http://forums.somethingawful.com/showthread.php?threadid=3563154&userid=0&perpage=40&pagenumber=2#post418151171
+
+        }
 
 
 

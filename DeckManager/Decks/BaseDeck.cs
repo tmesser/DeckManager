@@ -83,7 +83,10 @@ namespace DeckManager.Decks
 
             return ret;
         }
-
+        /// <summary>
+        /// Places the passed card at the bottom of the deck
+        /// </summary>
+        /// <param name="card">Card to be buried</param>
         public virtual void Bury(T card)
         {
             this.Deck.Add(card);        // we're drawing at 0, this puts card at the end of the list

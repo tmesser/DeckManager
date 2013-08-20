@@ -108,5 +108,9 @@ namespace DeckManager.States
                     _treacheryDeck = value;
             }
         }
+        public string toBBCode()
+        {
+            return "not implemented";
+        }
     }
 }

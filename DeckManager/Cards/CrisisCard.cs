@@ -66,5 +66,10 @@ namespace DeckManager.Cards
         {
             return "not implemented";
         }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
