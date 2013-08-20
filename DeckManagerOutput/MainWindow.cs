@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DeckManager;
+using DeckManagerOutput;
 
 namespace DeckManagerOutput
 {
@@ -31,6 +33,17 @@ namespace DeckManagerOutput
         private void polDeckButton_Click(object sender, EventArgs e)
         {
 
+            this.drawnCardListBox.BeginUpdate();
+            //DeckManager.Cards.SkillCard card = Program.gManager.CurrentGameState.PoliticsDeck.Draw();
+
+            DeckManager.Cards.SkillCard card = new DeckManager.Cards.SkillCard();
+            card.CardColor =DeckManager.Cards.Enums.SkillCardColor.Politics;
+            card.CardPower = 5;
+            card.Heading = "test Card";
+
+            this.drawnCardListBox.Items.Add(card);
+
+            this.drawnCardListBox.EndUpdate();
         }
 
         private void leaDeckButton_Click(object sender, EventArgs e)
@@ -75,7 +88,7 @@ namespace DeckManagerOutput
 
         private void addPlayerButton_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void beginGameButton_Click(object sender, EventArgs e)
@@ -111,6 +124,11 @@ namespace DeckManagerOutput
         private void destinationCountUpDown_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void returnToDeckButton_Click(object sender, EventArgs e)
+        {
+            // return the selected card to the appropriate deck
         }
 
 

@@ -72,6 +72,9 @@
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.drawMissionButton = new System.Windows.Forms.Button();
+            this.clearCrisisButton = new System.Windows.Forms.Button();
+            this.returnToDeckButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.skillDecksPanel.SuspendLayout();
             this.crisisPanel.SuspendLayout();
@@ -221,6 +224,7 @@
             // 
             // skillDecksPanel
             // 
+            this.skillDecksPanel.Controls.Add(this.returnToDeckButton);
             this.skillDecksPanel.Controls.Add(this.drawQuorumButton);
             this.skillDecksPanel.Controls.Add(this.giveCardToCurrentCharacterButton);
             this.skillDecksPanel.Controls.Add(this.treDeckButton);
@@ -325,6 +329,8 @@
             // 
             // crisisPanel
             // 
+            this.crisisPanel.Controls.Add(this.clearCrisisButton);
+            this.crisisPanel.Controls.Add(this.drawMissionButton);
             this.crisisPanel.Controls.Add(this.copySkillCheckResultsButton);
             this.crisisPanel.Controls.Add(this.evalSkillCheckButton);
             this.crisisPanel.Controls.Add(this.addDestinyCardsButton);
@@ -377,7 +383,7 @@
             // 
             // crisisCopyTextButton
             // 
-            this.crisisCopyTextButton.Location = new System.Drawing.Point(3, 32);
+            this.crisisCopyTextButton.Location = new System.Drawing.Point(4, 134);
             this.crisisCopyTextButton.Name = "crisisCopyTextButton";
             this.crisisCopyTextButton.Size = new System.Drawing.Size(75, 39);
             this.crisisCopyTextButton.TabIndex = 2;
@@ -542,6 +548,34 @@
             0,
             0});
             // 
+            // drawMissionButton
+            // 
+            this.drawMissionButton.Location = new System.Drawing.Point(4, 66);
+            this.drawMissionButton.Name = "drawMissionButton";
+            this.drawMissionButton.Size = new System.Drawing.Size(75, 39);
+            this.drawMissionButton.TabIndex = 7;
+            this.drawMissionButton.Text = "Draw Mission";
+            this.drawMissionButton.UseVisualStyleBackColor = true;
+            // 
+            // clearCrisisButton
+            // 
+            this.clearCrisisButton.Location = new System.Drawing.Point(233, 359);
+            this.clearCrisisButton.Name = "clearCrisisButton";
+            this.clearCrisisButton.Size = new System.Drawing.Size(75, 23);
+            this.clearCrisisButton.TabIndex = 8;
+            this.clearCrisisButton.Text = "Clear Crisis";
+            this.clearCrisisButton.UseVisualStyleBackColor = true;
+            // 
+            // returnToDeckButton
+            // 
+            this.returnToDeckButton.Location = new System.Drawing.Point(39, 242);
+            this.returnToDeckButton.Name = "returnToDeckButton";
+            this.returnToDeckButton.Size = new System.Drawing.Size(40, 23);
+            this.returnToDeckButton.TabIndex = 9;
+            this.returnToDeckButton.Text = "^";
+            this.returnToDeckButton.UseVisualStyleBackColor = true;
+            this.returnToDeckButton.Click += new System.EventHandler(this.returnToDeckButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -616,6 +650,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button clearCrisisButton;
+        private System.Windows.Forms.Button drawMissionButton;
+        private System.Windows.Forms.Button returnToDeckButton;
     }
 }
 

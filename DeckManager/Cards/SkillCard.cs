@@ -48,5 +48,10 @@ namespace DeckManager.Cards
         {
             get { return CardType.Skill; }
         }
+
+        public override string ToString()
+        {
+            return this.CardColor + " " + this.CardPower + " " +this.Heading;
+        }
     }
 }
