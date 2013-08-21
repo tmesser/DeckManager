@@ -86,10 +86,33 @@ namespace DeckManagerOutput
         {
 
         }
+        private void CrisisTextBox_MeasureItem(object sender, MeasureItemEventArgs e)
+        {
+            //e.ItemHeight = 50;
+            string item = crisisTextListBox.Items[e.Index].ToString();
+            int count = item.Count(f=>f=='\n');
+            count++;
+            e.ItemHeight *= count;
+        }
+
+        private void CrisisTextBox_DrawItem(object sender, System.Windows.Forms.DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+
+            Rectangle itemBounds = e.Bounds;
+
+            e.Graphics.DrawString(crisisTextListBox.Items[e.Index].ToString(),
+                e.Font,
+                Brushes.Black,
+                itemBounds,
+                StringFormat.GenericDefault);
+            e.DrawFocusRectangle();
+
+        }
 
         private void drawCrisisButton_Click(object sender, EventArgs e)
         {
-            this.crisisSkillCheckListBox.BeginUpdate();
+            this.crisisTextListBox.BeginUpdate();
 
             // DeckManager.Cards.CrisisCard crisis = Program.gManager.CurrentGameState.CrisisDeck.Draw();
 
@@ -97,12 +120,13 @@ namespace DeckManagerOutput
             crisis.Activation = DeckManager.Cards.Enums.CylonActivations.Raiders;
             crisis.Heading = "Test Crisis";
             crisis.JumpPrep = true;
+            crisis.AdditionalText = "A description of the crisis";
             crisis.PositiveColors = new List<DeckManager.Cards.Enums.SkillCardColor>();
             crisis.PositiveColors.Add(DeckManager.Cards.Enums.SkillCardColor.Engineering);
             crisis.PositiveColors.Add(DeckManager.Cards.Enums.SkillCardColor.Politics);
-            
-            this.crisisSkillCheckListBox.Items.Add(crisis);
-            this.crisisSkillCheckListBox.EndUpdate();
+
+            this.crisisTextListBox.Items.Add(crisis);
+            this.crisisTextListBox.EndUpdate();
         }
 
         private void crisisCopyTextButton_Click(object sender, EventArgs e)

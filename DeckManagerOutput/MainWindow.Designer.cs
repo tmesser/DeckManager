@@ -255,7 +255,6 @@
             // 
             // skillDecksPanel
             // 
-            this.skillDecksPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.skillDecksPanel.Controls.Add(this.returnToDeckButton);
             this.skillDecksPanel.Controls.Add(this.drawQuorumButton);
             this.skillDecksPanel.Controls.Add(this.giveCardToCurrentCharacterButton);
@@ -457,6 +456,9 @@
             // 
             // crisisTextListBox
             // 
+            this.crisisTextListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.crisisTextListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(CrisisTextBox_DrawItem);
+            this.crisisTextListBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(CrisisTextBox_MeasureItem);
             this.crisisTextListBox.FormattingEnabled = true;
             this.crisisTextListBox.Location = new System.Drawing.Point(84, 0);
             this.crisisTextListBox.Name = "crisisTextListBox";

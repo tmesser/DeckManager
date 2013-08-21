@@ -51,7 +51,7 @@ namespace DeckManager.Characters
         {
             // MetricUnit (President Roslin [1], 6Q)
             string titles = this.Titles.Count>0?string.Join(" ", this.Titles)+" ":"";
-            return this.playerName + " ("+ titles + this.characterName + ") [" + this.skillHand.Count.ToString() + "] " + (this.QuorumHand.Count > 0 ? this.QuorumHand.Count.ToString() + "Q" : "")
+            return this.playerName + " (" + titles + this.characterName + ") [" + this.skillHand.Count.ToString() + "] " + (this.QuorumHand.Count > 0 ? this.QuorumHand.Count.ToString() + "Q" : "");
         }
 
     }
