@@ -26,22 +26,24 @@ namespace DeckManagerOutput
 
         private void giveCardToCurrentCharacterButton_Click(object sender, EventArgs e)
         {
-            // BIG TODO changed selection mode to multiple, rewrite this 
-            // give drawn card to currently selected player (skill or quorum)
-            DeckManager.Cards.BaseCard card = (DeckManager.Cards.BaseCard)this.drawnCardListBox.SelectedItem;
+            Array cards = new DeckManager.Cards.BaseCard[this.drawnCardListBox.SelectedItems.Count];
+            this.drawnCardListBox.SelectedItems.CopyTo(cards, 0);
             DeckManager.Characters.Character currentPlayer = (DeckManager.Characters.Character)this.characterListBox.SelectedItem;
 
-            switch (card.CardType)
+            // give selected cards to currently selected player (skill or quorum)
+            foreach (DeckManager.Cards.BaseCard card in cards)
             {
-                case DeckManager.Cards.Enums.CardType.Skill:
-                    currentPlayer.skillHand.Add((DeckManager.Cards.SkillCard)card);
-                    break;
-                case DeckManager.Cards.Enums.CardType.Quorum:
-                    // @todo no representation of quorum deck yet
-                    break;
+                switch (card.CardType)
+                {
+                    case DeckManager.Cards.Enums.CardType.Skill:
+                        currentPlayer.skillHand.Add((DeckManager.Cards.SkillCard)card);
+                        break;
+                    case DeckManager.Cards.Enums.CardType.Quorum:
+                        // @todo no representation of quorum deck yet
+                        break;
+                }
+                this.drawnCardListBox.Items.Remove(card);
             }
-
-            this.drawnCardListBox.Items.Remove(card);
         }
 
         private void polDeckButton_Click(object sender, EventArgs e)
@@ -144,12 +146,16 @@ namespace DeckManagerOutput
 
         private void discardSkillCardButton_Click(object sender, EventArgs e)
         {
+            Array cards = new DeckManager.Cards.SkillCard[this.characterSkillHandListBox.SelectedItems.Count];
+            this.characterSkillHandListBox.SelectedItems.CopyTo(cards, 0);
             DeckManager.Characters.Character currentCharacter = (DeckManager.Characters.Character)this.characterListBox.SelectedItem;
-            DeckManager.Cards.SkillCard card = (DeckManager.Cards.SkillCard)this.characterSkillHandListBox.SelectedItem;
 
-            bool success = currentCharacter.discard(card);
-            if (success)
-                ; // update character skill box with character's skill hand info
+            foreach (DeckManager.Cards.SkillCard card in cards)
+            {
+                Program.gManager.discardCard(card);
+                currentCharacter.discard(card);
+                this.characterSkillHandListBox.Items.Remove(card);
+            }
         }
 
         private void drawQuorumButton_Click(object sender, EventArgs e)
@@ -170,40 +176,14 @@ namespace DeckManagerOutput
 
         private void returnToDeckButton_Click(object sender, EventArgs e)
         {
-            // BIG TODO changed selection mode to multiple, rewrite this 
-            // return the selected card to the appropriate deck
-            // should probably move these switches elsewhere, outside of gui code.
-            DeckManager.Cards.BaseCard card = (DeckManager.Cards.BaseCard)this.drawnCardListBox.SelectedItem;
-            switch (card.CardType)
+            Array cards = new DeckManager.Cards.BaseCard[this.drawnCardListBox.SelectedItems.Count];
+            this.drawnCardListBox.SelectedItems.CopyTo(cards, 0);
+
+            foreach (DeckManager.Cards.BaseCard card in cards)
             {
-                case DeckManager.Cards.Enums.CardType.Quorum:
-                    Program.gManager.CurrentGameState.QuorumDeck.Bury((DeckManager.Cards.QuorumCard)card);
-                    break;
-                case DeckManager.Cards.Enums.CardType.Skill:
-                    switch (((DeckManager.Cards.SkillCard)card).CardColor)
-                    {
-                        case DeckManager.Cards.Enums.SkillCardColor.Politics:
-                            Program.gManager.CurrentGameState.PoliticsDeck.Bury((DeckManager.Cards.SkillCard)card);
-                            break;
-                        case DeckManager.Cards.Enums.SkillCardColor.Leadership:
-                            Program.gManager.CurrentGameState.LeadershipDeck.Bury((DeckManager.Cards.SkillCard)card);
-                            break;
-                        case DeckManager.Cards.Enums.SkillCardColor.Tactics:
-                            Program.gManager.CurrentGameState.TacticsDeck.Bury((DeckManager.Cards.SkillCard)card);
-                            break;
-                        case DeckManager.Cards.Enums.SkillCardColor.Engineering:
-                            Program.gManager.CurrentGameState.EngineeringDeck.Bury((DeckManager.Cards.SkillCard)card);
-                            break;
-                        case DeckManager.Cards.Enums.SkillCardColor.Piloting:
-                            Program.gManager.CurrentGameState.PilotingDeck.Bury((DeckManager.Cards.SkillCard)card);
-                            break;
-                        case DeckManager.Cards.Enums.SkillCardColor.Treachery:
-                            Program.gManager.CurrentGameState.TreacheryDeck.Bury((DeckManager.Cards.SkillCard)card);
-                            break;
-                    }
-                    break;
+                Program.gManager.discardCard(card);
+                this.drawnCardListBox.Items.Remove(card);
             }
-            this.drawnCardListBox.Items.Remove(card);
         }
 
         private void drawDestinationsButton_Click(object sender, EventArgs e)
@@ -234,6 +214,28 @@ namespace DeckManagerOutput
         {
 
         }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown4_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown3_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
 
 
 

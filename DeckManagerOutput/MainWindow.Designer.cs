@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.removeFromHandButton = new System.Windows.Forms.Button();
             this.discardQuorumCardButton = new System.Windows.Forms.Button();
@@ -80,11 +81,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.MoraleUpDown = new System.Windows.Forms.NumericUpDown();
+            this.PopulationUpDown = new System.Windows.Forms.NumericUpDown();
+            this.FoodUpDown = new System.Windows.Forms.NumericUpDown();
+            this.FuelUpDown = new System.Windows.Forms.NumericUpDown();
             this.copyGameButton = new System.Windows.Forms.Button();
+            this.returnToBoxToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.giveToPlayerToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.takeCardFromPlayerToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.skillDecksPanel.SuspendLayout();
             this.crisisPanel.SuspendLayout();
@@ -92,10 +96,10 @@
             this.jumpPrepGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.destinationCountUpDown)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MoraleUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PopulationUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FuelUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -125,6 +129,8 @@
             this.removeFromHandButton.Size = new System.Drawing.Size(28, 23);
             this.removeFromHandButton.TabIndex = 12;
             this.removeFromHandButton.Text = "->";
+            this.takeCardFromPlayerToolTip.SetToolTip(this.removeFromHandButton, "Removes the currently selected cards from the currently selected character\'s hand" +
+        " and moves them to the Drawn Card list.");
             this.removeFromHandButton.UseVisualStyleBackColor = true;
             this.removeFromHandButton.Click += new System.EventHandler(this.removeFromHandButton_Click);
             // 
@@ -209,6 +215,7 @@
             this.characterSkillHandListBox.FormattingEnabled = true;
             this.characterSkillHandListBox.Location = new System.Drawing.Point(186, 187);
             this.characterSkillHandListBox.Name = "characterSkillHandListBox";
+            this.characterSkillHandListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.characterSkillHandListBox.Size = new System.Drawing.Size(156, 173);
             this.characterSkillHandListBox.TabIndex = 3;
             // 
@@ -269,6 +276,7 @@
             this.returnToDeckButton.Size = new System.Drawing.Size(31, 23);
             this.returnToDeckButton.TabIndex = 9;
             this.returnToDeckButton.Text = "^";
+            this.returnToBoxToolTip.SetToolTip(this.returnToDeckButton, "Return selected cards to their deck");
             this.returnToDeckButton.UseVisualStyleBackColor = true;
             this.returnToDeckButton.Click += new System.EventHandler(this.returnToDeckButton_Click);
             // 
@@ -289,6 +297,7 @@
             this.giveCardToCurrentCharacterButton.Size = new System.Drawing.Size(29, 23);
             this.giveCardToCurrentCharacterButton.TabIndex = 7;
             this.giveCardToCurrentCharacterButton.Text = "<-";
+            this.giveToPlayerToolTip.SetToolTip(this.giveCardToCurrentCharacterButton, "Give selected cards to the currently selected player.");
             this.giveCardToCurrentCharacterButton.UseVisualStyleBackColor = true;
             this.giveCardToCurrentCharacterButton.Click += new System.EventHandler(this.giveCardToCurrentCharacterButton_Click);
             // 
@@ -595,10 +604,10 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.numericUpDown4);
-            this.panel2.Controls.Add(this.numericUpDown3);
-            this.panel2.Controls.Add(this.numericUpDown2);
-            this.panel2.Controls.Add(this.numericUpDown1);
+            this.panel2.Controls.Add(this.MoraleUpDown);
+            this.panel2.Controls.Add(this.PopulationUpDown);
+            this.panel2.Controls.Add(this.FoodUpDown);
+            this.panel2.Controls.Add(this.FuelUpDown);
             this.panel2.Location = new System.Drawing.Point(361, 422);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(113, 100);
@@ -640,53 +649,57 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Fuel:";
             // 
-            // numericUpDown4
+            // MoraleUpDown
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(70, 53);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(40, 20);
-            this.numericUpDown4.TabIndex = 3;
-            this.numericUpDown4.Value = new decimal(new int[] {
+            this.MoraleUpDown.Location = new System.Drawing.Point(70, 53);
+            this.MoraleUpDown.Name = "MoraleUpDown";
+            this.MoraleUpDown.Size = new System.Drawing.Size(40, 20);
+            this.MoraleUpDown.TabIndex = 3;
+            this.MoraleUpDown.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
+            this.MoraleUpDown.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
             // 
-            // numericUpDown3
+            // PopulationUpDown
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(70, 77);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(40, 20);
-            this.numericUpDown3.TabIndex = 2;
-            this.numericUpDown3.Value = new decimal(new int[] {
+            this.PopulationUpDown.Location = new System.Drawing.Point(70, 77);
+            this.PopulationUpDown.Name = "PopulationUpDown";
+            this.PopulationUpDown.Size = new System.Drawing.Size(40, 20);
+            this.PopulationUpDown.TabIndex = 2;
+            this.PopulationUpDown.Value = new decimal(new int[] {
             12,
             0,
             0,
             0});
+            this.PopulationUpDown.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
             // 
-            // numericUpDown2
+            // FoodUpDown
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(70, 29);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(40, 20);
-            this.numericUpDown2.TabIndex = 1;
-            this.numericUpDown2.Value = new decimal(new int[] {
+            this.FoodUpDown.Location = new System.Drawing.Point(70, 29);
+            this.FoodUpDown.Name = "FoodUpDown";
+            this.FoodUpDown.Size = new System.Drawing.Size(40, 20);
+            this.FoodUpDown.TabIndex = 1;
+            this.FoodUpDown.Value = new decimal(new int[] {
             8,
             0,
             0,
             0});
+            this.FoodUpDown.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
-            // numericUpDown1
+            // FuelUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(70, 3);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(40, 20);
-            this.numericUpDown1.TabIndex = 0;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.FuelUpDown.Location = new System.Drawing.Point(70, 3);
+            this.FuelUpDown.Name = "FuelUpDown";
+            this.FuelUpDown.Size = new System.Drawing.Size(40, 20);
+            this.FuelUpDown.TabIndex = 0;
+            this.FuelUpDown.Value = new decimal(new int[] {
             8,
             0,
             0,
             0});
+            this.FuelUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // copyGameButton
             // 
@@ -721,10 +734,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.destinationCountUpDown)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MoraleUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PopulationUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FuelUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -771,10 +784,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown MoraleUpDown;
+        private System.Windows.Forms.NumericUpDown PopulationUpDown;
+        private System.Windows.Forms.NumericUpDown FoodUpDown;
+        private System.Windows.Forms.NumericUpDown FuelUpDown;
         private System.Windows.Forms.Button clearCrisisButton;
         private System.Windows.Forms.Button drawMissionButton;
         private System.Windows.Forms.Button returnToDeckButton;
@@ -788,6 +801,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button copyGameButton;
+        private System.Windows.Forms.ToolTip returnToBoxToolTip;
+        private System.Windows.Forms.ToolTip giveToPlayerToolTip;
+        private System.Windows.Forms.ToolTip takeCardFromPlayerToolTip;
     }
 }
 

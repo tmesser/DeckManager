@@ -32,7 +32,7 @@ namespace DeckManager
                     TurnLog = "Begin game.",
 
                     CrisisDeck = new CrisisDeck(_logger),
-                    MissionDeck  = MissionDeck(_logger),
+                    MissionDeck  = new MissionDeck(_logger),
                     DestinationDeck = new DestinationDeck(_logger),
 
                     EngineeringDeck = new SkillCardDeck(_logger, SkillCardColor.Engineering),
@@ -96,5 +96,39 @@ namespace DeckManager
             }
         }
 
+        public void discardCard(Cards.BaseCard card)
+        { 
+            // discards the passed card into its appropriate deck
+            switch (card.CardType)
+            {
+                case DeckManager.Cards.Enums.CardType.Quorum:
+                    this.CurrentGameState.QuorumDeck.Discard((DeckManager.Cards.QuorumCard)card);
+                    break;
+                case DeckManager.Cards.Enums.CardType.Skill:
+                    switch (((DeckManager.Cards.SkillCard)card).CardColor)
+                    {
+                        case DeckManager.Cards.Enums.SkillCardColor.Politics:
+                            this.CurrentGameState.PoliticsDeck.Discard((DeckManager.Cards.SkillCard)card);
+                            break;
+                        case DeckManager.Cards.Enums.SkillCardColor.Leadership:
+                            this.CurrentGameState.LeadershipDeck.Discard((DeckManager.Cards.SkillCard)card);
+                            break;
+                        case DeckManager.Cards.Enums.SkillCardColor.Tactics:
+                            this.CurrentGameState.TacticsDeck.Discard((DeckManager.Cards.SkillCard)card);
+                            break;
+                        case DeckManager.Cards.Enums.SkillCardColor.Engineering:
+                            this.CurrentGameState.EngineeringDeck.Discard((DeckManager.Cards.SkillCard)card);
+                            break;
+                        case DeckManager.Cards.Enums.SkillCardColor.Piloting:
+                            this.CurrentGameState.PilotingDeck.Discard((DeckManager.Cards.SkillCard)card);
+                            break;
+                        case DeckManager.Cards.Enums.SkillCardColor.Treachery:
+                            this.CurrentGameState.TreacheryDeck.Discard((DeckManager.Cards.SkillCard)card);
+                            break;
+                    }
+                    break;
+            }
+            return;
+        }
     }
 }
