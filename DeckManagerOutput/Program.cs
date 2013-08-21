@@ -9,7 +9,7 @@ namespace DeckManagerOutput
 {
     static class Program
     {
-        public static GameManager gManager { get; set; }
+        public static GameManager GManager { get; set; }
 
         /// <summary>
         /// The main entry point for the application.
@@ -18,9 +18,7 @@ namespace DeckManagerOutput
         static void Main()
         {
 
-            // @todo create logger for GUI
-            log4net.ILog logger = null;
-            Program.gManager = new GameManager(logger);
+            GManager = new GameManager();
 
 
             Application.EnableVisualStyles();

@@ -15,6 +15,12 @@ namespace DeckManager.ManagerLogic
         public List<Consequence> Consequences { get; set; }
         public string Name { get; set; }
 
+        public SkillCheck()
+        {
+            _logger = LogManager.GetLogger(typeof (SkillCheck));
+            PlayedCards = new List<SkillCard>();
+        }
+
         public SkillCheck(ILog logger)
         {
             _logger = logger;
@@ -62,7 +68,7 @@ namespace DeckManager.ManagerLogic
                 }
 
                 // TODO: OrderBy might arrange the skill check backwards.  This would be really easy to test if I had NuGet working and could install NUnit.  Check this later.
-                var checkResult = CrisisCard.PassLevels.OrderBy(x => x.Item1).First(result => strength > result.Item1);
+                var checkResult = CrisisCard.PassLevels.OrderByDescending(x => x.Item1).First(result => strength > result.Item1);
                 results.Add(new Consequence(checkResult.Item1, checkResult.Item2));
             }
             catch (Exception e)

@@ -49,9 +49,19 @@ namespace DeckManager.Cards
             get { return CardType.Skill; }
         }
 
+        /// <summary>
+        /// Outputs a BBCode representation for the card.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public override string ToBBCode()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public override string ToString()
         {
-            return this.CardColor + " " + this.CardPower + " " +this.Heading;
+            return CardColor + " " + CardPower + " " + Heading;
         }
     }
 }

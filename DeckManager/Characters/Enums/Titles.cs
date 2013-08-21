@@ -1,4 +1,4 @@
-﻿namespace DeckManager.Cards.Enums
+﻿namespace DeckManager.Characters.Enums
 {
     public enum Titles
     {

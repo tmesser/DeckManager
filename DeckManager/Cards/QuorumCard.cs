@@ -16,6 +16,16 @@ namespace DeckManager.Cards
         }
 
         /// <summary>
+        /// Outputs a BBCode representation for the card.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public override string ToBBCode()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
         /// Gets or sets the heading. Basic display stuff, like Inspirational Speech or whatever
         /// </summary>
         /// <value>

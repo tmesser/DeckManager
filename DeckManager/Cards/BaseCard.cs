@@ -23,5 +23,11 @@ namespace DeckManager.Cards
         /// The type of the card.
         /// </value>
         public abstract CardType CardType { get; }
+
+        /// <summary>
+        /// Returns a representation of the card in BBCode.
+        /// </summary>
+        /// <returns></returns>
+        public abstract string ToBBCode();
     }
 }

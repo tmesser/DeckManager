@@ -14,6 +14,11 @@ namespace DeckManager
     {
         private readonly ILog _logger;
 
+        public GameManager()
+        {
+            _logger = LogManager.GetLogger(typeof (GameManager));
+        }
+
         public GameManager(ILog logger)
         {
             _logger = logger;

@@ -29,5 +29,15 @@ namespace DeckManager.Cards
         {
             get { return CardType.Loyalty; }
         }
+
+        /// <summary>
+        /// Outputs a BBCode representation of the card
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public override string ToBBCode()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

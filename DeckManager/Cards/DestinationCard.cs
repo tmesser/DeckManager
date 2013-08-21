@@ -16,6 +16,16 @@ namespace DeckManager.Cards
         }
 
         /// <summary>
+        /// Outputs a BBCode representation of the card.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public override string ToBBCode()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
         /// Title of the destination.
         /// </summary>
         /// <value>

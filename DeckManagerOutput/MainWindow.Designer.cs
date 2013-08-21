@@ -115,7 +115,7 @@
             this.discardQuorumCardButton.Text = "Discard Quorum Card";
             this.discardQuorumCardButton.UseVisualStyleBackColor = true;
             this.discardQuorumCardButton.Visible = false;
-            this.discardQuorumCardButton.Click += new System.EventHandler(this.discardQuorumCardButton_Click);
+            this.discardQuorumCardButton.Click += new System.EventHandler(this.DiscardQuorumCardButtonClick);
             // 
             // discardSkillCardButton
             // 
@@ -125,7 +125,7 @@
             this.discardSkillCardButton.TabIndex = 10;
             this.discardSkillCardButton.Text = "Discard Skill Card";
             this.discardSkillCardButton.UseVisualStyleBackColor = true;
-            this.discardSkillCardButton.Click += new System.EventHandler(this.discardSkillCardButton_Click);
+            this.discardSkillCardButton.Click += new System.EventHandler(this.DiscardSkillCardButtonClick);
             // 
             // playIntoCrisisButton
             // 
@@ -135,7 +135,7 @@
             this.playIntoCrisisButton.TabIndex = 9;
             this.playIntoCrisisButton.Text = "Play Into Crisis";
             this.playIntoCrisisButton.UseVisualStyleBackColor = true;
-            this.playIntoCrisisButton.Click += new System.EventHandler(this.playIntoCrisisButton_Click);
+            this.playIntoCrisisButton.Click += new System.EventHandler(this.PlayIntoCrisisButtonClick);
             // 
             // characterQuorumHandCountTextBox
             // 
@@ -198,7 +198,7 @@
             this.addPlayerButton.TabIndex = 2;
             this.addPlayerButton.Text = "Add Player";
             this.addPlayerButton.UseVisualStyleBackColor = true;
-            this.addPlayerButton.Click += new System.EventHandler(this.addPlayerButton_Click);
+            this.addPlayerButton.Click += new System.EventHandler(this.AddPlayerButtonClick);
             // 
             // beginGameButton
             // 
@@ -209,7 +209,7 @@
             this.beginGameButton.TabIndex = 1;
             this.beginGameButton.Text = "Begin Game";
             this.beginGameButton.UseVisualStyleBackColor = true;
-            this.beginGameButton.Click += new System.EventHandler(this.beginGameButton_Click);
+            this.beginGameButton.Click += new System.EventHandler(this.BeginGameButtonClick);
             // 
             // characterListBox
             // 
@@ -221,7 +221,7 @@
             this.characterListBox.Name = "characterListBox";
             this.characterListBox.Size = new System.Drawing.Size(338, 147);
             this.characterListBox.TabIndex = 0;
-            this.characterListBox.SelectedIndexChanged += new System.EventHandler(this.characterListBox_SelectedIndexChanged);
+            this.characterListBox.SelectedIndexChanged += new System.EventHandler(this.CharacterListBoxSelectedIndexChanged);
             // 
             // skillDecksPanel
             // 
@@ -248,7 +248,7 @@
             this.returnToDeckButton.TabIndex = 9;
             this.returnToDeckButton.Text = "^";
             this.returnToDeckButton.UseVisualStyleBackColor = true;
-            this.returnToDeckButton.Click += new System.EventHandler(this.returnToDeckButton_Click);
+            this.returnToDeckButton.Click += new System.EventHandler(this.ReturnToDeckButtonClick);
             // 
             // drawQuorumButton
             // 
@@ -258,7 +258,7 @@
             this.drawQuorumButton.TabIndex = 8;
             this.drawQuorumButton.Text = "Quorum";
             this.drawQuorumButton.UseVisualStyleBackColor = true;
-            this.drawQuorumButton.Click += new System.EventHandler(this.drawQuorumButton_Click);
+            this.drawQuorumButton.Click += new System.EventHandler(this.DrawQuorumButtonClick);
             // 
             // giveCardToCurrentCharacterButton
             // 
@@ -268,7 +268,7 @@
             this.giveCardToCurrentCharacterButton.TabIndex = 7;
             this.giveCardToCurrentCharacterButton.Text = "<-";
             this.giveCardToCurrentCharacterButton.UseVisualStyleBackColor = true;
-            this.giveCardToCurrentCharacterButton.Click += new System.EventHandler(this.giveCardToCurrentCharacterButton_Click);
+            this.giveCardToCurrentCharacterButton.Click += new System.EventHandler(this.GiveCardToCurrentCharacterButtonClick);
             // 
             // treDeckButton
             // 
@@ -278,7 +278,7 @@
             this.treDeckButton.TabIndex = 6;
             this.treDeckButton.Text = "TRE";
             this.treDeckButton.UseVisualStyleBackColor = true;
-            this.treDeckButton.Click += new System.EventHandler(this.treDeckButton_Click);
+            this.treDeckButton.Click += new System.EventHandler(this.TreDeckButtonClick);
             // 
             // pilDeckButton
             // 
@@ -288,7 +288,7 @@
             this.pilDeckButton.TabIndex = 5;
             this.pilDeckButton.Text = "PIL";
             this.pilDeckButton.UseVisualStyleBackColor = true;
-            this.pilDeckButton.Click += new System.EventHandler(this.pilDeckButton_Click);
+            this.pilDeckButton.Click += new System.EventHandler(this.PilDeckButtonClick);
             // 
             // engDeckButton
             // 
@@ -298,7 +298,7 @@
             this.engDeckButton.TabIndex = 4;
             this.engDeckButton.Text = "ENG";
             this.engDeckButton.UseVisualStyleBackColor = true;
-            this.engDeckButton.Click += new System.EventHandler(this.engDeckButton_Click);
+            this.engDeckButton.Click += new System.EventHandler(this.EngDeckButtonClick);
             // 
             // tacDeckButton
             // 
@@ -308,7 +308,7 @@
             this.tacDeckButton.TabIndex = 3;
             this.tacDeckButton.Text = "TAC";
             this.tacDeckButton.UseVisualStyleBackColor = true;
-            this.tacDeckButton.Click += new System.EventHandler(this.tacDeckButton_Click);
+            this.tacDeckButton.Click += new System.EventHandler(this.TacDeckButtonClick);
             // 
             // leaDeckButton
             // 
@@ -318,7 +318,7 @@
             this.leaDeckButton.TabIndex = 2;
             this.leaDeckButton.Text = "LEA";
             this.leaDeckButton.UseVisualStyleBackColor = true;
-            this.leaDeckButton.Click += new System.EventHandler(this.leaDeckButton_Click);
+            this.leaDeckButton.Click += new System.EventHandler(this.LeaDeckButtonClick);
             // 
             // polDeckButton
             // 
@@ -328,7 +328,7 @@
             this.polDeckButton.TabIndex = 1;
             this.polDeckButton.Text = "POL";
             this.polDeckButton.UseVisualStyleBackColor = true;
-            this.polDeckButton.Click += new System.EventHandler(this.polDeckButton_Click);
+            this.polDeckButton.Click += new System.EventHandler(this.PolDeckButtonClick);
             // 
             // drawnCardListBox
             // 
@@ -389,7 +389,7 @@
             this.evalSkillCheckButton.TabIndex = 5;
             this.evalSkillCheckButton.Text = "Evaluate Skill Check";
             this.evalSkillCheckButton.UseVisualStyleBackColor = true;
-            this.evalSkillCheckButton.Click += new System.EventHandler(this.evalSkillCheckButton_Click);
+            this.evalSkillCheckButton.Click += new System.EventHandler(this.EvalSkillCheckButtonClick);
             // 
             // addDestinyCardsButton
             // 
@@ -399,7 +399,7 @@
             this.addDestinyCardsButton.TabIndex = 4;
             this.addDestinyCardsButton.Text = "Add Destiny Cards";
             this.addDestinyCardsButton.UseVisualStyleBackColor = true;
-            this.addDestinyCardsButton.Click += new System.EventHandler(this.addDestinyCardsButton_Click);
+            this.addDestinyCardsButton.Click += new System.EventHandler(this.AddDestinyCardsButtonClick);
             // 
             // crisisSkillCheckListBox
             // 
@@ -418,7 +418,7 @@
             this.crisisCopyTextButton.TabIndex = 2;
             this.crisisCopyTextButton.Text = "Copy to Clipboard";
             this.crisisCopyTextButton.UseVisualStyleBackColor = true;
-            this.crisisCopyTextButton.Click += new System.EventHandler(this.crisisCopyTextButton_Click);
+            this.crisisCopyTextButton.Click += new System.EventHandler(this.CrisisCopyTextButtonClick);
             // 
             // crisisTextListBox
             // 
@@ -436,7 +436,7 @@
             this.drawCrisisButton.TabIndex = 0;
             this.drawCrisisButton.Text = "Draw Crisis";
             this.drawCrisisButton.UseVisualStyleBackColor = true;
-            this.drawCrisisButton.Click += new System.EventHandler(this.drawCrisisButton_Click);
+            this.drawCrisisButton.Click += new System.EventHandler(this.DrawCrisisButtonClick);
             // 
             // destinationPanel
             // 
@@ -464,7 +464,7 @@
             this.drawDestinationsButton.TabIndex = 1;
             this.drawDestinationsButton.Text = "Draw Destinations";
             this.drawDestinationsButton.UseVisualStyleBackColor = true;
-            this.drawDestinationsButton.Click += new System.EventHandler(this.drawDestinationsButton_Click);
+            this.drawDestinationsButton.Click += new System.EventHandler(this.DrawDestinationsButtonClick);
             // 
             // destinationCountUpDown
             // 
@@ -477,7 +477,7 @@
             0,
             0,
             0});
-            this.destinationCountUpDown.ValueChanged += new System.EventHandler(this.destinationCountUpDown_ValueChanged);
+            this.destinationCountUpDown.ValueChanged += new System.EventHandler(this.DestinationCountUpDownValueChanged);
             // 
             // panel2
             // 

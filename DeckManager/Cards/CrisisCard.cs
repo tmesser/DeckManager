@@ -62,9 +62,9 @@ namespace DeckManager.Cards
         /// Formats the object for posts on BBCode forums
         /// </summary>
         /// <returns></returns>
-        public string toBBCode()
+        public override string ToBBCode()
         {
-            return "not implemented";
+            throw new NotImplementedException();
         }
     }
 }
