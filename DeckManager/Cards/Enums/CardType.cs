@@ -8,6 +8,7 @@
         Crisis,
         SuperCrisis,
         Loyalty,
-        Destination
+        Destination,
+        Mission
     }
 }

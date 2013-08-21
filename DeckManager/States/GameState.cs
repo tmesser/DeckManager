@@ -44,6 +44,7 @@ namespace DeckManager.States
         public LoyaltyDeck LoyaltyDeck { get; set; }
         public DestinyDeck DestinyDeck { get; set; }
         public QuorumDeck QuorumDeck { get; set; }
+        public MissionDeck MissionDeck { get; set; }
 
         private SkillCardDeck _leadershipDeck;
         public SkillCardDeck LeadershipDeck

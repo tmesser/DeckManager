@@ -32,6 +32,7 @@ namespace DeckManager
                     TurnLog = "Begin game.",
 
                     CrisisDeck = new CrisisDeck(_logger),
+                    MissionDeck  = MissionDeck(_logger),
                     DestinationDeck = new DestinationDeck(_logger),
 
                     EngineeringDeck = new SkillCardDeck(_logger, SkillCardColor.Engineering),

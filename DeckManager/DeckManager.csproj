@@ -49,8 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cards\BaseCard.cs" />
+    <Compile Include="Cards\MissionCard.cs" />
     <Compile Include="Characters\Character.cs" />
     <Compile Include="Characters\Enums\Titles.cs" />
+    <Compile Include="Decks\MissionDeck.cs" />
     <Compile Include="ManagerLogic\Consequence.cs" />
     <Compile Include="Cards\CrisisCard.cs" />
     <Compile Include="Cards\DestinationCard.cs" />

@@ -394,6 +394,7 @@
             this.drawMissionButton.TabIndex = 7;
             this.drawMissionButton.Text = "Draw Mission";
             this.drawMissionButton.UseVisualStyleBackColor = true;
+            this.drawMissionButton.Click += new System.EventHandler(this.drawMissionButton_Click);
             // 
             // copySkillCheckResultsButton
             // 
