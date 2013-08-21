@@ -65,6 +65,7 @@
             this.crisisTextListBox = new System.Windows.Forms.ListBox();
             this.drawCrisisButton = new System.Windows.Forms.Button();
             this.destinationPanel = new System.Windows.Forms.Panel();
+            this.copyDestinationsButton = new System.Windows.Forms.Button();
             this.jumpPrepGroupBox = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -254,6 +255,7 @@
             // 
             // skillDecksPanel
             // 
+            this.skillDecksPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.skillDecksPanel.Controls.Add(this.returnToDeckButton);
             this.skillDecksPanel.Controls.Add(this.drawQuorumButton);
             this.skillDecksPanel.Controls.Add(this.giveCardToCurrentCharacterButton);
@@ -473,6 +475,7 @@
             // 
             // destinationPanel
             // 
+            this.destinationPanel.Controls.Add(this.copyDestinationsButton);
             this.destinationPanel.Controls.Add(this.jumpPrepGroupBox);
             this.destinationPanel.Controls.Add(this.destinationsListBox);
             this.destinationPanel.Controls.Add(this.drawDestinationsButton);
@@ -481,6 +484,16 @@
             this.destinationPanel.Name = "destinationPanel";
             this.destinationPanel.Size = new System.Drawing.Size(344, 107);
             this.destinationPanel.TabIndex = 3;
+            // 
+            // copyDestinationsButton
+            // 
+            this.copyDestinationsButton.Location = new System.Drawing.Point(226, 4);
+            this.copyDestinationsButton.Name = "copyDestinationsButton";
+            this.copyDestinationsButton.Size = new System.Drawing.Size(104, 23);
+            this.copyDestinationsButton.TabIndex = 4;
+            this.copyDestinationsButton.Text = "Copy Destinations";
+            this.copyDestinationsButton.UseVisualStyleBackColor = true;
+            this.copyDestinationsButton.Click += new System.EventHandler(this.copyDestinationsButton_Click);
             // 
             // jumpPrepGroupBox
             // 
@@ -660,7 +673,7 @@
             0,
             0,
             0});
-            this.MoraleUpDown.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
+            this.MoraleUpDown.ValueChanged += new System.EventHandler(this.MoraleUpDown_ValueChanged);
             // 
             // PopulationUpDown
             // 
@@ -673,7 +686,7 @@
             0,
             0,
             0});
-            this.PopulationUpDown.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
+            this.PopulationUpDown.ValueChanged += new System.EventHandler(this.PopulationUpDown_ValueChanged);
             // 
             // FoodUpDown
             // 
@@ -686,7 +699,7 @@
             0,
             0,
             0});
-            this.FoodUpDown.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            this.FoodUpDown.ValueChanged += new System.EventHandler(this.FoodUpDown_ValueChanged);
             // 
             // FuelUpDown
             // 
@@ -699,7 +712,7 @@
             0,
             0,
             0});
-            this.FuelUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.FuelUpDown.ValueChanged += new System.EventHandler(this.FuelUpDown_ValueChanged);
             // 
             // copyGameButton
             // 
@@ -804,6 +817,7 @@
         private System.Windows.Forms.ToolTip returnToBoxToolTip;
         private System.Windows.Forms.ToolTip giveToPlayerToolTip;
         private System.Windows.Forms.ToolTip takeCardFromPlayerToolTip;
+        private System.Windows.Forms.Button copyDestinationsButton;
     }
 }
 

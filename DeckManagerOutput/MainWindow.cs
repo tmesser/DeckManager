@@ -166,12 +166,22 @@ namespace DeckManagerOutput
 
         private void discardQuorumCardButton_Click(object sender, EventArgs e)
         {
+            Array cards = new DeckManager.Cards.QuorumCard[this.characterSkillHandListBox.SelectedItems.Count];
+            this.characterSkillHandListBox.SelectedItems.CopyTo(cards, 0);
+            DeckManager.Characters.Character currentCharacter = (DeckManager.Characters.Character)this.characterListBox.SelectedItem;
+
+            foreach (DeckManager.Cards.QuorumCard card in cards)
+            {
+                Program.gManager.discardCard(card);
+                currentCharacter.discard(card);
+                this.characterQuorumHandListBox.Items.Remove(card);
+            }
 
         }
 
         private void destinationCountUpDown_ValueChanged(object sender, EventArgs e)
         {
-
+            // number of destination cards to draw
         }
 
         private void returnToDeckButton_Click(object sender, EventArgs e)
@@ -215,24 +225,29 @@ namespace DeckManagerOutput
 
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void FuelUpDown_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        private void FoodUpDown_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void numericUpDown4_ValueChanged(object sender, EventArgs e)
+        private void MoraleUpDown_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void numericUpDown3_ValueChanged(object sender, EventArgs e)
+        private void PopulationUpDown_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void copyDestinationsButton_Click(object sender, EventArgs e)
+        {
+            // copies drawn destination cards to clipboard, used to send PM to destination chooser
         }
 
 

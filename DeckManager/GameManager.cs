@@ -97,7 +97,8 @@ namespace DeckManager
         }
 
         public void discardCard(Cards.BaseCard card)
-        { 
+        {   
+            // todo each discard creates new gamestate? that would let us implement undos
             // discards the passed card into its appropriate deck
             switch (card.CardType)
             {
