@@ -4,7 +4,7 @@ using log4net;
 
 namespace DeckManager.Decks
 {
-    public class MissionDeck : BaseDeck<MisisonCard>
+    public class MissionDeck : BaseDeck<MissionCard>
     {
         public MissionDeck(ILog logger)
             : base(logger)
@@ -14,7 +14,7 @@ namespace DeckManager.Decks
 
         private void InitDeck()
         {
-            var cardsFromBox = new List<MisisonCard>();
+            var cardsFromBox = new List<MissionCard>();
             //TODO: Import the cards via JSON/XML reader - the goddamn NuGet packages aren't working right now.  Fill up the cardsFromBox object.
 
             Deck = cardsFromBox;

@@ -133,7 +133,7 @@
             this.takeCardFromPlayerToolTip.SetToolTip(this.removeFromHandButton, "Removes the currently selected cards from the currently selected character\'s hand" +
         " and moves them to the Drawn Card list.");
             this.removeFromHandButton.UseVisualStyleBackColor = true;
-            this.removeFromHandButton.Click += new System.EventHandler(this.removeFromHandButton_Click);
+            this.removeFromHandButton.Click += new System.EventHandler(this.RemoveFromHandButtonClick);
             // 
             // discardQuorumCardButton
             // 
@@ -404,7 +404,7 @@
             this.drawMissionButton.TabIndex = 7;
             this.drawMissionButton.Text = "Draw Mission";
             this.drawMissionButton.UseVisualStyleBackColor = true;
-            this.drawMissionButton.Click += new System.EventHandler(this.drawMissionButton_Click);
+            this.drawMissionButton.Click += new System.EventHandler(this.DrawMissionButtonClick);
             // 
             // copySkillCheckResultsButton
             // 
@@ -457,8 +457,8 @@
             // crisisTextListBox
             // 
             this.crisisTextListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.crisisTextListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(CrisisTextBox_DrawItem);
-            this.crisisTextListBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(CrisisTextBox_MeasureItem);
+            this.crisisTextListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(CrisisTextBoxDrawItem);
+            this.crisisTextListBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(CrisisTextBoxMeasureItem);
             this.crisisTextListBox.FormattingEnabled = true;
             this.crisisTextListBox.Location = new System.Drawing.Point(84, 0);
             this.crisisTextListBox.Name = "crisisTextListBox";
@@ -495,7 +495,7 @@
             this.copyDestinationsButton.TabIndex = 4;
             this.copyDestinationsButton.Text = "Copy Destinations";
             this.copyDestinationsButton.UseVisualStyleBackColor = true;
-            this.copyDestinationsButton.Click += new System.EventHandler(this.copyDestinationsButton_Click);
+            this.copyDestinationsButton.Click += new System.EventHandler(this.CopyDestinationsButtonClick);
             // 
             // jumpPrepGroupBox
             // 
@@ -675,7 +675,7 @@
             0,
             0,
             0});
-            this.MoraleUpDown.ValueChanged += new System.EventHandler(this.MoraleUpDown_ValueChanged);
+            this.MoraleUpDown.ValueChanged += new System.EventHandler(this.MoraleUpDownValueChanged);
             // 
             // PopulationUpDown
             // 
@@ -688,7 +688,7 @@
             0,
             0,
             0});
-            this.PopulationUpDown.ValueChanged += new System.EventHandler(this.PopulationUpDown_ValueChanged);
+            this.PopulationUpDown.ValueChanged += new System.EventHandler(this.PopulationUpDownValueChanged);
             // 
             // FoodUpDown
             // 
@@ -701,7 +701,7 @@
             0,
             0,
             0});
-            this.FoodUpDown.ValueChanged += new System.EventHandler(this.FoodUpDown_ValueChanged);
+            this.FoodUpDown.ValueChanged += new System.EventHandler(this.FoodUpDownValueChanged);
             // 
             // FuelUpDown
             // 
@@ -714,7 +714,7 @@
             0,
             0,
             0});
-            this.FuelUpDown.ValueChanged += new System.EventHandler(this.FuelUpDown_ValueChanged);
+            this.FuelUpDown.ValueChanged += new System.EventHandler(this.FuelUpDownValueChanged);
             // 
             // copyGameButton
             // 
@@ -724,7 +724,7 @@
             this.copyGameButton.TabIndex = 5;
             this.copyGameButton.Text = "Copy Board to Clipboard";
             this.copyGameButton.UseVisualStyleBackColor = true;
-            this.copyGameButton.Click += new System.EventHandler(this.copyGameButton_Click);
+            this.copyGameButton.Click += new System.EventHandler(this.CopyGameButtonClick);
             // 
             // MainForm
             // 

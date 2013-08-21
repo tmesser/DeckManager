@@ -27,8 +27,8 @@ namespace DeckManagerOutput
 
         private void GiveCardToCurrentCharacterButtonClick(object sender, EventArgs e)
         {
-            Array cards = new DeckManager.Cards.BaseCard[this.drawnCardListBox.SelectedItems.Count];
-            this.drawnCardListBox.SelectedItems.CopyTo(cards, 0);
+            Array cards = new DeckManager.Cards.BaseCard[drawnCardListBox.SelectedItems.Count];
+            drawnCardListBox.SelectedItems.CopyTo(cards, 0);
             var currentPlayer = (Player)characterListBox.SelectedItem;
 
             // give selected cards to currently selected player (skill or quorum)
@@ -89,7 +89,7 @@ namespace DeckManagerOutput
         {
 
         }
-        private void CrisisTextBox_MeasureItem(object sender, MeasureItemEventArgs e)
+        private void CrisisTextBoxMeasureItem(object sender, MeasureItemEventArgs e)
         {
             //e.ItemHeight = 50;
             string item = crisisTextListBox.Items[e.Index].ToString();
@@ -98,7 +98,7 @@ namespace DeckManagerOutput
             e.ItemHeight *= count;
         }
 
-        private void CrisisTextBox_DrawItem(object sender, System.Windows.Forms.DrawItemEventArgs e)
+        private void CrisisTextBoxDrawItem(object sender, DrawItemEventArgs e)
         {
             e.DrawBackground();
 
@@ -115,21 +115,26 @@ namespace DeckManagerOutput
 
         private void DrawCrisisButtonClick(object sender, EventArgs e)
         {
-            this.crisisTextListBox.BeginUpdate();
+            crisisTextListBox.BeginUpdate();
 
             // DeckManager.Cards.CrisisCard crisis = Program.gManager.CurrentGameState.CrisisDeck.Draw();
+            // TODO: This sort of stuff should really be done in the TESTS project.  See my example in there.
+            var crisis = new DeckManager.Cards.CrisisCard
+                {
+                    Activation = DeckManager.Cards.Enums.CylonActivations.Raiders,
+                    Heading = "Test Crisis",
+                    JumpPrep = true,
+                    AdditionalText = "A description of the crisis",
+                    PositiveColors =
+                        new List<DeckManager.Cards.Enums.SkillCardColor>
+                            {
+                                DeckManager.Cards.Enums.SkillCardColor.Engineering,
+                                DeckManager.Cards.Enums.SkillCardColor.Politics
+                            }
+                };
 
-            DeckManager.Cards.CrisisCard crisis = new DeckManager.Cards.CrisisCard();
-            crisis.Activation = DeckManager.Cards.Enums.CylonActivations.Raiders;
-            crisis.Heading = "Test Crisis";
-            crisis.JumpPrep = true;
-            crisis.AdditionalText = "A description of the crisis";
-            crisis.PositiveColors = new List<DeckManager.Cards.Enums.SkillCardColor>();
-            crisis.PositiveColors.Add(DeckManager.Cards.Enums.SkillCardColor.Engineering);
-            crisis.PositiveColors.Add(DeckManager.Cards.Enums.SkillCardColor.Politics);
-
-            this.crisisTextListBox.Items.Add(crisis);
-            this.crisisTextListBox.EndUpdate();
+            crisisTextListBox.Items.Add(crisis);
+            crisisTextListBox.EndUpdate();
         }
 
         private void CrisisCopyTextButtonClick(object sender, EventArgs e)
@@ -139,13 +144,13 @@ namespace DeckManagerOutput
 
         private void AddDestinyCardsButtonClick(object sender, EventArgs e)
         {
-            DeckManager.Cards.SkillCard dest1 =  Program.gManager.CurrentGameState.DestinyDeck.Draw();
-            DeckManager.Cards.SkillCard dest2 = Program.gManager.CurrentGameState.DestinyDeck.Draw();
+            var dest1 =  Program.GManager.CurrentGameState.DestinyDeck.Draw();
+            var dest2 = Program.GManager.CurrentGameState.DestinyDeck.Draw();
 
-            this.crisisSkillCheckListBox.BeginUpdate();
-            this.crisisSkillCheckListBox.Items.Add(dest1);            
-            this.crisisSkillCheckListBox.Items.Add(dest2);
-            this.crisisSkillCheckListBox.EndUpdate();
+            crisisSkillCheckListBox.BeginUpdate();
+            crisisSkillCheckListBox.Items.Add(dest1);            
+            crisisSkillCheckListBox.Items.Add(dest2);
+            crisisSkillCheckListBox.EndUpdate();
         }
 
         private void AddPlayerButtonClick(object sender, EventArgs e)
@@ -155,7 +160,7 @@ namespace DeckManagerOutput
 
         private void BeginGameButtonClick(object sender, EventArgs e)
         {
-            this.addPlayerButton.Enabled = false;
+            addPlayerButton.Enabled = false;
         }
 
         private void EvalSkillCheckButtonClick(object sender, EventArgs e)
@@ -165,42 +170,41 @@ namespace DeckManagerOutput
 
         private void PlayIntoCrisisButtonClick(object sender, EventArgs e)
         {
-            DeckManager.Cards.SkillCard card = (DeckManager.Cards.SkillCard)this.characterSkillHandListBox.SelectedItem;
-            this.crisisSkillCheckListBox.Items.Add(card);
-            ((DeckManager.Characters.Character)this.characterListBox.SelectedItem).discard(card);
-            this.characterSkillHandListBox.Items.Remove(card);
+            var card = (DeckManager.Cards.SkillCard)characterSkillHandListBox.SelectedItem;
+            crisisSkillCheckListBox.Items.Add(card);
+            ((Player)characterListBox.SelectedItem).Cards.Remove(card);
+            characterSkillHandListBox.Items.Remove(card);
         }
 
         private void DiscardSkillCardButtonClick(object sender, EventArgs e)
         {
-            Array cards = new DeckManager.Cards.SkillCard[this.characterSkillHandListBox.SelectedItems.Count];
-            this.characterSkillHandListBox.SelectedItems.CopyTo(cards, 0);
+            Array cards = new DeckManager.Cards.SkillCard[characterSkillHandListBox.SelectedItems.Count];
+            characterSkillHandListBox.SelectedItems.CopyTo(cards, 0);
 
             foreach (DeckManager.Cards.SkillCard card in cards)
             {
-                Program.gManager.discardCard(card);
-                currentCharacter.discard(card);
-                this.characterSkillHandListBox.Items.Remove(card);
+                Program.GManager.discardCard(card);
+                characterSkillHandListBox.Items.Remove(card);
             }
         }
 
         private void DrawQuorumButtonClick(object sender, EventArgs e)
         {
-            DeckManager.Cards.QuorumCard quorum = (DeckManager.Cards.QuorumCard)Program.gManager.CurrentGameState.QuorumDeck.Draw();
-            this.drawnCardListBox.Items.Add(quorum);
+            var quorum = Program.GManager.CurrentGameState.QuorumDeck.Draw();
+            drawnCardListBox.Items.Add(quorum);
         }
 
         private void DiscardQuorumCardButtonClick(object sender, EventArgs e)
         {
-            Array cards = new DeckManager.Cards.QuorumCard[this.characterSkillHandListBox.SelectedItems.Count];
-            this.characterSkillHandListBox.SelectedItems.CopyTo(cards, 0);
-            DeckManager.Characters.Character currentCharacter = (DeckManager.Characters.Character)this.characterListBox.SelectedItem;
+            Array cards = new DeckManager.Cards.QuorumCard[characterSkillHandListBox.SelectedItems.Count];
+            characterSkillHandListBox.SelectedItems.CopyTo(cards, 0);
+            var currentCharacter = (Player)characterListBox.SelectedItem;
 
             foreach (DeckManager.Cards.QuorumCard card in cards)
             {
-                Program.gManager.discardCard(card);
-                currentCharacter.discard(card);
-                this.characterQuorumHandListBox.Items.Remove(card);
+                Program.GManager.discardCard(card);
+                currentCharacter.Discard(card);
+                characterQuorumHandListBox.Items.Remove(card);
             }
 
         }
@@ -212,13 +216,13 @@ namespace DeckManagerOutput
 
         private void ReturnToDeckButtonClick(object sender, EventArgs e)
         {
-            Array cards = new DeckManager.Cards.BaseCard[this.drawnCardListBox.SelectedItems.Count];
-            this.drawnCardListBox.SelectedItems.CopyTo(cards, 0);
+            Array cards = new DeckManager.Cards.BaseCard[drawnCardListBox.SelectedItems.Count];
+            drawnCardListBox.SelectedItems.CopyTo(cards, 0);
 
             foreach (DeckManager.Cards.BaseCard card in cards)
             {
-                Program.gManager.discardCard(card);
-                this.drawnCardListBox.Items.Remove(card);
+                Program.GManager.discardCard(card);
+                drawnCardListBox.Items.Remove(card);
             }
         }
 
@@ -234,44 +238,44 @@ namespace DeckManagerOutput
             // update quorum card list box if current character is president
         }
 
-        private void removeFromHandButton_Click(object sender, EventArgs e)
+        private void RemoveFromHandButtonClick(object sender, EventArgs e)
         {
             // move character's currently selected card into the drawn card window. can use this to transfer cards between players
         }
 
-        private void copyGameButton_Click(object sender, EventArgs e)
+        private void CopyGameButtonClick(object sender, EventArgs e)
         {
             // this button click copies an entire post update to the clipboard
             // e.g. http://forums.somethingawful.com/showthread.php?threadid=3563154&userid=0&perpage=40&pagenumber=2#post418151171
 
         }
 
-        private void drawMissionButton_Click(object sender, EventArgs e)
+        private void DrawMissionButtonClick(object sender, EventArgs e)
         {
 
         }
 
-        private void FuelUpDown_ValueChanged(object sender, EventArgs e)
+        private void FuelUpDownValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void FoodUpDown_ValueChanged(object sender, EventArgs e)
+        private void FoodUpDownValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void MoraleUpDown_ValueChanged(object sender, EventArgs e)
+        private void MoraleUpDownValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void PopulationUpDown_ValueChanged(object sender, EventArgs e)
+        private void PopulationUpDownValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void copyDestinationsButton_Click(object sender, EventArgs e)
+        private void CopyDestinationsButtonClick(object sender, EventArgs e)
         {
             // copies drawn destination cards to clipboard, used to send PM to destination chooser
         }

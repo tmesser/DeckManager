@@ -4,12 +4,10 @@ using DeckManager.Cards.Enums;
 
 namespace DeckManager.Cards
 {
-    public class MisisonCard : BaseCard
+    public class MissionCard : BaseCard
     {
-
-
         /// <summary>
-        /// Reports that this is a crisis card.
+        /// Reports that this is a Mission card.
         /// </summary>
         /// <value>
         /// The type of the card.
@@ -17,6 +15,16 @@ namespace DeckManager.Cards
         public override CardType CardType
         {
             get { return CardType.Mission; }
+        }
+
+        /// <summary>
+        /// Returns a representation of the card in BBCode.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public override string ToBBCode()
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -57,19 +65,5 @@ namespace DeckManager.Cards
         /// This crisis' skill check (can be null)
         /// </summary>
         public List<Tuple<int, string>> PassLevels { get; set; }
-
-        /// <summary>
-        /// Formats the object for posts on BBCode forums
-        /// </summary>
-        /// <returns></returns>
-        public string toBBCode()
-        {
-            return "not implemented";
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 }

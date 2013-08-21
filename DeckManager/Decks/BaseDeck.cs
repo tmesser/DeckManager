@@ -80,10 +80,6 @@ namespace DeckManager.Decks
             var ret = Deck.ElementAt(0);
             Deck.RemoveAt(0);
 
-            // CPS - removing this call - adding card to discard as they're drawn will create copies of the card: the drawn
-            //   object and the discarded one. I've added a Discard method to handle adding Cards back into the Deck
-            //Discarded.Add(ret);
-
             return ret;
         }
         /// <summary>
@@ -92,7 +88,7 @@ namespace DeckManager.Decks
         /// <param name="card">Card to be buried</param>
         public virtual void Bury(T card)
         {
-            this.Deck.Add(card);        // we're drawing at 0, this puts card at the end of the list
+            Deck.Add(card);        // we're drawing at 0, this puts card at the end of the list
         }
 
         /// <summary>
@@ -101,7 +97,16 @@ namespace DeckManager.Decks
         /// <param name="card">The card to be discarded</param>
         public virtual void Discard(T card)
         {
-            this.Discarded.Add(card);
+            Discarded.Add(card);
+        }
+
+        /// <summary>
+        /// Adds the passed card to this deck's discard pile
+        /// </summary>
+        /// <param name="cards">The cards to be discarded</param>
+        public virtual void Discard(IEnumerable<T> cards)
+        {
+            Discarded.AddRange(cards);
         }
 
         /// <summary>
@@ -116,8 +121,6 @@ namespace DeckManager.Decks
 
             var ret = Deck.Take(cards).ToList();
             Deck.RemoveRange(0,cards);
-            Discarded.AddRange(ret);
-
             return ret;
         }
 

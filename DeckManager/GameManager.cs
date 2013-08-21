@@ -101,40 +101,39 @@ namespace DeckManager
             }
         }
 
-        public void discardCard(Cards.BaseCard card)
+        public void DiscardCard(Cards.BaseCard card)
         {   
             // todo each discard creates new gamestate? that would let us implement undos
             // discards the passed card into its appropriate deck
             switch (card.CardType)
             {
-                case DeckManager.Cards.Enums.CardType.Quorum:
-                    this.CurrentGameState.QuorumDeck.Discard((DeckManager.Cards.QuorumCard)card);
+                case CardType.Quorum:
+                    this.CurrentGameState.QuorumDeck.Discard((Cards.QuorumCard)card);
                     break;
-                case DeckManager.Cards.Enums.CardType.Skill:
-                    switch (((DeckManager.Cards.SkillCard)card).CardColor)
+                case CardType.Skill:
+                    switch (((Cards.SkillCard)card).CardColor)
                     {
-                        case DeckManager.Cards.Enums.SkillCardColor.Politics:
-                            this.CurrentGameState.PoliticsDeck.Discard((DeckManager.Cards.SkillCard)card);
+                        case SkillCardColor.Politics:
+                            CurrentGameState.PoliticsDeck.Discard((Cards.SkillCard)card);
                             break;
-                        case DeckManager.Cards.Enums.SkillCardColor.Leadership:
-                            this.CurrentGameState.LeadershipDeck.Discard((DeckManager.Cards.SkillCard)card);
+                        case SkillCardColor.Leadership:
+                            CurrentGameState.LeadershipDeck.Discard((Cards.SkillCard)card);
                             break;
-                        case DeckManager.Cards.Enums.SkillCardColor.Tactics:
-                            this.CurrentGameState.TacticsDeck.Discard((DeckManager.Cards.SkillCard)card);
+                        case SkillCardColor.Tactics:
+                            CurrentGameState.TacticsDeck.Discard((Cards.SkillCard)card);
                             break;
-                        case DeckManager.Cards.Enums.SkillCardColor.Engineering:
-                            this.CurrentGameState.EngineeringDeck.Discard((DeckManager.Cards.SkillCard)card);
+                        case SkillCardColor.Engineering:
+                            CurrentGameState.EngineeringDeck.Discard((Cards.SkillCard)card);
                             break;
-                        case DeckManager.Cards.Enums.SkillCardColor.Piloting:
-                            this.CurrentGameState.PilotingDeck.Discard((DeckManager.Cards.SkillCard)card);
+                        case SkillCardColor.Piloting:
+                            CurrentGameState.PilotingDeck.Discard((Cards.SkillCard)card);
                             break;
-                        case DeckManager.Cards.Enums.SkillCardColor.Treachery:
-                            this.CurrentGameState.TreacheryDeck.Discard((DeckManager.Cards.SkillCard)card);
+                        case SkillCardColor.Treachery:
+                            CurrentGameState.TreacheryDeck.Discard((Cards.SkillCard)card);
                             break;
                     }
                     break;
             }
-            return;
         }
     }
 }
