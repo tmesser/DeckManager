@@ -44,6 +44,7 @@ namespace DeckManager.States
         public LoyaltyDeck LoyaltyDeck { get; set; }
         public DestinyDeck DestinyDeck { get; set; }
         public QuorumDeck QuorumDeck { get; set; }
+        public MissionDeck MissionDeck { get; set; }
 
         private SkillCardDeck _leadershipDeck;
         public SkillCardDeck LeadershipDeck
@@ -107,6 +108,10 @@ namespace DeckManager.States
                 if (value.DeckColor == SkillCardColor.Treachery)
                     _treacheryDeck = value;
             }
+        }
+        public string toBBCode()
+        {
+            return "not implemented";
         }
     }
 }

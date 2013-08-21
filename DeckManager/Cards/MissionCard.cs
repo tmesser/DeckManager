@@ -4,7 +4,7 @@ using DeckManager.Cards.Enums;
 
 namespace DeckManager.Cards
 {
-    public class CrisisCard : BaseCard
+    public class MisisonCard : BaseCard
     {
 
 
@@ -16,7 +16,7 @@ namespace DeckManager.Cards
         /// </value>
         public override CardType CardType
         {
-            get { return CardType.Crisis; }
+            get { return CardType.Mission; }
         }
 
         /// <summary>
@@ -62,14 +62,14 @@ namespace DeckManager.Cards
         /// Formats the object for posts on BBCode forums
         /// </summary>
         /// <returns></returns>
-        public override string ToBBCode()
+        public string toBBCode()
         {
-            throw new NotImplementedException();
+            return "not implemented";
         }
 
         public override string ToString()
         {
-            return this.Heading+"\n"+this.AdditionalText+"\n"+this.Activation+" "+ this.JumpPrep;
+            return base.ToString();
         }
     }
 }
