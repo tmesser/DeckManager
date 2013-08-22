@@ -183,7 +183,7 @@ namespace DeckManagerOutput
 
             foreach (DeckManager.Cards.SkillCard card in cards)
             {
-                Program.GManager.discardCard(card);
+                Program.GManager.DiscardCard(card);
                 characterSkillHandListBox.Items.Remove(card);
             }
         }
@@ -202,7 +202,7 @@ namespace DeckManagerOutput
 
             foreach (DeckManager.Cards.QuorumCard card in cards)
             {
-                Program.GManager.discardCard(card);
+                Program.GManager.DiscardCard(card);
                 currentCharacter.Discard(card);
                 characterQuorumHandListBox.Items.Remove(card);
             }
@@ -221,7 +221,7 @@ namespace DeckManagerOutput
 
             foreach (DeckManager.Cards.BaseCard card in cards)
             {
-                Program.GManager.discardCard(card);
+                Program.GManager.DiscardCard(card);
                 drawnCardListBox.Items.Remove(card);
             }
         }
