@@ -135,5 +135,10 @@ namespace DeckManager
                     break;
             }
         }
+        public void DiscardCards(IEnumerable<Cards.BaseCard> cards)
+        {
+            foreach (Cards.BaseCard card in cards)
+                DiscardCard(card);
+        }
     }
 }

@@ -62,6 +62,9 @@ namespace DeckManager.ManagerLogic
                     else if (!scaHit && Consequences.Exists(x => x.Threshold == -1))
                     {
                         //TODO: 0-strength card consequences should probably be attached to the card, not the consequence.
+                        // CPS: The consequence here is when the crisis skill check has the 3-dot symbol on it, indicating
+                        //      that the effect happens when someone plays a card with a SCA into the check. We should probably add
+                        //      Consequences to SkillCards to account for those.
                         scaHit = true;
                         results.Add(Consequences.Find(x => x.Threshold == -1));    // SCA consequence only happens once
                     }
