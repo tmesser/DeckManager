@@ -1,0 +1,1535 @@
+<?xml version="1.0"?>
+<ROOT>
+  <POLdeck>
+    <card>
+      <text>Politics-1 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-1 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-1 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-1 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-1 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-1 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-1 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-1 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-2 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-2 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-2 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-2 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-2 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-2 (Consolidate Power)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-3 (Investigative Committee)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-3 (Investigative Committee)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-3 (Investigative Committee)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-3 (Investigative Committee)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-4 (Investigative Committee)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-4 (Investigative Committee)</text>
+      <type>POL</type>
+    </card>
+    <card>
+      <text>Politics-5 (Investigative Committee)</text>
+      <type>POL</type>
+    </card>
+  </POLdeck>
+  <LEAdeck>
+    <card>
+      <text>Leadership-1 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-1 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-1 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-1 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-1 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-1 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-1 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-1 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-2 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-2 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-2 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-2 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-2 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-2 (Executive Order)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-3 (Declare Emergency)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-3 (Declare Emergency)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-3 (Declare Emergency)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-3 (Declare Emergency)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-4 (Declare Emergency)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-4 (Declare Emergency)</text>
+      <type>LEA</type>
+    </card>
+    <card>
+      <text>Leadership-5 (Declare Emergency)</text>
+      <type>LEA</type>
+    </card>
+  </LEAdeck>
+  <TACdeck>
+    <card>
+      <text>Tactics-1 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-1 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-1 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-1 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-1 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-1 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-1 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-1 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-2 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-2 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-2 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-2 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-2 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-2 (Launch Scout)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-3 (Strategic Planning)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-3 (Strategic Planning)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-3 (Strategic Planning)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-3 (Strategic Planning)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-4 (Strategic Planning)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-4 (Strategic Planning)</text>
+      <type>TAC</type>
+    </card>
+    <card>
+      <text>Tactics-5 (Strategic Planning)</text>
+      <type>TAC</type>
+    </card>
+  </TACdeck>
+  <PILdeck>
+    <card>
+      <text>Piloting-1 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-1 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-1 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-1 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-1 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-1 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-1 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-1 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-2 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-2 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-2 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-2 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-2 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-2 (Evasive Maneuvers)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-3 (Maximum Firepower)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-3 (Maximum Firepower)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-3 (Maximum Firepower)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-3 (Maximum Firepower)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-4 (Maximum Firepower)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-4 (Maximum Firepower)</text>
+      <type>PIL</type>
+    </card>
+    <card>
+      <text>Piloting-5 (Maximum Firepower)</text>
+      <type>PIL</type>
+    </card>
+  </PILdeck>
+  <ENGdeck>
+    <card>
+      <text>Engineering-1 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-1 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-1 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-1 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-1 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-1 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-1 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-1 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-2 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-2 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-2 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-2 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-2 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-2 (Repair)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-3 (Scientific Research)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-3 (Scientific Research)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-3 (Scientific Research)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-3 (Scientific Research)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-4 (Scientific Research)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-4 (Scientific Research)</text>
+      <type>ENG</type>
+    </card>
+    <card>
+      <text>Engineering-5 (Scientific Research)</text>
+      <type>ENG</type>
+    </card>
+  </ENGdeck>
+  <TREdeck />
+  <NEWCAPRICACRISISdeck />
+  <DESTINYdeck />
+  <CRISISdeck>
+    <card>
+      <text>CRISIS: Jump Computer Failure 
+
+Skill check: TAC /ENG = 7 
+PASS: No Effect 
+FAIL: -1 Population, -1 Jump Prep 
+
+POST CRISIS: Launch Raiders | NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CYLON ATTACK: Ambush 
+
+1. Launch Nukes 
+2. Setup: ALPHA: 4 Raiders CHARLIE: 1 Civilian Ship DELTA: 1 Basestar, 4 Raiders ECHO: 2 Vipers, 1 Civilian Ship FOXTROT: 1 Civilian Ship 
+3. Special Rule - Training New Pilots: Until the next jump, all unmanned vipers have -2 to their attack rolls.</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Build Cylon Detector 
+
+Admiral Chooses: 
+-1 nuke token
+OR 
+-1 Morale and the Admiral discards 2 skill cards
+
+Post-Crisis: Activate Heavies, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Food Shortage 
+
+President Chooses: 
+-2 Food
+OR 
+-1 Food and the President discards 2 Skill Cards, then the current player discards 3 Skill Cards
+
+Post-Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Food Shortage 
+
+President Chooses: 
+-2 Food
+OR 
+-1 Food and the President discards 2 Skill Cards, then the current player discards 3 Skill Cards
+
+Post-Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Food Shortage 
+
+President Chooses: 
+-2 Food
+OR 
+-1 Food and the President discards 2 Skill Cards, then the current player discards 3 Skill Cards
+
+Post-Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Water Shortage
+
+President Chooses: 
+-1 Food
+OR 
+the President discards 2 Skill Cards, then the current player discards 3 Skill Cards
+
+Post-Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Water Shortage
+
+President Chooses: 
+-1 Food
+OR 
+the President discards 2 Skill Cards, then the current player discards 3 Skill Cards
+
+Post-Crisis: Launch Nukes, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Water Shortage
+
+President Chooses: 
+-1 Food
+OR 
+the President discards 2 Skill Cards, then the current player discards 3 Skill Cards
+
+Post-Crisis: Launch Nukes, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Water Shortage
+
+President Chooses: 
+-1 Food
+OR 
+the President discards 2 Skill Cards, then the current player discards 3 Skill Cards
+
+Post-Crisis: Launch Nukes, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Water Shortage
+
+President Chooses: 
+-1 Food
+OR 
+the President discards 2 Skill Cards, then the current player discards 3 Skill Cards
+
+Post-Crisis: Launch Nukes, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CYLON ATTACK: Besieged 
+1. Activate Raiders 
+2. Setup: ALPHA: Civilian Ship BRAVO Civilian Ship DELTA: Heavy Raider ECHO: Basestar FOXTROT: 4 Raiders, 2 Vipers, 1 Civilian Ship 
+3. Special Rule - Heavy Casualties: The 4 Raiders that were just setup are immediately activated.</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Cylon Tracking Device 
+
+Skill check: TAC/PIL/ENG = 10 
+PASS: No Effect 
+FAIL: Destroy 1 raptor and place a basestar in ALPHA and 2 civilian ships in DELTA. 
+
+Post-Crisis: Activate Raiders, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Guilt By Collusion 
+
+Skill check: LEA/TAC = 9 
+PASS: The current player may choose a character to move to the brig. 
+FAIL: -1 Morale 
+
+Post-Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Riots 
+
+Admiral Chooses: 
+-1 Food, -1 Morale
+OR 
+-1 Population, -1 Fuel
+
+Post Crisis: Launch Raiders, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Riots
+
+Admiral Chooses: 
+-1 Food, -1 Morale
+OR 
+-1 Population, -1 Fuel 
+
+Post Crisis: Launch Nukes, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Informing the Public 
+
+Current Player Chooses: 
+Skill check: POL/LEA = 7 
+Pass: Current player looks at one loyalty card belonging to any player. 
+FAIL: -2 Morale
+
+OR 
+
+Roll a die. On a 4 or less, -1 pop, -1 morale. 
+
+Post Crisis: Activate Raiders, +1 jump prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Rescue Mission 
+
+Admiral Chooses 
+-1 morale and the current player is moved to sickbay
+OR 
+-1 fuel and destroy 1 raptor 
+
+Post-Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Rescue Mission 
+
+Admiral Chooses 
+-1 morale and the current player is moved to sickbay
+OR 
+-1 fuel and destroy 1 raptor 
+
+Post-Crisis: Launch Nukes, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CYLON ATTACK: Raiding Party  
+
+1. Activate Raiders 
+2. Setup: CHARLIE: Basestar, 3 raiders DELTA: 2 heavy raiders, 2 raiders ECHO: Civilian Ship FOXTROT: 2 Vipers, 2 Civilian Ships 
+3. Special Rule - FTL Failure: -1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CYLON ATTACK: Thirty-Three 
+
+1. Activate Raiders 
+2. Setup: ALPHA: Basestar CHARLIE: Civilian Ship DELTA: Civilian Ship ECHO: Viper, Civilian Ship FOXTROT: Viper, Civilian Ship 
+3. Special Rule - Relentless Pursuit: Keep this card in play. If the fleet jumps before a civilian ship or basestar is destroyed, reshuffle this crisis into the deck.</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CYLON ATTACK: Surrounded 
+
+1. Launch Nukes 
+2. Setup: ALPHA: 4 Raiders BRAVO: Basestar CHARLIE: 3 raiders, 1 heavy raider DELTA: Civilian Ship ECHO: Viper, Civilian Ship FOXTROT: Viper, Civilian Ship 
+3. Special Rule - Panic: The current player discards 3 Skill Cards</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CYLON ATTACK: Heavy Assault 
+
+1. Activate Raiders 
+2. Setup: ALPHA: Basestar BRAVO: Basestar DELTA: Civilian Ship ECHO: Civilian Ship FOXTROT: 1 Viper, Civilian Ship 
+3. Special Rule - Heavy Bombardment: Launch Nukes</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CYLON ATTACK: Cylon Swarm 
+
+1. Launch Nukes 
+2. Setup: ALPHA: Basestar, 5 Raiders BRAVO: 1 Heavy DELTA: Civilian ECHO: Viper, Civilian FOXTROT: Viper, Civilian 
+3. Special Rule - Massive Deployment: Keep this card in play until the fleet jumps. Each time a basestar launches Raiders or Heavy Raiders, it launches 1 additional of the same type.</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CYLON ATTACK:  Tactical Strike 
+
+1. Activate Raiders 
+2. Setup: ALPHA: Heavy Raider CHARLIE: Civilian Ship DELTA: Civilian Ship ECHO: 2 Vipers, Civilian Ship FOXTROT: 5 Raiders, 1 Basestar 
+3. Special Rule - Hangar Assault: Damage 2 Vipers in the reserves.</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CYLON ATTACK: Boarding Parties 
+
+1. Activate Heavy Raiders 
+2. Setup: ALPHA: 2 Heavy Raiders BRAVO: Basestar, 4 Raiders CHARLIE: 2 Heavy Raiders DELTA: Civilian Ship ECHO: 2 Civilian Ships
+3. Special Rule - Surprise Assault: There are no vipers in this setup</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CYLON ATTACK: Jammed Assault 
+
+1. Activate Raiders 
+2. Setup: ALPHA Civilian Ship BRAVO: 4 Raiders CHARLIE: 1 Basestar, 2 Heavy Raiders DELTA: Civilian Ship ECHO: Viper, Civilian Ship FOXTROT: Viper, Civilian Ship 
+3. Special Rule - Communications Jamming: Until the fleet jumps, no player may activate the Communications location.</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: A Traitor Accused 
+
+Current Player Chooses 
+Skill check: POL/LEA = 8 
+PASS: No Effect 
+FAIL: The current player chooses a character to send to the brig.
+
+OR 
+
+The current player discards 5 Skill Cards 
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Cylon Screenings 
+
+Current Player Chooses 
+Skill check: POL/LEA = 9 
+PASS: No Effect 
+FAIL: -1 Morale and the current player looks at a random Loyalty Card belonging to the President or Admiral. 
+
+OR 
+
+Each player discards 2 Skill Cards 
+
+Post Crisis: Activate Raiders, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Admiral Grilled 
+
+Current Player Chooses 
+Skill check: POL/LEA = 9 
+PASS: No Effect 
+FAIL: -1 Morale and the Admiral discards 2 Skill Cards
+
+OR 
+
+-1 Morale 
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Fulfiller of Prophecy 
+
+Current Player Chooses 
+Skill check: POL/LEA = 6 
+PASS: The Current Player draws 1 Politics card 
+FAIL: -1 Population
+
+OR 
+
+The current player discards 1 Skill Card; after this crisis is finished resolving, draw and resolve a new Crisis card
+
+Post Crisis: Launch Nukes, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Scouting For Fuel 
+
+Current Player Chooses 
+Skill check: TAC/PIL = 12 
+PASS: +1 Fuel 
+FAIL: -1 Fuel and destroy 1 raptor
+
+OR 
+
+Roll a die; if 4 or lower, -1 Fuel
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Scouting For Water 
+
+Current Player Chooses 
+Skill check: TAC/PIL = 9 
+PASS: +1 Food 
+FAIL: -1 Fuel and destroy 1 raptor
+
+OR 
+
+-1 Food
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Water Sabotaged 
+
+Current Player Chooses 
+Skill check: POL/LEA/TAC = 13 
+PASS: No Effect 
+FAIL: -2 Food
+
+OR 
+
+-1 Food
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Bomb Threat 
+
+Current Player Chooses 
+Skill check: POL/LEA/TAC = 13 
+PASS: No Effect 
+FAIL: -1 Morale and draw a civilian ship and destroy it 
+
+OR 
+
+Roll a die; on a 4 or less, trigger the FAIL condition of this Crisis
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Keep Tabs on Visitor 
+
+Current Player Chooses 
+Skill check: POL/LEA/TAC = 12 
+PASS: No Effect 
+FAIL: Roll a die. If 4 or less, -2 population
+
+OR 
+
+The Current Player discards 4 Skill Cards at random.
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Crippled Raider 
+
+Current Player Chooses 
+Skill check: TAC/ENG = 10 
+PASS: +1 Jump Prep 
+FAIL: -1 Population
+
+OR 
+
+Roll a die. If 4 or lower, place 3 raiders in ALPHA and 1 civilian ship in DELTA
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Analyze Enemy Fighter 
+
+Current Player Chooses 
+Skill check: TAC/ENG = 7 
+PASS: Repair one destroyed Raptor 
+FAIL: -1 Population
+
+OR 
+
+Roll a die. If 4 or lower, -1 population and the current player discards 2 Skill Cards 
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Send Survey Team 
+
+Current Player Chooses 
+Skill check: TAC/PIL/ENG = 15 
+PASS: No Effect 
+FAIL: The current player is sent to Sickbay and destroy one raptor.
+
+OR 
+
+Roll a die. If 5 or lower, -1 Fuel 
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Forced Water Mining 
+
+Current Player Chooses 
+Skill check: POL/LEA/TAC/ENG = 17 
+PASS: +1 Food 
+FAIL: -1 Population, -1 Morale
+
+OR 
+
++1 Food, -1 Morale and each player discards one random Skill Card 
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Network the Computers 
+
+Current Player Chooses 
+Skill check: POL/TAC/ENG = 11 
+PASS: +1 Jump Prep 
+FAIL: -1 Population and place 1 Centurion marker at the start of the boarding party track
+
+OR 
+
+-1 Population and -1 Jump Prep
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Colonial Day 
+
+Current Player Chooses 
+Skill check: POL/TAC = 10 
+PASS: +1 Morale 
+FAIL: -2 Morale
+
+OR 
+
+-1 Morale
+
+Post Crisis: Launch Nukes, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Rescue The Fleet 
+
+Admiral Chooses 
+-2 Population
+OR 
+-1 morale. Setup: ALPHA: Basestar DELTA: 3 Civilian Ships
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Rescue The Fleet 
+
+Admiral Chooses 
+-2 Population
+OR 
+-1 morale. Setup: ALPHA: Basestar DELTA: 3 Civilian Ships
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Rescue Caprica Survivors 
+
+President Chooses 
+-1 Fuel, -1 Food, +1 Population
+OR 
+-1 Morale
+
+Post Crisis: Activate Raiders, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Declare Martial Law 
+
+Admiral Chooses 
+-1 Morale and the Admiral receives the President title
+OR 
+-1 Population and the Admiral discards 2 Skill Cards
+
+Post Crisis: Launch Nukes, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Sleep Deprivation 
+
+Admiral Chooses 
+Return all undamaged Vipers in space to the Reserves; current player moves to Sickbay
+OR 
+-1 Morale
+
+Post Crisis: Launch Nukes, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Requested Resignation 
+
+Admiral Chooses 
+The Admiral and President discard 2 Skill Cards
+
+OR 
+
+The President Chooses 
+Give President Title to Admiral
+OR 
+Move to Brig
+
+Post Crisis: Launch Nukes, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Mandatory Testing 
+
+Skill check: POL/LEA = 13 
+PASS: The President looks at 1 random Loyalty Card of the current player. 
+9+: No Effect 
+FAIL: -1 Morale 
+
+Post Crisis: Activate Heavies, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Weapon Malfunction 
+
+Skill check: TAC/PIL/ENG = 11 
+PASS: No Effect 
+FAIL: Damage 2 Vipers in space areas. All characters in Weapons Control are sent to Sickbay. 
+
+Post Crisis: Launch Raiders, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Security Breach 
+
+Skill check: LEA/TAC = 6 
+PASS: No Effect 
+FAIL: -1 Morale and all characters in the Command location are sent to Sickbay. 
+
+Post Crisis: Launch Raiders, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Terrorist Bomber 
+
+Skill check: LEA/TAC = 9 
+PASS: No Effect 
+FAIL: -1 Morale and the current player is sent to Sickbay. 
+
+Post Crisis: Activate Heavies, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Low Supplies 
+
+Skill check: POL/LEA = 7 
+Pass: No Effect 
+Fail: -1 Morale; if Food is less than 6, -1 additional Morale.
+
+Post Crisis: Activate Raiders, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Prisoner Revolt 
+
+Skill check: POL/LEA/TAC = 11 
+PASS: No Effect 
+6+: -1 Population 
+FAIL: -1 Population and the President chooses another player to receive the President title. 
+
+Post Crisis: Activate Heavies, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Resistance 
+
+Skill check: POL/LEA/TAC = 11 
+PASS: No Effect 
+9+: -1 Food 
+FAIL: -1 Food, -1 Fuel 
+
+Post Crisis: Activate Heavies, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Legendary Discovery 
+
+Skill check: TAC/PIL = 14 
+PASS: +1 Distance 
+FAIL: -1 Food and destroy 1 raptor. 
+
+Post Crisis: Activate Heavies, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Missing G4 Explosives 
+
+Skill check: LEA/TAC = 7 
+PASS: No Effect 
+FAIL: -1 Food and all characters in the Armory location are sent to the Brig. 
+
+Post Crisis: Activate Raiders, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Elections Loom 
+
+Skill check: POL/LEA = 8 
+PASS: No effect 
+5+: -1 Morale 
+FAIL: -1 Morale and the President discards 4 Skill Cards 
+
+Post Crisis: Activate Heavies, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Crash Landing 
+
+Skill check: TAC/PIL = 6 
+PASS: No Effect 
+FAIL: The Admiral Chooses 
+-1 Fuel
+OR 
+-1 Morale and the current player is sent to Sickbay.
+
+Post Crisis: Activate Heavies, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Hangar Accident 
+
+Skill check: TAC/PIL/ENG = 10 
+PASS: No Effect 
+7+: -1 Population 
+FAIL: -1 Population and damage two vipers in the reserves. 
+
+Post Crisis: Activate Heavies, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Prison Labor 
+
+Skill check: POL/LEA/TAC = 10 
+PASS: No Effect 
+FAIL: -1 morale, -1 food 
+
+Post Crisis: Activate Raiders, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Cylon Accusation 
+
+Skill check: POL/LEA/TAC = 10 
+PASS: No Effect 
+FAIL: The current player is sent to the Brig. 
+
+Post Crisis: Activate Raiders, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Unexpected Reunion 
+
+Skill check: POL/LEA/TAC = 8 
+PASS: No Effect 
+FAIL: -1 Morale and the current player discards his hand of Skill Cards. 
+
+Post Crisis: Activate Raiders, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Terrorist Investigations 
+
+Skill check: POL/LEA = 12 
+PASS: Current player looks at 1 random Loyalty Card belonging to any player. 
+6+: No Effect 
+FAIL: -1 Morale 
+
+Post Crisis: Activate Heavies, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Detector Sabotage 
+
+Skill check: LEA/TAC = 8 
+PASS: No Effect 
+FAIL: All characters in the Research Lab are moved to Sickbay. Until the end of the game, no players may look at other players' Loyalty Cards. 
+
+Post Crisis: Activate Heavies, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Loss of a Friend 
+
+Skill check: POL/LEA = 9 
+PASS: No Effect 
+7+: The current player discards 2 Skill Cards 
+FAIL: -1 Morale and the current player discards 2 Skill Cards 
+
+Post Crisis: Activate Heavies, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: The Olympic Carrier 
+
+Skill check: POL/LEA/PIL = 11 
+Pass: No Effect 
+8+: -1 Population 
+FAIL: -1 Morale, -1 Population 
+
+Post Crisis: Activate Heavies, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Witch Hunt 
+
+Skill check: POL/LEA = 10 
+PASS: No Effect 
+6+: -1 Morale 
+FAIL: -1 Morale, current player chooses a character and moves him to Sickbay. 
+
+Post Crisis: Activate Heavies, +1 Jump Prep</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Unidentified Ship 
+
+Skill check: TAC/PIL = 10 
+PASS: No Effect 
+FAIL: -1 Population 
+
+Post Crisis: Launch Raiders, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+    <card>
+      <text>CRISIS: Cylon Virus 
+
+Skill check: TAC/ENG = 13 
+PASS: No Effect 
+FAIL: All characters in FTL Control move to Sickbay. Then place 1 Centurion marker at the beginning of the Boarding Track. 
+
+Post Crisis: Launch Raiders, NO JUMP PREP</text>
+      <type>CRISIS</type>
+    </card>
+  </CRISISdeck>
+  <SUPERCRISISdeck>
+    <card>
+      <text>SUPER CRISIS: Massive Assault 
+1. Activate Heavies, Launch Nukes 
+2. Setup: BRAVO: Basestar, 4 Raiders CHARLIE: Basestar, 2 Raiders, 1 Heavy ECHO: Viper, 2 Civilian Ships FOXTROT: Viper, 2 Civilian Ships 
+3. -2 Jump Prep</text>
+      <type>SUPERCRISIS</type>
+    </card>
+    <card>
+      <text>SUPER CRISIS: Bomb On Colonial One 
+
+Skill check: TAC/PIL/ENG = 15 
+PASS: No Effect 
+FAIL: -2 Morale, all characters in Administration, President's Office, and Press Room are sent to Sickbay. Until the end of the game, no player may move to or activate Administration, President's Office, and Press Room.</text>
+      <type>SUPERCRISIS</type>
+    </card>
+    <card>
+      <text>SUPER CRISIS: Cylon Intruders 
+
+Skill check: LEA/TAC = 18 
+PASS: No Effect 
+14+: Place 1 Centurion marker at the beginning of the Boarding Party track. 
+FAIL: Damage Galactica once and place 2 Centurion markers at the beginning of the Boarding Party track.</text>
+      <type>SUPERCRISIS</type>
+    </card>
+    <card>
+      <text>SUPER CRISIS: Fleet Mobilization 
+
+Skill check: LEA/TAC/PIL/ENG = 24 
+PASS: Launch Nukes, Launch Raiders 
+FAIL: Launch Nukes, Activate Raiders, Activate Heavies, Launch Raiders</text>
+      <type>SUPERCRISIS</type>
+    </card>
+    <card>
+      <text>SUPER CRISIS: Inbound Nukes 
+
+Skill check: LEA/TAC = 15 
+PASS: No Effect 
+FAIL: -1 Fuel, -1 Food, -1 Population</text>
+      <type>SUPERCRISIS</type>
+    </card>
+  </SUPERCRISISdeck>
+  <QUORUMdeck>
+    <card>
+      <text>INSPIRATIONAL SPEECH
+
+Action: Roll a die. If 6 or higher, gain 1 morale and remove this card from the game. Otherwise, no effect and discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>INSPIRATIONAL SPEECH
+
+Action: Roll a die. If 6 or higher, gain 1 morale and remove this card from the game. Otherwise, no effect and discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>INSPIRATIONAL SPEECH
+
+Action: Roll a die. If 6 or higher, gain 1 morale and remove this card from the game. Otherwise, no effect and discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>INSPIRATIONAL SPEECH
+
+Action: Roll a die. If 6 or higher, gain 1 morale and remove this card from the game. Otherwise, no effect and discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>FOOD RATIONING
+
+Action: Roll a die. If 6 or higher, gain 1 food and remove this card from the game. Otherwise, no effect and discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>FOOD RATIONING
+
+Action: Roll a die. If 6 or higher, gain 1 food and remove this card from the game. Otherwise, no effect and discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>ARREST ORDER
+
+Action: Chose a character and send him to the 'Brig' location. Then discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>ARREST ORDER
+
+Action: Chose a character and send him to the 'Brig' location. Then discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>AUTHORIZATION OF BRUTAL FORCE
+
+Action: Destroy 3 raiders, 1 heavy raider, or 1 centurion. Then roll a die and if 2 or less, lose 1 population. Then discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>AUTHORIZATION OF BRUTAL FORCE
+
+Action: Destroy 3 raiders, 1 heavy raider, or 1 centurion. Then roll a die and if 2 or less, lose 1 population. Then discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>RELEASE CYLON MUGSHOT
+
+Action: Look at 1 random Loyalty Card belonging to any other player, then roll a die. If 3 or less, lose 1 morale. Then discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>PRESIDENTIAL PARDON
+
+Action: Move any other character from the 'Brig' to any other location on Galactica.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>ASSIGN MISSION SPECIALIST
+
+Action: Draw 2 politics cards and give this card to any other player. Keep this card in play. The next time the Fleet jumps, this player chooses the destination instead of the Admiral. He draws 3 Destination Card (instead of 2) and chooses 1. Then discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>ACCEPT PROPHECY
+
+Action: Draw 1 Skill Card of any type (it may be from outside your skill set). Keep this card in play. When a player activates Administration or chooses the President with the Admiral's Quarters location, increase the difficulty by 2 then discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>ASSIGN ARBITRATOR
+
+Action: Draw 2 politics cards and give this card to any other player. Keep this card in play. When a player activates the Admiral's Quarters location, this player may discard this card to reduce or increase the difficulty by 3.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>ENCOURAGE MUTINY
+
+Action: Choose any other player (excluding the Admiral). That player rolls a die. If 3 or higher, he receives the Admiral title. Otherwise lose 1 morale. Discard this card.</text>
+      <type>QUORUM</type>
+    </card>
+    <card>
+      <text>ASSIGN VICE PRESIDENT
+
+Action: Draw 2 politics cards and give this card to any other player. Keep this card in play. While this player is not President other players may not be chosen with the Administration location.</text>
+      <type>QUORUM</type>
+    </card>
+  </QUORUMdeck>
+  <DESTINATIONdeck>
+    <card>
+      <text>Desolate Moon 
+
+Distance 3 
+Lose 3 Fuel.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Cylon Ambush 
+
+Distance 3 
+Lose 1 Fuel. Then place 1 basestar and 3 raiders in sector ALPHA and 3 civilian ships in sector DELTA.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Asteroid Field 
+
+Distance 3 
+Lose 2 Fuel. Then draw 1 civilian ship and destroy it, losing the resources on the back.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Asteroid Field 
+
+Distance 3 
+Lose 2 Fuel. Then draw 1 civilian ship and destroy it, losing the resources on the back.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Remote Planet 
+
+Distance 2 
+Lose 1 Fuel and destroy one raptor.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Remote Planet 
+
+Distance 2 
+Lose 1 Fuel and destroy one raptor.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Remote Planet 
+
+Distance 2 
+Lose 1 Fuel and destroy one raptor.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Deep Space 
+
+Distance 2 
+Lose 1 Fuel and 1 Morale.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Deep Space 
+
+Distance 2 
+Lose 1 Fuel and 1 Morale.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Deep Space 
+
+Distance 2 
+Lose 1 Fuel and 1 Morale.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Barren Planet 
+
+Distance 2 
+Lose 2 Fuel.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Barren Planet 
+
+Distance 2 
+Lose 2 Fuel.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Barren Planet 
+
+Distance 2 
+Lose 2 Fuel.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Barren Planet 
+
+Distance 2 
+Lose 2 Fuel.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Cylon Refinery 
+
+Distance 2 
+Lose 1 Fuel. The Admiral may risk 2 vipers to roll a die. If 6+, gain 2 Fuel. Otherwise, damage 2 vipers.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Tylium Planet 
+
+Distance 1 
+Lose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 2 fuel. Otherwise, destroy one raptor.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Tylium Planet 
+
+Distance 1 
+Lose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 2 fuel. Otherwise, destroy one raptor.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Tylium Planet 
+
+Distance 1 
+Lose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 2 fuel. Otherwise, destroy one raptor.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Tylium Planet 
+
+Distance 1 
+Lose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 2 fuel. Otherwise, destroy one raptor.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Icy Moon 
+
+Distance 1 
+Lose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 1 Food. Otherwise, destroy 1 raptor.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Icy Moon 
+
+Distance 1 
+Lose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 1 Food. Otherwise, destroy 1 raptor.</text>
+      <type>DESTINATION</type>
+    </card>
+    <card>
+      <text>Ragnar Anchorage 
+
+Distance 1 
+The Admiral may repair up to 3 vipers and 1 raptor. These ships may be damaged or even destroyed.</text>
+      <type>DESTINATION</type>
+    </card>
+  </DESTINATIONdeck>
+</ROOT>
