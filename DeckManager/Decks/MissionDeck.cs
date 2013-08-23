@@ -19,6 +19,7 @@ namespace DeckManager.Decks
 
             Deck = cardsFromBox;
             Deck = Shuffle(Deck);
+            Discarded = new List<MissionCard>();
         }
     }
 }

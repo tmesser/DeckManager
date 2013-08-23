@@ -5,7 +5,7 @@ namespace DeckManager.Cards
     public class SuperCrisisCard : CrisisCard
     {
         /// <summary>
-        /// Reports that this is a crisis card.
+        /// Reports that this is a super crisis card.
         /// </summary>
         /// <value>
         /// The type of the card.

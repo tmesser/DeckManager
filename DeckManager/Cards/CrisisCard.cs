@@ -36,6 +36,15 @@ namespace DeckManager.Cards
         public string AdditionalText { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of choices on this crisis card
+        /// </summary>
+        public List<object> choices { get; set; }  // choices can be skill checks or strings like "-1 Morale and damage Galatica twice"
+        /// <summary>
+        /// Gets or sets the chooser on this crisis card
+        /// </summary>
+        public DeckManager.Characters.Enums.Titles chooser {get;set;}
+
+        /// <summary>
         /// Gets or sets the positive card colors.
         /// </summary>
         /// <value>

@@ -6,7 +6,7 @@ namespace DeckManager.Cards
     {
 
         /// <summary>
-        /// Gets or sets the heading. Basic display stuff, LEA-2 XO or whatever.
+        /// Name of the Card (e.g. "Executive Order")
         /// </summary>
         /// <value>
         /// The heading.
@@ -58,7 +58,10 @@ namespace DeckManager.Cards
         {
             throw new System.NotImplementedException();
         }
-
+        /// <summary>
+        /// Returns card summary for ListBox controls (e.g. "LEA-2 Executive Order")
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return CardColor + " " + CardPower + " " + Heading;

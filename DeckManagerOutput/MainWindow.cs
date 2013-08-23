@@ -49,45 +49,50 @@ namespace DeckManagerOutput
 
         private void PolDeckButtonClick(object sender, EventArgs e)
         {
-
             drawnCardListBox.BeginUpdate();
-            //DeckManager.Cards.SkillCard card = Program.gManager.CurrentGameState.PoliticsDeck.Draw();
-
-            var card = new DeckManager.Cards.SkillCard
-                {
-                    CardColor = DeckManager.Cards.Enums.SkillCardColor.Politics,
-                    CardPower = 5,
-                    Heading = "test Card"
-                };
-
+            DeckManager.Cards.SkillCard card = Program.GManager.CurrentGameState.PoliticsDeck.Draw();
             drawnCardListBox.Items.Add(card);
-
             drawnCardListBox.EndUpdate();
         }
 
         private void LeaDeckButtonClick(object sender, EventArgs e)
         {
-
+            drawnCardListBox.BeginUpdate();
+            DeckManager.Cards.SkillCard card = Program.GManager.CurrentGameState.LeadershipDeck.Draw();
+            drawnCardListBox.Items.Add(card);
+            drawnCardListBox.EndUpdate();   
         }
 
         private void TacDeckButtonClick(object sender, EventArgs e)
         {
-
+            drawnCardListBox.BeginUpdate();
+            DeckManager.Cards.SkillCard card = Program.GManager.CurrentGameState.TacticsDeck.Draw();
+            drawnCardListBox.Items.Add(card);
+            drawnCardListBox.EndUpdate();   
         }
 
         private void EngDeckButtonClick(object sender, EventArgs e)
         {
-
+            drawnCardListBox.BeginUpdate();
+            DeckManager.Cards.SkillCard card = Program.GManager.CurrentGameState.EngineeringDeck.Draw();
+            drawnCardListBox.Items.Add(card);
+            drawnCardListBox.EndUpdate();   
         }
 
         private void PilDeckButtonClick(object sender, EventArgs e)
         {
-
+            drawnCardListBox.BeginUpdate();
+            DeckManager.Cards.SkillCard card = Program.GManager.CurrentGameState.PilotingDeck.Draw();
+            drawnCardListBox.Items.Add(card);
+            drawnCardListBox.EndUpdate();   
         }
 
         private void TreDeckButtonClick(object sender, EventArgs e)
         {
-
+            drawnCardListBox.BeginUpdate();
+            DeckManager.Cards.SkillCard card = Program.GManager.CurrentGameState.TreacheryDeck.Draw();
+            drawnCardListBox.Items.Add(card);
+            drawnCardListBox.EndUpdate();        
         }
         private void CrisisTextBoxMeasureItem(object sender, MeasureItemEventArgs e)
         {
@@ -133,6 +138,7 @@ namespace DeckManagerOutput
                             }
                 };
 
+            //DeckManager.Cards.CrisisCard crisis = Program.GManager.CurrentGameState.CrisisDeck.Draw();          
             crisisTextListBox.Items.Add(crisis);
             crisisTextListBox.EndUpdate();
         }
@@ -166,6 +172,13 @@ namespace DeckManagerOutput
         private void BeginGameButtonClick(object sender, EventArgs e)
         {
             addPlayerButton.Enabled = false;
+
+            List<Player> players = new List<Player>();
+            players.Add(new Player());
+            players.Add(new Player());
+            players.Add(new Player());
+
+            GameState gs =  Program.GManager.NewGame(players,0,false);
         }
 
         private void EvalSkillCheckButtonClick(object sender, EventArgs e)

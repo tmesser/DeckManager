@@ -41,6 +41,7 @@ namespace DeckManager.Decks
             PilotingDeck = pilotingDeck;
             EngineeringDeck = engineeringDeck;
             PoliticsDeck = politicsDeck;
+            Discarded = new List<SkillCard>();
         }
 
         protected override void Reshuffle()

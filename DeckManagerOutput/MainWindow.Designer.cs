@@ -232,7 +232,6 @@
             // 
             // beginGameButton
             // 
-            this.beginGameButton.Enabled = false;
             this.beginGameButton.Location = new System.Drawing.Point(85, 159);
             this.beginGameButton.Name = "beginGameButton";
             this.beginGameButton.Size = new System.Drawing.Size(75, 23);
@@ -457,13 +456,13 @@
             // crisisTextListBox
             // 
             this.crisisTextListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.crisisTextListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(CrisisTextBoxDrawItem);
-            this.crisisTextListBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(CrisisTextBoxMeasureItem);
             this.crisisTextListBox.FormattingEnabled = true;
             this.crisisTextListBox.Location = new System.Drawing.Point(84, 0);
             this.crisisTextListBox.Name = "crisisTextListBox";
             this.crisisTextListBox.Size = new System.Drawing.Size(225, 173);
             this.crisisTextListBox.TabIndex = 1;
+            this.crisisTextListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.CrisisTextBoxDrawItem);
+            this.crisisTextListBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.CrisisTextBoxMeasureItem);
             // 
             // drawCrisisButton
             // 

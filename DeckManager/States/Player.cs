@@ -19,6 +19,16 @@ namespace DeckManager.States
         public int MiracleTokens { get; set; }
         public int DefaultDrawIndex { get; set; }
 
+        public Player()
+        {
+            // make sure these don't start uninitialized
+            Cards = new List<SkillCard>();
+            LoyaltyCards = new List<LoyaltyCard>();
+            CustomDraws  = new List<List<SkillCardColor>>();
+            Titles  = new List<Titles>();
+            Character = new Characters.Character();
+        }
+
         public override string ToString()
         {
             // MetricUnit (President Roslin [1], 6Q)

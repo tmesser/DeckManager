@@ -59,13 +59,13 @@ namespace DeckManager
             CurrentGameState = firstTurn;
 
             //TODO: Need a graceful way to handle Baltar here.
-            foreach (var player in playerList)
-            {
-                player.LoyaltyCards.Add(firstTurn.LoyaltyDeck.Draw());
-                DoPlayerDraw(player);
-            }
-
-            throw new NotImplementedException();
+            //foreach (var player in playerList)
+            //{
+            //    player.LoyaltyCards.Add(firstTurn.LoyaltyDeck.Draw());
+            //    DoPlayerDraw(player);
+            //}
+            return CurrentGameState;
+            //throw new NotImplementedException();
         }
 
         public void DoPlayerDraw(Player player, int drawIndex = 0)

@@ -34,7 +34,14 @@ namespace DeckManager.Decks
 
             var cardsFromBox = new List<LoyaltyCard>();
             //TODO: Import the cards via JSON/XML reader - the goddamn NuGet packages aren't working right now.  Fill up the cardsFromBox object.
-            
+            var  cardList = Initialization.XMLUtil.GetCardList(CardType.Loyalty);
+            foreach(BaseCard card in cardList)
+            {
+                cardsFromBox.Add((LoyaltyCard)card);
+            }
+
+
+
             var usedLoyaltyCards = new List<LoyaltyCard>();
             try
             {
@@ -72,6 +79,7 @@ namespace DeckManager.Decks
                 throw;
             }
             Deck = usedLoyaltyCards;
+            Discarded = new List<LoyaltyCard>();
         }
 
     }
