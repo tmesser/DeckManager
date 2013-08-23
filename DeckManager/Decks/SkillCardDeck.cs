@@ -66,24 +66,28 @@ namespace DeckManager.Decks
                 cardsFromBox.AddRange(
                     token["card"].Children().Select(
                         element => element.Value<string>("text"))
-                            .Select(
-                            headerText => new SkillCard
-                                {
-                                    Heading = headerText, 
-                                    CardColor = color, 
-                                    CardPower = headerText[headerText.IndexOfAny(new[] {'0', '1', '2', '3', '4', '5'})].ToString(CultureInfo.InvariantCulture).ParseAs<int>()
-                                }
-                            )
-                );
+                                 .Select(
+                                     headerText => new SkillCard
+                                         {
+                                             Heading = headerText,
+                                             CardColor = color,
+                                             CardPower =
+                                                 headerText[headerText.IndexOfAny(new[] {'0', '1', '2', '3', '4', '5'})]
+                                                       .ToString(CultureInfo.InvariantCulture).ParseAs<int>()
+                                         }
+                        )
+                    );
             }
             else
             {
                 // At this point we should be working with JSON, which is the superior option anyway.
-                using (var reader = new StreamReader(fileLocation))
+                using (var sr = new StreamReader(fileLocation))
                 {
-                    var json = new JsonTextReader(reader);
+                    var jsonText = sr.ReadToEnd();
+                    cardsFromBox = JsonConvert.DeserializeObject<List<SkillCard>>(jsonText);
                 }
             }
+
             Deck = cardsFromBox;
             Deck = Shuffle(Deck);
             DeckColor = color;
