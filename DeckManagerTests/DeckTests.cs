@@ -14,6 +14,20 @@ namespace DeckManagerTests
     public class DeckTests
     {
         [Test]
+        public void Should_Read_Crisis_Xml()
+        {
+            var constructedDeck = new CrisisDeck(null, @"..\..\TestContent\Core.xml", true);
+            Assert.AreEqual(constructedDeck.Deck.Count, 70);
+        }
+
+        [Test]
+        public void Should_Read_Crisis_Json()
+        {
+            var constructedDeck = new CrisisDeck(null, @"..\..\TestContent\Crisis.json", false);
+            Assert.AreEqual(constructedDeck.Deck.Count, 70);
+        }
+
+        [Test]
         public void Should_Read_Engineering_Xml()
         {
             var constructedDeck = new SkillCardDeck(null, SkillCardColor.Engineering, @"..\..\TestContent\Core.xml", true);

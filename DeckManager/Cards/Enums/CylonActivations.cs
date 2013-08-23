@@ -3,6 +3,7 @@
     public enum CylonActivations
     {
         Unknown,
+        None,
         Raiders,
         LaunchRaiders,
         HeavyRaiders,

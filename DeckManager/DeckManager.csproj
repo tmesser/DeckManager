@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Content\Crisis.json" />
     <None Include="Content\EngineeringDeck.json" />
     <None Include="Content\LeadershipDeck.json" />
     <None Include="Content\PilotingDeck.json" />
