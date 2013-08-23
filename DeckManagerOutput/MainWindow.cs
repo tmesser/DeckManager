@@ -155,10 +155,10 @@ namespace DeckManagerOutput
 
         private void AddPlayerButtonClick(object sender, EventArgs e)
         {
-            ListBox characterList = new ListBox();
+            var characterList = new ListBox();
             // populate list of characters
 
-            NewPlayerForm newPlayer = new NewPlayerForm(characterList);
+            var newPlayer = new NewPlayerForm(characterList);
             
             newPlayer.Show();
         }

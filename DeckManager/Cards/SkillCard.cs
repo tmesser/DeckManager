@@ -4,7 +4,6 @@ namespace DeckManager.Cards
 {
     public class SkillCard : BaseCard
     {
-
         /// <summary>
         /// Gets or sets the heading. Basic display stuff, LEA-2 XO or whatever.
         /// </summary>

@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DeckManager\bin\Debug\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -48,12 +52,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="TestContent\EngineeringDeck.json" />
+    <None Include="TestContent\LeadershipDeck.json" />
+    <None Include="TestContent\PilotingDeck.json" />
+    <None Include="TestContent\PoliticsDeck.json" />
+    <None Include="TestContent\TacticsDeck.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DeckManager\DeckManager.csproj">
       <Project>{68A0657C-25CB-47D0-B674-CADDA0508F9F}</Project>
       <Name>DeckManager</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestContent\Core.xml" />
+    <Content Include="TestContent\Pegasus.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
