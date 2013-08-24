@@ -40,6 +40,7 @@
       <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,7 +54,8 @@
     <Compile Include="Characters\Character.cs" />
     <Compile Include="Characters\Enums\Titles.cs" />
     <Compile Include="Decks\MissionDeck.cs" />
-    <Compile Include="Initialization\XMLUtil.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\StringValueAttribute.cs" />
     <Compile Include="ManagerLogic\Consequence.cs" />
     <Compile Include="Cards\CrisisCard.cs" />
     <Compile Include="Cards\DestinationCard.cs" />
@@ -85,12 +87,20 @@
     <Compile Include="States\Viper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Content\Crisis.json" />
+    <None Include="Content\EngineeringDeck.json" />
+    <None Include="Content\LeadershipDeck.json" />
+    <None Include="Content\PilotingDeck.json" />
+    <None Include="Content\PoliticsDeck.json" />
+    <None Include="Content\TacticsDeck.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Core.xml" />
     <Content Include="Content\Pegasus.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,6 @@
-﻿namespace DeckManager.Cards.Enums
+﻿using DeckManager.Extensions;
+
+namespace DeckManager.Cards.Enums
 {
     public enum SkillCardColor
     {

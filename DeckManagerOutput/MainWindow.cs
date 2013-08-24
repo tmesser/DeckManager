@@ -38,6 +38,7 @@ namespace DeckManagerOutput
                 {
                     case DeckManager.Cards.Enums.CardType.Skill:
                         currentPlayer.Cards.Add((DeckManager.Cards.SkillCard)card);
+                    currentPlayer.Cards.Add((DeckManager.Cards.SkillCard)card);
                         characterSkillHandListBox.Items.Add(card);
                         break;
                     case DeckManager.Cards.Enums.CardType.Quorum:
@@ -53,6 +54,7 @@ namespace DeckManagerOutput
             drawnCardListBox.BeginUpdate();
             DeckManager.Cards.SkillCard card = Program.GManager.CurrentGameState.PoliticsDeck.Draw();
             drawnCardListBox.Items.Add(card);
+
             drawnCardListBox.EndUpdate();
         }
 

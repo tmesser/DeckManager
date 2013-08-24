@@ -4,7 +4,6 @@ namespace DeckManager.Cards
 {
     public class SkillCard : BaseCard
     {
-
         /// <summary>
         /// Name of the Card (e.g. "Executive Order")
         /// </summary>

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DeckManager.Cards.Enums;
 using DeckManager.Decks;
+using DeckManager.Extensions;
 using DeckManager.States;
 using log4net;
 
@@ -36,19 +38,19 @@ namespace DeckManager
                 {
                     TurnLog = "Begin game.",
 
-                    CrisisDeck = new CrisisDeck(_logger),
+                    CrisisDeck = new CrisisDeck(_logger, ConfigurationManager.AppSettings["EngineeringDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
                     MissionDeck  = new MissionDeck(_logger),
                     DestinationDeck = new DestinationDeck(_logger),
 
-                    EngineeringDeck = new SkillCardDeck(_logger, SkillCardColor.Engineering),
-                    LeadershipDeck = new SkillCardDeck(_logger, SkillCardColor.Leadership),
+                    EngineeringDeck = new SkillCardDeck(_logger, SkillCardColor.Engineering, ConfigurationManager.AppSettings["EngineeringDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
+                    LeadershipDeck = new SkillCardDeck(_logger, SkillCardColor.Leadership, ConfigurationManager.AppSettings["LeadershipDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
                     LoyaltyDeck = new LoyaltyDeck(_logger, playerList.Count(), extraLoyaltyCards, usingSympathizer),
-                    PilotingDeck = new SkillCardDeck(_logger, SkillCardColor.Piloting),
-                    PoliticsDeck = new SkillCardDeck(_logger, SkillCardColor.Politics),
+                    PilotingDeck = new SkillCardDeck(_logger, SkillCardColor.Piloting, ConfigurationManager.AppSettings["PilotingDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
+                    PoliticsDeck = new SkillCardDeck(_logger, SkillCardColor.Politics, ConfigurationManager.AppSettings["PoliticsDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
                     QuorumDeck = new QuorumDeck(_logger),
                     SuperCrisisDeck = new SuperCrisisDeck(_logger),
-                    TacticsDeck = new SkillCardDeck(_logger, SkillCardColor.Tactics),
-                    TreacheryDeck = new SkillCardDeck (_logger, SkillCardColor.Treachery),
+                    TacticsDeck = new SkillCardDeck(_logger, SkillCardColor.Tactics, ConfigurationManager.AppSettings["TacticsDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
+                    TreacheryDeck = new SkillCardDeck(_logger, SkillCardColor.Treachery, ConfigurationManager.AppSettings["TreacheryDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
                     Turn = 1,
                     Fuel = 8,
                     Food = 8,
@@ -59,13 +61,13 @@ namespace DeckManager
             CurrentGameState = firstTurn;
 
             //TODO: Need a graceful way to handle Baltar here.
-            //foreach (var player in playerList)
-            //{
-            //    player.LoyaltyCards.Add(firstTurn.LoyaltyDeck.Draw());
-            //    DoPlayerDraw(player);
-            //}
-            return CurrentGameState;
-            //throw new NotImplementedException();
+            foreach (var player in playerList)
+            {
+                player.LoyaltyCards.Add(firstTurn.LoyaltyDeck.Draw());
+                DoPlayerDraw(player);
+            }
+
+            throw new NotImplementedException();
         }
 
         public void DoPlayerDraw(Player player, int drawIndex = 0)
