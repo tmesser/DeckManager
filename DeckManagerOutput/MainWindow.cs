@@ -163,10 +163,19 @@ namespace DeckManagerOutput
         {
             ListBox characterList = new ListBox();
             // populate list of characters
+            DeckManager.Characters.Character character = new DeckManager.Characters.Character();
+            character.CharacterName = "Testman";
 
-            NewPlayerForm newPlayer = new NewPlayerForm(characterList);
-            
-            newPlayer.Show();
+            character.DefaultDrawColors = new List<List<DeckManager.Cards.Enums.SkillCardColor>>();
+
+            characterList.Items.Add(character);
+            NewPlayerForm newPlayerForm = new NewPlayerForm(characterList);
+
+            if (newPlayerForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Player newPlayer = newPlayerForm.newPlayer;
+                characterListBox.Items.Add(newPlayer);
+            }
         }
 
         private void BeginGameButtonClick(object sender, EventArgs e)

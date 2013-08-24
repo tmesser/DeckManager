@@ -119,7 +119,7 @@ namespace DeckManager.Initialization
             doc = new XmlDocument();
 
             if (filepath == null)
-                filepath = @"Y:\Dropbox\DeckManager\DeckManager\Content\Pegasus.xml";
+                filepath = @"E:\My Documents\Dropbox\DeckManager\DeckManager\Content\Pegasus.xml";
             doc.Load(filepath);
         }
         private static XmlNodeList GetNode(string nodename)

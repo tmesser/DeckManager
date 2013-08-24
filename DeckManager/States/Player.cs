@@ -33,7 +33,8 @@ namespace DeckManager.States
         {
             // MetricUnit (President Roslin [1], 6Q)
             var titles = Titles.Count > 0 ? string.Join(" ", Titles) + " " : "";
-            return PlayerName + " (" + titles + Character.CharacterName + ") [" + Cards.Count + "] " + (QuorumHand.Count > 0 ? QuorumHand.Count.ToString() + "Q" : "");
+            return PlayerName + " (" + Character.CharacterName+")";
+            //return PlayerName + " (" + titles + Character.CharacterName + ") [" + Cards.Count + "] " + (QuorumHand.Count > 0 ? QuorumHand.Count.ToString() + "Q" : "");
         }
 
         public IEnumerable<IEnumerable<SkillCardColor>> SkillCardDraws
