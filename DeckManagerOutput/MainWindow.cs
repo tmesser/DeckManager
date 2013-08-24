@@ -37,7 +37,8 @@ namespace DeckManagerOutput
                 switch (card.CardType)
                 {
                     case DeckManager.Cards.Enums.CardType.Skill:
-                    currentPlayer.Cards.Add((DeckManager.Cards.SkillCard)card);
+                        currentPlayer.Cards.Add((DeckManager.Cards.SkillCard)card);
+                        characterSkillHandListBox.Items.Add(card);
                         break;
                     case DeckManager.Cards.Enums.CardType.Quorum:
                         // @todo no representation of quorum deck yet
@@ -150,7 +151,7 @@ namespace DeckManagerOutput
 
         private void AddDestinyCardsButtonClick(object sender, EventArgs e)
         {
-            var dest1 =  Program.GManager.CurrentGameState.DestinyDeck.Draw();
+            var dest1 = Program.GManager.CurrentGameState.DestinyDeck.Draw();
             var dest2 = Program.GManager.CurrentGameState.DestinyDeck.Draw();
 
             crisisSkillCheckListBox.BeginUpdate();
@@ -174,6 +175,11 @@ namespace DeckManagerOutput
             if (newPlayerForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 Player newPlayer = newPlayerForm.newPlayer;
+                if (characterListBox.Enabled == false)
+                {
+                    characterListBox.Enabled = true;
+                    characterListBox.Items.Clear();
+                }
                 characterListBox.Items.Add(newPlayer);
             }
         }
@@ -262,12 +268,19 @@ namespace DeckManagerOutput
         private void CharacterListBoxSelectedIndexChanged(object sender, EventArgs e)
         {
             // update skill card list box
+            characterSkillHandListBox.BeginUpdate();
+            characterSkillHandListBox.Items.Clear();
+            foreach (DeckManager.Cards.SkillCard card in ((Player)characterListBox.SelectedItem).Cards)
+                characterSkillHandListBox.Items.Add(card);
+            characterSkillHandListBox.EndUpdate();
             // update quorum card list box if current character is president
         }
 
         private void RemoveFromHandButtonClick(object sender, EventArgs e)
         {
             // move character's currently selected card into the drawn card window. can use this to transfer cards between players
+            var currentPlayer = (Player)this.characterListBox.SelectedItem;
+            //currentPlayer.
         }
 
         private void CopyGameButtonClick(object sender, EventArgs e)

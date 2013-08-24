@@ -45,6 +45,39 @@ namespace DeckManagerOutput
         {
             OKButton.Enabled = true;
             newPlayer.Character = (DeckManager.Characters.Character)this.characterListBox.SelectedItem;
+
+            initialDrawComboBox1.BeginUpdate();
+            initialDrawComboBox2.BeginUpdate();
+            initialDrawComboBox3.BeginUpdate();
+
+            initialDrawComboBox1.Items.Clear();
+            initialDrawComboBox2.Items.Clear();
+            initialDrawComboBox3.Items.Clear();
+
+            foreach (DeckManager.Cards.Enums.SkillCardColor color in newPlayer.Character.UniqueColors)
+            {
+                initialDrawComboBox1.Items.Add(color);
+                initialDrawComboBox2.Items.Add(color);
+                initialDrawComboBox3.Items.Add(color);
+            }
+            initialDrawComboBox3.EndUpdate();
+            initialDrawComboBox2.EndUpdate();
+            initialDrawComboBox1.EndUpdate();
+        }
+
+        private void initialDrawComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void initialDrawComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void initialDrawComboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

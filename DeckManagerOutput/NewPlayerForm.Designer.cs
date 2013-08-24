@@ -34,9 +34,9 @@
             this.playerNameTextBox = new System.Windows.Forms.TextBox();
             this.characterListBox = new System.Windows.Forms.ListBox();
             this.initialDrawGroupBox = new System.Windows.Forms.GroupBox();
-            this.initialDrawComboBox1 = new System.Windows.Forms.ComboBox();
-            this.initialDrawComboBox2 = new System.Windows.Forms.ComboBox();
             this.initialDrawComboBox3 = new System.Windows.Forms.ComboBox();
+            this.initialDrawComboBox2 = new System.Windows.Forms.ComboBox();
+            this.initialDrawComboBox1 = new System.Windows.Forms.ComboBox();
             this.characterAbilitiesRichTextBox = new System.Windows.Forms.RichTextBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.initialDrawGroupBox.SuspendLayout();
@@ -77,7 +77,7 @@
             this.playerNameTextBox.Name = "playerNameTextBox";
             this.playerNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.playerNameTextBox.TabIndex = 3;
-            this.playerNameTextBox.Leave += new System.EventHandler(playerNameTextBox_Leave);
+            this.playerNameTextBox.Leave += new System.EventHandler(this.playerNameTextBox_Leave);
             // 
             // characterListBox
             // 
@@ -100,13 +100,14 @@
             this.initialDrawGroupBox.TabStop = false;
             this.initialDrawGroupBox.Text = "Initial Draw";
             // 
-            // initialDrawComboBox1
+            // initialDrawComboBox3
             // 
-            this.initialDrawComboBox1.FormattingEnabled = true;
-            this.initialDrawComboBox1.Location = new System.Drawing.Point(7, 20);
-            this.initialDrawComboBox1.Name = "initialDrawComboBox1";
-            this.initialDrawComboBox1.Size = new System.Drawing.Size(121, 21);
-            this.initialDrawComboBox1.TabIndex = 0;
+            this.initialDrawComboBox3.FormattingEnabled = true;
+            this.initialDrawComboBox3.Location = new System.Drawing.Point(7, 74);
+            this.initialDrawComboBox3.Name = "initialDrawComboBox3";
+            this.initialDrawComboBox3.Size = new System.Drawing.Size(121, 21);
+            this.initialDrawComboBox3.TabIndex = 2;
+            this.initialDrawComboBox3.SelectedIndexChanged += new System.EventHandler(this.initialDrawComboBox3_SelectedIndexChanged);
             // 
             // initialDrawComboBox2
             // 
@@ -115,14 +116,16 @@
             this.initialDrawComboBox2.Name = "initialDrawComboBox2";
             this.initialDrawComboBox2.Size = new System.Drawing.Size(121, 21);
             this.initialDrawComboBox2.TabIndex = 1;
+            this.initialDrawComboBox2.SelectedIndexChanged += new System.EventHandler(this.initialDrawComboBox2_SelectedIndexChanged);
             // 
-            // initialDrawComboBox3
+            // initialDrawComboBox1
             // 
-            this.initialDrawComboBox3.FormattingEnabled = true;
-            this.initialDrawComboBox3.Location = new System.Drawing.Point(7, 74);
-            this.initialDrawComboBox3.Name = "initialDrawComboBox3";
-            this.initialDrawComboBox3.Size = new System.Drawing.Size(121, 21);
-            this.initialDrawComboBox3.TabIndex = 2;
+            this.initialDrawComboBox1.FormattingEnabled = true;
+            this.initialDrawComboBox1.Location = new System.Drawing.Point(7, 20);
+            this.initialDrawComboBox1.Name = "initialDrawComboBox1";
+            this.initialDrawComboBox1.Size = new System.Drawing.Size(121, 21);
+            this.initialDrawComboBox1.TabIndex = 0;
+            this.initialDrawComboBox1.SelectedIndexChanged += new System.EventHandler(this.initialDrawComboBox1_SelectedIndexChanged);
             // 
             // characterAbilitiesRichTextBox
             // 
