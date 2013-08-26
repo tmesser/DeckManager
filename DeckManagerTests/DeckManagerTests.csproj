@@ -54,10 +54,13 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="TestContent\Crisis.json" />
+    <None Include="TestContent\DestinationDeck.json" />
     <None Include="TestContent\EngineeringDeck.json" />
     <None Include="TestContent\LeadershipDeck.json" />
     <None Include="TestContent\PilotingDeck.json" />
     <None Include="TestContent\PoliticsDeck.json" />
+    <None Include="TestContent\QuorumDeck.json" />
+    <None Include="TestContent\SuperCrisisDeck.json" />
     <None Include="TestContent\TacticsDeck.json" />
   </ItemGroup>
   <ItemGroup>

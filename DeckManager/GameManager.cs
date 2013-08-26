@@ -40,15 +40,15 @@ namespace DeckManager
 
                     CrisisDeck = new CrisisDeck(_logger, ConfigurationManager.AppSettings["EngineeringDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
                     MissionDeck  = new MissionDeck(_logger),
-                    DestinationDeck = new DestinationDeck(_logger),
+                    DestinationDeck = new DestinationDeck(_logger, ConfigurationManager.AppSettings["DestinationDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
 
                     EngineeringDeck = new SkillCardDeck(_logger, SkillCardColor.Engineering, ConfigurationManager.AppSettings["EngineeringDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
                     LeadershipDeck = new SkillCardDeck(_logger, SkillCardColor.Leadership, ConfigurationManager.AppSettings["LeadershipDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
                     LoyaltyDeck = new LoyaltyDeck(_logger, playerList.Count(), extraLoyaltyCards, usingSympathizer),
                     PilotingDeck = new SkillCardDeck(_logger, SkillCardColor.Piloting, ConfigurationManager.AppSettings["PilotingDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
                     PoliticsDeck = new SkillCardDeck(_logger, SkillCardColor.Politics, ConfigurationManager.AppSettings["PoliticsDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
-                    QuorumDeck = new QuorumDeck(_logger),
-                    SuperCrisisDeck = new SuperCrisisDeck(_logger),
+                    QuorumDeck = new QuorumDeck(_logger, ConfigurationManager.AppSettings["QuorumDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
+                    SuperCrisisDeck = new SuperCrisisDeck(_logger, ConfigurationManager.AppSettings["SuperCrisisDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
                     TacticsDeck = new SkillCardDeck(_logger, SkillCardColor.Tactics, ConfigurationManager.AppSettings["TacticsDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
                     TreacheryDeck = new SkillCardDeck(_logger, SkillCardColor.Treachery, ConfigurationManager.AppSettings["TreacheryDeckLocation"], ConfigurationManager.AppSettings["usingXml"].ParseAs<bool>()),
                     Turn = 1,

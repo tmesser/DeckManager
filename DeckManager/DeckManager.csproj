@@ -56,6 +56,7 @@
     <Compile Include="Decks\MissionDeck.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\StringValueAttribute.cs" />
+    <Compile Include="Initialization\XMLUtil.cs" />
     <Compile Include="ManagerLogic\Consequence.cs" />
     <Compile Include="Cards\CrisisCard.cs" />
     <Compile Include="Cards\DestinationCard.cs" />
@@ -89,10 +90,13 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Content\Crisis.json" />
+    <None Include="Content\DestinationDeck.json" />
     <None Include="Content\EngineeringDeck.json" />
     <None Include="Content\LeadershipDeck.json" />
     <None Include="Content\PilotingDeck.json" />
     <None Include="Content\PoliticsDeck.json" />
+    <None Include="Content\QuorumDeck.json" />
+    <None Include="Content\SuperCrisisDeck.json" />
     <None Include="Content\TacticsDeck.json" />
     <None Include="packages.config" />
   </ItemGroup>

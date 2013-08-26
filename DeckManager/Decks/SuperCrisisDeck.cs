@@ -1,24 +1,112 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Xml;
 using DeckManager.Cards;
+using DeckManager.Cards.Enums;
+using DeckManager.Extensions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using log4net;
+using Formatting = Newtonsoft.Json.Formatting;
 
 namespace DeckManager.Decks
 {
     public class SuperCrisisDeck : BaseDeck<SuperCrisisCard>
     {
-        public SuperCrisisDeck(ILog logger) : base(logger)
+        public SuperCrisisDeck(ILog logger, string fileLocation, bool isXml) : base(logger)
         {
-            InitDeck();
+            InitDeck(fileLocation, isXml);
         }
 
-        public void InitDeck()
+        public void InitDeck(string fileLocation, bool isXml)
         {
             var cardsFromBox = new List<SuperCrisisCard>();
-            //TODO: Import the cards via JSON/XML reader - the goddamn NuGet packages aren't working right now.  Fill up the cardsFromBox object.
 
+
+            if (isXml)
+            {
+                var baseDocument = new XmlDocument();
+                baseDocument.Load(fileLocation);
+
+                var jo = JObject.Parse(JsonConvert.SerializeXmlNode(baseDocument));
+                var token = jo["ROOT"]["SUPERCRISISdeck"];
+
+                foreach (var crisisCard in token["card"].Children())
+                {
+                    var cardReader = new StringReader(crisisCard.Value<string>("text"));
+
+                    var crisisHeading = cardReader.ReadLine();
+                    var crisisAdditionalText = cardReader.ReadToEnd();
+
+                    if (string.IsNullOrEmpty(crisisHeading) || string.IsNullOrEmpty(crisisAdditionalText))
+                        throw new ArgumentException("Error in SuperCrisis XML reading.");
+
+                    // Normal crisis card
+                    crisisAdditionalText = crisisAdditionalText.Trim();
+
+                    var positiveColors = new List<SkillCardColor>();
+                    if (crisisAdditionalText.Contains("LEA"))
+                        positiveColors.Add(SkillCardColor.Leadership);
+                    if (crisisAdditionalText.Contains("TAC"))
+                        positiveColors.Add(SkillCardColor.Tactics);
+                    if (crisisAdditionalText.Contains("POL"))
+                        positiveColors.Add(SkillCardColor.Politics);
+                    if (crisisAdditionalText.Contains("ENG"))
+                        positiveColors.Add(SkillCardColor.Engineering);
+                    if (crisisAdditionalText.Contains("PIL"))
+                        positiveColors.Add(SkillCardColor.Piloting);
+
+                    var strengthRegex = new Regex(@"=\s(?<strength>\d{1,2})");
+                    var tierRegex = new Regex(@"^((?<strength>[A-Za-z0-9]{1,4})\+?:)(?<effect>.{1,})", RegexOptions.Multiline);
+                    var strengthResult = strengthRegex.Match(crisisAdditionalText);
+                    var strength = strengthResult.Groups["strength"].Value.ParseAs<int>();
+                    var tierResult = tierRegex.Matches(crisisAdditionalText);
+                    var passLevels = new List<Tuple<int, string>>();
+                    foreach (Match match in tierResult)
+                    {
+                        switch (match.Groups["strength"].Value.ToUpper())
+                        {
+                            case "PASS":
+                                passLevels.Add(new Tuple<int, string>(strength, match.Groups["effect"].Value));
+                                break;
+                            case "FAIL":
+                                passLevels.Add(new Tuple<int, string>(0, match.Groups["effect"].Value));
+                                break;
+                            default: // partial pass
+                                passLevels.Add(new Tuple<int, string>(match.Groups["strength"].Value.ParseAs<int>(), match.Groups["effect"].Value));
+                                break;
+                        }
+                    }
+
+                    cardsFromBox.Add(new SuperCrisisCard
+                    {
+                        Activation = CylonActivations.None,
+                        AdditionalText = crisisAdditionalText,
+                        Heading = crisisHeading,
+                        JumpPrep = false,
+                        PositiveColors = positiveColors,
+                        PassLevels = passLevels
+                    });
+
+                }
+            }
+            else
+            {
+                // At this point we should be working with JSON, which is the superior option anyway.
+                using (var sr = new StreamReader(fileLocation))
+                {
+                    var jsonText = sr.ReadToEnd();
+                    cardsFromBox = JsonConvert.DeserializeObject<List<SuperCrisisCard>>(jsonText);
+                }
+            }
+            PristineDeck = JsonConvert.SerializeObject(cardsFromBox, Formatting.Indented);
             Deck = cardsFromBox;
             Deck = Shuffle(Deck);
             Discarded = new List<SuperCrisisCard>();
         }
+
+        public string PristineDeck { get; set; }
     }
 }
