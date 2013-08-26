@@ -53,6 +53,8 @@
     <Compile Include="Cards\MissionCard.cs" />
     <Compile Include="Characters\Character.cs" />
     <Compile Include="Characters\Enums\Titles.cs" />
+    <Compile Include="Components\BaseComponent.cs" />
+    <Compile Include="Components\ComponentPile.cs" />
     <Compile Include="Decks\MissionDeck.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\StringValueAttribute.cs" />
@@ -66,6 +68,7 @@
     <Compile Include="Cards\Enums\Loyalty.cs" />
     <Compile Include="Cards\LoyaltyCard.cs" />
     <Compile Include="Cards\QuorumCard.cs" />
+    <Compile Include="Components\Enums\Resource.cs" />
     <Compile Include="ManagerLogic\SkillCheck.cs" />
     <Compile Include="Cards\SuperCrisisCard.cs" />
     <Compile Include="Decks\BaseDeck.cs" />
@@ -80,24 +83,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="States\Board.cs" />
     <Compile Include="Cards\SkillCard.cs" />
-    <Compile Include="States\Civilian.cs" />
-    <Compile Include="States\Enums\ViperStatus.cs" />
+    <Compile Include="Components\Civilian.cs" />
+    <Compile Include="Components\Enums\ViperStatus.cs" />
     <Compile Include="States\GameState.cs" />
     <Compile Include="States\Location.cs" />
     <Compile Include="States\Player.cs" />
-    <Compile Include="States\Viper.cs" />
+    <Compile Include="Components\Viper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Content\Crisis.json" />
-    <None Include="Content\DestinationDeck.json" />
-    <None Include="Content\EngineeringDeck.json" />
-    <None Include="Content\LeadershipDeck.json" />
-    <None Include="Content\PilotingDeck.json" />
-    <None Include="Content\PoliticsDeck.json" />
-    <None Include="Content\QuorumDeck.json" />
-    <None Include="Content\SuperCrisisDeck.json" />
-    <None Include="Content\TacticsDeck.json" />
+    <None Include="Content\Components\CivilianPile.json" />
+    <None Include="Content\Decks\CrisisDeck.json" />
+    <None Include="Content\Decks\DestinationDeck.json" />
+    <None Include="Content\Decks\EngineeringDeck.json" />
+    <None Include="Content\Decks\LeadershipDeck.json" />
+    <None Include="Content\Decks\PilotingDeck.json" />
+    <None Include="Content\Decks\PoliticsDeck.json" />
+    <None Include="Content\Decks\QuorumDeck.json" />
+    <None Include="Content\Decks\SuperCrisisDeck.json" />
+    <None Include="Content\Decks\TacticsDeck.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

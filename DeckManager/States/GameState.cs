@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using DeckManager.Cards;
 using DeckManager.Cards.Enums;
+using DeckManager.Components;
 using DeckManager.Decks;
 
 namespace DeckManager.States
