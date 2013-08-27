@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeckManagerOutput", "DeckMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeckManagerTests", "DeckManagerTests\DeckManagerTests.csproj", "{2BC73027-7669-485B-AD0C-B58E076A48F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonGeneration", "JsonGeneration\JsonGeneration.csproj", "{12250CB1-7003-4C01-89D3-9153DAB34CDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{2BC73027-7669-485B-AD0C-B58E076A48F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BC73027-7669-485B-AD0C-B58E076A48F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BC73027-7669-485B-AD0C-B58E076A48F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12250CB1-7003-4C01-89D3-9153DAB34CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12250CB1-7003-4C01-89D3-9153DAB34CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12250CB1-7003-4C01-89D3-9153DAB34CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12250CB1-7003-4C01-89D3-9153DAB34CDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

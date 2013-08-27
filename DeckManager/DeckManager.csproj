@@ -49,12 +49,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boards\BaseNode.cs" />
+    <Compile Include="Boards\BasicLocation.cs" />
+    <Compile Include="Boards\Dradis\DradisBoard.cs" />
+    <Compile Include="Boards\Dradis\DradisNode.cs" />
+    <Compile Include="Boards\Dradis\Enums\DradisNodeName.cs" />
     <Compile Include="Cards\BaseCard.cs" />
     <Compile Include="Cards\MissionCard.cs" />
     <Compile Include="Characters\Character.cs" />
     <Compile Include="Characters\Enums\Titles.cs" />
     <Compile Include="Components\BaseComponent.cs" />
+    <Compile Include="Components\Basestar.cs" />
     <Compile Include="Components\ComponentPile.cs" />
+    <Compile Include="Components\Enums\ComponentType.cs" />
+    <Compile Include="Components\HeavyRaider.cs" />
+    <Compile Include="Components\Raider.cs" />
     <Compile Include="Decks\MissionDeck.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\StringValueAttribute.cs" />

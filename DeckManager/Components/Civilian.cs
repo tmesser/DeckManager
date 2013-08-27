@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DeckManager.Components.Enums;
 using DeckManager.ManagerLogic.Enums;
 
 namespace DeckManager.Components
@@ -13,5 +14,16 @@ namespace DeckManager.Components
         /// The load.
         /// </value>
         public List<Resource> Load { get; set; }
+
+        /// <summary>
+        /// Gets the type of the component.
+        /// </summary>
+        /// <value>
+        /// The type of the component.
+        /// </value>
+        public override ComponentType ComponentType
+        {
+            get { return ComponentType.Civilian; }
+        }
     }
 }

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DeckManager.Components.Enums;
 
 namespace DeckManager.Components
 {
@@ -31,6 +28,14 @@ namespace DeckManager.Components
         /// The internal designation.
         /// </value>
         public Guid InternalDesignation { get; set; }
+
+        /// <summary>
+        /// Gets the type of the component.
+        /// </summary>
+        /// <value>
+        /// The type of the component.
+        /// </value>
+        public abstract ComponentType ComponentType { get; }
 
         public static bool operator ==(BaseComponent x, BaseComponent y)
         {

@@ -51,5 +51,37 @@ namespace DeckManager.States
         {
             return QuorumHand.Remove(card);
         }
+
+        public static bool operator ==(Player x, Player y)
+        {
+            if (ReferenceEquals(x, null) && ReferenceEquals(y, null))
+                return true;
+            if (ReferenceEquals(x, null) || ReferenceEquals(y, null))
+                return false;
+            return x.PlayerName == y.PlayerName;
+        }
+
+        public static bool operator !=(Player x, Player y)
+        {
+            return !(x == y);
+        }
+
+        protected bool Equals(Player other)
+        {
+            return string.Equals(PlayerName, other.PlayerName);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Player)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return (PlayerName != null ? PlayerName.GetHashCode() : 0);
+        }
     }
 }
