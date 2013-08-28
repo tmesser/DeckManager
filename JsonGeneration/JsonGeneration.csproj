@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +49,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="GeneratedJson\Components\CivilianPile.json" />
+    <None Include="GeneratedJson\Decks\CrisisDeck.json" />
+    <None Include="GeneratedJson\Decks\DestinationDeck.json" />
+    <None Include="GeneratedJson\Decks\EngineeringDeck.json" />
+    <None Include="GeneratedJson\Decks\LeadershipDeck.json" />
+    <None Include="GeneratedJson\Decks\LoyaltyDeck.json" />
+    <None Include="GeneratedJson\Decks\PilotingDeck.json" />
+    <None Include="GeneratedJson\Decks\PoliticsDeck.json" />
+    <None Include="GeneratedJson\Decks\QuorumDeck.json" />
+    <None Include="GeneratedJson\Decks\SuperCrisisDeck.json" />
+    <None Include="GeneratedJson\Decks\TacticsDeck.json" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DeckManager\DeckManager.csproj">
+      <Project>{68A0657C-25CB-47D0-B674-CADDA0508F9F}</Project>
+      <Name>DeckManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Core.xml" />
+    <Content Include="Pegasus.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DeckManager.Boards.Enums;
 
 namespace DeckManager.Boards
 {
@@ -29,6 +30,6 @@ namespace DeckManager.Boards
         /// <value>
         /// The name of the board.
         /// </value>
-        public string BoardName { get; set; }
+        public BoardName BoardName { get; set; }
     }
 }

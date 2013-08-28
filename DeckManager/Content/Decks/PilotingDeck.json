@@ -1,170 +1,128 @@
 [
   {
     "Heading": "Piloting-1 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-1 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-1 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-1 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-1 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-1 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-1 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-1 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-2 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 2,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-2 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 2,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-2 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 2,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-2 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 2,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-2 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 2,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-2 (Evasive Maneuvers)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 2,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-3 (Maximum Firepower)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 3,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-3 (Maximum Firepower)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 3,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-3 (Maximum Firepower)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 3,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-3 (Maximum Firepower)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 3,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-4 (Maximum Firepower)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 4,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-4 (Maximum Firepower)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 4,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Piloting-5 (Maximum Firepower)",
-    "CardColor": 3,
+    "CardColor": "Piloting",
     "CardPower": 5,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   }
 ]

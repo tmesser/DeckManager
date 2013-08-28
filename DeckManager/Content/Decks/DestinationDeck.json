@@ -1,156 +1,134 @@
 [
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Desolate Moon",
     "AdditionalText": "Distance 3 \r\nLose 3 Fuel.",
-    "Distance": 3,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 3
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Cylon Ambush",
     "AdditionalText": "Distance 3 \r\nLose 1 Fuel. Then place 1 basestar and 3 raiders in sector ALPHA and 3 civilian ships in sector DELTA.",
-    "Distance": 3,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 3
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Asteroid Field",
     "AdditionalText": "Distance 3 \r\nLose 2 Fuel. Then draw 1 civilian ship and destroy it, losing the resources on the back.",
-    "Distance": 3,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 3
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Asteroid Field",
     "AdditionalText": "Distance 3 \r\nLose 2 Fuel. Then draw 1 civilian ship and destroy it, losing the resources on the back.",
-    "Distance": 3,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 3
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Remote Planet",
     "AdditionalText": "Distance 2 \r\nLose 1 Fuel and destroy one raptor.",
-    "Distance": 2,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 2
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Remote Planet",
     "AdditionalText": "Distance 2 \r\nLose 1 Fuel and destroy one raptor.",
-    "Distance": 2,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 2
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Remote Planet",
     "AdditionalText": "Distance 2 \r\nLose 1 Fuel and destroy one raptor.",
-    "Distance": 2,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 2
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Deep Space",
     "AdditionalText": "Distance 2 \r\nLose 1 Fuel and 1 Morale.",
-    "Distance": 2,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 2
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Deep Space",
     "AdditionalText": "Distance 2 \r\nLose 1 Fuel and 1 Morale.",
-    "Distance": 2,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 2
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Deep Space",
     "AdditionalText": "Distance 2 \r\nLose 1 Fuel and 1 Morale.",
-    "Distance": 2,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 2
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Barren Planet",
     "AdditionalText": "Distance 2 \r\nLose 2 Fuel.",
-    "Distance": 2,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 2
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Barren Planet",
     "AdditionalText": "Distance 2 \r\nLose 2 Fuel.",
-    "Distance": 2,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 2
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Barren Planet",
     "AdditionalText": "Distance 2 \r\nLose 2 Fuel.",
-    "Distance": 2,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 2
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Barren Planet",
     "AdditionalText": "Distance 2 \r\nLose 2 Fuel.",
-    "Distance": 2,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 2
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Cylon Refinery",
     "AdditionalText": "Distance 2 \r\nLose 1 Fuel. The Admiral may risk 2 vipers to roll a die. If 6+, gain 2 Fuel. Otherwise, damage 2 vipers.",
-    "Distance": 2,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 2
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Tylium Planet",
     "AdditionalText": "Distance 1 \r\nLose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 2 fuel. Otherwise, destroy one raptor.",
-    "Distance": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 1
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Tylium Planet",
     "AdditionalText": "Distance 1 \r\nLose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 2 fuel. Otherwise, destroy one raptor.",
-    "Distance": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 1
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Tylium Planet",
     "AdditionalText": "Distance 1 \r\nLose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 2 fuel. Otherwise, destroy one raptor.",
-    "Distance": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 1
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Tylium Planet",
     "AdditionalText": "Distance 1 \r\nLose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 2 fuel. Otherwise, destroy one raptor.",
-    "Distance": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 1
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Icy Moon",
     "AdditionalText": "Distance 1 \r\nLose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 1 Food. Otherwise, destroy 1 raptor.",
-    "Distance": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 1
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Icy Moon",
     "AdditionalText": "Distance 1 \r\nLose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 1 Food. Otherwise, destroy 1 raptor.",
-    "Distance": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 1
   },
   {
-    "CardType": 6,
+    "CardType": "Destination",
     "Heading": "Ragnar Anchorage",
     "AdditionalText": "Distance 1 \r\nThe Admiral may repair up to 3 vipers and 1 raptor. These ships may be damaged or even destroyed.",
-    "Distance": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Distance": 1
   }
 ]

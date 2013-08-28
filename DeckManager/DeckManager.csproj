@@ -54,6 +54,7 @@
     <Compile Include="Boards\Dradis\DradisBoard.cs" />
     <Compile Include="Boards\Dradis\DradisNode.cs" />
     <Compile Include="Boards\Dradis\Enums\DradisNodeName.cs" />
+    <Compile Include="Boards\Enums\BoardName.cs" />
     <Compile Include="Cards\BaseCard.cs" />
     <Compile Include="Cards\MissionCard.cs" />
     <Compile Include="Characters\Character.cs" />
@@ -106,6 +107,7 @@
     <None Include="Content\Decks\DestinationDeck.json" />
     <None Include="Content\Decks\EngineeringDeck.json" />
     <None Include="Content\Decks\LeadershipDeck.json" />
+    <None Include="Content\Decks\LoyaltyDeck.json" />
     <None Include="Content\Decks\PilotingDeck.json" />
     <None Include="Content\Decks\PoliticsDeck.json" />
     <None Include="Content\Decks\QuorumDeck.json" />

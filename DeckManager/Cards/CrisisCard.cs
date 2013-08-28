@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using DeckManager.Cards.Enums;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace DeckManager.Cards
 {
@@ -38,11 +40,13 @@ namespace DeckManager.Cards
         /// <summary>
         /// Gets or sets the list of choices on this crisis card
         /// </summary>
-        public List<object> choices { get; set; }  // choices can be skill checks or strings like "-1 Morale and damage Galatica twice"
+        [JsonIgnore]
+        public List<object> Choices { get; set; }  // choices can be skill checks or strings like "-1 Morale and damage Galatica twice"
         /// <summary>
         /// Gets or sets the chooser on this crisis card
         /// </summary>
-        public DeckManager.Characters.Enums.Titles chooser {get;set;}
+        [JsonIgnore]
+        public Characters.Enums.Titles Chooser {get;set;}
 
         /// <summary>
         /// Gets or sets the positive card colors.
@@ -60,6 +64,7 @@ namespace DeckManager.Cards
         /// <summary>
         /// Gets or Sets the Crisis' cylon activation
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
         public CylonActivations Activation { get; set; }
 
         /// <summary>

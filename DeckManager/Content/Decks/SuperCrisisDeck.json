@@ -1,53 +1,41 @@
 [
   {
-    "CardType": 4,
+    "CardType": "SuperCrisis",
     "Heading": "SUPER CRISIS: Massive Assault ",
     "AdditionalText": "1. Activate Heavies, Launch Nukes \r\n2. Setup: BRAVO: Basestar, 4 Raiders CHARLIE: Basestar, 2 Raiders, 1 Heavy ECHO: Viper, 2 Civilian Ships FOXTROT: Viper, 2 Civilian Ships \r\n3. -2 Jump Prep",
-    "choices": null,
-    "chooser": 0,
     "PositiveColors": [],
-    "JumpPrep": false,
-    "Activation": 1,
-    "PassLevels": [],
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "Activation": "None",
+    "PassLevels": []
   },
   {
-    "CardType": 4,
+    "CardType": "SuperCrisis",
     "Heading": "SUPER CRISIS: Bomb On Colonial One ",
     "AdditionalText": "Skill check: TAC/PIL/ENG = 15 \r\nPASS: No Effect \r\nFAIL: -2 Morale, all characters in Administration, President's Office, and Press Room are sent to Sickbay. Until the end of the game, no player may move to or activate Administration, President's Office, and Press Room.",
-    "choices": null,
-    "chooser": 0,
     "PositiveColors": [
-      2,
-      4,
-      3
+      "Tactics",
+      "Engineering",
+      "Piloting"
     ],
-    "JumpPrep": false,
-    "Activation": 1,
+    "Activation": "None",
     "PassLevels": [
       {
         "Item1": 15,
         "Item2": " No Effect \r"
       },
       {
-        "Item1": 0,
         "Item2": " -2 Morale, all characters in Administration, President's Office, and Press Room are sent to Sickbay. Until the end of the game, no player may move to or activate Administration, President's Office, and Press Room."
       }
-    ],
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    ]
   },
   {
-    "CardType": 4,
+    "CardType": "SuperCrisis",
     "Heading": "SUPER CRISIS: Cylon Intruders ",
     "AdditionalText": "Skill check: LEA/TAC = 18 \r\nPASS: No Effect \r\n14+: Place 1 Centurion marker at the beginning of the Boarding Party track. \r\nFAIL: Damage Galactica once and place 2 Centurion markers at the beginning of the Boarding Party track.",
-    "choices": null,
-    "chooser": 0,
     "PositiveColors": [
-      1,
-      2
+      "Leadership",
+      "Tactics"
     ],
-    "JumpPrep": false,
-    "Activation": 1,
+    "Activation": "None",
     "PassLevels": [
       {
         "Item1": 18,
@@ -58,60 +46,48 @@
         "Item2": " Place 1 Centurion marker at the beginning of the Boarding Party track. \r"
       },
       {
-        "Item1": 0,
         "Item2": " Damage Galactica once and place 2 Centurion markers at the beginning of the Boarding Party track."
       }
-    ],
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    ]
   },
   {
-    "CardType": 4,
+    "CardType": "SuperCrisis",
     "Heading": "SUPER CRISIS: Fleet Mobilization ",
     "AdditionalText": "Skill check: LEA/TAC/PIL/ENG = 24 \r\nPASS: Launch Nukes, Launch Raiders \r\nFAIL: Launch Nukes, Activate Raiders, Activate Heavies, Launch Raiders",
-    "choices": null,
-    "chooser": 0,
     "PositiveColors": [
-      1,
-      2,
-      4,
-      3
+      "Leadership",
+      "Tactics",
+      "Engineering",
+      "Piloting"
     ],
-    "JumpPrep": false,
-    "Activation": 1,
+    "Activation": "None",
     "PassLevels": [
       {
         "Item1": 24,
         "Item2": " Launch Nukes, Launch Raiders \r"
       },
       {
-        "Item1": 0,
         "Item2": " Launch Nukes, Activate Raiders, Activate Heavies, Launch Raiders"
       }
-    ],
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    ]
   },
   {
-    "CardType": 4,
+    "CardType": "SuperCrisis",
     "Heading": "SUPER CRISIS: Inbound Nukes ",
     "AdditionalText": "Skill check: LEA/TAC = 15 \r\nPASS: No Effect \r\nFAIL: -1 Fuel, -1 Food, -1 Population",
-    "choices": null,
-    "chooser": 0,
     "PositiveColors": [
-      1,
-      2
+      "Leadership",
+      "Tactics"
     ],
-    "JumpPrep": false,
-    "Activation": 1,
+    "Activation": "None",
     "PassLevels": [
       {
         "Item1": 15,
         "Item2": " No Effect \r"
       },
       {
-        "Item1": 0,
         "Item2": " -1 Fuel, -1 Food, -1 Population"
       }
-    ],
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    ]
   }
 ]

@@ -1,170 +1,128 @@
 [
   {
     "Heading": "Engineering-1 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-1 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-1 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-1 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-1 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-1 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-1 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-1 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 1,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-2 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 2,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-2 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 2,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-2 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 2,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-2 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 2,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-2 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 2,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-2 (Repair)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 2,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-3 (Scientific Research)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 3,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-3 (Scientific Research)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 3,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-3 (Scientific Research)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 3,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-3 (Scientific Research)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 3,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-4 (Scientific Research)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 4,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-4 (Scientific Research)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 4,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   },
   {
     "Heading": "Engineering-5 (Scientific Research)",
-    "CardColor": 4,
+    "CardColor": "Engineering",
     "CardPower": 5,
-    "AdditionalText": null,
-    "CardType": 1,
-    "UniqueId": "00000000-0000-0000-0000-000000000000"
+    "CardType": "Skill"
   }
 ]

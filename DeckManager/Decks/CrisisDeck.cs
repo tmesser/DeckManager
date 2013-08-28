@@ -121,7 +121,7 @@ namespace DeckManager.Decks
                 using (var sr = new StreamReader(fileLocation))
                 {
                     var jsonText = sr.ReadToEnd();
-                    cardsFromBox = JsonConvert.DeserializeObject<List<CrisisCard>>(jsonText);
+                    cardsFromBox = JsonConvert.DeserializeObject<List<CrisisCard>>(jsonText, new Newtonsoft.Json.Converters.StringEnumConverter());
                 }
             }
             Deck = cardsFromBox;

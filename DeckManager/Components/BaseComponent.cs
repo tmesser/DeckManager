@@ -1,5 +1,7 @@
 ﻿using System;
 using DeckManager.Components.Enums;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace DeckManager.Components
 {
@@ -35,6 +37,7 @@ namespace DeckManager.Components
         /// <value>
         /// The type of the component.
         /// </value>
+        [JsonConverter(typeof(StringEnumConverter))]
         public abstract ComponentType ComponentType { get; }
 
         public static bool operator ==(BaseComponent x, BaseComponent y)

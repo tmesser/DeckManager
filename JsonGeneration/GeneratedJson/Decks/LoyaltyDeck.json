@@ -1,0 +1,81 @@
+[
+  {
+    "Loyalty": "NotACylon",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "NotACylon",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "NotACylon",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "NotACylon",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "NotACylon",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "NotACylon",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "NotACylon",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "NotACylon",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "NotACylon",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "NotACylon",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "Cylon",
+    "AdditionalText": "Reveal: Target a player on Galactica and send them to the Brig",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "Cylon",
+    "AdditionalText": "Reveal: Target a player on Galactica and send them to the Sickbay.  That player discards 5 Skill Cards.",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "Cylon",
+    "AdditionalText": "Reveal: Draw 5 Galactica damage tokens and choose 2 of them to resolve.",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "Cylon",
+    "AdditionalText": "Reveal: Reduce Morale by 1.",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "Cylon",
+    "AdditionalText": "Reveal: Each human player randomly discards a card and draws 1 Treachery.  You draw 2 Treachery (after discarding to 3).",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "Cylon",
+    "AdditionalText": "Reveal: Reduce Jump Prep by 2.",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "Cylon",
+    "AdditionalText": "Reveal: Place a Centurion at the start of the Boarding Track.",
+    "CardType": "Loyalty"
+  },
+  {
+    "Loyalty": "Sympathizer",
+    "CardType": "Loyalty"
+  }
+]

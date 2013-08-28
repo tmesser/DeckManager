@@ -1,4 +1,6 @@
 ﻿using DeckManager.Cards.Enums;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace DeckManager.Cards
 {
@@ -18,6 +20,7 @@ namespace DeckManager.Cards
         /// <value>
         /// The color of the card.
         /// </value>
+        [JsonConverter(typeof(StringEnumConverter))]
         public SkillCardColor CardColor { get; set; }
         
         /// <summary>

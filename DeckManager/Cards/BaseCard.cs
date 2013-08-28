@@ -1,5 +1,7 @@
 ﻿using System;
 using DeckManager.Cards.Enums;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace DeckManager.Cards
 {
@@ -17,11 +19,20 @@ namespace DeckManager.Cards
         public Guid UniqueId { get; set; }
 
         /// <summary>
+        /// Gets or sets the permanent unique identifier.
+        /// </summary>
+        /// <value>
+        /// The permanent unique identifier.
+        /// </value>
+        internal Guid PermanentId { get; set; }
+
+        /// <summary>
         /// Gets or sets the type of the card.
         /// </summary>
         /// <value>
         /// The type of the card.
         /// </value>
+        [JsonConverter(typeof(StringEnumConverter))]
         public abstract CardType CardType { get; }
 
         /// <summary>

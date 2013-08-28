@@ -1,4 +1,6 @@
 ﻿using DeckManager.Cards.Enums;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace DeckManager.Cards
 {
@@ -10,6 +12,7 @@ namespace DeckManager.Cards
         /// <value>
         /// The loyalty.
         /// </value>
+        [JsonConverter(typeof(StringEnumConverter))]
         public Loyalty Loyalty { get; set; }
         /// <summary>
         /// Gets or sets additional text, for stuff like Cylon reveal effects and Final Five consequences.
