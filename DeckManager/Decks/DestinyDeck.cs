@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DeckManager.Cards;
 using DeckManager.Cards.Enums;
 using log4net;
@@ -11,6 +8,15 @@ namespace DeckManager.Decks
 {
     public class DestinyDeck : BaseDeck<SkillCard>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DestinyDeck"/> class.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
+        /// <param name="leadershipDeck">The leadership deck.</param>
+        /// <param name="tacticsDeck">The tactics deck.</param>
+        /// <param name="pilotingDeck">The piloting deck.</param>
+        /// <param name="engineeringDeck">The engineering deck.</param>
+        /// <param name="politicsDeck">The politics deck.</param>
         public DestinyDeck(ILog logger, SkillCardDeck leadershipDeck, SkillCardDeck tacticsDeck, SkillCardDeck pilotingDeck, SkillCardDeck engineeringDeck, SkillCardDeck politicsDeck)
             : base(logger)
         {
@@ -23,6 +29,25 @@ namespace DeckManager.Decks
         private SkillCardDeck EngineeringDeck { get; set; }
         private SkillCardDeck PoliticsDeck { get; set; }
 
+        /// <summary>
+        /// Initializes the deck.
+        /// </summary>
+        /// <param name="leadershipDeck">The leadership deck.</param>
+        /// <param name="tacticsDeck">The tactics deck.</param>
+        /// <param name="pilotingDeck">The piloting deck.</param>
+        /// <param name="engineeringDeck">The engineering deck.</param>
+        /// <param name="politicsDeck">The politics deck.</param>
+        /// <exception cref="System.ArgumentException">
+        /// Leadership deck input is not actually a leadership deck.
+        /// or
+        /// Tactics deck input is not actually a tactics deck.
+        /// or
+        /// Piloting deck input is not actually a piloting deck.
+        /// or
+        /// Engineering deck input is not actually an engineering deck.
+        /// or
+        /// Politics deck input is not actually a politics deck.
+        /// </exception>
         private void InitDeck(SkillCardDeck leadershipDeck, SkillCardDeck tacticsDeck, SkillCardDeck pilotingDeck, SkillCardDeck engineeringDeck, SkillCardDeck politicsDeck)
         {
             if (leadershipDeck.DeckColor != SkillCardColor.Leadership)
@@ -44,6 +69,9 @@ namespace DeckManager.Decks
             Discarded = new List<SkillCard>();
         }
 
+        /// <summary>
+        /// Reshuffles this instance.
+        /// </summary>
         protected override void Reshuffle()
         {
             Deck = new List<SkillCard>();

@@ -331,8 +331,8 @@ namespace JsonGeneration
                     new List<Resource> {Resource.Population},
                     new List<Resource> {Resource.Population, Resource.Morale},
                     new List<Resource> {Resource.Population, Resource.Fuel},
-                    new List<Resource> {},
-                    new List<Resource> {}
+                    new List<Resource>(),
+                    new List<Resource>()
                 };
 
             var json = JsonConvert.SerializeObject(dong, Formatting.Indented, new Newtonsoft.Json.Converters.StringEnumConverter());

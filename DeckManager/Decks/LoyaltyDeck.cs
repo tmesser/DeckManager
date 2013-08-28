@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using DeckManager.Cards;
 using DeckManager.Cards.Enums;
+using Newtonsoft.Json;
 using log4net;
 
 namespace DeckManager.Decks
@@ -12,10 +14,18 @@ namespace DeckManager.Decks
     /// </summary>
     public class LoyaltyDeck : BaseDeck<LoyaltyCard>
     {
-        public LoyaltyDeck(ILog logger, int players, int extraCards, bool sympathizer)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LoyaltyDeck"/> class.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
+        /// <param name="players">The players.</param>
+        /// <param name="extraCards">The extra cards.</param>
+        /// <param name="sympathizer">if set to <c>true</c> [sympathizer].</param>
+        /// <param name="fileLocation">The file location.</param>
+        public LoyaltyDeck(ILog logger, int players, int extraCards, bool sympathizer, string fileLocation)
             : base(logger)
         {
-            InitDeck(players, extraCards, sympathizer);
+            InitDeck(players, extraCards, sympathizer, fileLocation);
         }
 
         /// <summary>
@@ -24,7 +34,8 @@ namespace DeckManager.Decks
         /// <param name="players">The number of players in the game.</param>
         /// <param name="extraCards">The extra cards. (For cases like Baltar and Boomer)</param>
         /// <param name="sympathizer">Add the Sympathizer card.</param>
-        private void InitDeck(int players, int extraCards, bool sympathizer)
+        /// <param name="fileLocation">The location of the cards to deserialize.</param>
+        private void InitDeck(int players, int extraCards, bool sympathizer, string fileLocation)
         {
             if (players < 3 || players > 6)
                 throw new ArgumentException("Invalid player count.  Must be between 3 and 6.");
@@ -32,15 +43,12 @@ namespace DeckManager.Decks
             if (extraCards < 0)
                 throw new ArgumentException("You think you're funny by sending a negative number of extra cards.  But you're really not.");
 
-            var cardsFromBox = new List<LoyaltyCard>();
-            //TODO: Import the cards via JSON/XML reader - the goddamn NuGet packages aren't working right now.  Fill up the cardsFromBox object.
-            var  cardList = Initialization.XMLUtil.GetCardList(CardType.Loyalty);
-            foreach(BaseCard card in cardList)
+            List<LoyaltyCard> cardsFromBox;
+            using (var sr = new StreamReader(fileLocation))
             {
-                cardsFromBox.Add((LoyaltyCard)card);
+                var jsonText = sr.ReadToEnd();
+                cardsFromBox = JsonConvert.DeserializeObject<List<LoyaltyCard>>(jsonText);
             }
-
-
 
             var usedLoyaltyCards = new List<LoyaltyCard>();
             try

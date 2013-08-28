@@ -1,64 +1,48 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Xml;
 using DeckManager.Cards;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using log4net;
-using Formatting = Newtonsoft.Json.Formatting;
 
 namespace DeckManager.Decks
 {
     public class QuorumDeck : BaseDeck<QuorumCard>
     {
-        public QuorumDeck(ILog logger, string fileLocation, bool isXml)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QuorumDeck"/> class.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
+        /// <param name="fileLocation">The file location.</param>
+        public QuorumDeck(ILog logger, string fileLocation)
             : base(logger)
         {
-            InitDeck(fileLocation, isXml);
+            InitDeck(fileLocation);
         }
 
-        private void InitDeck(string fileLocation, bool isXml)
+        /// <summary>
+        /// Initializes the deck.
+        /// </summary>
+        /// <param name="fileLocation">The file location.</param>
+        private void InitDeck(string fileLocation)
         {
-            var cardsFromBox = new List<QuorumCard>();
-
-            if (isXml)
+            List<QuorumCard> cardsFromBox;
+            // At this point we should be working with JSON, which is the superior option anyway.
+            using (var sr = new StreamReader(fileLocation))
             {
-                var baseDocument = new XmlDocument();
-                baseDocument.Load(fileLocation);
-
-                var jo = JObject.Parse(JsonConvert.SerializeXmlNode(baseDocument));
-                var token = jo["ROOT"]["QUORUMdeck"];
-                cardsFromBox.AddRange(from crisisCard in token["card"].Children()
-                                        select new StringReader(crisisCard.Value<string>("text"))
-                                        into cardReader
-                                        let cardHeading = cardReader.ReadLine()
-                                        let cardText = cardReader.ReadToEnd()
-                                        select new QuorumCard
-                                        {
-                                            Heading = cardHeading.Trim(),
-                                            AdditionalText = cardText.Trim()
-                                        });
-
-            }
-            else
-            {
-                // At this point we should be working with JSON, which is the superior option anyway.
-                using (var sr = new StreamReader(fileLocation))
-                {
-                    var jsonText = sr.ReadToEnd();
-                    cardsFromBox = JsonConvert.DeserializeObject<List<QuorumCard>>(jsonText);
-                }
+                var jsonText = sr.ReadToEnd();
+                cardsFromBox = JsonConvert.DeserializeObject<List<QuorumCard>>(jsonText);
             }
 
-            PristineDeck = JsonConvert.SerializeObject(cardsFromBox, Formatting.Indented);
             Deck = cardsFromBox;
             Deck = Shuffle(Deck);
             Discarded = new List<QuorumCard>();
         }
 
-        public string PristineDeck { get; set; }
-
+        /// <summary>
+        /// Draws a card.
+        /// </summary>
+        /// <returns></returns>
         public override QuorumCard Draw()
         {
             if (Deck.Count == 0)
@@ -70,6 +54,11 @@ namespace DeckManager.Decks
             return ret;
         }
 
+        /// <summary>
+        /// Draws multiple cards.
+        /// </summary>
+        /// <param name="cards">The cards.</param>
+        /// <returns></returns>
         public override IEnumerable<QuorumCard> DrawMany(int cards)
         {
             if (Deck.Count < cards)
@@ -80,6 +69,10 @@ namespace DeckManager.Decks
             return ret;
         }
 
+        /// <summary>
+        /// Discards back to the Quorum deck.
+        /// </summary>
+        /// <param name="card">The card.</param>
         public void DiscardToQuorum(QuorumCard card)
         {
             Deck.Add(card);
