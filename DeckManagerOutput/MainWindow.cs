@@ -16,6 +16,7 @@ namespace DeckManagerOutput
     public partial class MainForm : Form
     {
         private readonly MainMenu _mainMenu;
+        private DradisForm dradis;
 
         public MainForm()
         {
@@ -23,12 +24,18 @@ namespace DeckManagerOutput
             _mainMenu = new MainMenu();
             _mainMenu.MenuItems.Add(new MenuItem("Game"));
             Menu = _mainMenu;
+
+            dradis = new DradisForm();
         }
 
         private void GiveCardToCurrentCharacterButtonClick(object sender, EventArgs e)
         {
-            Array cards = new DeckManager.Cards.BaseCard[drawnCardListBox.SelectedItems.Count];
-            drawnCardListBox.SelectedItems.CopyTo(cards, 0);
+            // if no cards selected, give all
+            object[] cards = new DeckManager.Cards.BaseCard[drawnCardListBox.Items.Count];
+            if (drawnCardListBox.SelectedIndex == -1)
+                drawnCardListBox.Items.CopyTo(cards, 0);
+            else
+                drawnCardListBox.SelectedItems.CopyTo(cards, 0);
             var currentPlayer = (Player)characterListBox.SelectedItem;
 
             // give selected cards to currently selected player (skill or quorum)
@@ -38,14 +45,15 @@ namespace DeckManagerOutput
                 {
                     case DeckManager.Cards.Enums.CardType.Skill:
                         currentPlayer.Cards.Add((DeckManager.Cards.SkillCard)card);
-                    currentPlayer.Cards.Add((DeckManager.Cards.SkillCard)card);
                         characterSkillHandListBox.Items.Add(card);
                         break;
                     case DeckManager.Cards.Enums.CardType.Quorum:
-                        // @todo no representation of quorum deck yet
+                        currentPlayer.QuorumHand.Add((DeckManager.Cards.QuorumCard)card);
+                        if (!currentPlayer.Titles.Contains(DeckManager.Characters.Enums.Titles.President))
+                            ;   // warning case, giving quorum to non-president player. not sure what to do here
                         break;
                 }
-            drawnCardListBox.Items.Remove(card);
+                drawnCardListBox.Items.Remove(card);
             }
         }
 
@@ -251,6 +259,9 @@ namespace DeckManagerOutput
 
         private void ReturnToDeckButtonClick(object sender, EventArgs e)
         {
+            if (drawnCardListBox.SelectedIndex == -1)
+                return;
+
             Array cards = new DeckManager.Cards.BaseCard[drawnCardListBox.SelectedItems.Count];
             drawnCardListBox.SelectedItems.CopyTo(cards, 0);
 
@@ -271,9 +282,20 @@ namespace DeckManagerOutput
         {
             // update skill card list box
             characterSkillHandListBox.BeginUpdate();
+            characterQuorumHandListBox.BeginUpdate();
+
             characterSkillHandListBox.Items.Clear();
             foreach (DeckManager.Cards.SkillCard card in ((Player)characterListBox.SelectedItem).Cards)
                 characterSkillHandListBox.Items.Add(card);
+            characterSkillHandCountTextBox.Text = characterSkillHandListBox.Items.Count.ToString();
+
+            characterQuorumHandListBox.Items.Clear();
+            if (((Player)characterListBox.SelectedItem).QuorumHand.Count > 0)
+                foreach (DeckManager.Cards.QuorumCard card in ((Player)characterListBox.SelectedItem).QuorumHand)
+                    characterQuorumHandListBox.Items.Add(card);
+            characterQuorumHandCountTextBox.Text = characterQuorumHandListBox.Items.Count.ToString();
+
+            characterQuorumHandListBox.EndUpdate();            
             characterSkillHandListBox.EndUpdate();
             // update quorum card list box if current character is president
         }
@@ -282,7 +304,7 @@ namespace DeckManagerOutput
         {
             // move character's currently selected card into the drawn card window. can use this to transfer cards between players
             var currentPlayer = (Player)this.characterListBox.SelectedItem;
-            //currentPlayer.
+            //currentPlayer.Cards.RemoveAll(
         }
 
         private void CopyGameButtonClick(object sender, EventArgs e)
@@ -294,7 +316,10 @@ namespace DeckManagerOutput
 
         private void DrawMissionButtonClick(object sender, EventArgs e)
         {
-
+            crisisTextListBox.BeginUpdate();
+            DeckManager.Cards.MissionCard mis = Program.GManager.CurrentGameState.MissionDeck.Draw();
+            crisisTextListBox.Items.Add(mis);
+            crisisTextListBox.EndUpdate();
         }
 
         private void FuelUpDownValueChanged(object sender, EventArgs e)
@@ -320,6 +345,26 @@ namespace DeckManagerOutput
         private void CopyDestinationsButtonClick(object sender, EventArgs e)
         {
             // copies drawn destination cards to clipboard, used to send PM to destination chooser
+        }
+
+        private void JumpToDestinationButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void copySkillCheckResultsButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearCrisisButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DradisButton_Click(object sender, EventArgs e)
+        {
+            dradis.Show();
         }
 
 
