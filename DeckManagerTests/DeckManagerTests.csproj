@@ -52,11 +52,25 @@
   <ItemGroup>
     <Compile Include="ComponentTests.cs" />
     <Compile Include="DeckTests.cs" />
+    <Compile Include="JsonGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SkillCheckTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="JsonGeneratorOutput\GeneratedJson\Boards\Locations.json" />
+    <None Include="JsonGeneratorOutput\GeneratedJson\Components\CivilianPile.json" />
+    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\CrisisDeck.json" />
+    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\DestinationDeck.json" />
+    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\EngineeringDeck.json" />
+    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\LeadershipDeck.json" />
+    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\LoyaltyDeck.json" />
+    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\PilotingDeck.json" />
+    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\PoliticsDeck.json" />
+    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\QuorumDeck.json" />
+    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\SuperCrisisDeck.json" />
+    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\TacticsDeck.json" />
     <None Include="packages.config" />
+    <None Include="TestContent\Boards\Locations.json" />
     <None Include="TestContent\CivilianPile.json" />
     <None Include="TestContent\Crisis.json" />
     <None Include="TestContent\CrisisDeck.json" />
@@ -77,9 +91,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TestContent\Core.xml" />
-    <Content Include="TestContent\Pegasus.xml" />
+    <Content Include="JsonGeneratorOutput\Core.xml" />
+    <Content Include="JsonGeneratorOutput\Pegasus.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

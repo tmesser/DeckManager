@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Content\Boards\Locations.json" />
     <None Include="Content\Components\CivilianPile.json" />
     <None Include="Content\Decks\CrisisDeck.json" />
     <None Include="Content\Decks\DestinationDeck.json" />

@@ -31,7 +31,6 @@ namespace DeckManager.Decks
         {
             List<SkillCard> cardsFromBox;
 
-            // At this point we should be working with JSON, which is the superior option anyway.
             using (var sr = new StreamReader(fileLocation))
             {
                 var jsonText = sr.ReadToEnd();

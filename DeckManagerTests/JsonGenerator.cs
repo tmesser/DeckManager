@@ -11,16 +11,20 @@ using DeckManager.Cards;
 using DeckManager.Cards.Enums;
 using DeckManager.Extensions;
 using DeckManager.ManagerLogic.Enums;
+using NUnit.Framework;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Formatting = Newtonsoft.Json.Formatting;
 
-namespace JsonGeneration
+namespace DeckManagerTests
 {
-    public class Program
+    [TestFixture]
+    public class JsonGenerator
     {
-        private static void Main()
+        [Ignore]
+        [Test]
+        public void GenerateJsonFromXml()
         {
+            // NOT ACTUALLY A TEST, do not run this routinely, I need to spin this off into a console project later.
             GenerateLoyaltyCards();
             GenerateCivilianComponents();
             GenerateCrisisDeck();
@@ -38,7 +42,7 @@ namespace JsonGeneration
         private static void GenerateSuperCrisisDeck()
         {
             var baseDocument = new XmlDocument();
-            baseDocument.Load(@"..\..\Core.xml");
+            baseDocument.Load(@"..\..\JsonGeneratorOutput\Core.xml");
             var cardsFromBox = new List<SuperCrisisCard>();
 
             var jo = JObject.Parse(JsonConvert.SerializeXmlNode(baseDocument));
@@ -104,8 +108,8 @@ namespace JsonGeneration
             }
 
             var jsonSettings = new JsonSerializerSettings { DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new Newtonsoft.Json.Converters.StringEnumConverter() } };
-            var json = JsonConvert.SerializeObject(cardsFromBox, Formatting.Indented, jsonSettings);
-            using (var sr = new StreamWriter(@"..\..\GeneratedJson\Decks\SuperCrisisDeck.json"))
+            var json = JsonConvert.SerializeObject(cardsFromBox, Newtonsoft.Json.Formatting.Indented, jsonSettings);
+            using (var sr = new StreamWriter(@"..\..\JsonGeneratorOutput\GeneratedJson\Decks\SuperCrisisDeck.json"))
             {
                 sr.Write(json);
             }
@@ -114,7 +118,7 @@ namespace JsonGeneration
         private static void GenerateSkillCardDeck(SkillCardColor color)
         {
             var baseDocument = new XmlDocument();
-            baseDocument.Load(@"..\..\Core.xml");
+            baseDocument.Load(@"..\..\JsonGeneratorOutput\Core.xml");
             var cardsFromBox = new List<SkillCard>();
             string deckName = null;
             switch (color)
@@ -153,8 +157,8 @@ namespace JsonGeneration
                 );
 
             var jsonSettings = new JsonSerializerSettings { DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new Newtonsoft.Json.Converters.StringEnumConverter() } };
-            var json = JsonConvert.SerializeObject(cardsFromBox, Formatting.Indented, jsonSettings);
-            using (var sr = new StreamWriter(@"..\..\GeneratedJson\Decks\"+color+"Deck.json"))
+            var json = JsonConvert.SerializeObject(cardsFromBox, Newtonsoft.Json.Formatting.Indented, jsonSettings);
+            using (var sr = new StreamWriter(@"..\..\JsonGeneratorOutput\GeneratedJson\Decks\"+color+"Deck.json"))
             {
                 sr.Write(json);
             }
@@ -163,7 +167,7 @@ namespace JsonGeneration
         private static void GenerateQuorumDeck()
         {
             var baseDocument = new XmlDocument();
-            baseDocument.Load(@"..\..\Core.xml");
+            baseDocument.Load(@"..\..\JsonGeneratorOutput\Core.xml");
             var cardsFromBox = new List<QuorumCard>();
 
             var jo = JObject.Parse(JsonConvert.SerializeXmlNode(baseDocument));
@@ -180,8 +184,8 @@ namespace JsonGeneration
                                       });
 
             var jsonSettings = new JsonSerializerSettings { DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new Newtonsoft.Json.Converters.StringEnumConverter() } };
-            var json = JsonConvert.SerializeObject(cardsFromBox, Formatting.Indented, jsonSettings);
-            using (var sr = new StreamWriter(@"..\..\GeneratedJson\Decks\QuorumDeck.json"))
+            var json = JsonConvert.SerializeObject(cardsFromBox, Newtonsoft.Json.Formatting.Indented, jsonSettings);
+            using (var sr = new StreamWriter(@"..\..\JsonGeneratorOutput\GeneratedJson\Decks\QuorumDeck.json"))
             {
                 sr.Write(json);
             }
@@ -190,7 +194,7 @@ namespace JsonGeneration
         private static void GenerateDestinationDeck()
         {
             var baseDocument = new XmlDocument();
-            baseDocument.Load(@"..\..\Core.xml");
+            baseDocument.Load(@"..\..\JsonGeneratorOutput\Core.xml");
             var cardsFromBox = new List<DestinationCard>();
 
             var jo = JObject.Parse(JsonConvert.SerializeXmlNode(baseDocument));
@@ -212,8 +216,8 @@ namespace JsonGeneration
                                       });
 
             var jsonSettings = new JsonSerializerSettings { DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new Newtonsoft.Json.Converters.StringEnumConverter() } };
-            var json = JsonConvert.SerializeObject(cardsFromBox, Formatting.Indented, jsonSettings);
-            using (var sr = new StreamWriter(@"..\..\GeneratedJson\Decks\DestinationDeck.json"))
+            var json = JsonConvert.SerializeObject(cardsFromBox, Newtonsoft.Json.Formatting.Indented, jsonSettings);
+            using (var sr = new StreamWriter(@"..\..\JsonGeneratorOutput\GeneratedJson\Decks\DestinationDeck.json"))
             {
                 sr.Write(json);
             }
@@ -222,7 +226,7 @@ namespace JsonGeneration
         private static void GenerateCrisisDeck()
         {
             var baseDocument = new XmlDocument();
-            baseDocument.Load(@"..\..\Core.xml");
+            baseDocument.Load(@"..\..\JsonGeneratorOutput\Core.xml");
             var cardsFromBox = new List<CrisisCard>();
 
             var jo = JObject.Parse(JsonConvert.SerializeXmlNode(baseDocument));
@@ -312,8 +316,8 @@ namespace JsonGeneration
                 }
             }
             var jsonSettings = new JsonSerializerSettings { DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new Newtonsoft.Json.Converters.StringEnumConverter() } };
-            var json = JsonConvert.SerializeObject(cardsFromBox, Formatting.Indented, jsonSettings);
-            using (var sr = new StreamWriter(@"..\..\GeneratedJson\Decks\CrisisDeck.json"))
+            var json = JsonConvert.SerializeObject(cardsFromBox, Newtonsoft.Json.Formatting.Indented, jsonSettings);
+            using (var sr = new StreamWriter(@"..\..\JsonGeneratorOutput\GeneratedJson\Decks\CrisisDeck.json"))
             {
                 sr.Write(json);
             }
@@ -338,8 +342,8 @@ namespace JsonGeneration
                     new List<Resource>()
                 };
 
-            var json = JsonConvert.SerializeObject(dong, Formatting.Indented, new Newtonsoft.Json.Converters.StringEnumConverter());
-            using (var sr = new StreamWriter(@"..\..\GeneratedJson\Components\CivilianPile.json"))
+            var json = JsonConvert.SerializeObject(dong, Newtonsoft.Json.Formatting.Indented, new Newtonsoft.Json.Converters.StringEnumConverter());
+            using (var sr = new StreamWriter(@"..\..\JsonGeneratorOutput\GeneratedJson\Components\CivilianPile.json"))
             {
                 sr.Write(json);
             }
@@ -371,9 +375,9 @@ namespace JsonGeneration
 
             var jsonSettings = new JsonSerializerSettings {DefaultValueHandling = DefaultValueHandling.Ignore};
 
-            var json = JsonConvert.SerializeObject(loyaltyDeck, Formatting.Indented, jsonSettings);
+            var json = JsonConvert.SerializeObject(loyaltyDeck, Newtonsoft.Json.Formatting.Indented, jsonSettings);
 
-            using (var sw = new StreamWriter(@"..\..\GeneratedJson\Decks\LoyaltyDeck.json"))
+            using (var sw = new StreamWriter(@"..\..\JsonGeneratorOutput\GeneratedJson\Decks\LoyaltyDeck.json"))
             {
                 sw.Write(json);
             }
@@ -406,8 +410,8 @@ namespace JsonGeneration
             };
 
             var jsonSettings = new JsonSerializerSettings { DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new Newtonsoft.Json.Converters.StringEnumConverter() } };
-            var json = JsonConvert.SerializeObject(locations, Formatting.Indented, jsonSettings);
-            using (var sr = new StreamWriter(@"..\..\GeneratedJson\Boards\Locations.json"))
+            var json = JsonConvert.SerializeObject(locations, Newtonsoft.Json.Formatting.Indented, jsonSettings);
+            using (var sr = new StreamWriter(@"..\..\JsonGeneratorOutput\GeneratedJson\Boards\Locations.json"))
             {
                 sr.Write(json);
             }
