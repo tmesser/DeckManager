@@ -1,0 +1,1105 @@
+[
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Jump Computer Failure",
+    "AdditionalText": "Skill check: TAC /ENG = 7 \r\nPASS: No Effect \r\nFAIL: -1 Population, -1 Jump Prep \r\n\r\nPOST CRISIS: Launch Raiders | NO JUMP PREP",
+    "PositiveColors": [
+      "Tactics",
+      "Engineering"
+    ],
+    "Activation": "LaunchRaiders",
+    "PassLevels": [
+      {
+        "Item1": 7,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-1 Population, -1 Jump Prep"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CYLON ATTACK: Ambush",
+    "AdditionalText": "1. Launch Nukes \r\n2. Setup: ALPHA: 4 Raiders CHARLIE: 1 Civilian Ship DELTA: 1 Basestar, 4 Raiders ECHO: 2 Vipers, 1 Civilian Ship FOXTROT: 1 Civilian Ship \r\n3. Special Rule - Training New Pilots: Until the next jump, all unmanned vipers have -2 to their attack rolls.",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Build Cylon Detector",
+    "AdditionalText": "Admiral Chooses: \r\n-1 nuke token\r\nOR \r\n-1 Morale and the Admiral discards 2 skill cards\r\n\r\nPost-Crisis: Activate Heavies, NO JUMP PREP",
+    "PositiveColors": [],
+    "Activation": "HeavyRaiders",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Food Shortage",
+    "AdditionalText": "President Chooses: \r\n-2 Food\r\nOR \r\n-1 Food and the President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Food Shortage",
+    "AdditionalText": "President Chooses: \r\n-2 Food\r\nOR \r\n-1 Food and the President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Food Shortage",
+    "AdditionalText": "President Chooses: \r\n-2 Food\r\nOR \r\n-1 Food and the President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Water Shortage",
+    "AdditionalText": "President Chooses: \r\n-1 Food\r\nOR \r\nthe President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Water Shortage",
+    "AdditionalText": "President Chooses: \r\n-1 Food\r\nOR \r\nthe President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Launch Nukes, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "BasestarAttack",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Water Shortage",
+    "AdditionalText": "President Chooses: \r\n-1 Food\r\nOR \r\nthe President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Launch Nukes, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "BasestarAttack",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Water Shortage",
+    "AdditionalText": "President Chooses: \r\n-1 Food\r\nOR \r\nthe President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Launch Nukes, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "BasestarAttack",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Water Shortage",
+    "AdditionalText": "President Chooses: \r\n-1 Food\r\nOR \r\nthe President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Launch Nukes, NO JUMP PREP",
+    "PositiveColors": [],
+    "Activation": "BasestarAttack",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CYLON ATTACK: Besieged",
+    "AdditionalText": "1. Activate Raiders \r\n2. Setup: ALPHA: Civilian Ship BRAVO Civilian Ship DELTA: Heavy Raider ECHO: Basestar FOXTROT: 4 Raiders, 2 Vipers, 1 Civilian Ship \r\n3. Special Rule - Heavy Casualties: The 4 Raiders that were just setup are immediately activated.",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Cylon Tracking Device",
+    "AdditionalText": "Skill check: TAC/PIL/ENG = 10 \r\nPASS: No Effect \r\nFAIL: Destroy 1 raptor and place a basestar in ALPHA and 2 civilian ships in DELTA. \r\n\r\nPost-Crisis: Activate Raiders, NO JUMP PREP",
+    "PositiveColors": [
+      "Tactics",
+      "Engineering",
+      "Piloting"
+    ],
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 10,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "Destroy 1 raptor and place a basestar in ALPHA and 2 civilian ships in DELTA."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Guilt By Collusion",
+    "AdditionalText": "Skill check: LEA/TAC = 9 \r\nPASS: The current player may choose a character to move to the brig. \r\nFAIL: -1 Morale \r\n\r\nPost-Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 9,
+        "Item2": "The current player may choose a character to move to the brig."
+      },
+      {
+        "Item2": "-1 Morale"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Riots",
+    "AdditionalText": "Admiral Chooses: \r\n-1 Food, -1 Morale\r\nOR \r\n-1 Population, -1 Fuel\r\n\r\nPost Crisis: Launch Raiders, NO JUMP PREP",
+    "PositiveColors": [],
+    "Activation": "LaunchRaiders",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Riots",
+    "AdditionalText": "Admiral Chooses: \r\n-1 Food, -1 Morale\r\nOR \r\n-1 Population, -1 Fuel \r\n\r\nPost Crisis: Launch Nukes, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "BasestarAttack",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Informing the Public",
+    "AdditionalText": "Current Player Chooses: \r\nSkill check: POL/LEA = 7 \r\nPass: Current player looks at one loyalty card belonging to any player. \r\nFAIL: -2 Morale\r\n\r\nOR \r\n\r\nRoll a die. On a 4 or less, -1 pop, -1 morale. \r\n\r\nPost Crisis: Activate Raiders, +1 jump prep",
+    "PositiveColors": [
+      "Leadership",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 7,
+        "Item2": "Current player looks at one loyalty card belonging to any player."
+      },
+      {
+        "Item2": "-2 Morale"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Rescue Mission",
+    "AdditionalText": "Admiral Chooses \r\n-1 morale and the current player is moved to sickbay\r\nOR \r\n-1 fuel and destroy 1 raptor \r\n\r\nPost-Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Rescue Mission",
+    "AdditionalText": "Admiral Chooses \r\n-1 morale and the current player is moved to sickbay\r\nOR \r\n-1 fuel and destroy 1 raptor \r\n\r\nPost-Crisis: Launch Nukes, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "BasestarAttack",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CYLON ATTACK: Raiding Party",
+    "AdditionalText": "1. Activate Raiders \r\n2. Setup: CHARLIE: Basestar, 3 raiders DELTA: 2 heavy raiders, 2 raiders ECHO: Civilian Ship FOXTROT: 2 Vipers, 2 Civilian Ships \r\n3. Special Rule - FTL Failure: -1 Jump Prep",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CYLON ATTACK: Thirty-Three",
+    "AdditionalText": "1. Activate Raiders \r\n2. Setup: ALPHA: Basestar CHARLIE: Civilian Ship DELTA: Civilian Ship ECHO: Viper, Civilian Ship FOXTROT: Viper, Civilian Ship \r\n3. Special Rule - Relentless Pursuit: Keep this card in play. If the fleet jumps before a civilian ship or basestar is destroyed, reshuffle this crisis into the deck.",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CYLON ATTACK: Surrounded",
+    "AdditionalText": "1. Launch Nukes \r\n2. Setup: ALPHA: 4 Raiders BRAVO: Basestar CHARLIE: 3 raiders, 1 heavy raider DELTA: Civilian Ship ECHO: Viper, Civilian Ship FOXTROT: Viper, Civilian Ship \r\n3. Special Rule - Panic: The current player discards 3 Skill Cards",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CYLON ATTACK: Heavy Assault",
+    "AdditionalText": "1. Activate Raiders \r\n2. Setup: ALPHA: Basestar BRAVO: Basestar DELTA: Civilian Ship ECHO: Civilian Ship FOXTROT: 1 Viper, Civilian Ship \r\n3. Special Rule - Heavy Bombardment: Launch Nukes",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CYLON ATTACK: Cylon Swarm",
+    "AdditionalText": "1. Launch Nukes \r\n2. Setup: ALPHA: Basestar, 5 Raiders BRAVO: 1 Heavy DELTA: Civilian ECHO: Viper, Civilian FOXTROT: Viper, Civilian \r\n3. Special Rule - Massive Deployment: Keep this card in play until the fleet jumps. Each time a basestar launches Raiders or Heavy Raiders, it launches 1 additional of the same type.",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CYLON ATTACK:  Tactical Strike",
+    "AdditionalText": "1. Activate Raiders \r\n2. Setup: ALPHA: Heavy Raider CHARLIE: Civilian Ship DELTA: Civilian Ship ECHO: 2 Vipers, Civilian Ship FOXTROT: 5 Raiders, 1 Basestar \r\n3. Special Rule - Hangar Assault: Damage 2 Vipers in the reserves.",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CYLON ATTACK: Boarding Parties",
+    "AdditionalText": "1. Activate Heavy Raiders \r\n2. Setup: ALPHA: 2 Heavy Raiders BRAVO: Basestar, 4 Raiders CHARLIE: 2 Heavy Raiders DELTA: Civilian Ship ECHO: 2 Civilian Ships\r\n3. Special Rule - Surprise Assault: There are no vipers in this setup",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CYLON ATTACK: Jammed Assault",
+    "AdditionalText": "1. Activate Raiders \r\n2. Setup: ALPHA Civilian Ship BRAVO: 4 Raiders CHARLIE: 1 Basestar, 2 Heavy Raiders DELTA: Civilian Ship ECHO: Viper, Civilian Ship FOXTROT: Viper, Civilian Ship \r\n3. Special Rule - Communications Jamming: Until the fleet jumps, no player may activate the Communications location.",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: A Traitor Accused",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA = 8 \r\nPASS: No Effect \r\nFAIL: The current player chooses a character to send to the brig.\r\n\r\nOR \r\n\r\nThe current player discards 5 Skill Cards \r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 8,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "The current player chooses a character to send to the brig."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Cylon Screenings",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA = 9 \r\nPASS: No Effect \r\nFAIL: -1 Morale and the current player looks at a random Loyalty Card belonging to the President or Admiral. \r\n\r\nOR \r\n\r\nEach player discards 2 Skill Cards \r\n\r\nPost Crisis: Activate Raiders, NO JUMP PREP",
+    "PositiveColors": [
+      "Leadership",
+      "Politics"
+    ],
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 9,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-1 Morale and the current player looks at a random Loyalty Card belonging to the President or Admiral."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Admiral Grilled",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA = 9 \r\nPASS: No Effect \r\nFAIL: -1 Morale and the Admiral discards 2 Skill Cards\r\n\r\nOR \r\n\r\n-1 Morale \r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 9,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-1 Morale and the Admiral discards 2 Skill Cards"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Fulfiller of Prophecy",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA = 6 \r\nPASS: The Current Player draws 1 Politics card \r\nFAIL: -1 Population\r\n\r\nOR \r\n\r\nThe current player discards 1 Skill Card; after this crisis is finished resolving, draw and resolve a new Crisis card\r\n\r\nPost Crisis: Launch Nukes, NO JUMP PREP",
+    "PositiveColors": [
+      "Leadership",
+      "Politics"
+    ],
+    "Activation": "BasestarAttack",
+    "PassLevels": [
+      {
+        "Item1": 6,
+        "Item2": "The Current Player draws 1 Politics card"
+      },
+      {
+        "Item2": "-1 Population"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Scouting For Fuel",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: TAC/PIL = 12 \r\nPASS: +1 Fuel \r\nFAIL: -1 Fuel and destroy 1 raptor\r\n\r\nOR \r\n\r\nRoll a die; if 4 or lower, -1 Fuel\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [
+      "Tactics",
+      "Piloting"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 12,
+        "Item2": "+1 Fuel"
+      },
+      {
+        "Item2": "-1 Fuel and destroy 1 raptor"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Scouting For Water",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: TAC/PIL = 9 \r\nPASS: +1 Food \r\nFAIL: -1 Fuel and destroy 1 raptor\r\n\r\nOR \r\n\r\n-1 Food\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [
+      "Tactics",
+      "Piloting"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 9,
+        "Item2": "+1 Food"
+      },
+      {
+        "Item2": "-1 Fuel and destroy 1 raptor"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Water Sabotaged",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA/TAC = 13 \r\nPASS: No Effect \r\nFAIL: -2 Food\r\n\r\nOR \r\n\r\n-1 Food\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 13,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-2 Food"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Bomb Threat",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA/TAC = 13 \r\nPASS: No Effect \r\nFAIL: -1 Morale and draw a civilian ship and destroy it \r\n\r\nOR \r\n\r\nRoll a die; on a 4 or less, trigger the FAIL condition of this Crisis\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 13,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-1 Morale and draw a civilian ship and destroy it"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Keep Tabs on Visitor",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA/TAC = 12 \r\nPASS: No Effect \r\nFAIL: Roll a die. If 4 or less, -2 population\r\n\r\nOR \r\n\r\nThe Current Player discards 4 Skill Cards at random.\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 12,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "Roll a die. If 4 or less, -2 population"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Crippled Raider",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: TAC/ENG = 10 \r\nPASS: +1 Jump Prep \r\nFAIL: -1 Population\r\n\r\nOR \r\n\r\nRoll a die. If 4 or lower, place 3 raiders in ALPHA and 1 civilian ship in DELTA\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [
+      "Tactics",
+      "Engineering"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 10,
+        "Item2": "+1 Jump Prep"
+      },
+      {
+        "Item2": "-1 Population"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Analyze Enemy Fighter",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: TAC/ENG = 7 \r\nPASS: Repair one destroyed Raptor \r\nFAIL: -1 Population\r\n\r\nOR \r\n\r\nRoll a die. If 4 or lower, -1 population and the current player discards 2 Skill Cards \r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [
+      "Tactics",
+      "Engineering"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 7,
+        "Item2": "Repair one destroyed Raptor"
+      },
+      {
+        "Item2": "-1 Population"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Send Survey Team",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: TAC/PIL/ENG = 15 \r\nPASS: No Effect \r\nFAIL: The current player is sent to Sickbay and destroy one raptor.\r\n\r\nOR \r\n\r\nRoll a die. If 5 or lower, -1 Fuel \r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [
+      "Tactics",
+      "Engineering",
+      "Piloting"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 15,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "The current player is sent to Sickbay and destroy one raptor."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Forced Water Mining",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA/TAC/ENG = 17 \r\nPASS: +1 Food \r\nFAIL: -1 Population, -1 Morale\r\n\r\nOR \r\n\r\n+1 Food, -1 Morale and each player discards one random Skill Card \r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics",
+      "Politics",
+      "Engineering"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 17,
+        "Item2": "+1 Food"
+      },
+      {
+        "Item2": "-1 Population, -1 Morale"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Network the Computers",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: POL/TAC/ENG = 11 \r\nPASS: +1 Jump Prep \r\nFAIL: -1 Population and place 1 Centurion marker at the start of the boarding party track\r\n\r\nOR \r\n\r\n-1 Population and -1 Jump Prep\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [
+      "Tactics",
+      "Politics",
+      "Engineering"
+    ],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 11,
+        "Item2": "+1 Jump Prep"
+      },
+      {
+        "Item2": "-1 Population and place 1 Centurion marker at the start of the boarding party track"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Colonial Day",
+    "AdditionalText": "Current Player Chooses \r\nSkill check: POL/TAC = 10 \r\nPASS: +1 Morale \r\nFAIL: -2 Morale\r\n\r\nOR \r\n\r\n-1 Morale\r\n\r\nPost Crisis: Launch Nukes, +1 Jump Prep",
+    "PositiveColors": [
+      "Tactics",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "BasestarAttack",
+    "PassLevels": [
+      {
+        "Item1": 10,
+        "Item2": "+1 Morale"
+      },
+      {
+        "Item2": "-2 Morale"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Rescue The Fleet",
+    "AdditionalText": "Admiral Chooses \r\n-2 Population\r\nOR \r\n-1 morale. Setup: ALPHA: Basestar DELTA: 3 Civilian Ships\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Rescue The Fleet",
+    "AdditionalText": "Admiral Chooses \r\n-2 Population\r\nOR \r\n-1 morale. Setup: ALPHA: Basestar DELTA: 3 Civilian Ships\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Rescue Caprica Survivors",
+    "AdditionalText": "President Chooses \r\n-1 Fuel, -1 Food, +1 Population\r\nOR \r\n-1 Morale\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "Raiders",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Declare Martial Law",
+    "AdditionalText": "Admiral Chooses \r\n-1 Morale and the Admiral receives the President title\r\nOR \r\n-1 Population and the Admiral discards 2 Skill Cards\r\n\r\nPost Crisis: Launch Nukes, NO JUMP PREP",
+    "PositiveColors": [],
+    "Activation": "BasestarAttack",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Sleep Deprivation",
+    "AdditionalText": "Admiral Chooses \r\nReturn all undamaged Vipers in space to the Reserves; current player moves to Sickbay\r\nOR \r\n-1 Morale\r\n\r\nPost Crisis: Launch Nukes, +1 Jump Prep",
+    "PositiveColors": [],
+    "JumpPrep": true,
+    "Activation": "BasestarAttack",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Requested Resignation",
+    "AdditionalText": "Admiral Chooses \r\nThe Admiral and President discard 2 Skill Cards\r\n\r\nOR \r\n\r\nThe President Chooses \r\nGive President Title to Admiral\r\nOR \r\nMove to Brig\r\n\r\nPost Crisis: Launch Nukes, NO JUMP PREP",
+    "PositiveColors": [],
+    "Activation": "BasestarAttack",
+    "PassLevels": []
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Mandatory Testing",
+    "AdditionalText": "Skill check: POL/LEA = 13 \r\nPASS: The President looks at 1 random Loyalty Card of the current player. \r\n9+: No Effect \r\nFAIL: -1 Morale \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "HeavyRaiders",
+    "PassLevels": [
+      {
+        "Item1": 13,
+        "Item2": "The President looks at 1 random Loyalty Card of the current player."
+      },
+      {
+        "Item1": 9,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-1 Morale"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Weapon Malfunction",
+    "AdditionalText": "Skill check: TAC/PIL/ENG = 11 \r\nPASS: No Effect \r\nFAIL: Damage 2 Vipers in space areas. All characters in Weapons Control are sent to Sickbay. \r\n\r\nPost Crisis: Launch Raiders, NO JUMP PREP",
+    "PositiveColors": [
+      "Tactics",
+      "Engineering",
+      "Piloting"
+    ],
+    "Activation": "LaunchRaiders",
+    "PassLevels": [
+      {
+        "Item1": 11,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "Damage 2 Vipers in space areas. All characters in Weapons Control are sent to Sickbay."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Security Breach",
+    "AdditionalText": "Skill check: LEA/TAC = 6 \r\nPASS: No Effect \r\nFAIL: -1 Morale and all characters in the Command location are sent to Sickbay. \r\n\r\nPost Crisis: Launch Raiders, NO JUMP PREP",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics"
+    ],
+    "Activation": "LaunchRaiders",
+    "PassLevels": [
+      {
+        "Item1": 6,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-1 Morale and all characters in the Command location are sent to Sickbay."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Terrorist Bomber",
+    "AdditionalText": "Skill check: LEA/TAC = 9 \r\nPASS: No Effect \r\nFAIL: -1 Morale and the current player is sent to Sickbay. \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics"
+    ],
+    "JumpPrep": true,
+    "Activation": "HeavyRaiders",
+    "PassLevels": [
+      {
+        "Item1": 9,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-1 Morale and the current player is sent to Sickbay."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Low Supplies",
+    "AdditionalText": "Skill check: POL/LEA = 7 \r\nPass: No Effect \r\nFail: -1 Morale; if Food is less than 6, -1 additional Morale.\r\n\r\nPost Crisis: Activate Raiders, NO JUMP PREP",
+    "PositiveColors": [
+      "Leadership",
+      "Politics"
+    ],
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 7,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-1 Morale; if Food is less than 6, -1 additional Morale."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Prisoner Revolt",
+    "AdditionalText": "Skill check: POL/LEA/TAC = 11 \r\nPASS: No Effect \r\n6+: -1 Population \r\nFAIL: -1 Population and the President chooses another player to receive the President title. \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "HeavyRaiders",
+    "PassLevels": [
+      {
+        "Item1": 11,
+        "Item2": "No Effect"
+      },
+      {
+        "Item1": 6,
+        "Item2": "-1 Population"
+      },
+      {
+        "Item2": "-1 Population and the President chooses another player to receive the President title."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Resistance",
+    "AdditionalText": "Skill check: POL/LEA/TAC = 11 \r\nPASS: No Effect \r\n9+: -1 Food \r\nFAIL: -1 Food, -1 Fuel \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "HeavyRaiders",
+    "PassLevels": [
+      {
+        "Item1": 11,
+        "Item2": "No Effect"
+      },
+      {
+        "Item1": 9,
+        "Item2": "-1 Food"
+      },
+      {
+        "Item2": "-1 Food, -1 Fuel"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Legendary Discovery",
+    "AdditionalText": "Skill check: TAC/PIL = 14 \r\nPASS: +1 Distance \r\nFAIL: -1 Food and destroy 1 raptor. \r\n\r\nPost Crisis: Activate Heavies, NO JUMP PREP",
+    "PositiveColors": [
+      "Tactics",
+      "Piloting"
+    ],
+    "Activation": "HeavyRaiders",
+    "PassLevels": [
+      {
+        "Item1": 14,
+        "Item2": "+1 Distance"
+      },
+      {
+        "Item2": "-1 Food and destroy 1 raptor."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Missing G4 Explosives",
+    "AdditionalText": "Skill check: LEA/TAC = 7 \r\nPASS: No Effect \r\nFAIL: -1 Food and all characters in the Armory location are sent to the Brig. \r\n\r\nPost Crisis: Activate Raiders, NO JUMP PREP",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics"
+    ],
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 7,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-1 Food and all characters in the Armory location are sent to the Brig."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Elections Loom",
+    "AdditionalText": "Skill check: POL/LEA = 8 \r\nPASS: No effect \r\n5+: -1 Morale \r\nFAIL: -1 Morale and the President discards 4 Skill Cards \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "HeavyRaiders",
+    "PassLevels": [
+      {
+        "Item1": 8,
+        "Item2": "No effect"
+      },
+      {
+        "Item1": 5,
+        "Item2": "-1 Morale"
+      },
+      {
+        "Item2": "-1 Morale and the President discards 4 Skill Cards"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Crash Landing",
+    "AdditionalText": "Skill check: TAC/PIL = 6 \r\nPASS: No Effect \r\nFAIL: The Admiral Chooses \r\n-1 Fuel\r\nOR \r\n-1 Morale and the current player is sent to Sickbay.\r\n\r\nPost Crisis: Activate Heavies, NO JUMP PREP",
+    "PositiveColors": [
+      "Tactics",
+      "Piloting"
+    ],
+    "Activation": "HeavyRaiders",
+    "PassLevels": [
+      {
+        "Item1": 6,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "The Admiral Chooses"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Hangar Accident",
+    "AdditionalText": "Skill check: TAC/PIL/ENG = 10 \r\nPASS: No Effect \r\n7+: -1 Population \r\nFAIL: -1 Population and damage two vipers in the reserves. \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+    "PositiveColors": [
+      "Tactics",
+      "Engineering",
+      "Piloting"
+    ],
+    "JumpPrep": true,
+    "Activation": "HeavyRaiders",
+    "PassLevels": [
+      {
+        "Item1": 10,
+        "Item2": "No Effect"
+      },
+      {
+        "Item1": 7,
+        "Item2": "-1 Population"
+      },
+      {
+        "Item2": "-1 Population and damage two vipers in the reserves."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Prison Labor",
+    "AdditionalText": "Skill check: POL/LEA/TAC = 10 \r\nPASS: No Effect \r\nFAIL: -1 morale, -1 food \r\n\r\nPost Crisis: Activate Raiders, NO JUMP PREP",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics",
+      "Politics"
+    ],
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 10,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-1 morale, -1 food"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Cylon Accusation",
+    "AdditionalText": "Skill check: POL/LEA/TAC = 10 \r\nPASS: No Effect \r\nFAIL: The current player is sent to the Brig. \r\n\r\nPost Crisis: Activate Raiders, NO JUMP PREP",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics",
+      "Politics"
+    ],
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 10,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "The current player is sent to the Brig."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Unexpected Reunion",
+    "AdditionalText": "Skill check: POL/LEA/TAC = 8 \r\nPASS: No Effect \r\nFAIL: -1 Morale and the current player discards his hand of Skill Cards. \r\n\r\nPost Crisis: Activate Raiders, NO JUMP PREP",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics",
+      "Politics"
+    ],
+    "Activation": "Raiders",
+    "PassLevels": [
+      {
+        "Item1": 8,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-1 Morale and the current player discards his hand of Skill Cards."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Terrorist Investigations",
+    "AdditionalText": "Skill check: POL/LEA = 12 \r\nPASS: Current player looks at 1 random Loyalty Card belonging to any player. \r\n6+: No Effect \r\nFAIL: -1 Morale \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "HeavyRaiders",
+    "PassLevels": [
+      {
+        "Item1": 12,
+        "Item2": "Current player looks at 1 random Loyalty Card belonging to any player."
+      },
+      {
+        "Item1": 6,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-1 Morale"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Detector Sabotage",
+    "AdditionalText": "Skill check: LEA/TAC = 8 \r\nPASS: No Effect \r\nFAIL: All characters in the Research Lab are moved to Sickbay. Until the end of the game, no players may look at other players' Loyalty Cards. \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics"
+    ],
+    "JumpPrep": true,
+    "Activation": "HeavyRaiders",
+    "PassLevels": [
+      {
+        "Item1": 8,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "All characters in the Research Lab are moved to Sickbay. Until the end of the game, no players may look at other players' Loyalty Cards."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Loss of a Friend",
+    "AdditionalText": "Skill check: POL/LEA = 9 \r\nPASS: No Effect \r\n7+: The current player discards 2 Skill Cards \r\nFAIL: -1 Morale and the current player discards 2 Skill Cards \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "HeavyRaiders",
+    "PassLevels": [
+      {
+        "Item1": 9,
+        "Item2": "No Effect"
+      },
+      {
+        "Item1": 7,
+        "Item2": "The current player discards 2 Skill Cards"
+      },
+      {
+        "Item2": "-1 Morale and the current player discards 2 Skill Cards"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: The Olympic Carrier",
+    "AdditionalText": "Skill check: POL/LEA/PIL = 11 \r\nPass: No Effect \r\n8+: -1 Population \r\nFAIL: -1 Morale, -1 Population \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Politics",
+      "Piloting"
+    ],
+    "JumpPrep": true,
+    "Activation": "HeavyRaiders",
+    "PassLevels": [
+      {
+        "Item1": 11,
+        "Item2": "No Effect"
+      },
+      {
+        "Item1": 8,
+        "Item2": "-1 Population"
+      },
+      {
+        "Item2": "-1 Morale, -1 Population"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Witch Hunt",
+    "AdditionalText": "Skill check: POL/LEA = 10 \r\nPASS: No Effect \r\n6+: -1 Morale \r\nFAIL: -1 Morale, current player chooses a character and moves him to Sickbay. \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+    "PositiveColors": [
+      "Leadership",
+      "Politics"
+    ],
+    "JumpPrep": true,
+    "Activation": "HeavyRaiders",
+    "PassLevels": [
+      {
+        "Item1": 10,
+        "Item2": "No Effect"
+      },
+      {
+        "Item1": 6,
+        "Item2": "-1 Morale"
+      },
+      {
+        "Item2": "-1 Morale, current player chooses a character and moves him to Sickbay."
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Unidentified Ship",
+    "AdditionalText": "Skill check: TAC/PIL = 10 \r\nPASS: No Effect \r\nFAIL: -1 Population \r\n\r\nPost Crisis: Launch Raiders, NO JUMP PREP",
+    "PositiveColors": [
+      "Tactics",
+      "Piloting"
+    ],
+    "Activation": "LaunchRaiders",
+    "PassLevels": [
+      {
+        "Item1": 10,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "-1 Population"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "CRISIS: Cylon Virus",
+    "AdditionalText": "Skill check: TAC/ENG = 13 \r\nPASS: No Effect \r\nFAIL: All characters in FTL Control move to Sickbay. Then place 1 Centurion marker at the beginning of the Boarding Track. \r\n\r\nPost Crisis: Launch Raiders, NO JUMP PREP",
+    "PositiveColors": [
+      "Tactics",
+      "Engineering"
+    ],
+    "Activation": "LaunchRaiders",
+    "PassLevels": [
+      {
+        "Item1": 13,
+        "Item2": "No Effect"
+      },
+      {
+        "Item2": "All characters in FTL Control move to Sickbay. Then place 1 Centurion marker at the beginning of the Boarding Track."
+      }
+    ]
+  }
+]

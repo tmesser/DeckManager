@@ -1,0 +1,87 @@
+[
+  {
+    "CardType": "Quorum",
+    "Heading": "INSPIRATIONAL SPEECH",
+    "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 morale and remove this card from the game. Otherwise, no effect and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "INSPIRATIONAL SPEECH",
+    "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 morale and remove this card from the game. Otherwise, no effect and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "INSPIRATIONAL SPEECH",
+    "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 morale and remove this card from the game. Otherwise, no effect and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "INSPIRATIONAL SPEECH",
+    "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 morale and remove this card from the game. Otherwise, no effect and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "FOOD RATIONING",
+    "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 food and remove this card from the game. Otherwise, no effect and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "FOOD RATIONING",
+    "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 food and remove this card from the game. Otherwise, no effect and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ARREST ORDER",
+    "AdditionalText": "Action: Chose a character and send him to the 'Brig' location. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ARREST ORDER",
+    "AdditionalText": "Action: Chose a character and send him to the 'Brig' location. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "AUTHORIZATION OF BRUTAL FORCE",
+    "AdditionalText": "Action: Destroy 3 raiders, 1 heavy raider, or 1 centurion. Then roll a die and if 2 or less, lose 1 population. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "AUTHORIZATION OF BRUTAL FORCE",
+    "AdditionalText": "Action: Destroy 3 raiders, 1 heavy raider, or 1 centurion. Then roll a die and if 2 or less, lose 1 population. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "RELEASE CYLON MUGSHOT",
+    "AdditionalText": "Action: Look at 1 random Loyalty Card belonging to any other player, then roll a die. If 3 or less, lose 1 morale. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "PRESIDENTIAL PARDON",
+    "AdditionalText": "Action: Move any other character from the 'Brig' to any other location on Galactica."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ASSIGN MISSION SPECIALIST",
+    "AdditionalText": "Action: Draw 2 politics cards and give this card to any other player. Keep this card in play. The next time the Fleet jumps, this player chooses the destination instead of the Admiral. He draws 3 Destination Card (instead of 2) and chooses 1. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ACCEPT PROPHECY",
+    "AdditionalText": "Action: Draw 1 Skill Card of any type (it may be from outside your skill set). Keep this card in play. When a player activates Administration or chooses the President with the Admiral's Quarters location, increase the difficulty by 2 then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ASSIGN ARBITRATOR",
+    "AdditionalText": "Action: Draw 2 politics cards and give this card to any other player. Keep this card in play. When a player activates the Admiral's Quarters location, this player may discard this card to reduce or increase the difficulty by 3."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ENCOURAGE MUTINY",
+    "AdditionalText": "Action: Choose any other player (excluding the Admiral). That player rolls a die. If 3 or higher, he receives the Admiral title. Otherwise lose 1 morale. Discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ASSIGN VICE PRESIDENT",
+    "AdditionalText": "Action: Draw 2 politics cards and give this card to any other player. Keep this card in play. While this player is not President other players may not be chosen with the Administration location."
+  }
+]
