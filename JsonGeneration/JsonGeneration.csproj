@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="GeneratedJson\Boards\Locations.json" />
     <None Include="GeneratedJson\Components\CivilianPile.json" />
     <None Include="GeneratedJson\Decks\CrisisDeck.json" />
     <None Include="GeneratedJson\Decks\DestinationDeck.json" />

@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="TestContent\Boards\Locations.json" />
     <None Include="TestContent\CivilianPile.json" />
     <None Include="TestContent\Crisis.json" />
     <None Include="TestContent\CrisisDeck.json" />
