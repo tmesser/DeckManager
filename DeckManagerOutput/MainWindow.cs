@@ -25,7 +25,7 @@ namespace DeckManagerOutput
             _mainMenu.MenuItems.Add(new MenuItem("Game"));
             Menu = _mainMenu;
 
-            dradis = new DradisForm();
+            dradis = new DradisForm(this);
         }
 
         private void GiveCardToCurrentCharacterButtonClick(object sender, EventArgs e)
@@ -208,7 +208,7 @@ namespace DeckManagerOutput
 
         private void EvalSkillCheckButtonClick(object sender, EventArgs e)
         {
-
+            
         }
 
         private void PlayIntoCrisisButtonClick(object sender, EventArgs e)

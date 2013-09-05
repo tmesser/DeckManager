@@ -4,7 +4,7 @@
     {
         Unknown,
         Alpha,
-        Beta,
+        Bravo,
         Charlie,
         Delta,
         Echo,
