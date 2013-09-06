@@ -17,6 +17,7 @@ namespace DeckManagerOutput
     {
         private readonly MainMenu _mainMenu;
         private DradisForm dradis;
+        
 
         public MainForm()
         {
@@ -178,6 +179,13 @@ namespace DeckManagerOutput
             character.CharacterName = "Testman";
 
             character.DefaultDrawColors = new List<List<DeckManager.Cards.Enums.SkillCardColor>>();
+            List<DeckManager.Cards.Enums.SkillCardColor> colores = new List<DeckManager.Cards.Enums.SkillCardColor>();
+            colores.Add(DeckManager.Cards.Enums.SkillCardColor.Engineering);
+
+            colores.Add(DeckManager.Cards.Enums.SkillCardColor.Politics);
+            colores.Add(DeckManager.Cards.Enums.SkillCardColor.Leadership);
+            character.DefaultDrawColors.Add(colores);
+            
 
             characterList.Items.Add(character);
             NewPlayerForm newPlayerForm = new NewPlayerForm(characterList);
@@ -197,14 +205,23 @@ namespace DeckManagerOutput
         private void BeginGameButtonClick(object sender, EventArgs e)
         {
             addPlayerButton.Enabled = false;
+            beginGameButton.Enabled = false;
 
-            List<Player> players = new List<Player>();
-            players.Add(new Player());
-            players.Add(new Player());
-            players.Add(new Player());
+            //List<Player> players = new List<Player>();
+            //players.Add(new Player());
+            //players.Add(new Player());
+            //players.Add(new Player());
 
+            var players = characterListBox.Items.Cast<Player>().ToList();
+            
             GameState gs =  Program.GManager.NewGame(players,0,false);
+            enableControls();
         }
+        /// <summary>
+        /// Controls should be disabled before the game begins. Calling this method enables everything.
+        /// </summary>
+        private void enableControls()
+        { }
 
         private void EvalSkillCheckButtonClick(object sender, EventArgs e)
         {
@@ -275,7 +292,9 @@ namespace DeckManagerOutput
         private void DrawDestinationsButtonClick(object sender, EventArgs e)
         {
             var count = (int)destinationCountUpDown.Value;
-            destinationsListBox.Items.Add(Program.GManager.CurrentGameState.DestinationDeck.DrawMany(count));
+            destinationsListBox.BeginUpdate();
+            destinationsListBox.Items.AddRange(Program.GManager.CurrentGameState.DestinationDeck.DrawMany(count).ToArray());
+            destinationsListBox.EndUpdate();
         }
 
         private void CharacterListBoxSelectedIndexChanged(object sender, EventArgs e)
@@ -345,6 +364,9 @@ namespace DeckManagerOutput
         private void CopyDestinationsButtonClick(object sender, EventArgs e)
         {
             // copies drawn destination cards to clipboard, used to send PM to destination chooser
+            var dests = destinationsListBox.Items.Cast<DeckManager.Cards.DestinationCard>().ToList();
+            string bbcode = string.Join("\r\n", dests.Select(x => x.ToBBCode()));
+            Clipboard.SetText(bbcode);
         }
 
         private void JumpToDestinationButton_Click(object sender, EventArgs e)
@@ -359,12 +381,25 @@ namespace DeckManagerOutput
 
         private void clearCrisisButton_Click(object sender, EventArgs e)
         {
+            // discard all crisis/mission cards drawn
+            // discard all skill cards in skill check pile
 
         }
 
         private void DradisButton_Click(object sender, EventArgs e)
         {
             dradis.Show();
+        }
+
+        private void AddToSkillCheckButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CopyQuorumToClipboardButton_Click(object sender, EventArgs e)
+        {
+            if (characterQuorumHandListBox.SelectedIndex >= 0)
+                Clipboard.SetText(((DeckManager.Cards.QuorumCard)characterQuorumHandListBox.SelectedItem).ToBBCode());
         }
 
 

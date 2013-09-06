@@ -79,13 +79,12 @@
             this.DamageVipersTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.RecallVipersTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.DiscardDamageTokenTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.DamageGalacticaTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.BoardingTrackPanel.SuspendLayout();
-            this.LaunchLocationComboBox.KeyPress += LaunchLocationComboBox_KeyPress;
-            this.LaunchComponentComboBox.KeyPress += LaunchComponentComboBox_KeyPress;
-            this.LaunchLocationComboBox.LostFocus += LaunchLocationComboBox_LostFocus;
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.DamageGalacticaTooltip.SetToolTip(this.DamageGalacticaButton, "Applies all currently selected Galactica Damage tokens, then marks them as resolved.");
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -358,7 +357,7 @@
             this.DamageGalacticaButton.Size = new System.Drawing.Size(75, 36);
             this.DamageGalacticaButton.TabIndex = 24;
             this.DamageGalacticaButton.Text = "Damage Galactica";
-            this.DiscardDamageTokenTooltip.SetToolTip(this.DamageGalacticaButton, "Places the selected Damage tokens back into the pile of unresolved Damage tokens." +
+            this.DiscardDamageTokenTooltip.SetToolTip(this.DiscardDamageTokenButton, "Places the selected Damage tokens back into the pile of unresolved Damage tokens." +
         "\r\nTokens discarded in this way may be drawn again in the future.");
             this.DamageGalacticaButton.UseVisualStyleBackColor = true;
             this.DamageGalacticaButton.Click += new System.EventHandler(this.DamageGalacticaButton_Click);
@@ -574,5 +573,6 @@
         private System.Windows.Forms.ToolTip DamageVipersTooltip;
         private System.Windows.Forms.ToolTip RecallVipersTooltip;
         private System.Windows.Forms.ToolTip DiscardDamageTokenTooltip;
+        private System.Windows.Forms.ToolTip DamageGalacticaTooltip;
     }
 }

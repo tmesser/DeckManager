@@ -14,5 +14,9 @@ namespace DeckManager.Components
         {
             get { return ComponentType.HeavyRaider; }
         }
+        public override string ToString()
+        {
+            return "Heavy Raider";
+        }
     }
 }

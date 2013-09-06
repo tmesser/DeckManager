@@ -25,5 +25,10 @@ namespace DeckManager.Components
         {
             get { return ComponentType.Civilian; }
         }
+
+        public override string ToString()
+        {
+            return "CIVILIAN ("+(Load.Count==0? "EMPTY":string.Join(" ",Load))+")";
+        }
     }
 }

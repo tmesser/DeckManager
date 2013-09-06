@@ -172,6 +172,15 @@ namespace DeckManagerOutput
         {
 
         }
+        /// <summary>
+        /// Returns a list of all selected components in all sectors of space around Galactica
+        /// </summary>
+        /// <returns>List of selected components</returns>
+        private List<DeckManager.Components.BaseComponent> GetSelectedComponents()
+        {
+            throw new NotImplementedException();
+        }
+
 
     }
 }

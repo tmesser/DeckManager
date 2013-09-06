@@ -38,7 +38,7 @@ namespace DeckManager
                 {
                     TurnLog = "Begin game.",
 
-                    CrisisDeck = new CrisisDeck(_logger, ConfigurationManager.AppSettings["EngineeringDeckLocation"]),
+                    CrisisDeck = new CrisisDeck(_logger, ConfigurationManager.AppSettings["CrisisDeckLocation"]),
                     MissionDeck  = new MissionDeck(_logger),
                     DestinationDeck = new DestinationDeck(_logger, ConfigurationManager.AppSettings["DestinationDeckLocation"]),
 

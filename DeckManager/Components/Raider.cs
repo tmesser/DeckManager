@@ -14,5 +14,9 @@ namespace DeckManager.Components
         {
             get { return ComponentType.Raider; }
         }
+        public override string ToString()
+        {
+            return "Raider";
+        }
     }
 }

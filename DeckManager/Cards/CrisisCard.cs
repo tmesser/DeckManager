@@ -83,7 +83,7 @@ namespace DeckManager.Cards
 
         public override string ToString()
         {
-            return Heading+"\n"+AdditionalText+"\n"+Activation+" "+ JumpPrep;
+            return Heading+"\n"+AdditionalText+"\n"+Activation+" "+ (JumpPrep?"+1 Jump Prep":"NO JUMP PREP");
         }
     }
 }

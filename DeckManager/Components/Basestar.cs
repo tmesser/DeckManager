@@ -14,5 +14,11 @@ namespace DeckManager.Components
         {
             get { return ComponentType.Basestar; }
         }
+
+        public override string ToString()
+        {
+            return "Basestar";
+        }
+
     }
 }
