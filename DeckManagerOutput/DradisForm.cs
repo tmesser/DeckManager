@@ -117,7 +117,22 @@ namespace DeckManagerOutput
         private void LaunchComponentComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // these won't work yet - no way to gamemanager does not have draw/destroy/discard component logic yet
-
+            var component = LaunchComponentComboBox.SelectedItem.GetType().ToString();
+            var comptype = (DeckManager.Components.Enums.ComponentType)LaunchComponentComboBox.SelectedItem;
+            switch (comptype)
+            {
+                case DeckManager.Components.Enums.ComponentType.Civilian:
+                    //var ship = Program.GManager.DrawCivilianShip();
+                    break;
+                case DeckManager.Components.Enums.ComponentType.Basestar:
+                    break;
+                case DeckManager.Components.Enums.ComponentType.HeavyRaider:
+                    break;
+                case DeckManager.Components.Enums.ComponentType.Raider:
+                    break;
+                case DeckManager.Components.Enums.ComponentType.Viper:
+                    break;
+            }
         }
 
         private void LaunchLocationComboBox_SelectedIndexChanged(object sender, EventArgs e)

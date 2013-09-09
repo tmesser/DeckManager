@@ -207,11 +207,6 @@ namespace DeckManagerOutput
             addPlayerButton.Enabled = false;
             beginGameButton.Enabled = false;
 
-            //List<Player> players = new List<Player>();
-            //players.Add(new Player());
-            //players.Add(new Player());
-            //players.Add(new Player());
-
             var players = characterListBox.Items.Cast<Player>().ToList();
             
             GameState gs =  Program.GManager.NewGame(players,0,false);
@@ -271,7 +266,7 @@ namespace DeckManagerOutput
 
         private void DestinationCountUpDownValueChanged(object sender, EventArgs e)
         {
-            // number of destination cards to draw
+            // number of destination cards to draw. probably don't need an event for this changing.
         }
 
         private void ReturnToDeckButtonClick(object sender, EventArgs e)
@@ -308,6 +303,7 @@ namespace DeckManagerOutput
                 characterSkillHandListBox.Items.Add(card);
             characterSkillHandCountTextBox.Text = characterSkillHandListBox.Items.Count.ToString();
 
+            // update quorum card list box if current character is president
             characterQuorumHandListBox.Items.Clear();
             if (((Player)characterListBox.SelectedItem).QuorumHand.Count > 0)
                 foreach (DeckManager.Cards.QuorumCard card in ((Player)characterListBox.SelectedItem).QuorumHand)
@@ -316,14 +312,14 @@ namespace DeckManagerOutput
 
             characterQuorumHandListBox.EndUpdate();            
             characterSkillHandListBox.EndUpdate();
-            // update quorum card list box if current character is president
         }
 
         private void RemoveFromHandButtonClick(object sender, EventArgs e)
         {
             // move character's currently selected card into the drawn card window. can use this to transfer cards between players
             var currentPlayer = (Player)this.characterListBox.SelectedItem;
-            //currentPlayer.Cards.RemoveAll(
+            var cards = this.characterSkillHandListBox.SelectedItems.Cast<DeckManager.Cards.SkillCard>().ToArray();
+            //currentPlayer.Cards.Remove(
         }
 
         private void CopyGameButtonClick(object sender, EventArgs e)

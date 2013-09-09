@@ -45,7 +45,11 @@ namespace DeckManagerOutput
         {
             OKButton.Enabled = true;
             newPlayer.Character = (DeckManager.Characters.Character)this.characterListBox.SelectedItem;
+            PopulateSkillColorListBoxes(newPlayer.Character);
+        }
 
+        private void PopulateSkillColorListBoxes(DeckManager.Characters.Character character)
+        {
             initialDrawComboBox1.BeginUpdate();
             initialDrawComboBox2.BeginUpdate();
             initialDrawComboBox3.BeginUpdate();
@@ -53,12 +57,17 @@ namespace DeckManagerOutput
             initialDrawComboBox1.Items.Clear();
             initialDrawComboBox2.Items.Clear();
             initialDrawComboBox3.Items.Clear();
-
-            foreach (DeckManager.Cards.Enums.SkillCardColor color in newPlayer.Character.UniqueColors)
+            
+            // todo can't draw more of one color than you can draw - need to account for that
+            //foreach (DeckManager.Cards.Enums.SkillCardColor color in character.UniqueColors)
+            foreach (List<DeckManager.Cards.Enums.SkillCardColor> draw in character.DefaultDrawColors)
             {
-                initialDrawComboBox1.Items.Add(color);
-                initialDrawComboBox2.Items.Add(color);
-                initialDrawComboBox3.Items.Add(color);
+                foreach (DeckManager.Cards.Enums.SkillCardColor color in draw)
+                {
+                    initialDrawComboBox1.Items.Add(color);
+                    initialDrawComboBox2.Items.Add(color);
+                    initialDrawComboBox3.Items.Add(color);
+                }
             }
             initialDrawComboBox3.EndUpdate();
             initialDrawComboBox2.EndUpdate();
