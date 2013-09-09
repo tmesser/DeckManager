@@ -7,6 +7,8 @@ namespace DeckManager.Components
 {
     public abstract class BaseComponent
     {
+        
+
         /// <summary>
         /// Component A, B, C etc that is publicly assigned whenever a ship is deployed.
         /// </summary>
@@ -21,7 +23,17 @@ namespace DeckManager.Components
         /// <value>
         /// The permanent designation.
         /// </value>
-        internal Guid PermanentDesignation { get; set; }
+        private Guid _permanentDesignation;
+        internal Guid PermanentDesignation
+        {
+            get
+            {
+                return _permanentDesignation == default(Guid)
+                           ? _permanentDesignation = new Guid()
+                           : _permanentDesignation;
+            }
+            set { _permanentDesignation = value; }
+        }
 
         /// <summary>
         /// A system-internal for the component to randomize their deployment.  Changes whenever the pile is shuffled.
@@ -69,7 +81,7 @@ namespace DeckManager.Components
 
         public override int GetHashCode()
         {
-            return (PermanentDesignation != null ? PermanentDesignation.GetHashCode() : 0);
+            return (PermanentDesignation.GetHashCode());
         }
     }
 }

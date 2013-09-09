@@ -9,6 +9,7 @@ using DeckManager.Boards;
 using DeckManager.Boards.Enums;
 using DeckManager.Cards;
 using DeckManager.Cards.Enums;
+using DeckManager.Components;
 using DeckManager.Extensions;
 using DeckManager.ManagerLogic.Enums;
 using NUnit.Framework;
@@ -326,23 +327,24 @@ namespace DeckManagerTests
 
         private static void GenerateCivilianComponents()
         {
-            var dong = new List<List<Resource>>
+            var dong = new List<Civilian>
                 {
-                    new List<Resource> {Resource.Population, Resource.Population},
-                    new List<Resource> {Resource.Population, Resource.Population},
-                    new List<Resource> {Resource.Population},
-                    new List<Resource> {Resource.Population},
-                    new List<Resource> {Resource.Population},
-                    new List<Resource> {Resource.Population},
-                    new List<Resource> {Resource.Population},
-                    new List<Resource> {Resource.Population},
-                    new List<Resource> {Resource.Population, Resource.Morale},
-                    new List<Resource> {Resource.Population, Resource.Fuel},
-                    new List<Resource>(),
-                    new List<Resource>()
+                    new Civilian{ Load = new List<Resource> {Resource.Population, Resource.Population}},
+                    new Civilian{ Load = new List<Resource> {Resource.Population, Resource.Population}},
+                    new Civilian{ Load = new List<Resource> {Resource.Population}},
+                    new Civilian{ Load = new List<Resource> {Resource.Population}},
+                    new Civilian{ Load = new List<Resource> {Resource.Population}},
+                    new Civilian{ Load = new List<Resource> {Resource.Population}},
+                    new Civilian{ Load = new List<Resource> {Resource.Population}},
+                    new Civilian{ Load = new List<Resource> {Resource.Population}},
+                    new Civilian{ Load = new List<Resource> {Resource.Population, Resource.Morale}},
+                    new Civilian{ Load = new List<Resource> {Resource.Population, Resource.Fuel}},
+                    new Civilian{ Load = new List<Resource>()},
+                    new Civilian{ Load = new List<Resource>()}
                 };
 
-            var json = JsonConvert.SerializeObject(dong, Newtonsoft.Json.Formatting.Indented, new Newtonsoft.Json.Converters.StringEnumConverter());
+            var jsonSettings = new JsonSerializerSettings { DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new Newtonsoft.Json.Converters.StringEnumConverter() } };
+            var json = JsonConvert.SerializeObject(dong, Newtonsoft.Json.Formatting.Indented, jsonSettings);
             using (var sr = new StreamWriter(@"..\..\JsonGeneratorOutput\GeneratedJson\Components\CivilianPile.json"))
             {
                 sr.Write(json);

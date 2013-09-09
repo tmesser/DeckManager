@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DeckManager.Components.Enums;
 using DeckManager.States.Enums;
 
-namespace DeckManager.States
+namespace DeckManager.Components
 {
-    public class Viper
+    public class Viper : BaseComponent
     {
         public ViperStatus Status { get; set; }
+
+        public override ComponentType ComponentType
+        {
+            get { return ComponentType.Viper; }
+        }
     }
 }
