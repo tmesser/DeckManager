@@ -6,6 +6,8 @@
         Galactica,
         Dradis,
         ColonialOne,
-        Cylon
+        Cylon,
+        HumanRebelBasestar,
+        CylonRebelBasestar
     }
 }

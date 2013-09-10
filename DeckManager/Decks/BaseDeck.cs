@@ -83,6 +83,15 @@ namespace DeckManager.Decks
             return ret;
         }
         /// <summary>
+        /// Places a card on the top of the Deck. It will be the next card drawn.
+        /// </summary>
+        /// <returns></returns>
+        public virtual void Top(T card)
+        {
+            Deck.Insert(0, card);
+        }
+
+        /// <summary>
         /// Places the passed card at the bottom of the deck
         /// </summary>
         /// <param name="card">Card to be buried</param>

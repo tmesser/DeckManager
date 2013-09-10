@@ -85,5 +85,22 @@ namespace DeckManager.Cards
         {
             return Heading+"\n"+AdditionalText+"\n"+Activation+" "+ (JumpPrep?"+1 Jump Prep":"NO JUMP PREP");
         }
+
+        /// <summary>
+        /// Returns a user-friendly string representing this crisis' skill check, if it has one. Empty string if not.
+        /// </summary>
+        /// <returns></returns>
+        public string GetSkillCheckText()
+        {
+            // todo fill this out
+            if (this.PassLevels.Count == 0)
+                return string.Empty;
+            return "not implemented";
+        }
+
+        public bool HasSkillCheck()
+        { 
+            return this.PositiveColors.Count != 0; 
+        }
     }
 }

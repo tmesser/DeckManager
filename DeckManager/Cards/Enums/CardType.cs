@@ -9,6 +9,7 @@
         SuperCrisis,
         Loyalty,
         Destination,
-        Mission
+        Mission,
+        Mutiny
     }
 }

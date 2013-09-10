@@ -125,6 +125,8 @@ namespace DeckManager
 
         private List<Viper> BuildVipers()
         {
+            // todo account for mk7 vipers
+
             var viperLimit = ConfigurationManager.AppSettings["MaxVipers"].ParseAs<int>();
             var vipers = new Viper[viperLimit];
             var viperInt = 0;
@@ -254,5 +256,157 @@ namespace DeckManager
             foreach (Cards.BaseCard card in cards)
                 DiscardCard(card);
         }
+                /// <summary>
+        /// Place the card on the top of its deck
+        /// </summary>
+        /// <param name="card"></param>
+        public void TopCard(Cards.BaseCard card)
+        {
+            switch (card.CardType)
+            {
+                case CardType.Crisis:
+                    CurrentGameState.CrisisDeck.Top((Cards.CrisisCard)card);
+                    break;
+                case CardType.Destination:
+                    CurrentGameState.DestinationDeck.Top((Cards.DestinationCard)card);
+                    break;
+                case CardType.Loyalty:
+                    CurrentGameState.LoyaltyDeck.Top((Cards.LoyaltyCard)card);
+                    break;
+                case CardType.Mission:
+                    CurrentGameState.MissionDeck.Top((Cards.MissionCard)card);
+                    break;
+                case CardType.Mutiny:
+                    CurrentGameState.MutinyDeck.Top((Cards.MutinyCard)card);
+                    break;
+                case CardType.Quorum:
+                    CurrentGameState.QuorumDeck.Top((Cards.QuorumCard)card);
+                    break;
+                case CardType.Skill:
+                    var skill = (Cards.SkillCard)card;
+                    switch (skill.CardColor)
+                    {
+                        case SkillCardColor.Politics:
+                            CurrentGameState.PoliticsDeck.Top(skill);
+                            break;
+                        case SkillCardColor.Leadership:
+                            CurrentGameState.LeadershipDeck.Top(skill);
+                            break;
+                        case SkillCardColor.Tactics:
+                            CurrentGameState.TacticsDeck.Top(skill);
+                            break;
+                        case SkillCardColor.Engineering:
+                            CurrentGameState.EngineeringDeck.Top(skill);
+                            break;
+                        case SkillCardColor.Piloting:
+                            CurrentGameState.PilotingDeck.Top(skill);
+                            break;
+                        case SkillCardColor.Treachery:
+                            CurrentGameState.TreacheryDeck.Top(skill);
+                            break;
+                    }
+                    break;
+                case CardType.SuperCrisis:
+                    CurrentGameState.SuperCrisisDeck.Top((Cards.SuperCrisisCard)card);
+                    break;
+                default:
+                    break;
+            }
+        }
+        /// <summary>
+        /// Places the cards on the top of their decks.
+        /// </summary>
+        /// <param name="cards"></param>
+        public void TopCards(IEnumerable<Cards.BaseCard> cards)
+        {
+            foreach (Cards.BaseCard card in cards)
+                BuryCard(card);
+        }
+        /// <summary>
+        /// Place the card on the bottom of its Deck
+        /// </summary>
+        /// <param name="card"></param>
+        public void BuryCard(Cards.BaseCard card)
+        {
+            switch (card.CardType)
+            { 
+                case CardType.Crisis:
+                    CurrentGameState.CrisisDeck.Bury((Cards.CrisisCard)card);
+                    break;
+                case CardType.Destination:
+                    CurrentGameState.DestinationDeck.Bury((Cards.DestinationCard)card);
+                    break;
+                case CardType.Loyalty:
+                    CurrentGameState.LoyaltyDeck.Bury((Cards.LoyaltyCard)card);
+                    break;
+                case CardType.Mission:
+                    CurrentGameState.MissionDeck.Bury((Cards.MissionCard)card);
+                    break;
+                case CardType.Mutiny:
+                    CurrentGameState.MutinyDeck.Bury((Cards.MutinyCard)card);
+                    break;
+                case CardType.Quorum:
+                    CurrentGameState.QuorumDeck.Bury((Cards.QuorumCard)card);
+                    break;
+                case CardType.Skill:
+                    var skill = (Cards.SkillCard)card;
+                    switch (skill.CardColor)
+                    { 
+                        case SkillCardColor.Politics:
+                            CurrentGameState.PoliticsDeck.Bury(skill);
+                            break;
+                        case SkillCardColor.Leadership:
+                            CurrentGameState.LeadershipDeck.Bury(skill);
+                            break;
+                        case SkillCardColor.Tactics:
+                            CurrentGameState.TacticsDeck.Bury(skill);
+                            break;
+                        case SkillCardColor.Engineering:
+                            CurrentGameState.EngineeringDeck.Bury(skill);
+                            break;
+                        case SkillCardColor.Piloting:
+                            CurrentGameState.PilotingDeck.Bury(skill);
+                            break;
+                        case SkillCardColor.Treachery:
+                            CurrentGameState.TreacheryDeck.Bury(skill);
+                            break;
+                    }
+                    break;
+                case CardType.SuperCrisis:
+                    CurrentGameState.SuperCrisisDeck.Bury((Cards.SuperCrisisCard)card);
+                    break;
+                default:
+                    break;
+            }
+        }
+        /// <summary>
+        /// places the cards on the bottom of their decks
+        /// </summary>
+        /// <param name="cards"></param>
+        public void BuryCards(IEnumerable<Cards.BaseCard> cards)
+        {
+            foreach (Cards.BaseCard card in cards)
+                BuryCard(card);
+        }
+        /// <summary>
+        /// Marks the component as destroyed and changes the GameState accordingly.
+        /// </summary>
+        /// <param name="ship"></param>
+        public void DestroyComponent(DeckManager.Components.BaseComponent ship)
+        { 
+        }
+
+        public void DestroyComponents(IEnumerable<DeckManager.Components.BaseComponent> ships)
+        { }
+
+        /// <summary>
+        /// Removes the component from active play and places it back in its pile
+        /// </summary>
+        /// <param name="ship"></param>
+        public void DiscardComponent(DeckManager.Components.BaseComponent ship)
+        { }
+
+        public void DiscardComponents(IEnumerable<DeckManager.Components.BaseComponent> ships)
+        { }
     }
 }

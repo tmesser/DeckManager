@@ -84,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            this.DamageGalacticaTooltip.SetToolTip(this.DamageGalacticaButton, "Applies all currently selected Galactica Damage tokens, then marks them as resolved.");
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -357,8 +356,8 @@
             this.DamageGalacticaButton.Size = new System.Drawing.Size(75, 36);
             this.DamageGalacticaButton.TabIndex = 24;
             this.DamageGalacticaButton.Text = "Damage Galactica";
-            this.DiscardDamageTokenTooltip.SetToolTip(this.DiscardDamageTokenButton, "Places the selected Damage tokens back into the pile of unresolved Damage tokens." +
-        "\r\nTokens discarded in this way may be drawn again in the future.");
+            this.DamageGalacticaTooltip.SetToolTip(this.DamageGalacticaButton, "Applies all currently selected Galactica Damage tokens, then marks them as resolv" +
+        "ed.");
             this.DamageGalacticaButton.UseVisualStyleBackColor = true;
             this.DamageGalacticaButton.Click += new System.EventHandler(this.DamageGalacticaButton_Click);
             // 
@@ -398,6 +397,8 @@
             this.DiscardDamageTokenButton.Size = new System.Drawing.Size(62, 23);
             this.DiscardDamageTokenButton.TabIndex = 28;
             this.DiscardDamageTokenButton.Text = "Discard";
+            this.DiscardDamageTokenTooltip.SetToolTip(this.DiscardDamageTokenButton, "Places the selected Damage tokens back into the pile of unresolved Damage tokens." +
+        "\r\nTokens discarded in this way may be drawn again in the future.");
             this.DiscardDamageTokenButton.UseVisualStyleBackColor = true;
             this.DiscardDamageTokenButton.Click += new System.EventHandler(this.DiscardDamageTokenButton_Click);
             // 
@@ -423,6 +424,7 @@
             this.RecallComponentsTooltip.SetToolTip(this.RecallComponentsButton, "Removes all selected components in all sectors\r\nfrom the board and places them ba" +
         "ck in the box.");
             this.RecallComponentsButton.UseVisualStyleBackColor = true;
+            this.RecallComponentsButton.Click += new System.EventHandler(this.RecallComponentsButton_Click);
             // 
             // DamageVipersButton
             // 

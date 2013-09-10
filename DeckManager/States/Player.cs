@@ -13,6 +13,7 @@ namespace DeckManager.States
         public Characters.Character Character { get; set; }
         public List<SkillCard> Cards { get; set; }
         public List<QuorumCard> QuorumHand { get; set; }
+        public List<MutinyCard> MutinyHand { get; set; }
         public List<LoyaltyCard> LoyaltyCards { get; set; }
         public List<List<SkillCardColor>> CustomDraws { get; set; }
         public List<Titles> Titles { get; set; }
@@ -50,6 +51,32 @@ namespace DeckManager.States
         public bool Discard(QuorumCard card)
         {
             return QuorumHand.Remove(card);
+        }
+        public bool Discard(MutinyCard card)
+        {
+            return MutinyHand.Remove(card);
+        }
+
+        public bool Discard(IEnumerable<SkillCard> cards)
+        {
+            int removed = Cards.RemoveAll(card => cards.Contains(card));
+            if (removed > 0)
+                return true;
+            return false;
+        }
+        public bool Discard(IEnumerable<QuorumCard> cards)
+        {
+            int removed = QuorumHand.RemoveAll(card => cards.Contains(card));
+            if (removed > 0)
+                return true;
+            return false;
+        }
+        public bool Discard(IEnumerable<MutinyCard > cards)
+        {
+            int removed = MutinyHand.RemoveAll(card => cards.Contains(card));
+            if (removed > 0)
+                return true;
+            return false;
         }
 
         public static bool operator ==(Player x, Player y)

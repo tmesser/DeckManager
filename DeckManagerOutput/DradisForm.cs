@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +35,9 @@ namespace DeckManagerOutput
                 this.LaunchLocationComboBox.Items.Add(sector);
             }
         }
+
+
+        #region Sector movement
 
         private void MoveComponent(ListBox source, ListBox dest, DeckManager.Components.BaseComponent item)
         {
@@ -114,12 +118,53 @@ namespace DeckManagerOutput
             MoveComponent(foxtrotListBox, alphaListBox, item);
         }
 
+        #endregion
+
+        #region components and placement
+
         private void LaunchComponentComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // these won't work yet - no way to gamemanager does not have draw/destroy/discard component logic yet
-            var component = LaunchComponentComboBox.SelectedItem.GetType().ToString();
-            var comptype = (DeckManager.Components.Enums.ComponentType)LaunchComponentComboBox.SelectedItem;
-            switch (comptype)
+            // might not need this event
+        }
+
+        private void LaunchLocationComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DeckManager.Components.Enums.ComponentType token = (DeckManager.Components.Enums.ComponentType)LaunchComponentComboBox.SelectedItem;
+            DeckManager.Boards.Dradis.DradisNodeName sector = (DeckManager.Boards.Dradis.DradisNodeName)LaunchLocationComboBox.SelectedItem;
+            if (sector != null && token != null)
+            {
+
+                switch (sector)
+                {
+                    case DeckManager.Boards.Dradis.DradisNodeName.Alpha:
+                        PlaceComponent(this.alphaListBox, token);
+                        break;
+                    case DeckManager.Boards.Dradis.DradisNodeName.Bravo:
+                        PlaceComponent(this.bravoListBox, token);
+                        break;
+                    case DeckManager.Boards.Dradis.DradisNodeName.Charlie:
+                        PlaceComponent(this.charlieListBox, token);
+                        break;
+                    case DeckManager.Boards.Dradis.DradisNodeName.Delta:
+                        PlaceComponent(this.deltaListBox, token);
+                        break;
+                    case DeckManager.Boards.Dradis.DradisNodeName.Echo:
+                        PlaceComponent(this.echoListBox, token);
+                        break;
+                    case DeckManager.Boards.Dradis.DradisNodeName.Foxtrot:
+                        PlaceComponent(this.foxtrotListBox, token);
+                        break;
+                }
+                LaunchComponentComboBox.SelectedIndex = -1;
+                LaunchLocationComboBox.SelectedIndex = -1;
+            }
+            // todo error checking
+        }
+
+        private void PlaceComponent(ListBox sector, DeckManager.Components.Enums.ComponentType token)
+        { 
+            // do component placement.            
+            switch (token)
             {
                 case DeckManager.Components.Enums.ComponentType.Civilian:
                     //var ship = Program.GManager.DrawCivilianShip();
@@ -133,36 +178,66 @@ namespace DeckManagerOutput
                 case DeckManager.Components.Enums.ComponentType.Viper:
                     break;
             }
+            // todo error handling - no components left?
         }
 
-        private void LaunchLocationComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void DestroyComponentsButton_Click(object sender, EventArgs e)
         {
-            //DeckManager.Components.BaseComponent selected = (DeckManager.Components.BaseComponent)LaunchComponentComboBox.SelectedItem;
-            //DeckManager.Boards.Dradis.DradisNodeName sector = (DeckManager.Boards.Dradis.DradisNodeName)LaunchLocationComboBox.SelectedItem;
-            //switch (sector)
-            //{
-            //    case DeckManager.Boards.Dradis.DradisNodeName.Alpha:
-            //        alphaListBox.Items.Add(selected);
-            //        break;
-            //    case DeckManager.Boards.Dradis.DradisNodeName.Bravo:
-            //        bravoListBox.Items.Add(selected); ;
-            //        break;
-            //    case DeckManager.Boards.Dradis.DradisNodeName.Charlie:
-            //        charlieListBox.Items.Add(selected);
-            //        break;
-            //    case DeckManager.Boards.Dradis.DradisNodeName.Delta:
-            //        deltaListBox.Items.Add(selected);
-            //        break;
-            //    case DeckManager.Boards.Dradis.DradisNodeName.Echo:
-            //        echoListBox.Items.Add(selected);
-            //        break;
-            //    case DeckManager.Boards.Dradis.DradisNodeName.Foxtrot:
-            //        foxtrotListBox.Items.Add(selected);
-            //        break;
-            //}
-            LaunchComponentComboBox.SelectedIndex = -1;
-            LaunchLocationComboBox.SelectedIndex = -1;
+            // tell game manager to destory the component
+            var ships = GetSelectedComponents();
+            Program.GManager.DestroyComponents(ships);
+            RemoveComponentsFromSpace(ships);
+
+            // need to trigger update in parent form after resources etc. are updated.
         }
+
+        private void RecallComponentsButton_Click(object sender, EventArgs e)
+        {
+            var ships = GetSelectedComponents();
+            Program.GManager.DiscardComponents(ships);
+            RemoveComponentsFromSpace(ships);
+        }
+
+        /// <summary>
+        /// Returns a list of all selected components in all sectors of space around Galactica
+        /// </summary>
+        /// <returns>List of selected components</returns>
+        private List<DeckManager.Components.BaseComponent> GetSelectedComponents()
+        {
+            var ret = alphaListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToList();
+            ret.AddRange(bravoListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToList());
+            ret.AddRange(charlieListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToList());
+            ret.AddRange(deltaListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToList());
+            ret.AddRange(echoListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToList());
+            ret.AddRange(foxtrotListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToList());
+            return ret;
+        }
+
+        /// <summary>
+        /// Removes the list of ships from the sectors of space around Galactica. Does not affect the GameState.
+        /// </summary>
+        /// <param name="ships"></param>
+        private void RemoveComponentsFromSpace(IEnumerable<DeckManager.Components.BaseComponent> ships)
+        {
+            foreach (DeckManager.Components.BaseComponent ship in ships)
+            {
+                if (alphaListBox.Items.Contains(ship))
+                    alphaListBox.Items.Remove(ship);
+                else if (bravoListBox.Items.Contains(ship))
+                    bravoListBox.Items.Remove(ship);
+                else if (charlieListBox.Items.Contains(ship))
+                    charlieListBox.Items.Remove(ship);
+                else if (deltaListBox.Items.Contains(ship))
+                    deltaListBox.Items.Remove(ship);
+                else if (echoListBox.Items.Contains(ship))
+                    echoListBox.Items.Remove(ship);
+                else if (foxtrotListBox.Items.Contains(ship))
+                    foxtrotListBox.Items.Remove(ship);
+            }
+        }
+        #endregion
+
+        #region Damage tokens
 
         private void DrawDamageTokenButton_Click(object sender, EventArgs e)
         {
@@ -172,6 +247,8 @@ namespace DeckManagerOutput
         private void DiscardDamageTokenButton_Click(object sender, EventArgs e)
         {
             // put damage tokens back in pile
+            //var token = (DeckManager.)DrawnDamageTokensListBox.SelectedItem;
+            //Program.GManager.DiscardComponent(token);
         }
 
         private void DamageGalacticaButton_Click(object sender, EventArgs e)
@@ -183,18 +260,7 @@ namespace DeckManagerOutput
             // remove from listbox
         }
 
-        private void DestroyComponentsButton_Click(object sender, EventArgs e)
-        {
-
-        }
-        /// <summary>
-        /// Returns a list of all selected components in all sectors of space around Galactica
-        /// </summary>
-        /// <returns>List of selected components</returns>
-        private List<DeckManager.Components.BaseComponent> GetSelectedComponents()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
 
 
     }
