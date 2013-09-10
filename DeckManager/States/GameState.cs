@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DeckManager.Boards.Dradis;
 using DeckManager.Cards;
 using DeckManager.Cards.Enums;
 using DeckManager.Components;
@@ -34,6 +35,7 @@ namespace DeckManager.States
         public List<Civilian> KilledCivilians { get; set; }
 
         public List<Board> Boards { get; set; }
+        public DradisBoard Dradis { get; set; }
 
         public int Distance { get; set; }
         public int JumpPrep { get; set; }
@@ -110,7 +112,7 @@ namespace DeckManager.States
                     _treacheryDeck = value;
             }
         }
-        public string toBBCode()
+        public string ToBBCode()
         {
             return "not implemented";
         }

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using DeckManager.Boards;
 
 namespace DeckManager.States
 {
     public class Board
     {
-        public List<Location> Locations { get; set; }
+        public List<BasicLocation> Locations { get; set; }
     }
 }

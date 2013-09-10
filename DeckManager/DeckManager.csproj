@@ -63,6 +63,7 @@
     <Compile Include="Components\Basestar.cs" />
     <Compile Include="Components\ComponentPile.cs" />
     <Compile Include="Components\Enums\ComponentType.cs" />
+    <Compile Include="Components\GenericComponent.cs" />
     <Compile Include="Components\HeavyRaider.cs" />
     <Compile Include="Components\Raider.cs" />
     <Compile Include="Decks\MissionDeck.cs" />
@@ -102,22 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Content\Boards\Locations.json" />
-    <None Include="Content\Components\CivilianPile.json" />
-    <None Include="Content\Decks\CrisisDeck.json" />
-    <None Include="Content\Decks\DestinationDeck.json" />
-    <None Include="Content\Decks\EngineeringDeck.json" />
-    <None Include="Content\Decks\LeadershipDeck.json" />
-    <None Include="Content\Decks\LoyaltyDeck.json" />
-    <None Include="Content\Decks\PilotingDeck.json" />
-    <None Include="Content\Decks\PoliticsDeck.json" />
-    <None Include="Content\Decks\QuorumDeck.json" />
-    <None Include="Content\Decks\SuperCrisisDeck.json" />
-    <None Include="Content\Decks\TacticsDeck.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Core.xml" />
+    <Content Include="Content\Core.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\Pegasus.xml" />
   </ItemGroup>
   <ItemGroup />
