@@ -217,6 +217,7 @@ namespace DeckManager
             }
         }
 
+        #region deck interactions
         public void DiscardCard(Cards.BaseCard card)
         {   
             // todo each discard creates new gamestate? that would let us implement undos
@@ -388,6 +389,10 @@ namespace DeckManager
             foreach (Cards.BaseCard card in cards)
                 BuryCard(card);
         }
+
+        #endregion
+
+        #region component interactions
         /// <summary>
         /// Marks the component as destroyed and changes the GameState accordingly.
         /// </summary>
@@ -428,12 +433,14 @@ namespace DeckManager
                 case Components.Enums.ComponentType.Basestar:                    
                     break;
                 case Components.Enums.ComponentType.Civilian:
+                    ship = DrawCiv();
                     break;
                 case Components.Enums.ComponentType.HeavyRaider:
                     break;
                 case Components.Enums.ComponentType.Raider:
                     break;
                 case Components.Enums.ComponentType.Viper:
+                    ship = DrawViper();
                     break;
                 default:
                     break;
@@ -441,6 +448,6 @@ namespace DeckManager
             CurrentGameState.Dradis.AddComponentToNode(ship, location);
             return null;
         }
-
+        #endregion
     }
 }

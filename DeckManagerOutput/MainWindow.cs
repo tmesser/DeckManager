@@ -28,6 +28,13 @@ namespace DeckManagerOutput
 
             dradis = new DradisForm(this);
 
+            // move panel into place and hide it. Quorum and SCC will share the same space
+            CharacterSuperCrisisHandListBox.Location = new System.Drawing.Point(3, 155);
+            CharacterSuperCrisisHandListBox.Visible = false;
+
+            // resize to hide extra panels
+            this.ClientSize = new System.Drawing.Size(786, 558);
+
             // todo need some way to turn off buttons not in use (treachery, mutiny, etc.)
         }
         #region Game Management events
@@ -95,6 +102,7 @@ namespace DeckManagerOutput
         {
             dradis.Show();
         }
+
         #region resource events
         private void FuelUpDownValueChanged(object sender, EventArgs e)
         {
@@ -116,9 +124,33 @@ namespace DeckManagerOutput
             Program.GManager.CurrentGameState.Population = (int)PopulationUpDown.Value;
         }
         #endregion
+
         #endregion
 
-        #region skill deck events
+        #region deck events
+
+        private void DrawnCardListBox_MeasureItemEvent(object sender, MeasureItemEventArgs e)
+        {
+            //e.ItemHeight = 50;
+            string item = drawnCardListBox.Items[e.Index].ToString();
+            int count = item.Count(f => f == '\n');
+            count++;
+            e.ItemHeight *= count;
+        }
+
+        private void DrawnCardListBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+
+            Rectangle itemBounds = e.Bounds;
+
+            e.Graphics.DrawString(drawnCardListBox.Items[e.Index].ToString(),
+                e.Font,
+                Brushes.Black,
+                itemBounds,
+                StringFormat.GenericDefault);
+            e.DrawFocusRectangle();
+        }
 
         private void PolDeckButtonClick(object sender, EventArgs e)
         {
@@ -177,7 +209,18 @@ namespace DeckManagerOutput
 
         private void DrawMutinyCardButton_Click(object sender, EventArgs e)
         {
-            // not in GManager yet
+            drawnCardListBox.BeginUpdate();
+            DeckManager.Cards.MutinyCard card = Program.GManager.CurrentGameState.MutinyDeck.Draw();
+            drawnCardListBox.Items.Add(card);
+            drawnCardListBox.EndUpdate();   
+        }
+
+        private void DrawSuperCrisisCardButton_Click(object sender, EventArgs e)
+        {
+            drawnCardListBox.BeginUpdate();
+            DeckManager.Cards.SuperCrisisCard card = Program.GManager.CurrentGameState.SuperCrisisDeck.Draw();
+            drawnCardListBox.Items.Add(card);
+            drawnCardListBox.EndUpdate();   
         }
 
         private void DestinyDeckButton_Click(object sender, EventArgs e)
@@ -186,6 +229,15 @@ namespace DeckManagerOutput
             DeckManager.Cards.SkillCard card = Program.GManager.CurrentGameState.DestinyDeck.Draw();
             drawnCardListBox.Items.Add(card);
             drawnCardListBox.EndUpdate();    
+        }
+
+        private void DrawLoyaltyButton_Click(object sender, EventArgs e)
+        {
+            // i guess expose this for people playing exodus?
+            drawnCardListBox.BeginUpdate();
+            DeckManager.Cards.LoyaltyCard card = Program.GManager.CurrentGameState.LoyaltyDeck.Draw();
+            drawnCardListBox.Items.Add(card);
+            drawnCardListBox.EndUpdate();     
         }
 
         private void ReturnToDeckButtonClick(object sender, EventArgs e)
@@ -234,6 +286,7 @@ namespace DeckManagerOutput
             drawnCardListBox.EndUpdate();
             crisisSkillCheckListBox.EndUpdate();
         }
+        
 
         #endregion
 
@@ -268,21 +321,21 @@ namespace DeckManagerOutput
 
             // DeckManager.Cards.CrisisCard crisis = Program.gManager.CurrentGameState.CrisisDeck.Draw();
             // TODO: This sort of stuff should really be done in the TESTS project.  See my example in there.
-            var crisis = new DeckManager.Cards.CrisisCard
-                {
-                    Activation = DeckManager.Cards.Enums.CylonActivations.Raiders,
-                    Heading = "Test Crisis",
-                    JumpPrep = true,
-                    AdditionalText = "A description of the crisis",
-                    PositiveColors =
-                        new List<DeckManager.Cards.Enums.SkillCardColor>
-                            {
-                                DeckManager.Cards.Enums.SkillCardColor.Engineering,
-                                DeckManager.Cards.Enums.SkillCardColor.Politics
-                            }
-                };
+            //var crisis = new DeckManager.Cards.CrisisCard
+            //    {
+            //        Activation = DeckManager.Cards.Enums.CylonActivations.Raiders,
+            //        Heading = "Test Crisis",
+            //        JumpPrep = true,
+            //        AdditionalText = "A description of the crisis",
+            //        PositiveColors =
+            //            new List<DeckManager.Cards.Enums.SkillCardColor>
+            //                {
+            //                    DeckManager.Cards.Enums.SkillCardColor.Engineering,
+            //                    DeckManager.Cards.Enums.SkillCardColor.Politics
+            //                }
+            //    };
 
-            //DeckManager.Cards.CrisisCard crisis = Program.GManager.CurrentGameState.CrisisDeck.Draw();          
+            DeckManager.Cards.CrisisCard crisis = Program.GManager.CurrentGameState.CrisisDeck.Draw();          
             crisisTextListBox.Items.Add(crisis);
             crisisTextListBox.EndUpdate();
         }
@@ -301,6 +354,9 @@ namespace DeckManagerOutput
             crisisSkillCheckListBox.Items.Add(dest1);            
             crisisSkillCheckListBox.Items.Add(dest2);
             crisisSkillCheckListBox.EndUpdate();
+
+            // disable to prevent double clicks. if more are needed, use draw button. will be enabled after skillcheck resolved
+            addDestinyCardsButton.Enabled = false;
         }
 
         private void EvalSkillCheckButtonClick(object sender, EventArgs e)
@@ -345,6 +401,7 @@ namespace DeckManagerOutput
         {
             var card = (DeckManager.Cards.BaseCard)crisisTextListBox.SelectedItem;
             Program.GManager.TopCard(card);
+            crisisSkillCheckListBox.Items.Remove(card);
 
             // todo change selected index or hide controls - nothing is selected after this event
         }
@@ -353,6 +410,7 @@ namespace DeckManagerOutput
         {
             var card = (DeckManager.Cards.BaseCard)crisisTextListBox.SelectedItem;
             Program.GManager.BuryCard(card);
+            crisisSkillCheckListBox.Items.Remove(card);
 
             // todo change selected index or hide controls - nothing is selected after this event
         }
@@ -377,9 +435,10 @@ namespace DeckManagerOutput
         /// </summary>
         private void ShowSkillCheckControls()
         { 
-                SkillCheckPanel.Visible = true;
-                AddToSkillCheckButton.Visible = true;
-                playIntoCrisisButton.Visible = true;        
+            SkillCheckPanel.Visible = true;
+            AddToSkillCheckButton.Visible = true;
+            playIntoCrisisButton.Visible = true;
+            addDestinyCardsButton.Enabled = true;
         }
         /// <summary>
         /// Hides all controls related to skill checks. These will be re-shown when a crisis containing a skill check is selected
@@ -423,6 +482,17 @@ namespace DeckManagerOutput
                     case DeckManager.Cards.Enums.CardType.Quorum:
                         currentPlayer.QuorumHand.Add((DeckManager.Cards.QuorumCard)card);
                         break;
+                    case DeckManager.Cards.Enums.CardType.Loyalty:
+                        currentPlayer.LoyaltyCards.Add((DeckManager.Cards.LoyaltyCard)card);
+                        break;
+                    case DeckManager.Cards.Enums.CardType.SuperCrisis:
+                        currentPlayer.SuperCrisisCards.Add((DeckManager.Cards.SuperCrisisCard)card);
+                        break;
+                    case DeckManager.Cards.Enums.CardType.Mutiny:
+                        currentPlayer.MutinyHand.Add((DeckManager.Cards.MutinyCard)card);
+                        break;
+                    default:
+                        break;
                 }
                 drawnCardListBox.Items.Remove(card);
             }
@@ -454,19 +524,42 @@ namespace DeckManagerOutput
             characterSkillHandListBox.Items.AddRange(player.Cards.ToArray());
             if (player.QuorumHand != null)
             {
-                characterQuorumHandListBox.Show();
-                characterQuorumHandCountTextBox.Show();
-                DiscardQuorumCardButton.Show();
-                CopyQuorumToClipboardButton.Show();
+                SuperCrisisHandPanel.Visible = false;
+                QuorumHandPanel.Visible = true;
+
+                //characterQuorumHandListBox.Show();
+                //characterQuorumHandCountTextBox.Show();
+                //DiscardQuorumCardButton.Show();
+                //CopyQuorumToClipboardButton.Show();
+                characterQuorumHandListBox.Items.Clear();
                 characterQuorumHandListBox.Items.AddRange(player.QuorumHand.ToArray());
                 characterQuorumHandCountTextBox.Text = player.QuorumHand.Count.ToString();
             }
             else
             {
-                DiscardQuorumCardButton.Hide();
-                CopyQuorumToClipboardButton.Hide();
-                characterQuorumHandListBox.Hide();
-                characterQuorumHandCountTextBox.Hide();
+                QuorumHandPanel.Visible = false;
+
+                characterQuorumHandListBox.Items.Clear();
+                characterQuorumHandCountTextBox.Text=string.Empty;
+
+                // just hide panel instead
+                //DiscardQuorumCardButton.Hide();
+                //CopyQuorumToClipboardButton.Hide();
+                //characterQuorumHandListBox.Hide();
+                //characterQuorumHandCountTextBox.Hide();
+
+                // quorum and SCC hands should be mutually exclusive, so checking in here should be okay
+                if (player.RevealedCylon)
+                {
+                    SuperCrisisHandPanel.Visible = true;
+                    CharacterSuperCrisisHandListBox.BeginUpdate();
+                    characterQuorumHandListBox.Items.Clear();
+                    characterQuorumHandListBox.Items.AddRange(player.SuperCrisisCards.ToArray());
+                    characterQuorumHandListBox.EndUpdate();
+                    SuperCrisisHandCountTextBox.Text = player.SuperCrisisCards.Count.ToString();
+                }
+                else
+                    SuperCrisisHandPanel.Visible = false;
             }
             characterSkillHandListBox.EndUpdate();
             characterQuorumHandListBox.EndUpdate();
@@ -562,7 +655,61 @@ namespace DeckManagerOutput
         }
         #endregion
 
+        #region super crisis hand stuff
 
-        
+        private void DiscardSuperCrisisButton_Click(object sender, EventArgs e)
+        {
+            // normal card discard of SCC
+        }
+
+        private void PlaySuperCrisisButton_Click(object sender, EventArgs e)
+        {
+            // move the SCC card to the Crisis text box and populate that info
+        }
+
+        private void CharacterSuperCrisisHandListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // todo need to do measureitem and paint for this control
+        }
+
+        #endregion
+
+        #region loyalty stuff
+        private void RevealAsCylonButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PassLoyaltyCardsButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlayerLoyaltyHandListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region titles
+
+        private void AdmiralCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PresidentTitleCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CAGTitleCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+
     }
 }

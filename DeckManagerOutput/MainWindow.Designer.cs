@@ -30,43 +30,52 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PlayerLoyaltyHandPanel = new System.Windows.Forms.Panel();
+            this.PassLoyaltyCardsButton = new System.Windows.Forms.Button();
+            this.RevealAsCylonButton = new System.Windows.Forms.Button();
+            this.PlayerLoyaltyHandListBox = new System.Windows.Forms.ListBox();
+            this.QuorumHandPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.characterQuorumHandCountTextBox = new System.Windows.Forms.TextBox();
+            this.characterQuorumHandListBox = new System.Windows.Forms.ListBox();
+            this.CopyQuorumToClipboardButton = new System.Windows.Forms.Button();
+            this.DiscardQuorumCardButton = new System.Windows.Forms.Button();
             this.RemovePlayerButton = new System.Windows.Forms.Button();
             this.CopyHandToClipboardButton = new System.Windows.Forms.Button();
-            this.CopyQuorumToClipboardButton = new System.Windows.Forms.Button();
             this.removeFromHandButton = new System.Windows.Forms.Button();
-            this.DiscardQuorumCardButton = new System.Windows.Forms.Button();
             this.playIntoCrisisButton = new System.Windows.Forms.Button();
-            this.characterQuorumHandCountTextBox = new System.Windows.Forms.TextBox();
             this.characterSkillHandCountTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.characterQuorumHandListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.characterSkillHandListBox = new System.Windows.Forms.ListBox();
             this.addPlayerButton = new System.Windows.Forms.Button();
             this.beginGameButton = new System.Windows.Forms.Button();
             this.characterListBox = new System.Windows.Forms.ListBox();
             this.skillDecksPanel = new System.Windows.Forms.Panel();
+            this.DrawSuperCrisisCardButton = new System.Windows.Forms.Button();
+            this.DestinyDeckButton = new System.Windows.Forms.Button();
             this.DrawMutinyCardButton = new System.Windows.Forms.Button();
             this.AddToSkillCheckButton = new System.Windows.Forms.Button();
             this.returnToDeckButton = new System.Windows.Forms.Button();
             this.drawQuorumButton = new System.Windows.Forms.Button();
             this.giveCardToCurrentCharacterButton = new System.Windows.Forms.Button();
             this.treDeckButton = new System.Windows.Forms.Button();
+            this.drawnCardListBox = new System.Windows.Forms.ListBox();
+            this.polDeckButton = new System.Windows.Forms.Button();
             this.pilDeckButton = new System.Windows.Forms.Button();
-            this.engDeckButton = new System.Windows.Forms.Button();
             this.tacDeckButton = new System.Windows.Forms.Button();
             this.leaDeckButton = new System.Windows.Forms.Button();
-            this.polDeckButton = new System.Windows.Forms.Button();
-            this.drawnCardListBox = new System.Windows.Forms.ListBox();
+            this.engDeckButton = new System.Windows.Forms.Button();
             this.crisisPanel = new System.Windows.Forms.Panel();
-            this.keepCrisisButton = new System.Windows.Forms.Button();
-            this.buryCrisisButton = new System.Windows.Forms.Button();
-            this.clearCrisisButton = new System.Windows.Forms.Button();
-            this.drawMissionButton = new System.Windows.Forms.Button();
+            this.SkillCheckPanel = new System.Windows.Forms.Panel();
             this.copySkillCheckResultsButton = new System.Windows.Forms.Button();
-            this.evalSkillCheckButton = new System.Windows.Forms.Button();
-            this.addDestinyCardsButton = new System.Windows.Forms.Button();
+            this.SkillCheckDescriptionRichTextBox = new System.Windows.Forms.RichTextBox();
             this.crisisSkillCheckListBox = new System.Windows.Forms.ListBox();
+            this.addDestinyCardsButton = new System.Windows.Forms.Button();
+            this.evalSkillCheckButton = new System.Windows.Forms.Button();
+            this.keepCrisisButton = new System.Windows.Forms.Button();
+            this.clearCrisisButton = new System.Windows.Forms.Button();
+            this.buryCrisisButton = new System.Windows.Forms.Button();
+            this.drawMissionButton = new System.Windows.Forms.Button();
             this.crisisCopyTextButton = new System.Windows.Forms.Button();
             this.crisisTextListBox = new System.Windows.Forms.ListBox();
             this.drawCrisisButton = new System.Windows.Forms.Button();
@@ -105,12 +114,28 @@
             this.CrisisTopTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.CrisisBuryTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.ClearCrisisButtonTooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.SkillCheckDescriptionRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.SkillCheckPanel = new System.Windows.Forms.Panel();
-            this.DestinyDeckButton = new System.Windows.Forms.Button();
+            this.SuperCrisisHandPanel = new System.Windows.Forms.Panel();
+            this.PlaySuperCrisisButton = new System.Windows.Forms.Button();
+            this.DiscardSuperCrisisButton = new System.Windows.Forms.Button();
+            this.CharacterSuperCrisisHandListBox = new System.Windows.Forms.ListBox();
+            this.SuperCrisisHandCountTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.DrawLoyaltyButton = new System.Windows.Forms.Button();
+            this.MutinyCardPanel = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.MutinyHandCountTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterMutinyHandListBox = new System.Windows.Forms.ListBox();
+            this.DiscardMutinyCardButton = new System.Windows.Forms.Button();
+            this.TitlesPanel = new System.Windows.Forms.Panel();
+            this.AdmiralCheckBox = new System.Windows.Forms.CheckBox();
+            this.PresidentTitleCheckBox = new System.Windows.Forms.CheckBox();
+            this.CAGTitleCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
+            this.PlayerLoyaltyHandPanel.SuspendLayout();
+            this.QuorumHandPanel.SuspendLayout();
             this.skillDecksPanel.SuspendLayout();
             this.crisisPanel.SuspendLayout();
+            this.SkillCheckPanel.SuspendLayout();
             this.destinationPanel.SuspendLayout();
             this.jumpPrepGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.destinationCountUpDown)).BeginInit();
@@ -119,21 +144,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.PopulationUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FuelUpDown)).BeginInit();
-            this.SkillCheckPanel.SuspendLayout();
+            this.SuperCrisisHandPanel.SuspendLayout();
+            this.MutinyCardPanel.SuspendLayout();
+            this.TitlesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.PlayerLoyaltyHandPanel);
+            this.panel1.Controls.Add(this.QuorumHandPanel);
             this.panel1.Controls.Add(this.RemovePlayerButton);
             this.panel1.Controls.Add(this.CopyHandToClipboardButton);
-            this.panel1.Controls.Add(this.CopyQuorumToClipboardButton);
             this.panel1.Controls.Add(this.removeFromHandButton);
-            this.panel1.Controls.Add(this.DiscardQuorumCardButton);
             this.panel1.Controls.Add(this.playIntoCrisisButton);
-            this.panel1.Controls.Add(this.characterQuorumHandCountTextBox);
             this.panel1.Controls.Add(this.characterSkillHandCountTextBox);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.characterQuorumHandListBox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.characterSkillHandListBox);
             this.panel1.Controls.Add(this.addPlayerButton);
@@ -144,9 +168,111 @@
             this.panel1.Size = new System.Drawing.Size(345, 407);
             this.panel1.TabIndex = 0;
             // 
+            // PlayerLoyaltyHandPanel
+            // 
+            this.PlayerLoyaltyHandPanel.Controls.Add(this.PassLoyaltyCardsButton);
+            this.PlayerLoyaltyHandPanel.Controls.Add(this.RevealAsCylonButton);
+            this.PlayerLoyaltyHandPanel.Controls.Add(this.PlayerLoyaltyHandListBox);
+            this.PlayerLoyaltyHandPanel.Location = new System.Drawing.Point(217, 6);
+            this.PlayerLoyaltyHandPanel.Name = "PlayerLoyaltyHandPanel";
+            this.PlayerLoyaltyHandPanel.Size = new System.Drawing.Size(124, 82);
+            this.PlayerLoyaltyHandPanel.TabIndex = 8;
+            // 
+            // PassLoyaltyCardsButton
+            // 
+            this.PassLoyaltyCardsButton.Location = new System.Drawing.Point(81, 49);
+            this.PassLoyaltyCardsButton.Name = "PassLoyaltyCardsButton";
+            this.PassLoyaltyCardsButton.Size = new System.Drawing.Size(38, 23);
+            this.PassLoyaltyCardsButton.TabIndex = 19;
+            this.PassLoyaltyCardsButton.Text = "→";
+            this.PassLoyaltyCardsButton.UseVisualStyleBackColor = true;
+            this.PassLoyaltyCardsButton.Click += new System.EventHandler(this.PassLoyaltyCardsButton_Click);
+            // 
+            // RevealAsCylonButton
+            // 
+            this.RevealAsCylonButton.Location = new System.Drawing.Point(0, 49);
+            this.RevealAsCylonButton.Name = "RevealAsCylonButton";
+            this.RevealAsCylonButton.Size = new System.Drawing.Size(75, 23);
+            this.RevealAsCylonButton.TabIndex = 18;
+            this.RevealAsCylonButton.Text = "REVEAL";
+            this.RevealAsCylonButton.UseVisualStyleBackColor = true;
+            this.RevealAsCylonButton.Click += new System.EventHandler(this.RevealAsCylonButton_Click);
+            // 
+            // PlayerLoyaltyHandListBox
+            // 
+            this.PlayerLoyaltyHandListBox.FormattingEnabled = true;
+            this.PlayerLoyaltyHandListBox.Location = new System.Drawing.Point(3, 3);
+            this.PlayerLoyaltyHandListBox.Name = "PlayerLoyaltyHandListBox";
+            this.PlayerLoyaltyHandListBox.Size = new System.Drawing.Size(120, 43);
+            this.PlayerLoyaltyHandListBox.TabIndex = 17;
+            this.PlayerLoyaltyHandListBox.Visible = false;
+            this.PlayerLoyaltyHandListBox.SelectedIndexChanged += new System.EventHandler(this.PlayerLoyaltyHandListBox_SelectedIndexChanged);
+            // 
+            // QuorumHandPanel
+            // 
+            this.QuorumHandPanel.Controls.Add(this.label2);
+            this.QuorumHandPanel.Controls.Add(this.characterQuorumHandCountTextBox);
+            this.QuorumHandPanel.Controls.Add(this.characterQuorumHandListBox);
+            this.QuorumHandPanel.Controls.Add(this.CopyQuorumToClipboardButton);
+            this.QuorumHandPanel.Controls.Add(this.DiscardQuorumCardButton);
+            this.QuorumHandPanel.Location = new System.Drawing.Point(3, 155);
+            this.QuorumHandPanel.Name = "QuorumHandPanel";
+            this.QuorumHandPanel.Size = new System.Drawing.Size(145, 252);
+            this.QuorumHandPanel.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Quorum Hand:";
+            this.label2.Visible = false;
+            // 
+            // characterQuorumHandCountTextBox
+            // 
+            this.characterQuorumHandCountTextBox.Enabled = false;
+            this.characterQuorumHandCountTextBox.Location = new System.Drawing.Point(105, 5);
+            this.characterQuorumHandCountTextBox.Name = "characterQuorumHandCountTextBox";
+            this.characterQuorumHandCountTextBox.Size = new System.Drawing.Size(36, 20);
+            this.characterQuorumHandCountTextBox.TabIndex = 8;
+            this.characterQuorumHandCountTextBox.Visible = false;
+            // 
+            // characterQuorumHandListBox
+            // 
+            this.characterQuorumHandListBox.FormattingEnabled = true;
+            this.characterQuorumHandListBox.Location = new System.Drawing.Point(1, 27);
+            this.characterQuorumHandListBox.Name = "characterQuorumHandListBox";
+            this.characterQuorumHandListBox.Size = new System.Drawing.Size(140, 173);
+            this.characterQuorumHandListBox.TabIndex = 5;
+            this.characterQuorumHandListBox.Visible = false;
+            // 
+            // CopyQuorumToClipboardButton
+            // 
+            this.CopyQuorumToClipboardButton.Location = new System.Drawing.Point(61, 206);
+            this.CopyQuorumToClipboardButton.Name = "CopyQuorumToClipboardButton";
+            this.CopyQuorumToClipboardButton.Size = new System.Drawing.Size(81, 34);
+            this.CopyQuorumToClipboardButton.TabIndex = 13;
+            this.CopyQuorumToClipboardButton.Text = "Copy Quorum to Clipboard";
+            this.CopyQuorumToClipboardButton.UseVisualStyleBackColor = true;
+            this.CopyQuorumToClipboardButton.Visible = false;
+            this.CopyQuorumToClipboardButton.Click += new System.EventHandler(this.CopyQuorumToClipboardButton_Click);
+            // 
+            // DiscardQuorumCardButton
+            // 
+            this.DiscardQuorumCardButton.Location = new System.Drawing.Point(2, 206);
+            this.DiscardQuorumCardButton.Name = "DiscardQuorumCardButton";
+            this.DiscardQuorumCardButton.Size = new System.Drawing.Size(53, 34);
+            this.DiscardQuorumCardButton.TabIndex = 11;
+            this.DiscardQuorumCardButton.Text = "Discard Quorum Card";
+            this.DiscardQuorumCardButton.UseVisualStyleBackColor = true;
+            this.DiscardQuorumCardButton.Visible = false;
+            this.DiscardQuorumCardButton.Click += new System.EventHandler(this.DiscardQuorumCardButtonClick);
+            // 
             // RemovePlayerButton
             // 
-            this.RemovePlayerButton.Location = new System.Drawing.Point(221, 36);
+            this.RemovePlayerButton.Location = new System.Drawing.Point(98, 120);
             this.RemovePlayerButton.Name = "RemovePlayerButton";
             this.RemovePlayerButton.Size = new System.Drawing.Size(88, 23);
             this.RemovePlayerButton.TabIndex = 15;
@@ -163,17 +289,6 @@
             this.CopyHandToClipboardButton.Text = "Copy Hand to Clipboard";
             this.CopyHandToClipboardButton.UseVisualStyleBackColor = true;
             // 
-            // CopyQuorumToClipboardButton
-            // 
-            this.CopyQuorumToClipboardButton.Location = new System.Drawing.Point(65, 360);
-            this.CopyQuorumToClipboardButton.Name = "CopyQuorumToClipboardButton";
-            this.CopyQuorumToClipboardButton.Size = new System.Drawing.Size(81, 34);
-            this.CopyQuorumToClipboardButton.TabIndex = 13;
-            this.CopyQuorumToClipboardButton.Text = "Copy Quorum to Clipboard";
-            this.CopyQuorumToClipboardButton.UseVisualStyleBackColor = true;
-            this.CopyQuorumToClipboardButton.Visible = false;
-            this.CopyQuorumToClipboardButton.Click += new System.EventHandler(this.CopyQuorumToClipboardButton_Click);
-            // 
             // removeFromHandButton
             // 
             this.removeFromHandButton.Location = new System.Drawing.Point(311, 271);
@@ -186,17 +301,6 @@
             this.removeFromHandButton.UseVisualStyleBackColor = true;
             this.removeFromHandButton.Click += new System.EventHandler(this.RemoveFromHandButtonClick);
             // 
-            // DiscardQuorumCardButton
-            // 
-            this.DiscardQuorumCardButton.Location = new System.Drawing.Point(6, 360);
-            this.DiscardQuorumCardButton.Name = "DiscardQuorumCardButton";
-            this.DiscardQuorumCardButton.Size = new System.Drawing.Size(53, 34);
-            this.DiscardQuorumCardButton.TabIndex = 11;
-            this.DiscardQuorumCardButton.Text = "Discard Quorum Card";
-            this.DiscardQuorumCardButton.UseVisualStyleBackColor = true;
-            this.DiscardQuorumCardButton.Visible = false;
-            this.DiscardQuorumCardButton.Click += new System.EventHandler(this.DiscardQuorumCardButtonClick);
-            // 
             // playIntoCrisisButton
             // 
             this.playIntoCrisisButton.Location = new System.Drawing.Point(274, 221);
@@ -207,15 +311,6 @@
             this.playIntoCrisisButton.UseVisualStyleBackColor = true;
             this.playIntoCrisisButton.Click += new System.EventHandler(this.PlayIntoCrisisButtonClick);
             // 
-            // characterQuorumHandCountTextBox
-            // 
-            this.characterQuorumHandCountTextBox.Enabled = false;
-            this.characterQuorumHandCountTextBox.Location = new System.Drawing.Point(113, 157);
-            this.characterQuorumHandCountTextBox.Name = "characterQuorumHandCountTextBox";
-            this.characterQuorumHandCountTextBox.Size = new System.Drawing.Size(36, 20);
-            this.characterQuorumHandCountTextBox.TabIndex = 8;
-            this.characterQuorumHandCountTextBox.Visible = false;
-            // 
             // characterSkillHandCountTextBox
             // 
             this.characterSkillHandCountTextBox.Enabled = false;
@@ -223,25 +318,6 @@
             this.characterSkillHandCountTextBox.Name = "characterSkillHandCountTextBox";
             this.characterSkillHandCountTextBox.Size = new System.Drawing.Size(36, 20);
             this.characterSkillHandCountTextBox.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 160);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Quorum Hand:";
-            this.label2.Visible = false;
-            // 
-            // characterQuorumHandListBox
-            // 
-            this.characterQuorumHandListBox.FormattingEnabled = true;
-            this.characterQuorumHandListBox.Location = new System.Drawing.Point(6, 182);
-            this.characterQuorumHandListBox.Name = "characterQuorumHandListBox";
-            this.characterQuorumHandListBox.Size = new System.Drawing.Size(140, 173);
-            this.characterQuorumHandListBox.TabIndex = 5;
-            this.characterQuorumHandListBox.Visible = false;
             // 
             // label1
             // 
@@ -263,7 +339,7 @@
             // 
             // addPlayerButton
             // 
-            this.addPlayerButton.Location = new System.Drawing.Point(221, 6);
+            this.addPlayerButton.Location = new System.Drawing.Point(4, 120);
             this.addPlayerButton.Name = "addPlayerButton";
             this.addPlayerButton.Size = new System.Drawing.Size(88, 23);
             this.addPlayerButton.TabIndex = 2;
@@ -273,7 +349,7 @@
             // 
             // beginGameButton
             // 
-            this.beginGameButton.Location = new System.Drawing.Point(221, 91);
+            this.beginGameButton.Location = new System.Drawing.Point(253, 120);
             this.beginGameButton.Name = "beginGameButton";
             this.beginGameButton.Size = new System.Drawing.Size(88, 23);
             this.beginGameButton.TabIndex = 1;
@@ -295,6 +371,8 @@
             // 
             // skillDecksPanel
             // 
+            this.skillDecksPanel.Controls.Add(this.DrawLoyaltyButton);
+            this.skillDecksPanel.Controls.Add(this.DrawSuperCrisisCardButton);
             this.skillDecksPanel.Controls.Add(this.DestinyDeckButton);
             this.skillDecksPanel.Controls.Add(this.DrawMutinyCardButton);
             this.skillDecksPanel.Controls.Add(this.AddToSkillCheckButton);
@@ -302,22 +380,42 @@
             this.skillDecksPanel.Controls.Add(this.drawQuorumButton);
             this.skillDecksPanel.Controls.Add(this.giveCardToCurrentCharacterButton);
             this.skillDecksPanel.Controls.Add(this.treDeckButton);
+            this.skillDecksPanel.Controls.Add(this.drawnCardListBox);
+            this.skillDecksPanel.Controls.Add(this.polDeckButton);
             this.skillDecksPanel.Controls.Add(this.pilDeckButton);
-            this.skillDecksPanel.Controls.Add(this.engDeckButton);
             this.skillDecksPanel.Controls.Add(this.tacDeckButton);
             this.skillDecksPanel.Controls.Add(this.leaDeckButton);
-            this.skillDecksPanel.Controls.Add(this.polDeckButton);
-            this.skillDecksPanel.Controls.Add(this.drawnCardListBox);
+            this.skillDecksPanel.Controls.Add(this.engDeckButton);
             this.skillDecksPanel.Location = new System.Drawing.Point(361, 7);
             this.skillDecksPanel.Name = "skillDecksPanel";
             this.skillDecksPanel.Size = new System.Drawing.Size(102, 407);
             this.skillDecksPanel.TabIndex = 1;
             // 
+            // DrawSuperCrisisCardButton
+            // 
+            this.DrawSuperCrisisCardButton.Location = new System.Drawing.Point(47, 96);
+            this.DrawSuperCrisisCardButton.Name = "DrawSuperCrisisCardButton";
+            this.DrawSuperCrisisCardButton.Size = new System.Drawing.Size(52, 23);
+            this.DrawSuperCrisisCardButton.TabIndex = 13;
+            this.DrawSuperCrisisCardButton.Text = "SCC";
+            this.DrawSuperCrisisCardButton.UseVisualStyleBackColor = true;
+            this.DrawSuperCrisisCardButton.Click += new System.EventHandler(this.DrawSuperCrisisCardButton_Click);
+            // 
+            // DestinyDeckButton
+            // 
+            this.DestinyDeckButton.Location = new System.Drawing.Point(47, 6);
+            this.DestinyDeckButton.Name = "DestinyDeckButton";
+            this.DestinyDeckButton.Size = new System.Drawing.Size(52, 23);
+            this.DestinyDeckButton.TabIndex = 12;
+            this.DestinyDeckButton.Text = "Destiny";
+            this.DestinyDeckButton.UseVisualStyleBackColor = true;
+            this.DestinyDeckButton.Click += new System.EventHandler(this.DestinyDeckButton_Click);
+            // 
             // DrawMutinyCardButton
             // 
-            this.DrawMutinyCardButton.Location = new System.Drawing.Point(4, 242);
+            this.DrawMutinyCardButton.Location = new System.Drawing.Point(47, 66);
             this.DrawMutinyCardButton.Name = "DrawMutinyCardButton";
-            this.DrawMutinyCardButton.Size = new System.Drawing.Size(95, 23);
+            this.DrawMutinyCardButton.Size = new System.Drawing.Size(52, 23);
             this.DrawMutinyCardButton.TabIndex = 11;
             this.DrawMutinyCardButton.Text = "Mutiny";
             this.DrawMutinyCardButton.UseVisualStyleBackColor = true;
@@ -325,7 +423,7 @@
             // 
             // AddToSkillCheckButton
             // 
-            this.AddToSkillCheckButton.Location = new System.Drawing.Point(70, 271);
+            this.AddToSkillCheckButton.Location = new System.Drawing.Point(70, 184);
             this.AddToSkillCheckButton.Name = "AddToSkillCheckButton";
             this.AddToSkillCheckButton.Size = new System.Drawing.Size(29, 23);
             this.AddToSkillCheckButton.TabIndex = 10;
@@ -336,7 +434,7 @@
             // 
             // returnToDeckButton
             // 
-            this.returnToDeckButton.Location = new System.Drawing.Point(37, 271);
+            this.returnToDeckButton.Location = new System.Drawing.Point(37, 184);
             this.returnToDeckButton.Name = "returnToDeckButton";
             this.returnToDeckButton.Size = new System.Drawing.Size(31, 23);
             this.returnToDeckButton.TabIndex = 9;
@@ -347,9 +445,9 @@
             // 
             // drawQuorumButton
             // 
-            this.drawQuorumButton.Location = new System.Drawing.Point(4, 213);
+            this.drawQuorumButton.Location = new System.Drawing.Point(47, 36);
             this.drawQuorumButton.Name = "drawQuorumButton";
-            this.drawQuorumButton.Size = new System.Drawing.Size(95, 23);
+            this.drawQuorumButton.Size = new System.Drawing.Size(52, 23);
             this.drawQuorumButton.TabIndex = 8;
             this.drawQuorumButton.Text = "Quorum";
             this.drawQuorumButton.UseVisualStyleBackColor = true;
@@ -357,7 +455,7 @@
             // 
             // giveCardToCurrentCharacterButton
             // 
-            this.giveCardToCurrentCharacterButton.Location = new System.Drawing.Point(4, 271);
+            this.giveCardToCurrentCharacterButton.Location = new System.Drawing.Point(4, 184);
             this.giveCardToCurrentCharacterButton.Name = "giveCardToCurrentCharacterButton";
             this.giveCardToCurrentCharacterButton.Size = new System.Drawing.Size(29, 23);
             this.giveCardToCurrentCharacterButton.TabIndex = 7;
@@ -370,37 +468,48 @@
             // 
             this.treDeckButton.Location = new System.Drawing.Point(4, 155);
             this.treDeckButton.Name = "treDeckButton";
-            this.treDeckButton.Size = new System.Drawing.Size(95, 23);
+            this.treDeckButton.Size = new System.Drawing.Size(38, 23);
             this.treDeckButton.TabIndex = 6;
             this.treDeckButton.Text = "TRE";
             this.treDeckButton.UseVisualStyleBackColor = true;
             this.treDeckButton.Click += new System.EventHandler(this.TreDeckButtonClick);
             // 
+            // drawnCardListBox
+            // 
+            this.drawnCardListBox.FormattingEnabled = true;
+            this.drawnCardListBox.Location = new System.Drawing.Point(1, 221);
+            this.drawnCardListBox.Name = "drawnCardListBox";
+            this.drawnCardListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.drawnCardListBox.Size = new System.Drawing.Size(101, 186);
+            this.drawnCardListBox.TabIndex = 0;
+            this.drawnCardListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.DrawnCardListBox_DrawItem);
+            this.drawnCardListBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.DrawnCardListBox_MeasureItemEvent);
+            // 
+            // polDeckButton
+            // 
+            this.polDeckButton.Location = new System.Drawing.Point(4, 6);
+            this.polDeckButton.Name = "polDeckButton";
+            this.polDeckButton.Size = new System.Drawing.Size(38, 23);
+            this.polDeckButton.TabIndex = 1;
+            this.polDeckButton.Text = "POL";
+            this.polDeckButton.UseVisualStyleBackColor = true;
+            this.polDeckButton.Click += new System.EventHandler(this.PolDeckButtonClick);
+            // 
             // pilDeckButton
             // 
             this.pilDeckButton.Location = new System.Drawing.Point(4, 126);
             this.pilDeckButton.Name = "pilDeckButton";
-            this.pilDeckButton.Size = new System.Drawing.Size(95, 23);
+            this.pilDeckButton.Size = new System.Drawing.Size(38, 23);
             this.pilDeckButton.TabIndex = 5;
             this.pilDeckButton.Text = "PIL";
             this.pilDeckButton.UseVisualStyleBackColor = true;
             this.pilDeckButton.Click += new System.EventHandler(this.PilDeckButtonClick);
             // 
-            // engDeckButton
-            // 
-            this.engDeckButton.Location = new System.Drawing.Point(4, 96);
-            this.engDeckButton.Name = "engDeckButton";
-            this.engDeckButton.Size = new System.Drawing.Size(95, 23);
-            this.engDeckButton.TabIndex = 4;
-            this.engDeckButton.Text = "ENG";
-            this.engDeckButton.UseVisualStyleBackColor = true;
-            this.engDeckButton.Click += new System.EventHandler(this.EngDeckButtonClick);
-            // 
             // tacDeckButton
             // 
             this.tacDeckButton.Location = new System.Drawing.Point(4, 66);
             this.tacDeckButton.Name = "tacDeckButton";
-            this.tacDeckButton.Size = new System.Drawing.Size(95, 23);
+            this.tacDeckButton.Size = new System.Drawing.Size(38, 23);
             this.tacDeckButton.TabIndex = 3;
             this.tacDeckButton.Text = "TAC";
             this.tacDeckButton.UseVisualStyleBackColor = true;
@@ -410,30 +519,21 @@
             // 
             this.leaDeckButton.Location = new System.Drawing.Point(4, 36);
             this.leaDeckButton.Name = "leaDeckButton";
-            this.leaDeckButton.Size = new System.Drawing.Size(95, 23);
+            this.leaDeckButton.Size = new System.Drawing.Size(38, 23);
             this.leaDeckButton.TabIndex = 2;
             this.leaDeckButton.Text = "LEA";
             this.leaDeckButton.UseVisualStyleBackColor = true;
             this.leaDeckButton.Click += new System.EventHandler(this.LeaDeckButtonClick);
             // 
-            // polDeckButton
+            // engDeckButton
             // 
-            this.polDeckButton.Location = new System.Drawing.Point(4, 6);
-            this.polDeckButton.Name = "polDeckButton";
-            this.polDeckButton.Size = new System.Drawing.Size(95, 23);
-            this.polDeckButton.TabIndex = 1;
-            this.polDeckButton.Text = "POL";
-            this.polDeckButton.UseVisualStyleBackColor = true;
-            this.polDeckButton.Click += new System.EventHandler(this.PolDeckButtonClick);
-            // 
-            // drawnCardListBox
-            // 
-            this.drawnCardListBox.FormattingEnabled = true;
-            this.drawnCardListBox.Location = new System.Drawing.Point(1, 299);
-            this.drawnCardListBox.Name = "drawnCardListBox";
-            this.drawnCardListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.drawnCardListBox.Size = new System.Drawing.Size(101, 108);
-            this.drawnCardListBox.TabIndex = 0;
+            this.engDeckButton.Location = new System.Drawing.Point(4, 96);
+            this.engDeckButton.Name = "engDeckButton";
+            this.engDeckButton.Size = new System.Drawing.Size(38, 23);
+            this.engDeckButton.TabIndex = 4;
+            this.engDeckButton.Text = "ENG";
+            this.engDeckButton.UseVisualStyleBackColor = true;
+            this.engDeckButton.Click += new System.EventHandler(this.EngDeckButtonClick);
             // 
             // crisisPanel
             // 
@@ -450,6 +550,66 @@
             this.crisisPanel.Size = new System.Drawing.Size(312, 407);
             this.crisisPanel.TabIndex = 2;
             // 
+            // SkillCheckPanel
+            // 
+            this.SkillCheckPanel.Controls.Add(this.copySkillCheckResultsButton);
+            this.SkillCheckPanel.Controls.Add(this.SkillCheckDescriptionRichTextBox);
+            this.SkillCheckPanel.Controls.Add(this.crisisSkillCheckListBox);
+            this.SkillCheckPanel.Controls.Add(this.addDestinyCardsButton);
+            this.SkillCheckPanel.Controls.Add(this.evalSkillCheckButton);
+            this.SkillCheckPanel.Location = new System.Drawing.Point(0, 208);
+            this.SkillCheckPanel.Name = "SkillCheckPanel";
+            this.SkillCheckPanel.Size = new System.Drawing.Size(312, 196);
+            this.SkillCheckPanel.TabIndex = 12;
+            // 
+            // copySkillCheckResultsButton
+            // 
+            this.copySkillCheckResultsButton.Location = new System.Drawing.Point(9, 143);
+            this.copySkillCheckResultsButton.Name = "copySkillCheckResultsButton";
+            this.copySkillCheckResultsButton.Size = new System.Drawing.Size(75, 39);
+            this.copySkillCheckResultsButton.TabIndex = 6;
+            this.copySkillCheckResultsButton.Text = "Copy to Clipboard";
+            this.copySkillCheckResultsButton.UseVisualStyleBackColor = true;
+            this.copySkillCheckResultsButton.Click += new System.EventHandler(this.copySkillCheckResultsButton_Click);
+            // 
+            // SkillCheckDescriptionRichTextBox
+            // 
+            this.SkillCheckDescriptionRichTextBox.Enabled = false;
+            this.SkillCheckDescriptionRichTextBox.Location = new System.Drawing.Point(214, 9);
+            this.SkillCheckDescriptionRichTextBox.Name = "SkillCheckDescriptionRichTextBox";
+            this.SkillCheckDescriptionRichTextBox.Size = new System.Drawing.Size(93, 173);
+            this.SkillCheckDescriptionRichTextBox.TabIndex = 11;
+            this.SkillCheckDescriptionRichTextBox.Text = "";
+            // 
+            // crisisSkillCheckListBox
+            // 
+            this.crisisSkillCheckListBox.FormattingEnabled = true;
+            this.crisisSkillCheckListBox.Location = new System.Drawing.Point(90, 9);
+            this.crisisSkillCheckListBox.Name = "crisisSkillCheckListBox";
+            this.crisisSkillCheckListBox.Size = new System.Drawing.Size(118, 173);
+            this.crisisSkillCheckListBox.TabIndex = 3;
+            this.crisisSkillCheckListBox.Visible = false;
+            // 
+            // addDestinyCardsButton
+            // 
+            this.addDestinyCardsButton.Location = new System.Drawing.Point(9, 10);
+            this.addDestinyCardsButton.Name = "addDestinyCardsButton";
+            this.addDestinyCardsButton.Size = new System.Drawing.Size(75, 40);
+            this.addDestinyCardsButton.TabIndex = 4;
+            this.addDestinyCardsButton.Text = "Add Destiny Cards";
+            this.addDestinyCardsButton.UseVisualStyleBackColor = true;
+            this.addDestinyCardsButton.Click += new System.EventHandler(this.AddDestinyCardsButtonClick);
+            // 
+            // evalSkillCheckButton
+            // 
+            this.evalSkillCheckButton.Location = new System.Drawing.Point(9, 56);
+            this.evalSkillCheckButton.Name = "evalSkillCheckButton";
+            this.evalSkillCheckButton.Size = new System.Drawing.Size(75, 39);
+            this.evalSkillCheckButton.TabIndex = 5;
+            this.evalSkillCheckButton.Text = "Evaluate Skill Check";
+            this.evalSkillCheckButton.UseVisualStyleBackColor = true;
+            this.evalSkillCheckButton.Click += new System.EventHandler(this.EvalSkillCheckButtonClick);
+            // 
             // keepCrisisButton
             // 
             this.keepCrisisButton.Location = new System.Drawing.Point(43, 78);
@@ -459,16 +619,6 @@
             this.keepCrisisButton.Text = "Top";
             this.keepCrisisButton.UseVisualStyleBackColor = true;
             this.keepCrisisButton.Click += new System.EventHandler(this.keepCrisisButton_Click);
-            // 
-            // buryCrisisButton
-            // 
-            this.buryCrisisButton.Location = new System.Drawing.Point(3, 78);
-            this.buryCrisisButton.Name = "buryCrisisButton";
-            this.buryCrisisButton.Size = new System.Drawing.Size(40, 23);
-            this.buryCrisisButton.TabIndex = 9;
-            this.buryCrisisButton.Text = "Bury";
-            this.buryCrisisButton.UseVisualStyleBackColor = true;
-            this.buryCrisisButton.Click += new System.EventHandler(this.buryCrisisButton_Click);
             // 
             // clearCrisisButton
             // 
@@ -482,6 +632,16 @@
             this.clearCrisisButton.UseVisualStyleBackColor = true;
             this.clearCrisisButton.Click += new System.EventHandler(this.clearCrisisButton_Click);
             // 
+            // buryCrisisButton
+            // 
+            this.buryCrisisButton.Location = new System.Drawing.Point(3, 78);
+            this.buryCrisisButton.Name = "buryCrisisButton";
+            this.buryCrisisButton.Size = new System.Drawing.Size(40, 23);
+            this.buryCrisisButton.TabIndex = 9;
+            this.buryCrisisButton.Text = "Bury";
+            this.buryCrisisButton.UseVisualStyleBackColor = true;
+            this.buryCrisisButton.Click += new System.EventHandler(this.buryCrisisButton_Click);
+            // 
             // drawMissionButton
             // 
             this.drawMissionButton.Location = new System.Drawing.Point(4, 32);
@@ -491,45 +651,6 @@
             this.drawMissionButton.Text = "Draw Mission";
             this.drawMissionButton.UseVisualStyleBackColor = true;
             this.drawMissionButton.Click += new System.EventHandler(this.DrawMissionButtonClick);
-            // 
-            // copySkillCheckResultsButton
-            // 
-            this.copySkillCheckResultsButton.Location = new System.Drawing.Point(9, 143);
-            this.copySkillCheckResultsButton.Name = "copySkillCheckResultsButton";
-            this.copySkillCheckResultsButton.Size = new System.Drawing.Size(75, 39);
-            this.copySkillCheckResultsButton.TabIndex = 6;
-            this.copySkillCheckResultsButton.Text = "Copy to Clipboard";
-            this.copySkillCheckResultsButton.UseVisualStyleBackColor = true;
-            this.copySkillCheckResultsButton.Click += new System.EventHandler(this.copySkillCheckResultsButton_Click);
-            // 
-            // evalSkillCheckButton
-            // 
-            this.evalSkillCheckButton.Location = new System.Drawing.Point(9, 56);
-            this.evalSkillCheckButton.Name = "evalSkillCheckButton";
-            this.evalSkillCheckButton.Size = new System.Drawing.Size(75, 39);
-            this.evalSkillCheckButton.TabIndex = 5;
-            this.evalSkillCheckButton.Text = "Evaluate Skill Check";
-            this.evalSkillCheckButton.UseVisualStyleBackColor = true;
-            this.evalSkillCheckButton.Click += new System.EventHandler(this.EvalSkillCheckButtonClick);
-            // 
-            // addDestinyCardsButton
-            // 
-            this.addDestinyCardsButton.Location = new System.Drawing.Point(9, 10);
-            this.addDestinyCardsButton.Name = "addDestinyCardsButton";
-            this.addDestinyCardsButton.Size = new System.Drawing.Size(75, 40);
-            this.addDestinyCardsButton.TabIndex = 4;
-            this.addDestinyCardsButton.Text = "Add Destiny Cards";
-            this.addDestinyCardsButton.UseVisualStyleBackColor = true;
-            this.addDestinyCardsButton.Click += new System.EventHandler(this.AddDestinyCardsButtonClick);
-            // 
-            // crisisSkillCheckListBox
-            // 
-            this.crisisSkillCheckListBox.FormattingEnabled = true;
-            this.crisisSkillCheckListBox.Location = new System.Drawing.Point(90, 9);
-            this.crisisSkillCheckListBox.Name = "crisisSkillCheckListBox";
-            this.crisisSkillCheckListBox.Size = new System.Drawing.Size(118, 173);
-            this.crisisSkillCheckListBox.TabIndex = 3;
-            this.crisisSkillCheckListBox.Visible = false;
             // 
             // crisisCopyTextButton
             // 
@@ -872,42 +993,170 @@
             this.DradisButton.UseVisualStyleBackColor = true;
             this.DradisButton.Click += new System.EventHandler(this.DradisButton_Click);
             // 
-            // SkillCheckDescriptionRichTextBox
+            // SuperCrisisHandPanel
             // 
-            this.SkillCheckDescriptionRichTextBox.Enabled = false;
-            this.SkillCheckDescriptionRichTextBox.Location = new System.Drawing.Point(214, 9);
-            this.SkillCheckDescriptionRichTextBox.Name = "SkillCheckDescriptionRichTextBox";
-            this.SkillCheckDescriptionRichTextBox.Size = new System.Drawing.Size(93, 173);
-            this.SkillCheckDescriptionRichTextBox.TabIndex = 11;
-            this.SkillCheckDescriptionRichTextBox.Text = "";
+            this.SuperCrisisHandPanel.Controls.Add(this.PlaySuperCrisisButton);
+            this.SuperCrisisHandPanel.Controls.Add(this.DiscardSuperCrisisButton);
+            this.SuperCrisisHandPanel.Controls.Add(this.CharacterSuperCrisisHandListBox);
+            this.SuperCrisisHandPanel.Controls.Add(this.SuperCrisisHandCountTextBox);
+            this.SuperCrisisHandPanel.Controls.Add(this.label10);
+            this.SuperCrisisHandPanel.Location = new System.Drawing.Point(876, 10);
+            this.SuperCrisisHandPanel.Name = "SuperCrisisHandPanel";
+            this.SuperCrisisHandPanel.Size = new System.Drawing.Size(145, 252);
+            this.SuperCrisisHandPanel.TabIndex = 7;
             // 
-            // SkillCheckPanel
+            // PlaySuperCrisisButton
             // 
-            this.SkillCheckPanel.Controls.Add(this.copySkillCheckResultsButton);
-            this.SkillCheckPanel.Controls.Add(this.SkillCheckDescriptionRichTextBox);
-            this.SkillCheckPanel.Controls.Add(this.crisisSkillCheckListBox);
-            this.SkillCheckPanel.Controls.Add(this.addDestinyCardsButton);
-            this.SkillCheckPanel.Controls.Add(this.evalSkillCheckButton);
-            this.SkillCheckPanel.Location = new System.Drawing.Point(0, 208);
-            this.SkillCheckPanel.Name = "SkillCheckPanel";
-            this.SkillCheckPanel.Size = new System.Drawing.Size(312, 196);
-            this.SkillCheckPanel.TabIndex = 12;
+            this.PlaySuperCrisisButton.Location = new System.Drawing.Point(57, 126);
+            this.PlaySuperCrisisButton.Name = "PlaySuperCrisisButton";
+            this.PlaySuperCrisisButton.Size = new System.Drawing.Size(75, 23);
+            this.PlaySuperCrisisButton.TabIndex = 4;
+            this.PlaySuperCrisisButton.Text = "Play SCC";
+            this.PlaySuperCrisisButton.UseVisualStyleBackColor = true;
+            this.PlaySuperCrisisButton.Click += new System.EventHandler(this.PlaySuperCrisisButton_Click);
             // 
-            // DestinyDeckButton
+            // DiscardSuperCrisisButton
             // 
-            this.DestinyDeckButton.Location = new System.Drawing.Point(4, 184);
-            this.DestinyDeckButton.Name = "DestinyDeckButton";
-            this.DestinyDeckButton.Size = new System.Drawing.Size(95, 23);
-            this.DestinyDeckButton.TabIndex = 12;
-            this.DestinyDeckButton.Text = "Destiny";
-            this.DestinyDeckButton.UseVisualStyleBackColor = true;
-            this.DestinyDeckButton.Click += new System.EventHandler(this.DestinyDeckButton_Click);
+            this.DiscardSuperCrisisButton.Location = new System.Drawing.Point(0, 126);
+            this.DiscardSuperCrisisButton.Name = "DiscardSuperCrisisButton";
+            this.DiscardSuperCrisisButton.Size = new System.Drawing.Size(51, 23);
+            this.DiscardSuperCrisisButton.TabIndex = 3;
+            this.DiscardSuperCrisisButton.Text = "Discard";
+            this.DiscardSuperCrisisButton.UseVisualStyleBackColor = true;
+            this.DiscardSuperCrisisButton.Click += new System.EventHandler(this.DiscardSuperCrisisButton_Click);
+            // 
+            // CharacterSuperCrisisHandListBox
+            // 
+            this.CharacterSuperCrisisHandListBox.FormattingEnabled = true;
+            this.CharacterSuperCrisisHandListBox.Location = new System.Drawing.Point(0, 25);
+            this.CharacterSuperCrisisHandListBox.Name = "CharacterSuperCrisisHandListBox";
+            this.CharacterSuperCrisisHandListBox.Size = new System.Drawing.Size(145, 95);
+            this.CharacterSuperCrisisHandListBox.TabIndex = 2;
+            this.CharacterSuperCrisisHandListBox.SelectedIndexChanged += new System.EventHandler(this.CharacterSuperCrisisHandListBox_SelectedIndexChanged);
+            // 
+            // SuperCrisisHandCountTextBox
+            // 
+            this.SuperCrisisHandCountTextBox.Enabled = false;
+            this.SuperCrisisHandCountTextBox.Location = new System.Drawing.Point(114, 2);
+            this.SuperCrisisHandCountTextBox.Name = "SuperCrisisHandCountTextBox";
+            this.SuperCrisisHandCountTextBox.Size = new System.Drawing.Size(28, 20);
+            this.SuperCrisisHandCountTextBox.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 5);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(94, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Super Crisis Hand:";
+            // 
+            // DrawLoyaltyButton
+            // 
+            this.DrawLoyaltyButton.Location = new System.Drawing.Point(47, 126);
+            this.DrawLoyaltyButton.Name = "DrawLoyaltyButton";
+            this.DrawLoyaltyButton.Size = new System.Drawing.Size(52, 23);
+            this.DrawLoyaltyButton.TabIndex = 14;
+            this.DrawLoyaltyButton.Text = "Loyalty";
+            this.DrawLoyaltyButton.UseVisualStyleBackColor = true;
+            this.DrawLoyaltyButton.Click += new System.EventHandler(this.DrawLoyaltyButton_Click);
+            // 
+            // MutinyCardPanel
+            // 
+            this.MutinyCardPanel.Controls.Add(this.DiscardMutinyCardButton);
+            this.MutinyCardPanel.Controls.Add(this.CharacterMutinyHandListBox);
+            this.MutinyCardPanel.Controls.Add(this.MutinyHandCountTextBox);
+            this.MutinyCardPanel.Controls.Add(this.label11);
+            this.MutinyCardPanel.Location = new System.Drawing.Point(876, 268);
+            this.MutinyCardPanel.Name = "MutinyCardPanel";
+            this.MutinyCardPanel.Size = new System.Drawing.Size(145, 201);
+            this.MutinyCardPanel.TabIndex = 8;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Mutiny Hand: ";
+            // 
+            // MutinyHandCountTextBox
+            // 
+            this.MutinyHandCountTextBox.Enabled = false;
+            this.MutinyHandCountTextBox.Location = new System.Drawing.Point(114, 7);
+            this.MutinyHandCountTextBox.Name = "MutinyHandCountTextBox";
+            this.MutinyHandCountTextBox.Size = new System.Drawing.Size(28, 20);
+            this.MutinyHandCountTextBox.TabIndex = 5;
+            // 
+            // CharacterMutinyHandListBox
+            // 
+            this.CharacterMutinyHandListBox.FormattingEnabled = true;
+            this.CharacterMutinyHandListBox.Location = new System.Drawing.Point(0, 33);
+            this.CharacterMutinyHandListBox.Name = "CharacterMutinyHandListBox";
+            this.CharacterMutinyHandListBox.Size = new System.Drawing.Size(145, 95);
+            this.CharacterMutinyHandListBox.TabIndex = 6;
+            // 
+            // DiscardMutinyCardButton
+            // 
+            this.DiscardMutinyCardButton.Location = new System.Drawing.Point(6, 135);
+            this.DiscardMutinyCardButton.Name = "DiscardMutinyCardButton";
+            this.DiscardMutinyCardButton.Size = new System.Drawing.Size(75, 23);
+            this.DiscardMutinyCardButton.TabIndex = 7;
+            this.DiscardMutinyCardButton.Text = "Discard";
+            this.DiscardMutinyCardButton.UseVisualStyleBackColor = true;
+            // 
+            // TitlesPanel
+            // 
+            this.TitlesPanel.Controls.Add(this.CAGTitleCheckBox);
+            this.TitlesPanel.Controls.Add(this.PresidentTitleCheckBox);
+            this.TitlesPanel.Controls.Add(this.AdmiralCheckBox);
+            this.TitlesPanel.Location = new System.Drawing.Point(1027, 21);
+            this.TitlesPanel.Name = "TitlesPanel";
+            this.TitlesPanel.Size = new System.Drawing.Size(76, 57);
+            this.TitlesPanel.TabIndex = 9;
+            // 
+            // AdmiralCheckBox
+            // 
+            this.AdmiralCheckBox.AutoSize = true;
+            this.AdmiralCheckBox.Location = new System.Drawing.Point(4, 4);
+            this.AdmiralCheckBox.Name = "AdmiralCheckBox";
+            this.AdmiralCheckBox.Size = new System.Drawing.Size(60, 17);
+            this.AdmiralCheckBox.TabIndex = 0;
+            this.AdmiralCheckBox.Text = "Admiral";
+            this.AdmiralCheckBox.UseVisualStyleBackColor = true;
+            this.AdmiralCheckBox.CheckedChanged += new System.EventHandler(this.AdmiralCheckBox_CheckedChanged);
+            // 
+            // PresidentTitleCheckBox
+            // 
+            this.PresidentTitleCheckBox.AutoSize = true;
+            this.PresidentTitleCheckBox.Location = new System.Drawing.Point(4, 22);
+            this.PresidentTitleCheckBox.Name = "PresidentTitleCheckBox";
+            this.PresidentTitleCheckBox.Size = new System.Drawing.Size(70, 17);
+            this.PresidentTitleCheckBox.TabIndex = 1;
+            this.PresidentTitleCheckBox.Text = "President";
+            this.PresidentTitleCheckBox.UseVisualStyleBackColor = true;
+            this.PresidentTitleCheckBox.CheckedChanged += new System.EventHandler(this.PresidentTitleCheckBox_CheckedChanged);
+            // 
+            // CAGTitleCheckBox
+            // 
+            this.CAGTitleCheckBox.AutoSize = true;
+            this.CAGTitleCheckBox.Location = new System.Drawing.Point(4, 39);
+            this.CAGTitleCheckBox.Name = "CAGTitleCheckBox";
+            this.CAGTitleCheckBox.Size = new System.Drawing.Size(48, 17);
+            this.CAGTitleCheckBox.TabIndex = 2;
+            this.CAGTitleCheckBox.Text = "CAG";
+            this.CAGTitleCheckBox.UseVisualStyleBackColor = true;
+            this.CAGTitleCheckBox.CheckedChanged += new System.EventHandler(this.CAGTitleCheckBox_CheckedChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 558);
+            this.ClientSize = new System.Drawing.Size(1221, 558);
+            this.Controls.Add(this.TitlesPanel);
+            this.Controls.Add(this.MutinyCardPanel);
+            this.Controls.Add(this.SuperCrisisHandPanel);
             this.Controls.Add(this.DradisButton);
             this.Controls.Add(this.copyGameButton);
             this.Controls.Add(this.panel2);
@@ -919,8 +1168,12 @@
             this.Text = "BSG Deck Manager";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.PlayerLoyaltyHandPanel.ResumeLayout(false);
+            this.QuorumHandPanel.ResumeLayout(false);
+            this.QuorumHandPanel.PerformLayout();
             this.skillDecksPanel.ResumeLayout(false);
             this.crisisPanel.ResumeLayout(false);
+            this.SkillCheckPanel.ResumeLayout(false);
             this.destinationPanel.ResumeLayout(false);
             this.destinationPanel.PerformLayout();
             this.jumpPrepGroupBox.ResumeLayout(false);
@@ -932,7 +1185,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.PopulationUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoodUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FuelUpDown)).EndInit();
-            this.SkillCheckPanel.ResumeLayout(false);
+            this.SuperCrisisHandPanel.ResumeLayout(false);
+            this.SuperCrisisHandPanel.PerformLayout();
+            this.MutinyCardPanel.ResumeLayout(false);
+            this.MutinyCardPanel.PerformLayout();
+            this.TitlesPanel.ResumeLayout(false);
+            this.TitlesPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1018,6 +1276,28 @@
         private System.Windows.Forms.RichTextBox SkillCheckDescriptionRichTextBox;
         private System.Windows.Forms.Panel SkillCheckPanel;
         private System.Windows.Forms.Button DestinyDeckButton;
+        private System.Windows.Forms.Panel QuorumHandPanel;
+        private System.Windows.Forms.Panel SuperCrisisHandPanel;
+        private System.Windows.Forms.Button PlaySuperCrisisButton;
+        private System.Windows.Forms.Button DiscardSuperCrisisButton;
+        private System.Windows.Forms.ListBox CharacterSuperCrisisHandListBox;
+        private System.Windows.Forms.TextBox SuperCrisisHandCountTextBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button DrawSuperCrisisCardButton;
+        private System.Windows.Forms.Panel PlayerLoyaltyHandPanel;
+        private System.Windows.Forms.Button PassLoyaltyCardsButton;
+        private System.Windows.Forms.Button RevealAsCylonButton;
+        private System.Windows.Forms.ListBox PlayerLoyaltyHandListBox;
+        private System.Windows.Forms.Button DrawLoyaltyButton;
+        private System.Windows.Forms.Panel MutinyCardPanel;
+        private System.Windows.Forms.Button DiscardMutinyCardButton;
+        private System.Windows.Forms.ListBox CharacterMutinyHandListBox;
+        private System.Windows.Forms.TextBox MutinyHandCountTextBox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel TitlesPanel;
+        private System.Windows.Forms.CheckBox CAGTitleCheckBox;
+        private System.Windows.Forms.CheckBox PresidentTitleCheckBox;
+        private System.Windows.Forms.CheckBox AdmiralCheckBox;
     }
 }
 
