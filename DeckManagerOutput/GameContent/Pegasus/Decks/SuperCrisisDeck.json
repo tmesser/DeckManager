@@ -1,0 +1,194 @@
+[
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Bomb On Colonial One ",
+    "AdditionalText": "Skill check: TAC/PIL/ENG = 15 \r\nPASS: No Effect \r\nFAIL: -2 Morale, all characters in Administration, President's Office, and Press Room are sent to Sickbay. Until the end of the game, no player may move to or activate Administration, President's Office, and Press Room.",
+    "PositiveColors": [
+      "Tactics",
+      "Engineering",
+      "Piloting"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 15,
+        "Item2": " No Effect \r"
+      },
+      {
+        "Item2": " -2 Morale, all characters in Administration, President's Office, and Press Room are sent to Sickbay. Until the end of the game, no player may move to or activate Administration, President's Office, and Press Room."
+      }
+    ]
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Cylon Intruders ",
+    "AdditionalText": "Skill check: LEA/TAC = 18 \r\nPASS: No Effect \r\n14+: Place 1 Centurion marker at the beginning of the Boarding Party track. \r\nFAIL: Damage Galactica once and place 2 Centurion markers at the beginning of the Boarding Party track.",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 18,
+        "Item2": " No Effect \r"
+      },
+      {
+        "Item1": 14,
+        "Item2": " Place 1 Centurion marker at the beginning of the Boarding Party track. \r"
+      },
+      {
+        "Item2": " Damage Galactica once and place 2 Centurion markers at the beginning of the Boarding Party track."
+      }
+    ]
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Fleet Mobilization ",
+    "AdditionalText": "Skill check: LEA/TAC/PIL/ENG = 24 \r\nPASS: Launch Nukes, Launch Raiders \r\nFAIL: Launch Nukes, Activate Raiders, Activate Heavies, Launch Raiders, -1 Morale",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics",
+      "Engineering",
+      "Piloting"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 24,
+        "Item2": " Launch Nukes, Launch Raiders \r"
+      },
+      {
+        "Item2": " Launch Nukes, Activate Raiders, Activate Heavies, Launch Raiders, -1 Morale"
+      }
+    ]
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Inbound Nukes ",
+    "AdditionalText": "Skill check: LEA/TAC = 15 \r\nPASS: No Effect \r\nFAIL: -1 Fuel, -1 Food, -1 Population",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 15,
+        "Item2": " No Effect \r"
+      },
+      {
+        "Item2": " -1 Fuel, -1 Food, -1 Population"
+      }
+    ]
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Demand Peace Manifesto ",
+    "AdditionalText": "Admiral Chooses: \r\n-1 Morale and damage Galatica twice\r\nOR \r\nPresident and Admiral discard their hand of Skill Cards",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Psychological Warfare ",
+    "AdditionalText": "President Chooses: \r\n-1 Morale and each player discards 2 Skill Cards and draws 2 Treachery Cards\r\nOR \r\nEach revealed Cylon player draws 2 Treachery Cards. Then discard the entire Destiny Deck and build a new one consisting of only 6 Treachery Cards",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Footage Transmitted ",
+    "AdditionalText": "Skill check: POL/LEA/TAC = 17 \r\nPASS: Each player draws 1 Treachery Card \r\n12+: Each revealed Cylon player draws 2 Treachery Cards \r\nFAIL: Each revealed Cylon player draws 2 Treachery Cards and 1 Super Crisis Card",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics",
+      "Politics"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 17,
+        "Item2": " Each player draws 1 Treachery Card \r"
+      },
+      {
+        "Item1": 12,
+        "Item2": " Each revealed Cylon player draws 2 Treachery Cards \r"
+      },
+      {
+        "Item2": " Each revealed Cylon player draws 2 Treachery Cards and 1 Super Crisis Card"
+      }
+    ]
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: The Farm ",
+    "AdditionalText": "Skill check: TAC/ENG = 15 \r\nPASS: No Effect \r\n8+: -1 Food \r\nFAIL: -1 Food -1 Population. Keep this card in play. Human players may not use their once-per-game abilities.",
+    "PositiveColors": [
+      "Tactics",
+      "Engineering"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 15,
+        "Item2": " No Effect \r"
+      },
+      {
+        "Item1": 8,
+        "Item2": " -1 Food \r"
+      },
+      {
+        "Item2": " -1 Food -1 Population. Keep this card in play. Human players may not use their once-per-game abilities."
+      }
+    ]
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Fire All Missiles ",
+    "AdditionalText": "Skill check: TAC/PIL = 22\r\nPASS: No Effect \r\nFAIL: Draw 2 civilian ships to destroy\r\n\r\nCONSEQUENCE: Damage Galactica twice",
+    "PositiveColors": [
+      "Tactics",
+      "Piloting"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 22,
+        "Item2": " No Effect \r"
+      },
+      {
+        "Item2": " Draw 2 civilian ships to destroy\r"
+      }
+    ]
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Human Prisoner ",
+    "AdditionalText": "Skill check: LEA/TAC = 18\r\nPASS: No Effect \r\nFAIL: The Cylon player who played this card chooses one human player and takes all of his Skill Cards. That human player's character is then sent to Sickbay.",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 18,
+        "Item2": " No Effect \r"
+      },
+      {
+        "Item2": " The Cylon player who played this card chooses one human player and takes all of his Skill Cards. That human player's character is then sent to Sickbay."
+      }
+    ]
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Fighting Blind ",
+    "AdditionalText": "CAG Chooses: \r\nPlace 2 centurions at the start of the Boarding Party track.\r\nOR \r\nThe CAG is executed.",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  }
+]

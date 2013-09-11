@@ -1,0 +1,74 @@
+[
+  {
+    "Load": [
+      "Population",
+      "Population"
+    ],
+    "ComponentType": "Civilian"
+  },
+  {
+    "Load": [
+      "Population",
+      "Population"
+    ],
+    "ComponentType": "Civilian"
+  },
+  {
+    "Load": [
+      "Population"
+    ],
+    "ComponentType": "Civilian"
+  },
+  {
+    "Load": [
+      "Population"
+    ],
+    "ComponentType": "Civilian"
+  },
+  {
+    "Load": [
+      "Population"
+    ],
+    "ComponentType": "Civilian"
+  },
+  {
+    "Load": [
+      "Population"
+    ],
+    "ComponentType": "Civilian"
+  },
+  {
+    "Load": [
+      "Population"
+    ],
+    "ComponentType": "Civilian"
+  },
+  {
+    "Load": [
+      "Population"
+    ],
+    "ComponentType": "Civilian"
+  },
+  {
+    "Load": [
+      "Population",
+      "Morale"
+    ],
+    "ComponentType": "Civilian"
+  },
+  {
+    "Load": [
+      "Population",
+      "Fuel"
+    ],
+    "ComponentType": "Civilian"
+  },
+  {
+    "Load": [],
+    "ComponentType": "Civilian"
+  },
+  {
+    "Load": [],
+    "ComponentType": "Civilian"
+  }
+]

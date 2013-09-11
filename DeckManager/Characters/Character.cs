@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using DeckManager.Cards.Enums;
-using DeckManager.Cards;
 using Newtonsoft.Json;
 
 namespace DeckManager.Characters
@@ -25,7 +22,15 @@ namespace DeckManager.Characters
         /// Set of draw colors. Each inner list represents mixed draws.
         /// </summary>
         public List<List<SkillCardColor>> DefaultDrawColors { get; set; }
-        
+
+        /// <summary>
+        /// Gets or sets the additional text -- powers, drawbacks, etc.
+        /// </summary>
+        /// <value>
+        /// The additional text.
+        /// </value>
+        public string AdditionalText { get; set; }
+
         /// <summary>
         /// Unique Skill Colors this character draws
         /// </summary>

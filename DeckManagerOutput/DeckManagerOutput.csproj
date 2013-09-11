@@ -94,6 +94,36 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="GameContent\Base\Boards\Locations.json" />
+    <None Include="GameContent\Base\Characters\Characters.json" />
+    <None Include="GameContent\Base\Components\CivilianPile.json" />
+    <None Include="GameContent\Base\Decks\CrisisDeck.json" />
+    <None Include="GameContent\Base\Decks\TreacheryDeck.json" />
+    <None Include="GameContent\Base\Decks\DestinationDeck.json" />
+    <None Include="GameContent\Base\Decks\EngineeringDeck.json" />
+    <None Include="GameContent\Base\Decks\LeadershipDeck.json" />
+    <None Include="GameContent\Base\Decks\LoyaltyDeck.json" />
+    <None Include="GameContent\Base\Decks\PegTreacheryDeck.json" />
+    <None Include="GameContent\Base\Decks\PilotingDeck.json" />
+    <None Include="GameContent\Base\Decks\PoliticsDeck.json" />
+    <None Include="GameContent\Base\Decks\QuorumDeck.json" />
+    <None Include="GameContent\Base\Decks\SuperCrisisDeck.json" />
+    <None Include="GameContent\Base\Decks\TacticsDeck.json" />
+    <None Include="GameContent\Pegasus\Boards\Locations.json" />
+    <None Include="GameContent\Pegasus\Characters\Characters.json" />
+    <None Include="GameContent\Pegasus\Components\CivilianPile.json" />
+    <None Include="GameContent\Pegasus\Decks\CrisisDeck.json" />
+    <None Include="GameContent\Pegasus\Decks\DestinationDeck.json" />
+    <None Include="GameContent\Pegasus\Decks\EngineeringDeck.json" />
+    <None Include="GameContent\Pegasus\Decks\LeadershipDeck.json" />
+    <None Include="GameContent\Pegasus\Decks\LoyaltyDeck.json" />
+    <None Include="GameContent\Pegasus\Decks\PegTreacheryDeck.json" />
+    <None Include="GameContent\Pegasus\Decks\PilotingDeck.json" />
+    <None Include="GameContent\Pegasus\Decks\PoliticsDeck.json" />
+    <None Include="GameContent\Pegasus\Decks\QuorumDeck.json" />
+    <None Include="GameContent\Pegasus\Decks\SuperCrisisDeck.json" />
+    <None Include="GameContent\Pegasus\Decks\TacticsDeck.json" />
+    <None Include="GameContent\Pegasus\Decks\TreacheryDeck.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

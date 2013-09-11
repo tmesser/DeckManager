@@ -1,0 +1,104 @@
+[
+  {
+    "Name": "Hangar Deck",
+    "LocationInfo": "Action: Launch yourself in a Viper.  You may then take 1 more action.  You must be in the Hangar Deck to use a \"Repair\" skill card action on damaged Vipers.",
+    "BoardName": "Galactica",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "FTL Control",
+    "LocationInfo": "Action: Jump the fleet if the jump preparation track is not in the red zone.  Roll a die; if the result is 1-6, lose a number of population indicated on the fleet's space on the jump preparation track.",
+    "BoardName": "Galactica",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Weapons Control",
+    "LocationInfo": "Action: Attack one Cylon ship with Galactica.  Roll 3-8 to hit a raider, 7-8 to hit a heavy raider, and 5-8 to hit a basestar.",
+    "BoardName": "Galactica",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Command",
+    "LocationInfo": "Action: Activate up to two unmanned vipers.  An activation can be used to a.) launch a viper from either of the two launch zones, b.) move an unammend viper to an adjacent space area, or c.) fire an unmanned viper's weapons (3-8 to hit a raider, 7-8 to hit a heavy raider, 8 to hit a basestar).",
+    "BoardName": "Galactica",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Communications",
+    "LocationInfo": "Action: Look at the back of 2 civilian ships.  You may then move them to adjacent area(s).  Only the player taking the action may look at the ships.",
+    "BoardName": "Galactica",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Admiral's Quarters",
+    "LocationInfo": "Action: Choose a character; then pass a Tactics/Leadership Skill Check of 7 to send him/her to the \"Brig\". Characters in the \"Brig\" can only add 1 skill card to skill checks, and being in the Brig prevents a Cylon from doing any damage upon reveal.",
+    "BoardName": "Galactica",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Research Lab",
+    "LocationInfo": "Action: Draw 1 Engineering OR 1 Tactics skill card.",
+    "BoardName": "Galactica",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Armory",
+    "LocationInfo": "Action: Attack a Centurion on the Boarding Party track (destroyed on a roll of 7-8).",
+    "BoardName": "Galactica",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Sickbay",
+    "LocationInfo": "You may only draw 1 Skill Card during the Receive Skills step of your turn. A character can (and should) move out of Sickbay during the Movement step of his/her turn.",
+    "BoardName": "Galactica",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Brig",
+    "LocationInfo": "You may not move, draw Crisis Cards, or add more than 1 card to any Skill Check.  Action: Pass a Politics/Tactics Skill Check of 7 to move to any location.",
+    "BoardName": "Galactica",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Press Room",
+    "LocationInfo": "Action: Draw 2 Politics skill cards.",
+    "BoardName": "ColonialOne",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "President's Office",
+    "LocationInfo": "Action: If you are President, draw 1 Quorum Card.  You may then draw 1 additional Quorum card or play 1 from your hand.",
+    "BoardName": "ColonialOne",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Administration",
+    "LocationInfo": "Action: Choose a character; then pass a Politics/Leadership Skill Check of 5 to give him/her the President title. Revealed Cylons may not be given the President title.",
+    "BoardName": "ColonialOne",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Caprica",
+    "LocationInfo": "Action: Play 1 of your Super Crisis Cards or draw 2 Crisis Cards, choose 1 to resolve, and bury the other at the bottom of the deck.  Cylon Activations and the Prepare for Jump step are not triggered after this Crisis.",
+    "BoardName": "Cylon",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Cylon Fleet",
+    "LocationInfo": "Action: Activate all Cylon ships of one type, or launch 2 raiders and 1 heavy raider from each basestar.  Activating heavy raiders will advance the centurions one step on the boarding party track, even if there are no heavy raiders on the board.",
+    "BoardName": "Cylon",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Human Fleet",
+    "LocationInfo": "Action: Look at any player's hand, and steal 1 Skill Card by placing it in your hand.  Then roll a die, and if 5+, damage Galactica.",
+    "BoardName": "Cylon",
+    "PlayersPresent": []
+  },
+  {
+    "Name": "Resurrection Ship",
+    "LocationInfo": "You may discard your Super Crisis Card to draw a new one.  Then, if the distance is 7 or less, give your unrevealed Loyalty Card(s) to any other player.",
+    "BoardName": "Cylon",
+    "PlayersPresent": []
+  }
+]

@@ -227,25 +227,26 @@ namespace DeckManager
                     CurrentGameState.QuorumDeck.Discard((Cards.QuorumCard)card);
                     break;
                 case CardType.Skill:
-                    switch (((Cards.SkillCard)card).CardColor)
+                    var skillCard = (Cards.SkillCard) card;
+                    switch (skillCard.CardColor)
                     {
                         case SkillCardColor.Politics:
-                            CurrentGameState.PoliticsDeck.Discard((Cards.SkillCard)card);
+                            CurrentGameState.PoliticsDeck.Discard(skillCard);
                             break;
                         case SkillCardColor.Leadership:
-                            CurrentGameState.LeadershipDeck.Discard((Cards.SkillCard)card);
+                            CurrentGameState.LeadershipDeck.Discard(skillCard);
                             break;
                         case SkillCardColor.Tactics:
-                            CurrentGameState.TacticsDeck.Discard((Cards.SkillCard)card);
+                            CurrentGameState.TacticsDeck.Discard(skillCard);
                             break;
                         case SkillCardColor.Engineering:
-                            CurrentGameState.EngineeringDeck.Discard((Cards.SkillCard)card);
+                            CurrentGameState.EngineeringDeck.Discard(skillCard);
                             break;
                         case SkillCardColor.Piloting:
-                            CurrentGameState.PilotingDeck.Discard((Cards.SkillCard)card);
+                            CurrentGameState.PilotingDeck.Discard(skillCard);
                             break;
                         case SkillCardColor.Treachery:
-                            CurrentGameState.TreacheryDeck.Discard((Cards.SkillCard)card);
+                            CurrentGameState.TreacheryDeck.Discard(skillCard);
                             break;
                     }
                     break;
@@ -253,7 +254,7 @@ namespace DeckManager
         }
         public void DiscardCards(IEnumerable<Cards.BaseCard> cards)
         {
-            foreach (Cards.BaseCard card in cards)
+            foreach (var card in cards)
                 DiscardCard(card);
         }
                 /// <summary>
@@ -420,26 +421,29 @@ namespace DeckManager
         /// <param name="location"></param>
         /// <param name="type"></param>
         /// <returns>The component that has been placed</returns>
-        public DeckManager.Components.BaseComponent PlaceComponent( DeckManager.Boards.Dradis.DradisNodeName location, DeckManager.Components.Enums.ComponentType type)
+        public BaseComponent PlaceComponent( DradisNodeName location, Components.Enums.ComponentType type)
         {
-            DeckManager.Components.BaseComponent ship = null;
+            BaseComponent ship = null;
             switch (type)
             { 
-                case Components.Enums.ComponentType.Basestar:                    
+                case Components.Enums.ComponentType.Basestar:
+                    ship = new Basestar();
                     break;
                 case Components.Enums.ComponentType.Civilian:
+                    ship = DrawCiv();
                     break;
                 case Components.Enums.ComponentType.HeavyRaider:
+                    ship = new HeavyRaider();
                     break;
                 case Components.Enums.ComponentType.Raider:
+                    ship = new Raider();
                     break;
                 case Components.Enums.ComponentType.Viper:
-                    break;
-                default:
+                    ship = DrawViper();
                     break;
             }
             CurrentGameState.Dradis.AddComponentToNode(ship, location);
-            return null;
+            return ship;
         }
 
     }

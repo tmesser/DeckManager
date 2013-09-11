@@ -1,0 +1,147 @@
+[
+  {
+    "CardType": "Quorum",
+    "Heading": "INSPIRATIONAL SPEECH",
+    "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 Morale and remove this card from the game. Otherwise, no effect and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "INSPIRATIONAL SPEECH",
+    "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 Morale and remove this card from the game. Otherwise, no effect and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "INSPIRATIONAL SPEECH",
+    "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 Morale and remove this card from the game. Otherwise, no effect and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "INSPIRATIONAL SPEECH",
+    "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 Morale and remove this card from the game. Otherwise, no effect and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "FOOD RATIONING",
+    "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 Food and remove this card from the game. Otherwise, no effect and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "FOOD RATIONING",
+    "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 Food and remove this card from the game. Otherwise, no effect and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ARREST ORDER",
+    "AdditionalText": "Action: Chose a character and send him to the 'Brig' location. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ARREST ORDER",
+    "AdditionalText": "Action: Chose a character and send him to the 'Brig' location. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "AUTHORIZATION OF BRUTAL FORCE",
+    "AdditionalText": "Action: Destroy 3 raiders, 1 heavy raider, or 1 centurion. Then roll a die and if 2 or less, lose 1 Population. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "AUTHORIZATION OF BRUTAL FORCE",
+    "AdditionalText": "Action: Destroy 3 raiders, 1 heavy raider, or 1 centurion. Then roll a die and if 2 or less, lose 1 Population. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "RELEASE CYLON MUGSHOT",
+    "AdditionalText": "Action: Look at 1 random Loyalty Card belonging to any other player, then roll a die. If 3 or less, lose 1 Morale. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "PRESIDENTIAL PARDON",
+    "AdditionalText": "Action: Move any other character from the 'Brig' to any other location on Galactica."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ASSIGN MISSION SPECIALIST",
+    "AdditionalText": "Action: Draw 2 politics cards and give this card to any other player. Keep this card in play. The next time the Fleet jumps, this player chooses the destination instead of the Admiral. He draws 3 Destination Card (instead of 2) and chooses 1. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ACCEPT PROPHECY",
+    "AdditionalText": "Action: Draw 1 Skill Card of any type (it may be from outside your skill set). Keep this card in play. When a player activates Administration or chooses the President with the Admiral's Quarters location, increase the difficulty by 2 then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ASSIGN ARBITRATOR",
+    "AdditionalText": "Action: Draw 2 politics cards and give this card to any other player. Keep this card in play. When a player activates the Admiral's Quarters location, this player may discard this card to reduce or increase the difficulty by 3."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ENCOURAGE MUTINY",
+    "AdditionalText": "Action: Choose any other player (excluding the Admiral). That player rolls a die. If 3 or higher, he receives the Admiral title. Otherwise lose 1 Morale. Discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ASSIGN VICE PRESIDENT",
+    "AdditionalText": "Action: Draw 2 politics cards and give this card to any other player. Keep this card in play. While this player is not President other players may not be chosen with the Administration location."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ASSIGN CHIEF OF STAFF",
+    "AdditionalText": "Action: Draw 2 Politics Cards and give this card to any other player. Keep this card in play. Before cards are added to a skill check, this player may discard this card to make all Politics Cards count as positive strength."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "UNSAVORY CONNECTIONS",
+    "AdditionalText": "Action: Discard 2 random Skill Cards and draw 2 Treachery Cards. Then gain +1 Food or +1 Fuel and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "RESOURCES FOR GALACTICA",
+    "AdditionalText": "Action: Repair up to 1 location and 2 damaged Vipers. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ENACT PRODUCTION QUOTAS",
+    "AdditionalText": "Action: +1 Food -1 Morale. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "EULOGY",
+    "AdditionalText": "Action: If at least 1 Morale has been lost by a character being executed, gain +1 Morale. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "CIVILIAN SELF DEFENSE",
+    "AdditionalText": "Action: Choose 1 Civilian Ship. Destroy either 3 Raiders or 1 Heavy Raider in the same space area as that ship. Then roll a die. If 2 or less, the Civilian Ship is destroyed. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "PROBATION",
+    "AdditionalText": "Action: Give this card to any player. After he plays cards into a skill check, you may discard this card to look at the cards he played."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "EXECUTE PRISONER",
+    "AdditionalText": "Action: Choose a character in the Brig. That character is executed. Then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "CONSULT THE ORACLE",
+    "AdditionalText": "Action: Look at the bottom card of any 1 deck. Then look at all the cards in the Destiny Deck and discard 2 of them. Then shuffle the Destiny Deck and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "RESIGNATION",
+    "AdditionalText": "Action: Discard any number of Quorum Cards from your hand and then draw an equal number of new Quorum Cards. Then choose another character, give him the President title, and discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "PRESIDENITAL ORDER",
+    "AdditionalText": "Action: Choose any player, give him either the Admiral title or the CAG title, and then discard this card."
+  },
+  {
+    "CardType": "Quorum",
+    "Heading": "ESTABLISH DOGSVILLE",
+    "AdditionalText": "Action: Gain 1 Population and lose 1 Morale. Then discard this card."
+  }
+]
