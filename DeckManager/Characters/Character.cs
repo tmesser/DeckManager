@@ -19,6 +19,8 @@ namespace DeckManager.Characters
 
         public string SetupLocation { get; set; }
 
+        public DeckManager.Characters.Enums.Roles Role { get; set; }
+
         /// <summary>
         /// Set of draw colors. Each inner list represents mixed draws.
         /// </summary>

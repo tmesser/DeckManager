@@ -1,0 +1,26 @@
+﻿[	
+    {
+		"Name": "Helena Cain",
+		"Location": "Pegasus CIC",
+		"Draw": {
+			{ "Tactics" },
+			{ "Tactics" },
+			{ "Tactics", "Leadership"},
+			{ "Leadership"},
+			{ "Leadership"}
+		},
+		"Role" : "Military"
+	},	
+    {
+		"Name": "William Adama",
+		"Location": "Admiral's Quarters",
+		"Draw": {
+			{ "Leadership" },
+			{ "Leadership" },
+			{ "Leadership" },
+			{ "Tactics" },
+			{ "Tactics" }
+		},
+		"Role" : Military
+	}
+]

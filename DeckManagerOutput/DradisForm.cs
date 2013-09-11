@@ -150,52 +150,42 @@ namespace DeckManagerOutput
             DeckManager.Boards.Dradis.DradisNodeName sector = (DeckManager.Boards.Dradis.DradisNodeName)LaunchLocationComboBox.SelectedItem;
             if (sector != null && token != null)
             {
-
-                switch (sector)
+                var ship = Program.GManager.PlaceComponent(sector, token);
+                if (ship != null)
                 {
-                    case DeckManager.Boards.Dradis.DradisNodeName.Alpha:
-                        PlaceComponent(this.alphaListBox, token);
-                        break;
-                    case DeckManager.Boards.Dradis.DradisNodeName.Bravo:
-                        PlaceComponent(this.bravoListBox, token);
-                        break;
-                    case DeckManager.Boards.Dradis.DradisNodeName.Charlie:
-                        PlaceComponent(this.charlieListBox, token);
-                        break;
-                    case DeckManager.Boards.Dradis.DradisNodeName.Delta:
-                        PlaceComponent(this.deltaListBox, token);
-                        break;
-                    case DeckManager.Boards.Dradis.DradisNodeName.Echo:
-                        PlaceComponent(this.echoListBox, token);
-                        break;
-                    case DeckManager.Boards.Dradis.DradisNodeName.Foxtrot:
-                        PlaceComponent(this.foxtrotListBox, token);
-                        break;
+                    switch (sector)
+                    {
+                        case DeckManager.Boards.Dradis.DradisNodeName.Alpha:
+                            PlaceComponent(this.alphaListBox, ship);
+                            break;
+                        case DeckManager.Boards.Dradis.DradisNodeName.Bravo:
+                            PlaceComponent(this.bravoListBox, ship);
+                            break;
+                        case DeckManager.Boards.Dradis.DradisNodeName.Charlie:
+                            PlaceComponent(this.charlieListBox, ship);
+                            break;
+                        case DeckManager.Boards.Dradis.DradisNodeName.Delta:
+                            PlaceComponent(this.deltaListBox, ship);
+                            break;
+                        case DeckManager.Boards.Dradis.DradisNodeName.Echo:
+                            PlaceComponent(this.echoListBox, ship);
+                            break;
+                        case DeckManager.Boards.Dradis.DradisNodeName.Foxtrot:
+                            PlaceComponent(this.foxtrotListBox, ship);
+                            break;
+                    }
+                    LaunchComponentComboBox.SelectedIndex = -1;
+                    LaunchLocationComboBox.SelectedIndex = -1;
                 }
-                LaunchComponentComboBox.SelectedIndex = -1;
-                LaunchLocationComboBox.SelectedIndex = -1;
             }
             // todo error checking
         }
 
-        private void PlaceComponent(ListBox sector, DeckManager.Components.Enums.ComponentType token)
-        { 
-            // do component placement.            
-            switch (token)
-            {
-                case DeckManager.Components.Enums.ComponentType.Civilian:
-                    //var ship = Program.GManager.DrawCivilianShip();
-                    break;
-                case DeckManager.Components.Enums.ComponentType.Basestar:
-                    break;
-                case DeckManager.Components.Enums.ComponentType.HeavyRaider:
-                    break;
-                case DeckManager.Components.Enums.ComponentType.Raider:
-                    break;
-                case DeckManager.Components.Enums.ComponentType.Viper:
-                    break;
-            }
-            // todo error handling - no components left?
+        private void PlaceComponent(ListBox sector, DeckManager.Components.BaseComponent token)
+        {
+            sector.BeginUpdate();
+            sector.Items.Add(token);
+            sector.EndUpdate();
         }
 
         private void DestroyComponentsButton_Click(object sender, EventArgs e)

@@ -413,5 +413,34 @@ namespace DeckManager
         { 
             CurrentGameState.Dradis.MoveComponents(source, dest, ships);
         }
+
+        /// <summary>
+        /// Attempts to place a ship of type in DRADIS location
+        /// </summary>
+        /// <param name="location"></param>
+        /// <param name="type"></param>
+        /// <returns>The component that has been placed</returns>
+        public DeckManager.Components.BaseComponent PlaceComponent( DeckManager.Boards.Dradis.DradisNodeName location, DeckManager.Components.Enums.ComponentType type)
+        {
+            DeckManager.Components.BaseComponent ship = null;
+            switch (type)
+            { 
+                case Components.Enums.ComponentType.Basestar:                    
+                    break;
+                case Components.Enums.ComponentType.Civilian:
+                    break;
+                case Components.Enums.ComponentType.HeavyRaider:
+                    break;
+                case Components.Enums.ComponentType.Raider:
+                    break;
+                case Components.Enums.ComponentType.Viper:
+                    break;
+                default:
+                    break;
+            }
+            CurrentGameState.Dradis.AddComponentToNode(ship, location);
+            return null;
+        }
+
     }
 }
