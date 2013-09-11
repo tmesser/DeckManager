@@ -408,5 +408,10 @@ namespace DeckManager
 
         public void DiscardComponents(IEnumerable<DeckManager.Components.BaseComponent> ships)
         { }
+
+        public void MoveComponents(DeckManager.Boards.Dradis.DradisNodeName source, DeckManager.Boards.Dradis.DradisNodeName dest, IEnumerable<DeckManager.Components.BaseComponent> ships)
+        { 
+            CurrentGameState.Dradis.MoveComponents(source, dest, ships);
+        }
     }
 }

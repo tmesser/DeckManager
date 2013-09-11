@@ -14,11 +14,21 @@ namespace DeckManagerOutput
     public partial class DradisForm : Form
     {
         protected MainForm parent { get; private set; }
+        private Dictionary<ListBox, DeckManager.Boards.Dradis.DradisNodeName> _sectors;
 
         public DradisForm(MainForm parent)
         {
             InitializeComponent();
             this.parent = parent;
+
+            _sectors = new Dictionary<ListBox, DeckManager.Boards.Dradis.DradisNodeName>();
+            _sectors.Add(alphaListBox, DeckManager.Boards.Dradis.DradisNodeName.Alpha);
+            _sectors.Add(bravoListBox, DeckManager.Boards.Dradis.DradisNodeName.Bravo);
+            _sectors.Add(charlieListBox, DeckManager.Boards.Dradis.DradisNodeName.Charlie);
+            _sectors.Add(deltaListBox, DeckManager.Boards.Dradis.DradisNodeName.Delta);
+            _sectors.Add(echoListBox, DeckManager.Boards.Dradis.DradisNodeName.Echo);
+            _sectors.Add(foxtrotListBox, DeckManager.Boards.Dradis.DradisNodeName.Foxtrot);
+
 
             var values = Enum.GetValues(typeof(DeckManager.Components.Enums.ComponentType));
             foreach (DeckManager.Components.Enums.ComponentType type in values)
@@ -39,13 +49,20 @@ namespace DeckManagerOutput
 
         #region Sector movement
 
-        private void MoveComponent(ListBox source, ListBox dest, DeckManager.Components.BaseComponent item)
+        private void MoveComponent(ListBox source, ListBox dest, IEnumerable<DeckManager.Components.BaseComponent> items)
         {
             source.BeginUpdate();
             dest.BeginUpdate();
 
-            source.Items.Remove(item);
-            dest.Items.Add(item);
+            source.Items.Remove(items);
+            dest.Items.AddRange(items.ToArray());
+
+            // probably a better way to get the nodenames but whatever
+            DeckManager.Boards.Dradis.DradisNodeName SourceNode;
+            _sectors.TryGetValue(source, out SourceNode);
+            DeckManager.Boards.Dradis.DradisNodeName DestNode;
+            _sectors.TryGetValue(dest, out DestNode);
+            Program.GManager.MoveComponents(SourceNode, DestNode, items);
 
             source.EndUpdate();
             dest.EndUpdate();
@@ -54,68 +71,68 @@ namespace DeckManagerOutput
 
         private void AtoBButton_Click(object sender, EventArgs e)
         {
-            DeckManager.Components.BaseComponent item = (DeckManager.Components.BaseComponent)alphaListBox.SelectedItem;
-            MoveComponent(alphaListBox, bravoListBox, item);
+            var items = alphaListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToArray();
+            MoveComponent(alphaListBox, bravoListBox, items);
         }
 
         private void BtoAButton_Click(object sender, EventArgs e)
         {
-            DeckManager.Components.BaseComponent item = (DeckManager.Components.BaseComponent)alphaListBox.SelectedItem;
-            MoveComponent(bravoListBox, alphaListBox, item);
+            var items = bravoListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToArray();
+            MoveComponent(bravoListBox, alphaListBox, items);
         }
 
         private void BtoCButton_Click(object sender, EventArgs e)
         {
-            DeckManager.Components.BaseComponent item = (DeckManager.Components.BaseComponent)alphaListBox.SelectedItem;
-            MoveComponent(bravoListBox, charlieListBox, item);
+            var items = bravoListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToArray();
+            MoveComponent(bravoListBox, charlieListBox, items);
         }
 
         private void CtoBButton_Click(object sender, EventArgs e)
         {
-            DeckManager.Components.BaseComponent item = (DeckManager.Components.BaseComponent)alphaListBox.SelectedItem;
-            MoveComponent(charlieListBox, bravoListBox, item);
+            var items = charlieListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToArray();
+            MoveComponent(charlieListBox, bravoListBox, items);
         }
 
         private void CtoDButton_Click(object sender, EventArgs e)
         {
-            DeckManager.Components.BaseComponent item = (DeckManager.Components.BaseComponent)alphaListBox.SelectedItem;
-            MoveComponent(charlieListBox, deltaListBox, item);
+            var items = charlieListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToArray();
+            MoveComponent(charlieListBox, deltaListBox, items);
         }
 
         private void DtoCButton_Click(object sender, EventArgs e)
         {
-            DeckManager.Components.BaseComponent item = (DeckManager.Components.BaseComponent)alphaListBox.SelectedItem;
-            MoveComponent(deltaListBox, charlieListBox, item);
+            var items = deltaListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToArray();
+            MoveComponent(deltaListBox, charlieListBox, items);
         }
 
         private void DtoEButton_Click(object sender, EventArgs e)
         {
-            DeckManager.Components.BaseComponent item = (DeckManager.Components.BaseComponent)alphaListBox.SelectedItem;
-            MoveComponent(deltaListBox, echoListBox, item);
+            var items = deltaListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToArray();
+            MoveComponent(deltaListBox, echoListBox, items);
         }
 
         private void EtoDButton_Click(object sender, EventArgs e)
         {
-            DeckManager.Components.BaseComponent item = (DeckManager.Components.BaseComponent)alphaListBox.SelectedItem;
-            MoveComponent(echoListBox, deltaListBox, item);
+            var items = echoListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToArray();
+            MoveComponent(echoListBox, deltaListBox, items);
         }
 
         private void EtoFButton_Click(object sender, EventArgs e)
         {
-            DeckManager.Components.BaseComponent item = (DeckManager.Components.BaseComponent)alphaListBox.SelectedItem;
-            MoveComponent(echoListBox, foxtrotListBox, item);
+            var items = echoListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToArray();
+            MoveComponent(echoListBox, foxtrotListBox, items);
         }
 
         private void FtoEButton_Click(object sender, EventArgs e)
         {
-            DeckManager.Components.BaseComponent item = (DeckManager.Components.BaseComponent)alphaListBox.SelectedItem;
-            MoveComponent(foxtrotListBox, echoListBox, item);
+            var items = foxtrotListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToArray();
+            MoveComponent(foxtrotListBox, echoListBox, items);
         }
 
         private void FtoAButton_Click(object sender, EventArgs e)
         {
-            DeckManager.Components.BaseComponent item = (DeckManager.Components.BaseComponent)alphaListBox.SelectedItem;
-            MoveComponent(foxtrotListBox, alphaListBox, item);
+            var items = foxtrotListBox.SelectedItems.Cast<DeckManager.Components.BaseComponent>().ToArray();
+            MoveComponent(foxtrotListBox, alphaListBox, items);
         }
 
         #endregion
