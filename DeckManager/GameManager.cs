@@ -95,6 +95,8 @@ namespace DeckManager
             return CurrentGameState;
         }
 
+        #region Private Methods
+
         private void AttemptToPlacePlayer(Player player)
         {
             foreach (var location in CurrentGameState.Boards.Select(board => board.Locations.FirstOrDefault(x => player.Character.SetupLocation == x.Name)))
@@ -179,9 +181,35 @@ namespace DeckManager
             CurrentGameState.ActiveCivilians = CurrentGameState.ActiveCivilians.OrderBy(x => x.InternalDesignation).ToList();
         }
 
+        #endregion // Private Methods
+
         private Civilian DrawCiv()
         {
             return CurrentGameState.ActiveCivilians.Count > 0 ? CurrentGameState.ActiveCivilians.ElementAt(0) : null;
+        }
+
+        public void KillCiv(Civilian civ)
+        {
+            CurrentGameState.Dradis.RemoveComponent(civ);
+            CurrentGameState.ActiveCivilians.Remove(civ);
+            CurrentGameState.KilledCivilians.Add(civ);
+        }
+
+        public void RemoveViper(Viper viper, bool destroyed = false)
+        {
+            CurrentGameState.Dradis.RemoveComponent(viper);
+            var modifiedViper = CurrentGameState.Vipers.FindIndex(x => x.PermanentDesignation == viper.PermanentDesignation);
+            CurrentGameState.Vipers[modifiedViper].Status = destroyed ? ViperStatus.Destroyed : ViperStatus.Damaged;
+        }
+
+        public void RemoveComponent(BaseComponent component)
+        {
+            CurrentGameState.Dradis.RemoveComponent(component.PermanentDesignation);
+        }
+
+        public void WipeDradis()
+        {
+            CurrentGameState.Dradis.WipeDradis();
         }
 
         public void DoPlayerDraw(Player player, int drawIndex = 0)
@@ -217,6 +245,11 @@ namespace DeckManager
             }
         }
 
+        public void DiscardCards(IEnumerable<Cards.BaseCard> cards)
+        {
+            foreach (var card in cards)
+                DiscardCard(card);
+        }
         public void DiscardCard(Cards.BaseCard card)
         {   
             // todo each discard creates new gamestate? that would let us implement undos
@@ -252,12 +285,18 @@ namespace DeckManager
                     break;
             }
         }
-        public void DiscardCards(IEnumerable<Cards.BaseCard> cards)
+
+        /// <summary>
+        /// Places the cards on the top of their decks.
+        /// </summary>
+        /// <param name="cards"></param>
+        public void TopCards(IEnumerable<Cards.BaseCard> cards)
         {
             foreach (var card in cards)
-                DiscardCard(card);
+                TopCard(card);
         }
-                /// <summary>
+
+        /// <summary>
         /// Place the card on the top of its deck
         /// </summary>
         /// <param name="card"></param>
@@ -314,15 +353,7 @@ namespace DeckManager
                     break;
             }
         }
-        /// <summary>
-        /// Places the cards on the top of their decks.
-        /// </summary>
-        /// <param name="cards"></param>
-        public void TopCards(IEnumerable<Cards.BaseCard> cards)
-        {
-            foreach (Cards.BaseCard card in cards)
-                BuryCard(card);
-        }
+
         /// <summary>
         /// Place the card on the bottom of its Deck
         /// </summary>
@@ -376,8 +407,6 @@ namespace DeckManager
                 case CardType.SuperCrisis:
                     CurrentGameState.SuperCrisisDeck.Bury((Cards.SuperCrisisCard)card);
                     break;
-                default:
-                    break;
             }
         }
         /// <summary>
@@ -389,27 +418,7 @@ namespace DeckManager
             foreach (Cards.BaseCard card in cards)
                 BuryCard(card);
         }
-        /// <summary>
-        /// Marks the component as destroyed and changes the GameState accordingly.
-        /// </summary>
-        /// <param name="ship"></param>
-        public void DestroyComponent(DeckManager.Components.BaseComponent ship)
-        { 
-        }
-
-        public void DestroyComponents(IEnumerable<DeckManager.Components.BaseComponent> ships)
-        { }
-
-        /// <summary>
-        /// Removes the component from active play and places it back in its pile
-        /// </summary>
-        /// <param name="ship"></param>
-        public void DiscardComponent(DeckManager.Components.BaseComponent ship)
-        { }
-
-        public void DiscardComponents(IEnumerable<DeckManager.Components.BaseComponent> ships)
-        { }
-
+       
         public void MoveComponents(DeckManager.Boards.Dradis.DradisNodeName source, DeckManager.Boards.Dradis.DradisNodeName dest, IEnumerable<DeckManager.Components.BaseComponent> ships)
         { 
             CurrentGameState.Dradis.MoveComponents(source, dest, ships);

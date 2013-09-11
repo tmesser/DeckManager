@@ -55,6 +55,15 @@ namespace DeckManager.Boards.Dradis
 
         }
 
+        /// <summary>
+        /// Wipes the dradis.
+        /// </summary>
+        public void WipeDradis()
+        {
+            foreach (var node in Nodes)
+                node.WipeComponents();
+        }
+
         public void RemoveComponent(Guid component)
         {
             RemoveComponent(new GenericComponent { PermanentDesignation = component });
