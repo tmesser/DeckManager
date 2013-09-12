@@ -59,6 +59,7 @@
     <Compile Include="Cards\MissionCard.cs" />
     <Compile Include="Cards\MutinyCard.cs" />
     <Compile Include="Characters\Character.cs" />
+    <Compile Include="Characters\Enums\Roles.cs" />
     <Compile Include="Characters\Enums\Titles.cs" />
     <Compile Include="Components\BaseComponent.cs" />
     <Compile Include="Components\Basestar.cs" />

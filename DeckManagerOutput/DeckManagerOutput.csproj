@@ -94,6 +94,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="GameContent\Base\Boards\Locations.json" />
+    <None Include="GameContent\Base\Characters\Characters.json" />
+    <None Include="GameContent\Base\Components\CivilianPile.json" />
+    <None Include="GameContent\Base\Decks\DBTreacheryDeck.json" />
+    <None Include="GameContent\Base\Decks\CrisisDeck.json" />
+    <None Include="GameContent\Base\Decks\DestinationDeck.json" />
+    <None Include="GameContent\Base\Decks\EngineeringDeck.json" />
+    <None Include="GameContent\Base\Decks\LeadershipDeck.json" />
+    <None Include="GameContent\Base\Decks\LoyaltyDeck.json" />
+    <None Include="GameContent\Base\Decks\PilotingDeck.json" />
+    <None Include="GameContent\Base\Decks\PoliticsDeck.json" />
+    <None Include="GameContent\Base\Decks\QuorumDeck.json" />
+    <None Include="GameContent\Base\Decks\SuperCrisisDeck.json" />
+    <None Include="GameContent\Base\Decks\TacticsDeck.json" />
+    <None Include="GameContent\Base\Decks\PegTreacheryDeck.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
