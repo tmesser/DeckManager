@@ -110,5 +110,23 @@ namespace DeckManager.States
         {
             return (PlayerName != null ? PlayerName.GetHashCode() : 0);
         }
+
+        internal bool Discard(BaseCard card)
+        {
+            switch (card.CardType)
+            { 
+                case CardType.Mutiny:
+                    return Discard((MutinyCard)card);
+                case CardType.Quorum:
+                    return Discard((QuorumCard)card);
+                case CardType.Skill:
+                    return Discard((SkillCard)card);
+                case CardType.SuperCrisis:
+                    return Discard((SuperCrisisCard)card);
+                default:
+                    // error case
+                    throw new System.Exception("Player's can't discard CardTypes they cannot hold:"+card.CardType);
+            }
+        }
     }
 }

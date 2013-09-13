@@ -51,6 +51,7 @@
             this.beginGameButton = new System.Windows.Forms.Button();
             this.characterListBox = new System.Windows.Forms.ListBox();
             this.skillDecksPanel = new System.Windows.Forms.Panel();
+            this.DrawLoyaltyButton = new System.Windows.Forms.Button();
             this.DrawSuperCrisisCardButton = new System.Windows.Forms.Button();
             this.DestinyDeckButton = new System.Windows.Forms.Button();
             this.DrawMutinyCardButton = new System.Windows.Forms.Button();
@@ -120,16 +121,15 @@
             this.CharacterSuperCrisisHandListBox = new System.Windows.Forms.ListBox();
             this.SuperCrisisHandCountTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.DrawLoyaltyButton = new System.Windows.Forms.Button();
             this.MutinyCardPanel = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.MutinyHandCountTextBox = new System.Windows.Forms.TextBox();
-            this.CharacterMutinyHandListBox = new System.Windows.Forms.ListBox();
             this.DiscardMutinyCardButton = new System.Windows.Forms.Button();
+            this.CharacterMutinyHandListBox = new System.Windows.Forms.ListBox();
+            this.MutinyHandCountTextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.TitlesPanel = new System.Windows.Forms.Panel();
-            this.AdmiralCheckBox = new System.Windows.Forms.CheckBox();
-            this.PresidentTitleCheckBox = new System.Windows.Forms.CheckBox();
             this.CAGTitleCheckBox = new System.Windows.Forms.CheckBox();
+            this.PresidentTitleCheckBox = new System.Windows.Forms.CheckBox();
+            this.AdmiralCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.PlayerLoyaltyHandPanel.SuspendLayout();
             this.QuorumHandPanel.SuspendLayout();
@@ -152,6 +152,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.PlayerLoyaltyHandPanel);
+            this.panel1.Controls.Add(this.MutinyCardPanel);
             this.panel1.Controls.Add(this.QuorumHandPanel);
             this.panel1.Controls.Add(this.RemovePlayerButton);
             this.panel1.Controls.Add(this.CopyHandToClipboardButton);
@@ -282,7 +283,7 @@
             // 
             // CopyHandToClipboardButton
             // 
-            this.CopyHandToClipboardButton.Location = new System.Drawing.Point(274, 180);
+            this.CopyHandToClipboardButton.Location = new System.Drawing.Point(270, 218);
             this.CopyHandToClipboardButton.Name = "CopyHandToClipboardButton";
             this.CopyHandToClipboardButton.Size = new System.Drawing.Size(72, 35);
             this.CopyHandToClipboardButton.TabIndex = 14;
@@ -291,7 +292,7 @@
             // 
             // removeFromHandButton
             // 
-            this.removeFromHandButton.Location = new System.Drawing.Point(311, 271);
+            this.removeFromHandButton.Location = new System.Drawing.Point(310, 184);
             this.removeFromHandButton.Name = "removeFromHandButton";
             this.removeFromHandButton.Size = new System.Drawing.Size(31, 23);
             this.removeFromHandButton.TabIndex = 12;
@@ -303,7 +304,7 @@
             // 
             // playIntoCrisisButton
             // 
-            this.playIntoCrisisButton.Location = new System.Drawing.Point(274, 221);
+            this.playIntoCrisisButton.Location = new System.Drawing.Point(270, 256);
             this.playIntoCrisisButton.Name = "playIntoCrisisButton";
             this.playIntoCrisisButton.Size = new System.Drawing.Size(72, 34);
             this.playIntoCrisisButton.TabIndex = 9;
@@ -334,7 +335,7 @@
             this.characterSkillHandListBox.Location = new System.Drawing.Point(152, 182);
             this.characterSkillHandListBox.Name = "characterSkillHandListBox";
             this.characterSkillHandListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.characterSkillHandListBox.Size = new System.Drawing.Size(115, 173);
+            this.characterSkillHandListBox.Size = new System.Drawing.Size(115, 108);
             this.characterSkillHandListBox.TabIndex = 3;
             // 
             // addPlayerButton
@@ -349,7 +350,7 @@
             // 
             // beginGameButton
             // 
-            this.beginGameButton.Location = new System.Drawing.Point(253, 120);
+            this.beginGameButton.Location = new System.Drawing.Point(192, 120);
             this.beginGameButton.Name = "beginGameButton";
             this.beginGameButton.Size = new System.Drawing.Size(88, 23);
             this.beginGameButton.TabIndex = 1;
@@ -390,6 +391,16 @@
             this.skillDecksPanel.Name = "skillDecksPanel";
             this.skillDecksPanel.Size = new System.Drawing.Size(102, 407);
             this.skillDecksPanel.TabIndex = 1;
+            // 
+            // DrawLoyaltyButton
+            // 
+            this.DrawLoyaltyButton.Location = new System.Drawing.Point(47, 126);
+            this.DrawLoyaltyButton.Name = "DrawLoyaltyButton";
+            this.DrawLoyaltyButton.Size = new System.Drawing.Size(52, 23);
+            this.DrawLoyaltyButton.TabIndex = 14;
+            this.DrawLoyaltyButton.Text = "Loyalty";
+            this.DrawLoyaltyButton.UseVisualStyleBackColor = true;
+            this.DrawLoyaltyButton.Click += new System.EventHandler(this.DrawLoyaltyButton_Click);
             // 
             // DrawSuperCrisisCardButton
             // 
@@ -1007,7 +1018,7 @@
             // 
             // PlaySuperCrisisButton
             // 
-            this.PlaySuperCrisisButton.Location = new System.Drawing.Point(57, 126);
+            this.PlaySuperCrisisButton.Location = new System.Drawing.Point(63, 126);
             this.PlaySuperCrisisButton.Name = "PlaySuperCrisisButton";
             this.PlaySuperCrisisButton.Size = new System.Drawing.Size(75, 23);
             this.PlaySuperCrisisButton.TabIndex = 4;
@@ -1017,7 +1028,7 @@
             // 
             // DiscardSuperCrisisButton
             // 
-            this.DiscardSuperCrisisButton.Location = new System.Drawing.Point(0, 126);
+            this.DiscardSuperCrisisButton.Location = new System.Drawing.Point(6, 126);
             this.DiscardSuperCrisisButton.Name = "DiscardSuperCrisisButton";
             this.DiscardSuperCrisisButton.Size = new System.Drawing.Size(51, 23);
             this.DiscardSuperCrisisButton.TabIndex = 3;
@@ -1051,26 +1062,41 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Super Crisis Hand:";
             // 
-            // DrawLoyaltyButton
-            // 
-            this.DrawLoyaltyButton.Location = new System.Drawing.Point(47, 126);
-            this.DrawLoyaltyButton.Name = "DrawLoyaltyButton";
-            this.DrawLoyaltyButton.Size = new System.Drawing.Size(52, 23);
-            this.DrawLoyaltyButton.TabIndex = 14;
-            this.DrawLoyaltyButton.Text = "Loyalty";
-            this.DrawLoyaltyButton.UseVisualStyleBackColor = true;
-            this.DrawLoyaltyButton.Click += new System.EventHandler(this.DrawLoyaltyButton_Click);
-            // 
             // MutinyCardPanel
             // 
             this.MutinyCardPanel.Controls.Add(this.DiscardMutinyCardButton);
             this.MutinyCardPanel.Controls.Add(this.CharacterMutinyHandListBox);
             this.MutinyCardPanel.Controls.Add(this.MutinyHandCountTextBox);
             this.MutinyCardPanel.Controls.Add(this.label11);
-            this.MutinyCardPanel.Location = new System.Drawing.Point(876, 268);
+            this.MutinyCardPanel.Location = new System.Drawing.Point(152, 296);
             this.MutinyCardPanel.Name = "MutinyCardPanel";
-            this.MutinyCardPanel.Size = new System.Drawing.Size(145, 201);
+            this.MutinyCardPanel.Size = new System.Drawing.Size(125, 106);
             this.MutinyCardPanel.TabIndex = 8;
+            // 
+            // DiscardMutinyCardButton
+            // 
+            this.DiscardMutinyCardButton.Location = new System.Drawing.Point(3, 82);
+            this.DiscardMutinyCardButton.Name = "DiscardMutinyCardButton";
+            this.DiscardMutinyCardButton.Size = new System.Drawing.Size(75, 23);
+            this.DiscardMutinyCardButton.TabIndex = 7;
+            this.DiscardMutinyCardButton.Text = "Discard";
+            this.DiscardMutinyCardButton.UseVisualStyleBackColor = true;
+            // 
+            // CharacterMutinyHandListBox
+            // 
+            this.CharacterMutinyHandListBox.FormattingEnabled = true;
+            this.CharacterMutinyHandListBox.Location = new System.Drawing.Point(0, 33);
+            this.CharacterMutinyHandListBox.Name = "CharacterMutinyHandListBox";
+            this.CharacterMutinyHandListBox.Size = new System.Drawing.Size(115, 43);
+            this.CharacterMutinyHandListBox.TabIndex = 6;
+            // 
+            // MutinyHandCountTextBox
+            // 
+            this.MutinyHandCountTextBox.Enabled = false;
+            this.MutinyHandCountTextBox.Location = new System.Drawing.Point(87, 7);
+            this.MutinyHandCountTextBox.Name = "MutinyHandCountTextBox";
+            this.MutinyHandCountTextBox.Size = new System.Drawing.Size(28, 20);
+            this.MutinyHandCountTextBox.TabIndex = 5;
             // 
             // label11
             // 
@@ -1081,31 +1107,6 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Mutiny Hand: ";
             // 
-            // MutinyHandCountTextBox
-            // 
-            this.MutinyHandCountTextBox.Enabled = false;
-            this.MutinyHandCountTextBox.Location = new System.Drawing.Point(114, 7);
-            this.MutinyHandCountTextBox.Name = "MutinyHandCountTextBox";
-            this.MutinyHandCountTextBox.Size = new System.Drawing.Size(28, 20);
-            this.MutinyHandCountTextBox.TabIndex = 5;
-            // 
-            // CharacterMutinyHandListBox
-            // 
-            this.CharacterMutinyHandListBox.FormattingEnabled = true;
-            this.CharacterMutinyHandListBox.Location = new System.Drawing.Point(0, 33);
-            this.CharacterMutinyHandListBox.Name = "CharacterMutinyHandListBox";
-            this.CharacterMutinyHandListBox.Size = new System.Drawing.Size(145, 95);
-            this.CharacterMutinyHandListBox.TabIndex = 6;
-            // 
-            // DiscardMutinyCardButton
-            // 
-            this.DiscardMutinyCardButton.Location = new System.Drawing.Point(6, 135);
-            this.DiscardMutinyCardButton.Name = "DiscardMutinyCardButton";
-            this.DiscardMutinyCardButton.Size = new System.Drawing.Size(75, 23);
-            this.DiscardMutinyCardButton.TabIndex = 7;
-            this.DiscardMutinyCardButton.Text = "Discard";
-            this.DiscardMutinyCardButton.UseVisualStyleBackColor = true;
-            // 
             // TitlesPanel
             // 
             this.TitlesPanel.Controls.Add(this.CAGTitleCheckBox);
@@ -1115,28 +1116,6 @@
             this.TitlesPanel.Name = "TitlesPanel";
             this.TitlesPanel.Size = new System.Drawing.Size(76, 57);
             this.TitlesPanel.TabIndex = 9;
-            // 
-            // AdmiralCheckBox
-            // 
-            this.AdmiralCheckBox.AutoSize = true;
-            this.AdmiralCheckBox.Location = new System.Drawing.Point(4, 4);
-            this.AdmiralCheckBox.Name = "AdmiralCheckBox";
-            this.AdmiralCheckBox.Size = new System.Drawing.Size(60, 17);
-            this.AdmiralCheckBox.TabIndex = 0;
-            this.AdmiralCheckBox.Text = "Admiral";
-            this.AdmiralCheckBox.UseVisualStyleBackColor = true;
-            this.AdmiralCheckBox.CheckedChanged += new System.EventHandler(this.AdmiralCheckBox_CheckedChanged);
-            // 
-            // PresidentTitleCheckBox
-            // 
-            this.PresidentTitleCheckBox.AutoSize = true;
-            this.PresidentTitleCheckBox.Location = new System.Drawing.Point(4, 22);
-            this.PresidentTitleCheckBox.Name = "PresidentTitleCheckBox";
-            this.PresidentTitleCheckBox.Size = new System.Drawing.Size(70, 17);
-            this.PresidentTitleCheckBox.TabIndex = 1;
-            this.PresidentTitleCheckBox.Text = "President";
-            this.PresidentTitleCheckBox.UseVisualStyleBackColor = true;
-            this.PresidentTitleCheckBox.CheckedChanged += new System.EventHandler(this.PresidentTitleCheckBox_CheckedChanged);
             // 
             // CAGTitleCheckBox
             // 
@@ -1149,13 +1128,34 @@
             this.CAGTitleCheckBox.UseVisualStyleBackColor = true;
             this.CAGTitleCheckBox.CheckedChanged += new System.EventHandler(this.CAGTitleCheckBox_CheckedChanged);
             // 
+            // PresidentTitleCheckBox
+            // 
+            this.PresidentTitleCheckBox.AutoSize = true;
+            this.PresidentTitleCheckBox.Location = new System.Drawing.Point(4, 22);
+            this.PresidentTitleCheckBox.Name = "PresidentTitleCheckBox";
+            this.PresidentTitleCheckBox.Size = new System.Drawing.Size(70, 17);
+            this.PresidentTitleCheckBox.TabIndex = 1;
+            this.PresidentTitleCheckBox.Text = "President";
+            this.PresidentTitleCheckBox.UseVisualStyleBackColor = true;
+            this.PresidentTitleCheckBox.CheckedChanged += new System.EventHandler(this.PresidentTitleCheckBox_CheckedChanged);
+            // 
+            // AdmiralCheckBox
+            // 
+            this.AdmiralCheckBox.AutoSize = true;
+            this.AdmiralCheckBox.Location = new System.Drawing.Point(4, 4);
+            this.AdmiralCheckBox.Name = "AdmiralCheckBox";
+            this.AdmiralCheckBox.Size = new System.Drawing.Size(60, 17);
+            this.AdmiralCheckBox.TabIndex = 0;
+            this.AdmiralCheckBox.Text = "Admiral";
+            this.AdmiralCheckBox.UseVisualStyleBackColor = true;
+            this.AdmiralCheckBox.CheckedChanged += new System.EventHandler(this.AdmiralCheckBox_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1221, 558);
             this.Controls.Add(this.TitlesPanel);
-            this.Controls.Add(this.MutinyCardPanel);
             this.Controls.Add(this.SuperCrisisHandPanel);
             this.Controls.Add(this.DradisButton);
             this.Controls.Add(this.copyGameButton);

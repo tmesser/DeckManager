@@ -41,6 +41,8 @@ namespace DeckManager.States
         public int JumpPrep { get; set; }
         public List<int> CylonBoarding { get; set; }
 
+        #region Decks
+
         public CrisisDeck CrisisDeck { get; set; }
         public DestinationDeck DestinationDeck { get; set; }
         public SuperCrisisDeck SuperCrisisDeck { get; set; }
@@ -113,6 +115,9 @@ namespace DeckManager.States
                     _treacheryDeck = value;
             }
         }
+
+        #endregion //decks
+
         public string ToBBCode()
         {
             return "not implemented";

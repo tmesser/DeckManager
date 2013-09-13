@@ -148,7 +148,7 @@ namespace DeckManagerOutput
         {
             DeckManager.Components.Enums.ComponentType token = (DeckManager.Components.Enums.ComponentType)LaunchComponentComboBox.SelectedItem;
             DeckManager.Boards.Dradis.DradisNodeName sector = (DeckManager.Boards.Dradis.DradisNodeName)LaunchLocationComboBox.SelectedItem;
-            if (sector != null && token != null)
+            if (sector != DeckManager.Boards.Dradis.DradisNodeName.Unknown && token != DeckManager.Components.Enums.ComponentType.Unknown)
             {
                 var ship = Program.GManager.PlaceComponent(sector, token);
                 if (ship != null)

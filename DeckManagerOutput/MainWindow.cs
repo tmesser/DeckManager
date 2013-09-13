@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DeckManager;
+using DeckManager.Cards;
 using DeckManager.States;
 using DeckManagerOutput;
 
@@ -17,7 +18,15 @@ namespace DeckManagerOutput
     {
         private readonly MainMenu _mainMenu;
         private DradisForm dradis;
-        
+
+        /// <summary>
+        /// The currently selected player.
+        /// </summary>
+        private Player currentPlayer;
+        /// <summary>
+        /// Variable to differentiate programatic GUI updates from user interaction. Hacky but straightforward.
+        /// </summary>
+        private bool IsUserClick;
 
         public MainForm()
         {
@@ -27,6 +36,7 @@ namespace DeckManagerOutput
             Menu = _mainMenu;
 
             dradis = new DradisForm(this);
+            IsUserClick = true;
 
             // move panel into place and hide it. Quorum and SCC will share the same space
             CharacterSuperCrisisHandListBox.Location = new System.Drawing.Point(3, 155);
@@ -79,6 +89,8 @@ namespace DeckManagerOutput
             addPlayerButton.Enabled = false;
             RemovePlayerButton.Enabled = false;
             beginGameButton.Enabled = false;
+            beginGameButton.Visible = false;
+            this.TitlesPanel.Location = new System.Drawing.Point(263, 92);
 
             var players = characterListBox.Items.Cast<Player>().ToList();
             
@@ -95,7 +107,7 @@ namespace DeckManagerOutput
         {
             // this button click copies an entire post update to the clipboard
             // e.g. http://forums.somethingawful.com/showthread.php?threadid=3563154&userid=0&perpage=40&pagenumber=2#post418151171
-
+            Clipboard.SetText(Program.GManager.CurrentGameState.ToBBCode());
         }
 
         private void DradisButton_Click(object sender, EventArgs e)
@@ -244,7 +256,7 @@ namespace DeckManagerOutput
         {
             if (drawnCardListBox.SelectedIndex == -1)
                 return;
-
+            drawnCardListBox.BeginUpdate();
             Array cards = new DeckManager.Cards.BaseCard[drawnCardListBox.SelectedItems.Count];
             drawnCardListBox.SelectedItems.CopyTo(cards, 0);
 
@@ -253,6 +265,7 @@ namespace DeckManagerOutput
                 Program.GManager.DiscardCard(card);
                 drawnCardListBox.Items.Remove(card);
             }
+            drawnCardListBox.EndUpdate();
         }
 
         /// <summary>
@@ -457,45 +470,22 @@ namespace DeckManagerOutput
 
         private void CharacterListBoxSelectedIndexChanged(object sender, EventArgs e)
         {
+            currentPlayer = (Player)characterListBox.SelectedItem;
             UpdatePlayerHandControls();
         }
 
         private void GiveCardToCurrentCharacterButtonClick(object sender, EventArgs e)
         {
             // if no cards selected, give all
-            object[] cards = new DeckManager.Cards.BaseCard[drawnCardListBox.Items.Count];
+            object[] cards = new BaseCard[drawnCardListBox.Items.Count];
             if (drawnCardListBox.SelectedIndex == -1)
                 drawnCardListBox.Items.CopyTo(cards, 0);
             else
                 drawnCardListBox.SelectedItems.CopyTo(cards, 0);
-            var currentPlayer = (Player)characterListBox.SelectedItem;
+            //var currentPlayer = (Player)characterListBox.SelectedItem;
 
-            // give selected cards to currently selected player (skill or quorum)
-            foreach (DeckManager.Cards.BaseCard card in cards)
-            {
-                switch (card.CardType)
-                {
-                    case DeckManager.Cards.Enums.CardType.Skill:
-                        currentPlayer.Cards.Add((DeckManager.Cards.SkillCard)card);
-                        //characterSkillHandListBox.Items.Add(card);
-                        break;
-                    case DeckManager.Cards.Enums.CardType.Quorum:
-                        currentPlayer.QuorumHand.Add((DeckManager.Cards.QuorumCard)card);
-                        break;
-                    case DeckManager.Cards.Enums.CardType.Loyalty:
-                        currentPlayer.LoyaltyCards.Add((DeckManager.Cards.LoyaltyCard)card);
-                        break;
-                    case DeckManager.Cards.Enums.CardType.SuperCrisis:
-                        currentPlayer.SuperCrisisCards.Add((DeckManager.Cards.SuperCrisisCard)card);
-                        break;
-                    case DeckManager.Cards.Enums.CardType.Mutiny:
-                        currentPlayer.MutinyHand.Add((DeckManager.Cards.MutinyCard)card);
-                        break;
-                    default:
-                        break;
-                }
-                drawnCardListBox.Items.Remove(card);
-            }
+            Program.GManager.GiveCardToPlayer(currentPlayer, (IEnumerable<BaseCard>)cards);
+
             UpdatePlayerHandControls();
         }
 
@@ -503,9 +493,13 @@ namespace DeckManagerOutput
         {
             if (characterSkillHandListBox.SelectedIndices.Count >= 0)
             {
-                var cards = characterSkillHandListBox.SelectedItems.Cast<DeckManager.Cards.SkillCard>().ToArray();
+                var cards = characterSkillHandListBox.SelectedItems.Cast<SkillCard>().ToArray();
                 crisisSkillCheckListBox.Items.AddRange(cards);
-                ((Player)characterListBox.SelectedItem).Discard(cards);
+                
+                
+                //((Player)characterListBox.SelectedItem).Discard(cards);
+                Program.GManager.PlayerRemoveCard(((Player)characterListBox.SelectedItem), (IEnumerable<BaseCard>)cards);
+                
                 UpdatePlayerHandControls();
             }
         }
@@ -515,97 +509,107 @@ namespace DeckManagerOutput
         /// </summary>
         private void UpdatePlayerHandControls()
         {
-            var player = (Player)characterListBox.SelectedItem;
+            // todo add titles
             characterQuorumHandListBox.BeginUpdate();
             characterSkillHandListBox.BeginUpdate();
+            CharacterMutinyHandListBox.BeginUpdate();
             characterQuorumHandListBox.Items.Clear();
             characterSkillHandListBox.Items.Clear();
+            CharacterMutinyHandListBox.Items.Clear();
 
-            characterSkillHandListBox.Items.AddRange(player.Cards.ToArray());
-            if (player.QuorumHand != null)
+            characterSkillHandListBox.Items.AddRange(currentPlayer.Cards.ToArray());
+            if (currentPlayer.QuorumHand != null)   // player owns the quorum hand
             {
                 SuperCrisisHandPanel.Visible = false;
                 QuorumHandPanel.Visible = true;
 
-                //characterQuorumHandListBox.Show();
-                //characterQuorumHandCountTextBox.Show();
-                //DiscardQuorumCardButton.Show();
-                //CopyQuorumToClipboardButton.Show();
                 characterQuorumHandListBox.Items.Clear();
-                characterQuorumHandListBox.Items.AddRange(player.QuorumHand.ToArray());
-                characterQuorumHandCountTextBox.Text = player.QuorumHand.Count.ToString();
+                characterQuorumHandListBox.Items.AddRange(currentPlayer.QuorumHand.ToArray());
+                characterQuorumHandCountTextBox.Text = currentPlayer.QuorumHand.Count.ToString();
             }
-            else
+            else  // play does not have quorum hand
             {
                 QuorumHandPanel.Visible = false;
 
                 characterQuorumHandListBox.Items.Clear();
                 characterQuorumHandCountTextBox.Text=string.Empty;
-
-                // just hide panel instead
-                //DiscardQuorumCardButton.Hide();
-                //CopyQuorumToClipboardButton.Hide();
-                //characterQuorumHandListBox.Hide();
-                //characterQuorumHandCountTextBox.Hide();
-
+                
                 // quorum and SCC hands should be mutually exclusive, so checking in here should be okay
-                if (player.RevealedCylon)
+                if (currentPlayer.RevealedCylon)
                 {
+                    MutinyCardPanel.Visible = false;
                     SuperCrisisHandPanel.Visible = true;
                     CharacterSuperCrisisHandListBox.BeginUpdate();
                     characterQuorumHandListBox.Items.Clear();
-                    characterQuorumHandListBox.Items.AddRange(player.SuperCrisisCards.ToArray());
-                    characterQuorumHandListBox.EndUpdate();
-                    SuperCrisisHandCountTextBox.Text = player.SuperCrisisCards.Count.ToString();
+                    characterQuorumHandListBox.Items.AddRange(currentPlayer.SuperCrisisCards.ToArray());
+                    SuperCrisisHandCountTextBox.Text = currentPlayer.SuperCrisisCards.Count.ToString();
                 }
-                else
+                else  // human, show mutiny cards
+                {
+                    MutinyCardPanel.Visible = true;
                     SuperCrisisHandPanel.Visible = false;
+                    CharacterMutinyHandListBox.Items.Clear();
+                    CharacterMutinyHandListBox.Items.AddRange(currentPlayer.MutinyHand.ToArray());
+                    MutinyHandCountTextBox.Text = CharacterMutinyHandListBox.Items.Count.ToString();
+                }
             }
+            // update title checkboxes
+            IsUserClick = false;
+            AdmiralCheckBox.Checked = false;
+            PresidentTitleCheckBox.Checked = false;
+            CAGTitleCheckBox.Checked = false;
+
+            if (currentPlayer.Titles.Contains(DeckManager.Characters.Enums.Titles.Admiral))
+                AdmiralCheckBox.Checked=true;
+            if (currentPlayer.Titles.Contains(DeckManager.Characters.Enums.Titles.President))
+                PresidentTitleCheckBox.Checked=true;
+            if (currentPlayer.Titles.Contains(DeckManager.Characters.Enums.Titles.CAG))
+                CAGTitleCheckBox.Checked=true;
+            IsUserClick = true;
+
             characterSkillHandListBox.EndUpdate();
             characterQuorumHandListBox.EndUpdate();
+            CharacterMutinyHandListBox.EndUpdate();
         }
 
-        private void DiscardSkillCardButtonClick(object sender, EventArgs e)
-        {
-            Array cards = new DeckManager.Cards.SkillCard[characterSkillHandListBox.SelectedItems.Count];
-            characterSkillHandListBox.SelectedItems.CopyTo(cards, 0);
+        // no longer used
+        //private void DiscardSkillCardButtonClick(object sender, EventArgs e)
+        //{
+        //    Array cards = new DeckManager.Cards.SkillCard[characterSkillHandListBox.SelectedItems.Count];
+        //    characterSkillHandListBox.SelectedItems.CopyTo(cards, 0);
 
-            foreach (DeckManager.Cards.SkillCard card in cards)
-            {
-                Program.GManager.DiscardCard(card);
-                characterSkillHandListBox.Items.Remove(card);
-            }
-            UpdatePlayerHandControls();
-        }
+        //    foreach (DeckManager.Cards.SkillCard card in cards)
+        //    {
+        //        Program.GManager.DiscardCard(card);
+        //        characterSkillHandListBox.Items.Remove(card);
+        //    }
+        //    UpdatePlayerHandControls();
+        //}
 
         private void DiscardQuorumCardButtonClick(object sender, EventArgs e)
         {
             if (characterQuorumHandListBox.SelectedIndex == -1)
                 return; // if nothing selected, do nothing
 
-            Array cards = new DeckManager.Cards.QuorumCard[characterQuorumHandListBox.SelectedItems.Count];
+            Array cards = new QuorumCard[characterQuorumHandListBox.SelectedItems.Count];
             characterSkillHandListBox.SelectedItems.CopyTo(cards, 0);
-            var currentCharacter = (Player)characterListBox.SelectedItem;
+            //var currentPlayer = (Player)characterListBox.SelectedItem;
 
-            foreach (DeckManager.Cards.QuorumCard card in cards)
-            {
-                Program.GManager.DiscardCard(card);
-                currentCharacter.Discard(card);
-                //characterQuorumHandListBox.Items.Remove(card);
-            }
+            Program.GManager.PlayerDiscardCard(currentPlayer, (IEnumerable<QuorumCard>)cards);
+
             UpdatePlayerHandControls();
         }
 
         private void RemoveFromHandButtonClick(object sender, EventArgs e)
         {
             // move character's currently selected card into the drawn card window. can use this to transfer cards between players
-            var currentPlayer = (Player)this.characterListBox.SelectedItem;
-            var cards = this.characterSkillHandListBox.SelectedItems.Cast<DeckManager.Cards.SkillCard>().ToArray();
-            
-            currentPlayer.Discard(cards);
+            //var currentPlayer = (Player)this.characterListBox.SelectedItem;
+            var cards = this.characterSkillHandListBox.SelectedItems.Cast<DeckManager.Cards.SkillCard>();
+
+            Program.GManager.PlayerRemoveCard(currentPlayer, cards);
             
             drawnCardListBox.BeginUpdate();
-            drawnCardListBox.Items.AddRange(cards);
+            drawnCardListBox.Items.AddRange(cards.ToArray());
             drawnCardListBox.EndUpdate();
 
             UpdatePlayerHandControls();            
@@ -659,7 +663,14 @@ namespace DeckManagerOutput
 
         private void DiscardSuperCrisisButton_Click(object sender, EventArgs e)
         {
-            // normal card discard of SCC
+            // normal card discard of SCC        
+            if (CharacterSuperCrisisHandListBox.SelectedItems.Count > 0)
+            {
+                var cards = CharacterSuperCrisisHandListBox.SelectedItems.Cast<SuperCrisisCard>();
+                //var currentPlayer = (Player)characterListBox.SelectedItem;
+                Program.GManager.PlayerDiscardCard(currentPlayer, cards);
+            }
+            UpdatePlayerHandControls();
         }
 
         private void PlaySuperCrisisButton_Click(object sender, EventArgs e)
@@ -695,17 +706,21 @@ namespace DeckManagerOutput
 
         private void AdmiralCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-
+            // todo redrawn charcter listbox items with new title info
+            if (IsUserClick)
+                Program.GManager.ChangePlayerTitle(DeckManager.Characters.Enums.Titles.Admiral, currentPlayer);
         }
 
         private void PresidentTitleCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (IsUserClick)
+                Program.GManager.ChangePlayerTitle(DeckManager.Characters.Enums.Titles.President, currentPlayer);
         }
 
         private void CAGTitleCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (IsUserClick)
+                Program.GManager.ChangePlayerTitle(DeckManager.Characters.Enums.Titles.CAG, currentPlayer);
         }
 
         #endregion

@@ -199,7 +199,7 @@ namespace DeckManager
         {
             CurrentGameState.Dradis.RemoveComponent(viper);
             var modifiedViper = CurrentGameState.Vipers.FindIndex(x => x.PermanentDesignation == viper.PermanentDesignation);
-            CurrentGameState.Vipers[modifiedViper].Status = destroyed ? ViperStatus.Destroyed : ViperStatus.Damaged;
+            CurrentGameState.Vipers[modifiedViper].Status = (destroyed ? ViperStatus.Destroyed : ViperStatus.Damaged);
         }
 
         public void RemoveComponent(BaseComponent component)
@@ -244,7 +244,9 @@ namespace DeckManager
                 throw;
             }
         }
-	#region deck interactions
+
+	    #region deck interactions
+
         public void DiscardCards(IEnumerable<Cards.BaseCard> cards)
         {
             foreach (var card in cards)
@@ -426,24 +428,24 @@ namespace DeckManager
         /// Marks the component as destroyed and changes the GameState accordingly.
         /// </summary>
         /// <param name="ship"></param>
-        public void DestroyComponent(DeckManager.Components.BaseComponent ship)
+        public void DestroyComponent(BaseComponent ship)
         { 
         }
 
-        public void DestroyComponents(IEnumerable<DeckManager.Components.BaseComponent> ships)
+        public void DestroyComponents(IEnumerable<BaseComponent> ships)
         { }
 
         /// <summary>
         /// Removes the component from active play and places it back in its pile
         /// </summary>
         /// <param name="ship"></param>
-        public void DiscardComponent(DeckManager.Components.BaseComponent ship)
+        public void DiscardComponent(BaseComponent ship)
         { }
 
-        public void DiscardComponents(IEnumerable<DeckManager.Components.BaseComponent> ships)
+        public void DiscardComponents(IEnumerable<BaseComponent> ships)
         { }
 
-        public void MoveComponents(DeckManager.Boards.Dradis.DradisNodeName source, DeckManager.Boards.Dradis.DradisNodeName dest, IEnumerable<DeckManager.Components.BaseComponent> ships)
+        public void MoveComponents(DradisNodeName source, DradisNodeName dest, IEnumerable<BaseComponent> ships)
         { 
             CurrentGameState.Dradis.MoveComponents(source, dest, ships);
         }
@@ -480,6 +482,110 @@ namespace DeckManager
             CurrentGameState.Dradis.AddComponentToNode(ship, location);
             return ship;
         }
+        #endregion
+
+        #region player/character interactions
+        // todo may want to add logging to these
+        /// <summary>
+        /// Inserts the card into the player's appropriate hand
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="card"></param>
+        public void GiveCardToPlayer(Player player, Cards.BaseCard card)
+        {
+            switch (card.CardType)
+            {
+                case DeckManager.Cards.Enums.CardType.Skill:
+                    player.Cards.Add((DeckManager.Cards.SkillCard)card);
+                    break;
+                case DeckManager.Cards.Enums.CardType.Quorum:
+                    player.QuorumHand.Add((DeckManager.Cards.QuorumCard)card);
+                    break;
+                case DeckManager.Cards.Enums.CardType.Loyalty:
+                    player.LoyaltyCards.Add((DeckManager.Cards.LoyaltyCard)card);
+                    break;
+                case DeckManager.Cards.Enums.CardType.SuperCrisis:
+                    player.SuperCrisisCards.Add((DeckManager.Cards.SuperCrisisCard)card);
+                    break;
+                case DeckManager.Cards.Enums.CardType.Mutiny:
+                    player.MutinyHand.Add((DeckManager.Cards.MutinyCard)card);
+                    break;
+                default:
+                    break;
+            }
+        }
+        public void GiveCardToPlayer(Player player, IEnumerable<Cards.BaseCard> cards)
+        {
+            foreach (DeckManager.Cards.BaseCard card in cards)
+                GiveCardToPlayer(player, card);
+        }
+        /// <summary>
+        /// Removes the card from the Player's hand and discards it to the appropriate Deck.
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="card"></param>
+        public void PlayerDiscardCard(Player player, Cards.BaseCard card)
+        { }
+        /// <summary>
+        /// Removes the cards from the Player's hand and discards them to their appropriate Decks.
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="cards"></param>
+        public void PlayerDiscardCard(Player player, IEnumerable<Cards.BaseCard> cards)
+        {
+            // todo error checking on these
+            foreach (Cards.BaseCard card in cards)
+            {
+                player.Discard(card);
+                DiscardCard(card);
+            }
+        }
+
+        public void PlayerRevealCylon(Player player, Cards.LoyaltyCard reveal)
+        { }
+
+        /// <summary>
+        /// Removes the card from the players hand. This can be used to move cards between players.
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="card"></param>
+        public void PlayerRemoveCard(Player player, Cards.BaseCard card)
+        {
+            switch (card.CardType)
+            {
+                case DeckManager.Cards.Enums.CardType.Skill:
+                    player.Cards.Remove((DeckManager.Cards.SkillCard)card);
+                    break;
+                case DeckManager.Cards.Enums.CardType.Quorum:
+                    player.QuorumHand.Remove((DeckManager.Cards.QuorumCard)card);
+                    break;
+                case DeckManager.Cards.Enums.CardType.Loyalty:
+                    player.LoyaltyCards.Remove((DeckManager.Cards.LoyaltyCard)card);
+                    break;
+                case DeckManager.Cards.Enums.CardType.SuperCrisis:
+                    player.SuperCrisisCards.Remove((DeckManager.Cards.SuperCrisisCard)card);
+                    break;
+                case DeckManager.Cards.Enums.CardType.Mutiny:
+                    player.MutinyHand.Remove((DeckManager.Cards.MutinyCard)card);
+                    break;
+                default:
+                    break;
+            }
+        }
+        public void PlayerRemoveCard(Player player, IEnumerable<Cards.BaseCard> cards)
+        {
+            foreach (Cards.BaseCard card in cards)
+                PlayerRemoveCard(player, card);
+        }
+
+        /// <summary>
+        /// Moves the title designation from one player to another, along with any hands or tokens for that title
+        /// </summary>
+        /// <param name="title">The title to be transferred</param>
+        /// <param name="newHolder">The player who should now possess the title</param>
+        public void ChangePlayerTitle(Characters.Enums.Titles title, Player newHolder)
+        { }
+
         #endregion
     }
 }
