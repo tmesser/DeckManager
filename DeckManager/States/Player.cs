@@ -39,7 +39,7 @@ namespace DeckManager.States
         public override string ToString()
         {
             // MetricUnit (President Roslin [1], 6Q)
-            var titles = Titles.Count > 0 ? string.Join(" ", Titles) + " " : "";
+            // var titles = Titles.Count > 0 ? string.Join(" ", Titles) + " " : "";
             return PlayerName + " (" + Character.CharacterName+")";
             //return PlayerName + " (" + titles + Character.CharacterName + ") [" + Cards.Count + "] " + (QuorumHand.Count > 0 ? QuorumHand.Count.ToString() + "Q" : "");
         }
@@ -65,24 +65,18 @@ namespace DeckManager.States
 
         public bool Discard(IEnumerable<SkillCard> cards)
         {
-            int removed = Cards.RemoveAll(card => cards.Contains(card));
-            if (removed > 0)
-                return true;
-            return false;
+            var removed = Cards.RemoveAll(cards.Contains);
+            return removed > 0;
         }
         public bool Discard(IEnumerable<QuorumCard> cards)
         {
-            int removed = QuorumHand.RemoveAll(card => cards.Contains(card));
-            if (removed > 0)
-                return true;
-            return false;
+            var removed = QuorumHand.RemoveAll(cards.Contains);
+            return removed > 0;
         }
         public bool Discard(IEnumerable<MutinyCard > cards)
         {
-            int removed = MutinyHand.RemoveAll(card => cards.Contains(card));
-            if (removed > 0)
-                return true;
-            return false;
+            var removed = MutinyHand.RemoveAll(cards.Contains);
+            return removed > 0;
         }
 
         public static bool operator ==(Player x, Player y)
@@ -108,7 +102,7 @@ namespace DeckManager.States
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
+            if (obj.GetType() != GetType()) return false;
             return Equals((Player)obj);
         }
 

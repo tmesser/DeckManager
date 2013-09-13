@@ -95,6 +95,8 @@ namespace DeckManager
             return CurrentGameState;
         }
 
+        #region Private Methods
+
         private void AttemptToPlacePlayer(Player player)
         {
             foreach (var location in CurrentGameState.Boards.Select(board => board.Locations.FirstOrDefault(x => player.Character.SetupLocation == x.Name)))
@@ -179,9 +181,35 @@ namespace DeckManager
             CurrentGameState.ActiveCivilians = CurrentGameState.ActiveCivilians.OrderBy(x => x.InternalDesignation).ToList();
         }
 
+        #endregion // Private Methods
+
         private Civilian DrawCiv()
         {
             return CurrentGameState.ActiveCivilians.Count > 0 ? CurrentGameState.ActiveCivilians.ElementAt(0) : null;
+        }
+
+        public void KillCiv(Civilian civ)
+        {
+            CurrentGameState.Dradis.RemoveComponent(civ);
+            CurrentGameState.ActiveCivilians.Remove(civ);
+            CurrentGameState.KilledCivilians.Add(civ);
+        }
+
+        public void RemoveViper(Viper viper, bool destroyed = false)
+        {
+            CurrentGameState.Dradis.RemoveComponent(viper);
+            var modifiedViper = CurrentGameState.Vipers.FindIndex(x => x.PermanentDesignation == viper.PermanentDesignation);
+            CurrentGameState.Vipers[modifiedViper].Status = destroyed ? ViperStatus.Destroyed : ViperStatus.Damaged;
+        }
+
+        public void RemoveComponent(BaseComponent component)
+        {
+            CurrentGameState.Dradis.RemoveComponent(component.PermanentDesignation);
+        }
+
+        public void WipeDradis()
+        {
+            CurrentGameState.Dradis.WipeDradis();
         }
 
         public void DoPlayerDraw(Player player, int drawIndex = 0)
@@ -216,8 +244,12 @@ namespace DeckManager
                 throw;
             }
         }
-
-        #region deck interactions
+	#region deck interactions
+        public void DiscardCards(IEnumerable<Cards.BaseCard> cards)
+        {
+            foreach (var card in cards)
+                DiscardCard(card);
+        }
         public void DiscardCard(Cards.BaseCard card)
         {   
             // todo each discard creates new gamestate? that would let us implement undos
@@ -228,36 +260,39 @@ namespace DeckManager
                     CurrentGameState.QuorumDeck.Discard((Cards.QuorumCard)card);
                     break;
                 case CardType.Skill:
-                    switch (((Cards.SkillCard)card).CardColor)
+                    var skillCard = (Cards.SkillCard) card;
+                    switch (skillCard.CardColor)
                     {
                         case SkillCardColor.Politics:
-                            CurrentGameState.PoliticsDeck.Discard((Cards.SkillCard)card);
+                            CurrentGameState.PoliticsDeck.Discard(skillCard);
                             break;
                         case SkillCardColor.Leadership:
-                            CurrentGameState.LeadershipDeck.Discard((Cards.SkillCard)card);
+                            CurrentGameState.LeadershipDeck.Discard(skillCard);
                             break;
                         case SkillCardColor.Tactics:
-                            CurrentGameState.TacticsDeck.Discard((Cards.SkillCard)card);
+                            CurrentGameState.TacticsDeck.Discard(skillCard);
                             break;
                         case SkillCardColor.Engineering:
-                            CurrentGameState.EngineeringDeck.Discard((Cards.SkillCard)card);
+                            CurrentGameState.EngineeringDeck.Discard(skillCard);
                             break;
                         case SkillCardColor.Piloting:
-                            CurrentGameState.PilotingDeck.Discard((Cards.SkillCard)card);
+                            CurrentGameState.PilotingDeck.Discard(skillCard);
                             break;
                         case SkillCardColor.Treachery:
-                            CurrentGameState.TreacheryDeck.Discard((Cards.SkillCard)card);
+                            CurrentGameState.TreacheryDeck.Discard(skillCard);
                             break;
                     }
                     break;
             }
         }
+
         public void DiscardCards(IEnumerable<Cards.BaseCard> cards)
         {
             foreach (Cards.BaseCard card in cards)
                 DiscardCard(card);
         }
-                /// <summary>
+
+        /// <summary>
         /// Place the card on the top of its deck
         /// </summary>
         /// <param name="card"></param>
@@ -321,7 +356,7 @@ namespace DeckManager
         public void TopCards(IEnumerable<Cards.BaseCard> cards)
         {
             foreach (Cards.BaseCard card in cards)
-                BuryCard(card);
+                TopCard(card);
         }
         /// <summary>
         /// Place the card on the bottom of its Deck
@@ -425,19 +460,22 @@ namespace DeckManager
         /// <param name="location"></param>
         /// <param name="type"></param>
         /// <returns>The component that has been placed</returns>
-        public DeckManager.Components.BaseComponent PlaceComponent( DeckManager.Boards.Dradis.DradisNodeName location, DeckManager.Components.Enums.ComponentType type)
+        public BaseComponent PlaceComponent( DradisNodeName location, Components.Enums.ComponentType type)
         {
-            DeckManager.Components.BaseComponent ship = null;
+            BaseComponent ship = null;
             switch (type)
             { 
-                case Components.Enums.ComponentType.Basestar:                    
+                case Components.Enums.ComponentType.Basestar:
+                    ship = new Basestar();
                     break;
                 case Components.Enums.ComponentType.Civilian:
                     ship = DrawCiv();
                     break;
                 case Components.Enums.ComponentType.HeavyRaider:
+                    ship = new HeavyRaider();
                     break;
                 case Components.Enums.ComponentType.Raider:
+                    ship = new Raider();
                     break;
                 case Components.Enums.ComponentType.Viper:
                     ship = DrawViper();
@@ -446,7 +484,7 @@ namespace DeckManager
                     break;
             }
             CurrentGameState.Dradis.AddComponentToNode(ship, location);
-            return null;
+            return ship;
         }
         #endregion
     }

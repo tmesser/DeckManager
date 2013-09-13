@@ -1,26 +1,159 @@
-﻿[	
-    {
-		"Name": "Helena Cain",
-		"Location": "Pegasus CIC",
-		"Draw": {
-			{ "Tactics" },
-			{ "Tactics" },
-			{ "Tactics", "Leadership"},
-			{ "Leadership"},
-			{ "Leadership"}
-		},
-		"Role" : "Military"
-	},	
-    {
-		"Name": "William Adama",
-		"Location": "Admiral's Quarters",
-		"Draw": {
-			{ "Leadership" },
-			{ "Leadership" },
-			{ "Leadership" },
-			{ "Tactics" },
-			{ "Tactics" }
-		},
-		"Role" : Military
-	}
+[
+  {
+    "CharacterName": "William Adama",
+    "SetupLocation": "Admiral's Quarters",
+    "Role": "Military",
+    "DefaultDrawColors": [
+      [
+        "Leadership",
+        "Leadership",
+        "Leadership",
+        "Tactics",
+        "Tactics"
+      ]
+    ],
+    "AdditionalText": "Inspirational Leader -- When you draw a Crisis Card, all 1 strength Skill Cards count positive for the skill check.\r\nCommand Authority -- Once per game, after resolving a skill check, instead of discarding the used Skill Cards, draw them into your hand.\r\nEmotionally Attached -- You may not activate the Admiral's Quarters location."
+  },
+  {
+    "CharacterName": "Saul Tigh",
+    "SetupLocation": "Command",
+    "Role": "Military",
+    "DefaultDrawColors": [
+      [
+        "Leadership",
+        "Leadership",
+        "Tactics",
+        "Tactics",
+        "Tactics"
+      ]
+    ],
+    "AdditionalText": "Cylon Hatred -- When a player activates the Admiral's Quarters location, you may choose to reduce the difficulty by 3.\r\nDeclare Martial Law -- ACTION: Once per game, give the President title to the Admiral.\r\nAlcoholic -- At the start of any player's turn, if you have exactly 1 Skill Card in your hand, you must discard it."
+  },
+  {
+    "CharacterName": "Karl \"Helo\" Agathon",
+    "SetupLocation": "",
+    "Role": "Military",
+    "DefaultDrawColors": [
+      [
+        "Leadership",
+        "Leadership",
+        "Tactics",
+        "Tactics",
+        "Piloting"
+      ]
+    ],
+    "AdditionalText": "ECO Officer -- During your turn, you may reroll a die that was just rolled (once per turn).  You must use the new result.\r\nMoral Compass -- Once per game, after a player makes a choice on a Crisis Card, you may change it.\r\nStranded -- Your character is not placed on the board at the start of the game.  While not on the game board, you may not move, be moved, or take actions.  At the start of your 2nd turn, place your character on the Hangar Deck location."
+  },
+  {
+    "CharacterName": "Laura Roslin",
+    "SetupLocation": "President's Office",
+    "Role": "Political",
+    "DefaultDrawColors": [
+      [
+        "Politics",
+        "Politics",
+        "Politics",
+        "Leadership",
+        "Leadership"
+      ]
+    ],
+    "AdditionalText": "Religious Visions -- When you draw Crisis Cards, draw 2 and choose 1 to resolve.  Place the other on the bottom of the deck.\r\nSkilled Politician -- ACTION: Once per came, draw 4 Quorum Cards.  Choose 1 to resolve and place the rest on the bottom of the deck.  You do not need to be President to use this ability.\r\nTerminal Illness -- In order to activate a location, you must first discard 2 Skill Cards."
+  },
+  {
+    "CharacterName": "Gaius Baltar",
+    "SetupLocation": "Research Lab",
+    "Role": "Political",
+    "DefaultDrawColors": [
+      [
+        "Politics",
+        "Politics",
+        "Engineering",
+        "Leadership",
+        "Leadership"
+      ]
+    ],
+    "AdditionalText": "Delusional Intuition -- After you draw a Crisis Card, draw 1 Skill Card of your choice (it may be outside your skill set).\r\nCylon Detector -- ACTION: Once per game, you may look at all the Loyalty Cards belonging to another player.\r\nCoward -- You start the game with 2 Loyalty Cards instead of 1."
+  },
+  {
+    "CharacterName": "Tom Zarek",
+    "SetupLocation": "Administration",
+    "Role": "Political",
+    "DefaultDrawColors": [
+      [
+        "Politics",
+        "Politics",
+        "Tactics",
+        "Leadership",
+        "Leadership"
+      ]
+    ],
+    "AdditionalText": "Friends in Low Places -- When a player activates the Administration, Brig, or Airlock locations, you may choose to reduce or increase the difficulty by 2.\r\nUnconventional Tactics -- ACTION: Once per game, lose 1 population to gain 1 of any other resource type.\r\nConvicted Criminal -- You may not activate locations occupied by other characters (except the Brig)."
+  },
+  {
+    "CharacterName": "Lee \"Apollo\" Adama",
+    "SetupLocation": "Launch and Pilot Viper",
+    "Role": "Pilot",
+    "DefaultDrawColors": [
+      [
+        "Piloting",
+        "Piloting",
+        "Tactics",
+        "Leadership",
+        "Leadership"
+      ]
+    ],
+    "AdditionalText": "Alert Viper Pilot -- When a Viper is placed in a space area from the Reserves, yo umay choose to pilot it and take 1 action.  You may only do this when you are on a Galactica location, excluding the Brig.\r\nCAG -- ACTION: Once per game, you may activate up to 6 unmanned Vipers.\r\nHeadstrong -- When you are forced to discard Skill Cards, you must discard randomly."
+  },
+  {
+    "CharacterName": "Kara \"Starbuck\" Thrace",
+    "SetupLocation": "Hangar Deck",
+    "Role": "Pilot",
+    "DefaultDrawColors": [
+      [
+        "Piloting",
+        "Piloting",
+        "Tactics",
+        "Tactics",
+        "Leadership"
+      ],
+      [
+        "Piloting",
+        "Piloting",
+        "Tactics",
+        "Tactics",
+        "Engineering"
+      ]
+    ],
+    "AdditionalText": "Expert Pilot -- When you start your turn piloting a Viper, you may take 2 Actions during your Action Step (instead of 1).\r\nSecret Destiny -- Once per game, immediately after a Crisis Card is revealed, discard it and draw a new one.\r\nInsubordinate -- When a player chooses you with the Admiral's Quarters location, reduce the difficulty by 3."
+  },
+  {
+    "CharacterName": "Sharon \"Boomer\" Valerii",
+    "SetupLocation": "Armory",
+    "Role": "Pilot",
+    "DefaultDrawColors": [
+      [
+        "Piloting",
+        "Piloting",
+        "Tactics",
+        "Tactics",
+        "Engineering"
+      ]
+    ],
+    "AdditionalText": "Recon -- At the end of your turn, you may look at the top of the Crisis Deck and place it on the top or bottom.\r\nMysterious Intuition -- Once per game, before resolving a Skill Check on a Crisis Card, choose the result (Pass or Fail) instead of resolving it normally.\r\nSleeper Agent -- During the Sleeper Agent Phase, you are dealt 2 Loyalty Cards (instead of 1) and are moved to the Brig location."
+  },
+  {
+    "CharacterName": "\"Chief\" Galen Tyrol",
+    "SetupLocation": "Hangar Deck",
+    "Role": "Support",
+    "DefaultDrawColors": [
+      [
+        "Engineering",
+        "Engineering",
+        "Politics",
+        "Leadership",
+        "Leadership"
+      ]
+    ],
+    "AdditionalText": "Maintenance Engineer -- During your turn, after yo uuse a Repair Skill Card, you may take another action (once per turn).\r\nBlind Devotion -- Once per game, after cards have been added to a Skill Check (but before revealing them), you may choose a skill type.  All cards of the chosen type are considered strength 0.\r\nReckless -- Your hand limit is 8 (instead of 10)"
+  }
 ]

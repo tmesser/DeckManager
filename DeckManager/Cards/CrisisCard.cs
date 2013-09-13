@@ -92,15 +92,12 @@ namespace DeckManager.Cards
         /// <returns></returns>
         public string GetSkillCheckText()
         {
-            // todo fill this out
-            if (this.PassLevels.Count == 0)
-                return string.Empty;
-            return "not implemented";
+            return HasSkillCheck() ? AdditionalText : string.Empty;
         }
 
         public bool HasSkillCheck()
         { 
-            return this.PositiveColors.Count != 0; 
+            return PositiveColors.Count != 0; 
         }
     }
 }

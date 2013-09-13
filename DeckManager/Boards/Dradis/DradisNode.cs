@@ -90,5 +90,13 @@ namespace DeckManager.Boards.Dradis
             foreach (var component in movedComponents)
                 Components.Remove(component);
         }
+
+        /// <summary>
+        /// Wipes the components (used on a jump)
+        /// </summary>
+        public void WipeComponents()
+        {
+            Components.Clear();
+        }
     }
 }

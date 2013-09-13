@@ -52,24 +52,40 @@
   <ItemGroup>
     <Compile Include="ComponentTests.cs" />
     <Compile Include="DeckTests.cs" />
-    <Compile Include="JsonGenerator.cs" />
+    <Compile Include="BaseJsonGenerator.cs" />
+    <Compile Include="PegasusJsonGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SkillCheckTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="JsonGeneratorOutput\GeneratedJson\Boards\Locations.json" />
-    <None Include="JsonGeneratorOutput\GeneratedJson\Components\CivilianPile.json" />
-    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\CrisisDeck.json" />
-    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\DestinationDeck.json" />
-    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\EngineeringDeck.json" />
-    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\LeadershipDeck.json" />
-    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\LoyaltyDeck.json" />
-    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\PilotingDeck.json" />
-    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\PoliticsDeck.json" />
-    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\QuorumDeck.json" />
-    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\SuperCrisisDeck.json" />
-    <None Include="JsonGeneratorOutput\GeneratedJson\Decks\TacticsDeck.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\Boards\Locations.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\Characters\Characters.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\Components\CivilianPile.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\Decks\CrisisDeck.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\Decks\DestinationDeck.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\Decks\EngineeringDeck.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\Decks\LeadershipDeck.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\Decks\LoyaltyDeck.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\Decks\PilotingDeck.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\Decks\PoliticsDeck.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\Decks\QuorumDeck.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\Decks\SuperCrisisDeck.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\Decks\TacticsDeck.json" />
     <None Include="packages.config" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Boards\Locations.json" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Characters\Characters.json" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Components\CivilianPile.json" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\CrisisDeck.json" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\DestinationDeck.json" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\EngineeringDeck.json" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\LeadershipDeck.json" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\LoyaltyDeck.json" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\PilotingDeck.json" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\PoliticsDeck.json" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\QuorumDeck.json" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\SuperCrisisDeck.json" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\TacticsDeck.json" />
+    <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\TreacheryDeck.json" />
     <None Include="TestContent\Boards\Locations.json" />
     <None Include="TestContent\CivilianPile.json" />
     <None Include="TestContent\Crisis.json" />
@@ -91,8 +107,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="JsonGeneratorOutput\Core.xml" />
-    <Content Include="JsonGeneratorOutput\Pegasus.xml" />
+    <Content Include="BaseJsonGeneratorOutput\Core.xml" />
+    <Content Include="PegasusJsonGeneratorOutput\Pegasus.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
