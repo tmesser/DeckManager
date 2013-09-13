@@ -286,12 +286,6 @@ namespace DeckManager
             }
         }
 
-        public void DiscardCards(IEnumerable<Cards.BaseCard> cards)
-        {
-            foreach (Cards.BaseCard card in cards)
-                DiscardCard(card);
-        }
-
         /// <summary>
         /// Place the card on the top of its deck
         /// </summary>

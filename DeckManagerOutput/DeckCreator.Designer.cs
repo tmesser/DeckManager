@@ -1,4 +1,7 @@
-﻿namespace DeckManagerOutput
+﻿using DeckManager;
+using DeckManager.Cards.Enums;
+
+namespace DeckManagerOutput
 {
     partial class DeckCreator
     {
