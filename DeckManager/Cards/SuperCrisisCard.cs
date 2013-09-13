@@ -14,5 +14,9 @@ namespace DeckManager.Cards
         {
             get { return CardType.SuperCrisis; }
         }
+        public override string ToString()
+        {
+            return Heading + "\n" + AdditionalText;
+        }
     }
 }

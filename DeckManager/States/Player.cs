@@ -32,6 +32,8 @@ namespace DeckManager.States
             Cards = new List<SkillCard>();
             LoyaltyCards = new List<LoyaltyCard>();
             CustomDraws  = new List<List<SkillCardColor>>();
+            MutinyHand = new List<MutinyCard>();
+            SuperCrisisCards = new List<SuperCrisisCard>();
             Titles  = new List<Titles>();
             Character = new Characters.Character();
         }
@@ -125,7 +127,7 @@ namespace DeckManager.States
                     return Discard((SuperCrisisCard)card);
                 default:
                     // error case
-                    throw new System.Exception("Player's can't discard CardTypes they cannot hold:"+card.CardType);
+                    throw new System.Exception("Players can't discard CardTypes they cannot hold:"+card.CardType);
             }
         }
     }

@@ -42,5 +42,22 @@ namespace DeckManager.Cards
         {
             throw new System.NotImplementedException();
         }
+
+        public override string ToString()
+        {
+            switch (Loyalty)
+            {
+                case Enums.Loyalty.Cylon:
+                    return "Cylon: " + AdditionalText;
+                case Enums.Loyalty.NotACylon:
+                    return "You Are Not a Cylon";
+                case Enums.Loyalty.Sympathizer:
+                    return "Why are you using Sympathizer this shit is terrible";
+                case Enums.Loyalty.Mutineer:
+                    return "Mutineer";
+                default:
+                    return "unknown loyalty type";
+            }
+        }
     }
 }

@@ -83,7 +83,19 @@ namespace DeckManager.Cards
 
         public override string ToString()
         {
-            return Heading+"\n"+AdditionalText+"\n"+Activation+" "+ (JumpPrep?"+1 Jump Prep":"NO JUMP PREP");
+            // todo this needs to be worked on to account for all the different crisis formats
+            string ret = Heading+"\n";
+            if (Chooser != null)
+            {
+                ret += Chooser + " Chooses:";
+                ret += string.Join("\n OR\n", Choices);
+            }
+            else
+                ret += AdditionalText;
+            //return Heading + "\n" + AdditionalText + "\n";
+
+            ret += "\nActivate: " + Activation + " " + (JumpPrep ? "+1 Jump Prep" : "NO JUMP PREP");
+            return ret;
         }
 
         /// <summary>

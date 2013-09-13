@@ -42,5 +42,18 @@ namespace DeckManager.Characters
                 return DefaultDrawColors.SelectMany(draw => draw).Distinct();
             }
         }
+
+        /// <summary>
+        /// returns the character's draw in the form; LEA/3, TAC/2
+        /// </summary>
+        /// <returns></returns>
+        public string GetHumanReadableDraw()
+        {
+            return "";
+        }
+        public override string ToString()
+        {
+            return CharacterName + " " + GetHumanReadableDraw();
+        }
     }
 }

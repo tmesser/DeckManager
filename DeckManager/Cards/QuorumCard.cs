@@ -25,6 +25,11 @@ namespace DeckManager.Cards
             throw new System.NotImplementedException();
         }
 
+        public override string ToString()
+        {
+            return Heading + "\n" + AdditionalText;
+        }
+
         /// <summary>
         /// Gets or sets the heading. Basic display stuff, like Inspirational Speech or whatever
         /// </summary>

@@ -37,6 +37,9 @@
             this.initialDrawComboBox3 = new System.Windows.Forms.ComboBox();
             this.initialDrawComboBox2 = new System.Windows.Forms.ComboBox();
             this.initialDrawComboBox1 = new System.Windows.Forms.ComboBox();
+            initialDrawComboBox3.KeyPress += initialDrawComboBox3_KeyPress;
+            initialDrawComboBox2.KeyPress += initialDrawComboBox2_KeyPress;
+            initialDrawComboBox1.KeyPress += initialDrawComboBox1_KeyPress;
             this.characterAbilitiesRichTextBox = new System.Windows.Forms.RichTextBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.initialDrawGroupBox.SuspendLayout();
@@ -65,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 36);
+            this.label2.Location = new System.Drawing.Point(12, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 2;
@@ -82,9 +85,9 @@
             // characterListBox
             // 
             this.characterListBox.FormattingEnabled = true;
-            this.characterListBox.Location = new System.Drawing.Point(89, 36);
+            this.characterListBox.Location = new System.Drawing.Point(12, 52);
             this.characterListBox.Name = "characterListBox";
-            this.characterListBox.Size = new System.Drawing.Size(100, 82);
+            this.characterListBox.Size = new System.Drawing.Size(177, 82);
             this.characterListBox.TabIndex = 4;
             this.characterListBox.SelectedIndexChanged += new System.EventHandler(this.characterListBox_SelectedIndexChanged);
             // 
@@ -165,6 +168,21 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        void initialDrawComboBox3_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        void initialDrawComboBox2_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        void initialDrawComboBox1_KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
 
         #endregion

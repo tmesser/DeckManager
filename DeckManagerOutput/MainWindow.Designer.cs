@@ -34,6 +34,11 @@
             this.PassLoyaltyCardsButton = new System.Windows.Forms.Button();
             this.RevealAsCylonButton = new System.Windows.Forms.Button();
             this.PlayerLoyaltyHandListBox = new System.Windows.Forms.ListBox();
+            this.MutinyCardPanel = new System.Windows.Forms.Panel();
+            this.DiscardMutinyCardButton = new System.Windows.Forms.Button();
+            this.CharacterMutinyHandListBox = new System.Windows.Forms.ListBox();
+            this.MutinyHandCountTextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.QuorumHandPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.characterQuorumHandCountTextBox = new System.Windows.Forms.TextBox();
@@ -121,17 +126,13 @@
             this.CharacterSuperCrisisHandListBox = new System.Windows.Forms.ListBox();
             this.SuperCrisisHandCountTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.MutinyCardPanel = new System.Windows.Forms.Panel();
-            this.DiscardMutinyCardButton = new System.Windows.Forms.Button();
-            this.CharacterMutinyHandListBox = new System.Windows.Forms.ListBox();
-            this.MutinyHandCountTextBox = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.TitlesPanel = new System.Windows.Forms.Panel();
             this.CAGTitleCheckBox = new System.Windows.Forms.CheckBox();
             this.PresidentTitleCheckBox = new System.Windows.Forms.CheckBox();
             this.AdmiralCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.PlayerLoyaltyHandPanel.SuspendLayout();
+            this.MutinyCardPanel.SuspendLayout();
             this.QuorumHandPanel.SuspendLayout();
             this.skillDecksPanel.SuspendLayout();
             this.crisisPanel.SuspendLayout();
@@ -145,7 +146,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.FoodUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FuelUpDown)).BeginInit();
             this.SuperCrisisHandPanel.SuspendLayout();
-            this.MutinyCardPanel.SuspendLayout();
             this.TitlesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,6 +178,7 @@
             this.PlayerLoyaltyHandPanel.Name = "PlayerLoyaltyHandPanel";
             this.PlayerLoyaltyHandPanel.Size = new System.Drawing.Size(124, 82);
             this.PlayerLoyaltyHandPanel.TabIndex = 8;
+            this.PlayerLoyaltyHandPanel.Visible = false;
             // 
             // PassLoyaltyCardsButton
             // 
@@ -206,8 +207,52 @@
             this.PlayerLoyaltyHandListBox.Name = "PlayerLoyaltyHandListBox";
             this.PlayerLoyaltyHandListBox.Size = new System.Drawing.Size(120, 43);
             this.PlayerLoyaltyHandListBox.TabIndex = 17;
-            this.PlayerLoyaltyHandListBox.Visible = false;
             this.PlayerLoyaltyHandListBox.SelectedIndexChanged += new System.EventHandler(this.PlayerLoyaltyHandListBox_SelectedIndexChanged);
+            // 
+            // MutinyCardPanel
+            // 
+            this.MutinyCardPanel.Controls.Add(this.DiscardMutinyCardButton);
+            this.MutinyCardPanel.Controls.Add(this.CharacterMutinyHandListBox);
+            this.MutinyCardPanel.Controls.Add(this.MutinyHandCountTextBox);
+            this.MutinyCardPanel.Controls.Add(this.label11);
+            this.MutinyCardPanel.Location = new System.Drawing.Point(152, 296);
+            this.MutinyCardPanel.Name = "MutinyCardPanel";
+            this.MutinyCardPanel.Size = new System.Drawing.Size(125, 106);
+            this.MutinyCardPanel.TabIndex = 8;
+            // 
+            // DiscardMutinyCardButton
+            // 
+            this.DiscardMutinyCardButton.Location = new System.Drawing.Point(3, 82);
+            this.DiscardMutinyCardButton.Name = "DiscardMutinyCardButton";
+            this.DiscardMutinyCardButton.Size = new System.Drawing.Size(75, 23);
+            this.DiscardMutinyCardButton.TabIndex = 7;
+            this.DiscardMutinyCardButton.Text = "Discard";
+            this.DiscardMutinyCardButton.UseVisualStyleBackColor = true;
+            // 
+            // CharacterMutinyHandListBox
+            // 
+            this.CharacterMutinyHandListBox.FormattingEnabled = true;
+            this.CharacterMutinyHandListBox.Location = new System.Drawing.Point(0, 33);
+            this.CharacterMutinyHandListBox.Name = "CharacterMutinyHandListBox";
+            this.CharacterMutinyHandListBox.Size = new System.Drawing.Size(115, 43);
+            this.CharacterMutinyHandListBox.TabIndex = 6;
+            // 
+            // MutinyHandCountTextBox
+            // 
+            this.MutinyHandCountTextBox.Enabled = false;
+            this.MutinyHandCountTextBox.Location = new System.Drawing.Point(79, 7);
+            this.MutinyHandCountTextBox.Name = "MutinyHandCountTextBox";
+            this.MutinyHandCountTextBox.Size = new System.Drawing.Size(36, 20);
+            this.MutinyHandCountTextBox.TabIndex = 5;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Mutiny Hand: ";
             // 
             // QuorumHandPanel
             // 
@@ -1062,51 +1107,6 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Super Crisis Hand:";
             // 
-            // MutinyCardPanel
-            // 
-            this.MutinyCardPanel.Controls.Add(this.DiscardMutinyCardButton);
-            this.MutinyCardPanel.Controls.Add(this.CharacterMutinyHandListBox);
-            this.MutinyCardPanel.Controls.Add(this.MutinyHandCountTextBox);
-            this.MutinyCardPanel.Controls.Add(this.label11);
-            this.MutinyCardPanel.Location = new System.Drawing.Point(152, 296);
-            this.MutinyCardPanel.Name = "MutinyCardPanel";
-            this.MutinyCardPanel.Size = new System.Drawing.Size(125, 106);
-            this.MutinyCardPanel.TabIndex = 8;
-            // 
-            // DiscardMutinyCardButton
-            // 
-            this.DiscardMutinyCardButton.Location = new System.Drawing.Point(3, 82);
-            this.DiscardMutinyCardButton.Name = "DiscardMutinyCardButton";
-            this.DiscardMutinyCardButton.Size = new System.Drawing.Size(75, 23);
-            this.DiscardMutinyCardButton.TabIndex = 7;
-            this.DiscardMutinyCardButton.Text = "Discard";
-            this.DiscardMutinyCardButton.UseVisualStyleBackColor = true;
-            // 
-            // CharacterMutinyHandListBox
-            // 
-            this.CharacterMutinyHandListBox.FormattingEnabled = true;
-            this.CharacterMutinyHandListBox.Location = new System.Drawing.Point(0, 33);
-            this.CharacterMutinyHandListBox.Name = "CharacterMutinyHandListBox";
-            this.CharacterMutinyHandListBox.Size = new System.Drawing.Size(115, 43);
-            this.CharacterMutinyHandListBox.TabIndex = 6;
-            // 
-            // MutinyHandCountTextBox
-            // 
-            this.MutinyHandCountTextBox.Enabled = false;
-            this.MutinyHandCountTextBox.Location = new System.Drawing.Point(87, 7);
-            this.MutinyHandCountTextBox.Name = "MutinyHandCountTextBox";
-            this.MutinyHandCountTextBox.Size = new System.Drawing.Size(28, 20);
-            this.MutinyHandCountTextBox.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Mutiny Hand: ";
-            // 
             // TitlesPanel
             // 
             this.TitlesPanel.Controls.Add(this.CAGTitleCheckBox);
@@ -1169,6 +1169,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.PlayerLoyaltyHandPanel.ResumeLayout(false);
+            this.MutinyCardPanel.ResumeLayout(false);
+            this.MutinyCardPanel.PerformLayout();
             this.QuorumHandPanel.ResumeLayout(false);
             this.QuorumHandPanel.PerformLayout();
             this.skillDecksPanel.ResumeLayout(false);
@@ -1187,8 +1189,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.FuelUpDown)).EndInit();
             this.SuperCrisisHandPanel.ResumeLayout(false);
             this.SuperCrisisHandPanel.PerformLayout();
-            this.MutinyCardPanel.ResumeLayout(false);
-            this.MutinyCardPanel.PerformLayout();
             this.TitlesPanel.ResumeLayout(false);
             this.TitlesPanel.PerformLayout();
             this.ResumeLayout(false);

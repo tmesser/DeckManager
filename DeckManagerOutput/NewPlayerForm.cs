@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DeckManager.States;
+using DeckManager.Cards;
 
 namespace DeckManagerOutput
 {
@@ -60,6 +61,10 @@ namespace DeckManagerOutput
             
             // todo can't draw more of one color than you can draw - need to account for that
             //foreach (DeckManager.Cards.Enums.SkillCardColor color in character.UniqueColors)
+
+            // count max allowable draw for each color
+            Dictionary<DeckManager.Cards.Enums.SkillCardColor, int> MaxDraw = new Dictionary<DeckManager.Cards.Enums.SkillCardColor, int>();
+
             foreach (List<DeckManager.Cards.Enums.SkillCardColor> draw in character.DefaultDrawColors)
             {
                 foreach (DeckManager.Cards.Enums.SkillCardColor color in draw)

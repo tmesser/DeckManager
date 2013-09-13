@@ -24,6 +24,10 @@ namespace DeckManager.Cards
         {
             throw new System.NotImplementedException();
         }
+        public override string ToString()
+        {
+            return Heading + "\n" + AdditionalText + "\nDistance: " + Distance.ToString();
+        }
 
         /// <summary>
         /// Title of the destination.

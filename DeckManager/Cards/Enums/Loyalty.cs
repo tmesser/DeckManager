@@ -5,6 +5,7 @@
         Unknown,
         NotACylon,
         Cylon,
-        Sympathizer
+        Sympathizer,
+        Mutineer
     }
 }

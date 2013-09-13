@@ -19,10 +19,12 @@ namespace DeckManager
     public class GameManager
     {
         private readonly ILog _logger;
+        public List<Characters.Character> CharacterList;
 
         public GameManager()
         {
             _logger = LogManager.GetLogger(typeof (GameManager));
+            CharacterList = InitCharacters();
         }
 
         public GameManager(ILog logger)
@@ -96,6 +98,19 @@ namespace DeckManager
         }
 
         #region Private Methods
+
+        private List<Characters.Character> InitCharacters()
+        {
+            
+            List<Characters.Character> characters;
+
+            using (var sr = new StreamReader(ConfigurationManager.AppSettings["CharacterListLocation"]))
+            {
+                var jsonText = sr.ReadToEnd();
+                characters = JsonConvert.DeserializeObject<List<Characters.Character>>(jsonText);
+            }
+            return characters;
+        }
 
         private void AttemptToPlacePlayer(Player player)
         {
@@ -541,8 +556,19 @@ namespace DeckManager
             }
         }
 
+        /// <summary>
+        /// Reveal's the Player's cylon loyalty card and marks the player as a revealed cylon
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="reveal"></param>
         public void PlayerRevealCylon(Player player, Cards.LoyaltyCard reveal)
-        { }
+        {
+            if (player.LoyaltyCards.Contains(reveal))
+                player.RevealedCylon = true;
+            else ; // error case, exception
+            // todo logging
+            // todo effects from card reveal
+        }
 
         /// <summary>
         /// Removes the card from the players hand. This can be used to move cards between players.
