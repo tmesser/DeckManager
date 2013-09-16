@@ -318,6 +318,7 @@
             // 
             // RemovePlayerButton
             // 
+            this.RemovePlayerButton.Enabled = false;
             this.RemovePlayerButton.Location = new System.Drawing.Point(98, 120);
             this.RemovePlayerButton.Name = "RemovePlayerButton";
             this.RemovePlayerButton.Size = new System.Drawing.Size(88, 23);
@@ -395,6 +396,7 @@
             // 
             // beginGameButton
             // 
+            this.beginGameButton.Enabled = false;
             this.beginGameButton.Location = new System.Drawing.Point(192, 120);
             this.beginGameButton.Name = "beginGameButton";
             this.beginGameButton.Size = new System.Drawing.Size(88, 23);

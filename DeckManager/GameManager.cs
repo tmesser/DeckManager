@@ -60,7 +60,7 @@ namespace DeckManager
                     QuorumDeck = new QuorumDeck(_logger, ConfigurationManager.AppSettings["QuorumDeckLocation"]),
                     SuperCrisisDeck = new SuperCrisisDeck(_logger, ConfigurationManager.AppSettings["SuperCrisisDeckLocation"]),
                     TacticsDeck = new SkillCardDeck(_logger, SkillCardColor.Tactics, ConfigurationManager.AppSettings["TacticsDeckLocation"]),
-                    TreacheryDeck = new SkillCardDeck(_logger, SkillCardColor.Treachery, ConfigurationManager.AppSettings["TreacheryDeckLocation"]),
+                    //TreacheryDeck = new SkillCardDeck(_logger, SkillCardColor.Treachery, ConfigurationManager.AppSettings["TreacheryDeckLocation"]),
 
                     Dradis = new DradisBoard(),
                     Boards = BuildBoards(),
@@ -114,10 +114,16 @@ namespace DeckManager
 
         private void AttemptToPlacePlayer(Player player)
         {
-            foreach (var location in CurrentGameState.Boards.Select(board => board.Locations.FirstOrDefault(x => player.Character.SetupLocation == x.Name)))
+            foreach (Board b in CurrentGameState.Boards)
             {
-                location.PlayersPresent.Add(player.PlayerName);
-                return;
+                foreach (BasicLocation location in b.Locations)
+                {
+                    if (location.Name == player.Character.SetupLocation)
+                    {                        
+                        location.PlayersPresent.Add(player.PlayerName);
+                        return;
+                    }
+                }
             }
         }
 

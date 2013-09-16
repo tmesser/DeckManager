@@ -69,6 +69,16 @@ namespace DeckManagerOutput
                 }
                 characterListBox.Items.Add(newPlayer);
                 AvailableCharacters.Remove(newPlayer.Character);
+
+                if (!GameStarted)
+                {
+                    if (characterListBox.Items.Count > 0)
+                        RemovePlayerButton.Enabled = true;
+                    else if (characterListBox.Items.Count == 0)
+                        RemovePlayerButton.Enabled = false;
+                    if (characterListBox.Items.Count >= 3)
+                        beginGameButton.Enabled = true;
+                }
             }
         }
 
@@ -91,7 +101,9 @@ namespace DeckManagerOutput
             this.TitlesPanel.Location = new System.Drawing.Point(263, 92);
             this.PlayerLoyaltyHandPanel.Visible = true;
             var players = characterListBox.Items.Cast<Player>().ToList();
-            
+
+            characterListBox.SelectedIndex = 0;
+
             GameState gs =  Program.GManager.NewGame(players,0,false);
             enableControls();
         }
@@ -466,9 +478,19 @@ namespace DeckManagerOutput
         #endregion
 
         #region player hand events
-
+        
         private void CharacterListBoxSelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!GameStarted)
+            {
+                if (characterListBox.Items.Count > 0)
+                    RemovePlayerButton.Enabled = true;
+                else if (characterListBox.Items.Count == 0)
+                    RemovePlayerButton.Enabled = false;
+                if (characterListBox.Items.Count >= 3)
+                    beginGameButton.Enabled = true;
+            }
+
             currentPlayer = (Player)characterListBox.SelectedItem;
             UpdatePlayerHandControls();
         }
@@ -481,6 +503,12 @@ namespace DeckManagerOutput
                 drawnCardListBox.Items.CopyTo(cards, 0);
             else
                 drawnCardListBox.SelectedItems.CopyTo(cards, 0);
+
+            drawnCardListBox.BeginUpdate();
+            foreach (BaseCard c in cards)
+                drawnCardListBox.Items.Remove(c);
+            drawnCardListBox.EndUpdate();
+
 
             Program.GManager.GiveCardToPlayer(currentPlayer, (IEnumerable<BaseCard>)cards);
 
