@@ -85,7 +85,7 @@ namespace DeckManager.Cards
         {
             // todo this needs to be worked on to account for all the different crisis formats
             string ret = Heading+"\n";
-            if (Chooser != null)
+            if (Chooser != Characters.Enums.Titles.Unknown)
             {
                 ret += Chooser + " Chooses:";
                 ret += string.Join("\n OR\n", Choices);

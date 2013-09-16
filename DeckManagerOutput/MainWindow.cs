@@ -317,10 +317,15 @@ namespace DeckManagerOutput
         #region crisis events
         private void CrisisTextBoxMeasureItem(object sender, MeasureItemEventArgs e)
         {
-            //e.ItemHeight = 50;
             string item = crisisTextListBox.Items[e.Index].ToString();
-            int count = item.Count(f=>f=='\n');
-            count++;
+            int count = 0;
+            string[] tokens = item.Split('\n');
+            foreach (string line in tokens)
+            {
+                count++;
+                if (line.Length > 38)
+                    count++;
+            }
             e.ItemHeight *= count;
         }
 
