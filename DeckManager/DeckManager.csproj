@@ -55,6 +55,7 @@
     <Compile Include="Boards\Dradis\DradisNode.cs" />
     <Compile Include="Boards\Dradis\Enums\DradisNodeName.cs" />
     <Compile Include="Boards\Enums\BoardName.cs" />
+    <Compile Include="Cards\Allegiance.cs" />
     <Compile Include="Cards\BaseCard.cs" />
     <Compile Include="Cards\MissionCard.cs" />
     <Compile Include="Cards\MutinyCard.cs" />
