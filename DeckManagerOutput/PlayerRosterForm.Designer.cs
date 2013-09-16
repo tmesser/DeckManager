@@ -50,7 +50,7 @@
             // 
             this.doneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.doneButton.Enabled = false;
-            this.doneButton.Location = new System.Drawing.Point(231, 287);
+            this.doneButton.Location = new System.Drawing.Point(299, 344);
             this.doneButton.Name = "doneButton";
             this.doneButton.Size = new System.Drawing.Size(75, 23);
             this.doneButton.TabIndex = 0;
@@ -62,7 +62,7 @@
             // 
             this.playerNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.playerNameLabel.AutoSize = true;
-            this.playerNameLabel.Location = new System.Drawing.Point(86, 6);
+            this.playerNameLabel.Location = new System.Drawing.Point(154, 6);
             this.playerNameLabel.Name = "playerNameLabel";
             this.playerNameLabel.Size = new System.Drawing.Size(70, 13);
             this.playerNameLabel.TabIndex = 1;
@@ -81,7 +81,7 @@
             // playerNameTextBox
             // 
             this.playerNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.playerNameTextBox.Location = new System.Drawing.Point(162, 3);
+            this.playerNameTextBox.Location = new System.Drawing.Point(230, 3);
             this.playerNameTextBox.Name = "playerNameTextBox";
             this.playerNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.playerNameTextBox.TabIndex = 3;
@@ -91,7 +91,7 @@
             this.initialDrawGroupBox.Controls.Add(this.initialDrawComboBox3);
             this.initialDrawGroupBox.Controls.Add(this.initialDrawComboBox2);
             this.initialDrawGroupBox.Controls.Add(this.initialDrawComboBox1);
-            this.initialDrawGroupBox.Location = new System.Drawing.Point(162, 53);
+            this.initialDrawGroupBox.Location = new System.Drawing.Point(230, 53);
             this.initialDrawGroupBox.Name = "initialDrawGroupBox";
             this.initialDrawGroupBox.Size = new System.Drawing.Size(135, 104);
             this.initialDrawGroupBox.TabIndex = 5;
@@ -124,7 +124,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(3, 287);
+            this.cancelButton.Location = new System.Drawing.Point(3, 344);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 7;
@@ -137,9 +137,9 @@
             this.Layout.SetColumnSpan(this.playerRosterListBox, 2);
             this.playerRosterListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.playerRosterListBox.FormattingEnabled = true;
-            this.playerRosterListBox.Location = new System.Drawing.Point(3, 246);
+            this.playerRosterListBox.Location = new System.Drawing.Point(3, 239);
             this.playerRosterListBox.Name = "playerRosterListBox";
-            this.playerRosterListBox.Size = new System.Drawing.Size(303, 35);
+            this.playerRosterListBox.Size = new System.Drawing.Size(371, 99);
             this.playerRosterListBox.TabIndex = 10;
             // 
             // Layout
@@ -163,17 +163,17 @@
             this.Layout.RowCount = 6;
             this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.Layout.Size = new System.Drawing.Size(309, 315);
+            this.Layout.Size = new System.Drawing.Size(377, 372);
             this.Layout.TabIndex = 11;
             // 
             // characterDetailButton
             // 
             this.characterDetailButton.Enabled = false;
-            this.characterDetailButton.Location = new System.Drawing.Point(3, 217);
+            this.characterDetailButton.Location = new System.Drawing.Point(3, 210);
             this.characterDetailButton.Name = "characterDetailButton";
             this.characterDetailButton.Size = new System.Drawing.Size(108, 23);
             this.characterDetailButton.TabIndex = 9;
@@ -187,7 +187,7 @@
             this.characterListBox.FormattingEnabled = true;
             this.characterListBox.Location = new System.Drawing.Point(3, 53);
             this.characterListBox.Name = "characterListBox";
-            this.characterListBox.Size = new System.Drawing.Size(153, 158);
+            this.characterListBox.Size = new System.Drawing.Size(221, 151);
             this.characterListBox.TabIndex = 5;
             this.characterListBox.SelectedIndexChanged += new System.EventHandler(this.CharacterListBoxSelectedIndexChanged);
             // 
@@ -195,7 +195,7 @@
             // 
             this.addPlayerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addPlayerButton.Enabled = false;
-            this.addPlayerButton.Location = new System.Drawing.Point(231, 217);
+            this.addPlayerButton.Location = new System.Drawing.Point(299, 210);
             this.addPlayerButton.Name = "addPlayerButton";
             this.addPlayerButton.Size = new System.Drawing.Size(75, 23);
             this.addPlayerButton.TabIndex = 8;
@@ -207,7 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 315);
+            this.ClientSize = new System.Drawing.Size(377, 372);
             this.Controls.Add(this.Layout);
             this.Name = "PlayerRosterForm";
             this.Text = "Player Roster";
