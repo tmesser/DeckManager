@@ -32,22 +32,25 @@
             this.playerNameLabel = new System.Windows.Forms.Label();
             this.characterListBoxLabel = new System.Windows.Forms.Label();
             this.playerNameTextBox = new System.Windows.Forms.TextBox();
-            this.characterListBox = new System.Windows.Forms.ListBox();
             this.initialDrawGroupBox = new System.Windows.Forms.GroupBox();
             this.initialDrawComboBox3 = new System.Windows.Forms.ComboBox();
             this.initialDrawComboBox2 = new System.Windows.Forms.ComboBox();
             this.initialDrawComboBox1 = new System.Windows.Forms.ComboBox();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.addPlayerButton = new System.Windows.Forms.Button();
-            this.characterDetailButton = new System.Windows.Forms.Button();
             this.playerRosterListBox = new System.Windows.Forms.ListBox();
+            this.Layout = new System.Windows.Forms.TableLayoutPanel();
+            this.characterDetailButton = new System.Windows.Forms.Button();
+            this.characterListBox = new System.Windows.Forms.ListBox();
+            this.addPlayerButton = new System.Windows.Forms.Button();
             this.initialDrawGroupBox.SuspendLayout();
+            this.Layout.SuspendLayout();
             this.SuspendLayout();
             // 
             // doneButton
             // 
+            this.doneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.doneButton.Enabled = false;
-            this.doneButton.Location = new System.Drawing.Point(255, 335);
+            this.doneButton.Location = new System.Drawing.Point(231, 287);
             this.doneButton.Name = "doneButton";
             this.doneButton.Size = new System.Drawing.Size(75, 23);
             this.doneButton.TabIndex = 0;
@@ -57,8 +60,9 @@
             // 
             // playerNameLabel
             // 
+            this.playerNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.playerNameLabel.AutoSize = true;
-            this.playerNameLabel.Location = new System.Drawing.Point(13, 13);
+            this.playerNameLabel.Location = new System.Drawing.Point(86, 6);
             this.playerNameLabel.Name = "playerNameLabel";
             this.playerNameLabel.Size = new System.Drawing.Size(70, 13);
             this.playerNameLabel.TabIndex = 1;
@@ -66,8 +70,9 @@
             // 
             // characterListBoxLabel
             // 
+            this.characterListBoxLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.characterListBoxLabel.AutoSize = true;
-            this.characterListBoxLabel.Location = new System.Drawing.Point(12, 36);
+            this.characterListBoxLabel.Location = new System.Drawing.Point(3, 37);
             this.characterListBoxLabel.Name = "characterListBoxLabel";
             this.characterListBoxLabel.Size = new System.Drawing.Size(56, 13);
             this.characterListBoxLabel.TabIndex = 2;
@@ -75,28 +80,20 @@
             // 
             // playerNameTextBox
             // 
-            this.playerNameTextBox.Location = new System.Drawing.Point(89, 10);
+            this.playerNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.playerNameTextBox.Location = new System.Drawing.Point(162, 3);
             this.playerNameTextBox.Name = "playerNameTextBox";
             this.playerNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.playerNameTextBox.TabIndex = 3;
-            // 
-            // characterListBox
-            // 
-            this.characterListBox.FormattingEnabled = true;
-            this.characterListBox.Location = new System.Drawing.Point(12, 52);
-            this.characterListBox.Name = "characterListBox";
-            this.characterListBox.Size = new System.Drawing.Size(177, 82);
-            this.characterListBox.TabIndex = 4;
-            this.characterListBox.SelectedIndexChanged += new System.EventHandler(this.CharacterListBoxSelectedIndexChanged);
             // 
             // initialDrawGroupBox
             // 
             this.initialDrawGroupBox.Controls.Add(this.initialDrawComboBox3);
             this.initialDrawGroupBox.Controls.Add(this.initialDrawComboBox2);
             this.initialDrawGroupBox.Controls.Add(this.initialDrawComboBox1);
-            this.initialDrawGroupBox.Location = new System.Drawing.Point(195, 37);
+            this.initialDrawGroupBox.Location = new System.Drawing.Point(162, 53);
             this.initialDrawGroupBox.Name = "initialDrawGroupBox";
-            this.initialDrawGroupBox.Size = new System.Drawing.Size(135, 97);
+            this.initialDrawGroupBox.Size = new System.Drawing.Size(135, 104);
             this.initialDrawGroupBox.TabIndex = 5;
             this.initialDrawGroupBox.TabStop = false;
             this.initialDrawGroupBox.Text = "Initial Draw";
@@ -127,7 +124,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(12, 335);
+            this.cancelButton.Location = new System.Drawing.Point(3, 287);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 7;
@@ -135,21 +132,48 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.CancelButtonClick);
             // 
-            // addPlayerButton
+            // playerRosterListBox
             // 
-            this.addPlayerButton.Enabled = false;
-            this.addPlayerButton.Location = new System.Drawing.Point(255, 138);
-            this.addPlayerButton.Name = "addPlayerButton";
-            this.addPlayerButton.Size = new System.Drawing.Size(75, 23);
-            this.addPlayerButton.TabIndex = 8;
-            this.addPlayerButton.Text = "Add Player";
-            this.addPlayerButton.UseVisualStyleBackColor = true;
-            this.addPlayerButton.Click += new System.EventHandler(this.AddPlayerButtonClick);
+            this.Layout.SetColumnSpan(this.playerRosterListBox, 2);
+            this.playerRosterListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.playerRosterListBox.FormattingEnabled = true;
+            this.playerRosterListBox.Location = new System.Drawing.Point(3, 246);
+            this.playerRosterListBox.Name = "playerRosterListBox";
+            this.playerRosterListBox.Size = new System.Drawing.Size(303, 35);
+            this.playerRosterListBox.TabIndex = 10;
+            // 
+            // Layout
+            // 
+            this.Layout.ColumnCount = 2;
+            this.Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.Layout.Controls.Add(this.playerNameLabel, 0, 0);
+            this.Layout.Controls.Add(this.doneButton, 1, 5);
+            this.Layout.Controls.Add(this.cancelButton, 0, 5);
+            this.Layout.Controls.Add(this.playerRosterListBox, 0, 4);
+            this.Layout.Controls.Add(this.playerNameTextBox, 1, 0);
+            this.Layout.Controls.Add(this.characterDetailButton, 0, 3);
+            this.Layout.Controls.Add(this.characterListBox, 0, 2);
+            this.Layout.Controls.Add(this.addPlayerButton, 1, 3);
+            this.Layout.Controls.Add(this.characterListBoxLabel, 0, 1);
+            this.Layout.Controls.Add(this.initialDrawGroupBox, 1, 2);
+            this.Layout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Layout.Location = new System.Drawing.Point(0, 0);
+            this.Layout.Name = "Layout";
+            this.Layout.RowCount = 6;
+            this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.Layout.Size = new System.Drawing.Size(309, 315);
+            this.Layout.TabIndex = 11;
             // 
             // characterDetailButton
             // 
             this.characterDetailButton.Enabled = false;
-            this.characterDetailButton.Location = new System.Drawing.Point(12, 140);
+            this.characterDetailButton.Location = new System.Drawing.Point(3, 217);
             this.characterDetailButton.Name = "characterDetailButton";
             this.characterDetailButton.Size = new System.Drawing.Size(108, 23);
             this.characterDetailButton.TabIndex = 9;
@@ -157,34 +181,40 @@
             this.characterDetailButton.UseVisualStyleBackColor = true;
             this.characterDetailButton.Click += new System.EventHandler(this.CharacterDetailButtonClick);
             // 
-            // playerRosterListBox
+            // characterListBox
             // 
-            this.playerRosterListBox.FormattingEnabled = true;
-            this.playerRosterListBox.Location = new System.Drawing.Point(12, 169);
-            this.playerRosterListBox.Name = "playerRosterListBox";
-            this.playerRosterListBox.Size = new System.Drawing.Size(318, 160);
-            this.playerRosterListBox.TabIndex = 10;
+            this.characterListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.characterListBox.FormattingEnabled = true;
+            this.characterListBox.Location = new System.Drawing.Point(3, 53);
+            this.characterListBox.Name = "characterListBox";
+            this.characterListBox.Size = new System.Drawing.Size(153, 158);
+            this.characterListBox.TabIndex = 5;
+            this.characterListBox.SelectedIndexChanged += new System.EventHandler(this.CharacterListBoxSelectedIndexChanged);
+            // 
+            // addPlayerButton
+            // 
+            this.addPlayerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addPlayerButton.Enabled = false;
+            this.addPlayerButton.Location = new System.Drawing.Point(231, 217);
+            this.addPlayerButton.Name = "addPlayerButton";
+            this.addPlayerButton.Size = new System.Drawing.Size(75, 23);
+            this.addPlayerButton.TabIndex = 8;
+            this.addPlayerButton.Text = "Add Player";
+            this.addPlayerButton.UseVisualStyleBackColor = true;
+            this.addPlayerButton.Click += new System.EventHandler(this.AddPlayerButtonClick);
             // 
             // PlayerRosterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 370);
-            this.Controls.Add(this.playerRosterListBox);
-            this.Controls.Add(this.characterDetailButton);
-            this.Controls.Add(this.addPlayerButton);
-            this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.initialDrawGroupBox);
-            this.Controls.Add(this.characterListBox);
-            this.Controls.Add(this.playerNameTextBox);
-            this.Controls.Add(this.characterListBoxLabel);
-            this.Controls.Add(this.playerNameLabel);
-            this.Controls.Add(this.doneButton);
+            this.ClientSize = new System.Drawing.Size(309, 315);
+            this.Controls.Add(this.Layout);
             this.Name = "PlayerRosterForm";
             this.Text = "Player Roster";
             this.initialDrawGroupBox.ResumeLayout(false);
+            this.Layout.ResumeLayout(false);
+            this.Layout.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -209,14 +239,15 @@
         private System.Windows.Forms.Label playerNameLabel;
         private System.Windows.Forms.Label characterListBoxLabel;
         private System.Windows.Forms.TextBox playerNameTextBox;
-        private System.Windows.Forms.ListBox characterListBox;
         private System.Windows.Forms.GroupBox initialDrawGroupBox;
         private System.Windows.Forms.ComboBox initialDrawComboBox3;
         private System.Windows.Forms.ComboBox initialDrawComboBox2;
         private System.Windows.Forms.ComboBox initialDrawComboBox1;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button addPlayerButton;
-        private System.Windows.Forms.Button characterDetailButton;
         private System.Windows.Forms.ListBox playerRosterListBox;
+        private System.Windows.Forms.TableLayoutPanel Layout;
+        private System.Windows.Forms.Button characterDetailButton;
+        private System.Windows.Forms.ListBox characterListBox;
+        private System.Windows.Forms.Button addPlayerButton;
     }
 }

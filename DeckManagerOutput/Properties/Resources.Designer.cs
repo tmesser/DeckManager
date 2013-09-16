@@ -97,6 +97,15 @@ namespace DeckManagerOutput.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Initial 3-card draw is required..
+        /// </summary>
+        internal static string PlayerRosterForm_AddPlayerButtonClick_NoDrawSelected {
+            get {
+                return ResourceManager.GetString("PlayerRosterForm_AddPlayerButtonClick_NoDrawSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The player must have a unique name..
         /// </summary>
         internal static string PlayerRosterForm_AddPlayerButtonClick_NoPlayerName {

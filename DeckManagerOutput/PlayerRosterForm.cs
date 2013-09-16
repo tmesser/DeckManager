@@ -60,15 +60,11 @@ namespace DeckManagerOutput
             Close();
         }
 
-        private void CharacterListBoxSelectedIndexChanged(object sender, EventArgs e)
-        {
-            addPlayerButton.Enabled = true;
-            characterDetailButton.Enabled = true;
-            PopulateSkillColorListBoxes((Character)characterListBox.SelectedItem);
-        }
-
         private void PopulateSkillColorListBoxes(Character character)
         {
+            if (character == null)
+                return;
+
             initialDrawComboBox1.BeginUpdate();
             initialDrawComboBox2.BeginUpdate();
             initialDrawComboBox3.BeginUpdate();
@@ -99,6 +95,13 @@ namespace DeckManagerOutput
             initialDrawComboBox3.EndUpdate();
             initialDrawComboBox2.EndUpdate();
             initialDrawComboBox1.EndUpdate();
+        }
+
+        private void CharacterListBoxSelectedIndexChanged(object sender, EventArgs e)
+        {
+            addPlayerButton.Enabled = true;
+            characterDetailButton.Enabled = true;
+            PopulateSkillColorListBoxes((Character)characterListBox.SelectedItem);
         }
 
         private void CharacterDetailButtonClick(object sender, EventArgs e)
@@ -133,10 +136,16 @@ namespace DeckManagerOutput
                 MessageBox.Show(Resources.PlayerRosterForm_AddPlayerButtonClick_NoPlayerName, Resources.PlayerRosterForm_AddPlayerButton_Text);
                 return;
             }
+            
 
             var colorDraw = character.DefaultDrawColors.First();
             if (Players.Count != 0)
             {
+                if (initialDrawComboBox1.SelectedItem == null || initialDrawComboBox2.SelectedItem == null || initialDrawComboBox3.SelectedItem == null)
+                {
+                    MessageBox.Show(Resources.PlayerRosterForm_AddPlayerButtonClick_NoDrawSelected, Resources.PlayerRosterForm_AddPlayerButton_Text);
+                    return;
+                }
                 colorDraw = new List<SkillCardColor>
                     {
                         (SkillCardColor) initialDrawComboBox1.SelectedItem,
@@ -155,6 +164,12 @@ namespace DeckManagerOutput
             Players.Add(player);
             if (Players.Count > 2)
                 doneButton.Enabled = true;
+
+            playerNameTextBox.Text = string.Empty;
+            characterListBox.ClearSelected();
+            initialDrawComboBox1.SelectedIndex = -1;
+            initialDrawComboBox2.SelectedIndex = -1;
+            initialDrawComboBox3.SelectedIndex = -1;
         }
     }
 }

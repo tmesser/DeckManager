@@ -150,4 +150,7 @@
   <data name="PlayerRosterForm_AddPlayerButtonClick_InvalidColors" xml:space="preserve">
     <value>This player is attempting to draw too many {0} cards.  Please check their initial draw against their valid draws.</value>
   </data>
+  <data name="PlayerRosterForm_AddPlayerButtonClick_NoDrawSelected" xml:space="preserve">
+    <value>Initial 3-card draw is required.</value>
+  </data>
 </root>

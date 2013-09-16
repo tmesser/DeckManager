@@ -16,7 +16,6 @@ namespace DeckManagerOutput
 {
     public partial class MainForm : Form
     {
-        private readonly MainMenu _mainMenu;
         private DradisForm dradis;
         private List<DeckManager.Characters.Character> AvailableCharacters;
         private bool _gameStarted;
