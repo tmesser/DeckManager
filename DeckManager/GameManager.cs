@@ -6,6 +6,7 @@ using System.Linq;
 using DeckManager.Boards;
 using DeckManager.Boards.Dradis;
 using DeckManager.Cards.Enums;
+using DeckManager.Characters;
 using DeckManager.Components;
 using DeckManager.Decks;
 using DeckManager.Extensions;
@@ -19,12 +20,25 @@ namespace DeckManager
     public class GameManager
     {
         private readonly ILog _logger;
-        public List<Characters.Character> CharacterList;
+        private IEnumerable<Character> _characters;
+        public IEnumerable<Character> CharacterList
+        {
+            get {
+                if (_characters == null)
+                {
+                    using (var sr = new StreamReader(ConfigurationManager.AppSettings["CharacterListLocation"]))
+                    {
+                        var jsonText = sr.ReadToEnd();
+                        _characters = JsonConvert.DeserializeObject<List<Character>>(jsonText);
+                    }
+                }
+                return _characters;
+            }
+        }
 
         public GameManager()
         {
             _logger = LogManager.GetLogger(typeof (GameManager));
-            CharacterList = InitCharacters();
         }
 
         public GameManager(ILog logger)
@@ -98,19 +112,6 @@ namespace DeckManager
         }
 
         #region Private Methods
-
-        private List<Characters.Character> InitCharacters()
-        {
-            
-            List<Characters.Character> characters;
-
-            using (var sr = new StreamReader(ConfigurationManager.AppSettings["CharacterListLocation"]))
-            {
-                var jsonText = sr.ReadToEnd();
-                characters = JsonConvert.DeserializeObject<List<Characters.Character>>(jsonText);
-            }
-            return characters;
-        }
 
         private void AttemptToPlacePlayer(Player player)
         {

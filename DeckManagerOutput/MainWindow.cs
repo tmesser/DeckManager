@@ -19,28 +19,25 @@ namespace DeckManagerOutput
         private readonly MainMenu _mainMenu;
         private DradisForm dradis;
         private List<DeckManager.Characters.Character> AvailableCharacters;
-        private bool GameStarted;
+        private bool _gameStarted;
 
         /// <summary>
         /// The currently selected player.
         /// </summary>
-        private Player currentPlayer;
+        private Player _currentPlayer;
         /// <summary>
         /// Variable to differentiate programatic GUI updates from user interaction. Hacky but straightforward.
         /// </summary>
-        private bool IsUserClick;
+        private bool _isUserClick;
 
         public MainForm()
         {
             InitializeComponent();
-            _mainMenu = new MainMenu();
-            _mainMenu.MenuItems.Add(new MenuItem("Game"));
-            Menu = _mainMenu;
-            GameStarted = false;
+            _gameStarted = false;
 
             dradis = new DradisForm(this);
-            AvailableCharacters = Program.GManager.CharacterList;
-            IsUserClick = true;
+            AvailableCharacters = Program.GManager.CharacterList.ToList();
+            _isUserClick = true;
 
             // move panel into place and hide it. Quorum and SCC will share the same space
             CharacterSuperCrisisHandListBox.Location = new System.Drawing.Point(3, 155);
@@ -54,21 +51,21 @@ namespace DeckManagerOutput
         #region Game Management events
         private void AddPlayerButtonClick(object sender, EventArgs e)
         {
-            ListBox characterList = new ListBox();
+            //ListBox characterList = new ListBox();
             //AvailableCharacters.Sort(); // todo override character comparator to be able to sort.
-            characterList.Items.AddRange(AvailableCharacters.ToArray());
-            NewPlayerForm newPlayerForm = new NewPlayerForm(characterList);
+            //characterList.Items.AddRange(AvailableCharacters.ToArray());
+            PlayerRosterForm newPlayerForm = new PlayerRosterForm(Program.GManager.CharacterList);
 
             if (newPlayerForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                Player newPlayer = newPlayerForm.newPlayer;
+                /*Player newPlayer = newPlayerForm.NewPlayer;
                 if (characterListBox.Enabled == false)
                 {
                     characterListBox.Enabled = true;
                     characterListBox.Items.Clear();
                 }
                 characterListBox.Items.Add(newPlayer);
-                AvailableCharacters.Remove(newPlayer.Character);
+                AvailableCharacters.Remove(newPlayer.Character);*/
             }
         }
 
@@ -78,22 +75,6 @@ namespace DeckManagerOutput
             Player p = (Player)characterListBox.SelectedItem;
             AvailableCharacters.Add(p.Character);
             characterListBox.Items.Remove(p);
-        }
-
-        private void BeginGameButtonClick(object sender, EventArgs e)
-        {
-            GameStarted = true;
-
-            addPlayerButton.Enabled = false;
-            RemovePlayerButton.Enabled = false;
-            beginGameButton.Enabled = false;
-            beginGameButton.Visible = false;
-            this.TitlesPanel.Location = new System.Drawing.Point(263, 92);
-            this.PlayerLoyaltyHandPanel.Visible = true;
-            var players = characterListBox.Items.Cast<Player>().ToList();
-            
-            GameState gs =  Program.GManager.NewGame(players,0,false);
-            enableControls();
         }
         /// <summary>
         /// Controls should be disabled before the game begins. Calling this method enables everything.
@@ -469,7 +450,7 @@ namespace DeckManagerOutput
 
         private void CharacterListBoxSelectedIndexChanged(object sender, EventArgs e)
         {
-            currentPlayer = (Player)characterListBox.SelectedItem;
+            _currentPlayer = (Player)characterListBox.SelectedItem;
             UpdatePlayerHandControls();
         }
 
@@ -482,7 +463,7 @@ namespace DeckManagerOutput
             else
                 drawnCardListBox.SelectedItems.CopyTo(cards, 0);
 
-            Program.GManager.GiveCardToPlayer(currentPlayer, (IEnumerable<BaseCard>)cards);
+            Program.GManager.GiveCardToPlayer(_currentPlayer, (IEnumerable<BaseCard>)cards);
 
             UpdatePlayerHandControls();
         }
@@ -507,7 +488,7 @@ namespace DeckManagerOutput
         /// </summary>
         private void UpdatePlayerHandControls()
         {
-            if (GameStarted)
+            if (_gameStarted)
             {
                 characterQuorumHandListBox.BeginUpdate();
                 characterSkillHandListBox.BeginUpdate();
@@ -519,18 +500,18 @@ namespace DeckManagerOutput
                 CharacterMutinyHandListBox.Items.Clear();
                 PlayerLoyaltyHandListBox.Items.Clear();
 
-                characterSkillHandListBox.Items.AddRange(currentPlayer.Cards.ToArray());
+                characterSkillHandListBox.Items.AddRange(_currentPlayer.Cards.ToArray());
 
-                PlayerLoyaltyHandListBox.Items.AddRange(currentPlayer.LoyaltyCards.ToArray());
+                PlayerLoyaltyHandListBox.Items.AddRange(_currentPlayer.LoyaltyCards.ToArray());
 
-                if (currentPlayer.QuorumHand != null)   // player owns the quorum hand
+                if (_currentPlayer.QuorumHand != null)   // player owns the quorum hand
                 {
                     SuperCrisisHandPanel.Visible = false;
                     QuorumHandPanel.Visible = true;
 
                     characterQuorumHandListBox.Items.Clear();
-                    characterQuorumHandListBox.Items.AddRange(currentPlayer.QuorumHand.ToArray());
-                    characterQuorumHandCountTextBox.Text = currentPlayer.QuorumHand.Count.ToString();
+                    characterQuorumHandListBox.Items.AddRange(_currentPlayer.QuorumHand.ToArray());
+                    characterQuorumHandCountTextBox.Text = _currentPlayer.QuorumHand.Count.ToString();
                 }
                 else  // play does not have quorum hand
                 {
@@ -540,39 +521,39 @@ namespace DeckManagerOutput
                     characterQuorumHandCountTextBox.Text = string.Empty;
 
                     // quorum and SCC hands should be mutually exclusive, so checking in here should be okay
-                    if (currentPlayer.RevealedCylon)
+                    if (_currentPlayer.RevealedCylon)
                     {
                         MutinyCardPanel.Visible = false;
                         SuperCrisisHandPanel.Visible = true;
                         CharacterSuperCrisisHandListBox.BeginUpdate();
                         CharacterSuperCrisisHandListBox.Items.Clear();
-                        CharacterSuperCrisisHandListBox.Items.AddRange(currentPlayer.SuperCrisisCards.ToArray());
+                        CharacterSuperCrisisHandListBox.Items.AddRange(_currentPlayer.SuperCrisisCards.ToArray());
                         CharacterSuperCrisisHandListBox.EndUpdate();
-                        SuperCrisisHandCountTextBox.Text = currentPlayer.SuperCrisisCards.Count.ToString();
+                        SuperCrisisHandCountTextBox.Text = _currentPlayer.SuperCrisisCards.Count.ToString();
                     }
                     else  // human, show mutiny cards
                     {
                         MutinyCardPanel.Visible = true;
                         SuperCrisisHandPanel.Visible = false;
                         CharacterMutinyHandListBox.Items.Clear();
-                        CharacterMutinyHandListBox.Items.AddRange(currentPlayer.MutinyHand.ToArray());
+                        CharacterMutinyHandListBox.Items.AddRange(_currentPlayer.MutinyHand.ToArray());
                         MutinyHandCountTextBox.Text = CharacterMutinyHandListBox.Items.Count.ToString();
                     }
                 }
                 // update title checkboxes
-                IsUserClick = false;
+                _isUserClick = false;
 
                 AdmiralCheckBox.Checked = false;
                 PresidentTitleCheckBox.Checked = false;
                 CAGTitleCheckBox.Checked = false;
 
-                if (currentPlayer.Titles.Contains(DeckManager.Characters.Enums.Titles.Admiral))
+                if (_currentPlayer.Titles.Contains(DeckManager.Characters.Enums.Titles.Admiral))
                     AdmiralCheckBox.Checked = true;
-                if (currentPlayer.Titles.Contains(DeckManager.Characters.Enums.Titles.President))
+                if (_currentPlayer.Titles.Contains(DeckManager.Characters.Enums.Titles.President))
                     PresidentTitleCheckBox.Checked = true;
-                if (currentPlayer.Titles.Contains(DeckManager.Characters.Enums.Titles.CAG))
+                if (_currentPlayer.Titles.Contains(DeckManager.Characters.Enums.Titles.CAG))
                     CAGTitleCheckBox.Checked = true;
-                IsUserClick = true;
+                _isUserClick = true;
 
                 characterSkillHandListBox.EndUpdate();
                 characterQuorumHandListBox.EndUpdate();
@@ -589,7 +570,7 @@ namespace DeckManagerOutput
             Array cards = new QuorumCard[characterQuorumHandListBox.SelectedItems.Count];
             characterSkillHandListBox.SelectedItems.CopyTo(cards, 0);
 
-            Program.GManager.PlayerDiscardCard(currentPlayer, (IEnumerable<QuorumCard>)cards);
+            Program.GManager.PlayerDiscardCard(_currentPlayer, (IEnumerable<QuorumCard>)cards);
 
             UpdatePlayerHandControls();
         }
@@ -599,7 +580,7 @@ namespace DeckManagerOutput
             // move character's currently selected card into the drawn card window. can use this to transfer cards between players
             var cards = characterSkillHandListBox.SelectedItems.Cast<DeckManager.Cards.SkillCard>();
 
-            Program.GManager.PlayerRemoveCard(currentPlayer, cards);
+            Program.GManager.PlayerRemoveCard(_currentPlayer, cards);
             
             drawnCardListBox.BeginUpdate();
             drawnCardListBox.Items.AddRange(cards.ToArray());
@@ -660,7 +641,7 @@ namespace DeckManagerOutput
             if (CharacterSuperCrisisHandListBox.SelectedItems.Count > 0)
             {
                 var cards = CharacterSuperCrisisHandListBox.SelectedItems.Cast<SuperCrisisCard>();
-                Program.GManager.PlayerDiscardCard(currentPlayer, cards);
+                Program.GManager.PlayerDiscardCard(_currentPlayer, cards);
                 UpdatePlayerHandControls();
             }
         }
@@ -681,7 +662,7 @@ namespace DeckManagerOutput
         private void RevealAsCylonButton_Click(object sender, EventArgs e)
         {
             var card = (LoyaltyCard)PlayerLoyaltyHandListBox.SelectedItem;
-            Program.GManager.PlayerRevealCylon(currentPlayer, card);
+            Program.GManager.PlayerRevealCylon(_currentPlayer, card);
         }
 
         private void PassLoyaltyCardsButton_Click(object sender, EventArgs e)
@@ -700,24 +681,53 @@ namespace DeckManagerOutput
         private void AdmiralCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             // todo redrawn charcter listbox items with new title info
-            if (IsUserClick)
-                Program.GManager.ChangePlayerTitle(DeckManager.Characters.Enums.Titles.Admiral, currentPlayer);
+            if (_isUserClick)
+                Program.GManager.ChangePlayerTitle(DeckManager.Characters.Enums.Titles.Admiral, _currentPlayer);
         }
 
         private void PresidentTitleCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (IsUserClick)
-                Program.GManager.ChangePlayerTitle(DeckManager.Characters.Enums.Titles.President, currentPlayer);
+            if (_isUserClick)
+                Program.GManager.ChangePlayerTitle(DeckManager.Characters.Enums.Titles.President, _currentPlayer);
         }
 
         private void CAGTitleCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (IsUserClick)
-                Program.GManager.ChangePlayerTitle(DeckManager.Characters.Enums.Titles.CAG, currentPlayer);
+            if (_isUserClick)
+                Program.GManager.ChangePlayerTitle(DeckManager.Characters.Enums.Titles.CAG, _currentPlayer);
         }
 
         #endregion
 
+        private void MainFormLoad(object sender, EventArgs e)
+        {
 
+        }
+
+        private void ItmNewGameClick(object sender, EventArgs e)
+        {
+            var characters = Program.GManager.CharacterList;
+            var rosterForm = new PlayerRosterForm(characters);
+            rosterForm.ShowDialog();
+            if (rosterForm.DialogResult == DialogResult.OK)
+            {
+
+            }
+
+            /*_gameStarted = true;
+
+
+
+            addPlayerButton.Enabled = false;
+            RemovePlayerButton.Enabled = false;
+            beginGameButton.Enabled = false;
+            beginGameButton.Visible = false;
+            this.TitlesPanel.Location = new System.Drawing.Point(263, 92);
+            this.PlayerLoyaltyHandPanel.Visible = true;
+            var players = characterListBox.Items.Cast<Player>().ToList();
+
+            GameState gs = Program.GManager.NewGame(players, 0, false);
+            enableControls();*/
+        }
     }
 }

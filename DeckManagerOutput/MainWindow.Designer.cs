@@ -130,6 +130,11 @@
             this.CAGTitleCheckBox = new System.Windows.Forms.CheckBox();
             this.PresidentTitleCheckBox = new System.Windows.Forms.CheckBox();
             this.AdmiralCheckBox = new System.Windows.Forms.CheckBox();
+            this.GameMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NewGameMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveGameMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoadGameMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
             this.PlayerLoyaltyHandPanel.SuspendLayout();
             this.MutinyCardPanel.SuspendLayout();
@@ -147,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.FuelUpDown)).BeginInit();
             this.SuperCrisisHandPanel.SuspendLayout();
             this.TitlesPanel.SuspendLayout();
+            this.MainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -164,7 +170,7 @@
             this.panel1.Controls.Add(this.addPlayerButton);
             this.panel1.Controls.Add(this.beginGameButton);
             this.panel1.Controls.Add(this.characterListBox);
-            this.panel1.Location = new System.Drawing.Point(9, 7);
+            this.panel1.Location = new System.Drawing.Point(14, 83);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(345, 407);
             this.panel1.TabIndex = 0;
@@ -401,7 +407,6 @@
             this.beginGameButton.TabIndex = 1;
             this.beginGameButton.Text = "Begin Game";
             this.beginGameButton.UseVisualStyleBackColor = true;
-            this.beginGameButton.Click += new System.EventHandler(this.BeginGameButtonClick);
             // 
             // characterListBox
             // 
@@ -432,7 +437,7 @@
             this.skillDecksPanel.Controls.Add(this.tacDeckButton);
             this.skillDecksPanel.Controls.Add(this.leaDeckButton);
             this.skillDecksPanel.Controls.Add(this.engDeckButton);
-            this.skillDecksPanel.Location = new System.Drawing.Point(361, 7);
+            this.skillDecksPanel.Location = new System.Drawing.Point(366, 83);
             this.skillDecksPanel.Name = "skillDecksPanel";
             this.skillDecksPanel.Size = new System.Drawing.Size(102, 407);
             this.skillDecksPanel.TabIndex = 1;
@@ -601,7 +606,7 @@
             this.crisisPanel.Controls.Add(this.crisisCopyTextButton);
             this.crisisPanel.Controls.Add(this.crisisTextListBox);
             this.crisisPanel.Controls.Add(this.drawCrisisButton);
-            this.crisisPanel.Location = new System.Drawing.Point(469, 7);
+            this.crisisPanel.Location = new System.Drawing.Point(474, 83);
             this.crisisPanel.Name = "crisisPanel";
             this.crisisPanel.Size = new System.Drawing.Size(312, 407);
             this.crisisPanel.TabIndex = 2;
@@ -753,7 +758,7 @@
             this.destinationPanel.Controls.Add(this.destinationsListBox);
             this.destinationPanel.Controls.Add(this.drawDestinationsButton);
             this.destinationPanel.Controls.Add(this.destinationCountUpDown);
-            this.destinationPanel.Location = new System.Drawing.Point(9, 420);
+            this.destinationPanel.Location = new System.Drawing.Point(14, 496);
             this.destinationPanel.Name = "destinationPanel";
             this.destinationPanel.Size = new System.Drawing.Size(454, 131);
             this.destinationPanel.TabIndex = 3;
@@ -936,7 +941,7 @@
             this.panel2.Controls.Add(this.PopulationUpDown);
             this.panel2.Controls.Add(this.FoodUpDown);
             this.panel2.Controls.Add(this.FuelUpDown);
-            this.panel2.Location = new System.Drawing.Point(469, 420);
+            this.panel2.Location = new System.Drawing.Point(474, 496);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(113, 100);
             this.panel2.TabIndex = 4;
@@ -1031,7 +1036,7 @@
             // 
             // copyGameButton
             // 
-            this.copyGameButton.Location = new System.Drawing.Point(706, 501);
+            this.copyGameButton.Location = new System.Drawing.Point(711, 577);
             this.copyGameButton.Name = "copyGameButton";
             this.copyGameButton.Size = new System.Drawing.Size(75, 50);
             this.copyGameButton.TabIndex = 5;
@@ -1041,7 +1046,7 @@
             // 
             // DradisButton
             // 
-            this.DradisButton.Location = new System.Drawing.Point(706, 475);
+            this.DradisButton.Location = new System.Drawing.Point(711, 551);
             this.DradisButton.Name = "DradisButton";
             this.DradisButton.Size = new System.Drawing.Size(75, 23);
             this.DradisButton.TabIndex = 6;
@@ -1056,7 +1061,7 @@
             this.SuperCrisisHandPanel.Controls.Add(this.CharacterSuperCrisisHandListBox);
             this.SuperCrisisHandPanel.Controls.Add(this.SuperCrisisHandCountTextBox);
             this.SuperCrisisHandPanel.Controls.Add(this.label10);
-            this.SuperCrisisHandPanel.Location = new System.Drawing.Point(876, 10);
+            this.SuperCrisisHandPanel.Location = new System.Drawing.Point(881, 86);
             this.SuperCrisisHandPanel.Name = "SuperCrisisHandPanel";
             this.SuperCrisisHandPanel.Size = new System.Drawing.Size(145, 252);
             this.SuperCrisisHandPanel.TabIndex = 7;
@@ -1112,7 +1117,7 @@
             this.TitlesPanel.Controls.Add(this.CAGTitleCheckBox);
             this.TitlesPanel.Controls.Add(this.PresidentTitleCheckBox);
             this.TitlesPanel.Controls.Add(this.AdmiralCheckBox);
-            this.TitlesPanel.Location = new System.Drawing.Point(1027, 21);
+            this.TitlesPanel.Location = new System.Drawing.Point(1032, 97);
             this.TitlesPanel.Name = "TitlesPanel";
             this.TitlesPanel.Size = new System.Drawing.Size(76, 57);
             this.TitlesPanel.TabIndex = 9;
@@ -1150,11 +1155,49 @@
             this.AdmiralCheckBox.UseVisualStyleBackColor = true;
             this.AdmiralCheckBox.CheckedChanged += new System.EventHandler(this.AdmiralCheckBox_CheckedChanged);
             // 
+            // GameMenuItem
+            // 
+            this.GameMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NewGameMenuItem,
+            this.SaveGameMenuItem,
+            this.LoadGameMenuItem});
+            this.GameMenuItem.Name = "GameMenuItem";
+            this.GameMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.GameMenuItem.Text = "Game";
+            // 
+            // NewGameMenuItem
+            // 
+            this.NewGameMenuItem.Name = "NewGameMenuItem";
+            this.NewGameMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.NewGameMenuItem.Text = "New...";
+            this.NewGameMenuItem.Click += new System.EventHandler(this.ItmNewGameClick);
+            // 
+            // SaveGameMenuItem
+            // 
+            this.SaveGameMenuItem.Name = "SaveGameMenuItem";
+            this.SaveGameMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.SaveGameMenuItem.Text = "Save...";
+            // 
+            // LoadGameMenuItem
+            // 
+            this.LoadGameMenuItem.Name = "LoadGameMenuItem";
+            this.LoadGameMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.LoadGameMenuItem.Text = "Load...";
+            // 
+            // MainMenuStrip
+            // 
+            this.MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.GameMenuItem});
+            this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MainMenuStrip.Name = "MainMenuStrip";
+            this.MainMenuStrip.Size = new System.Drawing.Size(1221, 24);
+            this.MainMenuStrip.TabIndex = 10;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1221, 558);
+            this.ClientSize = new System.Drawing.Size(1221, 644);
             this.Controls.Add(this.TitlesPanel);
             this.Controls.Add(this.SuperCrisisHandPanel);
             this.Controls.Add(this.DradisButton);
@@ -1164,8 +1207,10 @@
             this.Controls.Add(this.crisisPanel);
             this.Controls.Add(this.skillDecksPanel);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.MainMenuStrip);
             this.Name = "MainForm";
             this.Text = "BSG Deck Manager";
+            this.Load += new System.EventHandler(this.MainFormLoad);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.PlayerLoyaltyHandPanel.ResumeLayout(false);
@@ -1191,7 +1236,10 @@
             this.SuperCrisisHandPanel.PerformLayout();
             this.TitlesPanel.ResumeLayout(false);
             this.TitlesPanel.PerformLayout();
+            this.MainMenuStrip.ResumeLayout(false);
+            this.MainMenuStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1298,6 +1346,11 @@
         private System.Windows.Forms.CheckBox CAGTitleCheckBox;
         private System.Windows.Forms.CheckBox PresidentTitleCheckBox;
         private System.Windows.Forms.CheckBox AdmiralCheckBox;
+        private System.Windows.Forms.ToolStripMenuItem GameMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NewGameMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SaveGameMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LoadGameMenuItem;
+        //private new System.Windows.Forms.MenuStrip MainMenuStrip;
     }
 }
 
