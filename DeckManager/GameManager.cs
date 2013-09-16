@@ -245,16 +245,16 @@ namespace DeckManager
                             player.Cards.Add(CurrentGameState.EngineeringDeck.Draw());
                             break;
                         case SkillCardColor.Leadership:
-                            player.Cards.Add(CurrentGameState.EngineeringDeck.Draw());
+                            player.Cards.Add(CurrentGameState.LeadershipDeck.Draw());
                             break;
                         case SkillCardColor.Piloting:
                             player.Cards.Add(CurrentGameState.PilotingDeck.Draw());
                             break;
                         case SkillCardColor.Tactics:
-                            player.Cards.Add(CurrentGameState.PilotingDeck.Draw());
+                            player.Cards.Add(CurrentGameState.TacticsDeck.Draw());
                             break;
                         case SkillCardColor.Politics:
-                            player.Cards.Add(CurrentGameState.PilotingDeck.Draw());
+                            player.Cards.Add(CurrentGameState.PoliticsDeck.Draw());
                             break;
                     }
                 }
