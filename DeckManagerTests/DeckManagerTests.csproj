@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterTests.cs" />
     <Compile Include="ComponentTests.cs" />
     <Compile Include="DeckTests.cs" />
     <Compile Include="BaseJsonGenerator.cs" />

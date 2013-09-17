@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DeckManagerOutput.Properties
-{
-
-
+namespace DeckManagerOutput.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,49 +22,149 @@ namespace DeckManagerOutput.Properties
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DeckManagerOutput.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string Button_Cancel {
+            get {
+                return ResourceManager.GetString("Button_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Done.
+        /// </summary>
+        internal static string Button_Done {
+            get {
+                return ResourceManager.GetString("Button_Done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Player.
+        /// </summary>
+        internal static string PlayerRosterForm_AddPlayerButton_Text {
+            get {
+                return ResourceManager.GetString("PlayerRosterForm_AddPlayerButton_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This player is attempting to draw too many {0} cards.  Please check their initial draw against their valid draws..
+        /// </summary>
+        internal static string PlayerRosterForm_AddPlayerButtonClick_InvalidColors {
+            get {
+                return ResourceManager.GetString("PlayerRosterForm_AddPlayerButtonClick_InvalidColors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Initial 3-card draw is required..
+        /// </summary>
+        internal static string PlayerRosterForm_AddPlayerButtonClick_NoDrawSelected {
+            get {
+                return ResourceManager.GetString("PlayerRosterForm_AddPlayerButtonClick_NoDrawSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The player must have a unique name..
+        /// </summary>
+        internal static string PlayerRosterForm_AddPlayerButtonClick_NoPlayerName {
+            get {
+                return ResourceManager.GetString("PlayerRosterForm_AddPlayerButtonClick_NoPlayerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Character Details.
+        /// </summary>
+        internal static string PlayerRosterForm_CharacterDetailButton_Text {
+            get {
+                return ResourceManager.GetString("PlayerRosterForm_CharacterDetailButton_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Character selected, or no Characters loaded.  Select a Character to get details..
+        /// </summary>
+        internal static string PlayerRosterForm_CharacterDetailButtonClick_No_Character_selected {
+            get {
+                return ResourceManager.GetString("PlayerRosterForm_CharacterDetailButtonClick_No_Character_selected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Character:.
+        /// </summary>
+        internal static string PlayerRosterForm_CharacterListBoxLabel_Text {
+            get {
+                return ResourceManager.GetString("PlayerRosterForm_CharacterListBoxLabel_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player Roster.
+        /// </summary>
+        internal static string PlayerRosterForm_FormName {
+            get {
+                return ResourceManager.GetString("PlayerRosterForm_FormName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Initial Draw.
+        /// </summary>
+        internal static string PlayerRosterForm_InitialDrawGroupBox_Text {
+            get {
+                return ResourceManager.GetString("PlayerRosterForm_InitialDrawGroupBox_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player Name:.
+        /// </summary>
+        internal static string PlayerRosterForm_PlayerName_Text {
+            get {
+                return ResourceManager.GetString("PlayerRosterForm_PlayerName_Text", resourceCulture);
             }
         }
     }

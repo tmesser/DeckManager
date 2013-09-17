@@ -117,40 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="PlayerRosterForm_CharacterDetailButtonClick_No_Character_selected" xml:space="preserve">
-    <value>No Character selected, or no Characters loaded.  Select a Character to get details.</value>
-  </data>
-  <data name="PlayerRosterForm_CharacterDetailButton_Text" xml:space="preserve">
-    <value>Character Details</value>
-  </data>
-  <data name="Button_Cancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="Button_Done" xml:space="preserve">
-    <value>Done</value>
-  </data>
-  <data name="PlayerRosterForm_AddPlayerButton_Text" xml:space="preserve">
-    <value>Add Player</value>
-  </data>
-  <data name="PlayerRosterForm_CharacterListBoxLabel_Text" xml:space="preserve">
-    <value>Character:</value>
-  </data>
-  <data name="PlayerRosterForm_FormName" xml:space="preserve">
-    <value>Player Roster</value>
-  </data>
-  <data name="PlayerRosterForm_InitialDrawGroupBox_Text" xml:space="preserve">
-    <value>Initial Draw</value>
-  </data>
-  <data name="PlayerRosterForm_PlayerName_Text" xml:space="preserve">
-    <value>Player Name:</value>
-  </data>
-  <data name="PlayerRosterForm_AddPlayerButtonClick_NoPlayerName" xml:space="preserve">
-    <value>The player must have a unique name.</value>
-  </data>
-  <data name="PlayerRosterForm_AddPlayerButtonClick_InvalidColors" xml:space="preserve">
-    <value>This player is attempting to draw too many {0} cards.  Please check their initial draw against their valid draws.</value>
-  </data>
-  <data name="PlayerRosterForm_AddPlayerButtonClick_NoDrawSelected" xml:space="preserve">
-    <value>Initial 3-card draw is required.</value>
-  </data>
 </root>
