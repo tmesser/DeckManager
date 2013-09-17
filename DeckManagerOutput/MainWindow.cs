@@ -35,7 +35,6 @@ namespace DeckManagerOutput
             InitializeComponent();
             _gameStarted = false;
 
-            dradis = new DradisForm(this);
             AvailableCharacters = Program.GManager.CharacterList.ToList();
             _isUserClick = true;
 
@@ -58,16 +57,18 @@ namespace DeckManagerOutput
 
             if (newPlayerForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                Player newPlayer = newPlayerForm.newPlayer;
+                IList<Player> newPlayers = newPlayerForm.Players;
                 if (characterListBox.Enabled == false)
                 {
                     characterListBox.Enabled = true;
                     characterListBox.Items.Clear();
                 }
-                characterListBox.Items.Add(newPlayer);
-                AvailableCharacters.Remove(newPlayer.Character);
-
-                if (!GameStarted)
+                foreach (Player p in newPlayers)
+                {
+                    characterListBox.Items.Add(p);
+                    AvailableCharacters.Remove(p.Character);
+                }
+                if (!_gameStarted)
                 {
                     if (characterListBox.Items.Count > 0)
                         RemovePlayerButton.Enabled = true;
@@ -89,7 +90,7 @@ namespace DeckManagerOutput
 
         private void BeginGameButtonClick(object sender, EventArgs e)
         {
-            GameStarted = true;
+            _gameStarted = true;
 
             addPlayerButton.Enabled = false;
             RemovePlayerButton.Enabled = false;
@@ -100,7 +101,9 @@ namespace DeckManagerOutput
             var players = characterListBox.Items.Cast<Player>().ToList();
 
             characterListBox.SelectedIndex = 0;
+            UpdatePlayerHandControls();
 
+            // todo disable buttons for unused options which will cause NREs (TRE deck for base, for example)
             GameState gs =  Program.GManager.NewGame(players,0,false);
             enableControls();
         }
@@ -119,6 +122,8 @@ namespace DeckManagerOutput
 
         private void DradisButton_Click(object sender, EventArgs e)
         {
+            if (dradis==null)
+                dradis = new DradisForm(this);
             dradis.Show();
         }
 
@@ -480,6 +485,8 @@ namespace DeckManagerOutput
         #endregion
 
         #region player hand events
+
+        // todo quorum card text too long for listbox. override measure/draw events
         
         private void CharacterListBoxSelectedIndexChanged(object sender, EventArgs e)
         {
@@ -502,7 +509,7 @@ namespace DeckManagerOutput
             drawnCardListBox.EndUpdate();
 
 
-            Program.GManager.GiveCardToPlayer(currentPlayer, (IEnumerable<BaseCard>)cards);
+            Program.GManager.GiveCardToPlayer(_currentPlayer, (IEnumerable<BaseCard>)cards);
 
             UpdatePlayerHandControls();
         }
@@ -539,7 +546,7 @@ namespace DeckManagerOutput
                 CharacterMutinyHandListBox.Items.Clear();
                 PlayerLoyaltyHandListBox.Items.Clear();
 
-                characterSkillHandListBox.Items.AddRange(currentPlayer.Cards.ToArray());
+                characterSkillHandListBox.Items.AddRange(_currentPlayer.Cards.ToArray());
 
                 PlayerLoyaltyHandListBox.Items.AddRange(_currentPlayer.LoyaltyCards.ToArray());
 

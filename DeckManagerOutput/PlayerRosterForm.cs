@@ -38,7 +38,9 @@ namespace DeckManagerOutput
             doneButton.Text = Resources.Button_Done;
 
             characterListBox.BeginUpdate();
-            characterListBox.DataSource = characters;
+            foreach (var character in characters)
+                characterListBox.Items.Add(character);
+            //characterListBox.DataSource = characters;
             characterListBox.DisplayMember = "CharacterSummary";
             characterListBox.EndUpdate();
 
@@ -162,6 +164,7 @@ namespace DeckManagerOutput
             var player = new Player {Character = character, PlayerName = playerName, CustomDraws = new List<List<SkillCardColor>>{colorDraw}, TurnPosition = Players.Count+1};
             playerRosterListBox.Items.Add(player);
             Players.Add(player);
+            this.characterListBox.Items.Remove(character);
             if (Players.Count > 2)
                 doneButton.Enabled = true;
 

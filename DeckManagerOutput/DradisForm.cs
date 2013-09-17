@@ -29,6 +29,12 @@ namespace DeckManagerOutput
             _sectors.Add(echoListBox, DeckManager.Boards.Dradis.DradisNodeName.Echo);
             _sectors.Add(foxtrotListBox, DeckManager.Boards.Dradis.DradisNodeName.Foxtrot);
 
+            foreach (DeckManager.Boards.Dradis.DradisNode node in Program.GManager.CurrentGameState.Dradis.Nodes)
+            {
+                ListBox sector = _sectors.FirstOrDefault(x => x.Value == node.Name).Key;
+                sector.Items.AddRange(node.Components.ToArray());
+            }
+
 
             var values = Enum.GetValues(typeof(DeckManager.Components.Enums.ComponentType));
             foreach (DeckManager.Components.Enums.ComponentType type in values)
