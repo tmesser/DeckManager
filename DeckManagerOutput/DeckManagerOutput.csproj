@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\ReadOnlyListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DeckCreator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,11 +62,29 @@
     <Compile Include="DradisForm.Designer.cs">
       <DependentUpon>DradisForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameWindow.Designer.cs">
+      <DependentUpon>GameWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionalRulesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionalRulesForm.Designer.cs">
+      <DependentUpon>OptionalRulesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PlayerRosterForm.cs">
       <SubType>Form</SubType>
@@ -79,8 +100,17 @@
     <EmbeddedResource Include="DradisForm.resx">
       <DependentUpon>DradisForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GameWindow.resx">
+      <DependentUpon>GameWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionalRulesForm.resx">
+      <DependentUpon>OptionalRulesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerRosterForm.resx">
       <DependentUpon>PlayerRosterForm.cs</DependentUpon>
@@ -104,7 +134,6 @@
     <None Include="GameContent\Base\Decks\EngineeringDeck.json" />
     <None Include="GameContent\Base\Decks\LeadershipDeck.json" />
     <None Include="GameContent\Base\Decks\LoyaltyDeck.json" />
-    <None Include="GameContent\Base\Decks\PegTreacheryDeck.json" />
     <None Include="GameContent\Base\Decks\PilotingDeck.json" />
     <None Include="GameContent\Base\Decks\PoliticsDeck.json" />
     <None Include="GameContent\Base\Decks\QuorumDeck.json" />

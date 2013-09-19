@@ -79,6 +79,114 @@ namespace DeckManagerOutput.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Game.
+        /// </summary>
+        internal static string GameWindowForm_MainMenu_Game {
+            get {
+                return ResourceManager.GetString("GameWindowForm_MainMenu_Game", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Load....
+        /// </summary>
+        internal static string GameWindowForm_MainMenu_Game_Load {
+            get {
+                return ResourceManager.GetString("GameWindowForm_MainMenu_Game_Load", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New....
+        /// </summary>
+        internal static string GameWindowForm_MainMenu_Game_New {
+            get {
+                return ResourceManager.GetString("GameWindowForm_MainMenu_Game_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save....
+        /// </summary>
+        internal static string GameWindowForm_MainMenu_Game_Save {
+            get {
+                return ResourceManager.GetString("GameWindowForm_MainMenu_Game_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battlestar Galactica Game Manager.
+        /// </summary>
+        internal static string GameWindowForm_Text {
+            get {
+                return ResourceManager.GetString("GameWindowForm_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some characters&apos; special abilities require extra loyalty cards to be dealt into the deck, such as Gaius Baltar or Sharon &quot;Boomer&quot; Valerii.  Or perhaps you&apos;re playing a house ruled variant of the game!  This option will give you extra \b&quot;You are NOT a Cylon&quot;\b0  cards in your starting Loyalty deck..
+        /// </summary>
+        internal static string OptionalRulesForm_ExtraLoyaltyCards_Text {
+            get {
+                return ResourceManager.GetString("OptionalRulesForm_ExtraLoyaltyCards_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional Rules.
+        /// </summary>
+        internal static string OptionalRulesForm_FormName {
+            get {
+                return ResourceManager.GetString("OptionalRulesForm_FormName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extra Loyalty Cards Needed:.
+        /// </summary>
+        internal static string OptionalRulesForm_OptionalRulesForm_ExtraLoyaltyCardsLabel_Text {
+            get {
+                return ResourceManager.GetString("OptionalRulesForm_OptionalRulesForm_ExtraLoyaltyCardsLabel_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sympathizer:.
+        /// </summary>
+        internal static string OptionalRulesForm_OptionalRulesForm_SympathizerLabel_Text {
+            get {
+                return ResourceManager.GetString("OptionalRulesForm_OptionalRulesForm_SympathizerLabel_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When using this rule, an extra \b&quot;Sympathizer&quot;\b0  loyalty card will be dealt into the loyalty deck on game creation.  Rules surrounding this card are on page 19 of the Core Rulebook..
+        /// </summary>
+        internal static string OptionalRulesForm_Sympathizer_Text {
+            get {
+                return ResourceManager.GetString("OptionalRulesForm_Sympathizer_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NOT Using Sympathizer.
+        /// </summary>
+        internal static string OptionalRulesForm_SympathizerCheckBoxCheckedChanged_Sympathizer_False {
+            get {
+                return ResourceManager.GetString("OptionalRulesForm_SympathizerCheckBoxCheckedChanged_Sympathizer_False", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Using Sympathizer.
+        /// </summary>
+        internal static string OptionalRulesForm_SympathizerCheckBoxCheckedChanged_Sympathizer_True {
+            get {
+                return ResourceManager.GetString("OptionalRulesForm_SympathizerCheckBoxCheckedChanged_Sympathizer_True", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Player.
         /// </summary>
         internal static string PlayerRosterForm_AddPlayerButton_Text {

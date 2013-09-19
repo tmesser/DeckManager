@@ -66,7 +66,7 @@ namespace DeckManager.Cards
         /// <returns></returns>
         public override string ToString()
         {
-            return CardColor + " " + CardPower + " " + Heading;
+            return Heading;
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DeckManager.Cards.Enums;
@@ -12,12 +11,6 @@ namespace DeckManager.Characters
         public Character()
         {
             DefaultDrawColors = new List<List<SkillCardColor>>();
-        }
-
-        [JsonIgnore]
-        public string CharacterSummary
-        {
-            get { return string.Format("{0} ({1})", CharacterName, Role); }
         }
 
         public string CharacterName { get; set; }
@@ -85,7 +78,7 @@ namespace DeckManager.Characters
         }
         public override string ToString()
         {
-            return CharacterName + " " + GetHumanReadableDraw();
+            return string.Format("{0} ({1})", CharacterName, Role);
         }
     }
 }

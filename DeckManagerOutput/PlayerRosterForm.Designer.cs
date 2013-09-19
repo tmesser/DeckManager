@@ -185,6 +185,7 @@
             // 
             this.characterListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.characterListBox.FormattingEnabled = true;
+            this.characterListBox.HorizontalScrollbar = true;
             this.characterListBox.Location = new System.Drawing.Point(3, 53);
             this.characterListBox.Name = "characterListBox";
             this.characterListBox.Size = new System.Drawing.Size(221, 151);

@@ -39,11 +39,6 @@ namespace DeckManagerOutput
 
             characterListBox.BeginUpdate();
             characterListBox.DataSource = characters;
-            characterListBox.DisplayMember = "CharacterSummary";
-            characterListBox.EndUpdate();
-
-            playerRosterListBox.BeginUpdate();
-            playerRosterListBox.DisplayMember = "PlayerName";
             characterListBox.EndUpdate();
         }
 
@@ -117,7 +112,7 @@ namespace DeckManagerOutput
 
             var characterDetail = string.Format("{0} ({1})\r\n\r\n{2}\r\n\r\n{3}",character.CharacterName, character.Role, character.GetHumanReadableDraw(), character.AdditionalText);
 
-            MessageBox.Show(characterDetail, Resources.PlayerRosterForm_CharacterDetailButton_Text);
+            new HelpForm(characterDetail, Resources.PlayerRosterForm_CharacterDetailButton_Text).ShowDialog();
         }
 
         private void AddPlayerButtonClick(object sender, EventArgs e)
@@ -170,6 +165,7 @@ namespace DeckManagerOutput
             initialDrawComboBox1.SelectedIndex = -1;
             initialDrawComboBox2.SelectedIndex = -1;
             initialDrawComboBox3.SelectedIndex = -1;
+            playerNameTextBox.Focus();
         }
     }
 }

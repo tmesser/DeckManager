@@ -3,6 +3,7 @@ using System.Linq;
 using DeckManager.Cards;
 using DeckManager.Cards.Enums;
 using DeckManager.Characters.Enums;
+using DeckManager.Extensions;
 
 namespace DeckManager.States
 {
@@ -41,14 +42,18 @@ namespace DeckManager.States
         public override string ToString()
         {
             // MetricUnit (President Roslin [1], 6Q)
-            // var titles = Titles.Count > 0 ? string.Join(" ", Titles) + " " : "";
-            return PlayerName + " (" + Character.CharacterName+")";
-            //return PlayerName + " (" + titles + Character.CharacterName + ") [" + Cards.Count + "] " + (QuorumHand.Count > 0 ? QuorumHand.Count.ToString() + "Q" : "");
+            return PlayerName + " (" + Titles.ToSingleString() + Character.CharacterName + ") [" + Cards.Count + "] " + ((QuorumHand != null && QuorumHand.Count > 0) ? QuorumHand.Count + "Q" : string.Empty);
         }
 
         public IEnumerable<IEnumerable<SkillCardColor>> SkillCardDraws
         {
-            get { return Character.DefaultDrawColors.Union(CustomDraws); }
+            get
+            {
+                var ret = new List<List<SkillCardColor>>();
+                ret.AddRange(CustomDraws);
+                ret.AddRange(Character.DefaultDrawColors);
+                return ret;
+            }
         }
 
         public bool Discard(SkillCard card)

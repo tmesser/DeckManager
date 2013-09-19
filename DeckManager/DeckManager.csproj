@@ -70,6 +70,7 @@
     <Compile Include="Components\Raider.cs" />
     <Compile Include="Decks\MissionDeck.cs" />
     <Compile Include="Decks\MutinyDeck.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\StringValueAttribute.cs" />
     <Compile Include="Initialization\XMLUtil.cs" />
@@ -109,7 +110,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Core.xml" />
+    <Content Include="Content\Core.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\Pegasus.xml" />
   </ItemGroup>
   <ItemGroup />

@@ -117,6 +117,10 @@ namespace DeckManager
         {
             foreach (var location in CurrentGameState.Boards.Select(board => board.Locations.FirstOrDefault(x => player.Character.SetupLocation == x.Name)))
             {
+                // FirstOrDefault means this can be null here.
+                if (location == default(BasicLocation))
+                    return;
+
                 location.PlayersPresent.Add(player.PlayerName);
                 return;
             }
@@ -131,11 +135,11 @@ namespace DeckManager
             }
             var fromBox = JsonConvert.DeserializeObject<List<BasicLocation>>(jsonString);
             var ret = new List<Board>();
-            foreach (var boardName in fromBox.Select(x => x.Name).Distinct())
+            foreach (var boardName in fromBox.Select(x => x.BoardName).Distinct())
             {
                 var nonClosureBoardName = boardName; // It's unstable to access a foreach variable in a closure like we do below, so we need to copy it out.
                 var board = new Board{Locations = new List<BasicLocation>()};
-                board.Locations.AddRange(fromBox.Where(x => x.Name == nonClosureBoardName));
+                board.Locations.AddRange(fromBox.Where(x => x.BoardName == nonClosureBoardName));
                 ret.Add(board);
             }
             return ret;
@@ -240,16 +244,16 @@ namespace DeckManager
                             player.Cards.Add(CurrentGameState.EngineeringDeck.Draw());
                             break;
                         case SkillCardColor.Leadership:
-                            player.Cards.Add(CurrentGameState.EngineeringDeck.Draw());
+                            player.Cards.Add(CurrentGameState.LeadershipDeck.Draw());
                             break;
                         case SkillCardColor.Piloting:
                             player.Cards.Add(CurrentGameState.PilotingDeck.Draw());
                             break;
                         case SkillCardColor.Tactics:
-                            player.Cards.Add(CurrentGameState.PilotingDeck.Draw());
+                            player.Cards.Add(CurrentGameState.TacticsDeck.Draw());
                             break;
                         case SkillCardColor.Politics:
-                            player.Cards.Add(CurrentGameState.PilotingDeck.Draw());
+                            player.Cards.Add(CurrentGameState.PoliticsDeck.Draw());
                             break;
                     }
                 }

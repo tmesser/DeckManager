@@ -117,76 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="PlayerRosterForm_CharacterDetailButtonClick_No_Character_selected" xml:space="preserve">
-    <value>No Character selected, or no Characters loaded.  Select a Character to get details.</value>
-  </data>
-  <data name="PlayerRosterForm_CharacterDetailButton_Text" xml:space="preserve">
-    <value>Character Details</value>
-  </data>
-  <data name="Button_Cancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="Button_Done" xml:space="preserve">
-    <value>Done</value>
-  </data>
-  <data name="PlayerRosterForm_AddPlayerButton_Text" xml:space="preserve">
-    <value>Add Player</value>
-  </data>
-  <data name="PlayerRosterForm_CharacterListBoxLabel_Text" xml:space="preserve">
-    <value>Character:</value>
-  </data>
-  <data name="PlayerRosterForm_FormName" xml:space="preserve">
-    <value>Player Roster</value>
-  </data>
-  <data name="PlayerRosterForm_InitialDrawGroupBox_Text" xml:space="preserve">
-    <value>Initial Draw</value>
-  </data>
-  <data name="PlayerRosterForm_PlayerName_Text" xml:space="preserve">
-    <value>Player Name:</value>
-  </data>
-  <data name="PlayerRosterForm_AddPlayerButtonClick_NoPlayerName" xml:space="preserve">
-    <value>The player must have a unique name.</value>
-  </data>
-  <data name="PlayerRosterForm_AddPlayerButtonClick_InvalidColors" xml:space="preserve">
-    <value>This player is attempting to draw too many {0} cards.  Please check their initial draw against their valid draws.</value>
-  </data>
-  <data name="PlayerRosterForm_AddPlayerButtonClick_NoDrawSelected" xml:space="preserve">
-    <value>Initial 3-card draw is required.</value>
-  </data>
-  <data name="OptionalRulesForm_ExtraLoyaltyCards_Text" xml:space="preserve">
-    <value>Some characters' special abilities require extra loyalty cards to be dealt into the deck, such as Gaius Baltar or Sharon "Boomer" Valerii.  Or perhaps you're playing a house ruled variant of the game!  This option will give you extra \b"You are NOT a Cylon"\b0  cards in your starting Loyalty deck.</value>
-  </data>
-  <data name="OptionalRulesForm_FormName" xml:space="preserve">
-    <value>Optional Rules</value>
-  </data>
-  <data name="OptionalRulesForm_Sympathizer_Text" xml:space="preserve">
-    <value>When using this rule, an extra \b"Sympathizer"\b0  loyalty card will be dealt into the loyalty deck on game creation.  Rules surrounding this card are on page 19 of the Core Rulebook.</value>
-  </data>
-  <data name="OptionalRulesForm_OptionalRulesForm_ExtraLoyaltyCardsLabel_Text" xml:space="preserve">
-    <value>Extra Loyalty Cards Needed:</value>
-  </data>
-  <data name="OptionalRulesForm_OptionalRulesForm_SympathizerLabel_Text" xml:space="preserve">
-    <value>Sympathizer:</value>
-  </data>
-  <data name="OptionalRulesForm_SympathizerCheckBoxCheckedChanged_Sympathizer_True" xml:space="preserve">
-    <value>Using Sympathizer</value>
-  </data>
-  <data name="OptionalRulesForm_SympathizerCheckBoxCheckedChanged_Sympathizer_False" xml:space="preserve">
-    <value>NOT Using Sympathizer</value>
-  </data>
-  <data name="GameWindowForm_MainMenu_Game" xml:space="preserve">
-    <value>Game</value>
-  </data>
-  <data name="GameWindowForm_MainMenu_Game_Load" xml:space="preserve">
-    <value>Load...</value>
-  </data>
-  <data name="GameWindowForm_MainMenu_Game_New" xml:space="preserve">
-    <value>New...</value>
-  </data>
-  <data name="GameWindowForm_MainMenu_Game_Save" xml:space="preserve">
-    <value>Save...</value>
-  </data>
-  <data name="GameWindowForm_Text" xml:space="preserve">
-    <value>Battlestar Galactica Game Manager</value>
-  </data>
+  <metadata name="MainMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="PlayerRightClickMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>142, 17</value>
+  </metadata>
 </root>
