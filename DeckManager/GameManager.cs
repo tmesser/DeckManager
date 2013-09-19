@@ -74,7 +74,6 @@ namespace DeckManager
                     QuorumDeck = new QuorumDeck(_logger, ConfigurationManager.AppSettings["QuorumDeckLocation"]),
                     SuperCrisisDeck = new SuperCrisisDeck(_logger, ConfigurationManager.AppSettings["SuperCrisisDeckLocation"]),
                     TacticsDeck = new SkillCardDeck(_logger, SkillCardColor.Tactics, ConfigurationManager.AppSettings["TacticsDeckLocation"]),
-                    // todo add destiny deck
                     //TreacheryDeck = new SkillCardDeck(_logger, SkillCardColor.Treachery, ConfigurationManager.AppSettings["TreacheryDeckLocation"]),
 
                     Dradis = new DradisBoard(),
@@ -89,6 +88,9 @@ namespace DeckManager
                     Morale = 10,
                     Population = 12
                 };
+            firstTurn.DestinyDeck = new DestinyDeck(_logger, firstTurn.LeadershipDeck, firstTurn.TacticsDeck,
+                                                    firstTurn.PilotingDeck, firstTurn.EngineeringDeck,
+                                                    firstTurn.PoliticsDeck);
             GameStates.Add(firstTurn);
 
             ShuffleCivs();
@@ -116,20 +118,10 @@ namespace DeckManager
 
         private void AttemptToPlacePlayer(Player player)
         {
-            foreach (Board b in CurrentGameState.Boards)
+            foreach (var location in CurrentGameState.Boards.Select(board => board.Locations.FirstOrDefault(x => x.Name == player.Character.SetupLocation)).Where(location => location != null))
             {
-                foreach (BasicLocation location in b.Locations)
-                {
-                    if (location.Name == player.Character.SetupLocation)
-                    {                        
-                // FirstOrDefault means this can be null here.
-                if (location == default(BasicLocation))
-                    return;
-
-                        location.PlayersPresent.Add(player.PlayerName);
-                        return;
-                    }
-                }
+                location.PlayersPresent.Add(player.PlayerName);
+                return;
             }
         }
 
