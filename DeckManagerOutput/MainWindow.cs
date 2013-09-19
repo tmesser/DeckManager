@@ -16,6 +16,7 @@ namespace DeckManagerOutput
 {
     public partial class MainForm : Form
     {
+        private readonly MainMenu _mainMenu;
         private DradisForm dradis;
         private List<DeckManager.Characters.Character> AvailableCharacters;
         private bool _gameStarted;
@@ -34,7 +35,6 @@ namespace DeckManagerOutput
             InitializeComponent();
             _gameStarted = false;
 
-            dradis = new DradisForm(this);
             AvailableCharacters = Program.GManager.CharacterList.ToList();
             _isUserClick = true;
 
@@ -57,14 +57,26 @@ namespace DeckManagerOutput
 
             if (newPlayerForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                /*Player newPlayer = newPlayerForm.NewPlayer;
+                IList<Player> newPlayers = newPlayerForm.Players;
                 if (characterListBox.Enabled == false)
                 {
                     characterListBox.Enabled = true;
                     characterListBox.Items.Clear();
                 }
-                characterListBox.Items.Add(newPlayer);
-                AvailableCharacters.Remove(newPlayer.Character);*/
+                foreach (Player p in newPlayers)
+                {
+                    characterListBox.Items.Add(p);
+                    AvailableCharacters.Remove(p.Character);
+                }
+                if (!_gameStarted)
+                {
+                    if (characterListBox.Items.Count > 0)
+                        RemovePlayerButton.Enabled = true;
+                    else if (characterListBox.Items.Count == 0)
+                        RemovePlayerButton.Enabled = false;
+                    if (characterListBox.Items.Count >= 3)
+                        beginGameButton.Enabled = true;
+                }
             }
         }
 
@@ -74,6 +86,26 @@ namespace DeckManagerOutput
             Player p = (Player)characterListBox.SelectedItem;
             AvailableCharacters.Add(p.Character);
             characterListBox.Items.Remove(p);
+        }
+
+        private void BeginGameButtonClick(object sender, EventArgs e)
+        {
+            _gameStarted = true;
+
+            addPlayerButton.Enabled = false;
+            RemovePlayerButton.Enabled = false;
+            beginGameButton.Enabled = false;
+            beginGameButton.Visible = false;
+            this.TitlesPanel.Location = new System.Drawing.Point(263, 92);
+            this.PlayerLoyaltyHandPanel.Visible = true;
+            var players = characterListBox.Items.Cast<Player>().ToList();
+
+            characterListBox.SelectedIndex = 0;
+            UpdatePlayerHandControls();
+
+            // todo disable buttons for unused options which will cause NREs (TRE deck for base, for example)
+            GameState gs =  Program.GManager.NewGame(players,0,false);
+            enableControls();
         }
         /// <summary>
         /// Controls should be disabled before the game begins. Calling this method enables everything.
@@ -90,6 +122,8 @@ namespace DeckManagerOutput
 
         private void DradisButton_Click(object sender, EventArgs e)
         {
+            if (dradis==null)
+                dradis = new DradisForm(this);
             dradis.Show();
         }
 
@@ -285,10 +319,15 @@ namespace DeckManagerOutput
         #region crisis events
         private void CrisisTextBoxMeasureItem(object sender, MeasureItemEventArgs e)
         {
-            //e.ItemHeight = 50;
             string item = crisisTextListBox.Items[e.Index].ToString();
-            int count = item.Count(f=>f=='\n');
-            count++;
+            int count = 0;
+            string[] tokens = item.Split('\n');
+            foreach (string line in tokens)
+            {
+                count++;
+                if (line.Length > 38)
+                    count++;
+            }
             e.ItemHeight *= count;
         }
 
@@ -447,6 +486,8 @@ namespace DeckManagerOutput
 
         #region player hand events
 
+        // todo quorum card text too long for listbox. override measure/draw events
+        
         private void CharacterListBoxSelectedIndexChanged(object sender, EventArgs e)
         {
             _currentPlayer = (Player)characterListBox.SelectedItem;
@@ -461,6 +502,12 @@ namespace DeckManagerOutput
                 drawnCardListBox.Items.CopyTo(cards, 0);
             else
                 drawnCardListBox.SelectedItems.CopyTo(cards, 0);
+
+            drawnCardListBox.BeginUpdate();
+            foreach (BaseCard c in cards)
+                drawnCardListBox.Items.Remove(c);
+            drawnCardListBox.EndUpdate();
+
 
             Program.GManager.GiveCardToPlayer(_currentPlayer, (IEnumerable<BaseCard>)cards);
 

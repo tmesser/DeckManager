@@ -10,6 +10,7 @@
         Loyalty,
         Destination,
         Mission,
-        Mutiny
+        Mutiny,
+        Allegiance
     }
 }
