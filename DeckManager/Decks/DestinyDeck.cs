@@ -41,7 +41,7 @@ namespace DeckManager.Decks
         /// Leadership deck input is not actually a leadership deck.
         /// or
         /// Tactics deck input is not actually a tactics deck.
-        /// or
+        /// 
         /// Piloting deck input is not actually a piloting deck.
         /// or
         /// Engineering deck input is not actually an engineering deck.
@@ -52,13 +52,13 @@ namespace DeckManager.Decks
         {
             if (leadershipDeck.DeckColor != SkillCardColor.Leadership)
                 throw new ArgumentException("Leadership deck input is not actually a leadership deck.");
-            if (leadershipDeck.DeckColor != SkillCardColor.Tactics)
+            if (tacticsDeck.DeckColor != SkillCardColor.Tactics)
                 throw new ArgumentException("Tactics deck input is not actually a tactics deck.");
-            if (leadershipDeck.DeckColor != SkillCardColor.Piloting)
+            if (pilotingDeck.DeckColor != SkillCardColor.Piloting)
                 throw new ArgumentException("Piloting deck input is not actually a piloting deck.");
-            if (leadershipDeck.DeckColor != SkillCardColor.Engineering)
+            if (engineeringDeck.DeckColor != SkillCardColor.Engineering)
                 throw new ArgumentException("Engineering deck input is not actually an engineering deck.");
-            if (leadershipDeck.DeckColor != SkillCardColor.Politics)
+            if (politicsDeck.DeckColor != SkillCardColor.Politics)
                 throw new ArgumentException("Politics deck input is not actually a politics deck.");
 
             LeadershipDeck = leadershipDeck;
