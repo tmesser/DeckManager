@@ -85,5 +85,11 @@ namespace DeckManager.Boards.Dradis
                 return;
             sector.MoveComponents(componentsToMove, destination);
         }
+
+        public IEnumerable<BaseComponent> GetComponents(DradisNodeName source)
+        {
+            var sector = Nodes.FirstOrDefault(x => x.Name == source);
+            return sector == null ? null : sector.Components;
+        }
     }
 }

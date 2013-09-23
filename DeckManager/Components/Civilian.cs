@@ -16,6 +16,14 @@ namespace DeckManager.Components
         public List<Resource> Load { get; set; }
 
         /// <summary>
+        /// Gets or sets the status.
+        /// </summary>
+        /// <value>
+        /// The status.
+        /// </value>
+        public ComponentStatus Status { get; set; }
+
+        /// <summary>
         /// Gets the type of the component.
         /// </summary>
         /// <value>
@@ -24,11 +32,6 @@ namespace DeckManager.Components
         public override ComponentType ComponentType
         {
             get { return ComponentType.Civilian; }
-        }
-
-        public override string ToString()
-        {
-            return "CIVILIAN ("+(Load.Count==0? "EMPTY":string.Join(" ",Load))+")";
         }
     }
 }

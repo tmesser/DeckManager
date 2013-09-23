@@ -57,10 +57,10 @@ namespace DeckManagerOutput
             this.EchoDradisListBox = new System.Windows.Forms.ListBox();
             this.FoxtrotToEchoButton = new System.Windows.Forms.Button();
             this.EchoToFoxtrotButton = new System.Windows.Forms.Button();
-            this.CylonBoardListBox = new System.Windows.Forms.ListBox();
-            this.PlayerRightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ShowHandMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.JumpPrepGroupBox = new System.Windows.Forms.GroupBox();
+            this.JumpPrepRightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.increaseJumpPrepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.decreaseJumpPrepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Red1RadioButton = new System.Windows.Forms.RadioButton();
             this.Red2RadioButton = new System.Windows.Forms.RadioButton();
@@ -68,6 +68,19 @@ namespace DeckManagerOutput
             this.Risk3RadioButton = new System.Windows.Forms.RadioButton();
             this.Risk1RadioButton = new System.Windows.Forms.RadioButton();
             this.JumpNowRadioButton = new System.Windows.Forms.RadioButton();
+            this.FuelUpDown = new System.Windows.Forms.NumericUpDown();
+            this.FoodUpDown = new System.Windows.Forms.NumericUpDown();
+            this.MoraleUpDown = new System.Windows.Forms.NumericUpDown();
+            this.PopUpDown = new System.Windows.Forms.NumericUpDown();
+            this.FuelLabel = new System.Windows.Forms.Label();
+            this.FoodLabel = new System.Windows.Forms.Label();
+            this.MoraleLabel = new System.Windows.Forms.Label();
+            this.PopulationLabel = new System.Windows.Forms.Label();
+            this.PlayerReadonlyListBox = new DeckManagerOutput.CustomControls.ReadOnlyListBox();
+            this.PlayerRightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ShowHandMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CylonBoardListBox = new System.Windows.Forms.ListBox();
+            this.CrisisLabel = new System.Windows.Forms.Label();
             this.CentBoardingGroupBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.CentBoardingTextBox1 = new System.Windows.Forms.TextBox();
@@ -75,27 +88,21 @@ namespace DeckManagerOutput
             this.CentBoardingTextBox3 = new System.Windows.Forms.TextBox();
             this.CentBoardingTextBox4 = new System.Windows.Forms.TextBox();
             this.CentBoardingTextBox5 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.FuelLabel = new System.Windows.Forms.Label();
-            this.FoodLabel = new System.Windows.Forms.Label();
-            this.MoraleLabel = new System.Windows.Forms.Label();
-            this.PopulationLabel = new System.Windows.Forms.Label();
-            this.CrisisLabel = new System.Windows.Forms.Label();
-            this.PlayerReadonlyListBox = new DeckManagerOutput.CustomControls.ReadOnlyListBox();
+            this.DistanceLabel = new System.Windows.Forms.Label();
+            this.DistanceUpDown = new System.Windows.Forms.NumericUpDown();
             this.MainMenuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.PlayerRightClickMenu.SuspendLayout();
             this.JumpPrepGroupBox.SuspendLayout();
+            this.JumpPrepRightClickMenu.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FuelUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MoraleUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PopUpDown)).BeginInit();
+            this.PlayerRightClickMenu.SuspendLayout();
             this.CentBoardingGroupBox.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DistanceUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // MainMenuStrip
@@ -139,76 +146,74 @@ namespace DeckManagerOutput
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 16;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel1.Controls.Add(this.CharlieDradisListBox, 9, 4);
-            this.tableLayoutPanel1.Controls.Add(this.BravoDradisListBox, 5, 4);
-            this.tableLayoutPanel1.Controls.Add(this.BravoToCharlieButton, 7, 4);
-            this.tableLayoutPanel1.Controls.Add(this.CharlieToBravoButton, 7, 5);
-            this.tableLayoutPanel1.Controls.Add(this.ColonialOneListBox, 8, 6);
-            this.tableLayoutPanel1.Controls.Add(this.AlphaDradisListBox, 3, 7);
-            this.tableLayoutPanel1.Controls.Add(this.DeltaDradisListBox, 11, 7);
-            this.tableLayoutPanel1.Controls.Add(this.AlphaToBravoButton, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.BravoToAlphaButton, 4, 5);
-            this.tableLayoutPanel1.Controls.Add(this.DeltaToCharlieButton, 11, 5);
-            this.tableLayoutPanel1.Controls.Add(this.CharlieToDeltaButton, 12, 5);
-            this.tableLayoutPanel1.Controls.Add(this.EchoToDeltaButton, 11, 9);
-            this.tableLayoutPanel1.Controls.Add(this.DeltaToEchoButton, 12, 9);
-            this.tableLayoutPanel1.Controls.Add(this.AlphaToFoxtrotButton, 4, 9);
-            this.tableLayoutPanel1.Controls.Add(this.FoxtrotToAlphaButton, 3, 9);
-            this.tableLayoutPanel1.Controls.Add(this.GalacticaBoardListBox, 5, 7);
-            this.tableLayoutPanel1.Controls.Add(this.FoxtrotDradisListBox, 5, 11);
-            this.tableLayoutPanel1.Controls.Add(this.EchoDradisListBox, 9, 11);
-            this.tableLayoutPanel1.Controls.Add(this.FoxtrotToEchoButton, 7, 11);
-            this.tableLayoutPanel1.Controls.Add(this.EchoToFoxtrotButton, 7, 12);
-            this.tableLayoutPanel1.Controls.Add(this.CylonBoardListBox, 2, 1);
+            this.tableLayoutPanel1.ColumnCount = 12;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.25424F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.704159F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.704159F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.704159F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.704159F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.704159F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.704159F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.704159F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.704159F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.704159F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.704159F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.704159F));
+            this.tableLayoutPanel1.Controls.Add(this.CharlieDradisListBox, 8, 3);
+            this.tableLayoutPanel1.Controls.Add(this.BravoDradisListBox, 4, 3);
+            this.tableLayoutPanel1.Controls.Add(this.BravoToCharlieButton, 6, 3);
+            this.tableLayoutPanel1.Controls.Add(this.CharlieToBravoButton, 6, 4);
+            this.tableLayoutPanel1.Controls.Add(this.ColonialOneListBox, 7, 5);
+            this.tableLayoutPanel1.Controls.Add(this.AlphaDradisListBox, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.DeltaDradisListBox, 10, 6);
+            this.tableLayoutPanel1.Controls.Add(this.AlphaToBravoButton, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.BravoToAlphaButton, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.DeltaToCharlieButton, 10, 4);
+            this.tableLayoutPanel1.Controls.Add(this.CharlieToDeltaButton, 11, 4);
+            this.tableLayoutPanel1.Controls.Add(this.EchoToDeltaButton, 10, 8);
+            this.tableLayoutPanel1.Controls.Add(this.DeltaToEchoButton, 11, 8);
+            this.tableLayoutPanel1.Controls.Add(this.AlphaToFoxtrotButton, 3, 8);
+            this.tableLayoutPanel1.Controls.Add(this.FoxtrotToAlphaButton, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.GalacticaBoardListBox, 4, 6);
+            this.tableLayoutPanel1.Controls.Add(this.FoxtrotDradisListBox, 4, 10);
+            this.tableLayoutPanel1.Controls.Add(this.EchoDradisListBox, 8, 10);
+            this.tableLayoutPanel1.Controls.Add(this.FoxtrotToEchoButton, 6, 10);
+            this.tableLayoutPanel1.Controls.Add(this.EchoToFoxtrotButton, 6, 11);
+            this.tableLayoutPanel1.Controls.Add(this.JumpPrepGroupBox, 2, 12);
+            this.tableLayoutPanel1.Controls.Add(this.FuelUpDown, 5, 13);
+            this.tableLayoutPanel1.Controls.Add(this.FoodUpDown, 6, 13);
+            this.tableLayoutPanel1.Controls.Add(this.MoraleUpDown, 7, 13);
+            this.tableLayoutPanel1.Controls.Add(this.PopUpDown, 8, 13);
+            this.tableLayoutPanel1.Controls.Add(this.FuelLabel, 5, 12);
+            this.tableLayoutPanel1.Controls.Add(this.FoodLabel, 6, 12);
+            this.tableLayoutPanel1.Controls.Add(this.MoraleLabel, 7, 12);
+            this.tableLayoutPanel1.Controls.Add(this.PopulationLabel, 8, 12);
             this.tableLayoutPanel1.Controls.Add(this.PlayerReadonlyListBox, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.JumpPrepGroupBox, 3, 13);
-            this.tableLayoutPanel1.Controls.Add(this.CentBoardingGroupBox, 10, 13);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown1, 6, 14);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown2, 7, 14);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown3, 8, 14);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown4, 9, 14);
-            this.tableLayoutPanel1.Controls.Add(this.FuelLabel, 6, 13);
-            this.tableLayoutPanel1.Controls.Add(this.FoodLabel, 7, 13);
-            this.tableLayoutPanel1.Controls.Add(this.MoraleLabel, 8, 13);
-            this.tableLayoutPanel1.Controls.Add(this.PopulationLabel, 9, 13);
-            this.tableLayoutPanel1.Controls.Add(this.CrisisLabel, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.CylonBoardListBox, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.CrisisLabel, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.CentBoardingGroupBox, 10, 12);
+            this.tableLayoutPanel1.Controls.Add(this.DistanceLabel, 9, 12);
+            this.tableLayoutPanel1.Controls.Add(this.DistanceUpDown, 9, 13);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 16;
+            this.tableLayoutPanel1.RowCount = 14;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.140351F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.52632F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(792, 549);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -217,10 +222,11 @@ namespace DeckManagerOutput
             this.tableLayoutPanel1.SetColumnSpan(this.CharlieDradisListBox, 2);
             this.CharlieDradisListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CharlieDradisListBox.FormattingEnabled = true;
-            this.CharlieDradisListBox.Location = new System.Drawing.Point(476, 145);
+            this.CharlieDradisListBox.Location = new System.Drawing.Point(550, 135);
             this.CharlieDradisListBox.Name = "CharlieDradisListBox";
             this.tableLayoutPanel1.SetRowSpan(this.CharlieDradisListBox, 2);
-            this.CharlieDradisListBox.Size = new System.Drawing.Size(82, 68);
+            this.CharlieDradisListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.CharlieDradisListBox.Size = new System.Drawing.Size(116, 70);
             this.CharlieDradisListBox.TabIndex = 3;
             // 
             // BravoDradisListBox
@@ -228,19 +234,20 @@ namespace DeckManagerOutput
             this.tableLayoutPanel1.SetColumnSpan(this.BravoDradisListBox, 2);
             this.BravoDradisListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BravoDradisListBox.FormattingEnabled = true;
-            this.BravoDradisListBox.Location = new System.Drawing.Point(300, 145);
+            this.BravoDradisListBox.Location = new System.Drawing.Point(306, 135);
             this.BravoDradisListBox.Name = "BravoDradisListBox";
             this.tableLayoutPanel1.SetRowSpan(this.BravoDradisListBox, 2);
-            this.BravoDradisListBox.Size = new System.Drawing.Size(82, 68);
+            this.BravoDradisListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.BravoDradisListBox.Size = new System.Drawing.Size(116, 70);
             this.BravoDradisListBox.TabIndex = 2;
             // 
             // BravoToCharlieButton
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.BravoToCharlieButton, 2);
             this.BravoToCharlieButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BravoToCharlieButton.Location = new System.Drawing.Point(388, 145);
+            this.BravoToCharlieButton.Location = new System.Drawing.Point(428, 135);
             this.BravoToCharlieButton.Name = "BravoToCharlieButton";
-            this.BravoToCharlieButton.Size = new System.Drawing.Size(82, 31);
+            this.BravoToCharlieButton.Size = new System.Drawing.Size(116, 32);
             this.BravoToCharlieButton.TabIndex = 7;
             this.BravoToCharlieButton.Text = "→";
             this.BravoToCharlieButton.UseVisualStyleBackColor = true;
@@ -249,9 +256,9 @@ namespace DeckManagerOutput
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.CharlieToBravoButton, 2);
             this.CharlieToBravoButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CharlieToBravoButton.Location = new System.Drawing.Point(388, 182);
+            this.CharlieToBravoButton.Location = new System.Drawing.Point(428, 173);
             this.CharlieToBravoButton.Name = "CharlieToBravoButton";
-            this.CharlieToBravoButton.Size = new System.Drawing.Size(82, 31);
+            this.CharlieToBravoButton.Size = new System.Drawing.Size(116, 32);
             this.CharlieToBravoButton.TabIndex = 8;
             this.CharlieToBravoButton.Text = "←";
             this.CharlieToBravoButton.UseVisualStyleBackColor = true;
@@ -261,10 +268,10 @@ namespace DeckManagerOutput
             this.tableLayoutPanel1.SetColumnSpan(this.ColonialOneListBox, 3);
             this.ColonialOneListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ColonialOneListBox.FormattingEnabled = true;
-            this.ColonialOneListBox.Location = new System.Drawing.Point(432, 219);
+            this.ColonialOneListBox.Location = new System.Drawing.Point(489, 211);
             this.ColonialOneListBox.Name = "ColonialOneListBox";
             this.tableLayoutPanel1.SetRowSpan(this.ColonialOneListBox, 3);
-            this.ColonialOneListBox.Size = new System.Drawing.Size(126, 105);
+            this.ColonialOneListBox.Size = new System.Drawing.Size(177, 108);
             this.ColonialOneListBox.TabIndex = 20;
             // 
             // AlphaDradisListBox
@@ -272,10 +279,11 @@ namespace DeckManagerOutput
             this.tableLayoutPanel1.SetColumnSpan(this.AlphaDradisListBox, 2);
             this.AlphaDradisListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AlphaDradisListBox.FormattingEnabled = true;
-            this.AlphaDradisListBox.Location = new System.Drawing.Point(212, 256);
+            this.AlphaDradisListBox.Location = new System.Drawing.Point(184, 249);
             this.AlphaDradisListBox.Name = "AlphaDradisListBox";
             this.tableLayoutPanel1.SetRowSpan(this.AlphaDradisListBox, 2);
-            this.AlphaDradisListBox.Size = new System.Drawing.Size(82, 68);
+            this.AlphaDradisListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.AlphaDradisListBox.Size = new System.Drawing.Size(116, 70);
             this.AlphaDradisListBox.TabIndex = 1;
             // 
             // DeltaDradisListBox
@@ -283,19 +291,20 @@ namespace DeckManagerOutput
             this.tableLayoutPanel1.SetColumnSpan(this.DeltaDradisListBox, 2);
             this.DeltaDradisListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DeltaDradisListBox.FormattingEnabled = true;
-            this.DeltaDradisListBox.Location = new System.Drawing.Point(564, 256);
+            this.DeltaDradisListBox.Location = new System.Drawing.Point(672, 249);
             this.DeltaDradisListBox.Name = "DeltaDradisListBox";
             this.tableLayoutPanel1.SetRowSpan(this.DeltaDradisListBox, 2);
-            this.DeltaDradisListBox.Size = new System.Drawing.Size(82, 68);
+            this.DeltaDradisListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.DeltaDradisListBox.Size = new System.Drawing.Size(117, 70);
             this.DeltaDradisListBox.TabIndex = 4;
             // 
             // AlphaToBravoButton
             // 
             this.AlphaToBravoButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AlphaToBravoButton.Location = new System.Drawing.Point(212, 182);
+            this.AlphaToBravoButton.Location = new System.Drawing.Point(184, 173);
             this.AlphaToBravoButton.Name = "AlphaToBravoButton";
             this.tableLayoutPanel1.SetRowSpan(this.AlphaToBravoButton, 2);
-            this.AlphaToBravoButton.Size = new System.Drawing.Size(38, 68);
+            this.AlphaToBravoButton.Size = new System.Drawing.Size(55, 70);
             this.AlphaToBravoButton.TabIndex = 9;
             this.AlphaToBravoButton.Text = "↑";
             this.AlphaToBravoButton.UseVisualStyleBackColor = true;
@@ -303,10 +312,10 @@ namespace DeckManagerOutput
             // BravoToAlphaButton
             // 
             this.BravoToAlphaButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BravoToAlphaButton.Location = new System.Drawing.Point(256, 182);
+            this.BravoToAlphaButton.Location = new System.Drawing.Point(245, 173);
             this.BravoToAlphaButton.Name = "BravoToAlphaButton";
             this.tableLayoutPanel1.SetRowSpan(this.BravoToAlphaButton, 2);
-            this.BravoToAlphaButton.Size = new System.Drawing.Size(38, 68);
+            this.BravoToAlphaButton.Size = new System.Drawing.Size(55, 70);
             this.BravoToAlphaButton.TabIndex = 10;
             this.BravoToAlphaButton.Text = "↓";
             this.BravoToAlphaButton.UseVisualStyleBackColor = true;
@@ -314,10 +323,10 @@ namespace DeckManagerOutput
             // DeltaToCharlieButton
             // 
             this.DeltaToCharlieButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DeltaToCharlieButton.Location = new System.Drawing.Point(564, 182);
+            this.DeltaToCharlieButton.Location = new System.Drawing.Point(672, 173);
             this.DeltaToCharlieButton.Name = "DeltaToCharlieButton";
             this.tableLayoutPanel1.SetRowSpan(this.DeltaToCharlieButton, 2);
-            this.DeltaToCharlieButton.Size = new System.Drawing.Size(38, 68);
+            this.DeltaToCharlieButton.Size = new System.Drawing.Size(55, 70);
             this.DeltaToCharlieButton.TabIndex = 13;
             this.DeltaToCharlieButton.Text = "↑";
             this.DeltaToCharlieButton.UseVisualStyleBackColor = true;
@@ -325,10 +334,10 @@ namespace DeckManagerOutput
             // CharlieToDeltaButton
             // 
             this.CharlieToDeltaButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CharlieToDeltaButton.Location = new System.Drawing.Point(608, 182);
+            this.CharlieToDeltaButton.Location = new System.Drawing.Point(733, 173);
             this.CharlieToDeltaButton.Name = "CharlieToDeltaButton";
             this.tableLayoutPanel1.SetRowSpan(this.CharlieToDeltaButton, 2);
-            this.CharlieToDeltaButton.Size = new System.Drawing.Size(38, 68);
+            this.CharlieToDeltaButton.Size = new System.Drawing.Size(56, 70);
             this.CharlieToDeltaButton.TabIndex = 14;
             this.CharlieToDeltaButton.Text = "↓";
             this.CharlieToDeltaButton.UseVisualStyleBackColor = true;
@@ -336,10 +345,10 @@ namespace DeckManagerOutput
             // EchoToDeltaButton
             // 
             this.EchoToDeltaButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EchoToDeltaButton.Location = new System.Drawing.Point(564, 330);
+            this.EchoToDeltaButton.Location = new System.Drawing.Point(672, 325);
             this.EchoToDeltaButton.Name = "EchoToDeltaButton";
             this.tableLayoutPanel1.SetRowSpan(this.EchoToDeltaButton, 2);
-            this.EchoToDeltaButton.Size = new System.Drawing.Size(38, 68);
+            this.EchoToDeltaButton.Size = new System.Drawing.Size(55, 70);
             this.EchoToDeltaButton.TabIndex = 18;
             this.EchoToDeltaButton.Text = "↑";
             this.EchoToDeltaButton.UseVisualStyleBackColor = true;
@@ -347,10 +356,10 @@ namespace DeckManagerOutput
             // DeltaToEchoButton
             // 
             this.DeltaToEchoButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DeltaToEchoButton.Location = new System.Drawing.Point(608, 330);
+            this.DeltaToEchoButton.Location = new System.Drawing.Point(733, 325);
             this.DeltaToEchoButton.Name = "DeltaToEchoButton";
             this.tableLayoutPanel1.SetRowSpan(this.DeltaToEchoButton, 2);
-            this.DeltaToEchoButton.Size = new System.Drawing.Size(38, 68);
+            this.DeltaToEchoButton.Size = new System.Drawing.Size(56, 70);
             this.DeltaToEchoButton.TabIndex = 15;
             this.DeltaToEchoButton.Text = "↓";
             this.DeltaToEchoButton.UseVisualStyleBackColor = true;
@@ -358,10 +367,10 @@ namespace DeckManagerOutput
             // AlphaToFoxtrotButton
             // 
             this.AlphaToFoxtrotButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AlphaToFoxtrotButton.Location = new System.Drawing.Point(256, 330);
+            this.AlphaToFoxtrotButton.Location = new System.Drawing.Point(245, 325);
             this.AlphaToFoxtrotButton.Name = "AlphaToFoxtrotButton";
             this.tableLayoutPanel1.SetRowSpan(this.AlphaToFoxtrotButton, 2);
-            this.AlphaToFoxtrotButton.Size = new System.Drawing.Size(38, 68);
+            this.AlphaToFoxtrotButton.Size = new System.Drawing.Size(55, 70);
             this.AlphaToFoxtrotButton.TabIndex = 16;
             this.AlphaToFoxtrotButton.Text = "↓";
             this.AlphaToFoxtrotButton.UseVisualStyleBackColor = true;
@@ -369,10 +378,10 @@ namespace DeckManagerOutput
             // FoxtrotToAlphaButton
             // 
             this.FoxtrotToAlphaButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FoxtrotToAlphaButton.Location = new System.Drawing.Point(212, 330);
+            this.FoxtrotToAlphaButton.Location = new System.Drawing.Point(184, 325);
             this.FoxtrotToAlphaButton.Name = "FoxtrotToAlphaButton";
             this.tableLayoutPanel1.SetRowSpan(this.FoxtrotToAlphaButton, 2);
-            this.FoxtrotToAlphaButton.Size = new System.Drawing.Size(38, 68);
+            this.FoxtrotToAlphaButton.Size = new System.Drawing.Size(55, 70);
             this.FoxtrotToAlphaButton.TabIndex = 17;
             this.FoxtrotToAlphaButton.Text = "↑";
             this.FoxtrotToAlphaButton.UseVisualStyleBackColor = true;
@@ -382,10 +391,10 @@ namespace DeckManagerOutput
             this.tableLayoutPanel1.SetColumnSpan(this.GalacticaBoardListBox, 3);
             this.GalacticaBoardListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GalacticaBoardListBox.FormattingEnabled = true;
-            this.GalacticaBoardListBox.Location = new System.Drawing.Point(300, 256);
+            this.GalacticaBoardListBox.Location = new System.Drawing.Point(306, 249);
             this.GalacticaBoardListBox.Name = "GalacticaBoardListBox";
             this.tableLayoutPanel1.SetRowSpan(this.GalacticaBoardListBox, 4);
-            this.GalacticaBoardListBox.Size = new System.Drawing.Size(126, 142);
+            this.GalacticaBoardListBox.Size = new System.Drawing.Size(177, 146);
             this.GalacticaBoardListBox.TabIndex = 19;
             // 
             // FoxtrotDradisListBox
@@ -393,10 +402,11 @@ namespace DeckManagerOutput
             this.tableLayoutPanel1.SetColumnSpan(this.FoxtrotDradisListBox, 2);
             this.FoxtrotDradisListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoxtrotDradisListBox.FormattingEnabled = true;
-            this.FoxtrotDradisListBox.Location = new System.Drawing.Point(300, 404);
+            this.FoxtrotDradisListBox.Location = new System.Drawing.Point(306, 401);
             this.FoxtrotDradisListBox.Name = "FoxtrotDradisListBox";
             this.tableLayoutPanel1.SetRowSpan(this.FoxtrotDradisListBox, 2);
-            this.FoxtrotDradisListBox.Size = new System.Drawing.Size(82, 68);
+            this.FoxtrotDradisListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.FoxtrotDradisListBox.Size = new System.Drawing.Size(116, 70);
             this.FoxtrotDradisListBox.TabIndex = 6;
             // 
             // EchoDradisListBox
@@ -404,19 +414,20 @@ namespace DeckManagerOutput
             this.tableLayoutPanel1.SetColumnSpan(this.EchoDradisListBox, 2);
             this.EchoDradisListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EchoDradisListBox.FormattingEnabled = true;
-            this.EchoDradisListBox.Location = new System.Drawing.Point(476, 404);
+            this.EchoDradisListBox.Location = new System.Drawing.Point(550, 401);
             this.EchoDradisListBox.Name = "EchoDradisListBox";
             this.tableLayoutPanel1.SetRowSpan(this.EchoDradisListBox, 2);
-            this.EchoDradisListBox.Size = new System.Drawing.Size(82, 68);
+            this.EchoDradisListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.EchoDradisListBox.Size = new System.Drawing.Size(116, 70);
             this.EchoDradisListBox.TabIndex = 5;
             // 
             // FoxtrotToEchoButton
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.FoxtrotToEchoButton, 2);
             this.FoxtrotToEchoButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FoxtrotToEchoButton.Location = new System.Drawing.Point(388, 404);
+            this.FoxtrotToEchoButton.Location = new System.Drawing.Point(428, 401);
             this.FoxtrotToEchoButton.Name = "FoxtrotToEchoButton";
-            this.FoxtrotToEchoButton.Size = new System.Drawing.Size(82, 31);
+            this.FoxtrotToEchoButton.Size = new System.Drawing.Size(116, 32);
             this.FoxtrotToEchoButton.TabIndex = 12;
             this.FoxtrotToEchoButton.Text = "→";
             this.FoxtrotToEchoButton.UseVisualStyleBackColor = true;
@@ -425,50 +436,48 @@ namespace DeckManagerOutput
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.EchoToFoxtrotButton, 2);
             this.EchoToFoxtrotButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EchoToFoxtrotButton.Location = new System.Drawing.Point(388, 441);
+            this.EchoToFoxtrotButton.Location = new System.Drawing.Point(428, 439);
             this.EchoToFoxtrotButton.Name = "EchoToFoxtrotButton";
-            this.EchoToFoxtrotButton.Size = new System.Drawing.Size(82, 31);
+            this.EchoToFoxtrotButton.Size = new System.Drawing.Size(116, 32);
             this.EchoToFoxtrotButton.TabIndex = 11;
             this.EchoToFoxtrotButton.Text = "←";
             this.EchoToFoxtrotButton.UseVisualStyleBackColor = true;
             // 
-            // CylonBoardListBox
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.CylonBoardListBox, 2);
-            this.CylonBoardListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CylonBoardListBox.FormattingEnabled = true;
-            this.CylonBoardListBox.Location = new System.Drawing.Point(168, 58);
-            this.CylonBoardListBox.Name = "CylonBoardListBox";
-            this.tableLayoutPanel1.SetRowSpan(this.CylonBoardListBox, 3);
-            this.CylonBoardListBox.Size = new System.Drawing.Size(82, 81);
-            this.CylonBoardListBox.TabIndex = 21;
-            // 
-            // PlayerRightClickMenu
-            // 
-            this.PlayerRightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ShowHandMenuItem});
-            this.PlayerRightClickMenu.Name = "PlayerRightClickMenu";
-            this.PlayerRightClickMenu.Size = new System.Drawing.Size(141, 26);
-            // 
-            // ShowHandMenuItem
-            // 
-            this.ShowHandMenuItem.Name = "ShowHandMenuItem";
-            this.ShowHandMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.ShowHandMenuItem.Text = "Show Hand...";
-            this.ShowHandMenuItem.Click += new System.EventHandler(this.ShowHandMenuItemClick);
-            // 
             // JumpPrepGroupBox
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.JumpPrepGroupBox, 3);
+            this.tableLayoutPanel1.SetColumnSpan(this.JumpPrepGroupBox, 2);
+            this.JumpPrepGroupBox.ContextMenuStrip = this.JumpPrepRightClickMenu;
             this.JumpPrepGroupBox.Controls.Add(this.tableLayoutPanel2);
             this.JumpPrepGroupBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.JumpPrepGroupBox.Location = new System.Drawing.Point(212, 478);
+            this.JumpPrepGroupBox.Location = new System.Drawing.Point(184, 477);
             this.JumpPrepGroupBox.Name = "JumpPrepGroupBox";
             this.tableLayoutPanel1.SetRowSpan(this.JumpPrepGroupBox, 2);
-            this.JumpPrepGroupBox.Size = new System.Drawing.Size(126, 59);
+            this.JumpPrepGroupBox.Size = new System.Drawing.Size(116, 59);
             this.JumpPrepGroupBox.TabIndex = 25;
             this.JumpPrepGroupBox.TabStop = false;
             this.JumpPrepGroupBox.Text = "JumpPrepGroupBox";
+            // 
+            // JumpPrepRightClickMenu
+            // 
+            this.JumpPrepRightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.increaseJumpPrepToolStripMenuItem,
+            this.decreaseJumpPrepToolStripMenuItem});
+            this.JumpPrepRightClickMenu.Name = "JumpPrepRightClickMenu";
+            this.JumpPrepRightClickMenu.Size = new System.Drawing.Size(173, 48);
+            // 
+            // increaseJumpPrepToolStripMenuItem
+            // 
+            this.increaseJumpPrepToolStripMenuItem.Name = "increaseJumpPrepToolStripMenuItem";
+            this.increaseJumpPrepToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.increaseJumpPrepToolStripMenuItem.Text = "Increase Jump Prep";
+            this.increaseJumpPrepToolStripMenuItem.Click += new System.EventHandler(this.IncreaseJumpPrepToolStripMenuItemClick);
+            // 
+            // decreaseJumpPrepToolStripMenuItem
+            // 
+            this.decreaseJumpPrepToolStripMenuItem.Name = "decreaseJumpPrepToolStripMenuItem";
+            this.decreaseJumpPrepToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.decreaseJumpPrepToolStripMenuItem.Text = "Decrease Jump Prep";
+            this.decreaseJumpPrepToolStripMenuItem.Click += new System.EventHandler(this.DecreaseJumpPrepToolStripMenuItemClick);
             // 
             // tableLayoutPanel2
             // 
@@ -490,7 +499,7 @@ namespace DeckManagerOutput
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(120, 40);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(110, 40);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // Red1RadioButton
@@ -498,77 +507,209 @@ namespace DeckManagerOutput
             this.Red1RadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Red1RadioButton.AutoSize = true;
             this.Red1RadioButton.Checked = true;
+            this.Red1RadioButton.Enabled = false;
             this.Red1RadioButton.Location = new System.Drawing.Point(3, 11);
             this.Red1RadioButton.Name = "Red1RadioButton";
-            this.Red1RadioButton.Size = new System.Drawing.Size(14, 17);
+            this.Red1RadioButton.Size = new System.Drawing.Size(12, 17);
             this.Red1RadioButton.TabIndex = 0;
             this.Red1RadioButton.TabStop = true;
             this.Red1RadioButton.Text = "radioButton1";
             this.Red1RadioButton.UseVisualStyleBackColor = true;
+            this.Red1RadioButton.CheckedChanged += new System.EventHandler(this.JumpPrepChanged);
             // 
             // Red2RadioButton
             // 
             this.Red2RadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Red2RadioButton.AutoSize = true;
-            this.Red2RadioButton.Location = new System.Drawing.Point(23, 11);
+            this.Red2RadioButton.Enabled = false;
+            this.Red2RadioButton.Location = new System.Drawing.Point(21, 11);
             this.Red2RadioButton.Name = "Red2RadioButton";
-            this.Red2RadioButton.Size = new System.Drawing.Size(14, 17);
+            this.Red2RadioButton.Size = new System.Drawing.Size(12, 17);
             this.Red2RadioButton.TabIndex = 1;
             this.Red2RadioButton.Text = "radioButton2";
             this.Red2RadioButton.UseVisualStyleBackColor = true;
+            this.Red2RadioButton.CheckedChanged += new System.EventHandler(this.JumpPrepChanged);
             // 
             // Red3RadioButton
             // 
             this.Red3RadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Red3RadioButton.AutoSize = true;
-            this.Red3RadioButton.Location = new System.Drawing.Point(43, 11);
+            this.Red3RadioButton.Enabled = false;
+            this.Red3RadioButton.Location = new System.Drawing.Point(39, 11);
             this.Red3RadioButton.Name = "Red3RadioButton";
-            this.Red3RadioButton.Size = new System.Drawing.Size(14, 17);
+            this.Red3RadioButton.Size = new System.Drawing.Size(12, 17);
             this.Red3RadioButton.TabIndex = 2;
             this.Red3RadioButton.Text = "radioButton3";
             this.Red3RadioButton.UseVisualStyleBackColor = true;
+            this.Red3RadioButton.CheckedChanged += new System.EventHandler(this.JumpPrepChanged);
             // 
             // Risk3RadioButton
             // 
             this.Risk3RadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Risk3RadioButton.AutoSize = true;
-            this.Risk3RadioButton.Location = new System.Drawing.Point(63, 11);
+            this.Risk3RadioButton.Enabled = false;
+            this.Risk3RadioButton.Location = new System.Drawing.Point(57, 11);
             this.Risk3RadioButton.Name = "Risk3RadioButton";
-            this.Risk3RadioButton.Size = new System.Drawing.Size(14, 17);
+            this.Risk3RadioButton.Size = new System.Drawing.Size(12, 17);
             this.Risk3RadioButton.TabIndex = 3;
             this.Risk3RadioButton.Text = "radioButton4";
             this.Risk3RadioButton.UseVisualStyleBackColor = true;
+            this.Risk3RadioButton.CheckedChanged += new System.EventHandler(this.JumpPrepChanged);
             // 
             // Risk1RadioButton
             // 
             this.Risk1RadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Risk1RadioButton.AutoSize = true;
-            this.Risk1RadioButton.Location = new System.Drawing.Point(83, 11);
+            this.Risk1RadioButton.Enabled = false;
+            this.Risk1RadioButton.Location = new System.Drawing.Point(75, 11);
             this.Risk1RadioButton.Name = "Risk1RadioButton";
-            this.Risk1RadioButton.Size = new System.Drawing.Size(14, 17);
+            this.Risk1RadioButton.Size = new System.Drawing.Size(12, 17);
             this.Risk1RadioButton.TabIndex = 4;
             this.Risk1RadioButton.Text = "radioButton5";
             this.Risk1RadioButton.UseVisualStyleBackColor = true;
+            this.Risk1RadioButton.CheckedChanged += new System.EventHandler(this.JumpPrepChanged);
             // 
             // JumpNowRadioButton
             // 
             this.JumpNowRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.JumpNowRadioButton.AutoSize = true;
-            this.JumpNowRadioButton.Location = new System.Drawing.Point(103, 11);
+            this.JumpNowRadioButton.Enabled = false;
+            this.JumpNowRadioButton.Location = new System.Drawing.Point(93, 11);
             this.JumpNowRadioButton.Name = "JumpNowRadioButton";
             this.JumpNowRadioButton.Size = new System.Drawing.Size(14, 17);
             this.JumpNowRadioButton.TabIndex = 5;
             this.JumpNowRadioButton.Text = "radioButton6";
             this.JumpNowRadioButton.UseVisualStyleBackColor = true;
+            this.JumpNowRadioButton.CheckedChanged += new System.EventHandler(this.JumpPrepChanged);
+            // 
+            // FuelUpDown
+            // 
+            this.FuelUpDown.Location = new System.Drawing.Point(367, 515);
+            this.FuelUpDown.Name = "FuelUpDown";
+            this.FuelUpDown.Size = new System.Drawing.Size(38, 20);
+            this.FuelUpDown.TabIndex = 27;
+            // 
+            // FoodUpDown
+            // 
+            this.FoodUpDown.Location = new System.Drawing.Point(428, 515);
+            this.FoodUpDown.Name = "FoodUpDown";
+            this.FoodUpDown.Size = new System.Drawing.Size(38, 20);
+            this.FoodUpDown.TabIndex = 28;
+            // 
+            // MoraleUpDown
+            // 
+            this.MoraleUpDown.Location = new System.Drawing.Point(489, 515);
+            this.MoraleUpDown.Name = "MoraleUpDown";
+            this.MoraleUpDown.Size = new System.Drawing.Size(38, 20);
+            this.MoraleUpDown.TabIndex = 29;
+            // 
+            // PopUpDown
+            // 
+            this.PopUpDown.Location = new System.Drawing.Point(550, 515);
+            this.PopUpDown.Name = "PopUpDown";
+            this.PopUpDown.Size = new System.Drawing.Size(38, 20);
+            this.PopUpDown.TabIndex = 30;
+            // 
+            // FuelLabel
+            // 
+            this.FuelLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.FuelLabel.AutoSize = true;
+            this.FuelLabel.Location = new System.Drawing.Point(367, 499);
+            this.FuelLabel.Name = "FuelLabel";
+            this.FuelLabel.Size = new System.Drawing.Size(27, 13);
+            this.FuelLabel.TabIndex = 31;
+            this.FuelLabel.Text = "Fuel";
+            // 
+            // FoodLabel
+            // 
+            this.FoodLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.FoodLabel.AutoSize = true;
+            this.FoodLabel.Location = new System.Drawing.Point(428, 499);
+            this.FoodLabel.Name = "FoodLabel";
+            this.FoodLabel.Size = new System.Drawing.Size(31, 13);
+            this.FoodLabel.TabIndex = 32;
+            this.FoodLabel.Text = "Food";
+            // 
+            // MoraleLabel
+            // 
+            this.MoraleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.MoraleLabel.AutoSize = true;
+            this.MoraleLabel.Location = new System.Drawing.Point(489, 499);
+            this.MoraleLabel.Name = "MoraleLabel";
+            this.MoraleLabel.Size = new System.Drawing.Size(39, 13);
+            this.MoraleLabel.TabIndex = 33;
+            this.MoraleLabel.Text = "Morale";
+            // 
+            // PopulationLabel
+            // 
+            this.PopulationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.PopulationLabel.AutoSize = true;
+            this.PopulationLabel.Location = new System.Drawing.Point(550, 499);
+            this.PopulationLabel.Name = "PopulationLabel";
+            this.PopulationLabel.Size = new System.Drawing.Size(26, 13);
+            this.PopulationLabel.TabIndex = 34;
+            this.PopulationLabel.Text = "Pop";
+            // 
+            // PlayerReadonlyListBox
+            // 
+            this.PlayerReadonlyListBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.PlayerReadonlyListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PlayerReadonlyListBox.ContextMenuStrip = this.PlayerRightClickMenu;
+            this.PlayerReadonlyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlayerReadonlyListBox.FormattingEnabled = true;
+            this.PlayerReadonlyListBox.HorizontalScrollbar = true;
+            this.PlayerReadonlyListBox.Location = new System.Drawing.Point(3, 3);
+            this.PlayerReadonlyListBox.Name = "PlayerReadonlyListBox";
+            this.PlayerReadonlyListBox.ReadOnly = true;
+            this.tableLayoutPanel1.SetRowSpan(this.PlayerReadonlyListBox, 4);
+            this.PlayerReadonlyListBox.Size = new System.Drawing.Size(114, 164);
+            this.PlayerReadonlyListBox.TabIndex = 24;
+            // 
+            // PlayerRightClickMenu
+            // 
+            this.PlayerRightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ShowHandMenuItem});
+            this.PlayerRightClickMenu.Name = "PlayerRightClickMenu";
+            this.PlayerRightClickMenu.Size = new System.Drawing.Size(141, 26);
+            // 
+            // ShowHandMenuItem
+            // 
+            this.ShowHandMenuItem.Name = "ShowHandMenuItem";
+            this.ShowHandMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.ShowHandMenuItem.Text = "Show Hand...";
+            this.ShowHandMenuItem.Click += new System.EventHandler(this.ShowHandMenuItemClick);
+            // 
+            // CylonBoardListBox
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.CylonBoardListBox, 2);
+            this.CylonBoardListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CylonBoardListBox.FormattingEnabled = true;
+            this.CylonBoardListBox.Location = new System.Drawing.Point(123, 58);
+            this.CylonBoardListBox.Name = "CylonBoardListBox";
+            this.tableLayoutPanel1.SetRowSpan(this.CylonBoardListBox, 2);
+            this.CylonBoardListBox.Size = new System.Drawing.Size(116, 71);
+            this.CylonBoardListBox.TabIndex = 21;
+            // 
+            // CrisisLabel
+            // 
+            this.CrisisLabel.AutoSize = true;
+            this.CrisisLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tableLayoutPanel1.SetColumnSpan(this.CrisisLabel, 2);
+            this.CrisisLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CrisisLabel.Location = new System.Drawing.Point(3, 170);
+            this.CrisisLabel.Name = "CrisisLabel";
+            this.tableLayoutPanel1.SetRowSpan(this.CrisisLabel, 4);
+            this.CrisisLabel.Size = new System.Drawing.Size(175, 152);
+            this.CrisisLabel.TabIndex = 35;
             // 
             // CentBoardingGroupBox
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.CentBoardingGroupBox, 3);
+            this.tableLayoutPanel1.SetColumnSpan(this.CentBoardingGroupBox, 2);
             this.CentBoardingGroupBox.Controls.Add(this.tableLayoutPanel3);
-            this.CentBoardingGroupBox.Location = new System.Drawing.Point(520, 478);
+            this.CentBoardingGroupBox.Location = new System.Drawing.Point(672, 477);
             this.CentBoardingGroupBox.Name = "CentBoardingGroupBox";
             this.tableLayoutPanel1.SetRowSpan(this.CentBoardingGroupBox, 2);
-            this.CentBoardingGroupBox.Size = new System.Drawing.Size(126, 59);
+            this.CentBoardingGroupBox.Size = new System.Drawing.Size(117, 59);
             this.CentBoardingGroupBox.TabIndex = 26;
             this.CentBoardingGroupBox.TabStop = false;
             this.CentBoardingGroupBox.Text = "Centurion Boarding";
@@ -592,7 +733,7 @@ namespace DeckManagerOutput
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(120, 40);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(111, 40);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // CentBoardingTextBox1
@@ -600,10 +741,10 @@ namespace DeckManagerOutput
             this.CentBoardingTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CentBoardingTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CentBoardingTextBox1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.CentBoardingTextBox1.Location = new System.Drawing.Point(3, 10);
+            this.CentBoardingTextBox1.Location = new System.Drawing.Point(3, 13);
             this.CentBoardingTextBox1.Name = "CentBoardingTextBox1";
             this.CentBoardingTextBox1.ReadOnly = true;
-            this.CentBoardingTextBox1.Size = new System.Drawing.Size(18, 13);
+            this.CentBoardingTextBox1.Size = new System.Drawing.Size(16, 13);
             this.CentBoardingTextBox1.TabIndex = 0;
             this.CentBoardingTextBox1.Text = "0";
             // 
@@ -612,10 +753,10 @@ namespace DeckManagerOutput
             this.CentBoardingTextBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CentBoardingTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CentBoardingTextBox2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.CentBoardingTextBox2.Location = new System.Drawing.Point(27, 10);
+            this.CentBoardingTextBox2.Location = new System.Drawing.Point(25, 13);
             this.CentBoardingTextBox2.Name = "CentBoardingTextBox2";
             this.CentBoardingTextBox2.ReadOnly = true;
-            this.CentBoardingTextBox2.Size = new System.Drawing.Size(18, 13);
+            this.CentBoardingTextBox2.Size = new System.Drawing.Size(16, 13);
             this.CentBoardingTextBox2.TabIndex = 1;
             this.CentBoardingTextBox2.Text = "0";
             // 
@@ -624,10 +765,10 @@ namespace DeckManagerOutput
             this.CentBoardingTextBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CentBoardingTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CentBoardingTextBox3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.CentBoardingTextBox3.Location = new System.Drawing.Point(51, 10);
+            this.CentBoardingTextBox3.Location = new System.Drawing.Point(47, 13);
             this.CentBoardingTextBox3.Name = "CentBoardingTextBox3";
             this.CentBoardingTextBox3.ReadOnly = true;
-            this.CentBoardingTextBox3.Size = new System.Drawing.Size(18, 13);
+            this.CentBoardingTextBox3.Size = new System.Drawing.Size(16, 13);
             this.CentBoardingTextBox3.TabIndex = 2;
             this.CentBoardingTextBox3.Text = "0";
             // 
@@ -636,10 +777,10 @@ namespace DeckManagerOutput
             this.CentBoardingTextBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CentBoardingTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CentBoardingTextBox4.ForeColor = System.Drawing.SystemColors.Menu;
-            this.CentBoardingTextBox4.Location = new System.Drawing.Point(75, 10);
+            this.CentBoardingTextBox4.Location = new System.Drawing.Point(69, 13);
             this.CentBoardingTextBox4.Name = "CentBoardingTextBox4";
             this.CentBoardingTextBox4.ReadOnly = true;
-            this.CentBoardingTextBox4.Size = new System.Drawing.Size(18, 13);
+            this.CentBoardingTextBox4.Size = new System.Drawing.Size(16, 13);
             this.CentBoardingTextBox4.TabIndex = 3;
             this.CentBoardingTextBox4.Text = "0";
             // 
@@ -649,107 +790,29 @@ namespace DeckManagerOutput
             this.CentBoardingTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CentBoardingTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CentBoardingTextBox5.ForeColor = System.Drawing.Color.Red;
-            this.CentBoardingTextBox5.Location = new System.Drawing.Point(99, 10);
+            this.CentBoardingTextBox5.Location = new System.Drawing.Point(91, 13);
             this.CentBoardingTextBox5.Name = "CentBoardingTextBox5";
             this.CentBoardingTextBox5.ReadOnly = true;
-            this.CentBoardingTextBox5.Size = new System.Drawing.Size(18, 13);
+            this.CentBoardingTextBox5.Size = new System.Drawing.Size(17, 13);
             this.CentBoardingTextBox5.TabIndex = 4;
             this.CentBoardingTextBox5.Text = "0";
             // 
-            // numericUpDown1
+            // DistanceLabel
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(344, 515);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown1.TabIndex = 27;
+            this.DistanceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.DistanceLabel.AutoSize = true;
+            this.DistanceLabel.Location = new System.Drawing.Point(611, 499);
+            this.DistanceLabel.Name = "DistanceLabel";
+            this.DistanceLabel.Size = new System.Drawing.Size(49, 13);
+            this.DistanceLabel.TabIndex = 36;
+            this.DistanceLabel.Text = "Distance";
             // 
-            // numericUpDown2
+            // DistanceUpDown
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(388, 515);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown2.TabIndex = 28;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(432, 515);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown3.TabIndex = 29;
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(476, 515);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDown4.TabIndex = 30;
-            // 
-            // FuelLabel
-            // 
-            this.FuelLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.FuelLabel.AutoSize = true;
-            this.FuelLabel.Location = new System.Drawing.Point(344, 499);
-            this.FuelLabel.Name = "FuelLabel";
-            this.FuelLabel.Size = new System.Drawing.Size(27, 13);
-            this.FuelLabel.TabIndex = 31;
-            this.FuelLabel.Text = "Fuel";
-            // 
-            // FoodLabel
-            // 
-            this.FoodLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.FoodLabel.AutoSize = true;
-            this.FoodLabel.Location = new System.Drawing.Point(388, 499);
-            this.FoodLabel.Name = "FoodLabel";
-            this.FoodLabel.Size = new System.Drawing.Size(31, 13);
-            this.FoodLabel.TabIndex = 32;
-            this.FoodLabel.Text = "Food";
-            // 
-            // MoraleLabel
-            // 
-            this.MoraleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.MoraleLabel.AutoSize = true;
-            this.MoraleLabel.Location = new System.Drawing.Point(432, 486);
-            this.MoraleLabel.Name = "MoraleLabel";
-            this.MoraleLabel.Size = new System.Drawing.Size(33, 26);
-            this.MoraleLabel.TabIndex = 33;
-            this.MoraleLabel.Text = "Morale";
-            // 
-            // PopulationLabel
-            // 
-            this.PopulationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.PopulationLabel.AutoSize = true;
-            this.PopulationLabel.Location = new System.Drawing.Point(476, 499);
-            this.PopulationLabel.Name = "PopulationLabel";
-            this.PopulationLabel.Size = new System.Drawing.Size(26, 13);
-            this.PopulationLabel.TabIndex = 34;
-            this.PopulationLabel.Text = "Pop";
-            // 
-            // CrisisLabel
-            // 
-            this.CrisisLabel.AutoSize = true;
-            this.CrisisLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CrisisLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CrisisLabel.Location = new System.Drawing.Point(3, 105);
-            this.CrisisLabel.Name = "CrisisLabel";
-            this.tableLayoutPanel1.SetRowSpan(this.CrisisLabel, 4);
-            this.CrisisLabel.Size = new System.Drawing.Size(158, 148);
-            this.CrisisLabel.TabIndex = 35;
-            this.CrisisLabel.Text = "CrisisLabel";
-            // 
-            // PlayerReadonlyListBox
-            // 
-            this.PlayerReadonlyListBox.BackColor = System.Drawing.SystemColors.Menu;
-            this.PlayerReadonlyListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlayerReadonlyListBox.ContextMenuStrip = this.PlayerRightClickMenu;
-            this.PlayerReadonlyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlayerReadonlyListBox.FormattingEnabled = true;
-            this.PlayerReadonlyListBox.HorizontalScrollbar = true;
-            this.PlayerReadonlyListBox.Location = new System.Drawing.Point(3, 3);
-            this.PlayerReadonlyListBox.Name = "PlayerReadonlyListBox";
-            this.PlayerReadonlyListBox.ReadOnly = true;
-            this.tableLayoutPanel1.SetRowSpan(this.PlayerReadonlyListBox, 3);
-            this.PlayerReadonlyListBox.Size = new System.Drawing.Size(158, 99);
-            this.PlayerReadonlyListBox.TabIndex = 24;
+            this.DistanceUpDown.Location = new System.Drawing.Point(611, 515);
+            this.DistanceUpDown.Name = "DistanceUpDown";
+            this.DistanceUpDown.Size = new System.Drawing.Size(38, 20);
+            this.DistanceUpDown.TabIndex = 37;
             // 
             // GameWindow
             // 
@@ -764,17 +827,19 @@ namespace DeckManagerOutput
             this.MainMenuStrip.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.PlayerRightClickMenu.ResumeLayout(false);
             this.JumpPrepGroupBox.ResumeLayout(false);
+            this.JumpPrepRightClickMenu.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FuelUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MoraleUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PopUpDown)).EndInit();
+            this.PlayerRightClickMenu.ResumeLayout(false);
             this.CentBoardingGroupBox.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DistanceUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -827,14 +892,19 @@ namespace DeckManagerOutput
         private System.Windows.Forms.TextBox CentBoardingTextBox3;
         private System.Windows.Forms.TextBox CentBoardingTextBox4;
         private System.Windows.Forms.TextBox CentBoardingTextBox5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown FuelUpDown;
+        private System.Windows.Forms.NumericUpDown FoodUpDown;
+        private System.Windows.Forms.NumericUpDown MoraleUpDown;
+        private System.Windows.Forms.NumericUpDown PopUpDown;
         private System.Windows.Forms.Label FuelLabel;
         private System.Windows.Forms.Label FoodLabel;
         private System.Windows.Forms.Label MoraleLabel;
         private System.Windows.Forms.Label PopulationLabel;
         private System.Windows.Forms.Label CrisisLabel;
+        private System.Windows.Forms.Label DistanceLabel;
+        private System.Windows.Forms.NumericUpDown DistanceUpDown;
+        private System.Windows.Forms.ContextMenuStrip JumpPrepRightClickMenu;
+        private System.Windows.Forms.ToolStripMenuItem increaseJumpPrepToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem decreaseJumpPrepToolStripMenuItem;
     }
 }

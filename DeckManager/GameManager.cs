@@ -8,10 +8,10 @@ using DeckManager.Boards.Dradis;
 using DeckManager.Cards.Enums;
 using DeckManager.Characters;
 using DeckManager.Components;
+using DeckManager.Components.Enums;
 using DeckManager.Decks;
 using DeckManager.Extensions;
 using DeckManager.States;
-using DeckManager.States.Enums;
 using Newtonsoft.Json;
 using log4net;
 
@@ -79,7 +79,7 @@ namespace DeckManager
                     Dradis = new DradisBoard(),
                     Boards = BuildBoards(),
 
-                    ActiveCivilians = BuildCivilians(),
+                    Civilians = BuildCivilians(),
                     Vipers = BuildVipers(),
 
                     Turn = 1,
@@ -159,7 +159,7 @@ namespace DeckManager
                         PermanentDesignation = Guid.NewGuid(),
                         InternalDesignation = Guid.NewGuid(),
                         PublicDesignation = "Vigilante " + (viperInt+1),
-                        Status = ViperStatus.InReserve
+                        Status = ComponentStatus.InReserve
                     };
                 vipers[viperInt] = newViper;
                 viperInt++;
@@ -169,7 +169,12 @@ namespace DeckManager
 
         private Viper DrawViper()
         {
-            return CurrentGameState.Vipers.FirstOrDefault(x => x.Status == ViperStatus.InReserve);
+            var viperDrawn = CurrentGameState.Vipers.FindIndex(x => x.Status == ComponentStatus.InReserve);
+            if (viperDrawn == -1) // No vipers are in reserve
+                return null;
+
+            CurrentGameState.Vipers[viperDrawn].Status = ComponentStatus.Active;
+            return CurrentGameState.Vipers[viperDrawn];
         }
 
         private List<Civilian> BuildCivilians()
@@ -190,35 +195,45 @@ namespace DeckManager
         private void ShuffleCivs()
         {
             var civInt = 1;
-            foreach (var civ in CurrentGameState.ActiveCivilians)
+            foreach (var civ in CurrentGameState.Civilians.Where(x => x.Status != ComponentStatus.Destroyed))
             {
                 civ.InternalDesignation = Guid.NewGuid();
                 civ.PublicDesignation = "Civ " + civInt;
+                civ.Status = ComponentStatus.InReserve;
                 civInt++;
             }
             
-            CurrentGameState.ActiveCivilians = CurrentGameState.ActiveCivilians.OrderBy(x => x.InternalDesignation).ToList();
+            CurrentGameState.Civilians = CurrentGameState.Civilians.OrderBy(x => x.InternalDesignation).ToList();
         }
 
         #endregion // Private Methods
 
         private Civilian DrawCiv()
         {
-            return CurrentGameState.ActiveCivilians.Count > 0 ? CurrentGameState.ActiveCivilians.ElementAt(0) : null;
+            var civDrawn = CurrentGameState.Civilians.FindIndex(x => x.Status == ComponentStatus.InReserve);
+            if (civDrawn == -1) // No vipers are in reserve
+                return null;
+
+            CurrentGameState.Civilians[civDrawn].Status = ComponentStatus.Active;
+            return CurrentGameState.Civilians[civDrawn];
         }
 
         public void KillCiv(Civilian civ)
         {
             CurrentGameState.Dradis.RemoveComponent(civ);
-            CurrentGameState.ActiveCivilians.Remove(civ);
-            CurrentGameState.KilledCivilians.Add(civ);
+            var modifiedCiv = CurrentGameState.Civilians.FindIndex(x => x.PermanentDesignation == civ.PermanentDesignation);
+            if (modifiedCiv == -1)
+                return;
+            CurrentGameState.Civilians[modifiedCiv].Status = ComponentStatus.Destroyed;
         }
 
         public void RemoveViper(Viper viper, bool destroyed = false)
         {
             CurrentGameState.Dradis.RemoveComponent(viper);
             var modifiedViper = CurrentGameState.Vipers.FindIndex(x => x.PermanentDesignation == viper.PermanentDesignation);
-            CurrentGameState.Vipers[modifiedViper].Status = (destroyed ? ViperStatus.Destroyed : ViperStatus.Damaged);
+            if (modifiedViper == -1)
+                return;
+            CurrentGameState.Vipers[modifiedViper].Status = (destroyed ? ComponentStatus.Destroyed : ComponentStatus.Damaged);
         }
 
         public void RemoveComponent(BaseComponent component)

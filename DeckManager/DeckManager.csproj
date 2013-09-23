@@ -100,7 +100,7 @@
     <Compile Include="States\Board.cs" />
     <Compile Include="Cards\SkillCard.cs" />
     <Compile Include="Components\Civilian.cs" />
-    <Compile Include="Components\Enums\ViperStatus.cs" />
+    <Compile Include="Components\Enums\ComponentStatus.cs" />
     <Compile Include="States\GameState.cs" />
     <Compile Include="States\Location.cs" />
     <Compile Include="States\Player.cs" />

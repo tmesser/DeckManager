@@ -43,6 +43,11 @@ namespace DeckManager.Components
         /// </value>
         public Guid InternalDesignation { get; set; }
 
+        public override string ToString()
+        {
+            return PublicDesignation;
+        }
+
         /// <summary>
         /// Gets the type of the component.
         /// </summary>

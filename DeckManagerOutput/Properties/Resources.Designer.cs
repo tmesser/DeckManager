@@ -79,6 +79,51 @@ namespace DeckManagerOutput.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Jump Now!.
+        /// </summary>
+        internal static string GameWindow_JumpPrepChanged_JumpNow {
+            get {
+                return ResourceManager.GetString("GameWindow_JumpPrepChanged_JumpNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No jumping!.
+        /// </summary>
+        internal static string GameWindow_JumpPrepChanged_NoJumping {
+            get {
+                return ResourceManager.GetString("GameWindow_JumpPrepChanged_NoJumping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Risk 1!.
+        /// </summary>
+        internal static string GameWindow_JumpPrepChanged_Risk1 {
+            get {
+                return ResourceManager.GetString("GameWindow_JumpPrepChanged_Risk1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Risk 3!.
+        /// </summary>
+        internal static string GameWindow_JumpPrepChanged_Risk3 {
+            get {
+                return ResourceManager.GetString("GameWindow_JumpPrepChanged_Risk3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player Skill Cards.
+        /// </summary>
+        internal static string GameWindow_ShowHandMenuItemClick_HelpForm_Title {
+            get {
+                return ResourceManager.GetString("GameWindow_ShowHandMenuItemClick_HelpForm_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Game.
         /// </summary>
         internal static string GameWindowForm_MainMenu_Game {
@@ -120,6 +165,87 @@ namespace DeckManagerOutput.Properties {
         internal static string GameWindowForm_Text {
             get {
                 return ResourceManager.GetString("GameWindowForm_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto Jump.
+        /// </summary>
+        internal static string JumpPrep_AutoJump {
+            get {
+                return ResourceManager.GetString("JumpPrep_AutoJump", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jump prep {0}! Now at {1}! \r\n.
+        /// </summary>
+        internal static string JumpPrep_Base {
+            get {
+                return ResourceManager.GetString("JumpPrep_Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decreases.
+        /// </summary>
+        internal static string JumpPrep_Decrease {
+            get {
+                return ResourceManager.GetString("JumpPrep_Decrease", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increases.
+        /// </summary>
+        internal static string JumpPrep_Increase {
+            get {
+                return ResourceManager.GetString("JumpPrep_Increase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Red 1.
+        /// </summary>
+        internal static string JumpPrep_Red1 {
+            get {
+                return ResourceManager.GetString("JumpPrep_Red1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Red 2.
+        /// </summary>
+        internal static string JumpPrep_Red2 {
+            get {
+                return ResourceManager.GetString("JumpPrep_Red2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Red 3.
+        /// </summary>
+        internal static string JumpPrep_Red3 {
+            get {
+                return ResourceManager.GetString("JumpPrep_Red3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Risk 1.
+        /// </summary>
+        internal static string JumpPrep_Risk1 {
+            get {
+                return ResourceManager.GetString("JumpPrep_Risk1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Risk 3.
+        /// </summary>
+        internal static string JumpPrep_Risk3 {
+            get {
+                return ResourceManager.GetString("JumpPrep_Risk3", resourceCulture);
             }
         }
         

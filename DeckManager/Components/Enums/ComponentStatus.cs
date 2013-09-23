@@ -1,6 +1,6 @@
-﻿namespace DeckManager.States.Enums
+﻿namespace DeckManager.Components.Enums
 {
-    public enum ViperStatus
+    public enum ComponentStatus
     {
         Unknown,
         Active,

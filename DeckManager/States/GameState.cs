@@ -31,14 +31,27 @@ namespace DeckManager.States
         public int MaxRaptors { get; set; }
         public int CurrentRaptors { get; set; }
         
-        public List<Civilian> ActiveCivilians { get; set; }
-        public List<Civilian> KilledCivilians { get; set; }
+        public List<Civilian> Civilians { get; set; }
 
         public List<Board> Boards { get; set; }
         public DradisBoard Dradis { get; set; }
 
         public int Distance { get; set; }
-        public int JumpPrep { get; set; }
+
+        private int _jumpPrep;
+        public int JumpPrep
+        {
+            get { return _jumpPrep; }
+            set
+            {
+                _jumpPrep = value;
+                if (value < 0)
+                    _jumpPrep = 0;
+                if (value > 5)
+                    _jumpPrep = 5;
+            }
+        }
+
         public List<int> CylonBoarding { get; set; }
 
         #region Decks
@@ -105,6 +118,7 @@ namespace DeckManager.States
                     _tacticsDeck = value;
             }
         }
+
         private SkillCardDeck _treacheryDeck;
         public SkillCardDeck TreacheryDeck
         {

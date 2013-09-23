@@ -1,4 +1,5 @@
-﻿using DeckManager.Boards.Enums;
+﻿using System.Text;
+using DeckManager.Boards.Enums;
 
 namespace DeckManager.Boards
 {
@@ -26,5 +27,22 @@ namespace DeckManager.Boards
         /// The name of the board.
         /// </value>
         public BoardName BoardName { get; set; }
+
+        public override string ToString()
+        {
+            var ret = Name;
+            if (PlayersPresent.Count > 0)
+            {
+                var players = new StringBuilder();
+                foreach (var player in PlayersPresent)
+                {
+                    players.Append(player);
+                    players.Append(',');
+                    players.Append(' ');
+                }
+                ret = string.Format("{0} - {1}", Name, players.ToString().Trim(',',' '));
+            }
+            return ret;
+        }
     }
 }

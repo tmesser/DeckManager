@@ -189,4 +189,46 @@
   <data name="GameWindowForm_Text" xml:space="preserve">
     <value>Battlestar Galactica Game Manager</value>
   </data>
+  <data name="GameWindow_ShowHandMenuItemClick_HelpForm_Title" xml:space="preserve">
+    <value>Player Skill Cards</value>
+  </data>
+  <data name="GameWindow_JumpPrepChanged_NoJumping" xml:space="preserve">
+    <value>No jumping!</value>
+  </data>
+  <data name="GameWindow_JumpPrepChanged_Risk3" xml:space="preserve">
+    <value>Risk 3!</value>
+  </data>
+  <data name="GameWindow_JumpPrepChanged_Risk1" xml:space="preserve">
+    <value>Risk 1!</value>
+  </data>
+  <data name="GameWindow_JumpPrepChanged_JumpNow" xml:space="preserve">
+    <value>Jump Now!</value>
+  </data>
+  <data name="JumpPrep_AutoJump" xml:space="preserve">
+    <value>Auto Jump</value>
+  </data>
+  <data name="JumpPrep_Base" xml:space="preserve">
+    <value>Jump prep {0}! Now at {1}! \r\n</value>
+  </data>
+  <data name="JumpPrep_Decrease" xml:space="preserve">
+    <value>Decreases</value>
+  </data>
+  <data name="JumpPrep_Increase" xml:space="preserve">
+    <value>Increases</value>
+  </data>
+  <data name="JumpPrep_Red1" xml:space="preserve">
+    <value>Red 1</value>
+  </data>
+  <data name="JumpPrep_Red2" xml:space="preserve">
+    <value>Red 2</value>
+  </data>
+  <data name="JumpPrep_Red3" xml:space="preserve">
+    <value>Red 3</value>
+  </data>
+  <data name="JumpPrep_Risk1" xml:space="preserve">
+    <value>Risk 1</value>
+  </data>
+  <data name="JumpPrep_Risk3" xml:space="preserve">
+    <value>Risk 3</value>
+  </data>
 </root>
