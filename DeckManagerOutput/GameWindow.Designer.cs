@@ -82,6 +82,10 @@ namespace DeckManagerOutput
             this.CylonBoardListBox = new System.Windows.Forms.ListBox();
             this.CrisisLabel = new System.Windows.Forms.Label();
             this.CentBoardingGroupBox = new System.Windows.Forms.GroupBox();
+            this.CenturionBoardingRightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addCenturionToBoardingTrackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.advanceCenturionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.destroyFurthestCenturionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.CentBoardingTextBox1 = new System.Windows.Forms.TextBox();
             this.CentBoardingTextBox2 = new System.Windows.Forms.TextBox();
@@ -101,6 +105,7 @@ namespace DeckManagerOutput
             ((System.ComponentModel.ISupportInitialize)(this.PopUpDown)).BeginInit();
             this.PlayerRightClickMenu.SuspendLayout();
             this.CentBoardingGroupBox.SuspendLayout();
+            this.CenturionBoardingRightClickMenu.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DistanceUpDown)).BeginInit();
             this.SuspendLayout();
@@ -251,6 +256,7 @@ namespace DeckManagerOutput
             this.BravoToCharlieButton.TabIndex = 7;
             this.BravoToCharlieButton.Text = "→";
             this.BravoToCharlieButton.UseVisualStyleBackColor = true;
+            this.BravoToCharlieButton.Click += new System.EventHandler(this.BravoToCharlieButtonClick);
             // 
             // CharlieToBravoButton
             // 
@@ -262,6 +268,7 @@ namespace DeckManagerOutput
             this.CharlieToBravoButton.TabIndex = 8;
             this.CharlieToBravoButton.Text = "←";
             this.CharlieToBravoButton.UseVisualStyleBackColor = true;
+            this.CharlieToBravoButton.Click += new System.EventHandler(this.CharlieToBravoButtonClick);
             // 
             // ColonialOneListBox
             // 
@@ -308,6 +315,7 @@ namespace DeckManagerOutput
             this.AlphaToBravoButton.TabIndex = 9;
             this.AlphaToBravoButton.Text = "↑";
             this.AlphaToBravoButton.UseVisualStyleBackColor = true;
+            this.AlphaToBravoButton.Click += new System.EventHandler(this.AlphaToBravoButtonClick);
             // 
             // BravoToAlphaButton
             // 
@@ -319,6 +327,7 @@ namespace DeckManagerOutput
             this.BravoToAlphaButton.TabIndex = 10;
             this.BravoToAlphaButton.Text = "↓";
             this.BravoToAlphaButton.UseVisualStyleBackColor = true;
+            this.BravoToAlphaButton.Click += new System.EventHandler(this.BravoToAlphaButtonClick);
             // 
             // DeltaToCharlieButton
             // 
@@ -330,6 +339,7 @@ namespace DeckManagerOutput
             this.DeltaToCharlieButton.TabIndex = 13;
             this.DeltaToCharlieButton.Text = "↑";
             this.DeltaToCharlieButton.UseVisualStyleBackColor = true;
+            this.DeltaToCharlieButton.Click += new System.EventHandler(this.DeltaToCharlieButtonClick);
             // 
             // CharlieToDeltaButton
             // 
@@ -341,6 +351,7 @@ namespace DeckManagerOutput
             this.CharlieToDeltaButton.TabIndex = 14;
             this.CharlieToDeltaButton.Text = "↓";
             this.CharlieToDeltaButton.UseVisualStyleBackColor = true;
+            this.CharlieToDeltaButton.Click += new System.EventHandler(this.CharlieToDeltaButtonClick);
             // 
             // EchoToDeltaButton
             // 
@@ -352,6 +363,7 @@ namespace DeckManagerOutput
             this.EchoToDeltaButton.TabIndex = 18;
             this.EchoToDeltaButton.Text = "↑";
             this.EchoToDeltaButton.UseVisualStyleBackColor = true;
+            this.EchoToDeltaButton.Click += new System.EventHandler(this.EchoToDeltaButtonClick);
             // 
             // DeltaToEchoButton
             // 
@@ -363,6 +375,7 @@ namespace DeckManagerOutput
             this.DeltaToEchoButton.TabIndex = 15;
             this.DeltaToEchoButton.Text = "↓";
             this.DeltaToEchoButton.UseVisualStyleBackColor = true;
+            this.DeltaToEchoButton.Click += new System.EventHandler(this.DeltaToEchoButtonClick);
             // 
             // AlphaToFoxtrotButton
             // 
@@ -374,6 +387,7 @@ namespace DeckManagerOutput
             this.AlphaToFoxtrotButton.TabIndex = 16;
             this.AlphaToFoxtrotButton.Text = "↓";
             this.AlphaToFoxtrotButton.UseVisualStyleBackColor = true;
+            this.AlphaToFoxtrotButton.Click += new System.EventHandler(this.AlphaToFoxtrotButtonClick);
             // 
             // FoxtrotToAlphaButton
             // 
@@ -385,6 +399,7 @@ namespace DeckManagerOutput
             this.FoxtrotToAlphaButton.TabIndex = 17;
             this.FoxtrotToAlphaButton.Text = "↑";
             this.FoxtrotToAlphaButton.UseVisualStyleBackColor = true;
+            this.FoxtrotToAlphaButton.Click += new System.EventHandler(this.FoxtrotToAlphaButtonClick);
             // 
             // GalacticaBoardListBox
             // 
@@ -431,6 +446,7 @@ namespace DeckManagerOutput
             this.FoxtrotToEchoButton.TabIndex = 12;
             this.FoxtrotToEchoButton.Text = "→";
             this.FoxtrotToEchoButton.UseVisualStyleBackColor = true;
+            this.FoxtrotToEchoButton.Click += new System.EventHandler(this.FoxtrotToEchoButtonClick);
             // 
             // EchoToFoxtrotButton
             // 
@@ -442,6 +458,7 @@ namespace DeckManagerOutput
             this.EchoToFoxtrotButton.TabIndex = 11;
             this.EchoToFoxtrotButton.Text = "←";
             this.EchoToFoxtrotButton.UseVisualStyleBackColor = true;
+            this.EchoToFoxtrotButton.Click += new System.EventHandler(this.EchoToFoxtrotButtonClick);
             // 
             // JumpPrepGroupBox
             // 
@@ -455,7 +472,7 @@ namespace DeckManagerOutput
             this.JumpPrepGroupBox.Size = new System.Drawing.Size(116, 59);
             this.JumpPrepGroupBox.TabIndex = 25;
             this.JumpPrepGroupBox.TabStop = false;
-            this.JumpPrepGroupBox.Text = "JumpPrepGroupBox";
+            this.JumpPrepGroupBox.Text = "Jump Prep";
             // 
             // JumpPrepRightClickMenu
             // 
@@ -588,6 +605,7 @@ namespace DeckManagerOutput
             this.FuelUpDown.Name = "FuelUpDown";
             this.FuelUpDown.Size = new System.Drawing.Size(38, 20);
             this.FuelUpDown.TabIndex = 27;
+            this.FuelUpDown.ValueChanged += new System.EventHandler(this.FuelUpDownValueChanged);
             // 
             // FoodUpDown
             // 
@@ -595,6 +613,7 @@ namespace DeckManagerOutput
             this.FoodUpDown.Name = "FoodUpDown";
             this.FoodUpDown.Size = new System.Drawing.Size(38, 20);
             this.FoodUpDown.TabIndex = 28;
+            this.FoodUpDown.ValueChanged += new System.EventHandler(this.FoodUpDownValueChanged);
             // 
             // MoraleUpDown
             // 
@@ -602,6 +621,7 @@ namespace DeckManagerOutput
             this.MoraleUpDown.Name = "MoraleUpDown";
             this.MoraleUpDown.Size = new System.Drawing.Size(38, 20);
             this.MoraleUpDown.TabIndex = 29;
+            this.MoraleUpDown.ValueChanged += new System.EventHandler(this.MoraleUpDownValueChanged);
             // 
             // PopUpDown
             // 
@@ -609,6 +629,7 @@ namespace DeckManagerOutput
             this.PopUpDown.Name = "PopUpDown";
             this.PopUpDown.Size = new System.Drawing.Size(38, 20);
             this.PopUpDown.TabIndex = 30;
+            this.PopUpDown.ValueChanged += new System.EventHandler(this.PopUpDownValueChanged);
             // 
             // FuelLabel
             // 
@@ -705,6 +726,7 @@ namespace DeckManagerOutput
             // CentBoardingGroupBox
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.CentBoardingGroupBox, 2);
+            this.CentBoardingGroupBox.ContextMenuStrip = this.CenturionBoardingRightClickMenu;
             this.CentBoardingGroupBox.Controls.Add(this.tableLayoutPanel3);
             this.CentBoardingGroupBox.Location = new System.Drawing.Point(672, 477);
             this.CentBoardingGroupBox.Name = "CentBoardingGroupBox";
@@ -713,6 +735,36 @@ namespace DeckManagerOutput
             this.CentBoardingGroupBox.TabIndex = 26;
             this.CentBoardingGroupBox.TabStop = false;
             this.CentBoardingGroupBox.Text = "Centurion Boarding";
+            // 
+            // CenturionBoardingRightClickMenu
+            // 
+            this.CenturionBoardingRightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addCenturionToBoardingTrackToolStripMenuItem,
+            this.advanceCenturionsToolStripMenuItem,
+            this.destroyFurthestCenturionToolStripMenuItem});
+            this.CenturionBoardingRightClickMenu.Name = "CenturionBoardingRightClickMenu";
+            this.CenturionBoardingRightClickMenu.Size = new System.Drawing.Size(233, 70);
+            // 
+            // addCenturionToBoardingTrackToolStripMenuItem
+            // 
+            this.addCenturionToBoardingTrackToolStripMenuItem.Name = "addCenturionToBoardingTrackToolStripMenuItem";
+            this.addCenturionToBoardingTrackToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.addCenturionToBoardingTrackToolStripMenuItem.Text = "Add Centurion To Boarding Track";
+            this.addCenturionToBoardingTrackToolStripMenuItem.Click += new System.EventHandler(this.AddCenturionToBoardingTrackToolStripMenuItemClick);
+            // 
+            // advanceCenturionsToolStripMenuItem
+            // 
+            this.advanceCenturionsToolStripMenuItem.Name = "advanceCenturionsToolStripMenuItem";
+            this.advanceCenturionsToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.advanceCenturionsToolStripMenuItem.Text = "Advance Centurions";
+            this.advanceCenturionsToolStripMenuItem.Click += new System.EventHandler(this.AdvanceCenturionsToolStripMenuItemClick);
+            // 
+            // destroyFurthestCenturionToolStripMenuItem
+            // 
+            this.destroyFurthestCenturionToolStripMenuItem.Name = "destroyFurthestCenturionToolStripMenuItem";
+            this.destroyFurthestCenturionToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.destroyFurthestCenturionToolStripMenuItem.Text = "Destroy Furthest Centurion";
+            this.destroyFurthestCenturionToolStripMenuItem.Click += new System.EventHandler(this.DestroyFurthestCenturionToolStripMenuItemClick);
             // 
             // tableLayoutPanel3
             // 
@@ -746,7 +798,7 @@ namespace DeckManagerOutput
             this.CentBoardingTextBox1.ReadOnly = true;
             this.CentBoardingTextBox1.Size = new System.Drawing.Size(16, 13);
             this.CentBoardingTextBox1.TabIndex = 0;
-            this.CentBoardingTextBox1.Text = "0";
+            this.CentBoardingTextBox1.Text = "0\t";
             // 
             // CentBoardingTextBox2
             // 
@@ -813,6 +865,7 @@ namespace DeckManagerOutput
             this.DistanceUpDown.Name = "DistanceUpDown";
             this.DistanceUpDown.Size = new System.Drawing.Size(38, 20);
             this.DistanceUpDown.TabIndex = 37;
+            this.DistanceUpDown.ValueChanged += new System.EventHandler(this.DistanceUpDownValueChanged);
             // 
             // GameWindow
             // 
@@ -837,6 +890,7 @@ namespace DeckManagerOutput
             ((System.ComponentModel.ISupportInitialize)(this.PopUpDown)).EndInit();
             this.PlayerRightClickMenu.ResumeLayout(false);
             this.CentBoardingGroupBox.ResumeLayout(false);
+            this.CenturionBoardingRightClickMenu.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DistanceUpDown)).EndInit();
@@ -906,5 +960,9 @@ namespace DeckManagerOutput
         private System.Windows.Forms.ContextMenuStrip JumpPrepRightClickMenu;
         private System.Windows.Forms.ToolStripMenuItem increaseJumpPrepToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem decreaseJumpPrepToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip CenturionBoardingRightClickMenu;
+        private System.Windows.Forms.ToolStripMenuItem addCenturionToBoardingTrackToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem advanceCenturionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem destroyFurthestCenturionToolStripMenuItem;
     }
 }

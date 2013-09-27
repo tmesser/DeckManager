@@ -71,6 +71,7 @@
     <Compile Include="Components\Raider.cs" />
     <Compile Include="Decks\MissionDeck.cs" />
     <Compile Include="Decks\MutinyDeck.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\StringValueAttribute.cs" />

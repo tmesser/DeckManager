@@ -79,6 +79,42 @@ namespace DeckManagerOutput.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A Centurion boards Galactica! \r\n.
+        /// </summary>
+        internal static string CenturionBoardsGalactica {
+            get {
+                return ResourceManager.GetString("CenturionBoardsGalactica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A Centurion is destroyed! \r\n.
+        /// </summary>
+        internal static string CenturionDestroyed {
+            get {
+                return ResourceManager.GetString("CenturionDestroyed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Centurions advance! \r\n.
+        /// </summary>
+        internal static string CenturionsAdvance {
+            get {
+                return ResourceManager.GetString("CenturionsAdvance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} from {1} now in {2}! \r\n.
+        /// </summary>
+        internal static string ComponentMovement {
+            get {
+                return ResourceManager.GetString("ComponentMovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Jump Now!.
         /// </summary>
         internal static string GameWindow_JumpPrepChanged_JumpNow {
@@ -399,6 +435,60 @@ namespace DeckManagerOutput.Properties {
         internal static string PlayerRosterForm_PlayerName_Text {
             get {
                 return ResourceManager.GetString("PlayerRosterForm_PlayerName_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distance.
+        /// </summary>
+        internal static string Resource_Distance {
+            get {
+                return ResourceManager.GetString("Resource_Distance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Food.
+        /// </summary>
+        internal static string Resource_Food {
+            get {
+                return ResourceManager.GetString("Resource_Food", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fuel.
+        /// </summary>
+        internal static string Resource_Fuel {
+            get {
+                return ResourceManager.GetString("Resource_Fuel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Morale.
+        /// </summary>
+        internal static string Resource_Morale {
+            get {
+                return ResourceManager.GetString("Resource_Morale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Population.
+        /// </summary>
+        internal static string Resource_Population {
+            get {
+                return ResourceManager.GetString("Resource_Population", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is now at {1}!.
+        /// </summary>
+        internal static string ResourceChanged {
+            get {
+                return ResourceManager.GetString("ResourceChanged", resourceCulture);
             }
         }
     }

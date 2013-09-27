@@ -204,6 +204,9 @@
   <data name="GameWindow_JumpPrepChanged_JumpNow" xml:space="preserve">
     <value>Jump Now!</value>
   </data>
+  <data name="ComponentMovement" xml:space="preserve">
+    <value>{0} from {1} now in {2}! \r\n</value>
+  </data>
   <data name="JumpPrep_AutoJump" xml:space="preserve">
     <value>Auto Jump</value>
   </data>
@@ -230,5 +233,32 @@
   </data>
   <data name="JumpPrep_Risk3" xml:space="preserve">
     <value>Risk 3</value>
+  </data>
+  <data name="CenturionBoardsGalactica" xml:space="preserve">
+    <value>A Centurion boards Galactica! \r\n</value>
+  </data>
+  <data name="CenturionDestroyed" xml:space="preserve">
+    <value>A Centurion is destroyed! \r\n</value>
+  </data>
+  <data name="CenturionsAdvance" xml:space="preserve">
+    <value>Centurions advance! \r\n</value>
+  </data>
+  <data name="ResourceChanged" xml:space="preserve">
+    <value>{0} is now at {1}!</value>
+  </data>
+  <data name="Resource_Distance" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="Resource_Food" xml:space="preserve">
+    <value>Food</value>
+  </data>
+  <data name="Resource_Fuel" xml:space="preserve">
+    <value>Fuel</value>
+  </data>
+  <data name="Resource_Morale" xml:space="preserve">
+    <value>Morale</value>
+  </data>
+  <data name="Resource_Population" xml:space="preserve">
+    <value>Population</value>
   </data>
 </root>

@@ -52,7 +52,16 @@ namespace DeckManager.States
             }
         }
 
-        public List<int> CylonBoarding { get; set; }
+        private List<int> _cylonBoarding;
+        public List<int> CylonBoarding {
+            get
+            {
+                if (_cylonBoarding == null || _cylonBoarding.Count != 5)
+                    _cylonBoarding = new List<int> {0, 0, 0, 0, 0};
+                return _cylonBoarding;
+            }
+            set { _cylonBoarding = value; }
+        }
 
         #region Decks
 
