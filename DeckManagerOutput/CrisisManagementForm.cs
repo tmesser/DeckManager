@@ -16,11 +16,17 @@ namespace DeckManagerOutput
     {
         public CrisisManagementForm(IEnumerable<CrisisCard> crises)
         {
+            InitializeComponent();
+
             foreach (var crisis in crises)
             {
                 contentPanel.Controls.Add(new CrisisManagementControl(crisis));
             }
-            InitializeComponent();
+        }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

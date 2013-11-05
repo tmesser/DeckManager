@@ -468,7 +468,54 @@ namespace DeckManagerOutput
 
         private void drawMultipleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            var inputForm = new InputForm("Input the number of Crises to draw", "Draw Crises");
+            inputForm.ShowDialog();
+            if(inputForm.DialogResult == DialogResult.OK)
+            {
+                var numCrises = inputForm.UserInput.ParseAs<int>();
+                if (numCrises == 0)
+                {
+                    MessageBox.Show("Please input a number greater than 0.");
+                    return;
+                }
+                var crisisManagementForm = new CrisisManagementForm(Program.GManager.CurrentGameState.CrisisDeck.DrawMany(numCrises));
+                crisisManagementForm.ShowDialog();
+            }
+        }
+
+        private void saveGameStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var saveDialog = new SaveFileDialog();
+            saveDialog.InitialDirectory = Application.StartupPath;
+            saveDialog.Filter = "Saved Games (*.bsg)|*.bsg";
+            if(saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                Program.GManager.SaveGame(saveDialog.FileName);
+            }            
+        }
+
+        private void loadGameStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var openDialog = new OpenFileDialog();
+            openDialog.Filter = "Saved Games (*.bsg)|*.bsg";
+            if (openDialog.ShowDialog() == DialogResult.OK)
+            {
+                Program.GManager.LoadGame(openDialog.FileName);   
+
+                PlayerReadonlyListBox.BeginUpdate();
+                PlayerReadonlyListBox.DataSource = Program.GManager.CurrentGameState.Players;
+                PlayerReadonlyListBox.SelectedIndex = 0;
+                PlayerReadonlyListBox.EndUpdate();
+
+                FoodUpDown.Value = Program.GManager.CurrentGameState.Food;
+                FuelUpDown.Value = Program.GManager.CurrentGameState.Fuel;
+                MoraleUpDown.Value = Program.GManager.CurrentGameState.Morale;
+                PopUpDown.Value = Program.GManager.CurrentGameState.Population;
+
+                RefreshGameListBoxes();
+
+                JumpPrepChanged(sender, e);
+            }
         }
     }
 }

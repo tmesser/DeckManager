@@ -60,6 +60,8 @@ namespace DeckManagerOutput.CustomControls
         {
             Card = crisisCard;
             InitializeComponent();
+            CrisisDisplayTextBox.Text = Card.Heading + Environment.NewLine + Card.AdditionalText;
+            
         }
     }
 }

@@ -76,7 +76,6 @@ namespace DeckManagerOutput
             this.FoodLabel = new System.Windows.Forms.Label();
             this.MoraleLabel = new System.Windows.Forms.Label();
             this.PopulationLabel = new System.Windows.Forms.Label();
-            this.PlayerReadonlyListBox = new DeckManagerOutput.CustomControls.ReadOnlyListBox();
             this.PlayerRightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ShowHandMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CylonBoardListBox = new System.Windows.Forms.ListBox();
@@ -100,6 +99,7 @@ namespace DeckManagerOutput
             this.drawCrisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buryTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drawMultipleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PlayerReadonlyListBox = new DeckManagerOutput.CustomControls.ReadOnlyListBox();
             this.MainMenuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.JumpPrepGroupBox.SuspendLayout();
@@ -140,21 +140,23 @@ namespace DeckManagerOutput
             // newGameStripMenuItem
             // 
             this.newGameStripMenuItem.Name = "newGameStripMenuItem";
-            this.newGameStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.newGameStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newGameStripMenuItem.Text = global::DeckManagerOutput.Properties.Resources.GameWindowForm_MainMenu_Game_New;
             this.newGameStripMenuItem.Click += new System.EventHandler(this.NewGameStripMenuItemClick);
             // 
             // loadGameStripMenuItem
             // 
             this.loadGameStripMenuItem.Name = "loadGameStripMenuItem";
-            this.loadGameStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.loadGameStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loadGameStripMenuItem.Text = global::DeckManagerOutput.Properties.Resources.GameWindowForm_MainMenu_Game_Load;
+            this.loadGameStripMenuItem.Click += new System.EventHandler(this.loadGameStripMenuItem_Click);
             // 
             // saveGameStripMenuItem
             // 
             this.saveGameStripMenuItem.Name = "saveGameStripMenuItem";
-            this.saveGameStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.saveGameStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveGameStripMenuItem.Text = global::DeckManagerOutput.Properties.Resources.GameWindowForm_MainMenu_Game_Save;
+            this.saveGameStripMenuItem.Click += new System.EventHandler(this.saveGameStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -680,21 +682,6 @@ namespace DeckManagerOutput
             this.PopulationLabel.TabIndex = 34;
             this.PopulationLabel.Text = "Pop";
             // 
-            // PlayerReadonlyListBox
-            // 
-            this.PlayerReadonlyListBox.BackColor = System.Drawing.SystemColors.Menu;
-            this.PlayerReadonlyListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlayerReadonlyListBox.ContextMenuStrip = this.PlayerRightClickMenu;
-            this.PlayerReadonlyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlayerReadonlyListBox.FormattingEnabled = true;
-            this.PlayerReadonlyListBox.HorizontalScrollbar = true;
-            this.PlayerReadonlyListBox.Location = new System.Drawing.Point(3, 3);
-            this.PlayerReadonlyListBox.Name = "PlayerReadonlyListBox";
-            this.PlayerReadonlyListBox.ReadOnly = true;
-            this.tableLayoutPanel1.SetRowSpan(this.PlayerReadonlyListBox, 4);
-            this.PlayerReadonlyListBox.Size = new System.Drawing.Size(114, 164);
-            this.PlayerReadonlyListBox.TabIndex = 24;
-            // 
             // PlayerRightClickMenu
             // 
             this.PlayerRightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -888,6 +875,7 @@ namespace DeckManagerOutput
             | System.Windows.Forms.AnchorStyles.Right)));
             this.crisisText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel1.SetColumnSpan(this.crisisText, 2);
+            this.crisisText.ContextMenuStrip = this.CrisisRightClickMenu;
             this.crisisText.Location = new System.Drawing.Point(3, 173);
             this.crisisText.Multiline = true;
             this.crisisText.Name = "crisisText";
@@ -904,28 +892,43 @@ namespace DeckManagerOutput
             this.buryTopToolStripMenuItem,
             this.drawMultipleToolStripMenuItem});
             this.CrisisRightClickMenu.Name = "CrisisRightClickMenu";
-            this.CrisisRightClickMenu.Size = new System.Drawing.Size(153, 92);
+            this.CrisisRightClickMenu.Size = new System.Drawing.Size(137, 70);
             // 
             // drawCrisisToolStripMenuItem
             // 
             this.drawCrisisToolStripMenuItem.Name = "drawCrisisToolStripMenuItem";
-            this.drawCrisisToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.drawCrisisToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.drawCrisisToolStripMenuItem.Text = "Draw Crisis...";
             this.drawCrisisToolStripMenuItem.Click += new System.EventHandler(this.drawCrisisToolStripMenuItem_Click);
             // 
             // buryTopToolStripMenuItem
             // 
             this.buryTopToolStripMenuItem.Name = "buryTopToolStripMenuItem";
-            this.buryTopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.buryTopToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.buryTopToolStripMenuItem.Text = "Bury Top...";
             this.buryTopToolStripMenuItem.Click += new System.EventHandler(this.buryTopToolStripMenuItem_Click);
             // 
             // drawMultipleToolStripMenuItem
             // 
             this.drawMultipleToolStripMenuItem.Name = "drawMultipleToolStripMenuItem";
-            this.drawMultipleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.drawMultipleToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.drawMultipleToolStripMenuItem.Text = "Draw Multiple...";
             this.drawMultipleToolStripMenuItem.Click += new System.EventHandler(this.drawMultipleToolStripMenuItem_Click);
+            // 
+            // PlayerReadonlyListBox
+            // 
+            this.PlayerReadonlyListBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.PlayerReadonlyListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PlayerReadonlyListBox.ContextMenuStrip = this.PlayerRightClickMenu;
+            this.PlayerReadonlyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlayerReadonlyListBox.FormattingEnabled = true;
+            this.PlayerReadonlyListBox.HorizontalScrollbar = true;
+            this.PlayerReadonlyListBox.Location = new System.Drawing.Point(3, 3);
+            this.PlayerReadonlyListBox.Name = "PlayerReadonlyListBox";
+            this.PlayerReadonlyListBox.ReadOnly = true;
+            this.tableLayoutPanel1.SetRowSpan(this.PlayerReadonlyListBox, 4);
+            this.PlayerReadonlyListBox.Size = new System.Drawing.Size(114, 164);
+            this.PlayerReadonlyListBox.TabIndex = 24;
             // 
             // GameWindow
             // 

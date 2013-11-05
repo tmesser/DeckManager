@@ -72,12 +72,6 @@
     <Compile Include="DeckCreator.Designer.cs">
       <DependentUpon>DeckCreator.cs</DependentUpon>
     </Compile>
-    <Compile Include="DradisForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DradisForm.Designer.cs">
-      <DependentUpon>DradisForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="GameWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,12 +89,6 @@
     </Compile>
     <Compile Include="InputForm.Designer.cs">
       <DependentUpon>InputForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainWindow.Designer.cs">
-      <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="OptionalRulesForm.cs">
       <SubType>Form</SubType>
@@ -125,17 +113,14 @@
     <EmbeddedResource Include="DeckCreator.resx">
       <DependentUpon>DeckCreator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DradisForm.resx">
-      <DependentUpon>DradisForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GameWindow.resx">
       <DependentUpon>GameWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.resx">
-      <DependentUpon>MainWindow.cs</DependentUpon>
+    <EmbeddedResource Include="InputForm.resx">
+      <DependentUpon>InputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionalRulesForm.resx">
       <DependentUpon>OptionalRulesForm.cs</DependentUpon>

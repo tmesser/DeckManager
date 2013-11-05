@@ -24,13 +24,6 @@ namespace DeckManager.Boards.Dradis
             var echo = new DradisNode(DradisNodeName.Echo);
             var foxtrot = new DradisNode(DradisNodeName.Foxtrot);
 
-            alpha.SetNodePosition(bravo, foxtrot);
-            bravo.SetNodePosition(charlie, alpha);
-            charlie.SetNodePosition(delta, bravo);
-            delta.SetNodePosition(echo, charlie);
-            echo.SetNodePosition(foxtrot, delta);
-            foxtrot.SetNodePosition(alpha, echo);
-
             Nodes = new List<DradisNode> {alpha, bravo, charlie, delta, echo, foxtrot};
         }
 
@@ -80,10 +73,18 @@ namespace DeckManager.Boards.Dradis
         {
             if (componentsToMove == null)
                 return;
-            var sector = Nodes.FirstOrDefault(x => x.Name == source);
-            if (sector == default(DradisNode))
+            var sectorSource = Nodes.FirstOrDefault(x => x.Name == source);
+            if (sectorSource == default(DradisNode))
                 return;
-            sector.MoveComponents(componentsToMove, destination);
+
+            var sectorDestination = Nodes.FirstOrDefault(x => x.Name == destination);
+            if (sectorSource == default(DradisNode))
+                return;
+
+            var movedComponents = sectorSource.Components.Where(x => componentsToMove.Contains(x.PermanentDesignation)).ToList();
+            sectorDestination.Components.AddRange(movedComponents);
+            foreach (var component in movedComponents)
+                sectorSource.Components.Remove(component);
         }
 
         public IEnumerable<BaseComponent> GetComponents(DradisNodeName source)

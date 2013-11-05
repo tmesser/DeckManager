@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.crisisDisplayTextBox = new System.Windows.Forms.TextBox();
+            this.CrisisDisplayTextBox = new System.Windows.Forms.TextBox();
             this.selectionGroupBox = new System.Windows.Forms.GroupBox();
             this.drawToActiveRadioButton = new System.Windows.Forms.RadioButton();
             this.buryRadioButton = new System.Windows.Forms.RadioButton();
@@ -43,7 +43,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel1.Controls.Add(this.crisisDisplayTextBox, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.CrisisDisplayTextBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.selectionGroupBox, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -53,17 +53,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(380, 200);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // crisisDisplayTextBox
+            // CrisisDisplayTextBox
             // 
-            this.crisisDisplayTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crisisDisplayTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crisisDisplayTextBox.Location = new System.Drawing.Point(3, 3);
-            this.crisisDisplayTextBox.Multiline = true;
-            this.crisisDisplayTextBox.Name = "crisisDisplayTextBox";
-            this.crisisDisplayTextBox.ReadOnly = true;
-            this.crisisDisplayTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.crisisDisplayTextBox.Size = new System.Drawing.Size(224, 194);
-            this.crisisDisplayTextBox.TabIndex = 0;
+            this.CrisisDisplayTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CrisisDisplayTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CrisisDisplayTextBox.Location = new System.Drawing.Point(3, 3);
+            this.CrisisDisplayTextBox.Multiline = true;
+            this.CrisisDisplayTextBox.Name = "CrisisDisplayTextBox";
+            this.CrisisDisplayTextBox.ReadOnly = true;
+            this.CrisisDisplayTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.CrisisDisplayTextBox.Size = new System.Drawing.Size(224, 194);
+            this.CrisisDisplayTextBox.TabIndex = 0;
             // 
             // selectionGroupBox
             // 
@@ -129,7 +129,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox crisisDisplayTextBox;
+        private System.Windows.Forms.TextBox CrisisDisplayTextBox;
         private System.Windows.Forms.GroupBox selectionGroupBox;
         private System.Windows.Forms.RadioButton drawToActiveRadioButton;
         private System.Windows.Forms.RadioButton buryRadioButton;

@@ -53,6 +53,45 @@ namespace DeckManager
             get { return GameStates.Last(); }
         }
 
+        public bool SaveGame(string pathName)
+        {
+            try 
+            {
+                var jsonSettings = new JsonSerializerSettings { DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new Newtonsoft.Json.Converters.StringEnumConverter() } };
+                var json = JsonConvert.SerializeObject(CurrentGameState, Newtonsoft.Json.Formatting.Indented, jsonSettings);
+                using (var file = new StreamWriter(pathName))
+                {
+                    file.Write(json);
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.Error("THINGS HAPPENED", e);
+                return false;
+            }
+            return true;
+        }
+
+        public GameState LoadGame(string pathName)
+        {
+            GameState ret;
+            try
+            {
+                using (var sr = new StreamReader(pathName))
+                {
+                    var jsonText = sr.ReadToEnd();
+                    ret = JsonConvert.DeserializeObject<GameState>(jsonText, new Newtonsoft.Json.Converters.StringEnumConverter());
+                    GameStates = new List<GameState> { ret };
+                }                
+            }
+            catch (Exception e)
+            {
+                _logger.Error("THINGS HAPPENED", e);
+                ret = null;
+            }
+            return ret;
+        }
+
         public GameState NewGame(IEnumerable<Player> numPlayers, int extraLoyaltyCards, bool usingSympathizer)
         {
             var playerList = numPlayers.ToList();
