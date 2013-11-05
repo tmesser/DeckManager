@@ -11,11 +11,14 @@ using DeckManager.Components;
 using DeckManager.Components.Enums;
 using DeckManager.Extensions;
 using DeckManagerOutput.Properties;
+using DeckManager.Cards;
 
 namespace DeckManagerOutput
 {
     public partial class GameWindow : Form
     {
+        private CrisisCard currentCrisis { get; set; }
+
         public GameWindow()
         {
             InitializeComponent();
@@ -443,6 +446,24 @@ namespace DeckManagerOutput
         private void DistanceUpDownValueChanged(object sender, EventArgs e)
         {
             Program.GManager.CurrentGameState.TurnLog += string.Format(Resources.ResourceChanged, Resources.Resource_Distance, DistanceUpDown.Value);
+        }
+
+        private void drawCrisisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentCrisis = Program.GManager.CurrentGameState.CrisisDeck.Draw();
+            crisisText.Text = currentCrisis.Heading + Environment.NewLine + currentCrisis.AdditionalText;
+        }
+
+        private void buryTopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (currentCrisis != null)
+            {
+                Program.GManager.CurrentGameState.CrisisDeck.Bury(currentCrisis);
+                currentCrisis = null;
+                crisisText.Text = string.Empty;
+            }
+            else
+                MessageBox.Show("To avoid accidental crisis burying, please draw a crisis before attempting to bury it.");
         }
     }
 }

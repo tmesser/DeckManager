@@ -35,6 +35,8 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.0\lib\net40-client\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,8 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrisisManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrisisManagementForm.Designer.cs">
+      <DependentUpon>CrisisManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\CrisisAction.cs" />
+    <Compile Include="CustomControls\CrisisDecision.cs" />
     <Compile Include="CustomControls\ReadOnlyListBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CrisisManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CrisisManagementControl.Designer.cs">
+      <DependentUpon>CrisisManagementControl.cs</DependentUpon>
     </Compile>
     <Compile Include="DeckCreator.cs">
       <SubType>Form</SubType>
@@ -94,6 +110,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrisisManagementForm.resx">
+      <DependentUpon>CrisisManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\CrisisManagementControl.resx">
+      <DependentUpon>CrisisManagementControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeckCreator.resx">
       <DependentUpon>DeckCreator.cs</DependentUpon>
     </EmbeddedResource>
