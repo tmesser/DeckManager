@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DeckManager.Cards;
+using DeckManagerOutput.CustomControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +14,12 @@ namespace DeckManagerOutput
 {
     public partial class CrisisManagementForm : Form
     {
-        public CrisisManagementForm()
+        public CrisisManagementForm(IEnumerable<CrisisCard> crises)
         {
+            foreach (var crisis in crises)
+            {
+                contentPanel.Controls.Add(new CrisisManagementControl(crisis));
+            }
             InitializeComponent();
         }
     }

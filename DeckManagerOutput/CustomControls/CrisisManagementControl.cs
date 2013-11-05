@@ -10,9 +10,24 @@ using System.Windows.Forms;
 
 namespace DeckManagerOutput.CustomControls
 {
+    /// <summary>
+    /// Encapsulates a single Crisis for management in the Crisis Management Form.
+    /// </summary>
     public partial class CrisisManagementControl : UserControl
     {
+        /// <summary>
+        /// Gets or sets the card.
+        /// </summary>
+        /// <value>
+        /// The card.
+        /// </value>
         private DeckManager.Cards.CrisisCard Card { get; set; }
+        /// <summary>
+        /// Gets the crisis decision.
+        /// </summary>
+        /// <value>
+        /// The crisis decision.
+        /// </value>
         public CrisisDecision CrisisDecision
         {
             get
@@ -21,6 +36,10 @@ namespace DeckManagerOutput.CustomControls
             }
         }
 
+        /// <summary>
+        /// Reads the radio buttons.
+        /// </summary>
+        /// <returns></returns>
         private CrisisAction ReadRadioButtons()
         {
             if (replaceRadioButton.Checked)
@@ -32,6 +51,11 @@ namespace DeckManagerOutput.CustomControls
             return CrisisAction.Undefined;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CrisisManagementControl"/> class.
+        /// </summary>
+        /// <param name="crisisCard">The crisis card.</param>
+        /// <remarks>Adding this Control to a form via the designer is gonna end in sorrow.</remarks>
         public CrisisManagementControl(DeckManager.Cards.CrisisCard crisisCard)
         {
             Card = crisisCard;

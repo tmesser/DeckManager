@@ -465,5 +465,10 @@ namespace DeckManagerOutput
             else
                 MessageBox.Show("To avoid accidental crisis burying, please draw a crisis before attempting to bury it.");
         }
+
+        private void drawMultipleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
