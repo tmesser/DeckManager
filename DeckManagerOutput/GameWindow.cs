@@ -5,12 +5,12 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using DeckManager.Boards.Dradis;
 using DeckManager.Boards.Dradis.Enums;
 using DeckManager.Boards.Enums;
 using DeckManager.Components;
 using DeckManager.Components.Enums;
 using DeckManager.Extensions;
+using DeckManagerOutput.CustomControls;
 using DeckManagerOutput.Properties;
 using DeckManager.Cards;
 
@@ -484,8 +484,30 @@ namespace DeckManagerOutput
                     MessageBox.Show(Resources.GameWindow_drawMultipleToolStripMenuItem_InputMoreThanZero);
                     return;
                 }
-                var crisisManagementForm = new CrisisManagementForm(Program.GManager.CurrentGameState.CrisisDeck.DrawMany(numCrises));
+                var crisisCards = Program.GManager.CurrentGameState.CrisisDeck.DrawMany(numCrises).ToList();
+                var crisisManagementForm = new CrisisManagementForm(crisisCards);
                 crisisManagementForm.ShowDialog();
+                if (crisisManagementForm.DialogResult == DialogResult.OK)
+                {
+                    foreach (var decision in crisisManagementForm.Decisions)
+                    {
+                        switch(decision.Action)
+                        {
+                            case CrisisAction.Replace:
+                                Program.GManager.CurrentGameState.CrisisDeck.Top(decision.Crisis);
+                                break;
+                            case CrisisAction.Draw:
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var crisisCard in crisisCards)
+                    {
+                        Program.GManager.CurrentGameState.CrisisDeck.Top(crisisCard);
+                    }
+                }
             }
         }
 
@@ -524,6 +546,11 @@ namespace DeckManagerOutput
 
                 JumpPrepChanged(sender, e);
             }
+        }
+
+        private void playCrisisButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

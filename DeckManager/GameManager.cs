@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using DeckManager.Boards;
 using DeckManager.Boards.Dradis;
+using DeckManager.Boards.Dradis.Enums;
 using DeckManager.Cards;
 using DeckManager.Cards.Enums;
 using DeckManager.Characters;

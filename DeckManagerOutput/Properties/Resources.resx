@@ -270,4 +270,7 @@
   <data name="GameWindow_drawMultipleToolStripMenuItem_InputMoreThanZero" xml:space="preserve">
     <value>Please input a number greater than 0.</value>
   </data>
+  <data name="CrisisManagementForm_TooManyCrisesSetAsActive" xml:space="preserve">
+    <value>You have chosen to set two or more Crises as the active Crisis.  Only one may be set as active.</value>
+  </data>
 </root>

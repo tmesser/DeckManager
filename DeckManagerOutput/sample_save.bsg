@@ -1,0 +1,3653 @@
+{
+  "$id": "1",
+  "$type": "DeckManager.States.GameState, DeckManager",
+  "TurnLog": "Begin game.Food is now at 8!Fuel is now at 8!Morale is now at 10!Population is now at 12!Food is now at 8!Fuel is now at 8!Morale is now at 10!Population is now at 12!Distance is now at 1!Distance is now at 2!Distance is now at 3!Distance is now at 4!Food is now at 8!Fuel is now at 8!Morale is now at 10!Population is now at 12!Distance is now at 4!Distance is now at 5!Distance is now at 6!Food is now at 8!Fuel is now at 8!Morale is now at 10!Population is now at 12!Distance is now at 6!",
+  "Fuel": 8,
+  "Food": 8,
+  "Morale": 10,
+  "Population": 12,
+  "Turn": 1,
+  "Players": {
+    "$id": "2",
+    "$type": "System.Collections.Generic.List`1[[DeckManager.States.Player, DeckManager]], mscorlib",
+    "$values": [
+      {
+        "$id": "3",
+        "$type": "DeckManager.States.Player, DeckManager",
+        "PlayerName": "a",
+        "TurnPosition": 1,
+        "Character": {
+          "$id": "4",
+          "$type": "DeckManager.Characters.Character, DeckManager",
+          "CharacterName": "William Adama",
+          "SetupLocation": "Admiral's Quarters",
+          "Role": "Military",
+          "DefaultDrawColors": {
+            "$id": "5",
+            "$type": "System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "6",
+                "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+                "$values": [
+                  "Leadership",
+                  "Leadership",
+                  "Leadership",
+                  "Tactics",
+                  "Tactics"
+                ]
+              }
+            ]
+          },
+          "AdditionalText": "Inspirational Leader -- When you draw a Crisis Card, all 1 strength Skill Cards count positive for the skill check.\r\nCommand Authority -- Once per game, after resolving a skill check, instead of discarding the used Skill Cards, draw them into your hand.\r\nEmotionally Attached -- You may not activate the Admiral's Quarters location."
+        },
+        "Cards": {
+          "$id": "7",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.SkillCard, DeckManager]], mscorlib",
+          "$values": [
+            {
+              "$id": "8",
+              "$type": "DeckManager.Cards.SkillCard, DeckManager",
+              "Heading": "Leadership-2 (Executive Order)",
+              "CardColor": "Leadership",
+              "CardPower": 2,
+              "CardType": "Skill",
+              "UniqueId": "0a346abf-93c9-46bd-bb36-dd30a8b4e654"
+            },
+            {
+              "$id": "9",
+              "$type": "DeckManager.Cards.SkillCard, DeckManager",
+              "Heading": "Leadership-1 (Executive Order)",
+              "CardColor": "Leadership",
+              "CardPower": 1,
+              "CardType": "Skill",
+              "UniqueId": "1629c36e-5686-494e-84e5-6383e0b084f5"
+            },
+            {
+              "$id": "10",
+              "$type": "DeckManager.Cards.SkillCard, DeckManager",
+              "Heading": "Leadership-1 (Executive Order)",
+              "CardColor": "Leadership",
+              "CardPower": 1,
+              "CardType": "Skill",
+              "UniqueId": "16951b1b-8869-4f85-b7dc-5ea8d2348d98"
+            },
+            {
+              "$id": "11",
+              "$type": "DeckManager.Cards.SkillCard, DeckManager",
+              "Heading": "Tactics-1 (Launch Scout)",
+              "CardColor": "Tactics",
+              "CardPower": 1,
+              "CardType": "Skill",
+              "UniqueId": "02ae7c0a-0ef3-487a-a6f9-f54446a62373"
+            },
+            {
+              "$id": "12",
+              "$type": "DeckManager.Cards.SkillCard, DeckManager",
+              "Heading": "Tactics-4 (Strategic Planning)",
+              "CardColor": "Tactics",
+              "CardPower": 4,
+              "CardType": "Skill",
+              "UniqueId": "0502d6a9-0b76-4f90-a737-422aed0e8ebe"
+            }
+          ]
+        },
+        "MutinyHand": {
+          "$id": "13",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.MutinyCard, DeckManager]], mscorlib",
+          "$values": []
+        },
+        "LoyaltyCards": {
+          "$id": "14",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.LoyaltyCard, DeckManager]], mscorlib",
+          "$values": [
+            {
+              "$id": "15",
+              "$type": "DeckManager.Cards.LoyaltyCard, DeckManager",
+              "Loyalty": "NotACylon",
+              "CardType": "Loyalty",
+              "UniqueId": "015c9774-e5c1-4f75-8d16-d3c6e7047b6e"
+            }
+          ]
+        },
+        "CustomDraws": {
+          "$id": "16",
+          "$type": "System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib]], mscorlib",
+          "$values": [
+            {
+              "$ref": "6"
+            }
+          ]
+        },
+        "SuperCrisisCards": {
+          "$id": "17",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.SuperCrisisCard, DeckManager]], mscorlib",
+          "$values": []
+        },
+        "Titles": {
+          "$id": "18",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Characters.Enums.Titles, DeckManager]], mscorlib",
+          "$values": []
+        },
+        "SkillCardDraws": {
+          "$id": "19",
+          "$type": "System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib]], mscorlib",
+          "$values": [
+            {
+              "$ref": "6"
+            },
+            {
+              "$ref": "6"
+            }
+          ]
+        }
+      },
+      {
+        "$id": "20",
+        "$type": "DeckManager.States.Player, DeckManager",
+        "PlayerName": "d",
+        "TurnPosition": 2,
+        "Character": {
+          "$id": "21",
+          "$type": "DeckManager.Characters.Character, DeckManager",
+          "CharacterName": "Saul Tigh",
+          "SetupLocation": "Command",
+          "Role": "Military",
+          "DefaultDrawColors": {
+            "$id": "22",
+            "$type": "System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "23",
+                "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+                "$values": [
+                  "Leadership",
+                  "Leadership",
+                  "Tactics",
+                  "Tactics",
+                  "Tactics"
+                ]
+              }
+            ]
+          },
+          "AdditionalText": "Cylon Hatred -- When a player activates the Admiral's Quarters location, you may choose to reduce the difficulty by 3.\r\nDeclare Martial Law -- ACTION: Once per game, give the President title to the Admiral.\r\nAlcoholic -- At the start of any player's turn, if you have exactly 1 Skill Card in your hand, you must discard it."
+        },
+        "Cards": {
+          "$id": "24",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.SkillCard, DeckManager]], mscorlib",
+          "$values": [
+            {
+              "$id": "25",
+              "$type": "DeckManager.Cards.SkillCard, DeckManager",
+              "Heading": "Leadership-2 (Executive Order)",
+              "CardColor": "Leadership",
+              "CardPower": 2,
+              "CardType": "Skill",
+              "UniqueId": "18a69337-2673-4151-b555-0befc04fad16"
+            },
+            {
+              "$id": "26",
+              "$type": "DeckManager.Cards.SkillCard, DeckManager",
+              "Heading": "Tactics-2 (Launch Scout)",
+              "CardColor": "Tactics",
+              "CardPower": 2,
+              "CardType": "Skill",
+              "UniqueId": "1c78f067-814d-43b4-813d-52afab1b4b3b"
+            },
+            {
+              "$id": "27",
+              "$type": "DeckManager.Cards.SkillCard, DeckManager",
+              "Heading": "Leadership-5 (Declare Emergency)",
+              "CardColor": "Leadership",
+              "CardPower": 5,
+              "CardType": "Skill",
+              "UniqueId": "22bcbbc1-ee4a-4c9d-93ae-bddfc60d7c29"
+            }
+          ]
+        },
+        "MutinyHand": {
+          "$id": "28",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.MutinyCard, DeckManager]], mscorlib",
+          "$values": []
+        },
+        "LoyaltyCards": {
+          "$id": "29",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.LoyaltyCard, DeckManager]], mscorlib",
+          "$values": [
+            {
+              "$id": "30",
+              "$type": "DeckManager.Cards.LoyaltyCard, DeckManager",
+              "Loyalty": "NotACylon",
+              "CardType": "Loyalty",
+              "UniqueId": "13496ee1-d82a-4197-9ff7-128288e4f1d4"
+            }
+          ]
+        },
+        "CustomDraws": {
+          "$id": "31",
+          "$type": "System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib]], mscorlib",
+          "$values": [
+            {
+              "$id": "32",
+              "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+              "$values": [
+                "Leadership",
+                "Tactics",
+                "Leadership"
+              ]
+            }
+          ]
+        },
+        "SuperCrisisCards": {
+          "$id": "33",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.SuperCrisisCard, DeckManager]], mscorlib",
+          "$values": []
+        },
+        "Titles": {
+          "$id": "34",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Characters.Enums.Titles, DeckManager]], mscorlib",
+          "$values": []
+        },
+        "SkillCardDraws": {
+          "$id": "35",
+          "$type": "System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib]], mscorlib",
+          "$values": [
+            {
+              "$ref": "32"
+            },
+            {
+              "$ref": "23"
+            }
+          ]
+        }
+      },
+      {
+        "$id": "36",
+        "$type": "DeckManager.States.Player, DeckManager",
+        "PlayerName": "c",
+        "TurnPosition": 3,
+        "Character": {
+          "$id": "37",
+          "$type": "DeckManager.Characters.Character, DeckManager",
+          "CharacterName": "Karl \"Helo\" Agathon",
+          "SetupLocation": "",
+          "Role": "Military",
+          "DefaultDrawColors": {
+            "$id": "38",
+            "$type": "System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "39",
+                "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+                "$values": [
+                  "Leadership",
+                  "Leadership",
+                  "Tactics",
+                  "Tactics",
+                  "Piloting"
+                ]
+              }
+            ]
+          },
+          "AdditionalText": "ECO Officer -- During your turn, you may reroll a die that was just rolled (once per turn).  You must use the new result.\r\nMoral Compass -- Once per game, after a player makes a choice on a Crisis Card, you may change it.\r\nStranded -- Your character is not placed on the board at the start of the game.  While not on the game board, you may not move, be moved, or take actions.  At the start of your 2nd turn, place your character on the Hangar Deck location."
+        },
+        "Cards": {
+          "$id": "40",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.SkillCard, DeckManager]], mscorlib",
+          "$values": [
+            {
+              "$id": "41",
+              "$type": "DeckManager.Cards.SkillCard, DeckManager",
+              "Heading": "Leadership-2 (Executive Order)",
+              "CardColor": "Leadership",
+              "CardPower": 2,
+              "CardType": "Skill",
+              "UniqueId": "36647a9f-e8dd-4c2c-ba01-2351a701c130"
+            },
+            {
+              "$id": "42",
+              "$type": "DeckManager.Cards.SkillCard, DeckManager",
+              "Heading": "Tactics-4 (Strategic Planning)",
+              "CardColor": "Tactics",
+              "CardPower": 4,
+              "CardType": "Skill",
+              "UniqueId": "241bb765-42f4-48a3-a84a-e765931bb820"
+            },
+            {
+              "$id": "43",
+              "$type": "DeckManager.Cards.SkillCard, DeckManager",
+              "Heading": "Piloting-2 (Evasive Maneuvers)",
+              "CardColor": "Piloting",
+              "CardPower": 2,
+              "CardType": "Skill",
+              "UniqueId": "0093262a-bad6-46d6-ab1a-6bca6047056d"
+            }
+          ]
+        },
+        "MutinyHand": {
+          "$id": "44",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.MutinyCard, DeckManager]], mscorlib",
+          "$values": []
+        },
+        "LoyaltyCards": {
+          "$id": "45",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.LoyaltyCard, DeckManager]], mscorlib",
+          "$values": [
+            {
+              "$id": "46",
+              "$type": "DeckManager.Cards.LoyaltyCard, DeckManager",
+              "Loyalty": "NotACylon",
+              "CardType": "Loyalty",
+              "UniqueId": "16a7b7fc-c3ff-485a-a66a-decd99abdfa6"
+            }
+          ]
+        },
+        "CustomDraws": {
+          "$id": "47",
+          "$type": "System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib]], mscorlib",
+          "$values": [
+            {
+              "$id": "48",
+              "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+              "$values": [
+                "Leadership",
+                "Tactics",
+                "Piloting"
+              ]
+            }
+          ]
+        },
+        "SuperCrisisCards": {
+          "$id": "49",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.SuperCrisisCard, DeckManager]], mscorlib",
+          "$values": []
+        },
+        "Titles": {
+          "$id": "50",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Characters.Enums.Titles, DeckManager]], mscorlib",
+          "$values": []
+        },
+        "SkillCardDraws": {
+          "$id": "51",
+          "$type": "System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib]], mscorlib",
+          "$values": [
+            {
+              "$ref": "48"
+            },
+            {
+              "$ref": "39"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "Vipers": {
+    "$id": "52",
+    "$type": "System.Collections.Generic.List`1[[DeckManager.Components.Viper, DeckManager]], mscorlib",
+    "$values": [
+      {
+        "$id": "53",
+        "$type": "DeckManager.Components.Viper, DeckManager",
+        "Status": "Active",
+        "ComponentType": "Viper",
+        "PublicDesignation": "Vigilante 2",
+        "InternalDesignation": "050e9517-de55-4994-946f-065c3ce05e82"
+      },
+      {
+        "$id": "54",
+        "$type": "DeckManager.Components.Viper, DeckManager",
+        "Status": "Active",
+        "ComponentType": "Viper",
+        "PublicDesignation": "Vigilante 7",
+        "InternalDesignation": "0871e3b9-b00f-41be-b662-0e99337d31cf"
+      },
+      {
+        "$id": "55",
+        "$type": "DeckManager.Components.Viper, DeckManager",
+        "Status": "InReserve",
+        "ComponentType": "Viper",
+        "PublicDesignation": "Vigilante 3",
+        "InternalDesignation": "10f6432d-a5d9-4036-836b-094667339494"
+      },
+      {
+        "$id": "56",
+        "$type": "DeckManager.Components.Viper, DeckManager",
+        "Status": "InReserve",
+        "ComponentType": "Viper",
+        "PublicDesignation": "Vigilante 5",
+        "InternalDesignation": "2cad65df-f3c0-43bd-978e-413d5f72d058"
+      },
+      {
+        "$id": "57",
+        "$type": "DeckManager.Components.Viper, DeckManager",
+        "Status": "InReserve",
+        "ComponentType": "Viper",
+        "PublicDesignation": "Vigilante 6",
+        "InternalDesignation": "4255f4b0-2ac6-4c7b-9593-52c82d8a9b1d"
+      },
+      {
+        "$id": "58",
+        "$type": "DeckManager.Components.Viper, DeckManager",
+        "Status": "InReserve",
+        "ComponentType": "Viper",
+        "PublicDesignation": "Vigilante 4",
+        "InternalDesignation": "48cf00a6-966a-4351-9e90-2804ef02dd58"
+      },
+      {
+        "$id": "59",
+        "$type": "DeckManager.Components.Viper, DeckManager",
+        "Status": "InReserve",
+        "ComponentType": "Viper",
+        "PublicDesignation": "Vigilante 1",
+        "InternalDesignation": "c4ecacf0-6203-4609-9ed3-c24871d0eb31"
+      },
+      {
+        "$id": "60",
+        "$type": "DeckManager.Components.Viper, DeckManager",
+        "Status": "InReserve",
+        "ComponentType": "Viper",
+        "PublicDesignation": "Vigilante 8",
+        "InternalDesignation": "e54ba056-a769-4d4c-8d16-533aef132f24"
+      }
+    ]
+  },
+  "Civilians": {
+    "$id": "61",
+    "$type": "System.Collections.Generic.List`1[[DeckManager.Components.Civilian, DeckManager]], mscorlib",
+    "$values": [
+      {
+        "$id": "62",
+        "$type": "DeckManager.Components.Civilian, DeckManager",
+        "Load": {
+          "$id": "63",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.ManagerLogic.Enums.Resource, DeckManager]], mscorlib",
+          "$values": []
+        },
+        "Status": "Active",
+        "ComponentType": "Civilian",
+        "PublicDesignation": "Civ 11",
+        "InternalDesignation": "139bb623-9cf5-4742-a206-4ca6a5722b34"
+      },
+      {
+        "$id": "64",
+        "$type": "DeckManager.Components.Civilian, DeckManager",
+        "Load": {
+          "$id": "65",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.ManagerLogic.Enums.Resource, DeckManager]], mscorlib",
+          "$values": [
+            "Population"
+          ]
+        },
+        "Status": "Active",
+        "ComponentType": "Civilian",
+        "PublicDesignation": "Civ 6",
+        "InternalDesignation": "1bb29cc3-b6e8-400a-8130-230860285875"
+      },
+      {
+        "$id": "66",
+        "$type": "DeckManager.Components.Civilian, DeckManager",
+        "Load": {
+          "$id": "67",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.ManagerLogic.Enums.Resource, DeckManager]], mscorlib",
+          "$values": [
+            "Population"
+          ]
+        },
+        "Status": "InReserve",
+        "ComponentType": "Civilian",
+        "PublicDesignation": "Civ 4",
+        "InternalDesignation": "1ebf99d3-68e6-42f4-afd4-75ca40a5172d"
+      },
+      {
+        "$id": "68",
+        "$type": "DeckManager.Components.Civilian, DeckManager",
+        "Load": {
+          "$id": "69",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.ManagerLogic.Enums.Resource, DeckManager]], mscorlib",
+          "$values": [
+            "Population"
+          ]
+        },
+        "Status": "InReserve",
+        "ComponentType": "Civilian",
+        "PublicDesignation": "Civ 8",
+        "InternalDesignation": "2546e475-22b4-4084-99d3-cbdc781767ef"
+      },
+      {
+        "$id": "70",
+        "$type": "DeckManager.Components.Civilian, DeckManager",
+        "Load": {
+          "$id": "71",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.ManagerLogic.Enums.Resource, DeckManager]], mscorlib",
+          "$values": [
+            "Population"
+          ]
+        },
+        "Status": "InReserve",
+        "ComponentType": "Civilian",
+        "PublicDesignation": "Civ 7",
+        "InternalDesignation": "2cc29b55-c3df-4f97-b9c0-85d9901b3ede"
+      },
+      {
+        "$id": "72",
+        "$type": "DeckManager.Components.Civilian, DeckManager",
+        "Load": {
+          "$id": "73",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.ManagerLogic.Enums.Resource, DeckManager]], mscorlib",
+          "$values": [
+            "Population"
+          ]
+        },
+        "Status": "InReserve",
+        "ComponentType": "Civilian",
+        "PublicDesignation": "Civ 3",
+        "InternalDesignation": "6265f121-45b0-4038-a3e0-088a727acb45"
+      },
+      {
+        "$id": "74",
+        "$type": "DeckManager.Components.Civilian, DeckManager",
+        "Load": {
+          "$id": "75",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.ManagerLogic.Enums.Resource, DeckManager]], mscorlib",
+          "$values": [
+            "Population"
+          ]
+        },
+        "Status": "InReserve",
+        "ComponentType": "Civilian",
+        "PublicDesignation": "Civ 5",
+        "InternalDesignation": "877680f0-6511-4eea-a645-68619316e877"
+      },
+      {
+        "$id": "76",
+        "$type": "DeckManager.Components.Civilian, DeckManager",
+        "Load": {
+          "$id": "77",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.ManagerLogic.Enums.Resource, DeckManager]], mscorlib",
+          "$values": []
+        },
+        "Status": "InReserve",
+        "ComponentType": "Civilian",
+        "PublicDesignation": "Civ 12",
+        "InternalDesignation": "87b2cb60-607a-4270-ae95-00e53a15bfda"
+      },
+      {
+        "$id": "78",
+        "$type": "DeckManager.Components.Civilian, DeckManager",
+        "Load": {
+          "$id": "79",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.ManagerLogic.Enums.Resource, DeckManager]], mscorlib",
+          "$values": [
+            "Population",
+            "Morale"
+          ]
+        },
+        "Status": "InReserve",
+        "ComponentType": "Civilian",
+        "PublicDesignation": "Civ 9",
+        "InternalDesignation": "914a259e-86b3-4684-b372-6ac5258b7da3"
+      },
+      {
+        "$id": "80",
+        "$type": "DeckManager.Components.Civilian, DeckManager",
+        "Load": {
+          "$id": "81",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.ManagerLogic.Enums.Resource, DeckManager]], mscorlib",
+          "$values": [
+            "Population",
+            "Population"
+          ]
+        },
+        "Status": "InReserve",
+        "ComponentType": "Civilian",
+        "PublicDesignation": "Civ 2",
+        "InternalDesignation": "a9636e1d-aeef-49df-9525-8c6d46095e3f"
+      },
+      {
+        "$id": "82",
+        "$type": "DeckManager.Components.Civilian, DeckManager",
+        "Load": {
+          "$id": "83",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.ManagerLogic.Enums.Resource, DeckManager]], mscorlib",
+          "$values": [
+            "Population",
+            "Fuel"
+          ]
+        },
+        "Status": "InReserve",
+        "ComponentType": "Civilian",
+        "PublicDesignation": "Civ 10",
+        "InternalDesignation": "eaaa117d-b641-4d94-a840-4b866aa3aaa7"
+      },
+      {
+        "$id": "84",
+        "$type": "DeckManager.Components.Civilian, DeckManager",
+        "Load": {
+          "$id": "85",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.ManagerLogic.Enums.Resource, DeckManager]], mscorlib",
+          "$values": [
+            "Population",
+            "Population"
+          ]
+        },
+        "Status": "InReserve",
+        "ComponentType": "Civilian",
+        "PublicDesignation": "Civ 1",
+        "InternalDesignation": "ed6e9d3a-4dd3-4ba2-ae6c-2c04f5c53750"
+      }
+    ]
+  },
+  "Boards": {
+    "$id": "86",
+    "$type": "System.Collections.Generic.List`1[[DeckManager.States.Board, DeckManager]], mscorlib",
+    "$values": [
+      {
+        "$id": "87",
+        "$type": "DeckManager.States.Board, DeckManager",
+        "Name": "Galactica",
+        "Locations": {
+          "$id": "88",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Boards.BasicLocation, DeckManager]], mscorlib",
+          "$values": [
+            {
+              "$id": "89",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Hangar Deck",
+              "LocationInfo": "Action: Launch yourself in a Viper.  You may then take 1 more action.  You must be in the Hangar Deck to use a \"Repair\" skill card action on damaged Vipers.",
+              "BoardName": "Galactica",
+              "PlayersPresent": {
+                "$id": "90",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            },
+            {
+              "$id": "91",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "FTL Control",
+              "LocationInfo": "Action: Jump the fleet if the jump preparation track is not in the red zone.  Roll a die; if the result is 1-6, lose a number of population indicated on the fleet's space on the jump preparation track.",
+              "BoardName": "Galactica",
+              "PlayersPresent": {
+                "$id": "92",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            },
+            {
+              "$id": "93",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Weapons Control",
+              "LocationInfo": "Action: Attack one Cylon ship with Galactica.  Roll 3-8 to hit a raider, 7-8 to hit a heavy raider, and 5-8 to hit a basestar.",
+              "BoardName": "Galactica",
+              "PlayersPresent": {
+                "$id": "94",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            },
+            {
+              "$id": "95",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Command",
+              "LocationInfo": "Action: Activate up to two unmanned vipers.  An activation can be used to a.) launch a viper from either of the two launch zones, b.) move an unammend viper to an adjacent space area, or c.) fire an unmanned viper's weapons (3-8 to hit a raider, 7-8 to hit a heavy raider, 8 to hit a basestar).",
+              "BoardName": "Galactica",
+              "PlayersPresent": {
+                "$id": "96",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": [
+                  "d"
+                ]
+              }
+            },
+            {
+              "$id": "97",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Communications",
+              "LocationInfo": "Action: Look at the back of 2 civilian ships.  You may then move them to adjacent area(s).  Only the player taking the action may look at the ships.",
+              "BoardName": "Galactica",
+              "PlayersPresent": {
+                "$id": "98",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            },
+            {
+              "$id": "99",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Admiral's Quarters",
+              "LocationInfo": "Action: Choose a character; then pass a Tactics/Leadership Skill Check of 7 to send him/her to the \"Brig\". Characters in the \"Brig\" can only add 1 skill card to skill checks, and being in the Brig prevents a Cylon from doing any damage upon reveal.",
+              "BoardName": "Galactica",
+              "PlayersPresent": {
+                "$id": "100",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": [
+                  "a"
+                ]
+              }
+            },
+            {
+              "$id": "101",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Research Lab",
+              "LocationInfo": "Action: Draw 1 Engineering OR 1 Tactics skill card.",
+              "BoardName": "Galactica",
+              "PlayersPresent": {
+                "$id": "102",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            },
+            {
+              "$id": "103",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Armory",
+              "LocationInfo": "Action: Attack a Centurion on the Boarding Party track (destroyed on a roll of 7-8).",
+              "BoardName": "Galactica",
+              "PlayersPresent": {
+                "$id": "104",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            },
+            {
+              "$id": "105",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Sickbay",
+              "LocationInfo": "You may only draw 1 Skill Card during the Receive Skills step of your turn. A character can (and should) move out of Sickbay during the Movement step of his/her turn.",
+              "BoardName": "Galactica",
+              "PlayersPresent": {
+                "$id": "106",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            },
+            {
+              "$id": "107",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Brig",
+              "LocationInfo": "You may not move, draw Crisis Cards, or add more than 1 card to any Skill Check.  Action: Pass a Politics/Tactics Skill Check of 7 to move to any location.",
+              "BoardName": "Galactica",
+              "PlayersPresent": {
+                "$id": "108",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "$id": "109",
+        "$type": "DeckManager.States.Board, DeckManager",
+        "Name": "ColonialOne",
+        "Locations": {
+          "$id": "110",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Boards.BasicLocation, DeckManager]], mscorlib",
+          "$values": [
+            {
+              "$id": "111",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Press Room",
+              "LocationInfo": "Action: Draw 2 Politics skill cards.",
+              "BoardName": "ColonialOne",
+              "PlayersPresent": {
+                "$id": "112",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            },
+            {
+              "$id": "113",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "President's Office",
+              "LocationInfo": "Action: If you are President, draw 1 Quorum Card.  You may then draw 1 additional Quorum card or play 1 from your hand.",
+              "BoardName": "ColonialOne",
+              "PlayersPresent": {
+                "$id": "114",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            },
+            {
+              "$id": "115",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Administration",
+              "LocationInfo": "Action: Choose a character; then pass a Politics/Leadership Skill Check of 5 to give him/her the President title. Revealed Cylons may not be given the President title.",
+              "BoardName": "ColonialOne",
+              "PlayersPresent": {
+                "$id": "116",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "$id": "117",
+        "$type": "DeckManager.States.Board, DeckManager",
+        "Name": "Cylon",
+        "Locations": {
+          "$id": "118",
+          "$type": "System.Collections.Generic.List`1[[DeckManager.Boards.BasicLocation, DeckManager]], mscorlib",
+          "$values": [
+            {
+              "$id": "119",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Caprica",
+              "LocationInfo": "Action: Play 1 of your Super Crisis Cards or draw 2 Crisis Cards, choose 1 to resolve, and bury the other at the bottom of the deck.  Cylon Activations and the Prepare for Jump step are not triggered after this Crisis.",
+              "BoardName": "Cylon",
+              "PlayersPresent": {
+                "$id": "120",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            },
+            {
+              "$id": "121",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Cylon Fleet",
+              "LocationInfo": "Action: Activate all Cylon ships of one type, or launch 2 raiders and 1 heavy raider from each basestar.  Activating heavy raiders will advance the centurions one step on the boarding party track, even if there are no heavy raiders on the board.",
+              "BoardName": "Cylon",
+              "PlayersPresent": {
+                "$id": "122",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            },
+            {
+              "$id": "123",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Human Fleet",
+              "LocationInfo": "Action: Looc at any player's hand, and steal 1 Skill Card by placing it in your hand.  Then roll a die, and if 5+, damage Galactica.",
+              "BoardName": "Cylon",
+              "PlayersPresent": {
+                "$id": "124",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            },
+            {
+              "$id": "125",
+              "$type": "DeckManager.Boards.BasicLocation, DeckManager",
+              "Name": "Resurrection Ship",
+              "LocationInfo": "You may discard your Super Crisis Card to draw a new one.  Then, if the distance is 7 or less, give your unrevealed Loyalty Card(s) to any other player.",
+              "BoardName": "Cylon",
+              "PlayersPresent": {
+                "$id": "126",
+                "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+                "$values": []
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "Dradis": {
+    "$id": "127",
+    "$type": "DeckManager.Boards.Dradis.DradisBoard, DeckManager",
+    "Nodes": {
+      "$id": "128",
+      "$type": "System.Collections.Generic.List`1[[DeckManager.Boards.Dradis.DradisNode, DeckManager]], mscorlib",
+      "$values": [
+        {
+          "$id": "129",
+          "$type": "DeckManager.Boards.Dradis.DradisNode, DeckManager",
+          "Components": {
+            "$id": "130",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Components.BaseComponent, DeckManager]], mscorlib",
+            "$values": [
+              {
+                "$id": "131",
+                "$type": "DeckManager.Components.Basestar, DeckManager",
+                "ComponentType": "Basestar"
+              },
+              {
+                "$id": "132",
+                "$type": "DeckManager.Components.Raider, DeckManager",
+                "ComponentType": "Raider"
+              },
+              {
+                "$id": "133",
+                "$type": "DeckManager.Components.Raider, DeckManager",
+                "ComponentType": "Raider"
+              },
+              {
+                "$id": "134",
+                "$type": "DeckManager.Components.Raider, DeckManager",
+                "ComponentType": "Raider"
+              }
+            ]
+          },
+          "Name": "Alpha",
+          "PlayersPresent": {
+            "$id": "135",
+            "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+            "$values": []
+          }
+        },
+        {
+          "$id": "136",
+          "$type": "DeckManager.Boards.Dradis.DradisNode, DeckManager",
+          "Components": {
+            "$id": "137",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Components.BaseComponent, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Name": "Bravo",
+          "PlayersPresent": {
+            "$id": "138",
+            "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+            "$values": []
+          }
+        },
+        {
+          "$id": "139",
+          "$type": "DeckManager.Boards.Dradis.DradisNode, DeckManager",
+          "Components": {
+            "$id": "140",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Components.BaseComponent, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Name": "Charlie",
+          "PlayersPresent": {
+            "$id": "141",
+            "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+            "$values": []
+          }
+        },
+        {
+          "$id": "142",
+          "$type": "DeckManager.Boards.Dradis.DradisNode, DeckManager",
+          "Components": {
+            "$id": "143",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Components.BaseComponent, DeckManager]], mscorlib",
+            "$values": [
+              {
+                "$ref": "62"
+              },
+              {
+                "$ref": "64"
+              }
+            ]
+          },
+          "Name": "Delta",
+          "PlayersPresent": {
+            "$id": "144",
+            "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+            "$values": []
+          }
+        },
+        {
+          "$id": "145",
+          "$type": "DeckManager.Boards.Dradis.DradisNode, DeckManager",
+          "Components": {
+            "$id": "146",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Components.BaseComponent, DeckManager]], mscorlib",
+            "$values": [
+              {
+                "$ref": "54"
+              }
+            ]
+          },
+          "Name": "Echo",
+          "PlayersPresent": {
+            "$id": "147",
+            "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+            "$values": []
+          }
+        },
+        {
+          "$id": "148",
+          "$type": "DeckManager.Boards.Dradis.DradisNode, DeckManager",
+          "Components": {
+            "$id": "149",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Components.BaseComponent, DeckManager]], mscorlib",
+            "$values": [
+              {
+                "$ref": "53"
+              }
+            ]
+          },
+          "Name": "Foxtrot",
+          "PlayersPresent": {
+            "$id": "150",
+            "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+            "$values": []
+          }
+        }
+      ]
+    }
+  },
+  "Distance": 6,
+  "CylonBoarding": {
+    "$id": "151",
+    "$type": "System.Collections.Generic.List`1[[System.Int32, mscorlib]], mscorlib",
+    "$values": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "CrisisDeck": {
+    "$id": "152",
+    "$type": "DeckManager.Decks.CrisisDeck, DeckManager",
+    "Deck": {
+      "$id": "153",
+      "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.CrisisCard, DeckManager]], mscorlib",
+      "$values": [
+        {
+          "$id": "154",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Cylon Tracking Device",
+          "AdditionalText": "Skill check: TAC/PIL/ENG = 10 \r\nPASS: No Effect \r\nFAIL: Destroy 1 raptor and place a basestar in ALPHA and 2 civilian ships in DELTA. \r\n\r\nPost-Crisis: Activate Raiders, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "155",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Engineering",
+              "Piloting"
+            ]
+          },
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "156",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "157",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 10,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "158",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "Destroy 1 raptor and place a basestar in ALPHA and 2 civilian ships in DELTA."
+              }
+            ]
+          },
+          "UniqueId": "11f7ff54-c39f-4008-a095-4e4c7e5c3f7d"
+        },
+        {
+          "$id": "159",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Guilt By Collusion",
+          "AdditionalText": "Skill check: LEA/TAC = 9 \r\nPASS: The current player may choose a character to move to the brig. \r\nFAIL: -1 Morale \r\n\r\nPost-Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "160",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "161",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "162",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 9,
+                "Item2": "The current player may choose a character to move to the brig."
+              },
+              {
+                "$id": "163",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Morale"
+              }
+            ]
+          },
+          "UniqueId": "105eedf0-2e6f-4c1b-8590-fee2817b3b1d"
+        },
+        {
+          "$id": "164",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Witch Hunt",
+          "AdditionalText": "Skill check: POL/LEA = 10 \r\nPASS: No Effect \r\n6+: -1 Morale \r\nFAIL: -1 Morale, current player chooses a character and moves him to Sickbay. \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "165",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "HeavyRaiders",
+          "PassLevels": {
+            "$id": "166",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "167",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 10,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "168",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 6,
+                "Item2": "-1 Morale"
+              },
+              {
+                "$id": "169",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Morale, current player chooses a character and moves him to Sickbay."
+              }
+            ]
+          },
+          "UniqueId": "07d0d346-3b7f-4ea4-8b03-cd96f59a7b3e"
+        },
+        {
+          "$id": "170",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Rescue The Fleet",
+          "AdditionalText": "Admiral Chooses \r\n-2 Population\r\nOR \r\n-1 morale. Setup: ALPHA: Basestar DELTA: 3 Civilian Ships\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "171",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "172",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "19275086-bd6c-4964-849c-e578979bc63c"
+        },
+        {
+          "$id": "173",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Crippled Raider",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: TAC/ENG = 10 \r\nPASS: +1 Jump Prep \r\nFAIL: -1 Population\r\n\r\nOR \r\n\r\nRoll a die. If 4 or lower, place 3 raiders in ALPHA and 1 civilian ship in DELTA\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "174",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Engineering"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "175",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "176",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 10,
+                "Item2": "+1 Jump Prep"
+              },
+              {
+                "$id": "177",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Population"
+              }
+            ]
+          },
+          "UniqueId": "1a6919e1-f898-4f58-a93a-7ca1be0af600"
+        },
+        {
+          "$id": "178",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Fulfiller of Prophecy",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA = 6 \r\nPASS: The Current Player draws 1 Politics card \r\nFAIL: -1 Population\r\n\r\nOR \r\n\r\nThe current player discards 1 Skill Card; after this crisis is finished resolving, draw and resolve a new Crisis card\r\n\r\nPost Crisis: Launch Nukes, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "179",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Politics"
+            ]
+          },
+          "Activation": "BasestarAttack",
+          "PassLevels": {
+            "$id": "180",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "181",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 6,
+                "Item2": "The Current Player draws 1 Politics card"
+              },
+              {
+                "$id": "182",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Population"
+              }
+            ]
+          },
+          "UniqueId": "1e0594ee-3e8f-4452-a2cd-db8cc9c8f534"
+        },
+        {
+          "$id": "183",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CYLON ATTACK: Boarding Parties",
+          "AdditionalText": "1. Activate Heavy Raiders \r\n2. Setup: ALPHA: 2 Heavy Raiders BRAVO: Basestar, 4 Raiders CHARLIE: 2 Heavy Raiders DELTA: Civilian Ship ECHO: 2 Civilian Ships\r\n3. Special Rule - Surprise Assault: There are no vipers in this setup",
+          "PositiveColors": {
+            "$id": "184",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "185",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "1e44bc16-c5ce-4c63-bd3a-bf7fbfac32c9"
+        },
+        {
+          "$id": "186",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Weapon Malfunction",
+          "AdditionalText": "Skill check: TAC/PIL/ENG = 11 \r\nPASS: No Effect \r\nFAIL: Damage 2 Vipers in space areas. All characters in Weapons Control are sent to Sickbay. \r\n\r\nPost Crisis: Launch Raiders, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "187",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Engineering",
+              "Piloting"
+            ]
+          },
+          "Activation": "LaunchRaiders",
+          "PassLevels": {
+            "$id": "188",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "189",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 11,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "190",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "Damage 2 Vipers in space areas. All characters in Weapons Control are sent to Sickbay."
+              }
+            ]
+          },
+          "UniqueId": "1ef2aecd-a038-4fa2-96cc-e9dedb718f3d"
+        },
+        {
+          "$id": "191",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Admiral Grilled",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA = 9 \r\nPASS: No Effect \r\nFAIL: -1 Morale and the Admiral discards 2 Skill Cards\r\n\r\nOR \r\n\r\n-1 Morale \r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "192",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "193",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "194",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 9,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "195",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Morale and the Admiral discards 2 Skill Cards"
+              }
+            ]
+          },
+          "UniqueId": "233025a3-3537-4bfa-94e1-5f9563a3ca73"
+        },
+        {
+          "$id": "196",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Forced Water Mining",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA/TAC/ENG = 17 \r\nPASS: +1 Food \r\nFAIL: -1 Population, -1 Morale\r\n\r\nOR \r\n\r\n+1 Food, -1 Morale and each player discards one random Skill Card \r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "197",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics",
+              "Politics",
+              "Engineering"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "198",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "199",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 17,
+                "Item2": "+1 Food"
+              },
+              {
+                "$id": "200",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Population, -1 Morale"
+              }
+            ]
+          },
+          "UniqueId": "266245ab-70ac-40e9-adaa-8a9921361f81"
+        },
+        {
+          "$id": "201",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Security Breach",
+          "AdditionalText": "Skill check: LEA/TAC = 6 \r\nPASS: No Effect \r\nFAIL: -1 Morale and all characters in the Command location are sent to Sickbay. \r\n\r\nPost Crisis: Launch Raiders, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "202",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics"
+            ]
+          },
+          "Activation": "LaunchRaiders",
+          "PassLevels": {
+            "$id": "203",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "204",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 6,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "205",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Morale and all characters in the Command location are sent to Sickbay."
+              }
+            ]
+          },
+          "UniqueId": "298f4c79-e2d5-4ef2-aa03-c269c4877f77"
+        },
+        {
+          "$id": "206",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Food Shortage",
+          "AdditionalText": "President Chooses: \r\n-2 Food\r\nOR \r\n-1 Food and the President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "207",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "208",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "2c8ee4fd-10ac-4460-a0b6-f26231321d9c"
+        },
+        {
+          "$id": "209",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Elections Loom",
+          "AdditionalText": "Skill check: POL/LEA = 8 \r\nPASS: No effect \r\n5+: -1 Morale \r\nFAIL: -1 Morale and the President discards 4 Skill Cards \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "210",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "HeavyRaiders",
+          "PassLevels": {
+            "$id": "211",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "212",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 8,
+                "Item2": "No effect"
+              },
+              {
+                "$id": "213",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 5,
+                "Item2": "-1 Morale"
+              },
+              {
+                "$id": "214",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Morale and the President discards 4 Skill Cards"
+              }
+            ]
+          },
+          "UniqueId": "2e0d3759-710d-47d2-a310-9515b4c34d55"
+        },
+        {
+          "$id": "215",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Cylon Screenings",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA = 9 \r\nPASS: No Effect \r\nFAIL: -1 Morale and the current player looks at a random Loyalty Card belonging to the President or Admiral. \r\n\r\nOR \r\n\r\nEach player discards 2 Skill Cards \r\n\r\nPost Crisis: Activate Raiders, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "216",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Politics"
+            ]
+          },
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "217",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "218",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 9,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "219",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Morale and the current player looks at a random Loyalty Card belonging to the President or Admiral."
+              }
+            ]
+          },
+          "UniqueId": "31713046-8662-4e91-b1a1-0e091c5e14fb"
+        },
+        {
+          "$id": "220",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Water Shortage",
+          "AdditionalText": "President Chooses: \r\n-1 Food\r\nOR \r\nthe President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Launch Nukes, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "221",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "BasestarAttack",
+          "PassLevels": {
+            "$id": "222",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "33162d72-7165-4435-acd8-879d19aa6c0d"
+        },
+        {
+          "$id": "223",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: A Traitor Accused",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA = 8 \r\nPASS: No Effect \r\nFAIL: The current player chooses a character to send to the brig.\r\n\r\nOR \r\n\r\nThe current player discards 5 Skill Cards \r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "224",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "225",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "226",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 8,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "227",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "The current player chooses a character to send to the brig."
+              }
+            ]
+          },
+          "UniqueId": "3534b004-e73e-4dba-86bd-1d58064caa77"
+        },
+        {
+          "$id": "228",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Missing G4 Explosives",
+          "AdditionalText": "Skill check: LEA/TAC = 7 \r\nPASS: No Effect \r\nFAIL: -1 Food and all characters in the Armory location are sent to the Brig. \r\n\r\nPost Crisis: Activate Raiders, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "229",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics"
+            ]
+          },
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "230",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "231",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 7,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "232",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Food and all characters in the Armory location are sent to the Brig."
+              }
+            ]
+          },
+          "UniqueId": "40b13d48-f07d-460c-833a-0993ac6ff255"
+        },
+        {
+          "$id": "233",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Detector Sabotage",
+          "AdditionalText": "Skill check: LEA/TAC = 8 \r\nPASS: No Effect \r\nFAIL: All characters in the Research Lab are moved to Sickbay. Until the end of the game, no players may look at other players' Loyalty Cards. \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "234",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "HeavyRaiders",
+          "PassLevels": {
+            "$id": "235",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "236",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 8,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "237",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "All characters in the Research Lab are moved to Sickbay. Until the end of the game, no players may look at other players' Loyalty Cards."
+              }
+            ]
+          },
+          "UniqueId": "40ff7559-f7bc-4d88-a193-eca1c9001dae"
+        },
+        {
+          "$id": "238",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Legendary Discovery",
+          "AdditionalText": "Skill check: TAC/PIL = 14 \r\nPASS: +1 Distance \r\nFAIL: -1 Food and destroy 1 raptor. \r\n\r\nPost Crisis: Activate Heavies, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "239",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Piloting"
+            ]
+          },
+          "Activation": "HeavyRaiders",
+          "PassLevels": {
+            "$id": "240",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "241",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 14,
+                "Item2": "+1 Distance"
+              },
+              {
+                "$id": "242",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Food and destroy 1 raptor."
+              }
+            ]
+          },
+          "UniqueId": "49726261-af70-4a03-bb41-70c1af2cd836"
+        },
+        {
+          "$id": "243",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Sleep Deprivation",
+          "AdditionalText": "Admiral Chooses \r\nReturn all undamaged Vipers in space to the Reserves; current player moves to Sickbay\r\nOR \r\n-1 Morale\r\n\r\nPost Crisis: Launch Nukes, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "244",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "BasestarAttack",
+          "PassLevels": {
+            "$id": "245",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "4a6c0b46-273a-44a1-9f21-b47b1cc213b1"
+        },
+        {
+          "$id": "246",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CYLON ATTACK: Thirty-Three",
+          "AdditionalText": "1. Activate Raiders \r\n2. Setup: ALPHA: Basestar CHARLIE: Civilian Ship DELTA: Civilian Ship ECHO: Viper, Civilian Ship FOXTROT: Viper, Civilian Ship \r\n3. Special Rule - Relentless Pursuit: Keep this card in play. If the fleet jumps before a civilian ship or basestar is destroyed, reshuffle this crisis into the deck.",
+          "PositiveColors": {
+            "$id": "247",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "248",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "4de27ca7-4437-48bc-abf5-e8a542ba040b"
+        },
+        {
+          "$id": "249",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Prison Labor",
+          "AdditionalText": "Skill check: POL/LEA/TAC = 10 \r\nPASS: No Effect \r\nFAIL: -1 morale, -1 food \r\n\r\nPost Crisis: Activate Raiders, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "250",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics",
+              "Politics"
+            ]
+          },
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "251",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "252",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 10,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "253",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 morale, -1 food"
+              }
+            ]
+          },
+          "UniqueId": "50fe86ec-f5fe-411a-a226-e1024b660332"
+        },
+        {
+          "$id": "254",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Scouting For Water",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: TAC/PIL = 9 \r\nPASS: +1 Food \r\nFAIL: -1 Fuel and destroy 1 raptor\r\n\r\nOR \r\n\r\n-1 Food\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "255",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Piloting"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "256",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "257",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 9,
+                "Item2": "+1 Food"
+              },
+              {
+                "$id": "258",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Fuel and destroy 1 raptor"
+              }
+            ]
+          },
+          "UniqueId": "5398251e-a305-4dce-abb9-1393f9faa97a"
+        },
+        {
+          "$id": "259",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Rescue The Fleet",
+          "AdditionalText": "Admiral Chooses \r\n-2 Population\r\nOR \r\n-1 morale. Setup: ALPHA: Basestar DELTA: 3 Civilian Ships\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "260",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "261",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "55f37ecc-fe8a-42ed-8249-da17d4bf5089"
+        },
+        {
+          "$id": "262",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Rescue Caprica Survivors",
+          "AdditionalText": "President Chooses \r\n-1 Fuel, -1 Food, +1 Population\r\nOR \r\n-1 Morale\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "263",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "264",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "5743559d-983a-44aa-ab92-aa6b793e2d92"
+        },
+        {
+          "$id": "265",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Keep Tabs on Visitor",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA/TAC = 12 \r\nPASS: No Effect \r\nFAIL: Roll a die. If 4 or less, -2 population\r\n\r\nOR \r\n\r\nThe Current Player discards 4 Skill Cards at random.\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "266",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "267",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "268",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 12,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "269",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "Roll a die. If 4 or less, -2 population"
+              }
+            ]
+          },
+          "UniqueId": "5add3af3-3968-437f-a668-23a8d7b58e75"
+        },
+        {
+          "$id": "270",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Riots",
+          "AdditionalText": "Admiral Chooses: \r\n-1 Food, -1 Morale\r\nOR \r\n-1 Population, -1 Fuel \r\n\r\nPost Crisis: Launch Nukes, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "271",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "BasestarAttack",
+          "PassLevels": {
+            "$id": "272",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "5fe9b953-178b-4549-97e2-a1110be724e4"
+        },
+        {
+          "$id": "273",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CYLON ATTACK: Cylon Swarm",
+          "AdditionalText": "1. Launch Nukes \r\n2. Setup: ALPHA: Basestar, 5 Raiders BRAVO: 1 Heavy DELTA: Civilian ECHO: Viper, Civilian FOXTROT: Viper, Civilian \r\n3. Special Rule - Massive Deployment: Keep this card in play until the fleet jumps. Each time a basestar launches Raiders or Heavy Raiders, it launches 1 additional of the same type.",
+          "PositiveColors": {
+            "$id": "274",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "275",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "64f87475-2c53-4480-bcb1-d55381bd8034"
+        },
+        {
+          "$id": "276",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Declare Martial Law",
+          "AdditionalText": "Admiral Chooses \r\n-1 Morale and the Admiral receives the President title\r\nOR \r\n-1 Population and the Admiral discards 2 Skill Cards\r\n\r\nPost Crisis: Launch Nukes, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "277",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "BasestarAttack",
+          "PassLevels": {
+            "$id": "278",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "65254d06-175a-4e35-9735-da34848bb096"
+        },
+        {
+          "$id": "279",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CYLON ATTACK: Jammed Assault",
+          "AdditionalText": "1. Activate Raiders \r\n2. Setup: ALPHA Civilian Ship BRAVO: 4 Raiders CHARLIE: 1 Basestar, 2 Heavy Raiders DELTA: Civilian Ship ECHO: Viper, Civilian Ship FOXTROT: Viper, Civilian Ship \r\n3. Special Rule - Communications Jamming: Until the fleet jumps, no player may activate the Communications location.",
+          "PositiveColors": {
+            "$id": "280",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "281",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "65a1c0e0-e226-4d06-8d83-84cbcca6d662"
+        },
+        {
+          "$id": "282",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Low Supplies",
+          "AdditionalText": "Skill check: POL/LEA = 7 \r\nPass: No Effect \r\nFail: -1 Morale; if Food is less than 6, -1 additional Morale.\r\n\r\nPost Crisis: Activate Raiders, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "283",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Politics"
+            ]
+          },
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "284",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "285",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 7,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "286",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Morale; if Food is less than 6, -1 additional Morale."
+              }
+            ]
+          },
+          "UniqueId": "6c972c7d-3a63-41ea-ad55-c0d5dd5ba812"
+        },
+        {
+          "$id": "287",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Requested Resignation",
+          "AdditionalText": "Admiral Chooses \r\nThe Admiral and President discard 2 Skill Cards\r\n\r\nOR \r\n\r\nThe President Chooses \r\nGive President Title to Admiral\r\nOR \r\nMove to Brig\r\n\r\nPost Crisis: Launch Nukes, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "288",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "BasestarAttack",
+          "PassLevels": {
+            "$id": "289",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "723fe962-3948-49da-a4c4-dfb3eb8aef02"
+        },
+        {
+          "$id": "290",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Send Survey Team",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: TAC/PIL/ENG = 15 \r\nPASS: No Effect \r\nFAIL: The current player is sent to Sickbay and destroy one raptor.\r\n\r\nOR \r\n\r\nRoll a die. If 5 or lower, -1 Fuel \r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "291",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Engineering",
+              "Piloting"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "292",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "293",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 15,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "294",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "The current player is sent to Sickbay and destroy one raptor."
+              }
+            ]
+          },
+          "UniqueId": "7829d28a-8cf4-4885-95fd-cb101da52620"
+        },
+        {
+          "$id": "295",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Cylon Accusation",
+          "AdditionalText": "Skill check: POL/LEA/TAC = 10 \r\nPASS: No Effect \r\nFAIL: The current player is sent to the Brig. \r\n\r\nPost Crisis: Activate Raiders, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "296",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics",
+              "Politics"
+            ]
+          },
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "297",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "298",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 10,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "299",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "The current player is sent to the Brig."
+              }
+            ]
+          },
+          "UniqueId": "7d398710-2dcc-496f-af8c-397d579c77d5"
+        },
+        {
+          "$id": "300",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CYLON ATTACK: Heavy Assault",
+          "AdditionalText": "1. Activate Raiders \r\n2. Setup: ALPHA: Basestar BRAVO: Basestar DELTA: Civilian Ship ECHO: Civilian Ship FOXTROT: 1 Viper, Civilian Ship \r\n3. Special Rule - Heavy Bombardment: Launch Nukes",
+          "PositiveColors": {
+            "$id": "301",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "302",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "84233db5-bd92-43cd-a2d1-ff12d95383a0"
+        },
+        {
+          "$id": "303",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Water Shortage",
+          "AdditionalText": "President Chooses: \r\n-1 Food\r\nOR \r\nthe President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Launch Nukes, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "304",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "BasestarAttack",
+          "PassLevels": {
+            "$id": "305",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "897ac4d4-7bad-429e-9189-714801383079"
+        },
+        {
+          "$id": "306",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CYLON ATTACK:  Tactical Strike",
+          "AdditionalText": "1. Activate Raiders \r\n2. Setup: ALPHA: Heavy Raider CHARLIE: Civilian Ship DELTA: Civilian Ship ECHO: 2 Vipers, Civilian Ship FOXTROT: 5 Raiders, 1 Basestar \r\n3. Special Rule - Hangar Assault: Damage 2 Vipers in the reserves.",
+          "PositiveColors": {
+            "$id": "307",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "308",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "90f8d4fe-8a26-49e3-9838-b941599b4896"
+        },
+        {
+          "$id": "309",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Terrorist Bomber",
+          "AdditionalText": "Skill check: LEA/TAC = 9 \r\nPASS: No Effect \r\nFAIL: -1 Morale and the current player is sent to Sickbay. \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "310",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "HeavyRaiders",
+          "PassLevels": {
+            "$id": "311",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "312",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 9,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "313",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Morale and the current player is sent to Sickbay."
+              }
+            ]
+          },
+          "UniqueId": "93e37022-dc57-418c-8fc3-050454fb2bcc"
+        },
+        {
+          "$id": "314",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Crash Landing",
+          "AdditionalText": "Skill check: TAC/PIL = 6 \r\nPASS: No Effect \r\nFAIL: The Admiral Chooses \r\n-1 Fuel\r\nOR \r\n-1 Morale and the current player is sent to Sickbay.\r\n\r\nPost Crisis: Activate Heavies, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "315",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Piloting"
+            ]
+          },
+          "Activation": "HeavyRaiders",
+          "PassLevels": {
+            "$id": "316",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "317",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 6,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "318",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "The Admiral Chooses"
+              }
+            ]
+          },
+          "UniqueId": "94abbddb-f03a-443b-9242-84d8880103c1"
+        },
+        {
+          "$id": "319",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Analyze Enemy Fighter",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: TAC/ENG = 7 \r\nPASS: Repair one destroyed Raptor \r\nFAIL: -1 Population\r\n\r\nOR \r\n\r\nRoll a die. If 4 or lower, -1 population and the current player discards 2 Skill Cards \r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "320",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Engineering"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "321",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "322",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 7,
+                "Item2": "Repair one destroyed Raptor"
+              },
+              {
+                "$id": "323",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Population"
+              }
+            ]
+          },
+          "UniqueId": "97dc1ce4-813e-482c-9cda-88c01c47d821"
+        },
+        {
+          "$id": "324",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Resistance",
+          "AdditionalText": "Skill check: POL/LEA/TAC = 11 \r\nPASS: No Effect \r\n9+: -1 Food \r\nFAIL: -1 Food, -1 Fuel \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "325",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "HeavyRaiders",
+          "PassLevels": {
+            "$id": "326",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "327",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 11,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "328",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 9,
+                "Item2": "-1 Food"
+              },
+              {
+                "$id": "329",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Food, -1 Fuel"
+              }
+            ]
+          },
+          "UniqueId": "9d8c46fd-55c1-475a-aca9-4de2922d6859"
+        },
+        {
+          "$id": "330",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Terrorist Investigations",
+          "AdditionalText": "Skill check: POL/LEA = 12 \r\nPASS: Current player looks at 1 random Loyalty Card belonging to any player. \r\n6+: No Effect \r\nFAIL: -1 Morale \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "331",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "HeavyRaiders",
+          "PassLevels": {
+            "$id": "332",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "333",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 12,
+                "Item2": "Current player looks at 1 random Loyalty Card belonging to any player."
+              },
+              {
+                "$id": "334",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 6,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "335",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Morale"
+              }
+            ]
+          },
+          "UniqueId": "9f283416-4420-42af-b7ae-64ff1ad3e179"
+        },
+        {
+          "$id": "336",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Food Shortage",
+          "AdditionalText": "President Chooses: \r\n-2 Food\r\nOR \r\n-1 Food and the President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "337",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "338",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "9f50ee0c-f400-4e29-abfc-4711be55a656"
+        },
+        {
+          "$id": "339",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Cylon Virus",
+          "AdditionalText": "Skill check: TAC/ENG = 13 \r\nPASS: No Effect \r\nFAIL: All characters in FTL Control move to Sickbay. Then place 1 Centurion marker at the beginning of the Boarding Track. \r\n\r\nPost Crisis: Launch Raiders, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "340",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Engineering"
+            ]
+          },
+          "Activation": "LaunchRaiders",
+          "PassLevels": {
+            "$id": "341",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "342",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 13,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "343",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "All characters in FTL Control move to Sickbay. Then place 1 Centurion marker at the beginning of the Boarding Track."
+              }
+            ]
+          },
+          "UniqueId": "a61146d6-e776-49e0-8b46-ec29e6ddbf88"
+        },
+        {
+          "$id": "344",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Food Shortage",
+          "AdditionalText": "President Chooses: \r\n-2 Food\r\nOR \r\n-1 Food and the President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "345",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "346",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "a74f579d-394b-44aa-be61-963910a1dd5d"
+        },
+        {
+          "$id": "347",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Water Shortage",
+          "AdditionalText": "President Chooses: \r\n-1 Food\r\nOR \r\nthe President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Launch Nukes, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "348",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "BasestarAttack",
+          "PassLevels": {
+            "$id": "349",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "ae5d8518-60f8-4c29-b24b-a416043d714a"
+        },
+        {
+          "$id": "350",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Unexpected Reunion",
+          "AdditionalText": "Skill check: POL/LEA/TAC = 8 \r\nPASS: No Effect \r\nFAIL: -1 Morale and the current player discards his hand of Skill Cards. \r\n\r\nPost Crisis: Activate Raiders, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "351",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics",
+              "Politics"
+            ]
+          },
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "352",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "353",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 8,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "354",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Morale and the current player discards his hand of Skill Cards."
+              }
+            ]
+          },
+          "UniqueId": "aeccc407-a5aa-4cca-af19-b15efa5274ab"
+        },
+        {
+          "$id": "355",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Unidentified Ship",
+          "AdditionalText": "Skill check: TAC/PIL = 10 \r\nPASS: No Effect \r\nFAIL: -1 Population \r\n\r\nPost Crisis: Launch Raiders, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "356",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Piloting"
+            ]
+          },
+          "Activation": "LaunchRaiders",
+          "PassLevels": {
+            "$id": "357",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "358",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 10,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "359",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Population"
+              }
+            ]
+          },
+          "UniqueId": "b25fa180-b61c-41f3-a78a-b43904d02ed4"
+        },
+        {
+          "$id": "360",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Riots",
+          "AdditionalText": "Admiral Chooses: \r\n-1 Food, -1 Morale\r\nOR \r\n-1 Population, -1 Fuel\r\n\r\nPost Crisis: Launch Raiders, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "361",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "LaunchRaiders",
+          "PassLevels": {
+            "$id": "362",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "b65722a0-7c92-4074-b663-1fc14985cf67"
+        },
+        {
+          "$id": "363",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Water Shortage",
+          "AdditionalText": "President Chooses: \r\n-1 Food\r\nOR \r\nthe President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "364",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "365",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "b66c87a9-c8ee-4179-8436-6d5218394d20"
+        },
+        {
+          "$id": "366",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Network the Computers",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: POL/TAC/ENG = 11 \r\nPASS: +1 Jump Prep \r\nFAIL: -1 Population and place 1 Centurion marker at the start of the boarding party track\r\n\r\nOR \r\n\r\n-1 Population and -1 Jump Prep\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "367",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Politics",
+              "Engineering"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "368",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "369",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 11,
+                "Item2": "+1 Jump Prep"
+              },
+              {
+                "$id": "370",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Population and place 1 Centurion marker at the start of the boarding party track"
+              }
+            ]
+          },
+          "UniqueId": "b699359d-fed3-4cec-84d1-261091301e40"
+        },
+        {
+          "$id": "371",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Rescue Mission",
+          "AdditionalText": "Admiral Chooses \r\n-1 morale and the current player is moved to sickbay\r\nOR \r\n-1 fuel and destroy 1 raptor \r\n\r\nPost-Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "372",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "373",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "bd904db0-291b-467f-b471-fc7a9329c54b"
+        },
+        {
+          "$id": "374",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Build Cylon Detector",
+          "AdditionalText": "Admiral Chooses: \r\n-1 nuke token\r\nOR \r\n-1 Morale and the Admiral discards 2 skill cards\r\n\r\nPost-Crisis: Activate Heavies, NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "375",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "HeavyRaiders",
+          "PassLevels": {
+            "$id": "376",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "bf6ba009-6e0c-42e3-973b-a1727289673a"
+        },
+        {
+          "$id": "377",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Colonial Day",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: POL/TAC = 10 \r\nPASS: +1 Morale \r\nFAIL: -2 Morale\r\n\r\nOR \r\n\r\n-1 Morale\r\n\r\nPost Crisis: Launch Nukes, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "378",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "BasestarAttack",
+          "PassLevels": {
+            "$id": "379",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "380",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 10,
+                "Item2": "+1 Morale"
+              },
+              {
+                "$id": "381",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-2 Morale"
+              }
+            ]
+          },
+          "UniqueId": "c320e344-0f20-47c3-ab47-e9f932f7dcc2"
+        },
+        {
+          "$id": "382",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CYLON ATTACK: Raiding Party",
+          "AdditionalText": "1. Activate Raiders \r\n2. Setup: CHARLIE: Basestar, 3 raiders DELTA: 2 heavy raiders, 2 raiders ECHO: Civilian Ship FOXTROT: 2 Vipers, 2 Civilian Ships \r\n3. Special Rule - FTL Failure: -1 Jump Prep",
+          "PositiveColors": {
+            "$id": "383",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "384",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "c4601cdb-91e7-4f29-b498-443dd5bd639f"
+        },
+        {
+          "$id": "385",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CYLON ATTACK: Besieged",
+          "AdditionalText": "1. Activate Raiders \r\n2. Setup: ALPHA: Civilian Ship BRAVO Civilian Ship DELTA: Heavy Raider ECHO: Basestar FOXTROT: 4 Raiders, 2 Vipers, 1 Civilian Ship \r\n3. Special Rule - Heavy Casualties: The 4 Raiders that were just setup are immediately activated.",
+          "PositiveColors": {
+            "$id": "386",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "387",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "cc394296-4b40-4c60-8e04-cb8a92fabe7b"
+        },
+        {
+          "$id": "388",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Informing the Public",
+          "AdditionalText": "Current Player Chooses: \r\nSkill check: POL/LEA = 7 \r\nPass: Current player looks at one loyalty card belonging to any player. \r\nFAIL: -2 Morale\r\n\r\nOR \r\n\r\nRoll a die. On a 4 or less, -1 pop, -1 morale. \r\n\r\nPost Crisis: Activate Raiders, +1 jump prep",
+          "PositiveColors": {
+            "$id": "389",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "390",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "391",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 7,
+                "Item2": "Current player looks at one loyalty card belonging to any player."
+              },
+              {
+                "$id": "392",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-2 Morale"
+              }
+            ]
+          },
+          "UniqueId": "cca804f3-6038-433b-bbde-71d31c034e82"
+        },
+        {
+          "$id": "393",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Bomb Threat",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA/TAC = 13 \r\nPASS: No Effect \r\nFAIL: -1 Morale and draw a civilian ship and destroy it \r\n\r\nOR \r\n\r\nRoll a die; on a 4 or less, trigger the FAIL condition of this Crisis\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "394",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "395",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "396",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 13,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "397",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Morale and draw a civilian ship and destroy it"
+              }
+            ]
+          },
+          "UniqueId": "cece2c1f-5b87-49d6-8c43-dec9984d99d6"
+        },
+        {
+          "$id": "398",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Rescue Mission",
+          "AdditionalText": "Admiral Chooses \r\n-1 morale and the current player is moved to sickbay\r\nOR \r\n-1 fuel and destroy 1 raptor \r\n\r\nPost-Crisis: Launch Nukes, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "399",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "BasestarAttack",
+          "PassLevels": {
+            "$id": "400",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "d0653601-1976-4f17-b816-a8388bebeb4a"
+        },
+        {
+          "$id": "401",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Water Sabotaged",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: POL/LEA/TAC = 13 \r\nPASS: No Effect \r\nFAIL: -2 Food\r\n\r\nOR \r\n\r\n-1 Food\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "402",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "403",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "404",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 13,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "405",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-2 Food"
+              }
+            ]
+          },
+          "UniqueId": "dbce57c7-563e-4720-8a95-1a6eda4bedcb"
+        },
+        {
+          "$id": "406",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CYLON ATTACK: Surrounded",
+          "AdditionalText": "1. Launch Nukes \r\n2. Setup: ALPHA: 4 Raiders BRAVO: Basestar CHARLIE: 3 raiders, 1 heavy raider DELTA: Civilian Ship ECHO: Viper, Civilian Ship FOXTROT: Viper, Civilian Ship \r\n3. Special Rule - Panic: The current player discards 3 Skill Cards",
+          "PositiveColors": {
+            "$id": "407",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "408",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "dc137981-78e1-4be2-9346-a837b17de41a"
+        },
+        {
+          "$id": "409",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Jump Computer Failure",
+          "AdditionalText": "Skill check: TAC /ENG = 7 \r\nPASS: No Effect \r\nFAIL: -1 Population, -1 Jump Prep \r\n\r\nPOST CRISIS: Launch Raiders | NO JUMP PREP",
+          "PositiveColors": {
+            "$id": "410",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Engineering"
+            ]
+          },
+          "Activation": "LaunchRaiders",
+          "PassLevels": {
+            "$id": "411",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "412",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 7,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "413",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Population, -1 Jump Prep"
+              }
+            ]
+          },
+          "UniqueId": "e0bb9be8-1961-4c7e-9622-13386d71d092"
+        },
+        {
+          "$id": "414",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Scouting For Fuel",
+          "AdditionalText": "Current Player Chooses \r\nSkill check: TAC/PIL = 12 \r\nPASS: +1 Fuel \r\nFAIL: -1 Fuel and destroy 1 raptor\r\n\r\nOR \r\n\r\nRoll a die; if 4 or lower, -1 Fuel\r\n\r\nPost Crisis: Activate Raiders, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "415",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Piloting"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "Raiders",
+          "PassLevels": {
+            "$id": "416",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "417",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 12,
+                "Item2": "+1 Fuel"
+              },
+              {
+                "$id": "418",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Fuel and destroy 1 raptor"
+              }
+            ]
+          },
+          "UniqueId": "e3289f89-a6f3-4c68-816a-49592f0865a7"
+        },
+        {
+          "$id": "419",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Mandatory Testing",
+          "AdditionalText": "Skill check: POL/LEA = 13 \r\nPASS: The President looks at 1 random Loyalty Card of the current player. \r\n9+: No Effect \r\nFAIL: -1 Morale \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "420",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "HeavyRaiders",
+          "PassLevels": {
+            "$id": "421",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "422",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 13,
+                "Item2": "The President looks at 1 random Loyalty Card of the current player."
+              },
+              {
+                "$id": "423",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 9,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "424",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Morale"
+              }
+            ]
+          },
+          "UniqueId": "ebe4ea7c-469e-4943-ae6a-1271b9df82ff"
+        },
+        {
+          "$id": "425",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Water Shortage",
+          "AdditionalText": "President Chooses: \r\n-1 Food\r\nOR \r\nthe President discards 2 Skill Cards, then the current player discards 3 Skill Cards\r\n\r\nPost-Crisis: Launch Nukes, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "426",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "JumpPrep": true,
+          "Activation": "BasestarAttack",
+          "PassLevels": {
+            "$id": "427",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "ebf5b3e3-755f-4d15-af25-0bed227f8b8c"
+        },
+        {
+          "$id": "428",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Prisoner Revolt",
+          "AdditionalText": "Skill check: POL/LEA/TAC = 11 \r\nPASS: No Effect \r\n6+: -1 Population \r\nFAIL: -1 Population and the President chooses another player to receive the President title. \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "429",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "HeavyRaiders",
+          "PassLevels": {
+            "$id": "430",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "431",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 11,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "432",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 6,
+                "Item2": "-1 Population"
+              },
+              {
+                "$id": "433",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Population and the President chooses another player to receive the President title."
+              }
+            ]
+          },
+          "UniqueId": "f530214b-b042-4ac5-997b-e781e3aafb72"
+        },
+        {
+          "$id": "434",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Hangar Accident",
+          "AdditionalText": "Skill check: TAC/PIL/ENG = 10 \r\nPASS: No Effect \r\n7+: -1 Population \r\nFAIL: -1 Population and damage two vipers in the reserves. \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "435",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Engineering",
+              "Piloting"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "HeavyRaiders",
+          "PassLevels": {
+            "$id": "436",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "437",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 10,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "438",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 7,
+                "Item2": "-1 Population"
+              },
+              {
+                "$id": "439",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Population and damage two vipers in the reserves."
+              }
+            ]
+          },
+          "UniqueId": "f5f362b2-ea8b-44bd-ba41-6d4a033cce91"
+        },
+        {
+          "$id": "440",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CYLON ATTACK: Ambush",
+          "AdditionalText": "1. Launch Nukes \r\n2. Setup: ALPHA: 4 Raiders CHARLIE: 1 Civilian Ship DELTA: 1 Basestar, 4 Raiders ECHO: 2 Vipers, 1 Civilian Ship FOXTROT: 1 Civilian Ship \r\n3. Special Rule - Training New Pilots: Until the next jump, all unmanned vipers have -2 to their attack rolls.",
+          "PositiveColors": {
+            "$id": "441",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "442",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "f66ca041-d181-4329-b89a-2fbf48a612fd"
+        },
+        {
+          "$id": "443",
+          "$type": "DeckManager.Cards.CrisisCard, DeckManager",
+          "CardType": "Crisis",
+          "Heading": "CRISIS: Loss of a Friend",
+          "AdditionalText": "Skill check: POL/LEA = 9 \r\nPASS: No Effect \r\n7+: The current player discards 2 Skill Cards \r\nFAIL: -1 Morale and the current player discards 2 Skill Cards \r\n\r\nPost Crisis: Activate Heavies, +1 Jump Prep",
+          "PositiveColors": {
+            "$id": "444",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Politics"
+            ]
+          },
+          "JumpPrep": true,
+          "Activation": "HeavyRaiders",
+          "PassLevels": {
+            "$id": "445",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "446",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 9,
+                "Item2": "No Effect"
+              },
+              {
+                "$id": "447",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 7,
+                "Item2": "The current player discards 2 Skill Cards"
+              },
+              {
+                "$id": "448",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": "-1 Morale and the current player discards 2 Skill Cards"
+              }
+            ]
+          },
+          "UniqueId": "ff0175fb-c083-4afa-a5d1-32aeff91ea66"
+        }
+      ]
+    },
+    "Discarded": {
+      "$id": "449",
+      "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.CrisisCard, DeckManager]], mscorlib",
+      "$values": []
+    }
+  },
+  "DestinationDeck": {
+    "$id": "450",
+    "$type": "DeckManager.Decks.DestinationDeck, DeckManager",
+    "Deck": {
+      "$id": "451",
+      "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.DestinationCard, DeckManager]], mscorlib",
+      "$values": [
+        {
+          "$id": "452",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Icy Moon",
+          "AdditionalText": "Distance 1 \r\nLose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 1 Food. Otherwise, destroy 1 raptor.",
+          "Distance": 1,
+          "UniqueId": "1051f52b-b37d-4c93-963d-399fc4a98a8a"
+        },
+        {
+          "$id": "453",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Barren Planet",
+          "AdditionalText": "Distance 2 \r\nLose 2 Fuel.",
+          "Distance": 2,
+          "UniqueId": "1820638a-6d7a-4c69-a32a-5f89f4f6b2e0"
+        },
+        {
+          "$id": "454",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Icy Moon",
+          "AdditionalText": "Distance 1 \r\nLose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 1 Food. Otherwise, destroy 1 raptor.",
+          "Distance": 1,
+          "UniqueId": "1de2848b-4dff-4997-a225-845374543d09"
+        },
+        {
+          "$id": "455",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Barren Planet",
+          "AdditionalText": "Distance 2 \r\nLose 2 Fuel.",
+          "Distance": 2,
+          "UniqueId": "1e0434c9-c40b-4945-80a0-e711469c942b"
+        },
+        {
+          "$id": "456",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Ragnar Anchorage",
+          "AdditionalText": "Distance 1 \r\nThe Admiral may repair up to 3 vipers and 1 raptor. These ships may be damaged or even destroyed.",
+          "Distance": 1,
+          "UniqueId": "21b0bdbb-007b-4959-a785-0dd0dc5fb1d1"
+        },
+        {
+          "$id": "457",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Remote Planet",
+          "AdditionalText": "Distance 2 \r\nLose 1 Fuel and destroy one raptor.",
+          "Distance": 2,
+          "UniqueId": "28ac2e6e-720c-4b2d-97b0-a3c7e1ea0d8f"
+        },
+        {
+          "$id": "458",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Asteroid Field",
+          "AdditionalText": "Distance 3 \r\nLose 2 Fuel. Then draw 1 civilian ship and destroy it, losing the resources on the back.",
+          "Distance": 3,
+          "UniqueId": "2a16abe6-9fce-4e51-981c-03d968f9106b"
+        },
+        {
+          "$id": "459",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Barren Planet",
+          "AdditionalText": "Distance 2 \r\nLose 2 Fuel.",
+          "Distance": 2,
+          "UniqueId": "3739acf9-3aac-49fe-a339-cfba89bcbd0c"
+        },
+        {
+          "$id": "460",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Cylon Refinery",
+          "AdditionalText": "Distance 2 \r\nLose 1 Fuel. The Admiral may risk 2 vipers to roll a die. If 6+, gain 2 Fuel. Otherwise, damage 2 vipers.",
+          "Distance": 2,
+          "UniqueId": "38d81f26-9eb6-47dd-b34e-af78c7c14012"
+        },
+        {
+          "$id": "461",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Tylium Planet",
+          "AdditionalText": "Distance 1 \r\nLose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 2 fuel. Otherwise, destroy one raptor.",
+          "Distance": 1,
+          "UniqueId": "4df27a4c-b713-4054-bdb1-1a1f92d57ba4"
+        },
+        {
+          "$id": "462",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Tylium Planet",
+          "AdditionalText": "Distance 1 \r\nLose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 2 fuel. Otherwise, destroy one raptor.",
+          "Distance": 1,
+          "UniqueId": "7482313d-06a7-4a31-b849-3a02e4050484"
+        },
+        {
+          "$id": "463",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Deep Space",
+          "AdditionalText": "Distance 2 \r\nLose 1 Fuel and 1 Morale.",
+          "Distance": 2,
+          "UniqueId": "832b1b02-fca6-4f48-b79b-34bb742ca5ad"
+        },
+        {
+          "$id": "464",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Remote Planet",
+          "AdditionalText": "Distance 2 \r\nLose 1 Fuel and destroy one raptor.",
+          "Distance": 2,
+          "UniqueId": "84bb8cdb-fc9d-45ac-bf52-a9fb00e79b9c"
+        },
+        {
+          "$id": "465",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Tylium Planet",
+          "AdditionalText": "Distance 1 \r\nLose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 2 fuel. Otherwise, destroy one raptor.",
+          "Distance": 1,
+          "UniqueId": "9fd48318-dc04-4eb5-91c6-dc2c8f83b63b"
+        },
+        {
+          "$id": "466",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Asteroid Field",
+          "AdditionalText": "Distance 3 \r\nLose 2 Fuel. Then draw 1 civilian ship and destroy it, losing the resources on the back.",
+          "Distance": 3,
+          "UniqueId": "ad7cec8c-0d80-4a43-8cc0-5a3cb4e44fd8"
+        },
+        {
+          "$id": "467",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Desolate Moon",
+          "AdditionalText": "Distance 3 \r\nLose 3 Fuel.",
+          "Distance": 3,
+          "UniqueId": "ae3f7551-a06d-4591-90dc-45eee5f36db2"
+        },
+        {
+          "$id": "468",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Deep Space",
+          "AdditionalText": "Distance 2 \r\nLose 1 Fuel and 1 Morale.",
+          "Distance": 2,
+          "UniqueId": "c6522473-eea9-4e08-b827-65ecd5eecc9d"
+        },
+        {
+          "$id": "469",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Remote Planet",
+          "AdditionalText": "Distance 2 \r\nLose 1 Fuel and destroy one raptor.",
+          "Distance": 2,
+          "UniqueId": "c948db3c-34a7-421b-ac11-5df78d42487d"
+        },
+        {
+          "$id": "470",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Barren Planet",
+          "AdditionalText": "Distance 2 \r\nLose 2 Fuel.",
+          "Distance": 2,
+          "UniqueId": "d12bc75a-0028-4fe1-8bfa-1241a3d6c6f9"
+        },
+        {
+          "$id": "471",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Tylium Planet",
+          "AdditionalText": "Distance 1 \r\nLose 1 Fuel. The Admiral may risk 1 raptor to roll a die. On a 3+, gain 2 fuel. Otherwise, destroy one raptor.",
+          "Distance": 1,
+          "UniqueId": "d6431971-3d1f-4f34-9a35-91003483893e"
+        },
+        {
+          "$id": "472",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Deep Space",
+          "AdditionalText": "Distance 2 \r\nLose 1 Fuel and 1 Morale.",
+          "Distance": 2,
+          "UniqueId": "dc563825-3c01-437e-b385-5cc0b743d2cb"
+        },
+        {
+          "$id": "473",
+          "$type": "DeckManager.Cards.DestinationCard, DeckManager",
+          "CardType": "Destination",
+          "Heading": "Cylon Ambush",
+          "AdditionalText": "Distance 3 \r\nLose 1 Fuel. Then place 1 basestar and 3 raiders in sector ALPHA and 3 civilian ships in sector DELTA.",
+          "Distance": 3,
+          "UniqueId": "df61a6ab-4cc5-478b-bb66-0668d717380a"
+        }
+      ]
+    },
+    "Discarded": {
+      "$id": "474",
+      "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.DestinationCard, DeckManager]], mscorlib",
+      "$values": []
+    }
+  },
+  "SuperCrisisDeck": {
+    "$id": "475",
+    "$type": "DeckManager.Decks.SuperCrisisDeck, DeckManager",
+    "Deck": {
+      "$id": "476",
+      "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.SuperCrisisCard, DeckManager]], mscorlib",
+      "$values": [
+        {
+          "$id": "477",
+          "$type": "DeckManager.Cards.SuperCrisisCard, DeckManager",
+          "CardType": "SuperCrisis",
+          "Heading": "SUPER CRISIS: Massive Assault ",
+          "AdditionalText": "1. Activate Heavies, Launch Nukes \r\n2. Setup: BRAVO: Basestar, 4 Raiders CHARLIE: Basestar, 2 Raiders, 1 Heavy ECHO: Viper, 2 Civilian Ships FOXTROT: Viper, 2 Civilian Ships \r\n3. -2 Jump Prep",
+          "PositiveColors": {
+            "$id": "478",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": []
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "479",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": []
+          },
+          "UniqueId": "0c631eec-fe92-46d0-8c14-5732c827c4f4"
+        },
+        {
+          "$id": "480",
+          "$type": "DeckManager.Cards.SuperCrisisCard, DeckManager",
+          "CardType": "SuperCrisis",
+          "Heading": "SUPER CRISIS: Cylon Intruders ",
+          "AdditionalText": "Skill check: LEA/TAC = 18 \r\nPASS: No Effect \r\n14+: Place 1 Centurion marker at the beginning of the Boarding Party track. \r\nFAIL: Damage Galactica once and place 2 Centurion markers at the beginning of the Boarding Party track.",
+          "PositiveColors": {
+            "$id": "481",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics"
+            ]
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "482",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "483",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 18,
+                "Item2": " No Effect \r"
+              },
+              {
+                "$id": "484",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 14,
+                "Item2": " Place 1 Centurion marker at the beginning of the Boarding Party track. \r"
+              },
+              {
+                "$id": "485",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": " Damage Galactica once and place 2 Centurion markers at the beginning of the Boarding Party track."
+              }
+            ]
+          },
+          "UniqueId": "1dae14b2-66f8-4d03-afd0-240e6cfca1cf"
+        },
+        {
+          "$id": "486",
+          "$type": "DeckManager.Cards.SuperCrisisCard, DeckManager",
+          "CardType": "SuperCrisis",
+          "Heading": "SUPER CRISIS: Fleet Mobilization ",
+          "AdditionalText": "Skill check: LEA/TAC/PIL/ENG = 24 \r\nPASS: Launch Nukes, Launch Raiders \r\nFAIL: Launch Nukes, Activate Raiders, Activate Heavies, Launch Raiders",
+          "PositiveColors": {
+            "$id": "487",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics",
+              "Engineering",
+              "Piloting"
+            ]
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "488",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "489",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 24,
+                "Item2": " Launch Nukes, Launch Raiders \r"
+              },
+              {
+                "$id": "490",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": " Launch Nukes, Activate Raiders, Activate Heavies, Launch Raiders"
+              }
+            ]
+          },
+          "UniqueId": "31d60995-f4b1-4ebb-abf3-fca69baa01de"
+        },
+        {
+          "$id": "491",
+          "$type": "DeckManager.Cards.SuperCrisisCard, DeckManager",
+          "CardType": "SuperCrisis",
+          "Heading": "SUPER CRISIS: Bomb On Colonial One ",
+          "AdditionalText": "Skill check: TAC/PIL/ENG = 15 \r\nPASS: No Effect \r\nFAIL: -2 Morale, all characters in Administration, President's Office, and Press Room are sent to Sickbay. Until the end of the game, no player may move to or activate Administration, President's Office, and Press Room.",
+          "PositiveColors": {
+            "$id": "492",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Tactics",
+              "Engineering",
+              "Piloting"
+            ]
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "493",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "494",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 15,
+                "Item2": " No Effect \r"
+              },
+              {
+                "$id": "495",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": " -2 Morale, all characters in Administration, President's Office, and Press Room are sent to Sickbay. Until the end of the game, no player may move to or activate Administration, President's Office, and Press Room."
+              }
+            ]
+          },
+          "UniqueId": "931834b7-a280-49fb-b454-2d491ae9c3e3"
+        },
+        {
+          "$id": "496",
+          "$type": "DeckManager.Cards.SuperCrisisCard, DeckManager",
+          "CardType": "SuperCrisis",
+          "Heading": "SUPER CRISIS: Inbound Nukes ",
+          "AdditionalText": "Skill check: LEA/TAC = 15 \r\nPASS: No Effect \r\nFAIL: -1 Fuel, -1 Food, -1 Population",
+          "PositiveColors": {
+            "$id": "497",
+            "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.Enums.SkillCardColor, DeckManager]], mscorlib",
+            "$values": [
+              "Leadership",
+              "Tactics"
+            ]
+          },
+          "Activation": "None",
+          "PassLevels": {
+            "$id": "498",
+            "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib]], mscorlib",
+            "$values": [
+              {
+                "$id": "499",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item1": 15,
+                "Item2": " No Effect \r"
+              },
+              {
+                "$id": "500",
+                "$type": "System.Tuple`2[[System.Int32, mscorlib],[System.String, mscorlib]], mscorlib",
+                "Item2": " -1 Fuel, -1 Food, -1 Population"
+              }
+            ]
+          },
+          "UniqueId": "fd9d7c90-591d-4e19-b7fe-65e7e5effff1"
+        }
+      ]
+    },
+    "Discarded": {
+      "$id": "501",
+      "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.SuperCrisisCard, DeckManager]], mscorlib",
+      "$values": []
+    }
+  },
+  "LoyaltyDeck": {
+    "$id": "502",
+    "$type": "DeckManager.Decks.LoyaltyDeck, DeckManager",
+    "Deck": {
+      "$id": "503",
+      "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.LoyaltyCard, DeckManager]], mscorlib",
+      "$values": [
+        {
+          "$id": "504",
+          "$type": "DeckManager.Cards.LoyaltyCard, DeckManager",
+          "Loyalty": "NotACylon",
+          "CardType": "Loyalty",
+          "UniqueId": "19fffefe-9eab-4191-a33a-e71dd0f7f251"
+        },
+        {
+          "$id": "505",
+          "$type": "DeckManager.Cards.LoyaltyCard, DeckManager",
+          "Loyalty": "NotACylon",
+          "CardType": "Loyalty",
+          "UniqueId": "6ce876f0-b0ee-42aa-9721-2ec84f37bdbe"
+        },
+        {
+          "$id": "506",
+          "$type": "DeckManager.Cards.LoyaltyCard, DeckManager",
+          "Loyalty": "Cylon",
+          "AdditionalText": "Reveal: Draw 5 Galactica damage tokens and choose 2 of them to resolve.",
+          "CardType": "Loyalty",
+          "UniqueId": "0f4470c2-95d5-450a-ad02-4d92306e6198"
+        }
+      ]
+    },
+    "Discarded": {
+      "$id": "507",
+      "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.LoyaltyCard, DeckManager]], mscorlib",
+      "$values": []
+    }
+  },
+  "DestinyDeck": {
+    "$id": "508",
+    "$type": "DeckManager.Decks.DestinyDeck, DeckManager",
+    "Discarded": {
+      "$id": "509",
+      "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.SkillCard, DeckManager]], mscorlib",
+      "$values": []
+    }
+  },
+  "QuorumDeck": {
+    "$id": "510",
+    "$type": "DeckManager.Decks.QuorumDeck, DeckManager",
+    "Deck": {
+      "$id": "511",
+      "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.QuorumCard, DeckManager]], mscorlib",
+      "$values": [
+        {
+          "$id": "512",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "ENCOURAGE MUTINY",
+          "AdditionalText": "Action: Choose any other player (excluding the Admiral). That player rolls a die. If 3 or higher, he receives the Admiral title. Otherwise lose 1 morale. Discard this card.",
+          "UniqueId": "09620377-ba0f-4856-815c-e288787ecf5f"
+        },
+        {
+          "$id": "513",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "INSPIRATIONAL SPEECH",
+          "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 morale and remove this card from the game. Otherwise, no effect and discard this card.",
+          "UniqueId": "5742fbca-636a-43bf-b0d6-544bab489b0a"
+        },
+        {
+          "$id": "514",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "FOOD RATIONING",
+          "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 food and remove this card from the game. Otherwise, no effect and discard this card.",
+          "UniqueId": "5a9dd404-0fa4-4200-bc94-2ff2dd43b07f"
+        },
+        {
+          "$id": "515",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "ASSIGN MISSION SPECIALIST",
+          "AdditionalText": "Action: Draw 2 politics cards and give this card to any other player. Keep this card in play. The next time the Fleet jumps, this player chooses the destination instead of the Admiral. He draws 3 Destination Card (instead of 2) and chooses 1. Then discard this card.",
+          "UniqueId": "601bfb74-e993-4e9a-8d40-67f6df9b3051"
+        },
+        {
+          "$id": "516",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "INSPIRATIONAL SPEECH",
+          "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 morale and remove this card from the game. Otherwise, no effect and discard this card.",
+          "UniqueId": "608bc7bb-7d45-4d83-a0cd-c62d9e1fc30b"
+        },
+        {
+          "$id": "517",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "ASSIGN VICE PRESIDENT",
+          "AdditionalText": "Action: Draw 2 politics cards and give this card to any other player. Keep this card in play. While this player is not President other players may not be chosen with the Administration location.",
+          "UniqueId": "64e08090-31f8-47d8-afef-60a053e7fc78"
+        },
+        {
+          "$id": "518",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "ASSIGN ARBITRATOR",
+          "AdditionalText": "Action: Draw 2 politics cards and give this card to any other player. Keep this card in play. When a player activates the Admiral's Quarters location, this player may discard this card to reduce or increase the difficulty by 3.",
+          "UniqueId": "6d16cf80-7de6-4bc5-ac37-e0117fd9f5b5"
+        },
+        {
+          "$id": "519",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "ARREST ORDER",
+          "AdditionalText": "Action: Chose a character and send him to the 'Brig' location. Then discard this card.",
+          "UniqueId": "6ef8efe0-844a-4df8-8f25-91e1721c35f2"
+        },
+        {
+          "$id": "520",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "AUTHORIZATION OF BRUTAL FORCE",
+          "AdditionalText": "Action: Destroy 3 raiders, 1 heavy raider, or 1 centurion. Then roll a die and if 2 or less, lose 1 population. Then discard this card.",
+          "UniqueId": "8c3f3efd-2d86-428d-9650-8f7414a157a2"
+        },
+        {
+          "$id": "521",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "INSPIRATIONAL SPEECH",
+          "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 morale and remove this card from the game. Otherwise, no effect and discard this card.",
+          "UniqueId": "8d2cbf3a-61d4-4406-9cf8-e6997a79ffda"
+        },
+        {
+          "$id": "522",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "ARREST ORDER",
+          "AdditionalText": "Action: Chose a character and send him to the 'Brig' location. Then discard this card.",
+          "UniqueId": "8da1bc37-ceed-4133-9fb8-7d00238bdb43"
+        },
+        {
+          "$id": "523",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "FOOD RATIONING",
+          "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 food and remove this card from the game. Otherwise, no effect and discard this card.",
+          "UniqueId": "c7a54f82-2ea5-4a39-b2e6-61b4c0f0cb70"
+        },
+        {
+          "$id": "524",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "PRESIDENTIAL PARDON",
+          "AdditionalText": "Action: Move any other character from the 'Brig' to any other location on Galactica.",
+          "UniqueId": "cda4c146-ec6d-4f74-853c-2d05b3e2253e"
+        },
+        {
+          "$id": "525",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "INSPIRATIONAL SPEECH",
+          "AdditionalText": "Action: Roll a die. If 6 or higher, gain 1 morale and remove this card from the game. Otherwise, no effect and discard this card.",
+          "UniqueId": "cdfe8b03-22b0-4aeb-a59f-9f6f95577779"
+        },
+        {
+          "$id": "526",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "ACCEPT PROPHECY",
+          "AdditionalText": "Action: Draw 1 Skill Card of any type (it may be from outside your skill set). Keep this card in play. When a player activates Administration or chooses the President with the Admiral's Quarters location, increase the difficulty by 2 then discard this card.",
+          "UniqueId": "e0fa0382-be23-4d27-9bb4-df3792b4bae5"
+        },
+        {
+          "$id": "527",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "AUTHORIZATION OF BRUTAL FORCE",
+          "AdditionalText": "Action: Destroy 3 raiders, 1 heavy raider, or 1 centurion. Then roll a die and if 2 or less, lose 1 population. Then discard this card.",
+          "UniqueId": "eee56b25-897a-454c-88a9-7897d23eb333"
+        },
+        {
+          "$id": "528",
+          "$type": "DeckManager.Cards.QuorumCard, DeckManager",
+          "CardType": "Quorum",
+          "Heading": "RELEASE CYLON MUGSHOT",
+          "AdditionalText": "Action: Look at 1 random Loyalty Card belonging to any other player, then roll a die. If 3 or less, lose 1 morale. Then discard this card.",
+          "UniqueId": "fc1af095-43ba-49f9-a8c5-5b34f20ceab3"
+        }
+      ]
+    },
+    "Discarded": {
+      "$id": "529",
+      "$type": "System.Collections.Generic.List`1[[DeckManager.Cards.QuorumCard, DeckManager]], mscorlib",
+      "$values": []
+    }
+  }
+}

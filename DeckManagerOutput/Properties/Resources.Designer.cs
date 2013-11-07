@@ -115,6 +115,15 @@ namespace DeckManagerOutput.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have chosen to set two or more Crises as the active Crisis.  Only one may be set as active..
+        /// </summary>
+        internal static string CrisisManagementForm_TooManyCrisesSetAsActive {
+            get {
+                return ResourceManager.GetString("CrisisManagementForm_TooManyCrisesSetAsActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To avoid accidental crisis burying, please draw a crisis before attempting to bury it..
         /// </summary>
         internal static string GameWindow_buryTopToolStripMenuItem_SelectCrisisBeforeBury {

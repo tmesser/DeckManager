@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DeckManager.Boards.Dradis.Enums;
 using DeckManager.Components;
 using Newtonsoft.Json;
 

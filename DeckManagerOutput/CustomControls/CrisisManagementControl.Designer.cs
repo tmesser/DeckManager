@@ -85,7 +85,6 @@
             this.drawToActiveRadioButton.Name = "drawToActiveRadioButton";
             this.drawToActiveRadioButton.Size = new System.Drawing.Size(122, 17);
             this.drawToActiveRadioButton.TabIndex = 2;
-            this.drawToActiveRadioButton.TabStop = true;
             this.drawToActiveRadioButton.Text = "Draw to Active Crisis";
             this.drawToActiveRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -96,13 +95,13 @@
             this.buryRadioButton.Name = "buryRadioButton";
             this.buryRadioButton.Size = new System.Drawing.Size(46, 17);
             this.buryRadioButton.TabIndex = 1;
-            this.buryRadioButton.TabStop = true;
             this.buryRadioButton.Text = "Bury";
             this.buryRadioButton.UseVisualStyleBackColor = true;
             // 
             // replaceRadioButton
             // 
             this.replaceRadioButton.AutoSize = true;
+            this.replaceRadioButton.Checked = true;
             this.replaceRadioButton.Location = new System.Drawing.Point(7, 20);
             this.replaceRadioButton.Name = "replaceRadioButton";
             this.replaceRadioButton.Size = new System.Drawing.Size(106, 17);

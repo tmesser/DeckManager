@@ -71,7 +71,8 @@
             this.MessageRichTextBox.Name = "MessageRichTextBox";
             this.MessageRichTextBox.ReadOnly = true;
             this.MessageRichTextBox.Size = new System.Drawing.Size(335, 41);
-            this.MessageRichTextBox.TabIndex = 0;
+            this.MessageRichTextBox.TabIndex = 99;
+            this.MessageRichTextBox.TabStop = false;
             this.MessageRichTextBox.Text = "";
             // 
             // InputTextBox
@@ -80,7 +81,7 @@
             this.InputTextBox.Location = new System.Drawing.Point(3, 50);
             this.InputTextBox.Name = "InputTextBox";
             this.InputTextBox.Size = new System.Drawing.Size(285, 20);
-            this.InputTextBox.TabIndex = 2;
+            this.InputTextBox.TabIndex = 0;
             // 
             // InputForm
             // 
