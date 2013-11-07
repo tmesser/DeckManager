@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DeckManager.Boards.Dradis;
+using DeckManager.Boards.Dradis.Enums;
 using DeckManager.Boards.Enums;
 using DeckManager.Components;
 using DeckManager.Components.Enums;
@@ -17,7 +18,7 @@ namespace DeckManagerOutput
 {
     public partial class GameWindow : Form
     {
-        private CrisisCard currentCrisis { get; set; }
+        private CrisisCard CurrentCrisis { get; set; }
 
         public GameWindow()
         {
@@ -426,44 +427,49 @@ namespace DeckManagerOutput
         private void FuelUpDownValueChanged(object sender, EventArgs e)
         {
             Program.GManager.CurrentGameState.TurnLog += string.Format(Resources.ResourceChanged, Resources.Resource_Fuel, FuelUpDown.Value);
+            Program.GManager.CurrentGameState.Fuel = (int)FuelUpDown.Value;
         }
 
         private void FoodUpDownValueChanged(object sender, EventArgs e)
         {
             Program.GManager.CurrentGameState.TurnLog += string.Format(Resources.ResourceChanged, Resources.Resource_Food, FoodUpDown.Value);
+            Program.GManager.CurrentGameState.Food = (int)FoodUpDown.Value;
         }
 
         private void MoraleUpDownValueChanged(object sender, EventArgs e)
         {
             Program.GManager.CurrentGameState.TurnLog += string.Format(Resources.ResourceChanged, Resources.Resource_Morale, MoraleUpDown.Value);
+            Program.GManager.CurrentGameState.Morale = (int)MoraleUpDown.Value;
         }
 
         private void PopUpDownValueChanged(object sender, EventArgs e)
         {
             Program.GManager.CurrentGameState.TurnLog += string.Format(Resources.ResourceChanged, Resources.Resource_Population, PopUpDown.Value);
+            Program.GManager.CurrentGameState.Population = (int)PopUpDown.Value;
         }
 
         private void DistanceUpDownValueChanged(object sender, EventArgs e)
         {
             Program.GManager.CurrentGameState.TurnLog += string.Format(Resources.ResourceChanged, Resources.Resource_Distance, DistanceUpDown.Value);
+            Program.GManager.CurrentGameState.Distance = (int)DistanceUpDown.Value;
         }
 
         private void drawCrisisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            currentCrisis = Program.GManager.CurrentGameState.CrisisDeck.Draw();
-            crisisText.Text = currentCrisis.Heading + Environment.NewLine + currentCrisis.AdditionalText;
+            CurrentCrisis = Program.GManager.CurrentGameState.CrisisDeck.Draw();
+            crisisText.Text = CurrentCrisis.Heading + Environment.NewLine + CurrentCrisis.AdditionalText;
         }
 
         private void buryTopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (currentCrisis != null)
+            if (CurrentCrisis != null)
             {
-                Program.GManager.CurrentGameState.CrisisDeck.Bury(currentCrisis);
-                currentCrisis = null;
+                Program.GManager.CurrentGameState.CrisisDeck.Bury(CurrentCrisis);
+                CurrentCrisis = null;
                 crisisText.Text = string.Empty;
             }
             else
-                MessageBox.Show("To avoid accidental crisis burying, please draw a crisis before attempting to bury it.");
+                MessageBox.Show(Resources.GameWindow_buryTopToolStripMenuItem_SelectCrisisBeforeBury);
         }
 
         private void drawMultipleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -475,7 +481,7 @@ namespace DeckManagerOutput
                 var numCrises = inputForm.UserInput.ParseAs<int>();
                 if (numCrises == 0)
                 {
-                    MessageBox.Show("Please input a number greater than 0.");
+                    MessageBox.Show(Resources.GameWindow_drawMultipleToolStripMenuItem_InputMoreThanZero);
                     return;
                 }
                 var crisisManagementForm = new CrisisManagementForm(Program.GManager.CurrentGameState.CrisisDeck.DrawMany(numCrises));
@@ -485,9 +491,11 @@ namespace DeckManagerOutput
 
         private void saveGameStripMenuItem_Click(object sender, EventArgs e)
         {
-            var saveDialog = new SaveFileDialog();
-            saveDialog.InitialDirectory = Application.StartupPath;
-            saveDialog.Filter = "Saved Games (*.bsg)|*.bsg";
+            var saveDialog = new SaveFileDialog
+            {
+                InitialDirectory = Application.StartupPath,
+                Filter = Resources.GameWindow_SavedGamesFilter
+            };
             if(saveDialog.ShowDialog() == DialogResult.OK)
             {
                 Program.GManager.SaveGame(saveDialog.FileName);
@@ -496,8 +504,7 @@ namespace DeckManagerOutput
 
         private void loadGameStripMenuItem_Click(object sender, EventArgs e)
         {
-            var openDialog = new OpenFileDialog();
-            openDialog.Filter = "Saved Games (*.bsg)|*.bsg";
+            var openDialog = new OpenFileDialog {Filter = Resources.GameWindow_SavedGamesFilter};
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
                 Program.GManager.LoadGame(openDialog.FileName);   
@@ -511,6 +518,7 @@ namespace DeckManagerOutput
                 FuelUpDown.Value = Program.GManager.CurrentGameState.Fuel;
                 MoraleUpDown.Value = Program.GManager.CurrentGameState.Morale;
                 PopUpDown.Value = Program.GManager.CurrentGameState.Population;
+                DistanceUpDown.Value = Program.GManager.CurrentGameState.Distance;
 
                 RefreshGameListBoxes();
 

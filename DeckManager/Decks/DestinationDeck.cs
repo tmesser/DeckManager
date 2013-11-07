@@ -25,12 +25,15 @@ namespace DeckManager.Decks
         /// <param name="fileLocation">The file location.</param>
         private void InitDeck(string fileLocation)
         {
-            List<DestinationCard> cardsFromBox;
+            var cardsFromBox = new List<DestinationCard>();
 
-            using (var sr = new StreamReader(fileLocation))
-            {
-                var jsonText = sr.ReadToEnd();
-                cardsFromBox = JsonConvert.DeserializeObject<List<DestinationCard>>(jsonText);
+            if(fileLocation!=null)
+            { 
+                using (var sr = new StreamReader(fileLocation))
+                {
+                    var jsonText = sr.ReadToEnd();
+                    cardsFromBox = JsonConvert.DeserializeObject<List<DestinationCard>>(jsonText);
+                }
             }
 
             Deck = cardsFromBox;

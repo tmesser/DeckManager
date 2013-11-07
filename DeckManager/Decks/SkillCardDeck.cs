@@ -29,12 +29,15 @@ namespace DeckManager.Decks
         /// <param name="fileLocation">The file location.</param>
         private void InitDeck(SkillCardColor color, string fileLocation)
         {
-            List<SkillCard> cardsFromBox;
+            var cardsFromBox = new List<SkillCard>();
 
-            using (var sr = new StreamReader(fileLocation))
+            if (fileLocation != null)
             {
-                var jsonText = sr.ReadToEnd();
-                cardsFromBox = JsonConvert.DeserializeObject<List<SkillCard>>(jsonText);
+                using (var sr = new StreamReader(fileLocation))
+                {
+                    var jsonText = sr.ReadToEnd();
+                    cardsFromBox = JsonConvert.DeserializeObject<List<SkillCard>>(jsonText);
+                }
             }
 
             Deck = cardsFromBox;

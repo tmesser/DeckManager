@@ -24,14 +24,17 @@ namespace DeckManager.Decks
         /// <param name="fileLocation">The file location.</param>
         public void InitDeck(string fileLocation)
         {
-            List<SuperCrisisCard> cardsFromBox;
-            
-            using (var sr = new StreamReader(fileLocation))
+            var cardsFromBox = new List<SuperCrisisCard>();
+
+            if (fileLocation != null)
             {
-                var jsonText = sr.ReadToEnd();
-                cardsFromBox = JsonConvert.DeserializeObject<List<SuperCrisisCard>>(jsonText);
+                using (var sr = new StreamReader(fileLocation))
+                {
+                    var jsonText = sr.ReadToEnd();
+                    cardsFromBox = JsonConvert.DeserializeObject<List<SuperCrisisCard>>(jsonText);
+                }
             }
-            
+
             Deck = cardsFromBox;
             Deck = Shuffle(Deck);
             Discarded = new List<SuperCrisisCard>();

@@ -24,12 +24,15 @@ namespace DeckManager.Decks
         /// <param name="fileLocation">The file location.</param>
         private void InitDeck(string fileLocation)
         {
-            List<CrisisCard> cardsFromBox;
+            var cardsFromBox = new List<CrisisCard>();
             
-            using (var sr = new StreamReader(fileLocation))
-            {
-                var jsonText = sr.ReadToEnd();
-                cardsFromBox = JsonConvert.DeserializeObject<List<CrisisCard>>(jsonText, new Newtonsoft.Json.Converters.StringEnumConverter());
+            if (fileLocation != null)
+            { 
+                using (var sr = new StreamReader(fileLocation))
+                {
+                    var jsonText = sr.ReadToEnd();
+                    cardsFromBox = JsonConvert.DeserializeObject<List<CrisisCard>>(jsonText, new Newtonsoft.Json.Converters.StringEnumConverter());
+                }
             }
             
             Deck = cardsFromBox;

@@ -261,4 +261,13 @@
   <data name="Resource_Population" xml:space="preserve">
     <value>Population</value>
   </data>
+  <data name="GameWindow_SavedGamesFilter" xml:space="preserve">
+    <value>Saved Games (*.bsg)|*.bsg</value>
+  </data>
+  <data name="GameWindow_buryTopToolStripMenuItem_SelectCrisisBeforeBury" xml:space="preserve">
+    <value>To avoid accidental crisis burying, please draw a crisis before attempting to bury it.</value>
+  </data>
+  <data name="GameWindow_drawMultipleToolStripMenuItem_InputMoreThanZero" xml:space="preserve">
+    <value>Please input a number greater than 0.</value>
+  </data>
 </root>

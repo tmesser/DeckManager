@@ -50,6 +50,12 @@ namespace DeckManager.Decks
         /// </exception>
         private void InitDeck(SkillCardDeck leadershipDeck, SkillCardDeck tacticsDeck, SkillCardDeck pilotingDeck, SkillCardDeck engineeringDeck, SkillCardDeck politicsDeck)
         {
+            if (leadershipDeck == null || tacticsDeck == null || pilotingDeck == null || engineeringDeck == null ||
+                politicsDeck == null)
+            {
+                return;
+            }
+
             if (leadershipDeck.DeckColor != SkillCardColor.Leadership)
                 throw new ArgumentException("Leadership deck input is not actually a leadership deck.");
             if (tacticsDeck.DeckColor != SkillCardColor.Tactics)

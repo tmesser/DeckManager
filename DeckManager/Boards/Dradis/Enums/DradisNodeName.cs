@@ -1,4 +1,4 @@
-﻿namespace DeckManager.Boards.Dradis
+﻿namespace DeckManager.Boards.Dradis.Enums
 {
     public enum DradisNodeName
     {

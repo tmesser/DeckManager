@@ -5,8 +5,10 @@ using System.IO;
 using System.Linq;
 using DeckManager.Boards;
 using DeckManager.Boards.Dradis;
+using DeckManager.Cards;
 using DeckManager.Cards.Enums;
 using DeckManager.Characters;
+using DeckManager.Characters.Enums;
 using DeckManager.Components;
 using DeckManager.Components.Enums;
 using DeckManager.Decks;
@@ -14,11 +16,14 @@ using DeckManager.Extensions;
 using DeckManager.States;
 using Newtonsoft.Json;
 using log4net;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 
 namespace DeckManager
 {
     public class GameManager
     {
+        private JsonSerializerSettings _jsonSettings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All, PreserveReferencesHandling = PreserveReferencesHandling.All, DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new StringEnumConverter() } };
         private readonly ILog _logger;
         private IEnumerable<Character> _characters;
         public IEnumerable<Character> CharacterList
@@ -57,8 +62,7 @@ namespace DeckManager
         {
             try 
             {
-                var jsonSettings = new JsonSerializerSettings { DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new Newtonsoft.Json.Converters.StringEnumConverter() } };
-                var json = JsonConvert.SerializeObject(CurrentGameState, Newtonsoft.Json.Formatting.Indented, jsonSettings);
+                var json = JsonConvert.SerializeObject(CurrentGameState, Formatting.Indented, _jsonSettings);
                 using (var file = new StreamWriter(pathName))
                 {
                     file.Write(json);
@@ -80,7 +84,7 @@ namespace DeckManager
                 using (var sr = new StreamReader(pathName))
                 {
                     var jsonText = sr.ReadToEnd();
-                    ret = JsonConvert.DeserializeObject<GameState>(jsonText, new Newtonsoft.Json.Converters.StringEnumConverter());
+                    ret = (GameState)JsonConvert.DeserializeObject(jsonText, null, _jsonSettings);
                     GameStates = new List<GameState> { ret };
                 }                
             }
@@ -102,7 +106,6 @@ namespace DeckManager
                     Players = playerList,
 
                     CrisisDeck = new CrisisDeck(_logger, ConfigurationManager.AppSettings["CrisisDeckLocation"]),
-                    MissionDeck  = new MissionDeck(_logger),
                     DestinationDeck = new DestinationDeck(_logger, ConfigurationManager.AppSettings["DestinationDeckLocation"]),
 
                     EngineeringDeck = new SkillCardDeck(_logger, SkillCardColor.Engineering, ConfigurationManager.AppSettings["EngineeringDeckLocation"]),
@@ -320,22 +323,22 @@ namespace DeckManager
 
 	    #region deck interactions
 
-        public void DiscardCards(IEnumerable<Cards.BaseCard> cards)
+        public void DiscardCards(IEnumerable<BaseCard> cards)
         {
             foreach (var card in cards)
                 DiscardCard(card);
         }
-        public void DiscardCard(Cards.BaseCard card)
+        public void DiscardCard(BaseCard card)
         {   
             // todo each discard creates new gamestate? that would let us implement undos
             // discards the passed card into its appropriate deck
             switch (card.CardType)
             {
                 case CardType.Quorum:
-                    CurrentGameState.QuorumDeck.Discard((Cards.QuorumCard)card);
+                    CurrentGameState.QuorumDeck.Discard((QuorumCard)card);
                     break;
                 case CardType.Skill:
-                    var skillCard = (Cards.SkillCard) card;
+                    var skillCard = (SkillCard) card;
                     switch (skillCard.CardColor)
                     {
                         case SkillCardColor.Politics:
@@ -365,30 +368,24 @@ namespace DeckManager
         /// Place the card on the top of its deck
         /// </summary>
         /// <param name="card"></param>
-        public void TopCard(Cards.BaseCard card)
+        public void TopCard(BaseCard card)
         {
             switch (card.CardType)
             {
                 case CardType.Crisis:
-                    CurrentGameState.CrisisDeck.Top((Cards.CrisisCard)card);
+                    CurrentGameState.CrisisDeck.Top((CrisisCard)card);
                     break;
                 case CardType.Destination:
-                    CurrentGameState.DestinationDeck.Top((Cards.DestinationCard)card);
+                    CurrentGameState.DestinationDeck.Top((DestinationCard)card);
                     break;
                 case CardType.Loyalty:
-                    CurrentGameState.LoyaltyDeck.Top((Cards.LoyaltyCard)card);
-                    break;
-                case CardType.Mission:
-                    CurrentGameState.MissionDeck.Top((Cards.MissionCard)card);
-                    break;
-                case CardType.Mutiny:
-                    CurrentGameState.MutinyDeck.Top((Cards.MutinyCard)card);
+                    CurrentGameState.LoyaltyDeck.Top((LoyaltyCard)card);
                     break;
                 case CardType.Quorum:
-                    CurrentGameState.QuorumDeck.Top((Cards.QuorumCard)card);
+                    CurrentGameState.QuorumDeck.Top((QuorumCard)card);
                     break;
                 case CardType.Skill:
-                    var skill = (Cards.SkillCard)card;
+                    var skill = (SkillCard)card;
                     switch (skill.CardColor)
                     {
                         case SkillCardColor.Politics:
@@ -412,9 +409,7 @@ namespace DeckManager
                     }
                     break;
                 case CardType.SuperCrisis:
-                    CurrentGameState.SuperCrisisDeck.Top((Cards.SuperCrisisCard)card);
-                    break;
-                default:
+                    CurrentGameState.SuperCrisisDeck.Top((SuperCrisisCard)card);
                     break;
             }
         }
@@ -422,39 +417,33 @@ namespace DeckManager
         /// Places the cards on the top of their decks.
         /// </summary>
         /// <param name="cards"></param>
-        public void TopCards(IEnumerable<Cards.BaseCard> cards)
+        public void TopCards(IEnumerable<BaseCard> cards)
         {
-            foreach (Cards.BaseCard card in cards)
+            foreach (BaseCard card in cards)
                 TopCard(card);
         }
         /// <summary>
         /// Place the card on the bottom of its Deck
         /// </summary>
         /// <param name="card"></param>
-        public void BuryCard(Cards.BaseCard card)
+        public void BuryCard(BaseCard card)
         {
             switch (card.CardType)
             { 
                 case CardType.Crisis:
-                    CurrentGameState.CrisisDeck.Bury((Cards.CrisisCard)card);
+                    CurrentGameState.CrisisDeck.Bury((CrisisCard)card);
                     break;
                 case CardType.Destination:
-                    CurrentGameState.DestinationDeck.Bury((Cards.DestinationCard)card);
+                    CurrentGameState.DestinationDeck.Bury((DestinationCard)card);
                     break;
                 case CardType.Loyalty:
-                    CurrentGameState.LoyaltyDeck.Bury((Cards.LoyaltyCard)card);
-                    break;
-                case CardType.Mission:
-                    CurrentGameState.MissionDeck.Bury((Cards.MissionCard)card);
-                    break;
-                case CardType.Mutiny:
-                    CurrentGameState.MutinyDeck.Bury((Cards.MutinyCard)card);
+                    CurrentGameState.LoyaltyDeck.Bury((LoyaltyCard)card);
                     break;
                 case CardType.Quorum:
-                    CurrentGameState.QuorumDeck.Bury((Cards.QuorumCard)card);
+                    CurrentGameState.QuorumDeck.Bury((QuorumCard)card);
                     break;
                 case CardType.Skill:
-                    var skill = (Cards.SkillCard)card;
+                    var skill = (SkillCard)card;
                     switch (skill.CardColor)
                     { 
                         case SkillCardColor.Politics:
@@ -478,9 +467,7 @@ namespace DeckManager
                     }
                     break;
                 case CardType.SuperCrisis:
-                    CurrentGameState.SuperCrisisDeck.Bury((Cards.SuperCrisisCard)card);
-                    break;
-                default:
+                    CurrentGameState.SuperCrisisDeck.Bury((SuperCrisisCard)card);
                     break;
             }
         }
@@ -488,9 +475,9 @@ namespace DeckManager
         /// places the cards on the bottom of their decks
         /// </summary>
         /// <param name="cards"></param>
-        public void BuryCards(IEnumerable<Cards.BaseCard> cards)
+        public void BuryCards(IEnumerable<BaseCard> cards)
         {
-            foreach (Cards.BaseCard card in cards)
+            foreach (BaseCard card in cards)
                 BuryCard(card);
         }
 
@@ -529,27 +516,25 @@ namespace DeckManager
         /// <param name="location"></param>
         /// <param name="type"></param>
         /// <returns>The component that has been placed</returns>
-        public BaseComponent PlaceComponent( DradisNodeName location, Components.Enums.ComponentType type)
+        public BaseComponent PlaceComponent( DradisNodeName location, ComponentType type)
         {
             BaseComponent ship = null;
             switch (type)
             { 
-                case Components.Enums.ComponentType.Basestar:
+                case ComponentType.Basestar:
                     ship = new Basestar();
                     break;
-                case Components.Enums.ComponentType.Civilian:
+                case ComponentType.Civilian:
                     ship = DrawCiv();
                     break;
-                case Components.Enums.ComponentType.HeavyRaider:
+                case ComponentType.HeavyRaider:
                     ship = new HeavyRaider();
                     break;
-                case Components.Enums.ComponentType.Raider:
+                case ComponentType.Raider:
                     ship = new Raider();
                     break;
-                case Components.Enums.ComponentType.Viper:
+                case ComponentType.Viper:
                     ship = DrawViper();
-                    break;
-                default:
                     break;
             }
             CurrentGameState.Dradis.AddComponentToNode(ship, location);
@@ -564,32 +549,30 @@ namespace DeckManager
         /// </summary>
         /// <param name="player"></param>
         /// <param name="card"></param>
-        public void GiveCardToPlayer(Player player, Cards.BaseCard card)
+        public void GiveCardToPlayer(Player player, BaseCard card)
         {
             switch (card.CardType)
             {
-                case DeckManager.Cards.Enums.CardType.Skill:
-                    player.Cards.Add((DeckManager.Cards.SkillCard)card);
+                case CardType.Skill:
+                    player.Cards.Add((SkillCard)card);
                     break;
-                case DeckManager.Cards.Enums.CardType.Quorum:
-                    player.QuorumHand.Add((DeckManager.Cards.QuorumCard)card);
+                case CardType.Quorum:
+                    player.QuorumHand.Add((QuorumCard)card);
                     break;
-                case DeckManager.Cards.Enums.CardType.Loyalty:
-                    player.LoyaltyCards.Add((DeckManager.Cards.LoyaltyCard)card);
+                case CardType.Loyalty:
+                    player.LoyaltyCards.Add((LoyaltyCard)card);
                     break;
-                case DeckManager.Cards.Enums.CardType.SuperCrisis:
-                    player.SuperCrisisCards.Add((DeckManager.Cards.SuperCrisisCard)card);
+                case CardType.SuperCrisis:
+                    player.SuperCrisisCards.Add((SuperCrisisCard)card);
                     break;
-                case DeckManager.Cards.Enums.CardType.Mutiny:
-                    player.MutinyHand.Add((DeckManager.Cards.MutinyCard)card);
-                    break;
-                default:
+                case CardType.Mutiny:
+                    player.MutinyHand.Add((MutinyCard)card);
                     break;
             }
         }
-        public void GiveCardToPlayer(Player player, IEnumerable<Cards.BaseCard> cards)
+        public void GiveCardToPlayer(Player player, IEnumerable<BaseCard> cards)
         {
-            foreach (DeckManager.Cards.BaseCard card in cards)
+            foreach (var card in cards)
                 GiveCardToPlayer(player, card);
         }
         /// <summary>
@@ -597,17 +580,17 @@ namespace DeckManager
         /// </summary>
         /// <param name="player"></param>
         /// <param name="card"></param>
-        public void PlayerDiscardCard(Player player, Cards.BaseCard card)
+        public void PlayerDiscardCard(Player player, BaseCard card)
         { }
         /// <summary>
         /// Removes the cards from the Player's hand and discards them to their appropriate Decks.
         /// </summary>
         /// <param name="player"></param>
         /// <param name="cards"></param>
-        public void PlayerDiscardCard(Player player, IEnumerable<Cards.BaseCard> cards)
+        public void PlayerDiscardCard(Player player, IEnumerable<BaseCard> cards)
         {
             // todo error checking on these
-            foreach (Cards.BaseCard card in cards)
+            foreach (BaseCard card in cards)
             {
                 player.Discard(card);
                 DiscardCard(card);
@@ -619,7 +602,7 @@ namespace DeckManager
         /// </summary>
         /// <param name="player"></param>
         /// <param name="reveal"></param>
-        public void PlayerRevealCylon(Player player, Cards.LoyaltyCard reveal)
+        public void PlayerRevealCylon(Player player, LoyaltyCard reveal)
         {
             if (player.LoyaltyCards.Contains(reveal))
                 player.RevealedCylon = true;
@@ -633,32 +616,30 @@ namespace DeckManager
         /// </summary>
         /// <param name="player"></param>
         /// <param name="card"></param>
-        public void PlayerRemoveCard(Player player, Cards.BaseCard card)
+        public void PlayerRemoveCard(Player player, BaseCard card)
         {
             switch (card.CardType)
             {
-                case DeckManager.Cards.Enums.CardType.Skill:
-                    player.Cards.Remove((DeckManager.Cards.SkillCard)card);
+                case CardType.Skill:
+                    player.Cards.Remove((SkillCard)card);
                     break;
-                case DeckManager.Cards.Enums.CardType.Quorum:
-                    player.QuorumHand.Remove((DeckManager.Cards.QuorumCard)card);
+                case CardType.Quorum:
+                    player.QuorumHand.Remove((QuorumCard)card);
                     break;
-                case DeckManager.Cards.Enums.CardType.Loyalty:
-                    player.LoyaltyCards.Remove((DeckManager.Cards.LoyaltyCard)card);
+                case CardType.Loyalty:
+                    player.LoyaltyCards.Remove((LoyaltyCard)card);
                     break;
-                case DeckManager.Cards.Enums.CardType.SuperCrisis:
-                    player.SuperCrisisCards.Remove((DeckManager.Cards.SuperCrisisCard)card);
+                case CardType.SuperCrisis:
+                    player.SuperCrisisCards.Remove((SuperCrisisCard)card);
                     break;
-                case DeckManager.Cards.Enums.CardType.Mutiny:
-                    player.MutinyHand.Remove((DeckManager.Cards.MutinyCard)card);
-                    break;
-                default:
+                case CardType.Mutiny:
+                    player.MutinyHand.Remove((MutinyCard)card);
                     break;
             }
         }
-        public void PlayerRemoveCard(Player player, IEnumerable<Cards.BaseCard> cards)
+        public void PlayerRemoveCard(Player player, IEnumerable<BaseCard> cards)
         {
-            foreach (Cards.BaseCard card in cards)
+            foreach (BaseCard card in cards)
                 PlayerRemoveCard(player, card);
         }
 
@@ -667,7 +648,7 @@ namespace DeckManager
         /// </summary>
         /// <param name="title">The title to be transferred</param>
         /// <param name="newHolder">The player who should now possess the title</param>
-        public void ChangePlayerTitle(Characters.Enums.Titles title, Player newHolder)
+        public void ChangePlayerTitle(Titles title, Player newHolder)
         { }
 
         #endregion

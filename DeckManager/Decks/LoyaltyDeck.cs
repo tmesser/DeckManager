@@ -37,54 +37,58 @@ namespace DeckManager.Decks
         /// <param name="fileLocation">The location of the cards to deserialize.</param>
         private void InitDeck(int players, int extraCards, bool sympathizer, string fileLocation)
         {
-            if (players < 3 || players > 6)
-                throw new ArgumentException("Invalid player count.  Must be between 3 and 6.");
-
             if (extraCards < 0)
-                throw new ArgumentException("You think you're funny by sending a negative number of extra cards.  But you're really not.");
-
-            List<LoyaltyCard> cardsFromBox;
-            using (var sr = new StreamReader(fileLocation))
-            {
-                var jsonText = sr.ReadToEnd();
-                cardsFromBox = JsonConvert.DeserializeObject<List<LoyaltyCard>>(jsonText);
-            }
+                throw new ArgumentException("ExtraCards must be positive");
 
             var usedLoyaltyCards = new List<LoyaltyCard>();
-            try
+            if (fileLocation != null)
             {
-                cardsFromBox = Shuffle(cardsFromBox);
-                usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(5));
-                usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.Cylon));
-
-                switch (players)
+                List<LoyaltyCard> cardsFromBox;
+                using (var sr = new StreamReader(fileLocation))
                 {
-                    case 4:
-                        usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.NotACylon));
-                        break;
-                    case 5:
-                        usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.Cylon));
-                        usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(3));
-                        break;
-                    case 6:
-                        usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.Cylon));
-                        usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(4));
-                        break;
+                    var jsonText = sr.ReadToEnd();
+                    cardsFromBox = JsonConvert.DeserializeObject<List<LoyaltyCard>>(jsonText);
                 }
 
-                if (extraCards > 0)
+
+                try
                 {
-                    usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(extraCards));
+                    cardsFromBox = Shuffle(cardsFromBox);
+                    usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(5));
+                    usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.Cylon));
+
+                    switch (players)
+                    {
+                        case 4:
+                            usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.NotACylon));
+                            break;
+                        case 5:
+                            usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.Cylon));
+                            usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(3));
+                            break;
+                        case 6:
+                            usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.Cylon));
+                            usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(4));
+                            break;
+                    }
+
+                    if (extraCards > 0)
+                    {
+                        usedLoyaltyCards.AddRange(
+                            cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(extraCards));
+                    }
+
+                    if (sympathizer)
+                        usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.Sympathizer));
+
                 }
-
-                if (sympathizer)
-                    usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.Sympathizer));
-
-            }
-            catch (Exception e)
-            {
-                Logger.Error(String.Format("Error in LoyaltyDeck.InitDeck.  Paramaters: {0},{1},{2}",players, extraCards, sympathizer), e);
-                throw;
+                catch (Exception e)
+                {
+                    Logger.Error(
+                        String.Format("Error in LoyaltyDeck.InitDeck.  Paramaters: {0},{1},{2}", players, extraCards,
+                            sympathizer), e);
+                    throw;
+                }
             }
             Deck = usedLoyaltyCards;
             Discarded = new List<LoyaltyCard>();
