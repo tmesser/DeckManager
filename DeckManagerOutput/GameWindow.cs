@@ -560,5 +560,13 @@ namespace DeckManagerOutput
         {
 
         }
+
+        private void removeSelectedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (var component in AlphaDradisListBox.SelectedItems.OfType<BaseComponent>())
+            {
+                Program.GManager.CurrentGameState.Dradis.RemoveComponent(component);
+            }
+        }
     }
 }
