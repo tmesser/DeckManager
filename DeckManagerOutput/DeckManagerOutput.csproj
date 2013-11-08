@@ -110,6 +110,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddComponentForm.resx">
+      <DependentUpon>AddComponentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrisisManagementForm.resx">
       <DependentUpon>CrisisManagementForm.cs</DependentUpon>
     </EmbeddedResource>
