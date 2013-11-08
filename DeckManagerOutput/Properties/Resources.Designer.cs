@@ -115,6 +115,15 @@ namespace DeckManagerOutput.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The order to replace Crises is the same on two or more Crises.  The replacement order must be unique..
+        /// </summary>
+        internal static string CrisisManagementForm_BadReplacementOrder {
+            get {
+                return ResourceManager.GetString("CrisisManagementForm_BadReplacementOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have chosen to set two or more Crises as the active Crisis.  Only one may be set as active..
         /// </summary>
         internal static string CrisisManagementForm_TooManyCrisesSetAsActive {

@@ -18,7 +18,6 @@ using DeckManager.States;
 using Newtonsoft.Json;
 using log4net;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 
 namespace DeckManager
 {

@@ -489,7 +489,7 @@ namespace DeckManagerOutput
                 crisisManagementForm.ShowDialog();
                 if (crisisManagementForm.DialogResult == DialogResult.OK)
                 {
-                    foreach (var decision in crisisManagementForm.Decisions)
+                    foreach (var decision in crisisManagementForm.Decisions.OrderByDescending(x => x.Order))
                     {
                         switch(decision.Action)
                         {
@@ -497,12 +497,20 @@ namespace DeckManagerOutput
                                 Program.GManager.CurrentGameState.CrisisDeck.Top(decision.Crisis);
                                 break;
                             case CrisisAction.Draw:
+                                CurrentCrisis = decision.Crisis;
+                                crisisText.Text = CurrentCrisis.Heading + Environment.NewLine + CurrentCrisis.AdditionalText;
+                                break;
+                            case CrisisAction.Bury:
+                                Program.GManager.CurrentGameState.CrisisDeck.Bury(CurrentCrisis);
+                                CurrentCrisis = null;
+                                crisisText.Text = string.Empty;
                                 break;
                         }
                     }
                 }
                 else
                 {
+                    crisisCards.Reverse();
                     foreach (var crisisCard in crisisCards)
                     {
                         Program.GManager.CurrentGameState.CrisisDeck.Top(crisisCard);

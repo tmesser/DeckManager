@@ -47,13 +47,13 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(434, 212);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(464, 212);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // SubmitButton
             // 
             this.SubmitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SubmitButton.Location = new System.Drawing.Point(356, 185);
+            this.SubmitButton.Location = new System.Drawing.Point(386, 185);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(75, 23);
             this.SubmitButton.TabIndex = 1;
@@ -69,14 +69,14 @@
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(3, 3);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(428, 176);
+            this.contentPanel.Size = new System.Drawing.Size(458, 176);
             this.contentPanel.TabIndex = 2;
             // 
             // CrisisManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 212);
+            this.ClientSize = new System.Drawing.Size(464, 212);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CrisisManagementForm";
             this.Text = "CrisisManagementForm";

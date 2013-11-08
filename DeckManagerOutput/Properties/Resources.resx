@@ -273,4 +273,7 @@
   <data name="CrisisManagementForm_TooManyCrisesSetAsActive" xml:space="preserve">
     <value>You have chosen to set two or more Crises as the active Crisis.  Only one may be set as active.</value>
   </data>
+  <data name="CrisisManagementForm_BadReplacementOrder" xml:space="preserve">
+    <value>The order to replace Crises is the same on two or more Crises.  The replacement order must be unique.</value>
+  </data>
 </root>

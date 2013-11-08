@@ -15,22 +15,34 @@ namespace DeckManagerOutput
         public CrisisManagementForm(IEnumerable<CrisisCard> crises)
         {
             InitializeComponent();
-
+            var count = 1;
             foreach (var crisis in crises)
             {
-                contentPanel.Controls.Add(new CrisisManagementControl(crisis));
+                var crisisControl = new CrisisManagementControl(crisis, count);
+                contentPanel.Controls.Add(crisisControl);
+                count++;
             }
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             var decisions = (from CrisisManagementControl control in contentPanel.Controls select control.CrisisDecision).ToList();
+            
             if (decisions.Count(x => x.Action == CrisisAction.Draw) > 1)
             {
                 MessageBox.Show(Resources.CrisisManagementForm_TooManyCrisesSetAsActive);
                 return;
             }
+
+            if (decisions.Count(x => x.Action == CrisisAction.Replace) !=
+                (from decision in decisions select decision.Order).Distinct().Count())
+            {
+                MessageBox.Show(Resources.CrisisManagementForm_BadReplacementOrder);
+                return;
+            }
+
             Decisions = decisions;
+            DialogResult = DialogResult.OK;
             Close();
         }
     }

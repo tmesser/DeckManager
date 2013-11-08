@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
+using DeckManager.Extensions;
 
 namespace DeckManagerOutput.CustomControls
 {
@@ -25,7 +27,7 @@ namespace DeckManagerOutput.CustomControls
         {
             get
             {
-                return new CrisisDecision { Crisis = Card, Action = ReadRadioButtons() };
+                return new CrisisDecision { Crisis = Card, Action = ReadRadioButtons(), Order = (ReadRadioButtons() == CrisisAction.Replace) ? orderTextBox.Text.ParseAs<int>() : -1};
             }
         }
 
@@ -48,11 +50,13 @@ namespace DeckManagerOutput.CustomControls
         /// Initializes a new instance of the <see cref="CrisisManagementControl"/> class.
         /// </summary>
         /// <param name="crisisCard">The crisis card.</param>
+        /// <param name="order">The order this crisis was drawn.</param>
         /// <remarks>Adding this Control to a form via the designer is gonna end in sorrow.</remarks>
-        public CrisisManagementControl(DeckManager.Cards.CrisisCard crisisCard)
+        public CrisisManagementControl(DeckManager.Cards.CrisisCard crisisCard, int order)
         {
             Card = crisisCard;
             InitializeComponent();
+            orderTextBox.Text = order.ToString(CultureInfo.InvariantCulture);
             CrisisDisplayTextBox.Text = Card.Heading + Environment.NewLine + Card.AdditionalText;
             
         }

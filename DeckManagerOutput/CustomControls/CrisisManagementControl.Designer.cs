@@ -34,6 +34,7 @@
             this.drawToActiveRadioButton = new System.Windows.Forms.RadioButton();
             this.buryRadioButton = new System.Windows.Forms.RadioButton();
             this.replaceRadioButton = new System.Windows.Forms.RadioButton();
+            this.orderTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.selectionGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +43,7 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
             this.tableLayoutPanel1.Controls.Add(this.CrisisDisplayTextBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.selectionGroupBox, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -50,7 +51,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(380, 200);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(420, 200);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // CrisisDisplayTextBox
@@ -62,18 +63,19 @@
             this.CrisisDisplayTextBox.Name = "CrisisDisplayTextBox";
             this.CrisisDisplayTextBox.ReadOnly = true;
             this.CrisisDisplayTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.CrisisDisplayTextBox.Size = new System.Drawing.Size(224, 194);
+            this.CrisisDisplayTextBox.Size = new System.Drawing.Size(239, 194);
             this.CrisisDisplayTextBox.TabIndex = 0;
             // 
             // selectionGroupBox
             // 
+            this.selectionGroupBox.Controls.Add(this.orderTextBox);
             this.selectionGroupBox.Controls.Add(this.drawToActiveRadioButton);
             this.selectionGroupBox.Controls.Add(this.buryRadioButton);
             this.selectionGroupBox.Controls.Add(this.replaceRadioButton);
             this.selectionGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.selectionGroupBox.Location = new System.Drawing.Point(233, 3);
+            this.selectionGroupBox.Location = new System.Drawing.Point(248, 3);
             this.selectionGroupBox.Name = "selectionGroupBox";
-            this.selectionGroupBox.Size = new System.Drawing.Size(144, 194);
+            this.selectionGroupBox.Size = new System.Drawing.Size(169, 194);
             this.selectionGroupBox.TabIndex = 1;
             this.selectionGroupBox.TabStop = false;
             this.selectionGroupBox.Text = "Select Action:";
@@ -110,13 +112,20 @@
             this.replaceRadioButton.Text = "Replace In Order";
             this.replaceRadioButton.UseVisualStyleBackColor = true;
             // 
+            // orderTextBox
+            // 
+            this.orderTextBox.Location = new System.Drawing.Point(120, 20);
+            this.orderTextBox.Name = "orderTextBox";
+            this.orderTextBox.Size = new System.Drawing.Size(43, 20);
+            this.orderTextBox.TabIndex = 3;
+            // 
             // CrisisManagementControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CrisisManagementControl";
-            this.Size = new System.Drawing.Size(380, 200);
+            this.Size = new System.Drawing.Size(420, 200);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.selectionGroupBox.ResumeLayout(false);
@@ -133,5 +142,6 @@
         private System.Windows.Forms.RadioButton drawToActiveRadioButton;
         private System.Windows.Forms.RadioButton buryRadioButton;
         private System.Windows.Forms.RadioButton replaceRadioButton;
+        private System.Windows.Forms.TextBox orderTextBox;
     }
 }
