@@ -61,6 +61,12 @@
     <Compile Include="CrisisManagementForm.Designer.cs">
       <DependentUpon>CrisisManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\AddDradisComponentsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\AddDradisComponentsControl.Designer.cs">
+      <DependentUpon>AddDradisComponentsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\CrisisAction.cs" />
     <Compile Include="CustomControls\CrisisDecision.cs" />
     <Compile Include="CustomControls\ReadOnlyListBox.cs">
