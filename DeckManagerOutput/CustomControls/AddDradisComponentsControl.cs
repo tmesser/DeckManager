@@ -1,20 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DeckManager.Components.Enums;
+using DeckManager.Extensions;
 
 namespace DeckManagerOutput.CustomControls
 {
     public partial class AddDradisComponentsControl : UserControl
     {
-        public AddDradisComponentsControl()
+        private readonly ComponentType _componentType;
+        public IEnumerable<ComponentType> Components { 
+            get
+            {
+                return Enumerable.Repeat(_componentType, ((string)requestedNumberComboBox.SelectedItem).ParseAs<int>());
+            } 
+        }
+
+        public AddDradisComponentsControl(ComponentType componentType)
         {
             InitializeComponent();
+            ComponentNameLabel.Text = componentType.ToString();
+            _componentType = componentType;
+            requestedNumberComboBox.SelectedIndex = 0;
         }
     }
 }

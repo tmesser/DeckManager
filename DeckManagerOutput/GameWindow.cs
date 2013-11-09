@@ -568,5 +568,19 @@ namespace DeckManagerOutput
                 Program.GManager.CurrentGameState.Dradis.RemoveComponent(component);
             }
         }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var componentForm = new AddComponentForm();
+            componentForm.ShowDialog();
+            if (componentForm.DialogResult != DialogResult.OK) 
+                return;
+            foreach (var request in componentForm.RequestedComponents)
+            {
+                Program.GManager.PlaceComponent(request.Item1, request.Item2);
+            }
+
+            RefreshGameListBoxes();
+        }
     }
 }

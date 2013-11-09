@@ -122,6 +122,9 @@
     <EmbeddedResource Include="CrisisManagementForm.resx">
       <DependentUpon>CrisisManagementForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\AddDradisComponentsControl.resx">
+      <DependentUpon>AddDradisComponentsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CrisisManagementControl.resx">
       <DependentUpon>CrisisManagementControl.cs</DependentUpon>
     </EmbeddedResource>
