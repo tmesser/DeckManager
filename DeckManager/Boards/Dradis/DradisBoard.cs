@@ -28,6 +28,8 @@ namespace DeckManager.Boards.Dradis
         {
             if (component == null)
                 return;
+            if (Nodes == null)
+                PrepDradis();
             var sector = Nodes.FirstOrDefault(x => x.Name == name);
             if (sector == default(DradisNode))
             { 
@@ -45,6 +47,8 @@ namespace DeckManager.Boards.Dradis
         {
             if (component == null)
                 return;
+            if (Nodes == null)
+                PrepDradis();
             var sector = Nodes.FirstOrDefault(x => x.Components.Contains(component));
             if(sector == default(DradisNode))
             {
@@ -96,6 +100,8 @@ namespace DeckManager.Boards.Dradis
         {
             if (componentsToMove == null)
                 return;
+            if (Nodes == null)
+                PrepDradis();
             var sectorSource = Nodes.FirstOrDefault(x => x.Name == source);
             if (sectorSource == default(DradisNode))
             {
@@ -123,6 +129,8 @@ namespace DeckManager.Boards.Dradis
         /// <returns></returns>
         public IEnumerable<BaseComponent> GetComponents(DradisNodeName source)
         {
+            if (Nodes == null)
+                PrepDradis();
             var sector = Nodes.FirstOrDefault(x => x.Name == source);
             return sector == null ? null : sector.Components;
         }
