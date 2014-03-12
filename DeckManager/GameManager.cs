@@ -422,6 +422,33 @@ namespace DeckManager
             foreach (BaseCard card in cards)
                 TopCard(card);
         }
+
+        public SkillCard DrawSkillCard(SkillCardColor color)
+        {
+            return DrawSkillCards(color, 1).FirstOrDefault();
+        }
+
+        public IEnumerable<SkillCard> DrawSkillCards(SkillCardColor color, int count)
+        {
+            switch (color)
+            {
+                case SkillCardColor.Engineering:
+                    return CurrentGameState.EngineeringDeck.DrawMany(count);
+                case SkillCardColor.Leadership:
+                    return CurrentGameState.LeadershipDeck.DrawMany(count);
+                case SkillCardColor.Piloting:
+                    return CurrentGameState.PilotingDeck.DrawMany(count);
+                case SkillCardColor.Politics:
+                    return CurrentGameState.PoliticsDeck.DrawMany(count);
+                case SkillCardColor.Tactics:
+                    return CurrentGameState.TacticsDeck.DrawMany(count);
+                case SkillCardColor.Treachery:
+                    return CurrentGameState.TreacheryDeck.DrawMany(count);
+                default:
+                    return new List<SkillCard>();
+            }
+        }
+
         /// <summary>
         /// Place the card on the bottom of its Deck
         /// </summary>

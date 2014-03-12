@@ -69,6 +69,12 @@
     </Compile>
     <Compile Include="CustomControls\CrisisAction.cs" />
     <Compile Include="CustomControls\CrisisDecision.cs" />
+    <Compile Include="CustomControls\DrawCardComboControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\DrawCardComboControl.Designer.cs">
+      <DependentUpon>DrawCardComboControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\ReadOnlyListBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -108,6 +114,12 @@
     <Compile Include="OptionalRulesForm.Designer.cs">
       <DependentUpon>OptionalRulesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayerManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerManagementForm.Designer.cs">
+      <DependentUpon>PlayerManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlayerRosterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +140,9 @@
     <EmbeddedResource Include="CustomControls\CrisisManagementControl.resx">
       <DependentUpon>CrisisManagementControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\DrawCardComboControl.resx">
+      <DependentUpon>DrawCardComboControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeckCreator.resx">
       <DependentUpon>DeckCreator.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OptionalRulesForm.resx">
       <DependentUpon>OptionalRulesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerManagementForm.resx">
+      <DependentUpon>PlayerManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerRosterForm.resx">
       <DependentUpon>PlayerRosterForm.cs</DependentUpon>
