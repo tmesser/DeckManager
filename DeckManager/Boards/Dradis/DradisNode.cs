@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using DeckManager.Boards.Dradis.Enums;
 using DeckManager.Components;
-using Newtonsoft.Json;
 
 namespace DeckManager.Boards.Dradis
 {
@@ -24,7 +21,18 @@ namespace DeckManager.Boards.Dradis
         /// <value>
         /// The name.
         /// </value>
-        public DradisNodeName Name { get; private set; }
+        public override string Name
+        {
+            get { return NodeName.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public DradisNodeName NodeName { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DradisNode"/> class.
@@ -32,7 +40,7 @@ namespace DeckManager.Boards.Dradis
         /// <param name="name">The name.</param>
         public DradisNode(DradisNodeName name)
         {
-            Name = name;
+            NodeName = name;
             Components = new List<BaseComponent>();
         }
 

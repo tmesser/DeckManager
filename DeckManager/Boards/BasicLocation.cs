@@ -6,13 +6,6 @@ namespace DeckManager.Boards
     public class BasicLocation : BaseNode
     {
         /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>
-        /// The name.
-        /// </value>
-        public string Name { get; set; }
-        /// <summary>
         /// Gets or sets the location information, such as activation effects.
         /// </summary>
         /// <value>

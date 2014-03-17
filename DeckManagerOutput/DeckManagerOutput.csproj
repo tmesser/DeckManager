@@ -67,6 +67,12 @@
     <Compile Include="CustomControls\AddDradisComponentsControl.Designer.cs">
       <DependentUpon>AddDradisComponentsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\DrawSpecialComboControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\DrawSpecialComboControl.Designer.cs">
+      <DependentUpon>DrawSpecialComboControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\CrisisAction.cs" />
     <Compile Include="CustomControls\CrisisDecision.cs" />
     <Compile Include="CustomControls\DrawCardComboControl.cs">
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\AddDradisComponentsControl.resx">
       <DependentUpon>AddDradisComponentsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\DrawSpecialComboControl.resx">
+      <DependentUpon>DrawSpecialComboControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CrisisManagementControl.resx">
       <DependentUpon>CrisisManagementControl.cs</DependentUpon>

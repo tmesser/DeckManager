@@ -29,22 +29,5 @@ namespace DeckManager.Cards
         {
             return Heading + "\n" + AdditionalText;
         }
-
-        /// <summary>
-        /// Gets or sets the heading. Basic display stuff, like Inspirational Speech or whatever
-        /// </summary>
-        /// <value>
-        /// The heading.
-        /// </value>
-        public string Heading { get; set; }
-
-        /// <summary>
-        /// Gets or sets the additional text, for flavor text, card descriptions, etc.
-        /// </summary>
-        /// <value>
-        /// The additional text.
-        /// </value>
-        public string AdditionalText { get; set; }
-
     }
 }

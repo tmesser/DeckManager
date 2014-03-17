@@ -1,6 +1,6 @@
 ﻿namespace DeckManagerOutput.CustomControls
 {
-    partial class DrawCardComboControl
+    partial class DrawSpecialComboControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -40,7 +40,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.33334F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tableLayoutPanel1.Controls.Add(this.DrawCardsCheckBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.DrawAmountComboBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.DrawTypeComboBox, 2, 1);
@@ -78,7 +78,7 @@
             "7",
             "8",
             "9"});
-            this.DrawAmountComboBox.Location = new System.Drawing.Point(14, 28);
+            this.DrawAmountComboBox.Location = new System.Drawing.Point(13, 28);
             this.DrawAmountComboBox.Name = "DrawAmountComboBox";
             this.DrawAmountComboBox.Size = new System.Drawing.Size(48, 21);
             this.DrawAmountComboBox.TabIndex = 1;
@@ -87,22 +87,20 @@
             // 
             this.DrawTypeComboBox.FormattingEnabled = true;
             this.DrawTypeComboBox.Items.AddRange(new object[] {
-            "Leadership",
-            "Engineering",
-            "Piloting",
-            "Tactics",
-            "Politics"});
-            this.DrawTypeComboBox.Location = new System.Drawing.Point(68, 28);
+            "SuperCrisis",
+            "Quorum",
+            "Loyalty"});
+            this.DrawTypeComboBox.Location = new System.Drawing.Point(67, 28);
             this.DrawTypeComboBox.Name = "DrawTypeComboBox";
             this.DrawTypeComboBox.Size = new System.Drawing.Size(76, 21);
             this.DrawTypeComboBox.TabIndex = 2;
             // 
-            // DrawCardComboControl
+            // DrawSpecialComboControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "DrawCardComboControl";
+            this.Name = "DrawSpecialComboControl";
             this.Size = new System.Drawing.Size(150, 50);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

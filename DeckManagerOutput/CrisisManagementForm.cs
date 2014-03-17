@@ -24,7 +24,7 @@ namespace DeckManagerOutput
             }
         }
 
-        private void SubmitButton_Click(object sender, EventArgs e)
+        private void SubmitButtonClick(object sender, EventArgs e)
         {
             var decisions = (from CrisisManagementControl control in contentPanel.Controls select control.CrisisDecision).ToList();
             

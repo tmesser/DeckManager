@@ -678,6 +678,49 @@ namespace DeckManager
         public void ChangePlayerTitle(Titles title, Player newHolder)
         { }
 
+        public BaseNode GetPlayerLocation(Player player)
+        {
+            return GetPlayerLocation(player.PlayerName);
+        }
+
+        public BaseNode GetPlayerLocation(string playerName)
+        {
+            foreach (var board in CurrentGameState.Boards.Where(
+                board => board.Locations.FirstOrDefault(x => x.PlayersPresent.Contains(playerName)) != default(BaseNode)))
+            {
+                return board.Locations.FirstOrDefault(x => x.PlayersPresent.Contains(playerName));
+            }
+            return CurrentGameState.Dradis.Nodes.FirstOrDefault(x => x.PlayersPresent.Contains(playerName));
+        }
+
+        public void SetPlayerLocation(string locationName, string playerName)
+        {
+            // Remove the player from wherever they were before
+            foreach (var location in CurrentGameState.Boards.SelectMany(board => board.Locations.Where(x => x.PlayersPresent.Contains(playerName))))
+            {
+                location.PlayersPresent.Remove(playerName);
+            }
+
+            foreach (var location in CurrentGameState.Dradis.Nodes.Where(x => x.PlayersPresent.Contains(playerName)))
+            {
+                location.PlayersPresent.Remove(playerName);
+            }
+
+            // Add the player
+            foreach (var location in CurrentGameState.Boards.Select(
+                board => board.Locations.FirstOrDefault(x => x.Name == locationName)).Where(
+                location => location != default(BaseNode)))
+            {
+                location.PlayersPresent.Add(playerName);
+            }
+
+            var applicableDradisNode = CurrentGameState.Dradis.Nodes.FirstOrDefault(x => x.Name == locationName);
+            if(applicableDradisNode != default(BaseNode))
+            {
+                applicableDradisNode.PlayersPresent.Add(playerName);
+            }
+        }
+
         #endregion
     }
 }

@@ -10,13 +10,30 @@ namespace DeckManager.Cards
     /// </summary>
     public abstract class BaseCard
     {
+
+        /// <summary>
+        /// Gets or sets the heading. Basic display stuff, like Inspirational Speech or whatever
+        /// </summary>
+        /// <value>
+        /// The heading.
+        /// </value>
+        public virtual string Heading { get; set; }
+
+        /// <summary>
+        /// Gets or sets the additional text, for flavor text, card descriptions, etc.
+        /// </summary>
+        /// <value>
+        /// The additional text.
+        /// </value>
+        public virtual string AdditionalText { get; set; }
+
         /// <summary>
         /// Gets or sets the id unique to this card.  This changes if the card is in a deck that's shuffled.
         /// </summary>
         /// <value>
         /// The unique id.
         /// </value>
-        public Guid UniqueId { get; set; }
+        public virtual Guid UniqueId { get; set; }
 
         /// <summary>
         /// Gets or sets the permanent unique identifier.
@@ -24,7 +41,7 @@ namespace DeckManager.Cards
         /// <value>
         /// The permanent unique identifier.
         /// </value>
-        internal Guid PermanentId { get; set; }
+        internal virtual Guid PermanentId { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the card.

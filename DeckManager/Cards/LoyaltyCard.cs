@@ -14,13 +14,10 @@ namespace DeckManager.Cards
         /// </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public Loyalty Loyalty { get; set; }
-        /// <summary>
-        /// Gets or sets additional text, for stuff like Cylon reveal effects and Final Five consequences.
-        /// </summary>
-        /// <value>
-        /// The additional text.
-        /// </value>
-        public string AdditionalText { get; set; }
+
+        public override string Heading {
+            get { return Loyalty.ToString(); }
+        }
 
         /// <summary>
         /// Returns that this is a Loyalty card.

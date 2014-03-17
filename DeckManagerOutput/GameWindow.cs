@@ -10,6 +10,7 @@ using DeckManager.Boards.Enums;
 using DeckManager.Components;
 using DeckManager.Components.Enums;
 using DeckManager.Extensions;
+using DeckManager.States;
 using DeckManagerOutput.CustomControls;
 using DeckManagerOutput.Properties;
 using DeckManager.Cards;
@@ -49,6 +50,12 @@ namespace DeckManagerOutput
             FuelUpDown.Value = Program.GManager.CurrentGameState.Fuel;
             MoraleUpDown.Value = Program.GManager.CurrentGameState.Morale;
             PopUpDown.Value = Program.GManager.CurrentGameState.Population;
+
+            foreach (var player in Program.GManager.CurrentGameState.Players)
+            {
+                var newMenuItem = new ToolStripMenuItem(player.PlayerName, null, ManagePlayerMenuItemClick);
+                managePlayerToolStripMenuItem.DropDownItems.Add(newMenuItem);
+            }
 
             RefreshGameListBoxes();
 
@@ -454,13 +461,13 @@ namespace DeckManagerOutput
             Program.GManager.CurrentGameState.Distance = (int)DistanceUpDown.Value;
         }
 
-        private void drawCrisisToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DrawCrisisToolStripMenuItemClick(object sender, EventArgs e)
         {
             CurrentCrisis = Program.GManager.CurrentGameState.CrisisDeck.Draw();
             crisisText.Text = CurrentCrisis.Heading + Environment.NewLine + CurrentCrisis.AdditionalText;
         }
 
-        private void buryTopToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BuryTopToolStripMenuItemClick(object sender, EventArgs e)
         {
             if (CurrentCrisis != null)
             {
@@ -472,7 +479,7 @@ namespace DeckManagerOutput
                 MessageBox.Show(Resources.GameWindow_buryTopToolStripMenuItem_SelectCrisisBeforeBury);
         }
 
-        private void drawMultipleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DrawMultipleToolStripMenuItemClick(object sender, EventArgs e)
         {
             var inputForm = new InputForm("Input the number of Crises to draw", "Draw Crises");
             inputForm.ShowDialog();
@@ -519,7 +526,7 @@ namespace DeckManagerOutput
             }
         }
 
-        private void saveGameStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveGameStripMenuItemClick(object sender, EventArgs e)
         {
             var saveDialog = new SaveFileDialog
             {
@@ -532,7 +539,7 @@ namespace DeckManagerOutput
             }            
         }
 
-        private void loadGameStripMenuItem_Click(object sender, EventArgs e)
+        private void LoadGameStripMenuItemClick(object sender, EventArgs e)
         {
             var openDialog = new OpenFileDialog {Filter = Resources.GameWindow_SavedGamesFilter};
             if (openDialog.ShowDialog() == DialogResult.OK)
@@ -552,16 +559,22 @@ namespace DeckManagerOutput
 
                 RefreshGameListBoxes();
 
+                foreach (var player in Program.GManager.CurrentGameState.Players)
+                {
+                    var newMenuItem = new ToolStripMenuItem(player.PlayerName, null, ManagePlayerMenuItemClick);
+                    managePlayerToolStripMenuItem.DropDownItems.Add(newMenuItem);
+                }
+
                 JumpPrepChanged(sender, e);
             }
         }
 
-        private void playCrisisButton_Click(object sender, EventArgs e)
+        private void PlayCrisisButtonClick(object sender, EventArgs e)
         {
 
         }
 
-        private void removeSelectedToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RemoveSelectedToolStripMenuItemClick(object sender, EventArgs e)
         {
             foreach (var component in AlphaDradisListBox.SelectedItems.OfType<BaseComponent>())
             {
@@ -569,7 +582,7 @@ namespace DeckManagerOutput
             }
         }
 
-        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AddToolStripMenuItemClick(object sender, EventArgs e)
         {
             var componentForm = new AddComponentForm();
             componentForm.ShowDialog();
@@ -581,6 +594,30 @@ namespace DeckManagerOutput
             }
 
             RefreshGameListBoxes();
+        }
+
+        private void ManagePlayerMenuItemClick(object sender, EventArgs e)
+        {
+            var itemClicked = (ToolStripMenuItem) sender;
+            var selectedPlayer = Program.GManager.CurrentGameState.Players.FirstOrDefault(x => x.PlayerName == itemClicked.Text);
+            if (selectedPlayer == default(Player))
+            {
+                MessageBox.Show(Resources.ManagePlayer_ClickedPlayerNotFound);
+                return;
+            }
+            var locations = new List<string>();
+            foreach (var board in Program.GManager.CurrentGameState.Boards)
+            {
+                locations.Add(string.Format("---{0}---", board.Name));
+                locations.AddRange(board.Locations.Select(x => x.Name));
+            }
+
+            locations.Add(string.Format("---{0}---", "Dradis"));
+            locations.AddRange(Program.GManager.CurrentGameState.Dradis.Nodes.Select(x => x.Name));
+
+            var playerLocation = Program.GManager.GetPlayerLocation(selectedPlayer);
+
+            var form = new PlayerManagementForm(selectedPlayer, locations, playerLocation.Name);
         }
     }
 }

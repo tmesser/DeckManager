@@ -26,23 +26,7 @@ namespace DeckManager.Cards
         {
             throw new NotImplementedException();
         }
-
-        /// <summary>
-        /// Title of the crisis.
-        /// </summary>
-        /// <value>
-        /// The heading.
-        /// </value>
-        public string Heading { get; set; }
-
-        /// <summary>
-        /// Gets or sets the additional text, description of the crisis, etc
-        /// </summary>
-        /// <value>
-        /// The additional text.
-        /// </value>
-        public string AdditionalText { get; set; }
-
+        
         /// <summary>
         /// Gets or sets the positive card colors.
         /// </summary>

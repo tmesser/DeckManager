@@ -276,4 +276,7 @@
   <data name="CrisisManagementForm_BadReplacementOrder" xml:space="preserve">
     <value>The order to replace Crises is the same on two or more Crises.  The replacement order must be unique.</value>
   </data>
+  <data name="ManagePlayer_ClickedPlayerNotFound" xml:space="preserve">
+    <value>Clicked player not found in the current game state.  This should probably never happen!  PANIC.</value>
+  </data>
 </root>

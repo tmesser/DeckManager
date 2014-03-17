@@ -30,11 +30,11 @@ namespace DeckManager.Boards.Dradis
                 return;
             if (Nodes == null)
                 PrepDradis();
-            var sector = Nodes.FirstOrDefault(x => x.Name == name);
+            var sector = Nodes.FirstOrDefault(x => x.NodeName == name);
             if (sector == default(DradisNode))
             { 
                 PrepDradis();
-                sector = Nodes.First(x => x.Name == name);
+                sector = Nodes.First(x => x.NodeName == name);
             }
             sector.Components.Add(component);
         }
@@ -102,18 +102,18 @@ namespace DeckManager.Boards.Dradis
                 return;
             if (Nodes == null)
                 PrepDradis();
-            var sectorSource = Nodes.FirstOrDefault(x => x.Name == source);
+            var sectorSource = Nodes.FirstOrDefault(x => x.NodeName == source);
             if (sectorSource == default(DradisNode))
             {
                 PrepDradis();
-                sectorSource = Nodes.First(x => x.Name == source);
+                sectorSource = Nodes.First(x => x.NodeName == source);
             }
 
-            var sectorDestination = Nodes.FirstOrDefault(x => x.Name == destination);
+            var sectorDestination = Nodes.FirstOrDefault(x => x.NodeName == destination);
             if (sectorDestination == default(DradisNode))
             {
                 PrepDradis();
-                sectorDestination = Nodes.First(x => x.Name == source);
+                sectorDestination = Nodes.First(x => x.NodeName == source);
             }
 
             var movedComponents = sectorSource.Components.Where(x => componentsToMove.Contains(x.PermanentDesignation)).ToList();
@@ -131,7 +131,7 @@ namespace DeckManager.Boards.Dradis
         {
             if (Nodes == null)
                 PrepDradis();
-            var sector = Nodes.FirstOrDefault(x => x.Name == source);
+            var sector = Nodes.FirstOrDefault(x => x.NodeName == source);
             return sector == null ? null : sector.Components;
         }
 

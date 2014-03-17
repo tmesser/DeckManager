@@ -7,14 +7,6 @@ namespace DeckManager.Cards
     public class SkillCard : BaseCard
     {
         /// <summary>
-        /// Name of the Card (e.g. "Executive Order")
-        /// </summary>
-        /// <value>
-        /// The heading.
-        /// </value>
-        public string Heading { get; set; }
-
-        /// <summary>
         /// Gets or sets the color of the card.
         /// </summary>
         /// <value>
@@ -30,16 +22,7 @@ namespace DeckManager.Cards
         /// The card power.
         /// </value>
         public int CardPower { get; set; }
-
-
-        /// <summary>
-        /// Gets or sets the additional text, for flavor text, card descriptions, etc.
-        /// </summary>
-        /// <value>
-        /// The additional text.
-        /// </value>
-        public string AdditionalText { get; set; }
-
+        
         /// <summary>
         /// Returns that this is a skill card.
         /// </summary>
