@@ -12,8 +12,8 @@ namespace DeckManagerOutput
     {
         private readonly Player _playerToManage;
 
-        public List<SkillCardColor> RequestedSkillCardColors { get; private set; }
-        public List<CardType> RequestedSpecialCards { get; private set; }
+        public Tuple<SkillCardColor, int> RequestedSkillCards { get; private set; }
+        public Tuple<CardType, int> RequestedSpecialCards { get; private set; }
         public string RequestedLocation { get; private set; }
         public List<BaseCard> CardsToDiscard { get; private set; }
 
@@ -34,8 +34,8 @@ namespace DeckManagerOutput
 
         private void SubmitButtonClick(object sender, EventArgs e)
         {
-            RequestedSkillCardColors = new List<SkillCardColor>();
-            RequestedSpecialCards = new List<CardType>();
+            RequestedSkillCards = new Tuple<SkillCardColor, int>(SkillCardColor.Unknown, 0);
+            RequestedSpecialCards = new Tuple<CardType, int>(CardType.Unknown, 0);
             CardsToDiscard = new List<BaseCard>();
 
             if (DiscardSelectedCheckBox.Checked)
@@ -49,12 +49,12 @@ namespace DeckManagerOutput
 
             if (DrawCardComboControl.NumCardsRequested > 0)
             {
-                RequestedSkillCardColors = Enumerable.Repeat(DrawCardComboControl.CardColorRequested, DrawCardComboControl.NumCardsRequested).ToList();
+                RequestedSkillCards = new Tuple<SkillCardColor, int>(DrawCardComboControl.CardColorRequested, DrawCardComboControl.NumCardsRequested);
             }
 
             if (DrawSpecialComboControl.NumCardsRequested > 0)
             {
-                RequestedSpecialCards = Enumerable.Repeat(DrawSpecialComboControl.CardTypeRequested, DrawSpecialComboControl.NumCardsRequested).ToList();
+                RequestedSpecialCards =  new Tuple<CardType, int>(DrawSpecialComboControl.CardTypeRequested, DrawSpecialComboControl.NumCardsRequested);
             }
 
             RequestedLocation = LocationComboBox.SelectedText;

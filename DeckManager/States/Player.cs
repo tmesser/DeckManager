@@ -56,36 +56,6 @@ namespace DeckManager.States
             }
         }
 
-        public bool Discard(SkillCard card)
-        {
-            return Cards.Remove(card);
-        }
-
-        public bool Discard(QuorumCard card)
-        {
-            return QuorumHand.Remove(card);
-        }
-        public bool Discard(MutinyCard card)
-        {
-            return MutinyHand.Remove(card);
-        }
-
-        public bool Discard(IEnumerable<SkillCard> cards)
-        {
-            var removed = Cards.RemoveAll(cards.Contains);
-            return removed > 0;
-        }
-        public bool Discard(IEnumerable<QuorumCard> cards)
-        {
-            var removed = QuorumHand.RemoveAll(cards.Contains);
-            return removed > 0;
-        }
-        public bool Discard(IEnumerable<MutinyCard > cards)
-        {
-            var removed = MutinyHand.RemoveAll(cards.Contains);
-            return removed > 0;
-        }
-
         public static bool operator ==(Player x, Player y)
         {
             if (ReferenceEquals(x, null) && ReferenceEquals(y, null))
@@ -118,21 +88,49 @@ namespace DeckManager.States
             return (PlayerName != null ? PlayerName.GetHashCode() : 0);
         }
 
+        internal bool Discard(IEnumerable<BaseCard> cards)
+        {
+            return cards.Aggregate(true, (current, card) => current && Discard(card));
+        }
+
         internal bool Discard(BaseCard card)
         {
             switch (card.CardType)
             { 
                 case CardType.Mutiny:
-                    return Discard((MutinyCard)card);
+                    return MutinyHand.Remove((MutinyCard)card);
                 case CardType.Quorum:
-                    return Discard((QuorumCard)card);
+                    return QuorumHand.Remove((QuorumCard)card);
                 case CardType.Skill:
-                    return Discard((SkillCard)card);
+                    return Cards.Remove((SkillCard)card);
                 case CardType.SuperCrisis:
-                    return Discard((SuperCrisisCard)card);
-                default:
-                    // error case
-                    throw new System.Exception("Players can't discard CardTypes they cannot hold:"+card.CardType);
+                    return SuperCrisisCards.Remove((SuperCrisisCard) card);
+            }
+            return false;
+        }
+
+        internal void TakeCard(IEnumerable<BaseCard> cards)
+        {
+            foreach (var card in cards)
+                TakeCard(card);
+        }
+
+        internal void TakeCard(BaseCard card)
+        {
+            switch (card.CardType)
+            {
+                case CardType.Mutiny:
+                    MutinyHand.Add((MutinyCard)card);
+                    break;
+                case CardType.Quorum:
+                    QuorumHand.Add((QuorumCard)card);
+                    break;
+                case CardType.Skill:
+                    Cards.Add((SkillCard)card);
+                    break;
+                case CardType.SuperCrisis:
+                    SuperCrisisCards.Remove((SuperCrisisCard)card);
+                    break;
             }
         }
     }

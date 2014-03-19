@@ -618,6 +618,20 @@ namespace DeckManagerOutput
             var playerLocation = Program.GManager.GetPlayerLocation(selectedPlayer);
 
             var form = new PlayerManagementForm(selectedPlayer, locations, playerLocation.Name);
+
+            form.ShowDialog();
+            if (form.DialogResult != DialogResult.OK)
+                return;
+
+            Program.GManager.SetPlayerLocation(form.RequestedLocation, selectedPlayer.PlayerName);
+            Program.GManager.DiscardCards(form.CardsToDiscard, selectedPlayer);
+
+            if (form.RequestedSkillCards.Item2 > 0) // Gimme skill cards!
+                Program.GManager.DrawSkillCards(form.RequestedSkillCards.Item1, form.RequestedSkillCards.Item2, selectedPlayer);
+
+            if (form.RequestedSpecialCards.Item2 > 0) // Gimme special cards!
+                Program.GManager.DrawCards(form.RequestedSpecialCards.Item1, form.RequestedSpecialCards.Item2, selectedPlayer);
+
         }
     }
 }

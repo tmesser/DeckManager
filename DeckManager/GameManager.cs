@@ -323,12 +323,12 @@ namespace DeckManager
 
 	    #region deck interactions
 
-        public void DiscardCards(IEnumerable<BaseCard> cards)
+        public void DiscardCards(IEnumerable<BaseCard> cards, Player player= null)
         {
             foreach (var card in cards)
-                DiscardCard(card);
+                DiscardCard(card, player);
         }
-        public void DiscardCard(BaseCard card)
+        public void DiscardCard(BaseCard card, Player player = null)
         {   
             // todo each discard creates new gamestate? that would let us implement undos
             // discards the passed card into its appropriate deck
@@ -361,7 +361,15 @@ namespace DeckManager
                             break;
                     }
                     break;
+                case CardType.SuperCrisis:
+                    CurrentGameState.SuperCrisisDeck.Discard((SuperCrisisCard) card);
+                    break;
+                case CardType.Loyalty:
+                    CurrentGameState.LoyaltyDeck.Discard((LoyaltyCard) card);
+                    break;
             }
+            if (player != null)
+                player.Discard(card);
         }
 
         /// <summary>
@@ -423,30 +431,96 @@ namespace DeckManager
                 TopCard(card);
         }
 
-        public SkillCard DrawSkillCard(SkillCardColor color)
+        public SkillCard DrawSkillCard(SkillCardColor color, Player player = null)
         {
-            return DrawSkillCards(color, 1).FirstOrDefault();
+            return DrawSkillCards(color, 1, player).FirstOrDefault();
         }
 
-        public IEnumerable<SkillCard> DrawSkillCards(SkillCardColor color, int count)
+        public IEnumerable<SkillCard> DrawSkillCards(SkillCardColor color, int count, Player player = null)
         {
+            List<SkillCard> ret;
             switch (color)
             {
                 case SkillCardColor.Engineering:
-                    return CurrentGameState.EngineeringDeck.DrawMany(count);
+                    ret = CurrentGameState.EngineeringDeck.DrawMany(count).ToList();
+                    break;
                 case SkillCardColor.Leadership:
-                    return CurrentGameState.LeadershipDeck.DrawMany(count);
+                    ret = CurrentGameState.LeadershipDeck.DrawMany(count).ToList();
+                    break;
                 case SkillCardColor.Piloting:
-                    return CurrentGameState.PilotingDeck.DrawMany(count);
+                    ret = CurrentGameState.PilotingDeck.DrawMany(count).ToList();
+                    break;
                 case SkillCardColor.Politics:
-                    return CurrentGameState.PoliticsDeck.DrawMany(count);
+                    ret = CurrentGameState.PoliticsDeck.DrawMany(count).ToList();
+                    break;
                 case SkillCardColor.Tactics:
-                    return CurrentGameState.TacticsDeck.DrawMany(count);
+                    ret = CurrentGameState.TacticsDeck.DrawMany(count).ToList();
+                    break;
                 case SkillCardColor.Treachery:
-                    return CurrentGameState.TreacheryDeck.DrawMany(count);
+                    ret = CurrentGameState.TreacheryDeck.DrawMany(count).ToList();
+                    break;
                 default:
                     return new List<SkillCard>();
             }
+
+            if (player != null)
+                player.TakeCard(ret);
+            return ret;
+        }
+
+        public void DrawCards(CardType cardType, int count, Player player = null)
+        {
+            //DrawCards(Enumerable.Repeat(cardType, count), player);
+        }
+
+        public void DrawCards(IEnumerable<BaseCard> cards, Player player = null)
+        {
+            foreach (var card in cards)
+                DrawCard(card, player);
+        }
+
+        public void DrawCard(BaseCard card, Player player = null)
+        {
+            // todo each discard creates new gamestate? that would let us implement undos
+            // discards the passed card into its appropriate deck
+            switch (card.CardType)
+            {
+                case CardType.Quorum:
+                    CurrentGameState.QuorumDeck.Draw();
+                    break;
+                case CardType.Skill:
+                    var skillCard = (SkillCard)card;
+                    switch (skillCard.CardColor)
+                    {
+                        case SkillCardColor.Politics:
+                            CurrentGameState.PoliticsDeck.Draw();
+                            break;
+                        case SkillCardColor.Leadership:
+                            CurrentGameState.LeadershipDeck.Draw();
+                            break;
+                        case SkillCardColor.Tactics:
+                            CurrentGameState.TacticsDeck.Draw();
+                            break;
+                        case SkillCardColor.Engineering:
+                            CurrentGameState.EngineeringDeck.Draw();
+                            break;
+                        case SkillCardColor.Piloting:
+                            CurrentGameState.PilotingDeck.Draw();
+                            break;
+                        case SkillCardColor.Treachery:
+                            CurrentGameState.TreacheryDeck.Draw();
+                            break;
+                    }
+                    break;
+                case CardType.SuperCrisis:
+                    CurrentGameState.SuperCrisisDeck.Draw();
+                    break;
+                case CardType.Loyalty:
+                    CurrentGameState.LoyaltyDeck.Draw();
+                    break;
+            }
+            if (player != null)
+                player.TakeCard(card);
         }
 
         /// <summary>
@@ -601,27 +675,6 @@ namespace DeckManager
         {
             foreach (var card in cards)
                 GiveCardToPlayer(player, card);
-        }
-        /// <summary>
-        /// Removes the card from the Player's hand and discards it to the appropriate Deck.
-        /// </summary>
-        /// <param name="player"></param>
-        /// <param name="card"></param>
-        public void PlayerDiscardCard(Player player, BaseCard card)
-        { }
-        /// <summary>
-        /// Removes the cards from the Player's hand and discards them to their appropriate Decks.
-        /// </summary>
-        /// <param name="player"></param>
-        /// <param name="cards"></param>
-        public void PlayerDiscardCard(Player player, IEnumerable<BaseCard> cards)
-        {
-            // todo error checking on these
-            foreach (BaseCard card in cards)
-            {
-                player.Discard(card);
-                DiscardCard(card);
-            }
         }
 
         /// <summary>
