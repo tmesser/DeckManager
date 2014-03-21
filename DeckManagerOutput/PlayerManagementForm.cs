@@ -19,17 +19,20 @@ namespace DeckManagerOutput
 
         public PlayerManagementForm(Player playerToManage, IEnumerable<string> validLocations, string currentPlayerLocation )
         {
-            _playerToManage = playerToManage;
-            PlayerCardListBox.DataSource = _playerToManage.Cards;
-            var specialCards = new List<BaseCard>();
-            specialCards.AddRange(_playerToManage.QuorumHand);
-            specialCards.AddRange(_playerToManage.SuperCrisisCards);
-            specialCards.AddRange(_playerToManage.LoyaltyCards);
-            SpecialCardListBox.DataSource = specialCards;
-            LocationComboBox.DataSource = validLocations;
-            LocationComboBox.SelectedText = currentPlayerLocation;
-
             InitializeComponent();
+            _playerToManage = playerToManage;
+            PlayerNameLabel.Text = _playerToManage.PlayerName;
+            CharacterNameLabel.Text = _playerToManage.Character.CharacterName;
+            PlayerCardListBox.DataSource = _playerToManage.Cards;
+            PlayerCardListBox.SelectedIndex = -1;
+            var specialCards = new List<BaseCard>();
+            specialCards.AddRange(_playerToManage.QuorumHand ?? new List<QuorumCard>());
+            specialCards.AddRange(_playerToManage.SuperCrisisCards ?? new List<SuperCrisisCard>());
+            specialCards.AddRange(_playerToManage.LoyaltyCards ?? new List<LoyaltyCard>());
+            SpecialCardListBox.DataSource = specialCards;
+            SpecialCardListBox.SelectedIndex = -1;
+            LocationComboBox.DataSource = validLocations;
+            LocationComboBox.SelectedItem = currentPlayerLocation;
         }
 
         private void SubmitButtonClick(object sender, EventArgs e)
@@ -57,7 +60,7 @@ namespace DeckManagerOutput
                 RequestedSpecialCards =  new Tuple<CardType, int>(DrawSpecialComboControl.CardTypeRequested, DrawSpecialComboControl.NumCardsRequested);
             }
 
-            RequestedLocation = LocationComboBox.SelectedText;
+            RequestedLocation = LocationComboBox.Text;
 
             DialogResult = DialogResult.OK;
             Close();

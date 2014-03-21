@@ -57,5 +57,30 @@ namespace DeckManager.Cards
         /// </summary>
         /// <returns></returns>
         public abstract string ToBBCode();
+
+        public static BaseCard ReturnBaseCardFromCardType(CardType cardType)
+        {
+            switch (cardType)
+            {
+                case CardType.Crisis:
+                    return new CrisisCard();
+                case CardType.Quorum:
+                    return new QuorumCard();
+                case CardType.SuperCrisis:
+                    return new SuperCrisisCard();
+                case CardType.Skill:
+                    return new SkillCard();
+                case CardType.Mutiny:
+                    return new MutinyCard();
+                case CardType.Mission:
+                    return new MissionCard();
+                case CardType.Loyalty:
+                    return new LoyaltyCard();
+                case CardType.Destination:
+                    return new DestinationCard();
+                default:
+                    return null;
+            }
+        }
     }
 }

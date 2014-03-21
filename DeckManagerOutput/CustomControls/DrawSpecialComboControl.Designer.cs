@@ -40,7 +40,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.33334F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
             this.tableLayoutPanel1.Controls.Add(this.DrawCardsCheckBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.DrawAmountComboBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.DrawTypeComboBox, 2, 1);
@@ -80,7 +80,7 @@
             "9"});
             this.DrawAmountComboBox.Location = new System.Drawing.Point(13, 28);
             this.DrawAmountComboBox.Name = "DrawAmountComboBox";
-            this.DrawAmountComboBox.Size = new System.Drawing.Size(48, 21);
+            this.DrawAmountComboBox.Size = new System.Drawing.Size(45, 21);
             this.DrawAmountComboBox.TabIndex = 1;
             // 
             // DrawTypeComboBox
@@ -90,7 +90,7 @@
             "SuperCrisis",
             "Quorum",
             "Loyalty"});
-            this.DrawTypeComboBox.Location = new System.Drawing.Point(67, 28);
+            this.DrawTypeComboBox.Location = new System.Drawing.Point(64, 28);
             this.DrawTypeComboBox.Name = "DrawTypeComboBox";
             this.DrawTypeComboBox.Size = new System.Drawing.Size(76, 21);
             this.DrawTypeComboBox.TabIndex = 2;

@@ -617,7 +617,7 @@ namespace DeckManagerOutput
 
             var playerLocation = Program.GManager.GetPlayerLocation(selectedPlayer);
 
-            var form = new PlayerManagementForm(selectedPlayer, locations, playerLocation.Name);
+            var form = new PlayerManagementForm(selectedPlayer, locations, playerLocation == null ? string.Empty : playerLocation.Name);
 
             form.ShowDialog();
             if (form.DialogResult != DialogResult.OK)
@@ -632,6 +632,7 @@ namespace DeckManagerOutput
             if (form.RequestedSpecialCards.Item2 > 0) // Gimme special cards!
                 Program.GManager.DrawCards(form.RequestedSpecialCards.Item1, form.RequestedSpecialCards.Item2, selectedPlayer);
 
+            RefreshGameListBoxes();
         }
     }
 }

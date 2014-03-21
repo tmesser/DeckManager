@@ -23,7 +23,7 @@ namespace DeckManager
 {
     public class GameManager
     {
-        private JsonSerializerSettings _jsonSettings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All, PreserveReferencesHandling = PreserveReferencesHandling.All, DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new StringEnumConverter() } };
+        private readonly JsonSerializerSettings _jsonSettings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All, PreserveReferencesHandling = PreserveReferencesHandling.All, DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new StringEnumConverter() } };
         private readonly ILog _logger;
         private IEnumerable<Character> _characters;
         public IEnumerable<Character> CharacterList
@@ -470,7 +470,7 @@ namespace DeckManager
 
         public void DrawCards(CardType cardType, int count, Player player = null)
         {
-            //DrawCards(Enumerable.Repeat(cardType, count), player);
+            DrawCards(Enumerable.Repeat(BaseCard.ReturnBaseCardFromCardType(cardType), count), player);
         }
 
         public void DrawCards(IEnumerable<BaseCard> cards, Player player = null)
@@ -479,48 +479,51 @@ namespace DeckManager
                 DrawCard(card, player);
         }
 
-        public void DrawCard(BaseCard card, Player player = null)
+        public BaseCard DrawCard(BaseCard card, Player player = null)
         {
             // todo each discard creates new gamestate? that would let us implement undos
             // discards the passed card into its appropriate deck
+            BaseCard ret = new SkillCard();
             switch (card.CardType)
             {
                 case CardType.Quorum:
-                    CurrentGameState.QuorumDeck.Draw();
+                    ret = CurrentGameState.QuorumDeck.Draw();
                     break;
                 case CardType.Skill:
                     var skillCard = (SkillCard)card;
                     switch (skillCard.CardColor)
                     {
                         case SkillCardColor.Politics:
-                            CurrentGameState.PoliticsDeck.Draw();
+                            ret = CurrentGameState.PoliticsDeck.Draw();
                             break;
                         case SkillCardColor.Leadership:
-                            CurrentGameState.LeadershipDeck.Draw();
+                            ret = CurrentGameState.LeadershipDeck.Draw();
                             break;
                         case SkillCardColor.Tactics:
-                            CurrentGameState.TacticsDeck.Draw();
+                            ret = CurrentGameState.TacticsDeck.Draw();
                             break;
                         case SkillCardColor.Engineering:
-                            CurrentGameState.EngineeringDeck.Draw();
+                            ret = CurrentGameState.EngineeringDeck.Draw();
                             break;
                         case SkillCardColor.Piloting:
-                            CurrentGameState.PilotingDeck.Draw();
+                            ret = CurrentGameState.PilotingDeck.Draw();
                             break;
                         case SkillCardColor.Treachery:
-                            CurrentGameState.TreacheryDeck.Draw();
+                            ret = CurrentGameState.TreacheryDeck.Draw();
                             break;
                     }
                     break;
                 case CardType.SuperCrisis:
-                    CurrentGameState.SuperCrisisDeck.Draw();
+                    ret = CurrentGameState.SuperCrisisDeck.Draw();
                     break;
                 case CardType.Loyalty:
-                    CurrentGameState.LoyaltyDeck.Draw();
+                    ret = CurrentGameState.LoyaltyDeck.Draw();
                     break;
             }
             if (player != null)
-                player.TakeCard(card);
+                player.TakeCard(ret);
+
+            return ret;
         }
 
         /// <summary>

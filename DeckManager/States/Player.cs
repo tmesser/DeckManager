@@ -105,6 +105,9 @@ namespace DeckManager.States
                     return Cards.Remove((SkillCard)card);
                 case CardType.SuperCrisis:
                     return SuperCrisisCards.Remove((SuperCrisisCard) card);
+                case CardType.Loyalty:
+                    LoyaltyCards.Remove((LoyaltyCard)card);
+                    break;
             }
             return false;
         }
@@ -129,7 +132,10 @@ namespace DeckManager.States
                     Cards.Add((SkillCard)card);
                     break;
                 case CardType.SuperCrisis:
-                    SuperCrisisCards.Remove((SuperCrisisCard)card);
+                    SuperCrisisCards.Add((SuperCrisisCard)card);
+                    break;
+                case CardType.Loyalty:
+                    LoyaltyCards.Add((LoyaltyCard) card);
                     break;
             }
         }

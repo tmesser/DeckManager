@@ -73,69 +73,22 @@ namespace DeckManager.States
         public QuorumDeck QuorumDeck { get; set; }
 
         private SkillCardDeck _leadershipDeck;
-        public SkillCardDeck LeadershipDeck
-        {
-            get { return _leadershipDeck; }
-            set { 
-                    if(value.DeckColor == SkillCardColor.Leadership)
-                        _leadershipDeck = value; 
-                }
-        }
+        public SkillCardDeck LeadershipDeck { get; set;  }
 
         private SkillCardDeck _politicsDeck;
-        public SkillCardDeck PoliticsDeck
-        {
-            get { return _politicsDeck; }
-            set
-            {
-                if (value.DeckColor == SkillCardColor.Politics)
-                    _politicsDeck = value;
-            }
-        }
+        public SkillCardDeck PoliticsDeck { get; set; }
 
         private SkillCardDeck _engineeringDeck;
-        public SkillCardDeck EngineeringDeck
-        {
-            get { return _engineeringDeck; }
-            set
-            {
-                if (value.DeckColor == SkillCardColor.Engineering)
-                    _engineeringDeck = value;
-            }
-        }
+        public SkillCardDeck EngineeringDeck { get; set; }
 
         private SkillCardDeck _pilotingDeck;
-        public SkillCardDeck PilotingDeck
-        {
-            get { return _pilotingDeck; }
-            set
-            {
-                if (value.DeckColor == SkillCardColor.Piloting)
-                    _pilotingDeck = value;
-            }
-        }
+        public SkillCardDeck PilotingDeck { get; set; }
 
         private SkillCardDeck _tacticsDeck;
-        public SkillCardDeck TacticsDeck
-        {
-            get { return _tacticsDeck; }
-            set
-            {
-                if (value.DeckColor == SkillCardColor.Tactics)
-                    _tacticsDeck = value;
-            }
-        }
+        public SkillCardDeck TacticsDeck { get; set; }
 
         private SkillCardDeck _treacheryDeck;
-        public SkillCardDeck TreacheryDeck
-        {
-            get { return _treacheryDeck; }
-            set
-            {
-                if (value.DeckColor == SkillCardColor.Treachery)
-                    _treacheryDeck = value;
-            }
-        }
+        public SkillCardDeck TreacheryDeck { get; set; }
 
         #endregion //decks
 

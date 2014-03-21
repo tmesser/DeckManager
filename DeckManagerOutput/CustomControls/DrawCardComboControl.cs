@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DeckManager.Cards.Enums;
+using DeckManager.Extensions;
 
 namespace DeckManagerOutput.CustomControls
 {
@@ -8,12 +9,12 @@ namespace DeckManagerOutput.CustomControls
     {
         public int NumCardsRequested
         {
-            get { return DrawCardsCheckBox.Enabled ? (int) DrawAmountComboBox.SelectedValue : 0; }
+            get { return DrawCardsCheckBox.Enabled ? DrawAmountComboBox.Text.ParseAs<int>() : 0; }
         }
 
         public SkillCardColor CardColorRequested 
         {
-            get { return DrawCardsCheckBox.Enabled ? (SkillCardColor)Enum.Parse(typeof(SkillCardColor), (string)DrawTypeComboBox.SelectedValue) : 0; }
+            get { return DrawCardsCheckBox.Enabled ? (SkillCardColor)Enum.Parse(typeof(SkillCardColor), (string)DrawTypeComboBox.SelectedItem) : 0; }
         }
 
         public DrawCardComboControl()
