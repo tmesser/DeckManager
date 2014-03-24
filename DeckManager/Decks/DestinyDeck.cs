@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DeckManager.Cards;
 using DeckManager.Cards.Enums;
+using Newtonsoft.Json;
 using log4net;
 
 namespace DeckManager.Decks
@@ -23,11 +24,16 @@ namespace DeckManager.Decks
             InitDeck(leadershipDeck, tacticsDeck, pilotingDeck, engineeringDeck, politicsDeck);
         }
 
-        private SkillCardDeck LeadershipDeck { get; set; }
-        private SkillCardDeck TacticsDeck { get; set; }
-        private SkillCardDeck PilotingDeck { get; set; }
-        private SkillCardDeck EngineeringDeck { get; set; }
-        private SkillCardDeck PoliticsDeck { get; set; }
+        [JsonProperty(IsReference=true)]
+        public SkillCardDeck LeadershipDeck { get; set; }
+        [JsonProperty(IsReference = true)]
+        public SkillCardDeck TacticsDeck { get; set; }
+        [JsonProperty(IsReference = true)]
+        public SkillCardDeck PilotingDeck { get; set; }
+        [JsonProperty(IsReference = true)]
+        public SkillCardDeck EngineeringDeck { get; set; }
+        [JsonProperty(IsReference = true)]
+        public SkillCardDeck PoliticsDeck { get; set; }
 
         /// <summary>
         /// Initializes the deck.
@@ -72,9 +78,38 @@ namespace DeckManager.Decks
             PilotingDeck = pilotingDeck;
             EngineeringDeck = engineeringDeck;
             PoliticsDeck = politicsDeck;
+            Deck = new List<SkillCard>();
             Discarded = new List<SkillCard>();
         }
 
+
+        public override void Discard(SkillCard card)
+        {
+            switch (card.CardColor)
+            {
+                case SkillCardColor.Leadership:
+                    LeadershipDeck.Discard(card);
+                    break;
+                case SkillCardColor.Engineering:
+                    EngineeringDeck.Discard(card);
+                    break;
+                case SkillCardColor.Piloting:
+                    PilotingDeck.Discard(card);
+                    break;
+                case SkillCardColor.Politics:
+                    PoliticsDeck.Discard(card);
+                    break;
+                case SkillCardColor.Tactics:
+                    TacticsDeck.Discard(card);
+                    break;
+            }
+        }
+
+        public override void Discard(IEnumerable<SkillCard> cards)
+        {
+            foreach (var card in cards)
+                Discard(card);
+        }
         /// <summary>
         /// Reshuffles this instance.
         /// </summary>

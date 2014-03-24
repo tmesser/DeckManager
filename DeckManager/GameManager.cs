@@ -23,7 +23,7 @@ namespace DeckManager
 {
     public class GameManager
     {
-        private readonly JsonSerializerSettings _jsonSettings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All, PreserveReferencesHandling = PreserveReferencesHandling.All, DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new StringEnumConverter() } };
+        private readonly JsonSerializerSettings _jsonSettings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All, ReferenceLoopHandling = ReferenceLoopHandling.Serialize, PreserveReferencesHandling = PreserveReferencesHandling.All, DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new StringEnumConverter() } };
         private readonly ILog _logger;
         private IEnumerable<Character> _characters;
         public IEnumerable<Character> CharacterList
@@ -253,7 +253,7 @@ namespace DeckManager
         private Civilian DrawCiv()
         {
             var civDrawn = CurrentGameState.Civilians.FindIndex(x => x.Status == ComponentStatus.InReserve);
-            if (civDrawn == -1) // No vipers are in reserve
+            if (civDrawn == -1) // No civs are in reserve
                 return null;
 
             CurrentGameState.Civilians[civDrawn].Status = ComponentStatus.Active;
@@ -486,6 +486,9 @@ namespace DeckManager
             BaseCard ret = new SkillCard();
             switch (card.CardType)
             {
+                case CardType.Crisis:
+                    ret = CurrentGameState.CrisisDeck.Draw();
+                    break;
                 case CardType.Quorum:
                     ret = CurrentGameState.QuorumDeck.Draw();
                     break;
@@ -775,6 +778,11 @@ namespace DeckManager
             {
                 applicableDradisNode.PlayersPresent.Add(playerName);
             }
+        }
+
+        public IEnumerable<SkillCard> DrawDestiny(int count)
+        {
+            return CurrentGameState.DestinyDeck.DrawMany(count);
         }
 
         #endregion

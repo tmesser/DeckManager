@@ -120,6 +120,12 @@
     <Compile Include="OptionalRulesForm.Designer.cs">
       <DependentUpon>OptionalRulesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayCrisisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayCrisisForm.Designer.cs">
+      <DependentUpon>PlayCrisisForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlayerManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OptionalRulesForm.resx">
       <DependentUpon>OptionalRulesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayCrisisForm.resx">
+      <DependentUpon>PlayCrisisForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerManagementForm.resx">
       <DependentUpon>PlayerManagementForm.cs</DependentUpon>

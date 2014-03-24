@@ -72,22 +72,16 @@ namespace DeckManager.States
         public DestinyDeck DestinyDeck { get; set; }
         public QuorumDeck QuorumDeck { get; set; }
 
-        private SkillCardDeck _leadershipDeck;
         public SkillCardDeck LeadershipDeck { get; set;  }
 
-        private SkillCardDeck _politicsDeck;
         public SkillCardDeck PoliticsDeck { get; set; }
 
-        private SkillCardDeck _engineeringDeck;
         public SkillCardDeck EngineeringDeck { get; set; }
 
-        private SkillCardDeck _pilotingDeck;
         public SkillCardDeck PilotingDeck { get; set; }
 
-        private SkillCardDeck _tacticsDeck;
         public SkillCardDeck TacticsDeck { get; set; }
 
-        private SkillCardDeck _treacheryDeck;
         public SkillCardDeck TreacheryDeck { get; set; }
 
         #endregion //decks

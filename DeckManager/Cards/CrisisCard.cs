@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using DeckManager.Cards.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -26,11 +27,6 @@ namespace DeckManager.Cards
         /// </summary>
         [JsonIgnore]
         public List<object> Choices { get; set; }  // choices can be skill checks or strings like "-1 Morale and damage Galatica twice"
-        /// <summary>
-        /// Gets or sets the chooser on this crisis card
-        /// </summary>
-        [JsonIgnore]
-        public Characters.Enums.Titles Chooser {get;set;}
 
         /// <summary>
         /// Gets or sets the positive card colors.
@@ -68,18 +64,10 @@ namespace DeckManager.Cards
         public override string ToString()
         {
             // todo this needs to be worked on to account for all the different crisis formats
-            string ret = Heading+"\n";
-            if (Chooser != Characters.Enums.Titles.Unknown)
-            {
-                ret += Chooser + " Chooses:";
-                ret += string.Join("\n OR\n", Choices);
-            }
-            else
-                ret += AdditionalText;
-            //return Heading + "\n" + AdditionalText + "\n";
-
-            ret += "\nActivate: " + Activation + " " + (JumpPrep ? "+1 Jump Prep" : "NO JUMP PREP");
-            return ret;
+            var ret = new StringBuilder();
+            ret.AppendLine(Heading);
+            ret.AppendLine(AdditionalText);
+            return ret.ToString();
         }
 
         /// <summary>

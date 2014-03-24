@@ -20,7 +20,7 @@ namespace DeckManager.Decks
             InitDeck(color, fileLocation);
         }
         
-        public SkillCardColor DeckColor { get; private set; }
+        public SkillCardColor DeckColor { get; set; }
         
         /// <summary>
         /// Initializes the deck.

@@ -571,7 +571,12 @@ namespace DeckManagerOutput
 
         private void PlayCrisisButtonClick(object sender, EventArgs e)
         {
-
+            if (CurrentCrisis != null && CurrentCrisis.PassLevels.Any())
+            {
+                var form = new PlayCrisisForm(Program.GManager.CurrentGameState.Players, CurrentCrisis, Program.GManager.DrawDestiny(2));
+                form.ShowDialog();
+            }
+            
         }
 
         private void RemoveSelectedToolStripMenuItemClick(object sender, EventArgs e)
