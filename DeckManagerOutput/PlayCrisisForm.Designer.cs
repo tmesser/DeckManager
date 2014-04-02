@@ -57,7 +57,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(306, 303);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(414, 431);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // PlayerDropDown
@@ -66,7 +66,7 @@
             this.PlayerDropDown.FormattingEnabled = true;
             this.PlayerDropDown.Location = new System.Drawing.Point(3, 3);
             this.PlayerDropDown.Name = "PlayerDropDown";
-            this.PlayerDropDown.Size = new System.Drawing.Size(147, 21);
+            this.PlayerDropDown.Size = new System.Drawing.Size(201, 21);
             this.PlayerDropDown.TabIndex = 0;
             this.PlayerDropDown.SelectedIndexChanged += new System.EventHandler(this.PlayerDropDownSelectedIndexChanged);
             // 
@@ -78,14 +78,13 @@
             this.PlayerCardListBox.Location = new System.Drawing.Point(3, 33);
             this.PlayerCardListBox.Name = "PlayerCardListBox";
             this.PlayerCardListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.PlayerCardListBox.Size = new System.Drawing.Size(147, 207);
+            this.PlayerCardListBox.Size = new System.Drawing.Size(201, 335);
             this.PlayerCardListBox.TabIndex = 1;
-            this.PlayerCardListBox.DataSourceChanged += new System.EventHandler(this.PlayerCardListBoxDataSourceChanged);
             // 
             // CommitButton
             // 
             this.CommitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CommitButton.Location = new System.Drawing.Point(75, 246);
+            this.CommitButton.Location = new System.Drawing.Point(129, 374);
             this.CommitButton.Name = "CommitButton";
             this.CommitButton.Size = new System.Drawing.Size(75, 23);
             this.CommitButton.TabIndex = 2;
@@ -98,26 +97,27 @@
             this.ResultTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.ResultTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ResultTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ResultTextBox.Location = new System.Drawing.Point(156, 3);
+            this.ResultTextBox.Location = new System.Drawing.Point(210, 3);
             this.ResultTextBox.Name = "ResultTextBox";
             this.tableLayoutPanel1.SetRowSpan(this.ResultTextBox, 3);
-            this.ResultTextBox.Size = new System.Drawing.Size(147, 267);
+            this.ResultTextBox.Size = new System.Drawing.Size(201, 395);
             this.ResultTextBox.TabIndex = 3;
             this.ResultTextBox.Text = "";
             // 
             // SubmitButton
             // 
-            this.SubmitButton.Location = new System.Drawing.Point(3, 276);
+            this.SubmitButton.Location = new System.Drawing.Point(3, 404);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(75, 23);
             this.SubmitButton.TabIndex = 4;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = true;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButtonClick);
             // 
             // CancelButton
             // 
             this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButton.Location = new System.Drawing.Point(228, 276);
+            this.CancelButton.Location = new System.Drawing.Point(336, 404);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 5;
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(306, 303);
+            this.ClientSize = new System.Drawing.Size(414, 431);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PlayCrisisForm";
             this.Text = "PlayCrisisForm";

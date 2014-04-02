@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using DeckManager.Cards;
+using DeckManager.Extensions;
 using log4net;
 
 namespace DeckManager.Decks
@@ -42,12 +43,7 @@ namespace DeckManager.Decks
             var deckTemp = inputDeck;
             try
             {
-                foreach (var card in inputDeck)
-                {
-                    card.UniqueId = Guid.NewGuid();
-                }
-
-                inputDeck = inputDeck.OrderBy(x => x.UniqueId).ToList();
+                inputDeck.Shuffle();
             }
             catch (Exception e)
             {

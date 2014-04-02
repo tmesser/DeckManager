@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DeckManager.Cards;
+using DeckManager.Extensions;
 using DeckManager.ManagerLogic;
 using DeckManager.States;
 
@@ -18,6 +19,9 @@ namespace DeckManagerOutput
         private IList<Tuple<SkillCard, string>> _crisisContributions;
 
         private const string ResultFormat = @"\b {0} \b0 - {1} ({2})";
+        private const string FinalFormat = @"\b {0} \b0 - {1}";
+
+        public string Result { get; private set; }
 
         public PlayCrisisForm(IEnumerable<Player> players, CrisisCard crisis, IEnumerable<SkillCard> destinyCards )
         {
@@ -44,8 +48,10 @@ namespace DeckManagerOutput
             var crisisResults = SkillCheck.EvalSkillCheck(_crisisContributions.Select(x => x.Item1), _crisis);
 
             var toDisplay = new StringBuilder();
-
+            
             var totalPower = 0;
+
+            _crisisContributions.Shuffle();
             foreach (var contribution in _crisisContributions)
             {
                 var appliedPower = _crisis.PositiveColors.Contains(contribution.Item1.CardColor) ? contribution.Item1.CardPower : contribution.Item1.CardPower*-1;
@@ -72,15 +78,6 @@ namespace DeckManagerOutput
             Close();
         }
 
-        private void PlayerCardListBoxDataSourceChanged(object sender, EventArgs e)
-        {
-            PlayerCardListBox.SelectedIndex = -1;
-            foreach (var card in PlayerCardListBox.Items.Cast<SkillCard>().Where(y => _crisisContributions.Select(x => x.Item1).Contains(y)))
-            {
-                PlayerCardListBox.SelectedItems.Add(card);
-            }
-        }
-
         private void CommitButtonClick(object sender, EventArgs e)
         {
             var selectedPlayer = (Player)PlayerDropDown.SelectedItem;
@@ -97,6 +94,41 @@ namespace DeckManagerOutput
         {
             var selectedPlayer = (Player)PlayerDropDown.SelectedItem;
             PlayerCardListBox.DataSource = selectedPlayer.Cards;
+            PlayerCardListBox.SelectedIndex = -1;
+            var playerCards = PlayerCardListBox.Items.Cast<SkillCard>().ToList();
+            var contributedCards = _crisisContributions.Select(x => x.Item1);
+            foreach (var card in playerCards.Where(contributedCards.Contains))
+            {
+                PlayerCardListBox.SelectedItems.Add(card);
+            }
+        }
+
+        private void SubmitButtonClick(object sender, EventArgs e)
+        {
+            var crisisResults = SkillCheck.EvalSkillCheck(_crisisContributions.Select(x => x.Item1), _crisis);
+
+            var resultOutput = new StringBuilder();
+
+            var totalPower = 0;
+            foreach (var contribution in _crisisContributions)
+            {
+                var appliedPower = _crisis.PositiveColors.Contains(contribution.Item1.CardColor) ? contribution.Item1.CardPower : contribution.Item1.CardPower * -1;
+                resultOutput.AppendLine(string.Format(FinalFormat, appliedPower, contribution.Item1.Heading));
+                totalPower += appliedPower;
+            } 
+            resultOutput.AppendLine(@"\b--------------------\b0");
+            foreach (var consequence in crisisResults)
+            {
+                resultOutput.AppendLine(string.Format(ResultFormat, consequence.ConditionText, consequence.Threshold, totalPower));
+            }
+            resultOutput.Replace(Environment.NewLine, @" \line ");
+            resultOutput.Insert(0, @"{\rtf1\ansi ");
+            resultOutput.Append(@"}");
+
+            Result = resultOutput.ToString();
+
+            DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }
