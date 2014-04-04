@@ -571,12 +571,34 @@ namespace DeckManagerOutput
 
         private void PlayCrisisButtonClick(object sender, EventArgs e)
         {
-            if (CurrentCrisis != null && CurrentCrisis.PassLevels.Any())
+            if (CurrentCrisis == null || CurrentCrisis.PassLevels.Any() == false) 
+                return;
+
+            var destinyDraw = Program.GManager.DrawDestiny(2).ToList();
+                    
+            var form = new PlayCrisisForm(Program.GManager.CurrentGameState.Players, CurrentCrisis, destinyDraw);
+            form.ShowDialog();
+            if (form.DialogResult == DialogResult.Cancel)
             {
-                var form = new PlayCrisisForm(Program.GManager.CurrentGameState.Players, CurrentCrisis, Program.GManager.DrawDestiny(2));
-                form.ShowDialog();
+                Program.GManager.TopCards(destinyDraw, true);
+                return;
             }
-            
+
+            foreach (var contribution in form.CrisisContributions)
+                Program.GManager.DiscardCard(contribution.Item1, Program.GManager.FindPlayerByName(contribution.Item2));
+
+            Program.GManager.DiscardCard(CurrentCrisis);
+
+            CurrentCrisis = null;
+            crisisText.Text = string.Empty;
+
+            var helpForm = new HelpForm(form.Result, "Crisis Result");
+            helpForm.Show();
+            PlayerReadonlyListBox.BeginUpdate();
+            PlayerReadonlyListBox.DataSource = null;
+            PlayerReadonlyListBox.DataSource = Program.GManager.CurrentGameState.Players;
+            PlayerReadonlyListBox.SelectedIndex = 0;
+            PlayerReadonlyListBox.EndUpdate();
         }
 
         private void RemoveSelectedToolStripMenuItemClick(object sender, EventArgs e)

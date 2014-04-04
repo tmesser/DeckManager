@@ -376,7 +376,8 @@ namespace DeckManager
         /// Place the card on the top of its deck
         /// </summary>
         /// <param name="card"></param>
-        public void TopCard(BaseCard card)
+        /// <param name="isDestiny"></param>
+        public void TopCard(BaseCard card, bool isDestiny=false)
         {
             switch (card.CardType)
             {
@@ -394,6 +395,8 @@ namespace DeckManager
                     break;
                 case CardType.Skill:
                     var skill = (SkillCard)card;
+                    if (isDestiny)
+                        CurrentGameState.DestinyDeck.Top(skill);
                     switch (skill.CardColor)
                     {
                         case SkillCardColor.Politics:
@@ -421,14 +424,16 @@ namespace DeckManager
                     break;
             }
         }
+
         /// <summary>
         /// Places the cards on the top of their decks.
         /// </summary>
         /// <param name="cards"></param>
-        public void TopCards(IEnumerable<BaseCard> cards)
+        /// <param name="isDestiny"></param>
+        public void TopCards(IEnumerable<BaseCard> cards, bool isDestiny=false)
         {
             foreach (BaseCard card in cards)
-                TopCard(card);
+                TopCard(card, isDestiny);
         }
 
         public SkillCard DrawSkillCard(SkillCardColor color, Player player = null)
@@ -683,18 +688,9 @@ namespace DeckManager
                 GiveCardToPlayer(player, card);
         }
 
-        /// <summary>
-        /// Reveal's the Player's cylon loyalty card and marks the player as a revealed cylon
-        /// </summary>
-        /// <param name="player"></param>
-        /// <param name="reveal"></param>
-        public void PlayerRevealCylon(Player player, LoyaltyCard reveal)
+        public Player FindPlayerByName(string name)
         {
-            if (player.LoyaltyCards.Contains(reveal))
-                player.RevealedCylon = true;
-            else ; // error case, exception
-            // todo logging
-            // todo effects from card reveal
+            return CurrentGameState.Players.FirstOrDefault(x => x.PlayerName == name);
         }
 
         /// <summary>
