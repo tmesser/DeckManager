@@ -588,10 +588,7 @@ namespace DeckManagerOutput
                 Program.GManager.DiscardCard(contribution.Item1, Program.GManager.FindPlayerByName(contribution.Item2));
 
             Program.GManager.DiscardCard(CurrentCrisis);
-
-            CurrentCrisis = null;
-            crisisText.Text = string.Empty;
-
+            
             var helpForm = new HelpForm(form.Result, "Crisis Result");
             helpForm.Show();
             PlayerReadonlyListBox.BeginUpdate();
