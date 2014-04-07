@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DeckManager.Cards;
-using DeckManager.Extensions;
 using DeckManager.ManagerLogic;
 using DeckManager.States;
 
@@ -53,8 +52,7 @@ namespace DeckManagerOutput
             
             var totalPower = 0;
 
-            CrisisContributions.Shuffle();
-            foreach (var contribution in CrisisContributions)
+            foreach (var contribution in CrisisContributions.OrderBy(x => x.Item1.CardColor))
             {
                 var appliedPower = _crisis.PositiveColors.Contains(contribution.Item1.CardColor) ? contribution.Item1.CardPower : contribution.Item1.CardPower*-1;
                 toDisplay.AppendLine(string.Format(ResultFormat, appliedPower, contribution.Item1.Heading, contribution.Item2));
@@ -112,7 +110,7 @@ namespace DeckManagerOutput
             var resultOutput = new StringBuilder();
 
             var totalPower = 0;
-            foreach (var contribution in CrisisContributions)
+            foreach (var contribution in CrisisContributions.OrderBy(x => x.Item1.CardColor))
             {
                 var appliedPower = _crisis.PositiveColors.Contains(contribution.Item1.CardColor) ? contribution.Item1.CardPower : contribution.Item1.CardPower * -1;
                 resultOutput.AppendLine(string.Format(FinalFormat, appliedPower, contribution.Item1.Heading));
