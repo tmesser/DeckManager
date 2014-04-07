@@ -103,6 +103,7 @@ namespace DeckManagerOutput
             this.drawCrisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buryTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drawMultipleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PassTurnButton = new System.Windows.Forms.Button();
             this.MainMenuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.AlphaDradisRightClickMenu.SuspendLayout();
@@ -213,6 +214,7 @@ namespace DeckManagerOutput
             this.tableLayoutPanel1.Controls.Add(this.DistanceUpDown, 9, 13);
             this.tableLayoutPanel1.Controls.Add(this.playCrisisButton, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.crisisText, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.PassTurnButton, 10, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -957,6 +959,18 @@ namespace DeckManagerOutput
             this.drawMultipleToolStripMenuItem.Text = "Draw Multiple...";
             this.drawMultipleToolStripMenuItem.Click += new System.EventHandler(this.DrawMultipleToolStripMenuItemClick);
             // 
+            // PassTurnButton
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.PassTurnButton, 2);
+            this.PassTurnButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PassTurnButton.Location = new System.Drawing.Point(672, 3);
+            this.PassTurnButton.Name = "PassTurnButton";
+            this.PassTurnButton.Size = new System.Drawing.Size(117, 49);
+            this.PassTurnButton.TabIndex = 41;
+            this.PassTurnButton.Text = "Pass Turn →";
+            this.PassTurnButton.UseVisualStyleBackColor = true;
+            this.PassTurnButton.Click += new System.EventHandler(this.PassTurnButtonClick);
+            // 
             // GameWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1065,5 +1079,6 @@ namespace DeckManagerOutput
         private System.Windows.Forms.ToolStripMenuItem removeSelectedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem managePlayerToolStripMenuItem;
+        private System.Windows.Forms.Button PassTurnButton;
     }
 }

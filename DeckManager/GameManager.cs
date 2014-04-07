@@ -782,5 +782,15 @@ namespace DeckManager
         }
 
         #endregion
+
+        public void WriteToTurnLog(string input)
+        {
+            CurrentGameState.TurnLog += input + Environment.NewLine;
+        }
+
+        public string GetTurnLog()
+        {
+            return CurrentGameState.TurnLog;
+        }
     }
 }

@@ -653,13 +653,36 @@ namespace DeckManagerOutput
             Program.GManager.SetPlayerLocation(form.RequestedLocation, selectedPlayer.PlayerName);
             Program.GManager.DiscardCards(form.CardsToDiscard, selectedPlayer);
 
-            if (form.RequestedSkillCards.Item2 > 0) // Gimme skill cards!
+            if (form.RequestedSkillCards.Item2 > 0) // Skill cards requested
                 Program.GManager.DrawSkillCards(form.RequestedSkillCards.Item1, form.RequestedSkillCards.Item2, selectedPlayer);
 
-            if (form.RequestedSpecialCards.Item2 > 0) // Gimme special cards!
+            if (form.RequestedSpecialCards.Item2 > 0) // Special cards requested
                 Program.GManager.DrawCards(form.RequestedSpecialCards.Item1, form.RequestedSpecialCards.Item2, selectedPlayer);
 
             RefreshGameListBoxes();
+        }
+        
+        private void PassTurnButtonClick(object sender, EventArgs e)
+        {
+            var dialogResult = MessageBox.Show(Resources.GameWindow_PassTurnButtonClick_PassTurnInfo, Resources.GameWindow_PassTurnButtonClick_PassTurnTitle, MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if(PlayerReadonlyListBox.SelectedIndex == (PlayerReadonlyListBox.Items.Count - 1))
+                    PlayerReadonlyListBox.SelectedIndex += 1;
+                else
+                    PlayerReadonlyListBox.SelectedIndex = 0;
+
+                Program.GManager.WriteToTurnLog(String.Format("The turn passes to {0}!", PlayerReadonlyListBox.SelectedItem));
+
+                System.IO.Directory.CreateDirectory("save/");
+
+                Program.GManager.SaveGame("save/" + DateTime.Now.ToString(@"M/d/yyyy hh:mm:ss tt"));
+
+                var turnRecord = new HelpForm(Program.GManager.GetTurnLog(), "Turn log");
+                turnRecord.Show();
+
+
+            }
         }
     }
 }

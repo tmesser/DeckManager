@@ -279,4 +279,10 @@
   <data name="ManagePlayer_ClickedPlayerNotFound" xml:space="preserve">
     <value>Clicked player not found in the current game state.  This should probably never happen!  PANIC.</value>
   </data>
+  <data name="GameWindow_PassTurnButtonClick_PassTurnInfo" xml:space="preserve">
+    <value>This will pass the turn to the next player, create a save of the current game state, and display the turn log for easy posting.  Please ensure players are updated, all components are moved, resources are correct, and the jump track is accurate.  Are you sure you wish to continue?</value>
+  </data>
+  <data name="GameWindow_PassTurnButtonClick_PassTurnTitle" xml:space="preserve">
+    <value>Pass turn</value>
+  </data>
 </root>

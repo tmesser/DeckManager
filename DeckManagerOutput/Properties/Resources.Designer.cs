@@ -187,6 +187,24 @@ namespace DeckManagerOutput.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This will pass the turn to the next player, create a save of the current game state, and display the turn log for easy posting.  Please ensure players are updated, all components are moved, resources are correct, and the jump track is accurate.  Are you sure you wish to continue?.
+        /// </summary>
+        internal static string GameWindow_PassTurnButtonClick_PassTurnInfo {
+            get {
+                return ResourceManager.GetString("GameWindow_PassTurnButtonClick_PassTurnInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pass turn.
+        /// </summary>
+        internal static string GameWindow_PassTurnButtonClick_PassTurnTitle {
+            get {
+                return ResourceManager.GetString("GameWindow_PassTurnButtonClick_PassTurnTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Saved Games (*.bsg)|*.bsg.
         /// </summary>
         internal static string GameWindow_SavedGamesFilter {
