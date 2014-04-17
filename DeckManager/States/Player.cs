@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using DeckManager.Cards;
 using DeckManager.Cards.Enums;
 using DeckManager.Characters.Enums;
@@ -138,6 +139,17 @@ namespace DeckManager.States
                     LoyaltyCards.Add((LoyaltyCard) card);
                     break;
             }
+        }
+
+        internal string SkillCardString(IEnumerable<SkillCardColor> playerDraw)
+        {
+            var draw = playerDraw.ToList();
+            var ret = new StringBuilder();
+            foreach (var color in draw.Distinct())
+            {
+                ret.Append(draw.Count(x => x == color) + " " + color + ", ");
+            }
+            return ret.ToString(0, ret.Length - 2);
         }
     }
 }

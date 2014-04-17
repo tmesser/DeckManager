@@ -294,6 +294,7 @@ namespace DeckManager
             {
                 foreach (var color in player.SkillCardDraws.ElementAt(drawIndex))
                 {
+                    CurrentGameState.TurnLog += player.Character.CharacterName + " draws " + player.SkillCardString(player.SkillCardDraws.ElementAt(drawIndex)) + "!";
                     switch (color)
                     {
                         case SkillCardColor.Engineering:
