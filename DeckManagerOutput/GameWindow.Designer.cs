@@ -104,6 +104,12 @@ namespace DeckManagerOutput
             this.buryTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drawMultipleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PassTurnButton = new System.Windows.Forms.Button();
+            this.DestinationTabControl = new System.Windows.Forms.TabControl();
+            this.DefaultTab = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.JumpButton = new System.Windows.Forms.Button();
+            this.RollDiceButton = new System.Windows.Forms.Button();
+            this.DiceRollTextBox = new System.Windows.Forms.TextBox();
             this.MainMenuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.AlphaDradisRightClickMenu.SuspendLayout();
@@ -120,6 +126,8 @@ namespace DeckManagerOutput
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DistanceUpDown)).BeginInit();
             this.CrisisRightClickMenu.SuspendLayout();
+            this.DestinationTabControl.SuspendLayout();
+            this.DefaultTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenuStrip
@@ -215,6 +223,10 @@ namespace DeckManagerOutput
             this.tableLayoutPanel1.Controls.Add(this.playCrisisButton, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.crisisText, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.PassTurnButton, 10, 0);
+            this.tableLayoutPanel1.Controls.Add(this.DestinationTabControl, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.JumpButton, 4, 12);
+            this.tableLayoutPanel1.Controls.Add(this.RollDiceButton, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.DiceRollTextBox, 1, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -971,6 +983,73 @@ namespace DeckManagerOutput
             this.PassTurnButton.UseVisualStyleBackColor = true;
             this.PassTurnButton.Click += new System.EventHandler(this.PassTurnButtonClick);
             // 
+            // DestinationTabControl
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.DestinationTabControl, 5);
+            this.DestinationTabControl.Controls.Add(this.DefaultTab);
+            this.DestinationTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DestinationTabControl.Location = new System.Drawing.Point(306, 3);
+            this.DestinationTabControl.Name = "DestinationTabControl";
+            this.tableLayoutPanel1.SetRowSpan(this.DestinationTabControl, 3);
+            this.DestinationTabControl.SelectedIndex = 0;
+            this.DestinationTabControl.Size = new System.Drawing.Size(299, 126);
+            this.DestinationTabControl.TabIndex = 42;
+            // 
+            // DefaultTab
+            // 
+            this.DefaultTab.Controls.Add(this.textBox1);
+            this.DefaultTab.Location = new System.Drawing.Point(4, 22);
+            this.DefaultTab.Name = "DefaultTab";
+            this.DefaultTab.Size = new System.Drawing.Size(291, 100);
+            this.DefaultTab.TabIndex = 0;
+            this.DefaultTab.Text = "Destinations";
+            this.DefaultTab.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(291, 100);
+            this.textBox1.TabIndex = 0;
+            // 
+            // JumpButton
+            // 
+            this.JumpButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.JumpButton.Location = new System.Drawing.Point(306, 477);
+            this.JumpButton.Name = "JumpButton";
+            this.tableLayoutPanel1.SetRowSpan(this.JumpButton, 2);
+            this.JumpButton.Size = new System.Drawing.Size(55, 69);
+            this.JumpButton.TabIndex = 43;
+            this.JumpButton.Text = "Jump!";
+            this.JumpButton.UseVisualStyleBackColor = true;
+            this.JumpButton.Click += new System.EventHandler(this.JumpButtonClick);
+            // 
+            // RollDiceButton
+            // 
+            this.RollDiceButton.Location = new System.Drawing.Point(123, 401);
+            this.RollDiceButton.Name = "RollDiceButton";
+            this.RollDiceButton.Size = new System.Drawing.Size(55, 23);
+            this.RollDiceButton.TabIndex = 44;
+            this.RollDiceButton.Text = "Roll D8";
+            this.RollDiceButton.UseVisualStyleBackColor = true;
+            this.RollDiceButton.Click += new System.EventHandler(this.RollDiceButtonClick);
+            // 
+            // DiceRollTextBox
+            // 
+            this.DiceRollTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.DiceRollTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.DiceRollTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DiceRollTextBox.Location = new System.Drawing.Point(123, 375);
+            this.DiceRollTextBox.Name = "DiceRollTextBox";
+            this.DiceRollTextBox.ReadOnly = true;
+            this.DiceRollTextBox.Size = new System.Drawing.Size(55, 20);
+            this.DiceRollTextBox.TabIndex = 45;
+            this.DiceRollTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // GameWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1000,6 +1079,9 @@ namespace DeckManagerOutput
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DistanceUpDown)).EndInit();
             this.CrisisRightClickMenu.ResumeLayout(false);
+            this.DestinationTabControl.ResumeLayout(false);
+            this.DefaultTab.ResumeLayout(false);
+            this.DefaultTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1080,5 +1162,11 @@ namespace DeckManagerOutput
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem managePlayerToolStripMenuItem;
         private System.Windows.Forms.Button PassTurnButton;
+        private System.Windows.Forms.Button JumpButton;
+        private System.Windows.Forms.TabControl DestinationTabControl;
+        private System.Windows.Forms.TabPage DefaultTab;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button RollDiceButton;
+        private System.Windows.Forms.TextBox DiceRollTextBox;
     }
 }

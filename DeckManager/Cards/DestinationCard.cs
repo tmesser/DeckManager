@@ -26,7 +26,7 @@ namespace DeckManager.Cards
         }
         public override string ToString()
         {
-            return Heading + "\n" + AdditionalText + "\nDistance: " + Distance.ToString();
+            return Heading + "\r\n" + AdditionalText;
         }
 
         /// <summary>

@@ -114,6 +114,12 @@
     <Compile Include="InputForm.Designer.cs">
       <DependentUpon>InputForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="JumpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JumpForm.Designer.cs">
+      <DependentUpon>JumpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OptionalRulesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InputForm.resx">
       <DependentUpon>InputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JumpForm.resx">
+      <DependentUpon>JumpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionalRulesForm.resx">
       <DependentUpon>OptionalRulesForm.cs</DependentUpon>

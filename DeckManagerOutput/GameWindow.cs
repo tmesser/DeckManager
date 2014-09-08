@@ -45,7 +45,7 @@ namespace DeckManagerOutput
             PlayerReadonlyListBox.DataSource = Program.GManager.CurrentGameState.Players;
             PlayerReadonlyListBox.SelectedIndex = 0;
             PlayerReadonlyListBox.EndUpdate();
-
+            
             FoodUpDown.Value = Program.GManager.CurrentGameState.Food;
             FuelUpDown.Value = Program.GManager.CurrentGameState.Fuel;
             MoraleUpDown.Value = Program.GManager.CurrentGameState.Morale;
@@ -81,21 +81,25 @@ namespace DeckManagerOutput
             {
                 JumpPrepGroupBox.ForeColor = Color.Red;
                 JumpPrepGroupBox.Text = Resources.GameWindow_JumpPrepChanged_NoJumping;
+                JumpButton.Enabled = false;
             }
             else if (Risk3RadioButton.Checked)
             {
                 JumpPrepGroupBox.ForeColor = Color.Goldenrod;
                 JumpPrepGroupBox.Text = Resources.GameWindow_JumpPrepChanged_Risk3;
+                JumpButton.Enabled = true;
             }
             else if (Risk1RadioButton.Checked)
             {
                 JumpPrepGroupBox.ForeColor = Color.Goldenrod;
                 JumpPrepGroupBox.Text = Resources.GameWindow_JumpPrepChanged_Risk1;
+                JumpButton.Enabled = true;
             }
             else if (JumpNowRadioButton.Checked)
             {
                 JumpPrepGroupBox.ForeColor = Color.Green;
                 JumpPrepGroupBox.Text = Resources.GameWindow_JumpPrepChanged_JumpNow;
+                JumpButton.Enabled = true;
             }
         }
 
@@ -680,6 +684,58 @@ namespace DeckManagerOutput
 
 
             }
+        }
+
+        private void JumpButtonClick(object sender, EventArgs e)
+        {
+            var destinationCards = Program.GManager.CurrentGameState.DestinationDeck.DrawMany(3);
+            var jumpForm = new JumpForm(Program.GManager.CurrentGameState.DestinationDeck.DrawMany(3));
+            jumpForm.ShowDialog();
+            if (jumpForm.DialogResult == DialogResult.OK)
+            {
+                var tabPage = new TabPage(jumpForm.SelectedCard.Heading);
+                var textBox = new TextBox 
+                {
+                    BackColor = SystemColors.Control, 
+                    BorderStyle = BorderStyle.FixedSingle, 
+                    Dock = DockStyle.Fill, 
+                    Multiline = true, 
+                    ScrollBars = ScrollBars.Vertical,
+                    Text = jumpForm.SelectedCard.AdditionalText
+                };
+                tabPage.Controls.Add(textBox);
+                if (DestinationTabControl.Controls[0].Name == "DefaultTab")
+                    DestinationTabControl.Controls.RemoveAt(0);
+                DestinationTabControl.TabPages.Add(tabPage);
+                Program.GManager.CurrentGameState.TurnLog += "The fleet jumps!  Destination: " + jumpForm.SelectedCard + "\n";
+                Program.GManager.CurrentGameState.JumpPrep = 0;
+                Program.GManager.WipeDradis();
+                RefreshGameListBoxes();
+                Red1RadioButton.Checked = true;
+                JumpPrepChanged(sender, e);
+                if (jumpForm.ThirdCardDrawn)
+                    Program.GManager.BuryCards(destinationCards);
+                else
+                {
+                    var cardArray = destinationCards as DestinationCard[] ?? destinationCards.ToArray();
+                    Program.GManager.BuryCards(cardArray.Take(2));
+                    Program.GManager.TopCard(cardArray.Last());
+                }
+            }
+            else
+            {
+                Program.GManager.TopCards(destinationCards);
+            }
+        }
+
+        private void RollDiceButtonClick(object sender, EventArgs e)
+        {
+            var rand = new Random();
+            var result = rand.Next(1, 9);
+
+            Program.GManager.CurrentGameState.TurnLog += "Rolling D8!  Result: " + result;
+
+            DiceRollTextBox.Text = result.ToString(CultureInfo.InvariantCulture);
         }
     }
 }
