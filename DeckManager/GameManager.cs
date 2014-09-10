@@ -625,6 +625,7 @@ namespace DeckManager
 
         public void MoveComponents(DradisNodeName source, DradisNodeName dest, IEnumerable<BaseComponent> ships)
         { 
+
             CurrentGameState.Dradis.MoveComponents(source, dest, ships);
         }
 
@@ -636,6 +637,7 @@ namespace DeckManager
         /// <returns>The component that has been placed</returns>
         public BaseComponent PlaceComponent( DradisNodeName location, ComponentType type)
         {
+            AddToTurnLog("A " + type + " arrives in " + location + "!");
             BaseComponent ship = null;
             switch (type)
             { 
@@ -744,6 +746,17 @@ namespace DeckManager
             return GetPlayerLocation(player.PlayerName);
         }
 
+        public IEnumerable<BaseCard> GetPlayerHand(Player player)
+        {
+            return GetPlayerHand(player.PlayerName);
+        }
+
+        public IEnumerable<BaseCard> GetPlayerHand(string player)
+        {
+            var playerObject = CurrentGameState.Players.FirstOrDefault(x => x.PlayerName == player);
+            return playerObject == default(Player) ? null : playerObject.Cards;
+        }
+
         public BaseNode GetPlayerLocation(string playerName)
         {
             foreach (var board in CurrentGameState.Boards.Where(
@@ -766,6 +779,8 @@ namespace DeckManager
             {
                 location.PlayersPresent.Remove(playerName);
             }
+
+            AddToTurnLog(playerName + " moves to " + locationName + "!");
 
             // Add the player
             foreach (var location in CurrentGameState.Boards.Select(

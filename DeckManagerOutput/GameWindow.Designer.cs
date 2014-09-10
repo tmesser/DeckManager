@@ -36,16 +36,18 @@ namespace DeckManagerOutput
             this.newGameStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadGameStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveGameStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showTurnLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.CharlieDradisListBox = new System.Windows.Forms.ListBox();
+            this.DradisRightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BravoDradisListBox = new System.Windows.Forms.ListBox();
             this.BravoToCharlieButton = new System.Windows.Forms.Button();
             this.CharlieToBravoButton = new System.Windows.Forms.Button();
             this.ColonialOneListBox = new System.Windows.Forms.ListBox();
             this.AlphaDradisListBox = new System.Windows.Forms.ListBox();
-            this.DradisRightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeltaDradisListBox = new System.Windows.Forms.ListBox();
             this.AlphaToBravoButton = new System.Windows.Forms.Button();
             this.BravoToAlphaButton = new System.Windows.Forms.Button();
@@ -79,6 +81,7 @@ namespace DeckManagerOutput
             this.FoodLabel = new System.Windows.Forms.Label();
             this.MoraleLabel = new System.Windows.Forms.Label();
             this.PopulationLabel = new System.Windows.Forms.Label();
+            this.PlayerReadonlyListBox = new DeckManagerOutput.CustomControls.ReadOnlyListBox();
             this.PlayerRightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ShowHandMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,9 +112,6 @@ namespace DeckManagerOutput
             this.JumpButton = new System.Windows.Forms.Button();
             this.RollDiceButton = new System.Windows.Forms.Button();
             this.DiceRollTextBox = new System.Windows.Forms.TextBox();
-            this.PlayerReadonlyListBox = new DeckManagerOutput.CustomControls.ReadOnlyListBox();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showTurnLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.DradisRightClickMenu.SuspendLayout();
@@ -173,6 +173,21 @@ namespace DeckManagerOutput
             this.saveGameStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.saveGameStripMenuItem.Text = global::DeckManagerOutput.Properties.Resources.GameWindowForm_MainMenu_Game_Save;
             this.saveGameStripMenuItem.Click += new System.EventHandler(this.SaveGameStripMenuItemClick);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showTurnLogToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // showTurnLogToolStripMenuItem
+            // 
+            this.showTurnLogToolStripMenuItem.Name = "showTurnLogToolStripMenuItem";
+            this.showTurnLogToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.showTurnLogToolStripMenuItem.Text = "Show Turn Log";
+            this.showTurnLogToolStripMenuItem.Click += new System.EventHandler(this.ShowTurnLogToolStripMenuItemClick);
             // 
             // tableLayoutPanel1
             // 
@@ -266,6 +281,28 @@ namespace DeckManagerOutput
             this.CharlieDradisListBox.Size = new System.Drawing.Size(116, 70);
             this.CharlieDradisListBox.TabIndex = 3;
             // 
+            // DradisRightClickMenu
+            // 
+            this.DradisRightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
+            this.removeSelectedToolStripMenuItem});
+            this.DradisRightClickMenu.Name = "AlphaDradisRightClickMenu";
+            this.DradisRightClickMenu.Size = new System.Drawing.Size(169, 48);
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.addToolStripMenuItem.Text = "Add Components...";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.AddToolStripMenuItemClick);
+            // 
+            // removeSelectedToolStripMenuItem
+            // 
+            this.removeSelectedToolStripMenuItem.Name = "removeSelectedToolStripMenuItem";
+            this.removeSelectedToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.removeSelectedToolStripMenuItem.Text = "Remove Selected";
+            this.removeSelectedToolStripMenuItem.Click += new System.EventHandler(this.RemoveSelectedToolStripMenuItemClick);
+            // 
             // BravoDradisListBox
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.BravoDradisListBox, 2);
@@ -326,28 +363,6 @@ namespace DeckManagerOutput
             this.AlphaDradisListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.AlphaDradisListBox.Size = new System.Drawing.Size(116, 70);
             this.AlphaDradisListBox.TabIndex = 1;
-            // 
-            // DradisRightClickMenu
-            // 
-            this.DradisRightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
-            this.removeSelectedToolStripMenuItem});
-            this.DradisRightClickMenu.Name = "AlphaDradisRightClickMenu";
-            this.DradisRightClickMenu.Size = new System.Drawing.Size(169, 48);
-            // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.addToolStripMenuItem.Text = "Add Components...";
-            this.addToolStripMenuItem.Click += new System.EventHandler(this.AddToolStripMenuItemClick);
-            // 
-            // removeSelectedToolStripMenuItem
-            // 
-            this.removeSelectedToolStripMenuItem.Name = "removeSelectedToolStripMenuItem";
-            this.removeSelectedToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.removeSelectedToolStripMenuItem.Text = "Remove Selected";
-            this.removeSelectedToolStripMenuItem.Click += new System.EventHandler(this.RemoveSelectedToolStripMenuItemClick);
             // 
             // DeltaDradisListBox
             // 
@@ -730,20 +745,34 @@ namespace DeckManagerOutput
             this.PopulationLabel.TabIndex = 34;
             this.PopulationLabel.Text = "Pop";
             // 
+            // PlayerReadonlyListBox
+            // 
+            this.PlayerReadonlyListBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.PlayerReadonlyListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PlayerReadonlyListBox.ContextMenuStrip = this.PlayerRightClickMenu;
+            this.PlayerReadonlyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlayerReadonlyListBox.FormattingEnabled = true;
+            this.PlayerReadonlyListBox.HorizontalScrollbar = true;
+            this.PlayerReadonlyListBox.Location = new System.Drawing.Point(3, 3);
+            this.PlayerReadonlyListBox.Name = "PlayerReadonlyListBox";
+            this.PlayerReadonlyListBox.ReadOnly = true;
+            this.tableLayoutPanel1.SetRowSpan(this.PlayerReadonlyListBox, 4);
+            this.PlayerReadonlyListBox.Size = new System.Drawing.Size(114, 164);
+            this.PlayerReadonlyListBox.TabIndex = 24;
+            // 
             // PlayerRightClickMenu
             // 
             this.PlayerRightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ShowHandMenuItem,
             this.managePlayerToolStripMenuItem});
             this.PlayerRightClickMenu.Name = "PlayerRightClickMenu";
-            this.PlayerRightClickMenu.Size = new System.Drawing.Size(158, 48);
+            this.PlayerRightClickMenu.Size = new System.Drawing.Size(158, 70);
             // 
             // ShowHandMenuItem
             // 
             this.ShowHandMenuItem.Name = "ShowHandMenuItem";
             this.ShowHandMenuItem.Size = new System.Drawing.Size(157, 22);
             this.ShowHandMenuItem.Text = "Show Hand...";
-            this.ShowHandMenuItem.Click += new System.EventHandler(this.ShowHandMenuItemClick);
             // 
             // managePlayerToolStripMenuItem
             // 
@@ -1042,36 +1071,6 @@ namespace DeckManagerOutput
             this.DiceRollTextBox.Size = new System.Drawing.Size(55, 20);
             this.DiceRollTextBox.TabIndex = 45;
             this.DiceRollTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // PlayerReadonlyListBox
-            // 
-            this.PlayerReadonlyListBox.BackColor = System.Drawing.SystemColors.Menu;
-            this.PlayerReadonlyListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlayerReadonlyListBox.ContextMenuStrip = this.PlayerRightClickMenu;
-            this.PlayerReadonlyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlayerReadonlyListBox.FormattingEnabled = true;
-            this.PlayerReadonlyListBox.HorizontalScrollbar = true;
-            this.PlayerReadonlyListBox.Location = new System.Drawing.Point(3, 3);
-            this.PlayerReadonlyListBox.Name = "PlayerReadonlyListBox";
-            this.PlayerReadonlyListBox.ReadOnly = true;
-            this.tableLayoutPanel1.SetRowSpan(this.PlayerReadonlyListBox, 4);
-            this.PlayerReadonlyListBox.Size = new System.Drawing.Size(114, 164);
-            this.PlayerReadonlyListBox.TabIndex = 24;
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showTurnLogToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // showTurnLogToolStripMenuItem
-            // 
-            this.showTurnLogToolStripMenuItem.Name = "showTurnLogToolStripMenuItem";
-            this.showTurnLogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.showTurnLogToolStripMenuItem.Text = "Show Turn Log";
-            this.showTurnLogToolStripMenuItem.Click += new System.EventHandler(this.ShowTurnLogToolStripMenuItemClick);
             // 
             // GameWindow
             // 

@@ -51,10 +51,14 @@ namespace DeckManagerOutput
             MoraleUpDown.Value = Program.GManager.CurrentGameState.Morale;
             PopUpDown.Value = Program.GManager.CurrentGameState.Population;
 
+            managePlayerToolStripMenuItem.DropDownItems.Clear();
+            ShowHandMenuItem.DropDownItems.Clear();
             foreach (var player in Program.GManager.CurrentGameState.Players)
             {
                 var newMenuItem = new ToolStripMenuItem(player.PlayerName, null, ManagePlayerMenuItemClick);
+                var showHandItem = new ToolStripMenuItem(player.PlayerName, null, ShowHandMenuItemClick);
                 managePlayerToolStripMenuItem.DropDownItems.Add(newMenuItem);
+                ShowHandMenuItem.DropDownItems.Add(showHandItem);
             }
 
             RefreshGameListBoxes();
@@ -64,7 +68,8 @@ namespace DeckManagerOutput
 
         private void ShowHandMenuItemClick(object sender, EventArgs e)
         {
-            var playerHand = Program.GManager.CurrentGameState.Players[PlayerReadonlyListBox.SelectedIndex].Cards;
+            var itemClicked = (ToolStripMenuItem)sender;
+            var playerHand = Program.GManager.GetPlayerHand(itemClicked.Text);
             var handString = new StringBuilder();
             foreach (var card in playerHand)
             {
@@ -563,10 +568,14 @@ namespace DeckManagerOutput
 
                 RefreshGameListBoxes();
 
+                managePlayerToolStripMenuItem.DropDownItems.Clear();
+                ShowHandMenuItem.DropDownItems.Clear();
                 foreach (var player in Program.GManager.CurrentGameState.Players)
                 {
                     var newMenuItem = new ToolStripMenuItem(player.PlayerName, null, ManagePlayerMenuItemClick);
+                    var showHandItem = new ToolStripMenuItem(player.PlayerName, null, ShowHandMenuItemClick);
                     managePlayerToolStripMenuItem.DropDownItems.Add(newMenuItem);
+                    ShowHandMenuItem.DropDownItems.Add(showHandItem);
                 }
 
                 JumpPrepChanged(sender, e);
@@ -642,6 +651,11 @@ namespace DeckManagerOutput
             }
 
             RefreshGameListBoxes();
+        }
+
+        private void ShowPlayerHand(object sender, EventArgs e)
+        {
+
         }
 
         private void ManagePlayerMenuItemClick(object sender, EventArgs e)
