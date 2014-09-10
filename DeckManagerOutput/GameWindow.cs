@@ -106,7 +106,7 @@ namespace DeckManagerOutput
         private void IncreaseJumpPrepToolStripMenuItemClick(object sender, EventArgs e)
         {
             Program.GManager.CurrentGameState.JumpPrep += 1;
-            Program.GManager.CurrentGameState.TurnLog += GetJumpPrepString(true);
+            Program.GManager.AddToTurnLog(GetJumpPrepString(true));
 
             Red1RadioButton.Checked = false;
             Red2RadioButton.Checked = false;
@@ -141,7 +141,7 @@ namespace DeckManagerOutput
         private void DecreaseJumpPrepToolStripMenuItemClick(object sender, EventArgs e)
         {
             Program.GManager.CurrentGameState.JumpPrep -= 1;
-            Program.GManager.CurrentGameState.TurnLog += GetJumpPrepString(true);
+            Program.GManager.AddToTurnLog(GetJumpPrepString(true));
 
             Red1RadioButton.Checked = false;
             Red2RadioButton.Checked = false;
@@ -250,7 +250,7 @@ namespace DeckManagerOutput
 
             movementUpdateString = movementUpdateString.Trim(',', ' ');
             
-            Program.GManager.CurrentGameState.TurnLog += string.Format(Resources.ComponentMovement, movementUpdateString, source, destination);
+            Program.GManager.AddToTurnLog(string.Format(Resources.ComponentMovement, movementUpdateString, source, destination));
         }
 
         private void RefreshGameListBoxes()
@@ -388,7 +388,7 @@ namespace DeckManagerOutput
             Program.GManager.CurrentGameState.CylonBoarding[2] = boardingTemp2;
             Program.GManager.CurrentGameState.CylonBoarding[3] = boardingTemp3;
             Program.GManager.CurrentGameState.CylonBoarding[4] = boardingTemp4;
-            Program.GManager.CurrentGameState.TurnLog += Resources.CenturionsAdvance;
+            Program.GManager.AddToTurnLog(Resources.CenturionsAdvance);
             RefreshCenturionBoardingTrack();
         }
         
@@ -397,7 +397,7 @@ namespace DeckManagerOutput
             if (Program.GManager.CurrentGameState.CylonBoarding[3] > 0)
             {
                 Program.GManager.CurrentGameState.CylonBoarding[3] -= 1;
-                Program.GManager.CurrentGameState.TurnLog += Resources.CenturionDestroyed;
+                Program.GManager.AddToTurnLog(Resources.CenturionDestroyed);
                 RefreshCenturionBoardingTrack();
                 return;
             }
@@ -405,7 +405,7 @@ namespace DeckManagerOutput
             if (Program.GManager.CurrentGameState.CylonBoarding[2] > 0)
             {
                 Program.GManager.CurrentGameState.CylonBoarding[2] -= 1;
-                Program.GManager.CurrentGameState.TurnLog += Resources.CenturionDestroyed;
+                Program.GManager.AddToTurnLog(Resources.CenturionDestroyed);
                 RefreshCenturionBoardingTrack();
                 return;
             }
@@ -413,7 +413,7 @@ namespace DeckManagerOutput
             if (Program.GManager.CurrentGameState.CylonBoarding[1] > 0)
             {
                 Program.GManager.CurrentGameState.CylonBoarding[1] -= 1;
-                Program.GManager.CurrentGameState.TurnLog += Resources.CenturionDestroyed;
+                Program.GManager.AddToTurnLog(Resources.CenturionDestroyed);
                 RefreshCenturionBoardingTrack();
                 return;
             }
@@ -421,7 +421,7 @@ namespace DeckManagerOutput
             if (Program.GManager.CurrentGameState.CylonBoarding[0] > 0)
             {
                 Program.GManager.CurrentGameState.CylonBoarding[0] -= 1;
-                Program.GManager.CurrentGameState.TurnLog += Resources.CenturionDestroyed;
+                Program.GManager.AddToTurnLog(Resources.CenturionDestroyed);
                 RefreshCenturionBoardingTrack();
             }
         }
@@ -437,31 +437,31 @@ namespace DeckManagerOutput
 
         private void FuelUpDownValueChanged(object sender, EventArgs e)
         {
-            Program.GManager.CurrentGameState.TurnLog += string.Format(Resources.ResourceChanged, Resources.Resource_Fuel, FuelUpDown.Value);
+            Program.GManager.AddToTurnLog(string.Format(Resources.ResourceChanged, Resources.Resource_Fuel, FuelUpDown.Value));
             Program.GManager.CurrentGameState.Fuel = (int)FuelUpDown.Value;
         }
 
         private void FoodUpDownValueChanged(object sender, EventArgs e)
         {
-            Program.GManager.CurrentGameState.TurnLog += string.Format(Resources.ResourceChanged, Resources.Resource_Food, FoodUpDown.Value);
+            Program.GManager.AddToTurnLog(string.Format(Resources.ResourceChanged, Resources.Resource_Food, FoodUpDown.Value));
             Program.GManager.CurrentGameState.Food = (int)FoodUpDown.Value;
         }
 
         private void MoraleUpDownValueChanged(object sender, EventArgs e)
         {
-            Program.GManager.CurrentGameState.TurnLog += string.Format(Resources.ResourceChanged, Resources.Resource_Morale, MoraleUpDown.Value);
+            Program.GManager.AddToTurnLog(string.Format(Resources.ResourceChanged, Resources.Resource_Morale, MoraleUpDown.Value));
             Program.GManager.CurrentGameState.Morale = (int)MoraleUpDown.Value;
         }
 
         private void PopUpDownValueChanged(object sender, EventArgs e)
         {
-            Program.GManager.CurrentGameState.TurnLog += string.Format(Resources.ResourceChanged, Resources.Resource_Population, PopUpDown.Value);
+            Program.GManager.AddToTurnLog(string.Format(Resources.ResourceChanged, Resources.Resource_Population, PopUpDown.Value));
             Program.GManager.CurrentGameState.Population = (int)PopUpDown.Value;
         }
 
         private void DistanceUpDownValueChanged(object sender, EventArgs e)
         {
-            Program.GManager.CurrentGameState.TurnLog += string.Format(Resources.ResourceChanged, Resources.Resource_Distance, DistanceUpDown.Value);
+            Program.GManager.AddToTurnLog(string.Format(Resources.ResourceChanged, Resources.Resource_Distance, DistanceUpDown.Value));
             Program.GManager.CurrentGameState.Distance = (int)DistanceUpDown.Value;
         }
 
@@ -608,6 +608,26 @@ namespace DeckManagerOutput
             {
                 Program.GManager.CurrentGameState.Dradis.RemoveComponent(component);
             }
+            foreach (var component in BravoDradisListBox.SelectedItems.OfType<BaseComponent>())
+            {
+                Program.GManager.CurrentGameState.Dradis.RemoveComponent(component);
+            }
+            foreach (var component in CharlieDradisListBox.SelectedItems.OfType<BaseComponent>())
+            {
+                Program.GManager.CurrentGameState.Dradis.RemoveComponent(component);
+            }
+            foreach (var component in DeltaDradisListBox.SelectedItems.OfType<BaseComponent>())
+            {
+                Program.GManager.CurrentGameState.Dradis.RemoveComponent(component);
+            }
+            foreach (var component in EchoDradisListBox.SelectedItems.OfType<BaseComponent>())
+            {
+                Program.GManager.CurrentGameState.Dradis.RemoveComponent(component);
+            }
+            foreach (var component in FoxtrotDradisListBox.SelectedItems.OfType<BaseComponent>())
+            {
+                Program.GManager.CurrentGameState.Dradis.RemoveComponent(component);
+            }
         }
 
         private void AddToolStripMenuItemClick(object sender, EventArgs e)
@@ -673,7 +693,7 @@ namespace DeckManagerOutput
                 else
                     PlayerReadonlyListBox.SelectedIndex = 0;
 
-                Program.GManager.WriteToTurnLog(String.Format("The turn passes to {0}!", PlayerReadonlyListBox.SelectedItem));
+                Program.GManager.AddToTurnLog(String.Format("The turn passes to {0}!", PlayerReadonlyListBox.SelectedItem));
 
                 System.IO.Directory.CreateDirectory("save/");
 
@@ -707,7 +727,7 @@ namespace DeckManagerOutput
                 if (DestinationTabControl.Controls[0].Name == "DefaultTab")
                     DestinationTabControl.Controls.RemoveAt(0);
                 DestinationTabControl.TabPages.Add(tabPage);
-                Program.GManager.CurrentGameState.TurnLog += "The fleet jumps!  Destination: " + jumpForm.SelectedCard + "\n";
+                Program.GManager.AddToTurnLog("The fleet jumps!  Destination: " + jumpForm.SelectedCard);
                 Program.GManager.CurrentGameState.JumpPrep = 0;
                 Program.GManager.WipeDradis();
                 RefreshGameListBoxes();
@@ -733,9 +753,15 @@ namespace DeckManagerOutput
             var rand = new Random();
             var result = rand.Next(1, 9);
 
-            Program.GManager.CurrentGameState.TurnLog += "Rolling D8!  Result: " + result;
+            Program.GManager.AddToTurnLog("Rolling D8!  Result: " + result);
 
             DiceRollTextBox.Text = result.ToString(CultureInfo.InvariantCulture);
+        }
+
+        private void ShowTurnLogToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            var helpForm = new HelpForm(Program.GManager.CurrentGameState.TurnLog, "Turn Log");
+            helpForm.Show();
         }
     }
 }

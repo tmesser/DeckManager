@@ -102,7 +102,6 @@ namespace DeckManager
             GameStates = new List<GameState>();
             var firstTurn = new GameState
                 {
-                    TurnLog = "Begin game.",
                     Players = playerList,
 
                     CrisisDeck = new CrisisDeck(_logger, ConfigurationManager.AppSettings["CrisisDeckLocation"]),
@@ -145,7 +144,6 @@ namespace DeckManager
             CurrentGameState.Dradis.AddComponentToNode(new Raider(), DradisNodeName.Alpha);
             CurrentGameState.Dradis.AddComponentToNode(new Raider(), DradisNodeName.Alpha);
 
-            //TODO: Fuck it we're not handling Baltar here just let the moderator draw extra cards
             foreach (var player in playerList)
             {
                 player.LoyaltyCards.Add(CurrentGameState.LoyaltyDeck.Draw());
@@ -188,8 +186,6 @@ namespace DeckManager
 
         private List<Viper> BuildVipers()
         {
-            // todo account for mk7 vipers
-
             var viperLimit = ConfigurationManager.AppSettings["MaxVipers"].ParseAs<int>();
             var vipers = new Viper[viperLimit];
             var viperInt = 0;
@@ -288,13 +284,23 @@ namespace DeckManager
             CurrentGameState.Dradis.WipeDradis();
         }
 
+        public void AddToTurnLog(string line)
+        {
+            CurrentGameState.TurnLog += line + Environment.NewLine;
+        }
+
+        public string GetTurnLog()
+        {
+            return CurrentGameState.TurnLog;
+        }
+
         public void DoPlayerDraw(Player player, int drawIndex = 0)
         {
             try
             {
+                AddToTurnLog(player.Character.CharacterName + " draws " + player.SkillCardString(player.SkillCardDraws.ElementAt(drawIndex)) + "!");
                 foreach (var color in player.SkillCardDraws.ElementAt(drawIndex))
                 {
-                    CurrentGameState.TurnLog += player.Character.CharacterName + " draws " + player.SkillCardString(player.SkillCardDraws.ElementAt(drawIndex)) + "!";
                     switch (color)
                     {
                         case SkillCardColor.Engineering:
@@ -330,8 +336,7 @@ namespace DeckManager
                 DiscardCard(card, player);
         }
         public void DiscardCard(BaseCard card, Player player = null)
-        {   
-            // todo each discard creates new gamestate? that would let us implement undos
+        {  
             // discards the passed card into its appropriate deck
             switch (card.CardType)
             {
@@ -783,15 +788,5 @@ namespace DeckManager
         }
 
         #endregion
-
-        public void WriteToTurnLog(string input)
-        {
-            CurrentGameState.TurnLog += input + Environment.NewLine;
-        }
-
-        public string GetTurnLog()
-        {
-            return CurrentGameState.TurnLog;
-        }
     }
 }

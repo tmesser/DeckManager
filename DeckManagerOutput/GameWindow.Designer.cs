@@ -43,7 +43,7 @@ namespace DeckManagerOutput
             this.CharlieToBravoButton = new System.Windows.Forms.Button();
             this.ColonialOneListBox = new System.Windows.Forms.ListBox();
             this.AlphaDradisListBox = new System.Windows.Forms.ListBox();
-            this.AlphaDradisRightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.DradisRightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeltaDradisListBox = new System.Windows.Forms.ListBox();
@@ -79,7 +79,6 @@ namespace DeckManagerOutput
             this.FoodLabel = new System.Windows.Forms.Label();
             this.MoraleLabel = new System.Windows.Forms.Label();
             this.PopulationLabel = new System.Windows.Forms.Label();
-            this.PlayerReadonlyListBox = new DeckManagerOutput.CustomControls.ReadOnlyListBox();
             this.PlayerRightClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ShowHandMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,9 +109,12 @@ namespace DeckManagerOutput
             this.JumpButton = new System.Windows.Forms.Button();
             this.RollDiceButton = new System.Windows.Forms.Button();
             this.DiceRollTextBox = new System.Windows.Forms.TextBox();
+            this.PlayerReadonlyListBox = new DeckManagerOutput.CustomControls.ReadOnlyListBox();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showTurnLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.AlphaDradisRightClickMenu.SuspendLayout();
+            this.DradisRightClickMenu.SuspendLayout();
             this.JumpPrepGroupBox.SuspendLayout();
             this.JumpPrepRightClickMenu.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -133,7 +135,8 @@ namespace DeckManagerOutput
             // MainMenuStrip
             // 
             this.MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gameStripMenuItem});
+            this.gameStripMenuItem,
+            this.viewToolStripMenuItem});
             this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainMenuStrip.Name = "MainMenuStrip";
             this.MainMenuStrip.Size = new System.Drawing.Size(792, 24);
@@ -253,6 +256,7 @@ namespace DeckManagerOutput
             // CharlieDradisListBox
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.CharlieDradisListBox, 2);
+            this.CharlieDradisListBox.ContextMenuStrip = this.DradisRightClickMenu;
             this.CharlieDradisListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CharlieDradisListBox.FormattingEnabled = true;
             this.CharlieDradisListBox.Location = new System.Drawing.Point(550, 135);
@@ -265,6 +269,7 @@ namespace DeckManagerOutput
             // BravoDradisListBox
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.BravoDradisListBox, 2);
+            this.BravoDradisListBox.ContextMenuStrip = this.DradisRightClickMenu;
             this.BravoDradisListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BravoDradisListBox.FormattingEnabled = true;
             this.BravoDradisListBox.Location = new System.Drawing.Point(306, 135);
@@ -312,7 +317,7 @@ namespace DeckManagerOutput
             // AlphaDradisListBox
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.AlphaDradisListBox, 2);
-            this.AlphaDradisListBox.ContextMenuStrip = this.AlphaDradisRightClickMenu;
+            this.AlphaDradisListBox.ContextMenuStrip = this.DradisRightClickMenu;
             this.AlphaDradisListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AlphaDradisListBox.FormattingEnabled = true;
             this.AlphaDradisListBox.Location = new System.Drawing.Point(184, 249);
@@ -322,19 +327,19 @@ namespace DeckManagerOutput
             this.AlphaDradisListBox.Size = new System.Drawing.Size(116, 70);
             this.AlphaDradisListBox.TabIndex = 1;
             // 
-            // AlphaDradisRightClickMenu
+            // DradisRightClickMenu
             // 
-            this.AlphaDradisRightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DradisRightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem,
             this.removeSelectedToolStripMenuItem});
-            this.AlphaDradisRightClickMenu.Name = "AlphaDradisRightClickMenu";
-            this.AlphaDradisRightClickMenu.Size = new System.Drawing.Size(221, 48);
+            this.DradisRightClickMenu.Name = "AlphaDradisRightClickMenu";
+            this.DradisRightClickMenu.Size = new System.Drawing.Size(169, 48);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.addToolStripMenuItem.Text = "Add RequestedComponents...";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.addToolStripMenuItem.Text = "Add Components...";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.AddToolStripMenuItemClick);
             // 
             // removeSelectedToolStripMenuItem
@@ -347,6 +352,7 @@ namespace DeckManagerOutput
             // DeltaDradisListBox
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.DeltaDradisListBox, 2);
+            this.DeltaDradisListBox.ContextMenuStrip = this.DradisRightClickMenu;
             this.DeltaDradisListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DeltaDradisListBox.FormattingEnabled = true;
             this.DeltaDradisListBox.Location = new System.Drawing.Point(672, 249);
@@ -466,6 +472,7 @@ namespace DeckManagerOutput
             // FoxtrotDradisListBox
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.FoxtrotDradisListBox, 2);
+            this.FoxtrotDradisListBox.ContextMenuStrip = this.DradisRightClickMenu;
             this.FoxtrotDradisListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoxtrotDradisListBox.FormattingEnabled = true;
             this.FoxtrotDradisListBox.Location = new System.Drawing.Point(306, 401);
@@ -478,6 +485,7 @@ namespace DeckManagerOutput
             // EchoDradisListBox
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.EchoDradisListBox, 2);
+            this.EchoDradisListBox.ContextMenuStrip = this.DradisRightClickMenu;
             this.EchoDradisListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EchoDradisListBox.FormattingEnabled = true;
             this.EchoDradisListBox.Location = new System.Drawing.Point(550, 401);
@@ -721,21 +729,6 @@ namespace DeckManagerOutput
             this.PopulationLabel.Size = new System.Drawing.Size(26, 13);
             this.PopulationLabel.TabIndex = 34;
             this.PopulationLabel.Text = "Pop";
-            // 
-            // PlayerReadonlyListBox
-            // 
-            this.PlayerReadonlyListBox.BackColor = System.Drawing.SystemColors.Menu;
-            this.PlayerReadonlyListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlayerReadonlyListBox.ContextMenuStrip = this.PlayerRightClickMenu;
-            this.PlayerReadonlyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlayerReadonlyListBox.FormattingEnabled = true;
-            this.PlayerReadonlyListBox.HorizontalScrollbar = true;
-            this.PlayerReadonlyListBox.Location = new System.Drawing.Point(3, 3);
-            this.PlayerReadonlyListBox.Name = "PlayerReadonlyListBox";
-            this.PlayerReadonlyListBox.ReadOnly = true;
-            this.tableLayoutPanel1.SetRowSpan(this.PlayerReadonlyListBox, 4);
-            this.PlayerReadonlyListBox.Size = new System.Drawing.Size(114, 164);
-            this.PlayerReadonlyListBox.TabIndex = 24;
             // 
             // PlayerRightClickMenu
             // 
@@ -1050,6 +1043,36 @@ namespace DeckManagerOutput
             this.DiceRollTextBox.TabIndex = 45;
             this.DiceRollTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // PlayerReadonlyListBox
+            // 
+            this.PlayerReadonlyListBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.PlayerReadonlyListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PlayerReadonlyListBox.ContextMenuStrip = this.PlayerRightClickMenu;
+            this.PlayerReadonlyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlayerReadonlyListBox.FormattingEnabled = true;
+            this.PlayerReadonlyListBox.HorizontalScrollbar = true;
+            this.PlayerReadonlyListBox.Location = new System.Drawing.Point(3, 3);
+            this.PlayerReadonlyListBox.Name = "PlayerReadonlyListBox";
+            this.PlayerReadonlyListBox.ReadOnly = true;
+            this.tableLayoutPanel1.SetRowSpan(this.PlayerReadonlyListBox, 4);
+            this.PlayerReadonlyListBox.Size = new System.Drawing.Size(114, 164);
+            this.PlayerReadonlyListBox.TabIndex = 24;
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showTurnLogToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // showTurnLogToolStripMenuItem
+            // 
+            this.showTurnLogToolStripMenuItem.Name = "showTurnLogToolStripMenuItem";
+            this.showTurnLogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.showTurnLogToolStripMenuItem.Text = "Show Turn Log";
+            this.showTurnLogToolStripMenuItem.Click += new System.EventHandler(this.ShowTurnLogToolStripMenuItemClick);
+            // 
             // GameWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1063,7 +1086,7 @@ namespace DeckManagerOutput
             this.MainMenuStrip.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.AlphaDradisRightClickMenu.ResumeLayout(false);
+            this.DradisRightClickMenu.ResumeLayout(false);
             this.JumpPrepGroupBox.ResumeLayout(false);
             this.JumpPrepRightClickMenu.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1157,7 +1180,7 @@ namespace DeckManagerOutput
         private System.Windows.Forms.ToolStripMenuItem drawMultipleToolStripMenuItem;
         private System.Windows.Forms.Button playCrisisButton;
         private System.Windows.Forms.TextBox crisisText;
-        private System.Windows.Forms.ContextMenuStrip AlphaDradisRightClickMenu;
+        private System.Windows.Forms.ContextMenuStrip DradisRightClickMenu;
         private System.Windows.Forms.ToolStripMenuItem removeSelectedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem managePlayerToolStripMenuItem;
@@ -1168,5 +1191,7 @@ namespace DeckManagerOutput
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button RollDiceButton;
         private System.Windows.Forms.TextBox DiceRollTextBox;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showTurnLogToolStripMenuItem;
     }
 }
