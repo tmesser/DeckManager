@@ -9,12 +9,12 @@ namespace DeckManagerOutput.CustomControls
     {
         public int NumCardsRequested
         {
-            get { return DrawCardsCheckBox.Enabled ? DrawAmountComboBox.Text.ParseAs<int>() : 0; }
+            get { return DrawCardsCheckBox.Checked ? DrawAmountComboBox.Text.ParseAs<int>() : 0; }
         }
 
         public SkillCardColor CardColorRequested 
         {
-            get { return DrawCardsCheckBox.Enabled ? (SkillCardColor)Enum.Parse(typeof(SkillCardColor), (string)DrawTypeComboBox.SelectedItem) : 0; }
+            get { return DrawCardsCheckBox.Checked ? (SkillCardColor)Enum.Parse(typeof(SkillCardColor), (string)DrawTypeComboBox.SelectedItem) : 0; }
         }
 
         public DrawCardComboControl()
