@@ -57,7 +57,7 @@
         "Leadership"
       ]
     ],
-    "AdditionalText": "Religious Visions -- When you draw Crisis Cards, draw 2 and choose 1 to resolve.  Place the other on the bottom of the deck.\r\nSkilled Politician -- ACTION: Once per came, draw 4 Quorum Cards.  Choose 1 to resolve and place the rest on the bottom of the deck.  You do not need to be President to use this ability.\r\nTerminal Illness -- In order to activate a location, you must first discard 2 Skill Cards."
+    "AdditionalText": "Religious Visions -- When you draw Crisis Cards, draw 2 and choose 1 to resolve.  Place the other on the bottom of the deck.\r\nSkilled Politician -- ACTION: Once per game, draw 4 Quorum Cards.  Choose 1 to resolve and place the rest on the bottom of the deck.  You do not need to be President to use this ability.\r\nTerminal Illness -- In order to activate a location, you must first discard 2 Skill Cards."
   },
   {
     "CharacterName": "Gaius Baltar",
@@ -109,7 +109,7 @@
         "Politics"
       ],
     ],
-    "AdditionalText": "Alert Viper Pilot -- When a Viper is placed in a space area from the Reserves, yo umay choose to pilot it and take 1 action.  You may only do this when you are on a Galactica location, excluding the Brig.\r\nCAG -- ACTION: Once per game, you may activate up to 6 unmanned Vipers.\r\nHeadstrong -- When you are forced to discard Skill Cards, you must discard randomly."
+    "AdditionalText": "Alert Viper Pilot -- When a Viper is placed in a space area from the Reserves, you may choose to pilot it and take 1 action.  You may only do this when you are on a Galactica location, excluding the Brig.\r\nCAG -- ACTION: Once per game, you may activate up to 6 unmanned Vipers.\r\nHeadstrong -- When you are forced to discard Skill Cards, you must discard randomly."
   },
   {
     "CharacterName": "Kara \"Starbuck\" Thrace",
@@ -161,6 +161,6 @@
         "Leadership"
       ]
     ],
-    "AdditionalText": "Maintenance Engineer -- During your turn, after yo uuse a Repair Skill Card, you may take another action (once per turn).\r\nBlind Devotion -- Once per game, after cards have been added to a Skill Check (but before revealing them), you may choose a skill type.  All cards of the chosen type are considered strength 0.\r\nReckless -- Your hand limit is 8 (instead of 10)"
+    "AdditionalText": "Maintenance Engineer -- During your turn, after you use a Repair Skill Card, you may take another action (once per turn).\r\nBlind Devotion -- Once per game, after cards have been added to a Skill Check (but before revealing them), you may choose a skill type.  All cards of the chosen type are considered strength 0.\r\nReckless -- Your hand limit is 8 (instead of 10)"
   }
 ]
