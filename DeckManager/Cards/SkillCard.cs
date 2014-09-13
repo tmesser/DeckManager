@@ -4,7 +4,7 @@ using Newtonsoft.Json.Converters;
 
 namespace DeckManager.Cards
 {
-    public class SkillCard : BaseCard
+    public class SkillCard : BaseCard, System.IComparable<SkillCard>
     {
         /// <summary>
         /// Gets or sets the color of the card.
@@ -50,6 +50,30 @@ namespace DeckManager.Cards
         public override string ToString()
         {
             return Heading;
+        }
+        /// <summary>
+        /// Used to order skill cards by color.
+        /// </summary>
+        private static SkillCardColor[] colorOrder = new SkillCardColor[6] {SkillCardColor.Politics, 
+            SkillCardColor.Leadership, 
+            SkillCardColor.Tactics, 
+            SkillCardColor.Piloting,
+            SkillCardColor.Engineering,
+            SkillCardColor.Treachery };
+
+        public int CompareTo(SkillCard right)
+        {
+            if (this.CardColor == right.CardColor)
+            {
+                if (this.CardPower == right.CardPower)
+                    return string.Compare(this.Heading, right.Heading);
+                else
+                    return this.CardPower - right.CardPower;
+            }
+            else
+            {
+                return System.Array.IndexOf(colorOrder, this.CardColor) - System.Array.IndexOf(colorOrder, right.CardColor);
+            }
         }
     }
 }

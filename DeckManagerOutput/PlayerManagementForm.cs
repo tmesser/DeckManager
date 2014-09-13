@@ -21,6 +21,7 @@ namespace DeckManagerOutput
         {
             InitializeComponent();
             _playerToManage = playerToManage;
+            _playerToManage.Cards.Sort();
             PlayerNameLabel.Text = _playerToManage.PlayerName;
             CharacterNameLabel.Text = _playerToManage.Character.CharacterName;
             PlayerCardListBox.DataSource = _playerToManage.Cards;

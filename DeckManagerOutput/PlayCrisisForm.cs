@@ -43,6 +43,7 @@ namespace DeckManagerOutput
             InitializeComponent();
 
             PlayerDropDown.DataSource = _players;
+            _players.ToList().ForEach(x => x.Cards.Sort());
             PlayerCardListBox.DataSource = _players.First().Cards;
 
             _playerCloneList = _players.ToList();
@@ -59,7 +60,7 @@ namespace DeckManagerOutput
             
             var totalPower = 0;
 
-            foreach (var contribution in CrisisContributions.OrderBy(x => x.Item1.CardColor))
+            foreach (var contribution in CrisisContributions.OrderBy(x => x.Item1))
             {
                 var appliedPower = _crisis.PositiveColors.Contains(contribution.Item1.CardColor) ? contribution.Item1.CardPower : contribution.Item1.CardPower*-1;
                 toDisplay.AppendLine(string.Format(ResultFormat, appliedPower, contribution.Item1.Heading, contribution.Item2));
