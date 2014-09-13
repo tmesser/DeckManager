@@ -644,6 +644,7 @@ namespace DeckManagerOutput
             {
                 Program.GManager.CurrentGameState.Dradis.RemoveComponent(component);
             }
+            RefreshGameListBoxes();
         }
 
         private void AddToolStripMenuItemClick(object sender, EventArgs e)
