@@ -674,28 +674,31 @@ namespace DeckManager
         /// <summary>
         /// Inserts the card into the player's appropriate hand
         /// </summary>
-        /// <param name="player"></param>
+        /// <param name="toPlayer"></param>
         /// <param name="card"></param>
-        public void GiveCardToPlayer(Player player, BaseCard card)
+        public void GiveCardToPlayer(Player toPlayer, BaseCard card, Player fromPlayer = null)
         {
             switch (card.CardType)
             {
                 case CardType.Skill:
-                    player.Cards.Add((SkillCard)card);
+                    toPlayer.Cards.Add((SkillCard)card);
                     break;
                 case CardType.Quorum:
-                    player.QuorumHand.Add((QuorumCard)card);
+                    toPlayer.QuorumHand.Add((QuorumCard)card);
                     break;
                 case CardType.Loyalty:
-                    player.LoyaltyCards.Add((LoyaltyCard)card);
+                    toPlayer.LoyaltyCards.Add((LoyaltyCard)card);
                     break;
                 case CardType.SuperCrisis:
-                    player.SuperCrisisCards.Add((SuperCrisisCard)card);
+                    toPlayer.SuperCrisisCards.Add((SuperCrisisCard)card);
                     break;
                 case CardType.Mutiny:
-                    player.MutinyHand.Add((MutinyCard)card);
+                    toPlayer.MutinyHand.Add((MutinyCard)card);
                     break;
             }
+
+            if (fromPlayer != null)
+                fromPlayer.Discard(card);
         }
         public void GiveCardToPlayer(Player player, IEnumerable<BaseCard> cards)
         {
