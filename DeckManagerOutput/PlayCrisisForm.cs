@@ -12,6 +12,7 @@ namespace DeckManagerOutput
     public partial class PlayCrisisForm : Form
     {
         private readonly IEnumerable<Player> _players;
+        private readonly List<Player> _playerCloneList;
         private readonly CrisisCard _crisis;
         private readonly IEnumerable<SkillCard> _destinyCards;
 
@@ -23,6 +24,8 @@ namespace DeckManagerOutput
 
         public string Result { get; private set; }
         public IList<Tuple<SkillCard, string>> CrisisContributions { get; set; }
+
+        public Player PlayerTakingCards { get; private set; }
 
         public PlayCrisisForm(IEnumerable<Player> players, CrisisCard crisis, IEnumerable<SkillCard> destinyCards )
         {
@@ -41,6 +44,10 @@ namespace DeckManagerOutput
 
             PlayerDropDown.DataSource = _players;
             PlayerCardListBox.DataSource = _players.First().Cards;
+
+            _playerCloneList = _players.ToList();
+            PlayerTakeCardsDropdown.DataSource = _playerCloneList;            
+
             RefreshResultPane();
         }
 
@@ -126,6 +133,9 @@ namespace DeckManagerOutput
             resultOutput.Append(@"}");
 
             Result = resultOutput.ToString();
+
+            if (PlayerTakeCardsCheckBox.Checked == true)
+                PlayerTakingCards = (Player)PlayerTakeCardsDropdown.SelectedItem;
 
             DialogResult = DialogResult.OK;
             Close();

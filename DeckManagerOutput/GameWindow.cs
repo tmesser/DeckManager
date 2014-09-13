@@ -604,8 +604,16 @@ namespace DeckManagerOutput
                 return;
             }
 
-            foreach (var contribution in form.CrisisContributions)
-                Program.GManager.DiscardCard(contribution.Item1, Program.GManager.FindPlayerByName(contribution.Item2));
+            if (form.PlayerTakingCards == null)
+            {
+                foreach (var contribution in form.CrisisContributions)
+                    Program.GManager.DiscardCard(contribution.Item1, Program.GManager.FindPlayerByName(contribution.Item2));
+            }
+            else 
+            {
+                foreach (var contribution in form.CrisisContributions)
+                    Program.GManager.GiveCardToPlayer(form.PlayerTakingCards, contribution.Item1, Program.GManager.FindPlayerByName(contribution.Item2));
+            }           
 
             Program.GManager.DiscardCard(CurrentCrisis);
             
