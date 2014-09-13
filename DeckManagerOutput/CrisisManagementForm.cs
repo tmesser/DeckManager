@@ -16,12 +16,17 @@ namespace DeckManagerOutput
         {
             InitializeComponent();
             var count = 1;
+            System.Drawing.Size boxSize = new System.Drawing.Size();
+            boxSize.Width = 465;
             foreach (var crisis in crises)
             {
                 var crisisControl = new CrisisManagementControl(crisis, count);
                 contentPanel.Controls.Add(crisisControl);
+                boxSize.Height += crisisControl.Size.Height;
                 count++;
             }
+            boxSize.Height += 100;
+            this.Size = boxSize;
         }
 
         private void SubmitButtonClick(object sender, EventArgs e)
