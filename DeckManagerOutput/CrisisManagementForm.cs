@@ -26,6 +26,8 @@ namespace DeckManagerOutput
                 count++;
             }
             boxSize.Height += 100;
+            if (boxSize.Height > 1000)
+                boxSize.Height = 1000;
             this.Size = boxSize;
         }
 
