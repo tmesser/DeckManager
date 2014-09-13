@@ -53,22 +53,29 @@ namespace DeckManager.Decks
 
                 try
                 {
-                    cardsFromBox = Shuffle(cardsFromBox);
-                    usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(5));
-                    usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.Cylon));
+                    cardsFromBox = Shuffle(cardsFromBox);                   
 
                     switch (players)
                     {
+                        case 3:
+                            usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(5));
+                            usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.Cylon));
+                            break;
                         case 4:
-                            usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.NotACylon));
+                            usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(6));
+                            usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.Cylon));
                             break;
                         case 5:
-                            usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.Cylon));
-                            usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(3));
+                            usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.Cylon).Take(2));
+                            usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(8));
                             break;
                         case 6:
-                            usedLoyaltyCards.Add(cardsFromBox.First(x => x.Loyalty == Loyalty.Cylon));
-                            usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(4));
+                            usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.Cylon).Take(2));
+                            usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(9));
+                            break;
+                        case 7:
+                            usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.Cylon).Take(3));
+                            usedLoyaltyCards.AddRange(cardsFromBox.Where(x => x.Loyalty == Loyalty.NotACylon).Take(11));
                             break;
                     }
 
