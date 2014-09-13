@@ -1,0 +1,93 @@
+[
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Massive Assault ",
+    "AdditionalText": "1. Activate Heavies, Launch Nukes \r\n2. Setup: BRAVO: Basestar, 4 Raiders CHARLIE: Basestar, 2 Raiders, 1 Heavy ECHO: Viper, 2 Civilian Ships FOXTROT: Viper, 2 Civilian Ships \r\n3. -2 Jump Prep",
+    "PositiveColors": [],
+    "Activation": "None",
+    "PassLevels": []
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Bomb On Colonial One ",
+    "AdditionalText": "Skill check: TAC/PIL/ENG = 15 \r\nPASS: No Effect \r\nFAIL: -2 Morale, all characters in Administration, President's Office, and Press Room are sent to Sickbay. Until the end of the game, no player may move to or activate Administration, President's Office, and Press Room.",
+    "PositiveColors": [
+      "Tactics",
+      "Engineering",
+      "Piloting"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 15,
+        "Item2": " No Effect \r"
+      },
+      {
+        "Item2": " -2 Morale, all characters in Administration, President's Office, and Press Room are sent to Sickbay. Until the end of the game, no player may move to or activate Administration, President's Office, and Press Room."
+      }
+    ]
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Cylon Intruders ",
+    "AdditionalText": "Skill check: LEA/TAC = 18 \r\nPASS: No Effect \r\n14+: Place 1 Centurion marker at the beginning of the Boarding Party track. \r\nFAIL: Damage Galactica once and place 2 Centurion markers at the beginning of the Boarding Party track.",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 18,
+        "Item2": " No Effect \r"
+      },
+      {
+        "Item1": 14,
+        "Item2": " Place 1 Centurion marker at the beginning of the Boarding Party track. \r"
+      },
+      {
+        "Item2": " Damage Galactica once and place 2 Centurion markers at the beginning of the Boarding Party track."
+      }
+    ]
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Fleet Mobilization ",
+    "AdditionalText": "Skill check: LEA/TAC/PIL/ENG = 24 \r\nPASS: Launch Nukes, Launch Raiders \r\nFAIL: Launch Nukes, Activate Raiders, Activate Heavies, Launch Raiders",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics",
+      "Engineering",
+      "Piloting"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 24,
+        "Item2": " Launch Nukes, Launch Raiders \r"
+      },
+      {
+        "Item2": " Launch Nukes, Activate Raiders, Activate Heavies, Launch Raiders"
+      }
+    ]
+  },
+  {
+    "CardType": "SuperCrisis",
+    "Heading": "SUPER CRISIS: Inbound Nukes ",
+    "AdditionalText": "Skill check: LEA/TAC = 15 \r\nPASS: No Effect \r\nFAIL: -1 Fuel, -1 Food, -1 Population",
+    "PositiveColors": [
+      "Leadership",
+      "Tactics"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 15,
+        "Item2": " No Effect \r"
+      },
+      {
+        "Item2": " -1 Fuel, -1 Food, -1 Population"
+      }
+    ]
+  }
+]
