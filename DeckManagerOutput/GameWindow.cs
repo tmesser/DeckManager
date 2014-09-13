@@ -260,6 +260,13 @@ namespace DeckManagerOutput
 
         private void RefreshGameListBoxes()
         {
+            var selectedIndex = PlayerReadonlyListBox.SelectedIndex;
+            PlayerReadonlyListBox.BeginUpdate();
+            PlayerReadonlyListBox.DataSource = null;
+            PlayerReadonlyListBox.DataSource = Program.GManager.CurrentGameState.Players;
+            PlayerReadonlyListBox.SelectedIndex = selectedIndex;
+            PlayerReadonlyListBox.EndUpdate();
+
             AlphaDradisListBox.DataSource = null;
             BravoDradisListBox.DataSource = null;
             CharlieDradisListBox.DataSource = null;

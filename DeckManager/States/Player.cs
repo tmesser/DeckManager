@@ -44,7 +44,7 @@ namespace DeckManager.States
         public override string ToString()
         {
             // MetricUnit (President Roslin [1], 6Q)
-            return PlayerName + " (" + Titles.ToSingleString() + Character.CharacterName + ") [" + Cards.Count + "] " + ((QuorumHand != null && QuorumHand.Count > 0) ? QuorumHand.Count + "Q" : string.Empty);
+            return PlayerName + " (" + Titles.ToSingleString() + Character.CharacterName + ") [" + Cards.Count + "] " + ((QuorumHand != null && QuorumHand.Count > 0) ? QuorumHand.Count + "Q" : string.Empty) + ((SuperCrisisCards != null && SuperCrisisCards.Count > 0) ? SuperCrisisCards.Count + "SCC" : string.Empty);
         }
 
         public IEnumerable<IEnumerable<SkillCardColor>> SkillCardDraws
