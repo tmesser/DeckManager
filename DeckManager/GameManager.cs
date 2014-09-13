@@ -294,6 +294,13 @@ namespace DeckManager
             return CurrentGameState.TurnLog;
         }
 
+        public void EndTurn()
+        {
+            var newTurn = CurrentGameState;
+            newTurn.TurnLog = string.Empty;
+            GameStates.Add(newTurn);
+        }
+
         public void DoPlayerDraw(Player player, int drawIndex = 0)
         {
             try

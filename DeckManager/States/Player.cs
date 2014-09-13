@@ -36,6 +36,7 @@ namespace DeckManager.States
             CustomDraws  = new List<List<SkillCardColor>>();
             MutinyHand = new List<MutinyCard>();
             SuperCrisisCards = new List<SuperCrisisCard>();
+            QuorumHand = new List<QuorumCard>();
             Titles  = new List<Titles>();
             Character = new Characters.Character();
         }

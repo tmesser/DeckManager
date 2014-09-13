@@ -703,20 +703,20 @@ namespace DeckManagerOutput
             if (dialogResult == DialogResult.Yes)
             {
                 if(PlayerReadonlyListBox.SelectedIndex == (PlayerReadonlyListBox.Items.Count - 1))
-                    PlayerReadonlyListBox.SelectedIndex += 1;
-                else
                     PlayerReadonlyListBox.SelectedIndex = 0;
+                else
+                    PlayerReadonlyListBox.SelectedIndex += 1;
+                    
 
                 Program.GManager.AddToTurnLog(String.Format("The turn passes to {0}!", PlayerReadonlyListBox.SelectedItem));
 
-                System.IO.Directory.CreateDirectory("save/");
+                System.IO.Directory.CreateDirectory("save\\");
 
-                Program.GManager.SaveGame("save/" + DateTime.Now.ToString(@"M/d/yyyy hh:mm:ss tt"));
+                Program.GManager.SaveGame(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "save\\" + DateTime.Now.ToString(@"M-d-yyyy-hh_mm_ss-tt") + ".bsg"));
 
                 var turnRecord = new HelpForm(Program.GManager.GetTurnLog(), "Turn log");
                 turnRecord.Show();
-
-
+                Program.GManager.EndTurn();
             }
         }
 
