@@ -384,7 +384,7 @@ namespace DeckManagerOutput
         private void AddCenturionToBoardingTrackToolStripMenuItemClick(object sender, EventArgs e)
         {
             Program.GManager.CurrentGameState.CylonBoarding[0] += 1;
-            Program.GManager.CurrentGameState.TurnLog += Resources.CenturionBoardsGalactica;
+            Program.GManager.AddToTurnLog(Resources.CenturionBoardsGalactica);
             RefreshCenturionBoardingTrack();
         }
 
