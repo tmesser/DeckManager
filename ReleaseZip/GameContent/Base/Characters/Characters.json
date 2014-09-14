@@ -68,7 +68,6 @@
         "Politics",
         "Politics",
         "Engineering",
-        "Leadership",
         "Leadership"
       ]
     ],
@@ -161,6 +160,6 @@
         "Leadership"
       ]
     ],
-    "AdditionalText": "Maintenance Engineer -- During your turn, after you use a Repair Skill Card, you may take another action (once per turn).\r\nBlind Devotion -- Once per game, after cards have been added to a Skill Check (but before revealing them), you may choose a skill type.  All cards of the chosen type are considered strength 0.\r\nReckless -- Your hand limit is 8 (instead of 10)"
+    "AdditionalText": "Maintenance Engineer -- During your turn, after you use a Repair Skill Card, you may take another action (once per turn).\r\nBlind Devotion -- Once per game, after cards have been added to a Skill Check (but before revealing them), you may choose a skill type.  All cards of the chosen type are considered strength 0.\r\nReckless -- Your hand limit is 8 (instead of 10)."
   }
 ]
