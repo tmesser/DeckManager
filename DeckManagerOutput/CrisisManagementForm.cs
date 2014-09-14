@@ -42,7 +42,7 @@ namespace DeckManagerOutput
             }
 
             if (decisions.Count(x => x.Action == CrisisAction.Replace) !=
-                (from decision in decisions select decision.Order).Distinct().Count())
+                (from decision in decisions where decision.Action == CrisisAction.Replace select decision.Order).Distinct().Count())
             {
                 MessageBox.Show(Resources.CrisisManagementForm_BadReplacementOrder);
                 return;
