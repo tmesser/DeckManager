@@ -17,7 +17,9 @@ namespace DeckManagerOutput
             {
                 widthList.AddRange(displayLines.Select(line => (int) g.MeasureString(line, MessageRichTextBox.Font).Width));
             }
-            Width = ((int)widthList.Average()+50 < 500) ? (int)widthList.Average()+50 : 500;
+            Width = 50;
+            if (widthList.Count > 0)
+                Width = ((int)widthList.Average()+50 < 500) ? (int)widthList.Average()+50 : 500;
 
             toDisplay = toDisplay.Replace(Environment.NewLine, @" \line "); //Flattening carriage returns from string input to rtf.
 
