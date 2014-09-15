@@ -96,7 +96,7 @@ namespace DeckManager
             return ret;
         }
 
-        public GameState NewGame(IEnumerable<Player> numPlayers, int extraLoyaltyCards, bool usingSympathizer)
+        public GameState NewGame(IEnumerable<Player> numPlayers, int extraLoyaltyCards, bool usingSympathizer, int firstPlayerDraw)
         {
             var playerList = numPlayers.ToList();
             GameStates = new List<GameState>();
@@ -144,7 +144,12 @@ namespace DeckManager
             CurrentGameState.Dradis.AddComponentToNode(new Raider(), DradisNodeName.Alpha);
             CurrentGameState.Dradis.AddComponentToNode(new Raider(), DradisNodeName.Alpha);
 
-            foreach (var player in playerList)
+            var firstPlayer = playerList.First();
+            firstPlayer.LoyaltyCards.Add(CurrentGameState.LoyaltyDeck.Draw());
+            DoPlayerDraw(firstPlayer, firstPlayerDraw);
+            AttemptToPlacePlayer(firstPlayer);
+
+            foreach (var player in playerList.Skip(1))
             {
                 player.LoyaltyCards.Add(CurrentGameState.LoyaltyDeck.Draw());
                 DoPlayerDraw(player);

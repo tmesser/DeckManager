@@ -39,7 +39,18 @@ namespace DeckManagerOutput
             if (optionalRulesForm.DialogResult != DialogResult.OK)
                 return;
 
-            Program.GManager.NewGame(rosterForm.Players, optionalRulesForm.ExtraLoyaltyCards, optionalRulesForm.UsingSympathizer);
+            var firstPlayerDrawIndex = 0;
+
+            var currentPlayer = rosterForm.Players.First();
+            if (currentPlayer.Character.DefaultDrawColors.Count > 0)
+            {
+                var drawForm = new SelectDrawForm(currentPlayer.Character.DefaultDrawColors);
+                drawForm.ShowDialog();
+
+                if (drawForm.DialogResult == DialogResult.OK && drawForm.SelectedSkillCardDrawIndex.HasValue)
+                    firstPlayerDrawIndex = drawForm.SelectedSkillCardDrawIndex.Value;
+            }
+            Program.GManager.NewGame(rosterForm.Players, optionalRulesForm.ExtraLoyaltyCards, optionalRulesForm.UsingSympathizer, firstPlayerDrawIndex);
 
             PlayerReadonlyListBox.BeginUpdate();
             PlayerReadonlyListBox.DataSource = Program.GManager.CurrentGameState.Players;
@@ -669,11 +680,6 @@ namespace DeckManagerOutput
             RefreshGameListBoxes();
         }
 
-        private void ShowPlayerHand(object sender, EventArgs e)
-        {
-
-        }
-
         private void ManagePlayerMenuItemClick(object sender, EventArgs e)
         {
             var itemClicked = (ToolStripMenuItem) sender;
@@ -735,13 +741,15 @@ namespace DeckManagerOutput
                 Program.GManager.EndTurn();
 
                 var currentPlayer = (Player)PlayerReadonlyListBox.SelectedItem;
-                if (currentPlayer.Character.DefaultDrawColors.Count == 1)
+                if (currentPlayer.Character.DefaultDrawColors.Count > 0)
                 {
-                    Program.GManager.DoPlayerDraw(currentPlayer);
-                }
-                else
-                {
+                    var drawForm = new SelectDrawForm(currentPlayer.Character.DefaultDrawColors);
+                    drawForm.ShowDialog();
 
+                    if(drawForm.DialogResult == DialogResult.OK && drawForm.SelectedSkillCardDrawIndex.HasValue)
+                        Program.GManager.DoPlayerDraw(currentPlayer, drawForm.SelectedSkillCardDrawIndex.Value);
+
+                    RefreshGameListBoxes();
                 }
             }
         }

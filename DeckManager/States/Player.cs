@@ -20,12 +20,8 @@ namespace DeckManager.States
         public List<List<SkillCardColor>> CustomDraws { get; set; }
         public List<SuperCrisisCard> SuperCrisisCards { get; set; }
         public List<Titles> Titles { get; set; }
-        public int MiracleTokens { get; set; }
+        public bool OncePerGamePower { get; set; }
         public int DefaultDrawIndex { get; set; }
-        /// <summary>
-        /// Gets or sets whether the player has revealed themselves to be a cylon. 
-        /// todo maybe make sure player has cylon loyalty in setter
-        /// </summary>
         public bool RevealedCylon { get; set; }
 
         public Player()
