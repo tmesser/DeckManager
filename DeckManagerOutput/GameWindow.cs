@@ -733,6 +733,16 @@ namespace DeckManagerOutput
                 var turnRecord = new HelpForm(Program.GManager.GetTurnLog(), "Turn log");
                 turnRecord.Show();
                 Program.GManager.EndTurn();
+
+                var currentPlayer = (Player)PlayerReadonlyListBox.SelectedItem;
+                if (currentPlayer.Character.DefaultDrawColors.Count == 1)
+                {
+                    Program.GManager.DoPlayerDraw(currentPlayer);
+                }
+                else
+                {
+
+                }
             }
         }
 
