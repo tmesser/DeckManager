@@ -148,12 +148,14 @@ namespace DeckManager
             firstPlayer.LoyaltyCards.Add(CurrentGameState.LoyaltyDeck.Draw());
             DoPlayerDraw(firstPlayer, firstPlayerDraw);
             AttemptToPlacePlayer(firstPlayer);
+            firstPlayer.OncePerGamePower = true;
 
             foreach (var player in playerList.Skip(1))
             {
                 player.LoyaltyCards.Add(CurrentGameState.LoyaltyDeck.Draw());
                 DoPlayerDraw(player);
                 AttemptToPlacePlayer(player);
+                player.OncePerGamePower = true;
             }
 
             return CurrentGameState;

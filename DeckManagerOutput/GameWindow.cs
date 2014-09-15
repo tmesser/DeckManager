@@ -709,6 +709,7 @@ namespace DeckManagerOutput
 
             Program.GManager.SetPlayerLocation(form.RequestedLocation, selectedPlayer.PlayerName);
             Program.GManager.DiscardCards(form.CardsToDiscard, selectedPlayer);
+            selectedPlayer.OncePerGamePower = form.OpgStatus;
 
             if (form.RequestedSkillCards.Item2 > 0) // Skill cards requested
                 Program.GManager.DrawSkillCards(form.RequestedSkillCards.Item1, form.RequestedSkillCards.Item2, selectedPlayer);
