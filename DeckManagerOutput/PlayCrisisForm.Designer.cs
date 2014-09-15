@@ -93,7 +93,7 @@
             this.CommitButton.Name = "CommitButton";
             this.CommitButton.Size = new System.Drawing.Size(75, 23);
             this.CommitButton.TabIndex = 2;
-            this.CommitButton.Text = "Commit →";
+            this.CommitButton.Text = "&Commit →";
             this.CommitButton.UseVisualStyleBackColor = true;
             this.CommitButton.Click += new System.EventHandler(this.CommitButtonClick);
             // 
@@ -122,6 +122,7 @@
             // CancelButton
             // 
             this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelButton.Location = new System.Drawing.Point(336, 404);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
@@ -152,8 +153,10 @@
             // 
             // PlayCrisisForm
             // 
+            this.AcceptButton = this.SubmitButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CancelButton;
             this.ClientSize = new System.Drawing.Size(414, 431);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PlayCrisisForm";
