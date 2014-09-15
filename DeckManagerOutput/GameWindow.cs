@@ -756,8 +756,8 @@ namespace DeckManagerOutput
 
         private void JumpButtonClick(object sender, EventArgs e)
         {
-            var destinationCards = Program.GManager.CurrentGameState.DestinationDeck.DrawMany(3);
-            var jumpForm = new JumpForm(Program.GManager.CurrentGameState.DestinationDeck.DrawMany(3));
+            var destinationCards = Program.GManager.CurrentGameState.DestinationDeck.DrawMany(3).ToList();
+            var jumpForm = new JumpForm(destinationCards);
             jumpForm.ShowDialog();
             if (jumpForm.DialogResult == DialogResult.OK)
             {
@@ -785,13 +785,13 @@ namespace DeckManagerOutput
                     Program.GManager.BuryCards(destinationCards);
                 else
                 {
-                    var cardArray = destinationCards as DestinationCard[] ?? destinationCards.ToArray();
-                    Program.GManager.BuryCards(cardArray.Take(2));
-                    Program.GManager.TopCard(cardArray.Last());
+                    Program.GManager.BuryCards(destinationCards.Take(2));
+                    Program.GManager.TopCard(destinationCards.Last());
                 }
             }
             else
             {
+                destinationCards.Reverse();
                 Program.GManager.TopCards(destinationCards);
             }
         }
