@@ -50,15 +50,25 @@ namespace DeckManager.Boards.Dradis
         /// </summary>
         public void WipeComponents()
         {
+            foreach (var ship in Components)
+            {
+                if (ship.ComponentType == DeckManager.Components.Enums.ComponentType.Viper)
+                {
+                    ((Viper)ship).Status = DeckManager.Components.Enums.ComponentStatus.InReserve;
+                    ((Viper)ship).Pilot = null;
+                }
+                if (ship.ComponentType == DeckManager.Components.Enums.ComponentType.Civilian)
+                    ((Civilian)ship).Status = DeckManager.Components.Enums.ComponentStatus.InReserve;
+            }
             Components.Clear();
         }
 
         public new List<string> PlayersPresent
         {
             get { return (from ship in Components 
-                                        where ship.ComponentType == DeckManager.Components.Enums.ComponentType.Viper 
-                                        && ((Viper)ship).Pilot != null 
-                                        select ((Viper)ship).Pilot.PlayerName).ToList<string>(); }
+                          where ship.ComponentType == DeckManager.Components.Enums.ComponentType.Viper 
+                          && ((Viper)ship).Pilot != null 
+                          select ((Viper)ship).Pilot.PlayerName).ToList<string>(); }
         }
     }
 }

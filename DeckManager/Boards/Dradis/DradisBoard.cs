@@ -59,6 +59,11 @@ namespace DeckManager.Boards.Dradis
             if (component.ComponentType == Components.Enums.ComponentType.Viper)
             {
                 ((Viper)component).Pilot = null;
+                ((Viper)component).Status = Components.Enums.ComponentStatus.InReserve;
+            }
+            if (component.ComponentType == Components.Enums.ComponentType.Civilian)
+            {
+                ((Civilian)component).Status = Components.Enums.ComponentStatus.InReserve;
             }
         }
 
