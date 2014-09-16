@@ -56,7 +56,10 @@ namespace DeckManager.Boards.Dradis
                 sector = Nodes.First(x => x.Components.Contains(component));
             }
             sector.Components.Remove(component);
-
+            if (component.ComponentType == Components.Enums.ComponentType.Viper)
+            {
+                ((Viper)component).Pilot = null;
+            }
         }
 
         /// <summary>

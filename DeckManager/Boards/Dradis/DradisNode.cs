@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using DeckManager.Boards.Dradis.Enums;
 using DeckManager.Components;
+using System.Linq;
 
 namespace DeckManager.Boards.Dradis
 {
@@ -50,6 +51,14 @@ namespace DeckManager.Boards.Dradis
         public void WipeComponents()
         {
             Components.Clear();
+        }
+
+        public new List<string> PlayersPresent
+        {
+            get { return (from ship in Components 
+                                        where ship.ComponentType == DeckManager.Components.Enums.ComponentType.Viper 
+                                        && ((Viper)ship).Pilot != null 
+                                        select ((Viper)ship).Pilot.PlayerName).ToList<string>(); }
         }
     }
 }
