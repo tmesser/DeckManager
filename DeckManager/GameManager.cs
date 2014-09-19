@@ -821,6 +821,23 @@ namespace DeckManager
             return CurrentGameState.DestinyDeck.DrawMany(count);
         }
 
+        public void DestroyRaptor()
+        {
+            if(CurrentGameState.CurrentRaptors > 0)
+                CurrentGameState.CurrentRaptors -= 1;
+        }
+
+        public void ProduceRaptor()
+        {
+            if (CurrentGameState.CurrentRaptors < CurrentGameState.MaxRaptors)
+                CurrentGameState.CurrentRaptors += 1;
+        }
+
+        public int CurrentRaptors()
+        {
+            return CurrentGameState.CurrentRaptors;
+        }
+
         #endregion
     }
 }

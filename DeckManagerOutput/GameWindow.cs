@@ -72,7 +72,7 @@ namespace DeckManagerOutput
                 ShowHandMenuItem.DropDownItems.Add(showHandItem);
             }
 
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
 
             JumpPrepChanged(sender, e);
         }
@@ -221,7 +221,7 @@ namespace DeckManagerOutput
             var selectedItems = AlphaDradisListBox.SelectedItems.Cast<BaseComponent>().ToList();
             Program.GManager.CurrentGameState.Dradis.MoveComponents(DradisNodeName.Alpha, DradisNodeName.Bravo, selectedItems);
             UpdateTurnLogWithMovement(DradisNodeName.Alpha, DradisNodeName.Bravo, selectedItems);
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void BravoToAlphaButtonClick(object sender, EventArgs e)
@@ -229,7 +229,7 @@ namespace DeckManagerOutput
             var selectedItems = BravoDradisListBox.SelectedItems.Cast<BaseComponent>().ToList();
             Program.GManager.CurrentGameState.Dradis.MoveComponents(DradisNodeName.Bravo, DradisNodeName.Alpha, selectedItems);
             UpdateTurnLogWithMovement(DradisNodeName.Bravo, DradisNodeName.Alpha, selectedItems);
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void UpdateTurnLogWithMovement(DradisNodeName source, DradisNodeName destination, IEnumerable<BaseComponent> selectedItems)
@@ -269,8 +269,10 @@ namespace DeckManagerOutput
             Program.GManager.AddToTurnLog(string.Format(Resources.ComponentMovement, movementUpdateString, source, destination));
         }
 
-        private void RefreshGameListBoxes()
+        private void RefreshGameDataBoxes()
         {
+            RaptorReserveLabel.Text = Program.GManager.CurrentRaptors().ToString(CultureInfo.InvariantCulture);
+
             var selectedIndex = PlayerReadonlyListBox.SelectedIndex;
             PlayerReadonlyListBox.BeginUpdate();
             PlayerReadonlyListBox.DataSource = null;
@@ -317,7 +319,7 @@ namespace DeckManagerOutput
             var selectedItems = BravoDradisListBox.SelectedItems.Cast<BaseComponent>().ToList();
             Program.GManager.CurrentGameState.Dradis.MoveComponents(DradisNodeName.Bravo, DradisNodeName.Charlie, selectedItems);
             UpdateTurnLogWithMovement(DradisNodeName.Bravo, DradisNodeName.Charlie, selectedItems);
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void CharlieToBravoButtonClick(object sender, EventArgs e)
@@ -325,7 +327,7 @@ namespace DeckManagerOutput
             var selectedItems = CharlieDradisListBox.SelectedItems.Cast<BaseComponent>().ToList();
             Program.GManager.CurrentGameState.Dradis.MoveComponents(DradisNodeName.Charlie, DradisNodeName.Bravo, selectedItems);
             UpdateTurnLogWithMovement(DradisNodeName.Charlie, DradisNodeName.Bravo, selectedItems);
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void CharlieToDeltaButtonClick(object sender, EventArgs e)
@@ -333,7 +335,7 @@ namespace DeckManagerOutput
             var selectedItems = CharlieDradisListBox.SelectedItems.Cast<BaseComponent>().ToList();
             Program.GManager.CurrentGameState.Dradis.MoveComponents(DradisNodeName.Charlie, DradisNodeName.Delta, selectedItems);
             UpdateTurnLogWithMovement(DradisNodeName.Charlie, DradisNodeName.Delta, selectedItems);
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void DeltaToCharlieButtonClick(object sender, EventArgs e)
@@ -341,7 +343,7 @@ namespace DeckManagerOutput
             var selectedItems = DeltaDradisListBox.SelectedItems.Cast<BaseComponent>().ToList();
             Program.GManager.CurrentGameState.Dradis.MoveComponents(DradisNodeName.Delta, DradisNodeName.Charlie, selectedItems);
             UpdateTurnLogWithMovement(DradisNodeName.Delta, DradisNodeName.Charlie, selectedItems);
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void DeltaToEchoButtonClick(object sender, EventArgs e)
@@ -349,7 +351,7 @@ namespace DeckManagerOutput
             var selectedItems = DeltaDradisListBox.SelectedItems.Cast<BaseComponent>().ToList();
             Program.GManager.CurrentGameState.Dradis.MoveComponents(DradisNodeName.Delta, DradisNodeName.Echo, selectedItems);
             UpdateTurnLogWithMovement(DradisNodeName.Delta, DradisNodeName.Echo, selectedItems);
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void EchoToDeltaButtonClick(object sender, EventArgs e)
@@ -357,7 +359,7 @@ namespace DeckManagerOutput
             var selectedItems = EchoDradisListBox.SelectedItems.Cast<BaseComponent>().ToList();
             Program.GManager.CurrentGameState.Dradis.MoveComponents(DradisNodeName.Echo, DradisNodeName.Delta, selectedItems);
             UpdateTurnLogWithMovement(DradisNodeName.Echo, DradisNodeName.Delta, selectedItems);
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void EchoToFoxtrotButtonClick(object sender, EventArgs e)
@@ -365,7 +367,7 @@ namespace DeckManagerOutput
             var selectedItems = EchoDradisListBox.SelectedItems.Cast<BaseComponent>().ToList();
             Program.GManager.CurrentGameState.Dradis.MoveComponents(DradisNodeName.Echo, DradisNodeName.Foxtrot, selectedItems);
             UpdateTurnLogWithMovement(DradisNodeName.Echo, DradisNodeName.Foxtrot, selectedItems);
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void FoxtrotToEchoButtonClick(object sender, EventArgs e)
@@ -373,7 +375,7 @@ namespace DeckManagerOutput
             var selectedItems = FoxtrotDradisListBox.SelectedItems.Cast<BaseComponent>().ToList();
             Program.GManager.CurrentGameState.Dradis.MoveComponents(DradisNodeName.Foxtrot, DradisNodeName.Echo, selectedItems);
             UpdateTurnLogWithMovement(DradisNodeName.Foxtrot, DradisNodeName.Echo, selectedItems);
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void FoxtrotToAlphaButtonClick(object sender, EventArgs e)
@@ -381,7 +383,7 @@ namespace DeckManagerOutput
             var selectedItems = FoxtrotDradisListBox.SelectedItems.Cast<BaseComponent>().ToList();
             Program.GManager.CurrentGameState.Dradis.MoveComponents(DradisNodeName.Foxtrot, DradisNodeName.Alpha, selectedItems);
             UpdateTurnLogWithMovement(DradisNodeName.Foxtrot, DradisNodeName.Alpha, selectedItems);
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void AlphaToFoxtrotButtonClick(object sender, EventArgs e)
@@ -389,7 +391,7 @@ namespace DeckManagerOutput
             var selectedItems = AlphaDradisListBox.SelectedItems.Cast<BaseComponent>().ToList();
             Program.GManager.CurrentGameState.Dradis.MoveComponents(DradisNodeName.Alpha, DradisNodeName.Foxtrot, selectedItems);
             UpdateTurnLogWithMovement(DradisNodeName.Alpha, DradisNodeName.Foxtrot, selectedItems);
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void AddCenturionToBoardingTrackToolStripMenuItemClick(object sender, EventArgs e)
@@ -584,7 +586,7 @@ namespace DeckManagerOutput
                 PopUpDown.Value = Program.GManager.CurrentGameState.Population;
                 DistanceUpDown.Value = Program.GManager.CurrentGameState.Distance;
 
-                RefreshGameListBoxes();
+                RefreshGameDataBoxes();
 
                 managePlayerToolStripMenuItem.DropDownItems.Clear();
                 ShowHandMenuItem.DropDownItems.Clear();
@@ -663,7 +665,7 @@ namespace DeckManagerOutput
             {
                 Program.GManager.CurrentGameState.Dradis.RemoveComponent(component);
             }
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void AddToolStripMenuItemClick(object sender, EventArgs e)
@@ -677,7 +679,7 @@ namespace DeckManagerOutput
                 Program.GManager.PlaceComponent(request.Item1, request.Item2);
             }
 
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
 
         private void ManagePlayerMenuItemClick(object sender, EventArgs e)
@@ -717,7 +719,7 @@ namespace DeckManagerOutput
             if (form.RequestedSpecialCards.Item2 > 0) // Special cards requested
                 Program.GManager.DrawCards(form.RequestedSpecialCards.Item1, form.RequestedSpecialCards.Item2, selectedPlayer);
 
-            RefreshGameListBoxes();
+            RefreshGameDataBoxes();
         }
         
         private void PassTurnButtonClick(object sender, EventArgs e)
@@ -750,7 +752,7 @@ namespace DeckManagerOutput
                     if(drawForm.DialogResult == DialogResult.OK && drawForm.SelectedSkillCardDrawIndex.HasValue)
                         Program.GManager.DoPlayerDraw(currentPlayer, drawForm.SelectedSkillCardDrawIndex.Value);
 
-                    RefreshGameListBoxes();
+                    RefreshGameDataBoxes();
                 }
             }
         }
@@ -779,7 +781,7 @@ namespace DeckManagerOutput
                 Program.GManager.AddToTurnLog("The fleet jumps!  Destination: " + jumpForm.SelectedCard);
                 Program.GManager.CurrentGameState.JumpPrep = 0;
                 Program.GManager.WipeDradis();
-                RefreshGameListBoxes();
+                RefreshGameDataBoxes();
                 Red1RadioButton.Checked = true;
                 JumpPrepChanged(sender, e);
                 if (jumpForm.ThirdCardDrawn)
@@ -811,6 +813,18 @@ namespace DeckManagerOutput
         {
             var helpForm = new HelpForm(Program.GManager.CurrentGameState.TurnLog, "Turn Log");
             helpForm.Show();
+        }
+
+        private void DestroyRaptorToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            Program.GManager.DestroyRaptor();
+            RefreshGameDataBoxes();
+        }
+
+        private void ProduceRaptorToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            Program.GManager.ProduceRaptor();
+            RefreshGameDataBoxes();
         }
     }
 }
