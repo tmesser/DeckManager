@@ -128,7 +128,9 @@ namespace DeckManager
                     Fuel = 8,
                     Food = 8,
                     Morale = 10,
-                    Population = 12
+                    Population = 12,
+                    MaxRaptors = 7,
+                    CurrentRaptors = 7
                 };
             firstTurn.DestinyDeck = new DestinyDeck(_logger, firstTurn.LeadershipDeck, firstTurn.TacticsDeck,
                                                     firstTurn.PilotingDeck, firstTurn.EngineeringDeck,

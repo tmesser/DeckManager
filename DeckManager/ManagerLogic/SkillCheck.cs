@@ -19,13 +19,13 @@ namespace DeckManager.ManagerLogic
             var logger = LogManager.GetLogger(typeof(SkillCheck));
             var results = new List<Consequence>();
 
-            // We can be messing around with these cards a lot inside here due to the special rules, so it is 
-            var internalPlayedCards = playedCards.ToList();
-            var internalCrisisCard = crisisCard;
+            // We can be messing around with these cards a lot inside here due to the special rules, so it is prudent to edit local copies.
+            var internalPlayedCards = playedCards == null ? new List<SkillCard>() : playedCards.ToList();
+            var internalCrisisCard = crisisCard ?? new CrisisCard();
 
             try
             {
-                foreach (var rule in specialRules)
+                foreach (var rule in specialRules ?? new List<SkillCheckRule>())
                 {
                     switch (rule.RuleType)
                     {
