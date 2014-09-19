@@ -33,7 +33,7 @@ namespace DeckManagerTests
                     new SkillCard {CardPower = 3, CardColor = SkillCardColor.Leadership}
                 };
 
-            var ret = SkillCheck.EvalSkillCheck(playedCards, crisisCard);
+            var ret = SkillCheck.EvalSkillCheck(playedCards, crisisCard, null);
 
             Assert.AreEqual(1, ret.Count());
             Assert.AreEqual("pass", ret.ElementAt(0).ConditionText);
@@ -62,7 +62,7 @@ namespace DeckManagerTests
                     new SkillCard {CardPower = 3, CardColor = SkillCardColor.Engineering}
                 };
 
-            var ret = SkillCheck.EvalSkillCheck(playedCards, crisisCard);
+            var ret = SkillCheck.EvalSkillCheck(playedCards, crisisCard, null);
 
             Assert.AreEqual(1, ret.Count());
             Assert.AreEqual("fail", ret.ElementAt(0).ConditionText);
@@ -92,7 +92,7 @@ namespace DeckManagerTests
                     new SkillCard {CardPower = 3, CardColor = SkillCardColor.Engineering}
                 };
 
-            var ret = SkillCheck.EvalSkillCheck(playedCards, crisisCard);
+            var ret = SkillCheck.EvalSkillCheck(playedCards, crisisCard, null);
 
             Assert.AreEqual(1, ret.Count());
             Assert.AreEqual("partialpass", ret.ElementAt(0).ConditionText);

@@ -681,8 +681,9 @@ namespace DeckManager
         /// <summary>
         /// Inserts the card into the player's appropriate hand
         /// </summary>
-        /// <param name="toPlayer"></param>
-        /// <param name="card"></param>
+        /// <param name="toPlayer">The player to give the cards to.</param>
+        /// <param name="card">The card to give them.</param>
+        /// <param name="fromPlayer">The player who is giving the card (if applicable)</param>
         public void GiveCardToPlayer(Player toPlayer, BaseCard card, Player fromPlayer = null)
         {
             switch (card.CardType)
