@@ -698,12 +698,19 @@ namespace DeckManagerOutput
                 locations.AddRange(board.Locations.Select(x => x.Name));
             }
 
-            locations.Add(string.Format("---{0}---", "Dradis"));
-            locations.AddRange(Program.GManager.CurrentGameState.Dradis.Nodes.Select(x => x.Name));
-
             var playerLocation = Program.GManager.GetPlayerLocation(selectedPlayer);
+            var playerLocationString = playerLocation == null ? string.Empty : playerLocation.Name;
 
-            var form = new PlayerManagementForm(selectedPlayer, locations, playerLocation == null ? string.Empty : playerLocation.Name);
+            var availableViper = Program.GManager.CurrentGameState.Vipers.FindIndex(x => x.Status == ComponentStatus.InReserve);
+            var applicableDradisNode = Program.GManager.CurrentGameState.Dradis.Nodes.FirstOrDefault(x => x.Name == playerLocationString);
+            if (availableViper != -1 || applicableDradisNode != default(DeckManager.Boards.BaseNode))
+            {
+                locations.Add(string.Format("---{0}---", "Dradis"));
+                locations.AddRange(Program.GManager.CurrentGameState.Dradis.Nodes.Select(x => x.Name));
+            }
+
+
+            var form = new PlayerManagementForm(selectedPlayer, locations, playerLocationString);
 
             form.ShowDialog();
             if (form.DialogResult != DialogResult.OK)
