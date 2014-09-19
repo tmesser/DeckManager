@@ -1,0 +1,59 @@
+﻿[
+  {
+    "CardType": "Crisis",
+    "Heading": "Administration Check",
+    "AdditionalText": "Skill check: POL\LEA = 5 \r\nPASS: The nominated player claims the President title \r\nFAIL: No Effect",
+    "PositiveColors": [
+      "Politics",
+      "Leadership"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 5,
+        "Item2": "The nominated player claims the President title"
+      },
+      {
+        "Item2": "No Effect"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "Admiral's Quarters Check",
+    "AdditionalText": "Skill check: TAC\LEA = 7 \r\nPASS: The nominated player is sent to the Brig \r\nFAIL: No Effect",
+    "PositiveColors": [
+      "Tactics",
+      "Leadership"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 5,
+        "Item2": "The nominated player is sent to the Brig"
+      },
+      {
+        "Item2": "No Effect"
+      }
+    ]
+  },
+  {
+    "CardType": "Crisis",
+    "Heading": "Brig Check",
+    "AdditionalText": "Skill check: TAC\POL = 7 \r\nPASS: The nominated player may move to any space on Galactica \r\nFAIL: No Effect",
+    "PositiveColors": [
+      "Tactics",
+      "Politics"
+    ],
+    "Activation": "None",
+    "PassLevels": [
+      {
+        "Item1": 7,
+        "Item2": "The nominated player may move to any space on Galactica"
+      },
+      {
+        "Item2": "No Effect"
+      }
+    ]
+  }
+]

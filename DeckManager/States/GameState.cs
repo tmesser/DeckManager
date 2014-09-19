@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using DeckManager.Boards.Dradis;
 using DeckManager.Cards;
-using DeckManager.Cards.Enums;
 using DeckManager.Components;
 using DeckManager.Decks;
 
@@ -34,6 +33,7 @@ namespace DeckManager.States
         public List<Civilian> Civilians { get; set; }
 
         public List<Board> Boards { get; set; }
+        public CrisisDeck BoardSkillChecks { get; set; }
         public DradisBoard Dradis { get; set; }
 
         public int Distance { get; set; }
