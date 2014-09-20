@@ -40,5 +40,9 @@ namespace DeckManager.Decks
             Deck = Shuffle(Deck);
             Discarded = new List<DestinationCard>();
         }
+        public override string ToString()
+        {
+            return "Destination Deck";
+        }
     }
 }

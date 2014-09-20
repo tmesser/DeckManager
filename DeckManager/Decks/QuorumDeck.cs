@@ -80,5 +80,9 @@ namespace DeckManager.Decks
         {
             Deck.Add(card);
         }
+        public override string ToString()
+        {
+            return "Quorum Deck";
+        }
     }
 }

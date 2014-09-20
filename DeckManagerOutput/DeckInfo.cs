@@ -1,4 +1,5 @@
 ﻿using DeckManager.Cards;
+using DeckManager.Components;
 using DeckManager.Decks;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,14 @@ namespace DeckManagerOutput
 {
     public partial class DeckInfo : Form
     {
-        private BaseDeck<BaseCard> _currentDeck;
+        private CrisisDeck _crisisDeck;
+        private SkillCardDeck _skillDeck;
+        private QuorumDeck _quorumDeck;
+        private SuperCrisisDeck _scDeck;
+        private LoyaltyDeck _loyaltyDeck;
+        private DestinationDeck _destinationDeck;
+        private DestinyDeck _destinyDeck;
+        private List<Civilian> _civilians;
 
         public DeckInfo()
         {
@@ -38,9 +46,10 @@ namespace DeckManagerOutput
 
         private void discardButton_Click(object sender, EventArgs e)
         {
-            var cards = cardsInDiscardListBox.SelectedItems;
-
+            var cards = (IEnumerable<BaseCard>) cardsInDiscardListBox.SelectedItems;
+            Program.GManager.DiscardCards(cards);
             //var deck = 
+            UpdateControls();
         }
 
         private void buryButton_Click(object sender, EventArgs e)
@@ -61,9 +70,9 @@ namespace DeckManagerOutput
 
         private void deckInfoDeckComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //this._currentDeck = (BaseDeck<BaseCard>)deckInfoDeckComboBox.SelectedItem;
-            //// TODO if deck selected is skill card deck, enable the add to destiny button
-            if (_currentDeck is SkillCardDeck)
+            determineDeck();
+            //// if deck selected is skill card deck, enable the add to destiny button
+            if (_skillDeck != null)
             {
                 this.addToDestinyButton.Visible = true;
                 this.addToDestinyButton.Enabled = true;
@@ -76,6 +85,33 @@ namespace DeckManagerOutput
 
 
             UpdateControls();
+        }
+
+        private void determineDeck()
+        {
+            this._crisisDeck = null;
+            this._skillDeck = null;
+            this._quorumDeck = null;
+            this._scDeck = null;
+            this._loyaltyDeck = null;
+            this._destinationDeck = null;
+            this._destinyDeck = null;
+            this._civilians = null;
+
+            if (deckInfoDeckComboBox.SelectedItem is CrisisDeck)
+            {
+                this._crisisDeck = (CrisisDeck)deckInfoDeckComboBox.SelectedItem;
+            }
+
+            if (deckInfoDeckComboBox.SelectedItem is SkillCardDeck)
+            {
+                this._skillDeck = (SkillCardDeck)deckInfoDeckComboBox.SelectedItem;
+            }
+            if (deckInfoDeckComboBox.SelectedItem is DestinationDeck)
+            {
+                this._destinationDeck = (DestinationDeck)deckInfoDeckComboBox.SelectedItem;
+            }
+
         }
 
         private void reshuffleButton_Click(object sender, EventArgs e)
@@ -94,9 +130,21 @@ namespace DeckManagerOutput
             this.cardsInDeckListBox.BeginUpdate();
             this.cardsInDiscardListBox.BeginUpdate();
 
-            cardsInDeckListBox.DataSource = _currentDeck.Deck;
-            cardsInDiscardListBox.DataSource = _currentDeck.Discarded;
-
+            if (this._crisisDeck != null)
+            {
+                cardsInDeckListBox.DataSource = _crisisDeck.Deck;
+                cardsInDiscardListBox.DataSource = _crisisDeck.Discarded;
+            }
+            if (this._skillDeck != null)
+            {
+                cardsInDeckListBox.DataSource = _skillDeck.Deck;
+                cardsInDiscardListBox.DataSource = _skillDeck.Discarded;
+            }
+            if (this._destinationDeck != null)
+            {
+                cardsInDeckListBox.DataSource = _destinationDeck.Deck;
+                cardsInDiscardListBox.DataSource = _destinationDeck.Discarded;
+            }
             this.cardsInDiscardListBox.EndUpdate();
             this.cardsInDeckListBox.EndUpdate();
         }

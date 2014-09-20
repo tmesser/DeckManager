@@ -123,5 +123,10 @@ namespace DeckManager.Decks
             Deck.AddRange(PoliticsDeck.DrawMany(2));
             Deck = Shuffle(Deck);
         }
+
+        public override string ToString()
+        {
+            return "Destiny Deck";
+        }
     }
 }

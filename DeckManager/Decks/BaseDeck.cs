@@ -121,10 +121,17 @@ namespace DeckManager.Decks
         /// <returns></returns>
         public virtual IEnumerable<T> DrawMany(int cards)
         {
+            // strictly speaking, this method should take any remaining cards before reshuffling the deck
+            List<T> ret;
             if (Deck.Count < cards)
+            {
+                int remainder = cards - Deck.Count;
+                ret = Deck.Take(Deck.Count).ToList();
                 Reshuffle();
-
-            var ret = Deck.Take(cards).ToList();
+                ret.AddRange(Deck.Take(remainder));
+            }
+            else
+                ret = Deck.Take(cards).ToList();
             Deck.RemoveRange(0,cards);
             return ret;
         }
