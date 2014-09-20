@@ -57,6 +57,7 @@
     <Compile Include="Boards\Enums\BoardName.cs" />
     <Compile Include="Cards\Allegiance.cs" />
     <Compile Include="Cards\BaseCard.cs" />
+    <Compile Include="Cards\Enums\Expansion.cs" />
     <Compile Include="Cards\MissionCard.cs" />
     <Compile Include="Cards\MutinyCard.cs" />
     <Compile Include="Characters\Character.cs" />

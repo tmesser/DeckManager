@@ -39,5 +39,9 @@ namespace DeckManager.Decks
             Deck = Shuffle(Deck);
             Discarded = new List<CrisisCard>();
         }
+        public override string ToString()
+        {
+            return "Crisis Deck";
+        }
     }
 }

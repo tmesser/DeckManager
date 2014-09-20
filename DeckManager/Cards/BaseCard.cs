@@ -56,6 +56,11 @@ namespace DeckManager.Cards
         public abstract CardType CardType { get; }
 
         /// <summary>
+        /// Gets or sets which expansion this card came from.
+        /// </summary>
+        public virtual Expansion ExpansionSource { get; set; }
+
+        /// <summary>
         /// Returns a representation of the card in BBCode.
         /// </summary>
         /// <returns></returns>

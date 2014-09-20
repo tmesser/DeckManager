@@ -66,6 +66,12 @@ namespace DeckManagerOutput
             JumpPrepChanged(sender, e);
         }
 
+        private void DeckInformationMenuItemClick(object sender, EventArgs e)
+        {
+            var form = new DeckInfo();
+            form.ShowDialog();
+        }
+
         private void ShowHandMenuItemClick(object sender, EventArgs e)
         {
             var itemClicked = (ToolStripMenuItem)sender;
