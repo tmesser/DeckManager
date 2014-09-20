@@ -258,6 +258,7 @@ namespace DeckManager
 
         private Civilian DrawCiv()
         {
+            CurrentGameState.Civilians.Shuffle();
             var civDrawn = CurrentGameState.Civilians.FindIndex(x => x.Status == ComponentStatus.InReserve);
             if (civDrawn == -1) // No civs are in reserve
                 return null;
