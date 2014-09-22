@@ -1,4 +1,5 @@
 ﻿using DeckManager.Cards;
+using DeckManager.Cards.Enums;
 using DeckManager.Components;
 using DeckManager.Decks;
 using System;
@@ -15,15 +16,8 @@ namespace DeckManagerOutput
 {
     public partial class DeckInfo : Form
     {
-        private CrisisDeck _crisisDeck;
-        private SkillCardDeck _skillDeck;
-        private QuorumDeck _quorumDeck;
-        private SuperCrisisDeck _scDeck;
-        private LoyaltyDeck _loyaltyDeck;
-        private DestinationDeck _destinationDeck;
-        private DestinyDeck _destinyDeck;
-        private List<Civilian> _civilians;
-
+        private BaseDeck<BaseCard> _currentDeck;
+        
         public DeckInfo()
         {
             InitializeComponent();
@@ -72,16 +66,16 @@ namespace DeckManagerOutput
         {
             determineDeck();
             //// if deck selected is skill card deck, enable the add to destiny button
-            if (_skillDeck != null)
-            {
-                this.addToDestinyButton.Visible = true;
-                this.addToDestinyButton.Enabled = true;
-            }
-            else
-            {
-                this.addToDestinyButton.Visible = false;
-                this.addToDestinyButton.Enabled = false;
-            }
+            //if (_currentDeck.CardType == CardType.Skill)
+            //{
+            //    this.addToDestinyButton.Visible = true;
+            //    this.addToDestinyButton.Enabled = true;
+            //}
+            //else
+            //{
+            //    this.addToDestinyButton.Visible = false;
+            //    this.addToDestinyButton.Enabled = false;
+            //}
 
 
             UpdateControls();
@@ -89,29 +83,52 @@ namespace DeckManagerOutput
 
         private void determineDeck()
         {
-            this._crisisDeck = null;
-            this._skillDeck = null;
-            this._quorumDeck = null;
-            this._scDeck = null;
-            this._loyaltyDeck = null;
-            this._destinationDeck = null;
-            this._destinyDeck = null;
-            this._civilians = null;
+            //Type myObjectType = typeof(this.deckInfoDeckComboBox.SelectedItem);
 
-            if (deckInfoDeckComboBox.SelectedItem is CrisisDeck)
-            {
-                this._crisisDeck = (CrisisDeck)deckInfoDeckComboBox.SelectedItem;
-            }
+            //string sType = "System.Int32";
+            //object o1 = "123";
+            //object o2 = Convert.ChangeType(o1, Type.GetType(sType));
+            //Type t = o2.GetType(); // this returns Int32 Type
+           _currentDeck = (BaseDeck<BaseCard>)deckInfoDeckComboBox.SelectedItem;
+            //Convert.ChangeType(asdf, myObjectType);
 
-            if (deckInfoDeckComboBox.SelectedItem is SkillCardDeck)
-            {
-                this._skillDeck = (SkillCardDeck)deckInfoDeckComboBox.SelectedItem;
-            }
-            if (deckInfoDeckComboBox.SelectedItem is DestinationDeck)
-            {
-                this._destinationDeck = (DestinationDeck)deckInfoDeckComboBox.SelectedItem;
-            }
 
+            var deck = deckInfoDeckComboBox.SelectedItem as CrisisDeck;
+            if (deck != null)
+            {
+                this.cardsInDeckListBox.BeginUpdate();
+                this.cardsInDiscardListBox.BeginUpdate();
+
+                this.cardsInDeckListBox.Items.AddRange(deck.Deck.ToArray());
+                this.cardsInDiscardListBox.Items.AddRange(deck.Discarded.ToArray());
+
+                this.cardsInDiscardListBox.EndUpdate();
+                this.cardsInDeckListBox.EndUpdate();
+            }
+            deck = deckInfoDeckComboBox.SelectedItem as CrisisDeck;
+
+
+            //switch (_currentDeck.CardType)
+            //{
+            //    case CardType.Skill: 
+            //        break;
+            //    case CardType.Crisis:
+            //        var d = (CrisisDeck)deckInfoDeckComboBox.SelectedItem;
+            //        break;
+            //    case CardType.Destination:
+            //        break;
+            //    case CardType.Loyalty:
+            //        break;
+            //    case CardType.Mission:
+            //        break;
+            //    case CardType.Mutiny:
+            //        break;
+            //    case CardType.Quorum:
+            //        break;
+            //    case CardType.SuperCrisis:
+            //        break;
+
+            //}
         }
 
         private void reshuffleButton_Click(object sender, EventArgs e)
@@ -130,21 +147,9 @@ namespace DeckManagerOutput
             this.cardsInDeckListBox.BeginUpdate();
             this.cardsInDiscardListBox.BeginUpdate();
 
-            if (this._crisisDeck != null)
-            {
-                cardsInDeckListBox.DataSource = _crisisDeck.Deck;
-                cardsInDiscardListBox.DataSource = _crisisDeck.Discarded;
-            }
-            if (this._skillDeck != null)
-            {
-                cardsInDeckListBox.DataSource = _skillDeck.Deck;
-                cardsInDiscardListBox.DataSource = _skillDeck.Discarded;
-            }
-            if (this._destinationDeck != null)
-            {
-                cardsInDeckListBox.DataSource = _destinationDeck.Deck;
-                cardsInDiscardListBox.DataSource = _destinationDeck.Discarded;
-            }
+            //this.cardsInDeckListBox.Items.AddRange(_currentDeck.Deck.ToArray());
+            //this.cardsInDiscardListBox.Items.AddRange(_currentDeck.Discarded.ToArray());
+
             this.cardsInDiscardListBox.EndUpdate();
             this.cardsInDeckListBox.EndUpdate();
         }

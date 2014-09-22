@@ -50,5 +50,10 @@ namespace DeckManager.Decks
         {
             return string.Format("{0} Deck", DeckColor);
         }
+
+        public override CardType CardType
+        {
+            get { return CardType.Skill; }
+        }
     }
 }

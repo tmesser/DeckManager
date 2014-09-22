@@ -4,6 +4,7 @@ using System.Linq;
 using DeckManager.Cards;
 using DeckManager.Extensions;
 using log4net;
+using DeckManager.Cards.Enums;
 
 namespace DeckManager.Decks
 {
@@ -32,6 +33,7 @@ namespace DeckManager.Decks
         /// </value>
         public List<T> Discarded { get; set; }
 
+        public abstract CardType CardType { get; }
 
         /// <summary>
         /// Shuffles the specified input deck.
@@ -135,7 +137,5 @@ namespace DeckManager.Decks
             Deck.RemoveRange(0,cards);
             return ret;
         }
-
-
     }
 }

@@ -3,6 +3,7 @@ using System.IO;
 using DeckManager.Cards;
 using Newtonsoft.Json;
 using log4net;
+using DeckManager.Cards.Enums;
 
 namespace DeckManager.Decks
 {
@@ -43,6 +44,11 @@ namespace DeckManager.Decks
         public override string ToString()
         {
             return "Destination Deck";
+        }
+
+        public override CardType CardType
+        {
+            get { return CardType.Destination; }
         }
     }
 }

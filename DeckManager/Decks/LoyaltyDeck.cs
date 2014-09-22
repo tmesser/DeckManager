@@ -104,5 +104,10 @@ namespace DeckManager.Decks
         {
             return "Loyalty Deck";
         }
+
+        public override CardType CardType
+        {
+            get { return CardType.Loyalty; }
+        }
     }
 }

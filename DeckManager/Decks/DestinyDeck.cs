@@ -128,5 +128,10 @@ namespace DeckManager.Decks
         {
             return "Destiny Deck";
         }
+
+        public override CardType CardType
+        {
+            get { return CardType.Skill; }
+        }
     }
 }
