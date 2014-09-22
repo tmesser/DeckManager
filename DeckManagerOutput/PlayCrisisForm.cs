@@ -34,7 +34,7 @@ namespace DeckManagerOutput
                 DialogResult = DialogResult.Cancel;
                 Close();
             }
-            _players = players;
+            _players = players.ToList();
             _crisis = crisis;
             _destinyCards = destinyCards;
             CrisisContributions = new List<Tuple<SkillCard, string>>();
@@ -54,7 +54,7 @@ namespace DeckManagerOutput
 
         private void RefreshResultPane()
         {
-            var crisisResults = SkillCheck.EvalSkillCheck(CrisisContributions.Select(x => x.Item1), _crisis);
+            var crisisResults = SkillCheck.EvalSkillCheck(CrisisContributions.Select(x => x.Item1), _crisis, null);
 
             var toDisplay = new StringBuilder();
             
@@ -113,7 +113,7 @@ namespace DeckManagerOutput
 
         private void SubmitButtonClick(object sender, EventArgs e)
         {
-            var crisisResults = SkillCheck.EvalSkillCheck(CrisisContributions.Select(x => x.Item1), _crisis);
+            var crisisResults = SkillCheck.EvalSkillCheck(CrisisContributions.Select(x => x.Item1), _crisis, null);
 
             var resultOutput = new StringBuilder();
 
@@ -135,7 +135,7 @@ namespace DeckManagerOutput
 
             Result = resultOutput.ToString();
 
-            if (PlayerTakeCardsCheckBox.Checked == true)
+            if (PlayerTakeCardsCheckBox.Checked)
                 PlayerTakingCards = (Player)PlayerTakeCardsDropdown.SelectedItem;
 
             DialogResult = DialogResult.OK;

@@ -96,7 +96,7 @@ namespace DeckManager
             return ret;
         }
 
-        public GameState NewGame(IEnumerable<Player> numPlayers, int extraLoyaltyCards, bool usingSympathizer)
+        public GameState NewGame(IEnumerable<Player> numPlayers, int extraLoyaltyCards, bool usingSympathizer, int firstPlayerDraw)
         {
             var playerList = numPlayers.ToList();
             GameStates = new List<GameState>();
@@ -115,6 +115,7 @@ namespace DeckManager
                     QuorumDeck = new QuorumDeck(_logger, ConfigurationManager.AppSettings["QuorumDeckLocation"]),
                     SuperCrisisDeck = new SuperCrisisDeck(_logger, ConfigurationManager.AppSettings["SuperCrisisDeckLocation"]),
                     TacticsDeck = new SkillCardDeck(_logger, SkillCardColor.Tactics, ConfigurationManager.AppSettings["TacticsDeckLocation"]),
+                    BoardSkillChecks = new CrisisDeck(_logger, ConfigurationManager.AppSettings["BoardSkillChecksLocation"]),
                     //TreacheryDeck = new SkillCardDeck(_logger, SkillCardColor.Treachery, ConfigurationManager.AppSettings["TreacheryDeckLocation"]),
 
                     Dradis = new DradisBoard(),
@@ -127,7 +128,9 @@ namespace DeckManager
                     Fuel = 8,
                     Food = 8,
                     Morale = 10,
-                    Population = 12
+                    Population = 12,
+                    MaxRaptors = 7,
+                    CurrentRaptors = 7
                 };
             firstTurn.DestinyDeck = new DestinyDeck(_logger, firstTurn.LeadershipDeck, firstTurn.TacticsDeck,
                                                     firstTurn.PilotingDeck, firstTurn.EngineeringDeck,
@@ -144,11 +147,18 @@ namespace DeckManager
             CurrentGameState.Dradis.AddComponentToNode(new Raider(), DradisNodeName.Alpha);
             CurrentGameState.Dradis.AddComponentToNode(new Raider(), DradisNodeName.Alpha);
 
-            foreach (var player in playerList)
+            var firstPlayer = playerList.First();
+            firstPlayer.LoyaltyCards.Add(CurrentGameState.LoyaltyDeck.Draw());
+            DoPlayerDraw(firstPlayer, firstPlayerDraw);
+            AttemptToPlacePlayer(firstPlayer);
+            firstPlayer.OncePerGamePower = true;
+
+            foreach (var player in playerList.Skip(1))
             {
                 player.LoyaltyCards.Add(CurrentGameState.LoyaltyDeck.Draw());
                 DoPlayerDraw(player);
                 AttemptToPlacePlayer(player);
+                player.OncePerGamePower = true;
             }
 
             return CurrentGameState;
@@ -248,6 +258,7 @@ namespace DeckManager
 
         private Civilian DrawCiv()
         {
+            CurrentGameState.Civilians.Shuffle();
             var civDrawn = CurrentGameState.Civilians.FindIndex(x => x.Status == ComponentStatus.InReserve);
             if (civDrawn == -1) // No civs are in reserve
                 return null;
@@ -674,8 +685,9 @@ namespace DeckManager
         /// <summary>
         /// Inserts the card into the player's appropriate hand
         /// </summary>
-        /// <param name="toPlayer"></param>
-        /// <param name="card"></param>
+        /// <param name="toPlayer">The player to give the cards to.</param>
+        /// <param name="card">The card to give them.</param>
+        /// <param name="fromPlayer">The player who is giving the card (if applicable)</param>
         public void GiveCardToPlayer(Player toPlayer, BaseCard card, Player fromPlayer = null)
         {
             switch (card.CardType)
@@ -779,37 +791,108 @@ namespace DeckManager
 
         public void SetPlayerLocation(string locationName, string playerName)
         {
-            // Remove the player from wherever they were before
-            foreach (var location in CurrentGameState.Boards.SelectMany(board => board.Locations.Where(x => x.PlayersPresent.Contains(playerName))))
+            var piloting = from ship in CurrentGameState.Dradis.Nodes.SelectMany(node => node.Components) 
+                           where ship.ComponentType == ComponentType.Viper 
+                           && ((DeckManager.Components.Viper)ship).Pilot != null
+                           && ((DeckManager.Components.Viper)ship).Pilot.PlayerName == playerName 
+                           select ship;
+            var currentShip = (Viper)(piloting.SingleOrDefault());
+            if (currentShip == default(Viper))
             {
-                location.PlayersPresent.Remove(playerName);
-            }
+                //they weren't piloting anything, handle movement normally maybe
+                //are we going to space?
+                var applicableDradisNode = CurrentGameState.Dradis.Nodes.FirstOrDefault(x => x.Name == locationName);
+                if (applicableDradisNode != default(BaseNode))
+                {
+                    //gotta go to space. if we have a viper. do we have a viper to launch?
+                    var launching = DrawViper(); //TODO: allow launching in different ships, when different ships exist
+                    if (launching != null)
+                    {
+                        //launch is go!
+                        // Remove the player from wherever they were before
+                        foreach (var location in CurrentGameState.Boards.SelectMany(board => board.Locations.Where(x => x.PlayersPresent.Contains(playerName))))
+                        {
+                            location.PlayersPresent.Remove(playerName);
+                        }
+                        launching.Pilot = FindPlayerByName(playerName);
+                        CurrentGameState.Dradis.AddComponentToNode(launching, applicableDradisNode.NodeName);
+                    } else
+                    {
+                        //no vipers available. display a message to that effect, then drop out of the method.
+                        //FIXME: display a message saying no vipers available?
+                        return;
+                    }
+                }
+                else
+                {
+                    //nope, perfectly normal movement
+                    // Remove the player from wherever they were before
+                    foreach (var location in CurrentGameState.Boards.SelectMany(board => board.Locations.Where(x => x.PlayersPresent.Contains(playerName))))
+                    {
+                        location.PlayersPresent.Remove(playerName);
+                    }
 
-            foreach (var location in CurrentGameState.Dradis.Nodes.Where(x => x.PlayersPresent.Contains(playerName)))
+                    foreach (var location in CurrentGameState.Boards.Select(
+                        board => board.Locations.FirstOrDefault(x => x.Name == locationName)).Where(
+                        location => location != default(BaseNode)))
+                    {
+                        location.PlayersPresent.Add(playerName);
+                    }
+                }
+            }
+            else
             {
-                location.PlayersPresent.Remove(playerName);
+                //they were piloting something! are they going somewhere else in space?
+                var applicableDradisNode = CurrentGameState.Dradis.Nodes.FirstOrDefault(x => x.Name == locationName);
+                if (applicableDradisNode != default(BaseNode))
+                {
+                    //spaaaaaace.
+                    CurrentGameState.Dradis.MoveComponents((from node in CurrentGameState.Dradis.Nodes 
+                                                            where node.Components.Contains(currentShip) 
+                                                            select node).Single().NodeName, 
+                                                            applicableDradisNode.NodeName, piloting);
+                }
+                else
+                {
+                    //landing, oh well
+                    foreach (var location in CurrentGameState.Boards.Select(
+                        board => board.Locations.FirstOrDefault(x => x.Name == locationName)).Where(
+                        location => location != default(BaseNode)))
+                    {
+                        location.PlayersPresent.Add(playerName);
+                    }
+                    currentShip.Pilot = null;
+                    CurrentGameState.Dradis.RemoveComponent(currentShip);
+                    
+                }
+
+
             }
 
             AddToTurnLog(playerName + " moves to " + locationName + "!");
 
-            // Add the player
-            foreach (var location in CurrentGameState.Boards.Select(
-                board => board.Locations.FirstOrDefault(x => x.Name == locationName)).Where(
-                location => location != default(BaseNode)))
-            {
-                location.PlayersPresent.Add(playerName);
-            }
-
-            var applicableDradisNode = CurrentGameState.Dradis.Nodes.FirstOrDefault(x => x.Name == locationName);
-            if(applicableDradisNode != default(BaseNode))
-            {
-                applicableDradisNode.PlayersPresent.Add(playerName);
-            }
         }
 
         public IEnumerable<SkillCard> DrawDestiny(int count)
         {
             return CurrentGameState.DestinyDeck.DrawMany(count);
+        }
+
+        public void DestroyRaptor()
+        {
+            if(CurrentGameState.CurrentRaptors > 0)
+                CurrentGameState.CurrentRaptors -= 1;
+        }
+
+        public void ProduceRaptor()
+        {
+            if (CurrentGameState.CurrentRaptors < CurrentGameState.MaxRaptors)
+                CurrentGameState.CurrentRaptors += 1;
+        }
+
+        public int CurrentRaptors()
+        {
+            return CurrentGameState.CurrentRaptors;
         }
 
         #endregion

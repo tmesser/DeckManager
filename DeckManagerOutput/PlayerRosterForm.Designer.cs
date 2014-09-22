@@ -124,6 +124,7 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Location = new System.Drawing.Point(3, 344);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
@@ -177,7 +178,7 @@
             this.characterDetailButton.Name = "characterDetailButton";
             this.characterDetailButton.Size = new System.Drawing.Size(108, 23);
             this.characterDetailButton.TabIndex = 9;
-            this.characterDetailButton.Text = "Character Details";
+            this.characterDetailButton.Text = "Character &Details";
             this.characterDetailButton.UseVisualStyleBackColor = true;
             this.characterDetailButton.Click += new System.EventHandler(this.CharacterDetailButtonClick);
             // 
@@ -200,14 +201,16 @@
             this.addPlayerButton.Name = "addPlayerButton";
             this.addPlayerButton.Size = new System.Drawing.Size(75, 23);
             this.addPlayerButton.TabIndex = 8;
-            this.addPlayerButton.Text = "Add Player";
+            this.addPlayerButton.Text = "&Add Player";
             this.addPlayerButton.UseVisualStyleBackColor = true;
             this.addPlayerButton.Click += new System.EventHandler(this.AddPlayerButtonClick);
             // 
             // PlayerRosterForm
             // 
+            this.AcceptButton = this.doneButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(377, 372);
             this.Controls.Add(this.Layout);
             this.Name = "PlayerRosterForm";

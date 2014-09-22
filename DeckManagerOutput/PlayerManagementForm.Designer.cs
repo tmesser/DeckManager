@@ -41,6 +41,7 @@
             this.SubmitButton = new System.Windows.Forms.Button();
             this.DrawCardComboControl = new DeckManagerOutput.CustomControls.DrawCardComboControl();
             this.DrawSpecialComboControl = new DeckManagerOutput.CustomControls.DrawSpecialComboControl();
+            this.OpgCheckbox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,25 +50,27 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.0274F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.9726F));
-            this.tableLayoutPanel1.Controls.Add(this.DiscardSpecialTextBox, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.SpecialCardListBox, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.DiscardSpecialTextBox, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.SpecialCardListBox, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.CharacterNameLabel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.PlayerNameLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.PlayerCardListBox, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.DiscardSelectedCheckBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.DrawCardComboControl, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.LocationMarkerLabel, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.LocationComboBox, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.CancelButton, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.SubmitButton, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.DrawSpecialComboControl, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.LocationMarkerLabel, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.LocationComboBox, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.CancelButton, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.SubmitButton, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.DrawSpecialComboControl, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.OpgCheckbox, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
@@ -122,7 +125,7 @@
             this.PlayerCardListBox.FormattingEnabled = true;
             this.PlayerCardListBox.Location = new System.Drawing.Point(3, 38);
             this.PlayerCardListBox.Name = "PlayerCardListBox";
-            this.tableLayoutPanel1.SetRowSpan(this.PlayerCardListBox, 2);
+            this.tableLayoutPanel1.SetRowSpan(this.PlayerCardListBox, 3);
             this.PlayerCardListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.PlayerCardListBox.Size = new System.Drawing.Size(143, 167);
             this.PlayerCardListBox.TabIndex = 2;
@@ -157,6 +160,7 @@
             // 
             // CancelButton
             // 
+            this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelButton.Location = new System.Drawing.Point(3, 419);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
@@ -190,8 +194,19 @@
             this.DrawSpecialComboControl.Size = new System.Drawing.Size(137, 50);
             this.DrawSpecialComboControl.TabIndex = 12;
             // 
+            // OpgCheckbox
+            // 
+            this.OpgCheckbox.AutoSize = true;
+            this.OpgCheckbox.Location = new System.Drawing.Point(152, 159);
+            this.OpgCheckbox.Name = "OpgCheckbox";
+            this.OpgCheckbox.Size = new System.Drawing.Size(103, 17);
+            this.OpgCheckbox.TabIndex = 13;
+            this.OpgCheckbox.Text = "Player Has OPG";
+            this.OpgCheckbox.UseVisualStyleBackColor = true;
+            // 
             // PlayerManagementForm
             // 
+            this.AcceptButton = this.SubmitButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 452);
@@ -219,5 +234,6 @@
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button SubmitButton;
         private CustomControls.DrawSpecialComboControl DrawSpecialComboControl;
+        private System.Windows.Forms.CheckBox OpgCheckbox;
     }
 }

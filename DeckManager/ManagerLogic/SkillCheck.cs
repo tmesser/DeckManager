@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using DeckManager.Cards;
+using DeckManager.Cards.Enums;
+using DeckManager.ManagerLogic.Enums;
 using log4net;
 
 namespace DeckManager.ManagerLogic
@@ -12,16 +14,65 @@ namespace DeckManager.ManagerLogic
         /// Evaluates the skill check after all cards have been played.
         /// </summary>
         /// <returns>List of all consequences that occur as a result of the skill check's outcome.</returns>
-        public static List<Consequence> EvalSkillCheck(IEnumerable<SkillCard> playedCards, CrisisCard crisisCard )
+        public static List<Consequence> EvalSkillCheck(IEnumerable<SkillCard> playedCards, CrisisCard crisisCard, IEnumerable<SkillCheckRule> specialRules )
         {
             var logger = LogManager.GetLogger(typeof(SkillCheck));
             var results = new List<Consequence>();
+
+            // We can be messing around with these cards a lot inside here due to the special rules, so it is prudent to edit local copies.
+            var internalPlayedCards = playedCards == null ? new List<SkillCard>() : playedCards.ToList();
+            var internalCrisisCard = crisisCard ?? new CrisisCard();
+
             try
             {
+                foreach (var rule in specialRules ?? new List<SkillCheckRule>())
+                {
+                    switch (rule.RuleType)
+                    {
+                        case SkillCheckRuleType.ModifyCheckDifficulty:
+                            if (rule.RuleInt.HasValue == false)
+                                break;
+                            var ruleStrength = rule.RuleInt.Value;
+                            var newPassLevels = internalCrisisCard.PassLevels.Select(passLevel => new Tuple<int, string>(passLevel.Item1 + ruleStrength, passLevel.Item2)).ToList();
+                            internalCrisisCard.PassLevels = newPassLevels;
+                            break;
+                        case SkillCheckRuleType.SkillCardColorSignChange:
+                            if (rule.RuleColor.HasValue == false || rule.RuleColor.Value == SkillCardColor.Unknown || rule.RuleFlagEnum == null)
+                                break;
+                            var ruleColor = rule.RuleColor.Value;
+                            var ruleSign = (SkillCheckCardSign)rule.RuleFlagEnum;
+                            foreach(var card in internalPlayedCards.Where(x => x.CardColor == ruleColor))
+                                card.CardPower = 
+                                    ruleSign == SkillCheckCardSign.Zero ? 
+                                        (ruleSign == SkillCheckCardSign.Positive ? Math.Abs(card.CardPower) : 
+                                        Math.Abs(card.CardPower)*-1) :  // implies ruleSign == SkillCheckCardSign.Negative
+                                    0;
+                            break;
+                        case SkillCheckRuleType.SkillCardStrengthChange:
+                            if (rule.RuleInt.HasValue == false)
+                                break;
+                            foreach (var card in internalPlayedCards)
+                                card.CardPower += rule.RuleInt.Value;
+                            break;
+                        case SkillCheckRuleType.SkillCardStrengthSignChange:
+                            if (rule.RuleColor.HasValue == false || rule.RuleColor.Value == SkillCardColor.Unknown || rule.RuleFlagEnum == null || rule.RuleInt.HasValue == false)
+                                break;
+                            var ruleStrengthColor = rule.RuleColor.Value;
+                            var ruleInt = rule.RuleInt.Value;
+                            var ruleStrengthSign = (SkillCheckCardSign)rule.RuleFlagEnum;
+                            foreach (var card in internalPlayedCards.Where(x => x.CardColor == ruleStrengthColor && x.CardPower == ruleInt))
+                                card.CardPower =
+                                    ruleStrengthSign == SkillCheckCardSign.Zero ?
+                                        (ruleStrengthSign == SkillCheckCardSign.Positive ? Math.Abs(card.CardPower) :
+                                        Math.Abs(card.CardPower) * -1) :  // implies ruleSign == SkillCheckCardSign.Negative
+                                    0;
+                            break;
+                    }
+                }
+
                 var strength = 0;
 
-                //var scaHit = false;
-                foreach (var card in playedCards)
+                foreach (var card in internalPlayedCards)
                 {
                     if (card.CardPower > 0)
                     {
@@ -30,17 +81,6 @@ namespace DeckManager.ManagerLogic
                         else
                             strength -= card.CardPower;
                     }
-                    /*else if (!scaHit && Consequences.Exists(x => x.Threshold == -1))
-                    {
-                        // CPS: The consequence here is when the crisis skill check has the 3-dot symbol on it, indicating
-                        //      that the effect happens when someone plays a card with a SCA into the check. We should probably add
-                        //      Consequences to SkillCards to account for those.
-                        //
-                        //  Tmesser(3/24/2014) - 
-                        //  None of this stuff is relevant right now as it relies on the CardPower 0 cards, which aren't in Base and will be dealt with later.
-                        scaHit = true;
-                        results.Add(Consequences.Find(x => x.Threshold == -1));    // SCA consequence only happens once
-                    }*/
                 }
                 if (strength < 0)
                     strength = 0;

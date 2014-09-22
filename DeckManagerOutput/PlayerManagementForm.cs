@@ -16,6 +16,7 @@ namespace DeckManagerOutput
         public Tuple<CardType, int> RequestedSpecialCards { get; private set; }
         public string RequestedLocation { get; private set; }
         public List<BaseCard> CardsToDiscard { get; private set; }
+        public bool OpgStatus { get; private set; }
 
         public PlayerManagementForm(Player playerToManage, IEnumerable<string> validLocations, string currentPlayerLocation )
         {
@@ -34,6 +35,7 @@ namespace DeckManagerOutput
             SpecialCardListBox.SelectedIndex = -1;
             LocationComboBox.DataSource = validLocations;
             LocationComboBox.SelectedItem = currentPlayerLocation;
+            OpgCheckbox.Checked = playerToManage.OncePerGamePower;
         }
 
         private void SubmitButtonClick(object sender, EventArgs e)
@@ -62,6 +64,8 @@ namespace DeckManagerOutput
             }
 
             RequestedLocation = LocationComboBox.Text;
+
+            OpgStatus = OpgCheckbox.Checked;
 
             DialogResult = DialogResult.OK;
             Close();

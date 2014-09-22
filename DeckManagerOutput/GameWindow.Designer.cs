@@ -113,6 +113,11 @@ namespace DeckManagerOutput
             this.RollDiceButton = new System.Windows.Forms.Button();
             this.DiceRollTextBox = new System.Windows.Forms.TextBox();
             this.deckInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RaptorLabel = new System.Windows.Forms.Label();
+            this.RaptorReserveLabel = new System.Windows.Forms.Label();
+            this.RaptorContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.destroyRaptorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.produceRaptorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.DradisRightClickMenu.SuspendLayout();
@@ -131,6 +136,7 @@ namespace DeckManagerOutput
             this.CrisisRightClickMenu.SuspendLayout();
             this.DestinationTabControl.SuspendLayout();
             this.DefaultTab.SuspendLayout();
+            this.RaptorContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenuStrip
@@ -247,6 +253,8 @@ namespace DeckManagerOutput
             this.tableLayoutPanel1.Controls.Add(this.JumpButton, 4, 12);
             this.tableLayoutPanel1.Controls.Add(this.RollDiceButton, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.DiceRollTextBox, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.RaptorLabel, 4, 5);
+            this.tableLayoutPanel1.Controls.Add(this.RaptorReserveLabel, 5, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -768,7 +776,7 @@ namespace DeckManagerOutput
             this.ShowHandMenuItem,
             this.managePlayerToolStripMenuItem});
             this.PlayerRightClickMenu.Name = "PlayerRightClickMenu";
-            this.PlayerRightClickMenu.Size = new System.Drawing.Size(162, 48);
+            this.PlayerRightClickMenu.Size = new System.Drawing.Size(158, 48);
             // 
             // ShowHandMenuItem
             // 
@@ -1080,6 +1088,48 @@ namespace DeckManagerOutput
             this.deckInfoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.deckInfoToolStripMenuItem.Text = "Deck Info";
             this.deckInfoToolStripMenuItem.Click += new System.EventHandler(this.DeckInformationMenuItemClick);
+            // RaptorLabel
+            // 
+            this.RaptorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.RaptorLabel.AutoSize = true;
+            this.RaptorLabel.Location = new System.Drawing.Point(311, 233);
+            this.RaptorLabel.Name = "RaptorLabel";
+            this.RaptorLabel.Size = new System.Drawing.Size(50, 13);
+            this.RaptorLabel.TabIndex = 46;
+            this.RaptorLabel.Text = " Raptors:";
+            // 
+            // RaptorReserveLabel
+            // 
+            this.RaptorReserveLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.RaptorReserveLabel.AutoSize = true;
+            this.RaptorReserveLabel.ContextMenuStrip = this.RaptorContextMenu;
+            this.RaptorReserveLabel.Location = new System.Drawing.Point(367, 220);
+            this.RaptorReserveLabel.Name = "RaptorReserveLabel";
+            this.RaptorReserveLabel.Size = new System.Drawing.Size(50, 26);
+            this.RaptorReserveLabel.TabIndex = 47;
+            this.RaptorReserveLabel.Text = "[RaptorReserves]";
+            // 
+            // RaptorContextMenu
+            // 
+            this.RaptorContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.destroyRaptorToolStripMenuItem,
+            this.produceRaptorToolStripMenuItem});
+            this.RaptorContextMenu.Name = "RaptorContextMenu";
+            this.RaptorContextMenu.Size = new System.Drawing.Size(150, 48);
+            // 
+            // destroyRaptorToolStripMenuItem
+            // 
+            this.destroyRaptorToolStripMenuItem.Name = "destroyRaptorToolStripMenuItem";
+            this.destroyRaptorToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.destroyRaptorToolStripMenuItem.Text = "Destroy Raptor";
+            this.destroyRaptorToolStripMenuItem.Click += new System.EventHandler(this.DestroyRaptorToolStripMenuItemClick);
+            // 
+            // produceRaptorToolStripMenuItem
+            // 
+            this.produceRaptorToolStripMenuItem.Name = "produceRaptorToolStripMenuItem";
+            this.produceRaptorToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.produceRaptorToolStripMenuItem.Text = "Produce Raptor";
+            this.produceRaptorToolStripMenuItem.Click += new System.EventHandler(this.ProduceRaptorToolStripMenuItemClick);
             // 
             // GameWindow
             // 
@@ -1113,6 +1163,7 @@ namespace DeckManagerOutput
             this.DestinationTabControl.ResumeLayout(false);
             this.DefaultTab.ResumeLayout(false);
             this.DefaultTab.PerformLayout();
+            this.RaptorContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1202,5 +1253,10 @@ namespace DeckManagerOutput
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showTurnLogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deckInfoToolStripMenuItem;
+        private System.Windows.Forms.Label RaptorLabel;
+        private System.Windows.Forms.Label RaptorReserveLabel;
+        private System.Windows.Forms.ContextMenuStrip RaptorContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem destroyRaptorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem produceRaptorToolStripMenuItem;
     }
 }

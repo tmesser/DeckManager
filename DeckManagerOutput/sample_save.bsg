@@ -7,6 +7,8 @@
   "Morale": 10,
   "Population": 12,
   "Turn": 1,
+  "MaxRaptors": 7,
+  "CurrentRaptors": 7,
   "Players": {
     "$id": "2",
     "$type": "System.Collections.Generic.List`1[[DeckManager.States.Player, DeckManager]], mscorlib",
