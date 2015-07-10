@@ -3,6 +3,8 @@ using DeckManager.Boards.Dradis;
 using DeckManager.Cards;
 using DeckManager.Components;
 using DeckManager.Decks;
+using DeckManager.Cards.Enums;
+using System.Linq;
 
 namespace DeckManager.States
 {
@@ -83,6 +85,62 @@ namespace DeckManager.States
         public SkillCardDeck TacticsDeck { get; set; }
 
         public SkillCardDeck TreacheryDeck { get; set; }
+
+        public List<BaseCard> GetDeckDrawPile(CardType cardtype)
+        {
+            List<BaseCard> deck;
+            switch (cardtype)
+            {
+                case CardType.Crisis:
+                    deck = this.CrisisDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Destination:
+                    deck = this.DestinationDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Quorum:
+                    deck = this.QuorumDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.SuperCrisis:
+                    deck = this.SuperCrisisDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Allegiance:
+                    deck = this.LoyaltyDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                default:
+                    deck = this.PoliticsDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+            }
+            return deck;
+        }
+        public List<BaseCard> GetDeckDrawPile(SkillCardColor cardtype)
+        {
+            List<BaseCard> deck;
+            switch (cardtype)
+            {
+                case SkillCardColor.Leadership:
+                    deck = this.LeadershipDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Tactics:
+                    deck = this.TacticsDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Piloting:
+                    deck = this.PilotingDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Engineering:
+                    deck = this.EngineeringDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Treachery:
+                    deck = this.TreacheryDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Politics:
+                    deck = this.PoliticsDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                default:
+                    deck = this.PoliticsDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+            }
+            return deck;
+        }
 
         #endregion //decks
 
