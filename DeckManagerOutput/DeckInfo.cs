@@ -41,13 +41,13 @@ namespace DeckManagerOutput
 
         private void discardButton_Click(object sender, EventArgs e)
         {
-            Program.GManager.MoveToDiscard(cardsInDeckListBox.SelectedItems.OfType<BaseCard>());
+            Program.GManager.MoveToDiscard(cardsInDeckListBox.SelectedItems.OfType<BaseCard>(), _selectedDeck == CardType.Skill);
             UpdateControls();
         }
 
         private void buryButton_Click(object sender, EventArgs e)
         {
-            Program.GManager.RemoveAndBuryCards(this.cardsInDeckListBox.SelectedItems.Cast<BaseCard>());
+            Program.GManager.RemoveAndBuryCards(this.cardsInDeckListBox.SelectedItems.Cast<BaseCard>(), _selectedDeck == CardType.Skill);
             UpdateControls();
         }
 

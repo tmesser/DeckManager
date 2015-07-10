@@ -395,11 +395,14 @@ namespace DeckManager
             }
         }
 
-        public void MoveToDiscard(IEnumerable<BaseCard> cards) 
+        public void MoveToDiscard(IEnumerable<BaseCard> cards, bool isDestiny = false)
         {
             foreach (BaseCard card in cards)
             {
-                RemoveCard(card);
+                if (isDestiny)
+                    CurrentGameState.DestinyDeck.Deck.Remove((SkillCard)card);
+                else
+                    RemoveCard(card);
                 DiscardCard(card);
             }
         }
@@ -682,12 +685,20 @@ namespace DeckManager
         /// Removes cards from the deck, then places the cards on the bottom of their decks
         /// </summary>
         /// <param name="cards"></param>
-        public void RemoveAndBuryCards(IEnumerable<BaseCard> cards)
+        public void RemoveAndBuryCards(IEnumerable<BaseCard> cards, bool isDestiny = false)
         {
             foreach (BaseCard card in cards)
             {
-                RemoveCard(card);
-                BuryCard(card);
+                if (isDestiny)
+                {
+                    CurrentGameState.DestinyDeck.Deck.Remove((SkillCard)card);
+                    CurrentGameState.DestinyDeck.Deck.Add((SkillCard)card);
+                }
+                else
+                {
+                    RemoveCard(card);
+                    BuryCard(card);
+                }
             }
         }
 
