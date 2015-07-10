@@ -16,25 +16,26 @@ namespace DeckManagerOutput
 {
     public partial class DeckInfo : Form
     {
-        private BaseDeck<BaseCard> _currentDeck;
+        private CardType _selectedDeck;
+        private SkillCardColor _selectedColor;
         
         public DeckInfo()
         {
             InitializeComponent();
-            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.CrisisDeck);
-            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.DestinyDeck);
-            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.DestinationDeck);
-            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.PoliticsDeck);
-            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.LeadershipDeck);
-            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.TacticsDeck);
-            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.PilotingDeck);
-            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.EngineeringDeck);
+            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.CrisisDeck.CardType);
+            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.DestinyDeck.CardType);
+            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.DestinationDeck.CardType);
+            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.PoliticsDeck.DeckColor);
+            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.LeadershipDeck.DeckColor);
+            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.TacticsDeck.DeckColor);
+            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.PilotingDeck.DeckColor);
+            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.EngineeringDeck.DeckColor);
             if (Program.GManager.CurrentGameState.TreacheryDeck != null)
-                this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.TreacheryDeck);
-            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.Civilians);
-            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.QuorumDeck);
-            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.SuperCrisisDeck);
-            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.LoyaltyDeck);
+                this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.TreacheryDeck.DeckColor);
+            //this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.Civilians.ElementAt(0);
+            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.QuorumDeck.CardType);
+            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.SuperCrisisDeck.CardType);
+            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.LoyaltyDeck.CardType);
             //this.deckInfoDeckComboBox.SelectedIndex = 0;
         }
 
@@ -64,76 +65,19 @@ namespace DeckManagerOutput
 
         private void deckInfoDeckComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            determineDeck();
-            //// if deck selected is skill card deck, enable the add to destiny button
-            //if (_currentDeck.CardType == CardType.Skill)
-            //{
-            //    this.addToDestinyButton.Visible = true;
-            //    this.addToDestinyButton.Enabled = true;
-            //}
-            //else
-            //{
-            //    this.addToDestinyButton.Visible = false;
-            //    this.addToDestinyButton.Enabled = false;
-            //}
+            _selectedColor = SkillCardColor.Unknown;
+            _selectedDeck = CardType.Unknown;
 
+            if (deckInfoDeckComboBox.SelectedItem is CardType)
+                _selectedDeck = (CardType)deckInfoDeckComboBox.SelectedItem;
+            else
+                _selectedColor = (SkillCardColor)deckInfoDeckComboBox.SelectedItem;
 
             UpdateControls();
         }
 
-        private void determineDeck()
-        {
-            //Type myObjectType = typeof(this.deckInfoDeckComboBox.SelectedItem);
-
-            //string sType = "System.Int32";
-            //object o1 = "123";
-            //object o2 = Convert.ChangeType(o1, Type.GetType(sType));
-            //Type t = o2.GetType(); // this returns Int32 Type
-           _currentDeck = (BaseDeck<BaseCard>)deckInfoDeckComboBox.SelectedItem;
-            //Convert.ChangeType(asdf, myObjectType);
-
-
-            var deck = deckInfoDeckComboBox.SelectedItem as CrisisDeck;
-            if (deck != null)
-            {
-                this.cardsInDeckListBox.BeginUpdate();
-                this.cardsInDiscardListBox.BeginUpdate();
-
-                this.cardsInDeckListBox.Items.AddRange(deck.Deck.ToArray());
-                this.cardsInDiscardListBox.Items.AddRange(deck.Discarded.ToArray());
-
-                this.cardsInDiscardListBox.EndUpdate();
-                this.cardsInDeckListBox.EndUpdate();
-            }
-            deck = deckInfoDeckComboBox.SelectedItem as CrisisDeck;
-
-
-            //switch (_currentDeck.CardType)
-            //{
-            //    case CardType.Skill: 
-            //        break;
-            //    case CardType.Crisis:
-            //        var d = (CrisisDeck)deckInfoDeckComboBox.SelectedItem;
-            //        break;
-            //    case CardType.Destination:
-            //        break;
-            //    case CardType.Loyalty:
-            //        break;
-            //    case CardType.Mission:
-            //        break;
-            //    case CardType.Mutiny:
-            //        break;
-            //    case CardType.Quorum:
-            //        break;
-            //    case CardType.SuperCrisis:
-            //        break;
-
-            //}
-        }
-
         private void reshuffleButton_Click(object sender, EventArgs e)
         {
-
             UpdateControls();
         }
 
@@ -146,8 +90,13 @@ namespace DeckManagerOutput
         {
             this.cardsInDeckListBox.BeginUpdate();
             this.cardsInDiscardListBox.BeginUpdate();
+            this.cardsInDeckListBox.Items.Clear();
+            this.cardsInDiscardListBox.Items.Clear();
 
-            //this.cardsInDeckListBox.Items.AddRange(_currentDeck.Deck.ToArray());
+            if (_selectedDeck != CardType.Unknown)
+                this.cardsInDeckListBox.Items.AddRange(Program.GManager.CurrentGameState.GetDeckDrawPile(_selectedDeck).ToArray());
+            else
+                this.cardsInDeckListBox.Items.AddRange(Program.GManager.CurrentGameState.GetDeckDrawPile(_selectedColor).ToArray());
             //this.cardsInDiscardListBox.Items.AddRange(_currentDeck.Discarded.ToArray());
 
             this.cardsInDiscardListBox.EndUpdate();
