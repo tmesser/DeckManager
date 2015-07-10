@@ -91,6 +91,9 @@ namespace DeckManager.States
             List<BaseCard> deck;
             switch (cardtype)
             {
+                case CardType.Skill:
+                    deck = this.DestinyDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
                 case CardType.Crisis:
                     deck = this.CrisisDeck.Deck.Cast<BaseCard>().ToList();
                     break;
@@ -103,7 +106,7 @@ namespace DeckManager.States
                 case CardType.SuperCrisis:
                     deck = this.SuperCrisisDeck.Deck.Cast<BaseCard>().ToList();
                     break;
-                case CardType.Allegiance:
+                case CardType.Loyalty:
                     deck = this.LoyaltyDeck.Deck.Cast<BaseCard>().ToList();
                     break;
                 default:
@@ -137,6 +140,64 @@ namespace DeckManager.States
                     break;
                 default:
                     deck = this.PoliticsDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+            }
+            return deck;
+        }
+        public List<BaseCard> GetDeckDiscardPile(CardType cardtype)
+        {
+            List<BaseCard> deck;
+            switch (cardtype)
+            {
+                case CardType.Skill:
+                    deck = this.DestinyDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Crisis:
+                    deck = this.CrisisDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Destination:
+                    deck = this.DestinationDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Quorum:
+                    deck = this.QuorumDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.SuperCrisis:
+                    deck = this.SuperCrisisDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Loyalty:
+                    deck = this.LoyaltyDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                default:
+                    deck = this.PoliticsDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+            }
+            return deck;
+        }
+        public List<BaseCard> GetDeckDiscardPile(SkillCardColor cardtype)
+        {
+            List<BaseCard> deck;
+            switch (cardtype)
+            {
+                case SkillCardColor.Leadership:
+                    deck = this.LeadershipDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Tactics:
+                    deck = this.TacticsDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Piloting:
+                    deck = this.PilotingDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Engineering:
+                    deck = this.EngineeringDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Treachery:
+                    deck = this.TreacheryDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Politics:
+                    deck = this.PoliticsDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                default:
+                    deck = this.PoliticsDeck.Discarded.Cast<BaseCard>().ToList();
                     break;
             }
             return deck;

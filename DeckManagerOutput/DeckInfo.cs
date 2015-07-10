@@ -67,12 +67,13 @@ namespace DeckManagerOutput
         {
             _selectedColor = SkillCardColor.Unknown;
             _selectedDeck = CardType.Unknown;
-
-            if (deckInfoDeckComboBox.SelectedItem is CardType)
-                _selectedDeck = (CardType)deckInfoDeckComboBox.SelectedItem;
-            else
-                _selectedColor = (SkillCardColor)deckInfoDeckComboBox.SelectedItem;
-
+            if (deckInfoDeckComboBox.SelectedItem != null)
+            {
+                if (deckInfoDeckComboBox.SelectedItem is CardType)
+                    _selectedDeck = (CardType)deckInfoDeckComboBox.SelectedItem;
+                else
+                    _selectedColor = (SkillCardColor)deckInfoDeckComboBox.SelectedItem;
+            }
             UpdateControls();
         }
 
@@ -94,10 +95,15 @@ namespace DeckManagerOutput
             this.cardsInDiscardListBox.Items.Clear();
 
             if (_selectedDeck != CardType.Unknown)
+            {
                 this.cardsInDeckListBox.Items.AddRange(Program.GManager.CurrentGameState.GetDeckDrawPile(_selectedDeck).ToArray());
-            else
+                this.cardsInDiscardListBox.Items.AddRange(Program.GManager.CurrentGameState.GetDeckDiscardPile(_selectedDeck).ToArray());
+            }
+            else if (_selectedColor != SkillCardColor.Unknown)
+            {
                 this.cardsInDeckListBox.Items.AddRange(Program.GManager.CurrentGameState.GetDeckDrawPile(_selectedColor).ToArray());
-            //this.cardsInDiscardListBox.Items.AddRange(_currentDeck.Discarded.ToArray());
+                this.cardsInDiscardListBox.Items.AddRange(Program.GManager.CurrentGameState.GetDeckDiscardPile(_selectedColor).ToArray());
+            }
 
             this.cardsInDiscardListBox.EndUpdate();
             this.cardsInDeckListBox.EndUpdate();
