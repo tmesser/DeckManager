@@ -41,9 +41,7 @@ namespace DeckManagerOutput
 
         private void discardButton_Click(object sender, EventArgs e)
         {
-            var cards = (IEnumerable<BaseCard>) cardsInDiscardListBox.SelectedItems;
-            Program.GManager.DiscardCards(cards);
-            //var deck = 
+            Program.GManager.MoveToDiscard(cardsInDeckListBox.SelectedItems.OfType<BaseCard>());
             UpdateControls();
         }
 
@@ -96,13 +94,13 @@ namespace DeckManagerOutput
 
             if (_selectedDeck != CardType.Unknown)
             {
-                this.cardsInDeckListBox.Items.AddRange(Program.GManager.CurrentGameState.GetDeckDrawPile(_selectedDeck).ToArray());
-                this.cardsInDiscardListBox.Items.AddRange(Program.GManager.CurrentGameState.GetDeckDiscardPile(_selectedDeck).ToArray());
+                this.cardsInDeckListBox.Items.AddRange(Program.GManager.GetDeckDrawPile(_selectedDeck).ToArray());
+                this.cardsInDiscardListBox.Items.AddRange(Program.GManager.GetDeckDiscardPile(_selectedDeck).ToArray());
             }
             else if (_selectedColor != SkillCardColor.Unknown)
             {
-                this.cardsInDeckListBox.Items.AddRange(Program.GManager.CurrentGameState.GetDeckDrawPile(_selectedColor).ToArray());
-                this.cardsInDiscardListBox.Items.AddRange(Program.GManager.CurrentGameState.GetDeckDiscardPile(_selectedColor).ToArray());
+                this.cardsInDeckListBox.Items.AddRange(Program.GManager.GetDeckDrawPile(_selectedColor).ToArray());
+                this.cardsInDiscardListBox.Items.AddRange(Program.GManager.GetDeckDiscardPile(_selectedColor).ToArray());
             }
 
             this.cardsInDiscardListBox.EndUpdate();
