@@ -348,7 +348,7 @@ namespace DeckManager
 
 	    #region deck interactions
         
-        public void MoveToDiscard(BaseCard card) 
+        public void RemoveCard(BaseCard card) 
         {
             // TODO check return status of Remove call
             switch (card.CardType)
@@ -393,13 +393,15 @@ namespace DeckManager
                     CurrentGameState.LoyaltyDeck.Deck.Remove((LoyaltyCard)card);
                     break;
             }
-            DiscardCard(card);
         }
 
         public void MoveToDiscard(IEnumerable<BaseCard> cards) 
         {
             foreach (BaseCard card in cards)
-                MoveToDiscard(card);
+            {
+                RemoveCard(card);
+                DiscardCard(card);
+            }
         }
 
         public void DiscardCards(IEnumerable<BaseCard> cards, Player player= null)
@@ -675,6 +677,18 @@ namespace DeckManager
         {
             foreach (BaseCard card in cards)
                 BuryCard(card);
+        }       
+        /// <summary>
+        /// Removes cards from the deck, then places the cards on the bottom of their decks
+        /// </summary>
+        /// <param name="cards"></param>
+        public void RemoveAndBuryCards(IEnumerable<BaseCard> cards)
+        {
+            foreach (BaseCard card in cards)
+            {
+                RemoveCard(card);
+                BuryCard(card);
+            }
         }
 
         public List<BaseCard> GetDeckDrawPile(CardType cardtype)
@@ -795,12 +809,50 @@ namespace DeckManager
         }
 
         public void ReshuffleDeck(CardType cardtype)
-        { }
+        {
+            switch (cardtype)
+            {
+                case CardType.Crisis:
+                    CurrentGameState.CrisisDeck.Reshuffle();
+                    break;
+                case CardType.Destination:
+                    CurrentGameState.DestinationDeck.Reshuffle();
+                    break;
+                case CardType.Quorum:
+                    CurrentGameState.QuorumDeck.Reshuffle();
+                    break;
+                case CardType.SuperCrisis:
+                    CurrentGameState.SuperCrisisDeck.Reshuffle();
+                    break;
+                case CardType.Loyalty:
+                    CurrentGameState.LoyaltyDeck.Reshuffle();
+                    break;
+            }        
+        }
         public void ReshuffleDeck(SkillCardColor cardtype)
-        { }
-
-
-
+        {
+            switch (cardtype)
+            {
+                case SkillCardColor.Politics:
+                    CurrentGameState.PoliticsDeck.Reshuffle();
+                    break;
+                case SkillCardColor.Leadership:
+                    CurrentGameState.LeadershipDeck.Reshuffle();
+                    break;
+                case SkillCardColor.Tactics:
+                    CurrentGameState.TacticsDeck.Reshuffle();
+                    break;
+                case SkillCardColor.Engineering:
+                    CurrentGameState.EngineeringDeck.Reshuffle();
+                    break;
+                case SkillCardColor.Piloting:
+                    CurrentGameState.PilotingDeck.Reshuffle();
+                    break;
+                case SkillCardColor.Treachery:
+                    CurrentGameState.TreacheryDeck.Reshuffle();
+                    break;
+            }
+        }
         #endregion
 
         #region component interactions

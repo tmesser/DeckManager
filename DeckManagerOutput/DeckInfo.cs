@@ -47,10 +47,11 @@ namespace DeckManagerOutput
 
         private void buryButton_Click(object sender, EventArgs e)
         {
-            Program.GManager.BuryCards(this.cardsInDeckListBox.SelectedItems.Cast<BaseCard>());
+            Program.GManager.RemoveAndBuryCards(this.cardsInDeckListBox.SelectedItems.Cast<BaseCard>());
             UpdateControls();
         }
 
+        // TODO don't commit card changes until OK/Cancel Button pushed
         private void deckInfoCancelButton_Click(object sender, EventArgs e)
         {
             UpdateControls();
@@ -77,6 +78,14 @@ namespace DeckManagerOutput
 
         private void reshuffleButton_Click(object sender, EventArgs e)
         {
+            if (_selectedDeck != CardType.Unknown)
+            {
+                Program.GManager.ReshuffleDeck(_selectedDeck);
+            }
+            else if (_selectedColor != SkillCardColor.Unknown)
+            {
+                Program.GManager.ReshuffleDeck(_selectedColor);
+            }
             UpdateControls();
         }
 

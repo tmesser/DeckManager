@@ -113,8 +113,9 @@ namespace DeckManager.Decks
         /// <summary>
         /// Reshuffles this instance.
         /// </summary>
-        protected override void Reshuffle()
+        public override void Reshuffle()
         {
+            // TODO ensure deck is empty or cards will be lost.
             Deck = new List<SkillCard>();
             Deck.AddRange(LeadershipDeck.DrawMany(2));
             Deck.AddRange(TacticsDeck.DrawMany(2));

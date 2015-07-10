@@ -59,7 +59,7 @@ namespace DeckManager.Decks
         /// <summary>
         /// Reshuffles Deck, adding stuff from the Discarded pile.
         /// </summary>
-        protected virtual void Reshuffle()
+        public virtual void Reshuffle()
         {
             Deck.AddRange(Discarded);
             Discarded = new List<T>();
