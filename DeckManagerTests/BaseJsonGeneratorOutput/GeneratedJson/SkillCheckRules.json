@@ -1,0 +1,38 @@
+{
+  "$type": "System.Collections.Generic.List`1[[DeckManager.ManagerLogic.SkillCheckRule, DeckManager]], mscorlib",
+  "$values": [
+    {
+      "$type": "DeckManager.ManagerLogic.SkillCheckRule, DeckManager",
+      "RuleType": "SkillCardColorSignChange",
+      "RuleDescription": "Blind Devotion (Leadership)",
+      "RuleColor": "Leadership",
+      "RuleFlagEnum": "Zero"
+    },
+    {
+      "$type": "DeckManager.ManagerLogic.SkillCheckRule, DeckManager",
+      "RuleType": "SkillCardColorSignChange",
+      "RuleDescription": "Scientific Research",
+      "RuleColor": "Engineering",
+      "RuleFlagEnum": "Positive"
+    },
+    {
+      "$type": "DeckManager.ManagerLogic.SkillCheckRule, DeckManager",
+      "RuleType": "ModifyCheckDifficulty",
+      "RuleDescription": "Friends in Low Places (increase check)",
+      "RuleInt": 2
+    },
+    {
+      "$type": "DeckManager.ManagerLogic.SkillCheckRule, DeckManager",
+      "RuleType": "ModifyCheckDifficulty",
+      "RuleDescription": "Friends in Low Places (decrease check)",
+      "RuleInt": -2
+    },
+    {
+      "$type": "DeckManager.ManagerLogic.SkillCheckRule, DeckManager",
+      "RuleType": "SkillCardStrengthSignChange",
+      "RuleDescription": "Command Authority",
+      "RuleInt": 1,
+      "RuleFlagEnum": "Positive"
+    }
+  ]
+}

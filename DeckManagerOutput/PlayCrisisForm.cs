@@ -15,7 +15,7 @@ namespace DeckManagerOutput
         private readonly List<Player> _playerCloneList;
         private readonly CrisisCard _crisis;
         private readonly IEnumerable<SkillCard> _destinyCards;
-
+        private readonly IEnumerable<SkillCheckRule> _rules;
         
 
         private const string ResultFormat = @"\b {0} \b0 - {1} ({2})";
@@ -24,10 +24,11 @@ namespace DeckManagerOutput
 
         public string Result { get; private set; }
         public IList<Tuple<SkillCard, string>> CrisisContributions { get; set; }
+        public IList<SkillCheckRule> Rules { get; set; }
 
         public Player PlayerTakingCards { get; private set; }
 
-        public PlayCrisisForm(IEnumerable<Player> players, CrisisCard crisis, IEnumerable<SkillCard> destinyCards )
+        public PlayCrisisForm(IEnumerable<Player> players, CrisisCard crisis, IEnumerable<SkillCard> destinyCards, IEnumerable<SkillCheckRule> rules )
         {
             if (crisis.PassLevels.Any() == false)
             {
@@ -37,6 +38,7 @@ namespace DeckManagerOutput
             _players = players.ToList();
             _crisis = crisis;
             _destinyCards = destinyCards;
+            _rules = rules.OrderBy(x => x.RuleDescription).ToList();
             CrisisContributions = new List<Tuple<SkillCard, string>>();
             foreach (var card in _destinyCards)
                 CrisisContributions.Add(new Tuple<SkillCard, string>(card, "Destiny"));
@@ -50,21 +52,29 @@ namespace DeckManagerOutput
             PlayerTakeCardsDropdown.DataSource = _playerCloneList;            
 
             RefreshResultPane();
+
+            foreach (var rule in _rules)
+            {
+                var ruleControl = new CheckBox { Text = rule.RuleDescription };
+                crisisRuleContentForm.Controls.Add(ruleControl);
+            }
         }
 
         private void RefreshResultPane()
         {
-            var crisisResults = SkillCheck.EvalSkillCheck(CrisisContributions.Select(x => x.Item1), _crisis, null);
+            IEnumerable<SkillCard> effectiveContributions;
+            var crisisResults = SkillCheck.EvalSkillCheck(CrisisContributions.Select(x => x.Item1), _crisis, Rules, out effectiveContributions);
 
             var toDisplay = new StringBuilder();
             
             var totalPower = 0;
 
-            foreach (var contribution in CrisisContributions.OrderBy(x => x.Item1))
+            var index = 0;
+            foreach (var contribution in effectiveContributions)
             {
-                var appliedPower = _crisis.PositiveColors.Contains(contribution.Item1.CardColor) ? contribution.Item1.CardPower : contribution.Item1.CardPower*-1;
-                toDisplay.AppendLine(string.Format(ResultFormat, appliedPower, contribution.Item1.Heading, contribution.Item2));
-                totalPower += appliedPower;
+                toDisplay.AppendLine(string.Format(ResultFormat, contribution.CardPower, contribution.Heading, CrisisContributions[index].Item2));
+                totalPower += contribution.CardPower;
+                index++;
             }
             toDisplay.AppendLine(@"\b--------------------\b0");
             toDisplay.AppendLine(_crisis.ToString());
@@ -98,6 +108,21 @@ namespace DeckManagerOutput
             RefreshResultPane();
         }
 
+        private void CommitRuleButtonClick(object sender, EventArgs e)
+        {
+            Rules = new List<SkillCheckRule>();
+            foreach (CheckBox control in crisisRuleContentForm.Controls)
+            {
+                if (!control.Checked) continue;
+                var selectedRule = _rules.FirstOrDefault(x => x.RuleDescription == control.Text);
+                if (selectedRule != default(SkillCheckRule))
+                {
+                    Rules.Add(selectedRule);
+                }
+            }
+            RefreshResultPane();
+        }
+
         private void PlayerDropDownSelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedPlayer = (Player)PlayerDropDown.SelectedItem;
@@ -113,16 +138,16 @@ namespace DeckManagerOutput
 
         private void SubmitButtonClick(object sender, EventArgs e)
         {
-            var crisisResults = SkillCheck.EvalSkillCheck(CrisisContributions.Select(x => x.Item1), _crisis, null);
+            IEnumerable<SkillCard> effectiveContributions;
+            var crisisResults = SkillCheck.EvalSkillCheck(CrisisContributions.Select(x => x.Item1), _crisis, Rules, out effectiveContributions);
 
             var resultOutput = new StringBuilder();
 
             var totalPower = 0;
-            foreach (var contribution in CrisisContributions.OrderBy(x => x.Item1.CardColor))
+            foreach (var contribution in effectiveContributions.OrderBy(x => x.CardColor))
             {
-                var appliedPower = _crisis.PositiveColors.Contains(contribution.Item1.CardColor) ? contribution.Item1.CardPower : contribution.Item1.CardPower * -1;
-                resultOutput.AppendLine(string.Format(FinalFormat, appliedPower, contribution.Item1.Heading));
-                totalPower += appliedPower;
+                resultOutput.AppendLine(string.Format(FinalFormat, contribution.CardPower, contribution.Heading));
+                totalPower += contribution.CardPower;
             } 
             resultOutput.AppendLine(@"\b--------------------\b0");
             foreach (var consequence in crisisResults)

@@ -13,9 +13,11 @@ using DeckManager.Characters;
 using DeckManager.Characters.Enums;
 using DeckManager.Components;
 using DeckManager.Extensions;
+using DeckManager.ManagerLogic;
 using DeckManager.ManagerLogic.Enums;
 using NUnit.Framework;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 
 namespace DeckManagerTests
@@ -23,6 +25,73 @@ namespace DeckManagerTests
     [TestFixture]
     public class BaseJsonGenerator
     {
+        [Ignore]
+        [Test]
+        public void GenerateAFewSkillCheckRules()
+        {
+            //Not actually a test, more a simple way to get a json file started.
+            var skillCheckRules = new List<SkillCheckRule>
+                {
+                    new SkillCheckRule
+                        {
+                            RuleBool = null,
+                            RuleColor = SkillCardColor.Leadership,
+                            RuleDescription = "Blind Devotion (Leadership)",
+                            RuleFlagEnum = SkillCheckCardSign.Zero,
+                            RuleInt = null,
+                            RuleObject = null,
+                            RuleType = SkillCheckRuleType.SkillCardColorSignChange
+                        },
+                    new SkillCheckRule
+                        {
+                            RuleBool = null,
+                            RuleColor = SkillCardColor.Engineering,
+                            RuleDescription = "Scientific Research",
+                            RuleFlagEnum = SkillCheckCardSign.Positive,
+                            RuleInt = null,
+                            RuleObject = null,
+                            RuleType = SkillCheckRuleType.SkillCardColorSignChange
+                        },
+                    new SkillCheckRule
+                        {
+                            RuleBool = null,
+                            RuleColor = null,
+                            RuleDescription = "Friends in Low Places (increase check)",
+                            RuleFlagEnum = null,
+                            RuleInt = 2,
+                            RuleObject = null,
+                            RuleType = SkillCheckRuleType.ModifyCheckDifficulty
+                        },
+                    new SkillCheckRule
+                        {
+                            RuleBool = null,
+                            RuleColor = null,
+                            RuleDescription = "Friends in Low Places (decrease check)",
+                            RuleFlagEnum = null,
+                            RuleInt = -2,
+                            RuleObject = null,
+                            RuleType = SkillCheckRuleType.ModifyCheckDifficulty
+                        },
+                    new SkillCheckRule
+                        {
+                            RuleBool = null,
+                            RuleColor = null,
+                            RuleDescription = "Command Authority",
+                            RuleFlagEnum = SkillCheckCardSign.Positive,
+                            RuleInt = 1,
+                            RuleObject = null,
+                            RuleType = SkillCheckRuleType.SkillCardStrengthSignChange
+                        }
+                };
+
+            var jsonSettings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All, DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new Newtonsoft.Json.Converters.StringEnumConverter() } };
+            var json = JsonConvert.SerializeObject(skillCheckRules, Newtonsoft.Json.Formatting.Indented, jsonSettings);
+            using (var sr = new StreamWriter(@"..\..\BaseJsonGeneratorOutput\GeneratedJson\SkillCheckRules.json"))
+            {
+                sr.Write(json);
+            }
+        }
+
         [Ignore]
         [Test]
         public void GenerateJsonFromXml()

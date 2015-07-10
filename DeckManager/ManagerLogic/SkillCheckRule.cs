@@ -1,9 +1,10 @@
-﻿using DeckManager.Cards.Enums;
+﻿using System;
+using DeckManager.Cards.Enums;
 using DeckManager.ManagerLogic.Enums;
 
 namespace DeckManager.ManagerLogic
 {
-    public class SkillCheckRule
+    public class SkillCheckRule : IEquatable<SkillCheckRule>
     {
         /// <summary>
         /// The general rule type.
@@ -39,5 +40,46 @@ namespace DeckManager.ManagerLogic
         /// A dumping ground for any other random crap I've failed to account for at this point in time.
         /// </summary>
         public object RuleObject { get; set; }
+
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// Returns the rule description.
+        /// </returns>
+        public override string ToString()
+        {
+            return RuleDescription;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((SkillCheckRule) obj);
+        }
+
+        public bool Equals(SkillCheckRule other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return string.Equals(RuleDescription, other.RuleDescription);
+        }
+
+        public override int GetHashCode()
+        {
+            return (RuleDescription != null ? RuleDescription.GetHashCode() : 0);
+        }
+
+        public static bool operator ==(SkillCheckRule left, SkillCheckRule right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(SkillCheckRule left, SkillCheckRule right)
+        {
+            return !Equals(left, right);
+        }
     }
 }

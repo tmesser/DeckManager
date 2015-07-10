@@ -72,6 +72,7 @@
     <None Include="BaseJsonGeneratorOutput\GeneratedJson\Decks\QuorumDeck.json" />
     <None Include="BaseJsonGeneratorOutput\GeneratedJson\Decks\SuperCrisisDeck.json" />
     <None Include="BaseJsonGeneratorOutput\GeneratedJson\Decks\TacticsDeck.json" />
+    <None Include="BaseJsonGeneratorOutput\GeneratedJson\SkillCheckRules.json" />
     <None Include="packages.config" />
     <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Boards\Locations.json" />
     <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Characters\Characters.json" />

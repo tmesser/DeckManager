@@ -16,8 +16,7 @@ namespace DeckManagerOutput
         {
             InitializeComponent();
             var count = 1;
-            System.Drawing.Size boxSize = new System.Drawing.Size();
-            boxSize.Width = 465;
+            var boxSize = new System.Drawing.Size {Width = 465};
             foreach (var crisis in crises)
             {
                 var crisisControl = new CrisisManagementControl(crisis, count);
@@ -28,7 +27,7 @@ namespace DeckManagerOutput
             boxSize.Height += 100;
             if (boxSize.Height > 1000)
                 boxSize.Height = 1000;
-            this.Size = boxSize;
+            Size = boxSize;
         }
 
         private void SubmitButtonClick(object sender, EventArgs e)

@@ -61,6 +61,12 @@
     <Compile Include="CrisisManagementForm.Designer.cs">
       <DependentUpon>CrisisManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CrisisRulesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrisisRulesForm.Designer.cs">
+      <DependentUpon>CrisisRulesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\AddDradisComponentsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     <EmbeddedResource Include="CrisisManagementForm.resx">
       <DependentUpon>CrisisManagementForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrisisRulesForm.resx">
+      <DependentUpon>CrisisRulesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\AddDradisComponentsControl.resx">
       <DependentUpon>AddDradisComponentsControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +248,7 @@
     <None Include="GameContent\Pegasus\Decks\SuperCrisisDeck.json" />
     <None Include="GameContent\Pegasus\Decks\TacticsDeck.json" />
     <None Include="GameContent\Pegasus\Decks\TreacheryDeck.json" />
+    <None Include="GameContent\SkillCheckRules.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

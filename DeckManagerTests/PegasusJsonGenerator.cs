@@ -17,12 +17,14 @@ using DeckManager.ManagerLogic.Enums;
 using NUnit.Framework;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using DeckManager.ManagerLogic;
 
 namespace DeckManagerTests
 {
     [TestFixture]
     public class PegasusJsonGenerator
     {
+
         [Ignore]
         [Test]
         public void GenerateJsonFromXml()

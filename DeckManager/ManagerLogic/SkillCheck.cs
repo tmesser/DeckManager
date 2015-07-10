@@ -13,8 +13,11 @@ namespace DeckManager.ManagerLogic
         /// <summary>
         /// Evaluates the skill check after all cards have been played.
         /// </summary>
-        /// <returns>List of all consequences that occur as a result of the skill check's outcome.</returns>
-        public static List<Consequence> EvalSkillCheck(IEnumerable<SkillCard> playedCards, CrisisCard crisisCard, IEnumerable<SkillCheckRule> specialRules )
+        /// <returns>
+        /// List of all consequences that occur as a result of the skill check's outcome.
+        /// output variable also returns the skill cards as they were computed after applying rules.
+        /// </returns>
+        public static List<Consequence> EvalSkillCheck(IEnumerable<SkillCard> playedCards, CrisisCard crisisCard, IEnumerable<SkillCheckRule> specialRules, out IEnumerable<SkillCard> computedCards )
         {
             var logger = LogManager.GetLogger(typeof(SkillCheck));
             var results = new List<Consequence>();
@@ -92,7 +95,7 @@ namespace DeckManager.ManagerLogic
                 logger.Error("Error while computing skill check.", e);
                 throw;
             }
-
+            computedCards = internalPlayedCards;
             return results;
         }
 

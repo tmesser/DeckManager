@@ -1,0 +1,30 @@
+[
+  {
+    "RuleType": "SkillCardColorSignChange",
+    "RuleDescription": "Blind Devotion (Leadership)",
+    "RuleColor": "Leadership",
+    "RuleFlagEnum": "Zero"
+  },
+  {
+    "RuleType": "SkillCardColorSignChange",
+    "RuleDescription": "Scientific Research",
+    "RuleColor": "Engineering",
+    "RuleFlagEnum": "Positive"
+  },
+  {
+    "RuleType": "ModifyCheckDifficulty",
+    "RuleDescription": "Friends in Low Places (increase check)",
+    "RuleInt": 2
+  },
+  {
+    "RuleType": "ModifyCheckDifficulty",
+    "RuleDescription": "Friends in Low Places (decrease check)",
+    "RuleInt": -2
+  },
+  {
+    "RuleType": "SkillCardStrengthSignChange",
+    "RuleDescription": "Command Authority",
+    "RuleInt": 1,
+    "RuleFlagEnum": "Positive"
+  }
+]

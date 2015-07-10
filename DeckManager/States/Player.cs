@@ -23,6 +23,7 @@ namespace DeckManager.States
         public bool OncePerGamePower { get; set; }
         public int DefaultDrawIndex { get; set; }
         public bool RevealedCylon { get; set; }
+        public string PlayerHandFile { get; set; }
 
         public Player()
         {

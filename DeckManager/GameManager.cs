@@ -14,6 +14,7 @@ using DeckManager.Components;
 using DeckManager.Components.Enums;
 using DeckManager.Decks;
 using DeckManager.Extensions;
+using DeckManager.ManagerLogic;
 using DeckManager.States;
 using Newtonsoft.Json;
 using log4net;
@@ -38,6 +39,23 @@ namespace DeckManager
                     }
                 }
                 return _characters;
+            }
+        }
+
+        private IEnumerable<SkillCheckRule> _skillCheckRules;
+        public IEnumerable<SkillCheckRule> SkillCheckRules
+        {
+            get
+            {
+                if (_skillCheckRules == null)
+                {
+                    using (var sr = new StreamReader(ConfigurationManager.AppSettings["SkillCheckRuleListLocation"]))
+                    {
+                        var jsonText = sr.ReadToEnd();
+                        _skillCheckRules = JsonConvert.DeserializeObject<List<SkillCheckRule>>(jsonText);
+                    }
+                }
+                return _skillCheckRules;
             }
         }
 

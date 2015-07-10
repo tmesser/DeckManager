@@ -608,8 +608,8 @@ namespace DeckManagerOutput
                 return;
 
             var destinyDraw = Program.GManager.DrawDestiny(2).ToList();
-                    
-            var form = new PlayCrisisForm(Program.GManager.CurrentGameState.Players, CurrentCrisis, destinyDraw);
+
+            var form = new PlayCrisisForm(Program.GManager.CurrentGameState.Players, CurrentCrisis, destinyDraw, Program.GManager.SkillCheckRules);
             form.ShowDialog();
             if (form.DialogResult == DialogResult.Cancel)
             {
