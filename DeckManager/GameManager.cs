@@ -348,7 +348,15 @@ namespace DeckManager
 
 	    #region deck interactions
         
-        public void RemoveCard(BaseCard card) 
+        /// <summary>
+        /// Removes the card from its deck.
+        /// 
+        /// N.B. Calls to the method should always be followed by another operation 
+        /// (bury, discard, give to player, etc.) as this method ONLY removes the card
+        /// from the deck. It can be lost if nothing else is done with it.
+        /// </summary>
+        /// <param name="card"></param>
+        private void RemoveCard(BaseCard card) 
         {
             // TODO check return status of Remove call
             switch (card.CardType)
@@ -395,6 +403,12 @@ namespace DeckManager
             }
         }
 
+        /// <summary>
+        /// Removes cards from their decks and places them in that deck's discard pile.
+        /// Or, in the case of the destiny deck, the discard pile that card belongs to.
+        /// </summary>
+        /// <param name="cards"></param>
+        /// <param name="isDestiny"></param>
         public void MoveToDiscard(IEnumerable<BaseCard> cards, bool isDestiny = false)
         {
             foreach (BaseCard card in cards)
@@ -701,7 +715,15 @@ namespace DeckManager
                 }
             }
         }
-
+        /// <summary>
+        /// Removes the cards from their decks, then adds them to the Destiny deck.
+        /// 
+        /// This method should only be used in cases where the list of input cards
+        /// have not been removed from their decks prior to calling this method
+        /// (the input cards should be in their deck).
+        /// </summary>
+        /// <param name="cards"></param>
+        /// <param name="shuffleAfter"></param>
         public void MoveToDestiny(IEnumerable<BaseCard> cards, bool shuffleAfter = true)
         {
             foreach (BaseCard card in cards)
