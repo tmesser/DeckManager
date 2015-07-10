@@ -91,6 +91,10 @@ namespace DeckManagerOutput
 
         private void addToDestinyButton_Click(object sender, EventArgs e)
         {
+            if (_selectedColor != SkillCardColor.Unknown)
+            {
+                Program.GManager.MoveToDestiny(this.cardsInDeckListBox.SelectedItems.Cast<BaseCard>());
+            }
             UpdateControls();
         }
 
@@ -103,11 +107,13 @@ namespace DeckManagerOutput
 
             if (_selectedDeck != CardType.Unknown)
             {
+                this.addToDestinyButton.Visible = false;
                 this.cardsInDeckListBox.Items.AddRange(Program.GManager.GetDeckDrawPile(_selectedDeck).ToArray());
                 this.cardsInDiscardListBox.Items.AddRange(Program.GManager.GetDeckDiscardPile(_selectedDeck).ToArray());
             }
             else if (_selectedColor != SkillCardColor.Unknown)
             {
+                this.addToDestinyButton.Visible = true;
                 this.cardsInDeckListBox.Items.AddRange(Program.GManager.GetDeckDrawPile(_selectedColor).ToArray());
                 this.cardsInDiscardListBox.Items.AddRange(Program.GManager.GetDeckDiscardPile(_selectedColor).ToArray());
             }

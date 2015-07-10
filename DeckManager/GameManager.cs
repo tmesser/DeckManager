@@ -677,7 +677,7 @@ namespace DeckManager
         {
             foreach (BaseCard card in cards)
                 BuryCard(card);
-        }       
+        }
         /// <summary>
         /// Removes cards from the deck, then places the cards on the bottom of their decks
         /// </summary>
@@ -688,6 +688,17 @@ namespace DeckManager
             {
                 RemoveCard(card);
                 BuryCard(card);
+            }
+        }
+
+        public void MoveToDestiny(IEnumerable<BaseCard> cards, bool shuffleAfter = true)
+        {
+            foreach (BaseCard card in cards)
+            {
+                RemoveCard(card);
+                CurrentGameState.DestinyDeck.Deck.Add((SkillCard)card);
+                if (shuffleAfter)
+                    CurrentGameState.DestinyDeck.Deck.Shuffle();
             }
         }
 
