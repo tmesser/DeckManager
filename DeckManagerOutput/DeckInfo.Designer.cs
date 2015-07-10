@@ -47,6 +47,7 @@
             this.cardsInDeckListBox.FormattingEnabled = true;
             this.cardsInDeckListBox.Location = new System.Drawing.Point(12, 52);
             this.cardsInDeckListBox.Name = "cardsInDeckListBox";
+            this.cardsInDeckListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.cardsInDeckListBox.Size = new System.Drawing.Size(158, 238);
             this.cardsInDeckListBox.TabIndex = 0;
             // 
