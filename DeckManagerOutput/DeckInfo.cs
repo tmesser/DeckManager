@@ -23,7 +23,7 @@ namespace DeckManagerOutput
         {
             InitializeComponent();
             this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.CrisisDeck.CardType);
-            this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.DestinyDeck.CardType);
+            this.deckInfoDeckComboBox.Items.Add("Destiny");
             this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.DestinationDeck.CardType);
             this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.PoliticsDeck.DeckColor);
             this.deckInfoDeckComboBox.Items.Add(Program.GManager.CurrentGameState.LeadershipDeck.DeckColor);
@@ -70,6 +70,8 @@ namespace DeckManagerOutput
             {
                 if (deckInfoDeckComboBox.SelectedItem is CardType)
                     _selectedDeck = (CardType)deckInfoDeckComboBox.SelectedItem;
+                else if (deckInfoDeckComboBox.SelectedItem is string && (string)deckInfoDeckComboBox.SelectedItem == "Destiny")
+                    _selectedDeck = CardType.Skill;
                 else
                     _selectedColor = (SkillCardColor)deckInfoDeckComboBox.SelectedItem;
             }
