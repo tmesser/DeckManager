@@ -3,6 +3,8 @@ using DeckManager.Boards.Dradis;
 using DeckManager.Cards;
 using DeckManager.Components;
 using DeckManager.Decks;
+using DeckManager.Cards.Enums;
+using System.Linq;
 
 namespace DeckManager.States
 {

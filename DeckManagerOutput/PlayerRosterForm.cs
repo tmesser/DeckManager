@@ -41,8 +41,17 @@ namespace DeckManagerOutput
             foreach (var character in characters)
                 characterListBox.Items.Add(character);
             characterListBox.EndUpdate();
+            
+
+            this.KeyUp += new KeyEventHandler(Form1_KeyUp);
+
         }
 
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
 
         private void CancelButtonClick(object sender, EventArgs e)
         {

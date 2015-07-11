@@ -365,6 +365,79 @@ namespace DeckManager
         }
 
 	    #region deck interactions
+        
+        /// <summary>
+        /// Removes the card from its deck.
+        /// 
+        /// N.B. Calls to the method should always be followed by another operation 
+        /// (bury, discard, give to player, etc.) as this method ONLY removes the card
+        /// from the deck. It can be lost if nothing else is done with it.
+        /// </summary>
+        /// <param name="card"></param>
+        private void RemoveCard(BaseCard card) 
+        {
+            // TODO check return status of Remove call
+            switch (card.CardType)
+            {
+                case CardType.Crisis:
+                    CurrentGameState.CrisisDeck.Deck.Remove((CrisisCard)card);
+                    break;
+                case CardType.Destination:
+                    CurrentGameState.DestinationDeck.Deck.Remove((DestinationCard)card);
+                    break;
+                case CardType.Quorum:
+                    CurrentGameState.QuorumDeck.Deck.Remove((QuorumCard)card);
+                    break;
+                case CardType.Skill:
+                    var skillCard = (SkillCard)card;
+                    switch (skillCard.CardColor)
+                    {
+                        case SkillCardColor.Politics:
+                            CurrentGameState.PoliticsDeck.Deck.Remove(skillCard);
+                            break;
+                        case SkillCardColor.Leadership:
+                            CurrentGameState.LeadershipDeck.Deck.Remove(skillCard);
+                            break;
+                        case SkillCardColor.Tactics:
+                            CurrentGameState.TacticsDeck.Deck.Remove(skillCard);
+                            break;
+                        case SkillCardColor.Engineering:
+                            CurrentGameState.EngineeringDeck.Deck.Remove(skillCard);
+                            break;
+                        case SkillCardColor.Piloting:
+                            CurrentGameState.PilotingDeck.Deck.Remove(skillCard);
+                            break;
+                        case SkillCardColor.Treachery:
+                            CurrentGameState.TreacheryDeck.Deck.Remove(skillCard);
+                            break;
+                    }
+                    break;
+                case CardType.SuperCrisis:
+                    CurrentGameState.SuperCrisisDeck.Deck.Remove((SuperCrisisCard)card);
+                    break;
+                case CardType.Loyalty:
+                    CurrentGameState.LoyaltyDeck.Deck.Remove((LoyaltyCard)card);
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Removes cards from their decks and places them in that deck's discard pile.
+        /// Or, in the case of the destiny deck, the discard pile that card belongs to.
+        /// </summary>
+        /// <param name="cards"></param>
+        /// <param name="isDestiny"></param>
+        public void MoveToDiscard(IEnumerable<BaseCard> cards, bool isDestiny = false)
+        {
+            foreach (BaseCard card in cards)
+            {
+                if (isDestiny)
+                    CurrentGameState.DestinyDeck.Deck.Remove((SkillCard)card);
+                else
+                    RemoveCard(card);
+                DiscardCard(card);
+            }
+        }
 
         public void DiscardCards(IEnumerable<BaseCard> cards, Player player= null)
         {
@@ -376,6 +449,12 @@ namespace DeckManager
             // discards the passed card into its appropriate deck
             switch (card.CardType)
             {
+                case CardType.Crisis:
+                    CurrentGameState.CrisisDeck.Discard((CrisisCard)card);
+                    break;
+                case CardType.Destination:
+                    CurrentGameState.DestinationDeck.Discard((DestinationCard)card);
+                    break;
                 case CardType.Quorum:
                     CurrentGameState.QuorumDeck.Discard((QuorumCard)card);
                     break;
@@ -634,7 +713,208 @@ namespace DeckManager
             foreach (BaseCard card in cards)
                 BuryCard(card);
         }
+        /// <summary>
+        /// Removes cards from the deck, then places the cards on the bottom of their decks
+        /// </summary>
+        /// <param name="cards"></param>
+        public void RemoveAndBuryCards(IEnumerable<BaseCard> cards, bool isDestiny = false)
+        {
+            foreach (BaseCard card in cards)
+            {
+                if (isDestiny)
+                {
+                    CurrentGameState.DestinyDeck.Deck.Remove((SkillCard)card);
+                    CurrentGameState.DestinyDeck.Deck.Add((SkillCard)card);
+                }
+                else
+                {
+                    RemoveCard(card);
+                    BuryCard(card);
+                }
+            }
+        }
+        /// <summary>
+        /// Removes the cards from their decks, then adds them to the Destiny deck.
+        /// 
+        /// This method should only be used in cases where the list of input cards
+        /// have not been removed from their decks prior to calling this method
+        /// (the input cards should be in their deck).
+        /// </summary>
+        /// <param name="cards"></param>
+        /// <param name="shuffleAfter"></param>
+        public void MoveToDestiny(IEnumerable<BaseCard> cards, bool shuffleAfter = true)
+        {
+            foreach (BaseCard card in cards)
+            {
+                RemoveCard(card);
+                CurrentGameState.DestinyDeck.Deck.Add((SkillCard)card);
+                if (shuffleAfter)
+                    CurrentGameState.DestinyDeck.Deck.Shuffle();
+            }
+        }
 
+        public List<BaseCard> GetDeckDrawPile(CardType cardtype)
+        {
+            List<BaseCard> deck;
+            switch (cardtype)
+            {
+                case CardType.Skill:
+                    deck = CurrentGameState.DestinyDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Crisis:
+                    deck = CurrentGameState.CrisisDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Destination:
+                    deck = CurrentGameState.DestinationDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Quorum:
+                    deck = CurrentGameState.QuorumDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.SuperCrisis:
+                    deck = CurrentGameState.SuperCrisisDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Loyalty:
+                    deck = CurrentGameState.LoyaltyDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                default:
+                    deck = CurrentGameState.PoliticsDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+            }
+            return deck;
+        }
+        public List<BaseCard> GetDeckDrawPile(SkillCardColor cardtype)
+        {
+            List<BaseCard> deck;
+            switch (cardtype)
+            {
+                case SkillCardColor.Leadership:
+                    deck = CurrentGameState.LeadershipDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Tactics:
+                    deck = CurrentGameState.TacticsDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Piloting:
+                    deck = CurrentGameState.PilotingDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Engineering:
+                    deck = CurrentGameState.EngineeringDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Treachery:
+                    deck = CurrentGameState.TreacheryDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Politics:
+                    deck = CurrentGameState.PoliticsDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+                default:
+                    deck = CurrentGameState.PoliticsDeck.Deck.Cast<BaseCard>().ToList();
+                    break;
+            }
+            return deck;
+        }
+        public List<BaseCard> GetDeckDiscardPile(CardType cardtype)
+        {
+            List<BaseCard> deck;
+            switch (cardtype)
+            {
+                case CardType.Skill:
+                    deck = CurrentGameState.DestinyDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Crisis:
+                    deck = CurrentGameState.CrisisDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Destination:
+                    deck = CurrentGameState.DestinationDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Quorum:
+                    deck = CurrentGameState.QuorumDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.SuperCrisis:
+                    deck = CurrentGameState.SuperCrisisDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case CardType.Loyalty:
+                    deck = CurrentGameState.LoyaltyDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                default:
+                    deck = CurrentGameState.PoliticsDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+            }
+            return deck;
+        }
+        public List<BaseCard> GetDeckDiscardPile(SkillCardColor cardtype)
+        {
+            List<BaseCard> deck;
+            switch (cardtype)
+            {
+                case SkillCardColor.Leadership:
+                    deck = CurrentGameState.LeadershipDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Tactics:
+                    deck = CurrentGameState.TacticsDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Piloting:
+                    deck = CurrentGameState.PilotingDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Engineering:
+                    deck = CurrentGameState.EngineeringDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Treachery:
+                    deck = CurrentGameState.TreacheryDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                case SkillCardColor.Politics:
+                    deck = CurrentGameState.PoliticsDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+                default:
+                    deck = CurrentGameState.PoliticsDeck.Discarded.Cast<BaseCard>().ToList();
+                    break;
+            }
+            return deck;
+        }
+
+        public void ReshuffleDeck(CardType cardtype)
+        {
+            switch (cardtype)
+            {
+                case CardType.Crisis:
+                    CurrentGameState.CrisisDeck.Reshuffle();
+                    break;
+                case CardType.Destination:
+                    CurrentGameState.DestinationDeck.Reshuffle();
+                    break;
+                case CardType.Quorum:
+                    CurrentGameState.QuorumDeck.Reshuffle();
+                    break;
+                case CardType.SuperCrisis:
+                    CurrentGameState.SuperCrisisDeck.Reshuffle();
+                    break;
+                case CardType.Loyalty:
+                    CurrentGameState.LoyaltyDeck.Reshuffle();
+                    break;
+            }        
+        }
+        public void ReshuffleDeck(SkillCardColor cardtype)
+        {
+            switch (cardtype)
+            {
+                case SkillCardColor.Politics:
+                    CurrentGameState.PoliticsDeck.Reshuffle();
+                    break;
+                case SkillCardColor.Leadership:
+                    CurrentGameState.LeadershipDeck.Reshuffle();
+                    break;
+                case SkillCardColor.Tactics:
+                    CurrentGameState.TacticsDeck.Reshuffle();
+                    break;
+                case SkillCardColor.Engineering:
+                    CurrentGameState.EngineeringDeck.Reshuffle();
+                    break;
+                case SkillCardColor.Piloting:
+                    CurrentGameState.PilotingDeck.Reshuffle();
+                    break;
+                case SkillCardColor.Treachery:
+                    CurrentGameState.TreacheryDeck.Reshuffle();
+                    break;
+            }
+        }
         #endregion
 
         #region component interactions

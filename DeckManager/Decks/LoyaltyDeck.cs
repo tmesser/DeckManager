@@ -100,6 +100,14 @@ namespace DeckManager.Decks
             Deck = usedLoyaltyCards;
             Discarded = new List<LoyaltyCard>();
         }
+        public override string ToString()
+        {
+            return "Loyalty Deck";
+        }
 
+        public override CardType CardType
+        {
+            get { return CardType.Loyalty; }
+        }
     }
 }

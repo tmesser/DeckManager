@@ -113,8 +113,9 @@ namespace DeckManager.Decks
         /// <summary>
         /// Reshuffles this instance.
         /// </summary>
-        protected override void Reshuffle()
+        public override void Reshuffle()
         {
+            // TODO ensure deck is empty or cards will be lost.
             Deck = new List<SkillCard>();
             Deck.AddRange(LeadershipDeck.DrawMany(2));
             Deck.AddRange(TacticsDeck.DrawMany(2));
@@ -122,6 +123,16 @@ namespace DeckManager.Decks
             Deck.AddRange(EngineeringDeck.DrawMany(2));
             Deck.AddRange(PoliticsDeck.DrawMany(2));
             Deck = Shuffle(Deck);
+        }
+
+        public override string ToString()
+        {
+            return "Destiny Deck";
+        }
+
+        public override CardType CardType
+        {
+            get { return CardType.Skill; }
         }
     }
 }

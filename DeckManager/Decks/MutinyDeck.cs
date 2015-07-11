@@ -3,6 +3,7 @@ using System.IO;
 using DeckManager.Cards;
 using Newtonsoft.Json;
 using log4net;
+using DeckManager.Cards.Enums;
 
 namespace DeckManager.Decks
 {
@@ -36,6 +37,11 @@ namespace DeckManager.Decks
             Deck = cardsFromBox;
             Deck = Shuffle(Deck);
             Discarded = new List<MutinyCard>();
+        }
+
+        public override CardType CardType
+        {
+            get { return CardType.Mutiny; }
         }
     }
 }

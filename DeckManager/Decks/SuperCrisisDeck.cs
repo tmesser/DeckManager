@@ -3,6 +3,7 @@ using System.IO;
 using DeckManager.Cards;
 using Newtonsoft.Json;
 using log4net;
+using DeckManager.Cards.Enums;
 
 namespace DeckManager.Decks
 {
@@ -39,6 +40,14 @@ namespace DeckManager.Decks
             Deck = Shuffle(Deck);
             Discarded = new List<SuperCrisisCard>();
         }
+        public override string ToString()
+        {
+            return "Supercrisis Deck";
+        }
 
+        public override CardType CardType
+        {
+            get { return CardType.SuperCrisis; }
+        }
     }
 }

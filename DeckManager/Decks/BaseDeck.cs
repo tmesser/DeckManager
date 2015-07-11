@@ -4,6 +4,7 @@ using System.Linq;
 using DeckManager.Cards;
 using DeckManager.Extensions;
 using log4net;
+using DeckManager.Cards.Enums;
 
 namespace DeckManager.Decks
 {
@@ -32,6 +33,7 @@ namespace DeckManager.Decks
         /// </value>
         public List<T> Discarded { get; set; }
 
+        public abstract CardType CardType { get; }
 
         /// <summary>
         /// Shuffles the specified input deck.
@@ -57,7 +59,7 @@ namespace DeckManager.Decks
         /// <summary>
         /// Reshuffles Deck, adding stuff from the Discarded pile.
         /// </summary>
-        protected virtual void Reshuffle()
+        public virtual void Reshuffle()
         {
             Deck.AddRange(Discarded);
             Discarded = new List<T>();
@@ -121,14 +123,19 @@ namespace DeckManager.Decks
         /// <returns></returns>
         public virtual IEnumerable<T> DrawMany(int cards)
         {
+            // strictly speaking, this method should take any remaining cards before reshuffling the deck
+            List<T> ret;
             if (Deck.Count < cards)
+            {
+                int remainder = cards - Deck.Count;
+                ret = Deck.Take(Deck.Count).ToList();
                 Reshuffle();
-
-            var ret = Deck.Take(cards).ToList();
+                ret.AddRange(Deck.Take(remainder));
+            }
+            else
+                ret = Deck.Take(cards).ToList();
             Deck.RemoveRange(0,cards);
             return ret;
         }
-
-
     }
 }

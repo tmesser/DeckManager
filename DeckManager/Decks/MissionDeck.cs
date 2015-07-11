@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using DeckManager.Cards;
 using log4net;
+using DeckManager.Cards.Enums;
 
 namespace DeckManager.Decks
 {
@@ -20,6 +21,11 @@ namespace DeckManager.Decks
             Deck = cardsFromBox;
             Deck = Shuffle(Deck);
             Discarded = new List<MissionCard>();
+        }
+
+        public override CardType CardType
+        {
+            get { return CardType.Mission; }
         }
     }
 }

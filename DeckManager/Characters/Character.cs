@@ -45,6 +45,11 @@ namespace DeckManager.Characters
         }
 
         /// <summary>
+        /// Gets or sets which expansion this character is from
+        /// </summary>
+        public Expansion Expansion { get; set; }
+
+        /// <summary>
         /// Returns the maximum number of cards the character can draw of this color.
         /// </summary>
         /// <param name="color">The color.</param>

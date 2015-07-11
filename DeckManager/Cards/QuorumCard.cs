@@ -15,6 +15,11 @@ namespace DeckManager.Cards
             get { return CardType.Quorum; }
         }
 
+        public override Expansion ExpansionSource
+        {
+            get { return Expansion.Base; }
+        }
+
         /// <summary>
         /// Outputs a BBCode representation for the card.
         /// </summary>

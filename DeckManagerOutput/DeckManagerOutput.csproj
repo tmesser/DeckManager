@@ -102,6 +102,12 @@
     <Compile Include="DeckCreator.Designer.cs">
       <DependentUpon>DeckCreator.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeckInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeckInfo.Designer.cs">
+      <DependentUpon>DeckInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeckCreator.resx">
       <DependentUpon>DeckCreator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeckInfo.resx">
+      <DependentUpon>DeckInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameWindow.resx">
       <DependentUpon>GameWindow.cs</DependentUpon>

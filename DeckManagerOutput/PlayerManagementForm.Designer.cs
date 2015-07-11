@@ -35,11 +35,11 @@
             this.PlayerNameLabel = new System.Windows.Forms.Label();
             this.PlayerCardListBox = new System.Windows.Forms.ListBox();
             this.DiscardSelectedCheckBox = new System.Windows.Forms.CheckBox();
-            this.DrawCardComboControl = new DeckManagerOutput.CustomControls.DrawCardComboControl();
             this.LocationMarkerLabel = new System.Windows.Forms.Label();
             this.LocationComboBox = new System.Windows.Forms.ComboBox();
             this.CancelButton = new System.Windows.Forms.Button();
             this.SubmitButton = new System.Windows.Forms.Button();
+            this.DrawCardComboControl = new DeckManagerOutput.CustomControls.DrawCardComboControl();
             this.DrawSpecialComboControl = new DeckManagerOutput.CustomControls.DrawSpecialComboControl();
             this.OpgCheckbox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -140,13 +140,6 @@
             this.DiscardSelectedCheckBox.Text = "Discard Selected";
             this.DiscardSelectedCheckBox.UseVisualStyleBackColor = true;
             // 
-            // DrawCardComboControl
-            // 
-            this.DrawCardComboControl.Location = new System.Drawing.Point(152, 90);
-            this.DrawCardComboControl.Name = "DrawCardComboControl";
-            this.DrawCardComboControl.Size = new System.Drawing.Size(137, 50);
-            this.DrawCardComboControl.TabIndex = 4;
-            // 
             // LocationMarkerLabel
             // 
             this.LocationMarkerLabel.AutoSize = true;
@@ -186,6 +179,13 @@
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = true;
             this.SubmitButton.Click += new System.EventHandler(this.SubmitButtonClick);
+            // 
+            // DrawCardComboControl
+            // 
+            this.DrawCardComboControl.Location = new System.Drawing.Point(152, 90);
+            this.DrawCardComboControl.Name = "DrawCardComboControl";
+            this.DrawCardComboControl.Size = new System.Drawing.Size(137, 50);
+            this.DrawCardComboControl.TabIndex = 4;
             // 
             // DrawSpecialComboControl
             // 
