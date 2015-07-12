@@ -731,6 +731,7 @@ namespace DeckManagerOutput
         
         private void PassTurnButtonClick(object sender, EventArgs e)
         {
+            // TODO add option to disable this warning
             var dialogResult = MessageBox.Show(Resources.GameWindow_PassTurnButtonClick_PassTurnInfo, Resources.GameWindow_PassTurnButtonClick_PassTurnTitle, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -761,6 +762,7 @@ namespace DeckManagerOutput
 
                     RefreshGameDataBoxes();
                 }
+                Program.GManager.CurrentGameState.Players.ForEach(Program.GManager.WriteHand);
             }
         }
 

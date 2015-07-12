@@ -27,6 +27,8 @@ namespace DeckManager
         private readonly JsonSerializerSettings _jsonSettings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All, ReferenceLoopHandling = ReferenceLoopHandling.Serialize, PreserveReferencesHandling = PreserveReferencesHandling.All, DefaultValueHandling = DefaultValueHandling.Ignore, Converters = new List<JsonConverter> { new StringEnumConverter() } };
         private readonly ILog _logger;
         private IEnumerable<Character> _characters;
+        //TODO make this configurable
+        private static string DropboxPublicPath = "E:\\Documents\\Dropbox\\Public\\BSG";
         public IEnumerable<Character> CharacterList
         {
             get {
@@ -913,6 +915,49 @@ namespace DeckManager
             return CurrentGameState.CurrentRaptors;
         }
 
+        #endregion
+
+        #region File writing
+        public void WriteHand(Player p)
+        {
+            try
+            {
+                string filePath = Path.Combine(DropboxPublicPath, p.PlayerName + ".txt");
+                // todo logic for if path doesn't exist
+                StreamWriter sw = new StreamWriter(filePath);
+                sw.WriteLine(p.Character);
+                sw.WriteLine(String.Join(", ", p.Titles));
+                if (p.Cards.Count > 0)
+                {
+                    sw.WriteLine("\nSKILL CARDS:");
+                    p.Cards.ForEach(sw.WriteLine);
+                }
+                if (p.QuorumHand.Count > 0)
+                {
+                    sw.WriteLine("\nQUORUM:");
+                    p.QuorumHand.ForEach(sw.WriteLine);
+                }
+                if (p.MutinyHand.Count > 0)
+                {
+                    sw.WriteLine("\nMUTINY:");
+                    p.MutinyHand.ForEach(sw.WriteLine);
+                }
+                if (p.SuperCrisisCards.Count > 0)
+                {
+                    sw.WriteLine("\nSCC:");
+                    p.SuperCrisisCards.ForEach(sw.WriteLine);
+                }
+                sw.WriteLine("\nLoyalty:");
+                p.LoyaltyCards.ForEach(sw.WriteLine);
+
+                sw.Flush();
+                sw.Close();
+            }
+            catch(IOException ex)
+            {
+                // swallow it for now
+            }
+        }
         #endregion
     }
 }
