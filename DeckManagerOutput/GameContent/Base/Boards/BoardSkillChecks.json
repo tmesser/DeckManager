@@ -29,7 +29,7 @@
     "Activation": "None",
     "PassLevels": [
       {
-        "Item1": 5,
+        "Item1": 7,
         "Item2": "The nominated player is sent to the Brig"
       },
       {

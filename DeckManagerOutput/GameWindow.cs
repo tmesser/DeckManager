@@ -596,10 +596,29 @@ namespace DeckManagerOutput
                     var showHandItem = new ToolStripMenuItem(player.PlayerName, null, ShowHandMenuItemClick);
                     managePlayerToolStripMenuItem.DropDownItems.Add(newMenuItem);
                     ShowHandMenuItem.DropDownItems.Add(showHandItem);
+                    if (player.SuperCrisisCards.Count > 0)
+                    {
+                        playSuperCrisisToolStripMenuItem.DropDownItems.Add(player.PlayerName, null, PlaySuperCrisis);
+                    }
+                    
+                }
+                foreach (var boardSkillCheck in Program.GManager.CurrentGameState.BoardSkillChecks.Deck)
+                {
+                    playBoardSkillCheckToolStripMenuItem.DropDownItems.Add(boardSkillCheck.Heading, null, PlayBoardSkillCheck);
                 }
 
                 JumpPrepChanged(sender, e);
             }
+        }
+
+        private void PlayBoardSkillCheck(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlaySuperCrisis(object sender, EventArgs e)
+        {
+            
         }
 
         private void PlayCrisisButtonClick(object sender, EventArgs e)
@@ -832,6 +851,11 @@ namespace DeckManagerOutput
         {
             Program.GManager.ProduceRaptor();
             RefreshGameDataBoxes();
+        }
+
+        private void CrisisRightClickMenu_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
         }
     }
 }
