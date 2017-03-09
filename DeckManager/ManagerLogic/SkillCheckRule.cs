@@ -34,7 +34,7 @@ namespace DeckManager.ManagerLogic
         /// <summary>
         /// The enum flag associated with the rule, if applicable.  CAN be null.
         /// </summary>
-        public System.Enum RuleFlagEnum { get; set; }
+        public SkillCheckCardSign? RuleFlagEnum { get; set; }
 
         /// <summary>
         /// A dumping ground for any other random crap I've failed to account for at this point in time.

@@ -88,6 +88,7 @@
     <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\SuperCrisisDeck.json" />
     <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\TacticsDeck.json" />
     <None Include="PegasusJsonGeneratorOutput\GeneratedJson\Decks\TreacheryDeck.json" />
+    <None Include="TestContent\Boards\BoardSkillChecks.json" />
     <None Include="TestContent\Boards\Locations.json" />
     <None Include="TestContent\CivilianPile.json" />
     <None Include="TestContent\Crisis.json" />

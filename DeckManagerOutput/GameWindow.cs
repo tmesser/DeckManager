@@ -72,6 +72,11 @@ namespace DeckManagerOutput
                 ShowHandMenuItem.DropDownItems.Add(showHandItem);
             }
 
+            foreach (var boardSkillCheck in Program.GManager.CurrentGameState.BoardSkillChecks.Deck)
+            {
+                playBoardSkillCheckToolStripMenuItem.DropDownItems.Add(boardSkillCheck.Heading, null, PlayBoardSkillCheck);
+            }
+
             RefreshGameDataBoxes();
 
             JumpPrepChanged(sender, e);
@@ -613,12 +618,24 @@ namespace DeckManagerOutput
 
         private void PlayBoardSkillCheck(object sender, EventArgs e)
         {
-
+            var itemClicked = (ToolStripMenuItem)sender;
+            var boardSkillCheck = Program.GManager.CurrentGameState.BoardSkillChecks.Deck.FirstOrDefault( x => x.Heading == itemClicked.Text);
+            if (boardSkillCheck != default(CrisisCard))
+            {
+                CurrentCrisis = boardSkillCheck;
+                crisisText.Text = CurrentCrisis.Heading + Environment.NewLine + CurrentCrisis.AdditionalText;
+            }
         }
 
         private void PlaySuperCrisis(object sender, EventArgs e)
         {
-            
+            var itemClicked = (ToolStripMenuItem)sender;
+            var player = Program.GManager.CurrentGameState.Players.FirstOrDefault(x => x.PlayerName == itemClicked.Text);
+            if (player != default(Player) && player.SuperCrisisCards.Count > 0)
+            {
+                CurrentCrisis = player.SuperCrisisCards.First();
+                crisisText.Text = CurrentCrisis.Heading + Environment.NewLine + CurrentCrisis.AdditionalText;
+            }
         }
 
         private void PlayCrisisButtonClick(object sender, EventArgs e)

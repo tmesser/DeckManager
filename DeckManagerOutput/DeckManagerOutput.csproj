@@ -219,6 +219,7 @@
     <EmbeddedResource Include="SelectDrawForm.resx">
       <DependentUpon>SelectDrawForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="GameContent\Base\Boards\BoardSkillChecks.json" />
     <None Include="GameContent\Base\Boards\Locations.json" />
     <None Include="GameContent\Base\Characters\Characters.json" />
     <None Include="GameContent\Base\Components\CivilianPile.json" />
